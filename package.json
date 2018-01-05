@@ -1,0 +1,12 @@
+{
+  "name": "sweetalert2.github.io",
+  "repository": "sweetalert2/sweetalert2.github.io",
+  "homepage": "https://sweetalert2.github.io/",
+  "description": "Documentation for SweetAlert2",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-sass": "latest",
+    "gulp-sass-lint": "latest"
+  }
+}
