@@ -1,24 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
 
-$black: #000;
-$white: #fff;
-$transparent: rgba($black, 0);
-$athens: #f2f4f6;
-$salmon: #f77;
-$emperor: #555;
-$dovegray: #666;
-$regentgray: #8d98a5;
-$chateaugray: #a7adb2;
-$curiousblue: #3085d6;
-$porcelain: #e2e5e8;
-$pear: #a6e22d;
-$melrose: #c3bcff;
-$spray: #66d9ef;
-$chenin: #e6db74;
-$armadillo: #49483e;
-$cinnabar: #eb4c36;
-$cornflowerblue: #2196f3;
-$white-button: rgba($white, .8);
+@import 'colors';
 
 @mixin retina-background($url, $type: png) {
   background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);
@@ -490,63 +472,6 @@ table {
   position: fixed;
   top: 0;
   right: 0;
-}
-
-.carbonads-wrapper {
-  height: 126px;
-
-  > div {
-    display: block;
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 1em;
-    max-width: 300px;
-    border: solid 1px $regentgray;
-    border-radius: 2px;
-    box-shadow: inset 0 1px $white;
-    text-shadow: 0 1px $white;
-    font-size: 12px;
-    line-height: 1.5;
-
-    a {
-      color: $regentgray;
-      transition: color .15s ease-in-out;
-
-      &:hover {
-        color: $salmon;
-      }
-    }
-
-    span {
-      position: relative;
-      display: block;
-      overflow: hidden;
-    }
-
-    .carbon-img {
-      float: left;
-      margin-right: 1em;
-
-      img {
-        display: block;
-      }
-    }
-
-    .carbon-text {
-      display: block;
-      float: left;
-      max-width: calc(100% - 130px - 1em);
-      text-align: left;
-    }
-
-    .carbon-poweredby {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      display: block;
-      font-size: 11px;
-    }
-  }
 }
 
 .donation-options,

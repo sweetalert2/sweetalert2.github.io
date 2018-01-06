@@ -1,0 +1,58 @@
+@import 'colors';
+
+.carbonads-wrapper {
+  height: 126px;
+
+  > div {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 300px;
+    border: solid 1px $regentgray;
+    border-radius: 2px;
+    box-shadow: inset 0 1px $white;
+    text-shadow: 0 1px $white;
+    font-size: 12px;
+    line-height: 1.5;
+
+    a {
+      color: $regentgray;
+      transition: color .15s ease-in-out;
+
+      &:hover {
+        color: $salmon;
+      }
+    }
+
+    span {
+      position: relative;
+      display: block;
+      overflow: hidden;
+    }
+
+    .carbon-img {
+      float: left;
+      margin-right: 1em;
+
+      img {
+        display: block;
+      }
+    }
+
+    .carbon-text {
+      display: block;
+      float: left;
+      max-width: calc(100% - 130px - 1em);
+      text-align: left;
+    }
+
+    .carbon-poweredby {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      font-size: 11px;
+    }
+  }
+}
