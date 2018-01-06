@@ -1381,7 +1381,7 @@ swal({
       timer: 5000,
       onOpen: () => {
         swal.showLoading()
-        $('.bsa-cpc').appendTo('.swal2-modal')
+        $('.bsa-cpc').clone().appendTo('.swal2-modal')
       }
     }).then((result) => {
       if (result.dismiss === 'timer') {
@@ -1760,6 +1760,9 @@ swal({
 
     swal.queue(steps).then((result) => {
       swal.resetDefaults()
+      swal.setDefaults({
+        onOpen: () => $('.bsa-cpc').clone().appendTo('.swal2-modal'),
+      })
 
       if (result.value) {
         swal({
@@ -1793,8 +1796,7 @@ swal({
   })
 
   swal.setDefaults({
-    onOpen: () => $('.bsa-cpc').appendTo('.swal2-modal'),
-    onClose: () => $('.bsa-cpc').appendTo('.carbonads-wrapper')
+    onOpen: () => $('.bsa-cpc').clone().appendTo('.swal2-modal'),
   })
 
   if(typeof _bsa !== 'undefined' && _bsa) {
