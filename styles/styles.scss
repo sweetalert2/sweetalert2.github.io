@@ -52,8 +52,8 @@ header {
 
   .swal2-icon,
   button {
-    display: inline-block;
-    margin: 0;
+    display: flex;
+    margin: 0 auto;
   }
 
   .swal2-success {

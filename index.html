@@ -522,13 +522,13 @@ swal.queue([{
       </tr>
       <tr>
         <td><b>width</b></td>
-        <td><i>'500px'</i></td>
-        <td>Modal window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>.</td>
+        <td><i>null</i></td>
+        <td>Modal window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>. The default width is <strong>32rem</strong>.</td>
       </tr>
       <tr>
         <td><b>padding</b></td>
-        <td><i>20</i></td>
-        <td>Modal window padding.</td>
+        <td><i>null</i></td>
+        <td>Modal window padding. The default padding is <strong>1.25rem</strong>.</td>
       </tr>
       <tr>
         <td><b>background</b></td>
@@ -568,12 +568,12 @@ swal.queue([{
       <tr id="allow-escape-key">
         <td><b>allowEscapeKey</b></td>
         <td><i>true</i></td>
-        <td>If set to <strong>false</strong>, the user can't dismiss the modal by pressing the Escape key.</td>
+        <td>If set to <strong>false</strong>, the user can't dismiss the modal by pressing the Escape key. You can also pass a custom function returning a boolean value, e.g. if you want to disable the escape key for the loading state of a modal.</td>
       </tr>
       <tr id="allow-enter-key">
         <td><b>allowEnterKey</b></td>
         <td><i>true</i></td>
-        <td>If set to <strong>false</strong>, the user can't confirm the modal by pressing the Enter or Space keys, unless they manually focus the confirm button.</td>
+        <td>If set to <strong>false</strong>, the user can't confirm the modal by pressing the Enter or Space keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value.</td>
       </tr>
       <tr>
         <td><b>showConfirmButton</b></td>

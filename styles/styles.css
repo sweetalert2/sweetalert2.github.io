@@ -34,8 +34,10 @@ header {
 
 .modal-types .swal2-icon,
 .modal-types button {
-  display: inline-block;
-  margin: 0; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto; }
 
 .modal-types .swal2-success::before, .modal-types .swal2-success::after {
   background: transparent !important; }
