@@ -4,6 +4,7 @@
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
   "devDependencies": {
+    "browser-sync": "^2.23.5",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-sass": "latest",
