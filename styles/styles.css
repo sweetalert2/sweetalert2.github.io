@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300");
 html,
 body {
-  margin: 0; }
+  margin: 0;
+  font-size: 1rem; }
 
 body {
   background-color: #f2f4f6;
@@ -361,6 +362,11 @@ table {
 
 .donation-options a {
   font-size: 20px; }
+
+.hall-of-donators {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 1em; }
 
 .stats {
   font-size: 13px;
