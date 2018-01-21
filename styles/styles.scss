@@ -66,14 +66,6 @@ header {
 }
 
 .modal-input-types {
-  tr {
-    td {
-      &:first-child {
-        padding-top: 45px;
-      }
-    }
-  }
-
   td {
     vertical-align: middle;
     text-align: center;
@@ -464,6 +456,10 @@ table {
 
 .hidden {
   opacity: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .mobile-hidden {

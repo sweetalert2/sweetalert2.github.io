@@ -43,9 +43,6 @@ header {
 .modal-types .swal2-success::before, .modal-types .swal2-success::after {
   background: transparent !important; }
 
-.modal-input-types tr td:first-child {
-  padding-top: 45px; }
-
 .modal-input-types td {
   vertical-align: middle;
   text-align: center;
@@ -328,6 +325,9 @@ table {
 
 .hidden {
   opacity: 0; }
+
+.nowrap {
+  white-space: nowrap; }
 
 @media all and (max-width: 750px) {
   .mobile-hidden {

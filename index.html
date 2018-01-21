@@ -419,30 +419,32 @@ swal.queue([{
     <pre class="center">$ bower install sweetalert2</pre>
     <p>
       Or download from CDN:
-      <a href="https://unpkg.com/sweetalert2" target="_blank" rel="noopener">unpkg.com/sweetalert2 <i class="fa fa-external-link"></i></a> |
-      <a href="https://cdn.jsdelivr.net/npm/sweetalert2" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/sweetalert2 <i class="fa fa-external-link"></i></a>
+      <a href="https://unpkg.com/sweetalert2" target="_blank" rel="noopener" class="nowrap">unpkg.com/sweetalert2 <i class="fa fa-external-link"></i></a> |
+      <a href="https://cdn.jsdelivr.net/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">cdn.jsdelivr.net/npm/sweetalert2 <i class="fa fa-external-link"></i></a>
     </p>
   </div>
 
 
   <div class="center-container">
     <h3>Usage</h3>
-    <p>1. Initialize the plugin by referencing the necessary files:</p>
-    <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.all.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+    <div class="mobile-hidden">
+      <p>1. Initialize the plugin by referencing the necessary files:</p>
+      <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.all.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
 
-<span class="comment">&lt;!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser --&gt;</span>
-&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</pre>
-    <p>You can also include the stylesheet separately if desired:</p>
-    <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">href</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.css"</span>&gt;</pre>
-      <p>Or</p>
+  <span class="comment">&lt;!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser --&gt;</span>
+  &lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</pre>
+      <p>You can also include the stylesheet separately if desired:</p>
+      <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+  &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">href</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.css"</span>&gt;</pre>
+        <p>Or</p>
+      </div>
 <pre><span class="comment">// ES6 Modules or TypeScript</span>
 <span class="val">import</span> swal <span class="val">from</span> <span class="str">'sweetalert2'</span>
 
 <span class="comment">// CommonJS</span>
 <span class="val">const</span> swal = <span class="func">require</span>(<span class="str">'sweetalert2'</span>)</pre>
 
-    <p>2. Call the sweetAlert2-function after the page has loaded</p>
+    <p class="mobile-hidden">2. Call the sweetAlert2-function after the page has loaded</p>
 <pre>swal({
   title: <span class="str">'Error!'</span>,
   text: <span class="str">'Do you want to continue'</span>,
@@ -757,7 +759,7 @@ swal.queue([{
       <tr>
         <td><b>useRejections</b></td>
         <td><i>false</i></td>
-        <td><strong>Deprecated and will be removed in the next major release.</strong> Determines whether dismissals (outside click, cancel button, close button, Esc key, timer) should resolve with an object of the format <strong>{ dismiss: reason }</strong> or reject the promise.</td>
+        <td><strong>Deprecated and will be removed in the next major release.</strong> Determines whether dismissals (outside click, cancel button, close button, Esc key, timer) should resolve with an object of the format <strong class="nowrap">{ dismiss: reason }</strong> or reject the promise.</td>
       </tr>
       <tr>
         <td><b>expectRejections</b></td>
@@ -776,7 +778,7 @@ swal.queue([{
   <div class="center-container">
     <h3>Handling Dismissals</h3>
 
-    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>swal()</strong> will be resolved with an object <strong>{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
+    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
 
     <table>
       <tr class="titles">
