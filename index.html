@@ -102,15 +102,16 @@ swal(
 
     <li class="error">
       <div class="ui">
-        <p>An error message</p>
-        <button aria-label="Try me! Example: An error message!">Try me!</button>
+        <p>A modal with a title, an error icon, a text, and a footer</p>
+        <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer">Try me!</button>
       </div>
       <pre>
-swal(
-  <span class="str">'Oops...'</span>,
-  <span class="str">'Something went wrong!'</span>,
-  <span class="str">'error'</span>
-)</pre>
+swal({
+  type: <span class="str">'error'</span>,
+  title: <span class="str">'Oops...'</span>,
+  text: <span class="str">'Something went wrong!'</span>,
+  footer: <span class="str">'&lt;a href>Why do I have this issue?&lt;/a>'</span>,
+})</pre>
     </li>
 
     <li id="long-text">
@@ -1456,7 +1457,12 @@ swal({
   })
 
   $('.examples .error button').on('click', () => {
-    swal('Oops...', 'Something went wrong!', 'error')
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
   })
 
   $('.examples #long-text button').on('click', () => {
