@@ -502,9 +502,9 @@ table {
 }
 
 .hall-of-donators {
-  display: block;
+  display: inline-block;
   font-size: 1.2em;
-  margin-top: 1em;
+  margin: 1em auto 0;
 }
 
 .stats {
