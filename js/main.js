@@ -501,9 +501,7 @@ $('.examples .chaining-modals button').on('click', () => {
 
   swal.queue(steps).then((result) => {
     swal.resetDefaults()
-    swal.setDefaults({
-      footer: $('.carbonads-wrapper .bsa-cpc')
-    })
+    setCarbonFooter()
 
     if (result.value) {
       swal({
@@ -536,10 +534,6 @@ $('.modal-types button').on('click', (e) => {
   swal(type + '!', '', type)
 })
 
-swal.setDefaults({
-  footer: $('.carbonads-wrapper .bsa-cpc')
-})
-
 if (typeof _bsa !== 'undefined' && _bsa) {
   _bsa.init('default', 'CKYDK5QE', 'placement:sweetalert2githubio', {
     target: '.bsa-cpc',
@@ -547,6 +541,16 @@ if (typeof _bsa !== 'undefined' && _bsa) {
     disable_css: 'true'
   })
 }
+
+function setCarbonFooter() {
+  if (typeof _bsa !== 'undefined' && _bsa) {
+    swal.setDefaults({
+      footer: $('.carbonads-wrapper .bsa-cpc')
+    })
+  }
+}
+
+setCarbonFooter()
 
 // Google Analytics
 /* eslint-disable */
