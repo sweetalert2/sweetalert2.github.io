@@ -4,10 +4,16 @@
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.5",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-sass": "latest",
-    "gulp-sass-lint": "latest"
-  }
+    "gulp-sass-lint": "latest",
+    "webpack": "^3.10.0"
+  },
+  "license": "MIT"
 }
