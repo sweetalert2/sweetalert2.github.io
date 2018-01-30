@@ -1,4 +1,4 @@
-/* global XMLHttpRequest, $, swal, FileReader, _bsa */
+/* global XMLHttpRequest, MutationObserver, $, swal, FileReader, _bsa */
 
 function makeApiRequest (endpoint) {
   return new Promise((resolve, reject) => {
@@ -542,15 +542,16 @@ if (typeof _bsa !== 'undefined' && _bsa) {
   })
 }
 
-function setCarbonFooter() {
-  if (typeof _bsa !== 'undefined' && _bsa) {
+function setCarbonFooter () {
+  if (typeof _bsa !== 'undefined' && _bsa && $('.carbonads-wrapper .bsa-cpc')[0].textContent) {
     swal.setDefaults({
       footer: $('.carbonads-wrapper .bsa-cpc')
     })
   }
 }
 
-setCarbonFooter()
+var observer = new MutationObserver(setCarbonFooter)
+observer.observe($('.carbonads-wrapper .bsa-cpc')[0], {childList: true})
 
 // Google Analytics
 /* eslint-disable */

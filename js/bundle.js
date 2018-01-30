@@ -9029,7 +9029,7 @@ module.exports = function (regExp, replace) {
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-/* global XMLHttpRequest, $, swal, FileReader, _bsa */
+/* global XMLHttpRequest, MutationObserver, $, swal, FileReader, _bsa */
 
 function makeApiRequest(endpoint) {
   return new Promise(function (resolve, reject) {
@@ -9818,14 +9818,15 @@ if (typeof _bsa !== 'undefined' && _bsa) {
 }
 
 function setCarbonFooter() {
-  if (typeof _bsa !== 'undefined' && _bsa) {
+  if (typeof _bsa !== 'undefined' && _bsa && $('.carbonads-wrapper .bsa-cpc')[0].textContent) {
     swal.setDefaults({
       footer: $('.carbonads-wrapper .bsa-cpc')
     });
   }
 }
 
-setCarbonFooter();
+var observer = new MutationObserver(setCarbonFooter);
+observer.observe($('.carbonads-wrapper .bsa-cpc')[0], { childList: true });
 
 // Google Analytics
 /* eslint-disable */
