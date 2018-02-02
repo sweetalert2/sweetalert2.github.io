@@ -9274,7 +9274,8 @@ $('.examples .custom-width-padding-background button').on('click', function () {
     title: 'Custom width, padding, background.',
     width: 600,
     padding: 100,
-    background: '#fff url(https://bit.ly/1Nqn9HU)'
+    background: '#fff url(/images/trees.png)',
+    backdrop: '\n      rgba(0,0,123,0.4)\n      url("/images/nyan-cat.gif")\n      center left\n      no-repeat\n    '
   });
 });
 

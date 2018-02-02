@@ -276,7 +276,7 @@ swal({
 
     <li class="custom-width-padding-background">
       <div class="ui">
-        <p>A message with custom width, padding and background</p>
+        <p>A message with custom width, padding, background and animated Nyan Cat</p>
         <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
       </div>
       <pre>
@@ -284,7 +284,13 @@ swal({
   title: <span class="str">'Custom width, padding, background.'</span>,
   width: <span class="val">600</span>,
   padding: <span class="val">100</span>,
-  background: <span class="str">'#fff url(//bit.ly/1Nqn9HU)'</span>
+  background: <span class="str">'#fff url(/images/trees.png)'</span>,
+  backdrop: <span class="str">`
+    rgba(0,0,123,0.4)
+    url("/images/nyan-cat.gif")
+    center left
+    no-repeat
+  `</span>
 })</pre>
     </li>
 
@@ -513,7 +519,7 @@ swal.queue([{
       <tr>
         <td><b>backdrop</b></td>
         <td><i>true</i></td>
-        <td>Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop</td>
+        <td>Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop. Can be either a <strong>boolean</strong> or a <strong>string</strong> which will be assigned to the CSS <strong>background</strong> property.</td>
       </tr>
       <tr>
         <td><b>toast</b></td>
