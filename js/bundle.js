@@ -9096,14 +9096,6 @@ function showStats() {
   }
 }
 
-$('.download').on('click', function () {
-  $('html, body').animate({ scrollTop: $('.download-section').offset().top }, 1000);
-});
-
-$('.donate').on('click', function () {
-  $('html, body').animate({ scrollTop: $('.donations-section').offset().top }, 1000);
-});
-
 $('.showcase.normal button').on('click', function () {
   window.alert('You clicked the button!');
 });

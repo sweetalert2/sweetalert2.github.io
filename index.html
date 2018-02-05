@@ -56,12 +56,12 @@
       Latest update: <a href="https://github.com/sweetalert2/sweetalert2/commits/master" id="latest-update" aria-label="Latest update "></a> ●
       Downloads last month: <a href="https://npm-stat.com/charts.html?package=sweetalert2" id="downloads-last-month" aria-label="Downloads last month "></a>
     </div>
-    <a class="top-right-button download">Download</a>
+    <a class="top-right-button download" href="#download">Download</a>
     <a href="https://unpkg.com/sweetalert2" tabindex="-1" class="top-right-button cdn" target="_blank" rel="noopener">CDN</a>
-    <div class="top-right-button donate">
+    <a class="top-right-button donate" href="#donations">
       <img src="./images/paypal.png" width="32" height="32" alt="">
       <span>Donate</span>
-    </div>
+    </a>
   </header>
 
   <div class="showcase normal">
@@ -86,7 +86,7 @@ swal(
 
 
   <!-- Examples -->
-  <h3>More examples</h3>
+  <h3 id="examples">More examples</h3>
 
   <ul class="examples">
 
@@ -431,7 +431,7 @@ swal.queue([{
 
   <!-- Download & Install -->
   <div class="center-container download-section">
-    <h3>Download & install</h3>
+    <h3 id="download">Download & install</h3>
     <pre class="center">$ npm install sweetalert2</pre>
     <p>Or</p>
     <pre class="center">$ bower install sweetalert2</pre>
@@ -444,7 +444,7 @@ swal.queue([{
 
 
   <div class="center-container">
-    <h3>Usage</h3>
+    <h3 id="usage">Usage</h3>
       <p>1. Initialize the plugin by referencing the necessary files:</p>
       <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"sweetalert2.all.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
 
@@ -472,7 +472,7 @@ swal.queue([{
 
   <div class="mobile-hidden">
     <!-- Configuration -->
-    <h3>Configuration</h3>
+    <h3 id="configuration">Configuration</h3>
 
     <p class="center">Here are the keys that you can use if you pass an object into sweetAlert2:</p>
 
@@ -797,7 +797,7 @@ swal.queue([{
 
   <!-- Handling Dismissals -->
   <div class="center-container">
-    <h3>Handling Dismissals</h3>
+    <h3 id="handling-dismissals">Handling Dismissals</h3>
 
     <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
 
@@ -836,7 +836,7 @@ swal.queue([{
   </div>
 
   <!-- Modal Types -->
-  <h3>Modal Types</h3>
+  <h3 id="modal-types">Modal Types</h3>
   <table class="modal-types">
     <tr>
       <td><strong>success</strong></td>
@@ -878,7 +878,7 @@ swal.queue([{
 
 
   <!-- Input Types -->
-  <h3>Input Types</h3>
+  <h3 id="input-types">Input Types</h3>
   <table class="modal-input-types">
     <tr id="input-text">
       <td><strong>text</strong></td>
@@ -1144,7 +1144,7 @@ swal({
 
   <div class="mobile-hidden">
     <!-- Methods -->
-    <h3>Methods</h3>
+    <h3 id="methods">Methods</h3>
     <table>
       <tr class="titles">
         <th>
@@ -1299,7 +1299,7 @@ swal({
 
 
   <!-- Collaborators -->
-  <h3>Collaborators</h3>
+  <h3 id="collaborators">Collaborators</h3>
   <div class="collaborators">
     <div>
       <a href="https://github.com/toverux" target="_blank" rel="noopener" aria-label="Morgan Touverey-Quilling">
@@ -1334,7 +1334,7 @@ swal({
   </div>
 
   <!-- Donations -->
-  <h3 class="donations-section">Donations</h3>
+  <h3 id="donations">Donations</h3>
   <p class="center">Has SweetAlert2 helped you create an amazing application?<br> You can show your support by making a donation in one of two ways:</p>
   <div class="donation-options">
     <div>
@@ -1356,7 +1356,7 @@ swal({
 
 
   <!-- Contribute -->
-  <h3>Contribute</h3>
+  <h3 id="contribute">Contribute</h3>
   <p class="center">Feel free to fork SweetAlert2 on <a href="https://github.com/sweetalert2/sweetalert2" class="github">GitHub</a> if you have any features that you want to add!</p>
 
 
