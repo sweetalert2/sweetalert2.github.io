@@ -9137,7 +9137,7 @@ $('.examples .timer button').on('click', function () {
       swal.showLoading();
     }
   }).then(function (result) {
-    if (result.dismiss === 'timer') {
+    if (result.dismiss === swal.DismissReason.timer) {
       console.log('I was closed by the timer');
     }
   });
@@ -9242,8 +9242,7 @@ $('.examples .bootstrap-buttons button').on('click', function () {
   }).then(function (result) {
     if (result.value) {
       swal('Deleted!', 'Your file has been deleted.', 'success');
-      // result.dismiss can be 'cancel', 'overlay', 'close', and 'timer'
-    } else if (result.dismiss === 'cancel') {
+    } else if (result.dismiss === swal.DismissReason.cancel) {
       swal('Cancelled', 'Your imaginary file is safe :)', 'error');
     }
   });

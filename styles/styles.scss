@@ -270,6 +270,11 @@ pre {
 
   .comment {
     color: $regentgray;
+
+    a {
+      color: $regentgray;
+      text-decoration: underline;
+    }
   }
 }
 

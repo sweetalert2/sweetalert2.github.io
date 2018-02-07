@@ -112,7 +112,7 @@ $('.examples .timer button').on('click', () => {
       swal.showLoading()
     }
   }).then((result) => {
-    if (result.dismiss === 'timer') {
+    if (result.dismiss === swal.DismissReason.timer) {
       console.log('I was closed by the timer')
     }
   })
@@ -224,8 +224,7 @@ $('.examples .bootstrap-buttons button').on('click', () => {
         'Your file has been deleted.',
         'success'
       )
-    // result.dismiss can be 'cancel', 'overlay', 'close', and 'timer'
-    } else if (result.dismiss === 'cancel') {
+    } else if (result.dismiss === swal.DismissReason.cancel) {
       swal(
         'Cancelled',
         'Your imaginary file is safe :)',

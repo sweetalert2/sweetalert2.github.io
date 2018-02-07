@@ -193,6 +193,9 @@ pre {
     color: #a6e22d; }
   pre .comment {
     color: #8d98a5; }
+    pre .comment a {
+      color: #8d98a5;
+      text-decoration: underline; }
 
 .showcase {
   background-color: #e2e5e8;
