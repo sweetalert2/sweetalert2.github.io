@@ -9790,7 +9790,9 @@ $('.examples .dynamic-queue button').on('click', function () {
     showLoaderOnConfirm: true,
     preConfirm: function preConfirm() {
       return $.get('https://api.ipify.org?format=json').then(function (data) {
-        swal.insertQueueStep(data.ip);
+        return swal.insertQueueStep(data.ip);
+      }, function () {
+        return swal.insertQueueStep({ type: 'error', title: 'Unable to your public IP' });
       });
     }
   }]);

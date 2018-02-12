@@ -518,9 +518,10 @@ $('.examples .dynamic-queue button').on('click', () => {
       text: 'Your public IP will be received via AJAX request',
       showLoaderOnConfirm: true,
       preConfirm: () => {
-        return $.get('https://api.ipify.org?format=json').then((data) => {
-          swal.insertQueueStep(data.ip)
-        })
+        return $.get('https://api.ipify.org?format=json').then(
+          (data) => swal.insertQueueStep(data.ip),
+          () => swal.insertQueueStep({type: 'error', title: 'Unable to your public IP'})
+        )
       }
     }
   ])
