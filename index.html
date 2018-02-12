@@ -430,9 +430,13 @@ swal.queue([{
     <span class="str">'via AJAX request'</span>,
   showLoaderOnConfirm: <span class="val">true</span>,
   preConfirm: () => {
-    <span class="tag">return</span> $.get(ipAPI).<span class="tag">then</span>((data) => {
-      swal.insertQueueStep(data.ip)
-    })
+    <span class="tag">return</span> $.get(ipAPI).<span class="tag">then</span>(
+      (data) => swal.insertQueueStep(data.ip),
+      () => swal.insertQueueStep({
+        type: <span class="str">'error'</span>,
+        title: <span class="str">'Unable to your public IP'</span>
+      })
+    )
   }
 }])</pre>
     </li>
