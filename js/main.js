@@ -520,7 +520,7 @@ $('.examples .dynamic-queue button').on('click', () => {
       preConfirm: () => {
         return $.get('https://api.ipify.org?format=json').then(
           (data) => swal.insertQueueStep(data.ip),
-          () => swal.insertQueueStep({type: 'error', title: 'Unable to your public IP'})
+          () => swal.insertQueueStep({type: 'error', title: 'Unable to get your public IP'})
         )
       }
     }
