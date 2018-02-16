@@ -9792,7 +9792,7 @@ $('.examples .dynamic-queue button').on('click', function () {
       return $.get('https://api.ipify.org?format=json').then(function (data) {
         return swal.insertQueueStep(data.ip);
       }, function () {
-        return swal.insertQueueStep({ type: 'error', title: 'Unable to your public IP' });
+        return swal.insertQueueStep({ type: 'error', title: 'Unable to get your public IP' });
       });
     }
   }]);
