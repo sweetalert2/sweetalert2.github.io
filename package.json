@@ -3,6 +3,9 @@
   "repository": "sweetalert2/sweetalert2.github.io",
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
+  "scripts": {
+    "build": "gulp sass && webpack"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
