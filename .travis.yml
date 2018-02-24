@@ -1,5 +1,13 @@
+language: node_js
+dist: trusty
+node_js: 8.9
+
 install:
   - gem install awesome_bot
 
+before_script:
+  - yarn install
+
 script:
   - awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results
+  - gulp sass-lint
