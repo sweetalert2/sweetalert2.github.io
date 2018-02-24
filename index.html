@@ -186,7 +186,7 @@ swal({
 
     <li class="html-jquery">
       <div class="ui">
-        <p>jQuery HTML with custom animation (<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">Animate.css <i class="fa fa-external-link"></i></a>)</p>
+        <p>jQuery HTML with custom animation (<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1">Animate.css <i class="fa fa-external-link"></i></a>)</p>
         <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre>
@@ -252,7 +252,7 @@ swal({
       <span class="str">'success'</span>
     )
   } <span class="tag">else if</span> (
-    <span class="comment">// <a href="#handling-dismissals">Read more about handling dismissals</a></span>
+    <span class="comment">// <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a></span>
     result.dismiss === swal.DismissReason.cancel
   ) {
     swal(
@@ -316,7 +316,7 @@ swal({
   }
 }).<span class="tag">then</span>((result) => {
   <span class="tag">if</span> (
-    <span class="comment">// <a href="#handling-dismissals">Read more about handling dismissals</a></span>
+    <span class="comment">// <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a></span>
     result.dismiss === swal.DismissReason.timer
   ) {
     console.log(<span class="str">'I was closed by the timer'</span>)
