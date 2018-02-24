@@ -314,6 +314,9 @@ table {
     @media all and (max-width: 750px) {
       table th:nth-child(2) {
         display: none; } }
+    @media all and (max-width: 360px) {
+      table th {
+        padding: 10px 4px; } }
   table td {
     padding: 10px 20px;
     vertical-align: top; }
@@ -325,6 +328,9 @@ table {
         padding: 10px 4px; }
         table td b {
           font-size: 13px; } }
+
+.capitalize::first-letter {
+  text-transform: capitalize; }
 
 .hidden {
   opacity: 0; }
