@@ -436,7 +436,11 @@ table {
     @media all and (max-width: 750px) {
       &:nth-child(2) {
         display: none;
-     }
+      }
+    }
+
+    @media all and (max-width: 360px) {
+      padding: 10px 4px;
     }
   }
 
@@ -456,6 +460,12 @@ table {
         font-size: 13px;
       }
     }
+  }
+}
+
+.capitalize {
+  &::first-letter {
+    text-transform: capitalize;
   }
 }
 
