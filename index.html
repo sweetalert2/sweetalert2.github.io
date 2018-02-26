@@ -1002,11 +1002,11 @@ swal.queue([{
   inputPlaceholder: <span class="str">'Select country'</span>,
   showCancelButton: <span class="val">true</span>,
   inputValidator: (value) => {
-    <span class="tag">return new</span> <span class="func">Promise</span>((resolve) => {
+    <span class="tag">return new</span> <span class="func">Promise</span>((resolve, reject) => {
       <span class="tag">if</span> (value === <span class="str">'UKR'</span>) {
         resolve()
       } <span class="tag">else</span> {
-        resolve(<span class="str">'You need to select Ukraine :)'</span>)
+        reject(<span class="str">'You need to select Ukraine :)'</span>)
       }
     })
   }

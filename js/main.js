@@ -340,11 +340,11 @@ $('.input-type-select').on('click', () => {
       inputPlaceholder: 'Select country',
       showCancelButton: true,
       inputValidator: (value) => {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
           if (value === 'UKR') {
             resolve()
           } else {
-            resolve('You need to select Ukraine :)')
+            reject('You need to select Ukraine :)')
           }
         })
       }
