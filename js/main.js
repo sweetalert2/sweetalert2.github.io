@@ -458,7 +458,6 @@ $('.examples .ajax-request button').on('click', () => {
     input: 'email',
     showCancelButton: true,
     confirmButtonText: 'Submit',
-    width: 600,
     showLoaderOnConfirm: true,
     preConfirm: (email) => {
       return new Promise((resolve) => {
