@@ -9732,7 +9732,6 @@ $('.examples .ajax-request button').on('click', function () {
     input: 'email',
     showCancelButton: true,
     confirmButtonText: 'Submit',
-    width: 600,
     showLoaderOnConfirm: true,
     preConfirm: function preConfirm(email) {
       return new Promise(function (resolve) {
