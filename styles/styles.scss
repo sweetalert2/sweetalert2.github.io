@@ -65,14 +65,6 @@ header {
   }
 }
 
-.modal-input-types {
-  td {
-    vertical-align: middle;
-    text-align: center;
-    width: 33%;
-  }
-}
-
 h3 {
   font-size: 28px;
   color: $dovegray;
@@ -427,17 +419,11 @@ table {
 
   th {
     background-color: $white;
-    padding: 10px 20px;
+    padding: .625em 1.25em;
     color: $dovegray;
     font-weight: 400;
     position: relative;
     white-space: nowrap;
-
-    @media all and (max-width: 750px) {
-      &:nth-child(2) {
-        display: none;
-      }
-    }
 
     @media all and (max-width: 360px) {
       padding: 10px 4px;
@@ -445,14 +431,9 @@ table {
   }
 
   td {
-    padding: 10px 20px;
+    padding: .625em 1.25em;
     vertical-align: top;
 
-    @media all and (max-width: 750px) {
-      &:nth-child(2) {
-        display: none;
-     }
-    }
     @media all and (max-width: 360px) {
       padding: 10px 4px;
 
@@ -463,9 +444,43 @@ table {
   }
 }
 
-.capitalize {
-  &::first-letter {
-    text-transform: capitalize;
+.modal-types, .input-types {
+  @media all and (max-width: 750px) {
+    th,
+    td {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+
+.input-types {
+  td {
+    vertical-align: middle;
+    text-align: center;
+    width: 33%;
+  }
+}
+
+.dismiss-reasons {
+  @media all and (max-width: 750px) {
+    tr {
+      display: flex;
+      flex-direction: column;
+      padding: .625em 1.25em;
+    }
+
+    th {
+      display: none;
+    }
+
+    td {
+      padding: 0;
+      &:nth-child(3) {
+        display: none;
+      }
+    }
   }
 }
 

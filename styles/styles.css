@@ -43,11 +43,6 @@ header {
 .modal-types .swal2-success::before, .modal-types .swal2-success::after {
   background: transparent !important; }
 
-.modal-input-types td {
-  vertical-align: middle;
-  text-align: center;
-  width: 33%; }
-
 h3 {
   font-size: 28px;
   color: #666;
@@ -306,31 +301,50 @@ table {
       margin: 10px auto; } }
   table th {
     background-color: #fff;
-    padding: 10px 20px;
+    padding: .625em 1.25em;
     color: #666;
     font-weight: 400;
     position: relative;
     white-space: nowrap; }
-    @media all and (max-width: 750px) {
-      table th:nth-child(2) {
-        display: none; } }
     @media all and (max-width: 360px) {
       table th {
         padding: 10px 4px; } }
   table td {
-    padding: 10px 20px;
+    padding: .625em 1.25em;
     vertical-align: top; }
-    @media all and (max-width: 750px) {
-      table td:nth-child(2) {
-        display: none; } }
     @media all and (max-width: 360px) {
       table td {
         padding: 10px 4px; }
         table td b {
           font-size: 13px; } }
 
-.capitalize::first-letter {
-  text-transform: capitalize; }
+@media all and (max-width: 750px) {
+  .modal-types th:nth-child(2),
+  .modal-types td:nth-child(2), .input-types th:nth-child(2),
+  .input-types td:nth-child(2) {
+    display: none; } }
+
+.input-types td {
+  vertical-align: middle;
+  text-align: center;
+  width: 33%; }
+
+@media all and (max-width: 750px) {
+  .dismiss-reasons tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: .625em 1.25em; }
+  .dismiss-reasons th {
+    display: none; }
+  .dismiss-reasons td {
+    padding: 0; }
+    .dismiss-reasons td:nth-child(3) {
+      display: none; } }
 
 .hidden {
   opacity: 0; }
