@@ -815,11 +815,11 @@ swal.queue([{
 
     <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
 
-    <table>
+    <table class="dismiss-reasons">
       <tr class="titles">
         <th>Reason</th>
         <th>Description</th>
-        <th class="capitalize"><span class="mobile-hidden">Related</span> configuration</th>
+        <th>Related configuration</th>
       </tr>
       <tr>
         <td><strong class="nowrap">swal.DismissReason.backdrop</strong></td>
@@ -893,7 +893,7 @@ swal.queue([{
 
   <!-- Input Types -->
   <h3 id="input-types">Input Types</h3>
-  <table class="modal-input-types">
+  <table class="input-types">
     <tr id="input-text">
       <td><strong>text</strong></td>
       <td>
@@ -1127,7 +1127,7 @@ swal({
     Multiple inputs aren't supported, you can achieve them by using <strong>html</strong> and <strong>preConfirm</strong> parameters.<br>
     Inside the <strong>preConfirm()</strong> function you can return (or, if async, resolve with) the custom result:
   </p>
-  <table class="modal-input-types">
+  <table class="input-types">
     <tr id="multiple-inputs">
       <td class="mobile-hidden"></td>
       <td>

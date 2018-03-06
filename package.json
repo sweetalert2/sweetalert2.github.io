@@ -4,7 +4,8 @@
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
   "scripts": {
-    "build": "gulp sass && webpack"
+    "build": "gulp sass && webpack",
+    "start": "gulp watch"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
