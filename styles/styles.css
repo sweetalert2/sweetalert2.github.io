@@ -192,6 +192,11 @@ pre {
       color: #8d98a5;
       text-decoration: underline; }
 
+kbd {
+  border: 1px solid #777;
+  border-radius: 3px;
+  padding: 0 2px; }
+
 .showcase {
   background-color: #e2e5e8;
   margin-top: 15px;
