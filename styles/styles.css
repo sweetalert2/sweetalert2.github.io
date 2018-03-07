@@ -193,7 +193,7 @@ pre {
       text-decoration: underline; }
 
 kbd {
-  border: 1px solid #777;
+  border: 1px solid #8d98a5;
   border-radius: 3px;
   padding: 0 2px; }
 
@@ -325,7 +325,8 @@ table {
 
 @media all and (max-width: 750px) {
   .modal-types th:nth-child(2),
-  .modal-types td:nth-child(2), .input-types th:nth-child(2),
+  .modal-types td:nth-child(2),
+  .input-types th:nth-child(2),
   .input-types td:nth-child(2) {
     display: none; } }
 
@@ -365,6 +366,10 @@ table {
   position: fixed;
   top: 0;
   right: 0; }
+
+.carbonads-wrapper {
+  opacity: 0;
+  height: 126px; }
 
 .donation-options,
 .collaborators {

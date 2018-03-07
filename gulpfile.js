@@ -37,6 +37,7 @@ gulp.task('watch', () => {
 
   gulp.watch([
     'index.html',
+    'js/bundle.js',
     'styles/*.css'
   ]).on('change', browserSync.reload)
 

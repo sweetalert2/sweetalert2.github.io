@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .carbonads-wrapper {
-  height: 126px; }
+  opacity: 1; }
   .carbonads-wrapper > div {
     display: block;
     overflow: hidden;

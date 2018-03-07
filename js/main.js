@@ -1,5 +1,19 @@
 /* global swal, fetch, MutationObserver, FileReader, _bsa */
 
+window.onload = () => {
+  var loadStyleSheet = (src) => { // eslint-disable-line
+    var link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = src
+    document.head.appendChild(link)
+  }
+
+  loadStyleSheet('./styles/carbon-ads.css')
+  loadStyleSheet('./styles/bootstrap4-buttons.css')
+  loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+}
+
 var stats = {}
 
 // latest release
@@ -512,6 +526,7 @@ document.querySelector('.modal-types button').onclick = (e) => {
   swal(type + '!', '', type)
 }
 
+// BuySellAds
 if (typeof _bsa !== 'undefined' && _bsa) {
   _bsa.init('default', 'CKYDK5QE', 'placement:sweetalert2githubio', {
     target: '.bsa-cpc',
@@ -520,7 +535,7 @@ if (typeof _bsa !== 'undefined' && _bsa) {
   })
 }
 
-function setCarbonFooter () {
+function setBuySellAdsFooter () {
   if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('.carbonads-wrapper .bsa-cpc').textContent) {
     swal.setDefaults({
       footer: document.querySelector('.carbonads-wrapper .bsa-cpc')
@@ -528,5 +543,5 @@ function setCarbonFooter () {
   }
 }
 
-var observer = new MutationObserver(setCarbonFooter)
+var observer = new MutationObserver(setBuySellAdsFooter)
 observer.observe(document.querySelector('.carbonads-wrapper .bsa-cpc'), {childList: true})
