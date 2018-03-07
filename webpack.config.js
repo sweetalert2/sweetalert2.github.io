@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   entry: ['babel-polyfill', './js/main.js'],
   output: {
@@ -11,5 +13,10 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+    })
+  ]
 }
