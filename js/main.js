@@ -1,6 +1,6 @@
 /* global swal, fetch, MutationObserver, FileReader, _bsa */
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   var loadStyleSheet = (src) => { // eslint-disable-line
     var link = document.createElement('link')
     link.rel = 'stylesheet'
@@ -12,7 +12,7 @@ window.onload = () => {
   loadStyleSheet('./styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
-}
+})
 
 var stats = {}
 
@@ -20,6 +20,9 @@ var stats = {}
 fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
   .then(response => response.json())
   .then(response => {
+    if (!response[0] || !response[0].name) {
+      return
+    }
     stats.latestRelease = response[0].name
     showStats()
   })
@@ -28,6 +31,9 @@ fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
 fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
   .then(response => response.json())
   .then(response => {
+    if (!response[0] || !response[0].commit) {
+      return
+    }
     var recentActivity = response[0].commit.author.date
     recentActivity = new Date(recentActivity)
     var today = new Date()
