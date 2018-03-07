@@ -1,0 +1,20 @@
+{
+  "name": "SweetAlert2",
+  "short_name": "SweetAlert2",
+  "icons": [
+    {
+      "src": "/images/manifest/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/manifest/512x215.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#f2f4f6",
+  "theme_color": "#f2f4f6"
+}
