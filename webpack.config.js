@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
   entry: ['babel-polyfill', './js/main.js'],
@@ -17,6 +18,24 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+    }),
+    new SWPrecacheWebpackPlugin({
+      staticFileGlobs: [
+        'styles/**/*.css',
+        'js/bundle.js',
+        'images/**/*'
+      ],
+      runtimeCaching: [
+        {
+          urlPattern: '/',
+          handler: 'networkFirst'
+        },
+        {
+          urlPattern: /^https:\/\/unpkg\.com\/sweetalert2\@latest\/dist\/sweetalert2\.all\.js/,
+          handler: 'networkFirst'
+        }
+      ],
+      minify: true
     })
   ]
 }

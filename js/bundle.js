@@ -9044,6 +9044,10 @@ document.addEventListener('DOMContentLoaded', function () {
   loadStyleSheet('./styles/bootstrap4-buttons.css');
   loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
   loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
 });
 
 var stats = {};
