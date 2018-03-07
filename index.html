@@ -33,7 +33,6 @@
   <link rel="stylesheet" href="./styles/bootstrap4-buttons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <link rel="preload" href="https://unsplash.it/400/200/?random" as="image">
   <link rel="preload" href="https://bit.ly/1Nqn9HU" as="image">
@@ -184,17 +183,14 @@ swal({
 })</pre>
     </li>
 
-    <li class="html-jquery">
+    <li id="custom-animation">
       <div class="ui">
-        <p>jQuery HTML with custom animation (<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1">Animate.css <i class="fa fa-external-link"></i></a>)</p>
+        <p>Custom animation (<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1">Animate.css <i class="fa fa-external-link"></i></a>)</p>
         <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre>
 swal({
-  title: <span class="str">'jQuery HTML example'</span>,
-  html: $(<span class="str">'&lt;div&gt;'</span>)
-    .addClass(<span class="str">'some-class'</span>)
-    .text(<span class="str">'jQuery is everywhere.'</span>),
+  title: <span class="str">'Custom animation with Animate.css'</span>,
   animation: <span class="val">false</span>,
   customClass: <span class="str">'animated tada'</span>
 })</pre>

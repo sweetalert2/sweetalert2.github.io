@@ -1,34 +1,19 @@
-/* global XMLHttpRequest, MutationObserver, $, swal, FileReader, _bsa */
-
-function makeApiRequest (endpoint) {
-  return new Promise((resolve, reject) => {
-    var xhr = new XMLHttpRequest()
-    xhr.open('GET', endpoint)
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        resolve(JSON.parse(xhr.responseText))
-      } else {
-        reject(new Error(`Api call to ${endpoint} faled`))
-      }
-    }
-    xhr.send()
-  })
-}
+/* global swal, fetch, MutationObserver, FileReader, _bsa */
 
 var stats = {}
 
 // latest release
-makeApiRequest('https://api.github.com/repos/sweetalert2/sweetalert2/tags').then(
-  (response) => {
+fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
+  .then(response => response.json())
+  .then(response => {
     stats.latestRelease = response[0].name
     showStats()
-  },
-  () => {}
-)
+  })
 
 // recent activity
-makeApiRequest('https://api.github.com/repos/sweetalert2/sweetalert2/commits').then(
-  (response) => {
+fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
+  .then(response => response.json())
+  .then(response => {
     var recentActivity = response[0].commit.author.date
     recentActivity = new Date(recentActivity)
     var today = new Date()
@@ -40,18 +25,15 @@ makeApiRequest('https://api.github.com/repos/sweetalert2/sweetalert2/commits').t
     }
     stats.recentActivity = recentActivity
     showStats()
-  },
-  () => {}
-)
+  })
 
 // number of downloads last month
-makeApiRequest('https://api.npmjs.org/downloads/point/last-month/sweetalert2').then(
-  (response) => {
+fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
+  .then(response => response.json())
+  .then(response => {
     stats.downloadsLastMonth = response.downloads.toLocaleString()
     showStats()
-  },
-  () => {}
-)
+  })
 
 function showStats () {
   if (stats.latestRelease && stats.recentActivity && stats.downloadsLastMonth) {
@@ -71,15 +53,15 @@ function showStats () {
   }
 }
 
-$('.showcase.normal button').on('click', () => {
+document.querySelector('.showcase.normal button').onclick = () => {
   window.alert('You clicked the button!')
-})
+}
 
-$('.showcase.sweet button').on('click', () => {
+document.querySelector('.showcase.sweet button').onclick = () => {
   swal('Good job!', 'You clicked the button!', 'success')
-})
+}
 
-$('.paypal').on('click', () => {
+document.querySelector('.paypal').onclick = () => {
   swal({
     title: 'How would you like to pay?',
     input: 'select',
@@ -97,13 +79,13 @@ $('.paypal').on('click', () => {
   })
 
   return false
-})
+}
 
-$('.examples .message button').on('click', () => {
+document.querySelector('.examples .message button').onclick = () => {
   swal('Any fool can use a computer')
-})
+}
 
-$('.examples .timer button').on('click', () => {
+document.querySelector('.examples .timer button').onclick = () => {
   swal({
     title: 'Auto close alert!',
     text: 'I will close in 5 seconds.',
@@ -116,9 +98,9 @@ $('.examples .timer button').on('click', () => {
       console.log('I was closed by the timer')
     }
   })
-})
+}
 
-$('.examples .html button').on('click', () => {
+document.querySelector('.examples .html button').onclick = () => {
   swal({
     title: '<i>HTML</i> <u>example</u>',
     type: 'info',
@@ -134,9 +116,9 @@ $('.examples .html button').on('click', () => {
     cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
     cancelButtonAriaLabel: 'Thumbs down'
   })
-})
+}
 
-$('.examples #position button').on('click', () => {
+document.querySelector('.examples #position button').onclick = () => {
   swal({
     position: 'top-end',
     type: 'success',
@@ -144,9 +126,9 @@ $('.examples #position button').on('click', () => {
     showConfirmButton: false,
     timer: 1500
   })
-})
+}
 
-$('.examples .rtl button').on('click', () => {
+document.querySelector('.examples .rtl button').onclick = () => {
   swal({
     title: 'هل تريد الاستمرار؟',
     confirmButtonText: 'نعم',
@@ -155,39 +137,38 @@ $('.examples .rtl button').on('click', () => {
     showCloseButton: true,
     target: document.getElementById('rtl-container')
   })
-})
+}
 
-$('.examples .html-jquery button').on('click', () => {
+document.querySelector('#custom-animation button').onclick = () => {
   swal({
-    title: 'jQuery HTML example',
-    html: $('<div>').addClass('some-class').text('jQuery is everywhere.'),
+    title: 'Custom animation with Animate.css',
     animation: false,
     customClass: 'animated tada'
   })
-})
+}
 
-$('.examples .title-text button').on('click', () => {
+document.querySelector('.examples .title-text button').onclick = () => {
   swal('The Internet?', 'That thing is still around?', 'question')
-})
+}
 
-$('.examples .error button').on('click', () => {
+document.querySelector('.examples .error button').onclick = () => {
   swal({
     type: 'error',
     title: 'Oops...',
     text: 'Something went wrong!',
     footer: '<a href>Why do I have this issue?</a>'
   })
-})
+}
 
-$('.examples #long-text button').on('click', () => {
+document.querySelector('.examples #long-text button').onclick = () => {
   swal({
     imageUrl: './images/robot.jpg',
     imageHeight: 1512,
     imageAlt: 'A tall image'
   })
-})
+}
 
-$('.examples .warning.confirm button').on('click', () => {
+document.querySelector('.examples .warning.confirm button').onclick = () => {
   swal({
     title: 'Are you sure?',
     text: 'You won\'t be able to revert this!',
@@ -201,9 +182,9 @@ $('.examples .warning.confirm button').on('click', () => {
       swal('Deleted!', 'Your file has been deleted!', 'success')
     }
   })
-})
+}
 
-$('.examples .bootstrap-buttons button').on('click', () => {
+document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
   swal({
     title: 'Are you sure?',
     text: 'Buttons below are styled with Bootstrap classes',
@@ -232,9 +213,9 @@ $('.examples .bootstrap-buttons button').on('click', () => {
       )
     }
   })
-})
+}
 
-$('.examples .custom-image button').on('click', () => {
+document.querySelector('.examples .custom-image button').onclick = () => {
   swal({
     title: 'Sweet!',
     text: 'Modal with a custom image.',
@@ -244,9 +225,9 @@ $('.examples .custom-image button').on('click', () => {
     imageAlt: 'Custom image',
     animation: false
   })
-})
+}
 
-$('.examples .custom-width-padding-background button').on('click', () => {
+document.querySelector('.examples .custom-width-padding-background button').onclick = () => {
   swal({
     title: 'Custom width, padding, background.',
     width: 600,
@@ -259,9 +240,9 @@ $('.examples .custom-width-padding-background button').on('click', () => {
       no-repeat
     `
   })
-})
+}
 
-$('.input-type-text').on('click', () => {
+document.querySelector('.input-type-text').onclick = () => {
   (async function getName () {
     const {value: name} = await swal({
       title: 'What is your name?',
@@ -274,9 +255,9 @@ $('.input-type-text').on('click', () => {
     })
     name && swal({type: 'success', title: `Hi, ${name}`})
   })()
-})
+}
 
-$('.input-type-email').on('click', () => {
+document.querySelector('.input-type-email').onclick = () => {
   (async function getEmail () {
     const {value: email} = await swal({
       title: 'Input email address',
@@ -285,9 +266,9 @@ $('.input-type-email').on('click', () => {
     })
     email && swal({html: 'Entered email: <strong>' + email + '</strong>'})
   })()
-})
+}
 
-$('.input-type-url').on('click', () => {
+document.querySelector('.input-type-url').onclick = () => {
   (async function getUrl () {
     const {value: url} = await swal({
       input: 'url',
@@ -295,9 +276,9 @@ $('.input-type-url').on('click', () => {
     })
     url && swal({html: 'Entered URL: <strong>' + url + '</strong>'})
   })()
-})
+}
 
-$('.input-type-password').on('click', () => {
+document.querySelector('.input-type-password').onclick = () => {
   (async function getPassword () {
     const {value: password} = await swal({
       title: 'Enter your password',
@@ -311,9 +292,9 @@ $('.input-type-password').on('click', () => {
     })
     password && swal({html: 'Entered password: <strong>' + password + '</strong>'})
   })()
-})
+}
 
-$('.input-type-textarea').on('click', () => {
+document.querySelector('.input-type-textarea').onclick = () => {
   (async function getMessage () {
     const {value: text} = await swal({
       input: 'textarea',
@@ -325,9 +306,9 @@ $('.input-type-textarea').on('click', () => {
     })
     text && swal(text)
   })()
-})
+}
 
-$('.input-type-select').on('click', () => {
+document.querySelector('.input-type-select').onclick = () => {
   (async function getCountry () {
     const {value: country} = await swal({
       title: 'Select Ukraine',
@@ -351,9 +332,9 @@ $('.input-type-select').on('click', () => {
     })
     country && swal({html: 'You selected: <strong>' + country + '</strong>'})
   })()
-})
+}
 
-$('.input-type-radio').on('click', () => {
+document.querySelector('.input-type-radio').onclick = () => {
   (async function getColor () {
     var inputOptionsPromise = new Promise((resolve) => {
       setTimeout(() => {
@@ -376,9 +357,9 @@ $('.input-type-radio').on('click', () => {
 
     color && swal({html: 'You selected: <strong>' + color + '</strong>'})
   })()
-})
+}
 
-$('.input-type-checkbox').on('click', () => {
+document.querySelector('.input-type-checkbox').onclick = () => {
   (async function acceptTerms () {
     const {value: accept} = await swal({
       title: 'Terms and conditions',
@@ -393,9 +374,9 @@ $('.input-type-checkbox').on('click', () => {
 
     accept && swal({text: 'You agreed with T&C :)'})
   })()
-})
+}
 
-$('.input-type-file').on('click', () => {
+document.querySelector('.input-type-file').onclick = () => {
   (async function getColor () {
     const {value: file} = await swal({
       title: 'Select image',
@@ -417,9 +398,9 @@ $('.input-type-file').on('click', () => {
       reader.readAsDataURL(file)
     }
   })()
-})
+}
 
-$('.input-type-range').on('click', () => {
+document.querySelector('.input-type-range').onclick = () => {
   swal({
     title: 'How old are you?',
     type: 'question',
@@ -431,9 +412,9 @@ $('.input-type-range').on('click', () => {
     },
     inputValue: 25
   })
-})
+}
 
-$('.input-type-multiple').on('click', () => {
+document.querySelector('.input-type-multiple').onclick = () => {
   (async function getForm () {
     const {value: formValues} = await swal({
       title: 'Multiple inputs',
@@ -443,16 +424,16 @@ $('.input-type-multiple').on('click', () => {
       focusConfirm: false,
       preConfirm: () => {
         return [
-          $('#swal-input1').val(),
-          $('#swal-input2').val()
+          document.getElementById('swal-input1').value,
+          document.getElementById('swal-input2').value
         ]
       }
     })
     formValues && swal(JSON.stringify(formValues))
   })()
-})
+}
 
-$('.examples .ajax-request button').on('click', () => {
+document.querySelector('.examples .ajax-request button').onclick = () => {
   swal({
     title: 'Submit email to run ajax request',
     input: 'email',
@@ -479,9 +460,9 @@ $('.examples .ajax-request button').on('click', () => {
       })
     }
   })
-})
+}
 
-$('.examples .chaining-modals button').on('click', () => {
+document.querySelector('.examples .chaining-modals button').onclick = () => {
   swal.setDefaults({
     input: 'text',
     confirmButtonText: 'Next &rarr;',
@@ -507,9 +488,9 @@ $('.examples .chaining-modals button').on('click', () => {
       })
     }
   })
-})
+}
 
-$('.examples .dynamic-queue button').on('click', () => {
+document.querySelector('.examples .dynamic-queue button').onclick = () => {
   swal.queue([
     {
       title: 'Your public IP',
@@ -517,19 +498,19 @@ $('.examples .dynamic-queue button').on('click', () => {
       text: 'Your public IP will be received via AJAX request',
       showLoaderOnConfirm: true,
       preConfirm: () => {
-        return $.get('https://api.ipify.org?format=json').then(
-          (data) => swal.insertQueueStep(data.ip),
-          () => swal.insertQueueStep({type: 'error', title: 'Unable to get your public IP'})
-        )
+        return fetch('https://api.ipify.org?format=json')
+          .then(response => response.json())
+          .then(data => swal.insertQueueStep(data.ip))
+          .catch(() => swal.insertQueueStep({type: 'error', title: 'Unable to get your public IP'}))
       }
     }
   ])
-})
+}
 
-$('.modal-types button').on('click', (e) => {
-  var type = $(e.currentTarget).attr('class').slice(5)
+document.querySelector('.modal-types button').onclick = (e) => {
+  var type = document.querySelector(e.currentTarget).getAttribute('class').slice(5)
   swal(type + '!', '', type)
-})
+}
 
 if (typeof _bsa !== 'undefined' && _bsa) {
   _bsa.init('default', 'CKYDK5QE', 'placement:sweetalert2githubio', {
@@ -540,12 +521,12 @@ if (typeof _bsa !== 'undefined' && _bsa) {
 }
 
 function setCarbonFooter () {
-  if (typeof _bsa !== 'undefined' && _bsa && $('.carbonads-wrapper .bsa-cpc')[0].textContent) {
+  if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('.carbonads-wrapper .bsa-cpc').textContent) {
     swal.setDefaults({
-      footer: $('.carbonads-wrapper .bsa-cpc')
+      footer: document.querySelector('.carbonads-wrapper .bsa-cpc')
     })
   }
 }
 
 var observer = new MutationObserver(setCarbonFooter)
-observer.observe($('.carbonads-wrapper .bsa-cpc')[0], {childList: true})
+observer.observe(document.querySelector('.carbonads-wrapper .bsa-cpc'), {childList: true})
