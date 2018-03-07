@@ -44,7 +44,7 @@
 
 <body>
   <header>
-    <img src="./images/swal2-logo.png" class="logo" width="498" alt="SweetAlert2 logo">
+    <img src="./images/swal2-logo.png" class="logo" width="498" height="84" alt="SweetAlert2 logo">
     <h1>A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes</h2>
     <h2>Zero dependencies</h2>
     <div class="carbonads-wrapper">
@@ -73,7 +73,7 @@
   </div>
 
   <div class="showcase sweet">
-    <img src="./images/swal2-logo.png" height="30" alt="SweetAlert2">
+    <img src="./images/swal2-logo.png" width="178" height="30" alt="SweetAlert2">
     <button aria-label="Show SweetAlert2 success message">Show success message</button>
     <pre>
 swal(
@@ -422,13 +422,15 @@ swal.queue([{
     <span class="str">'via AJAX request'</span>,
   showLoaderOnConfirm: <span class="val">true</span>,
   preConfirm: () => {
-    <span class="tag">return</span> $.get(ipAPI).<span class="tag">then</span>(
-      (data) => swal.insertQueueStep(data.ip),
-      () => swal.insertQueueStep({
-        type: <span class="str">'error'</span>,
-        title: <span class="str">'Unable to get your public IP'</span>
+    <span class="tag">return</span> fetch(ipAPI)
+      .<span class="tag">then</span>(response => response.json())
+      .<span class="tag">then</span>(data => swal.insertQueueStep(data.ip)),
+      .<span class="tag">catch</span>(() => {
+        swal.insertQueueStep({
+          type: <span class="str">'error'</span>,
+          title: <span class="str">'Unable to get your public IP'</span>
+        })
       })
-    )
   }
 }])</pre>
     </li>
@@ -1132,8 +1134,8 @@ swal({
   focusConfirm: <span class="val">false</span>,
   preConfirm: () => {
     <span class="tag">return</span> [
-      $(<span class="str">'#swal-input1'</span>).val(),
-      $(<span class="str">'#swal-input2'</span>).val()
+      document.getElementById(<span class="str">'swal-input1'</span>).value,
+      document.getElementById(<span class="str">'swal-input2'</span>).value
     ]
   }
 })
