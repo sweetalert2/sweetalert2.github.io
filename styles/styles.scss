@@ -271,7 +271,7 @@ pre {
 }
 
 kbd {
-  border: 1px solid #777;
+  border: 1px solid $regentgray;
   border-radius: 3px;
   padding: 0 2px;
 }
@@ -450,7 +450,8 @@ table {
   }
 }
 
-.modal-types, .input-types {
+.modal-types,
+.input-types {
   @media all and (max-width: 750px) {
     th,
     td {
@@ -483,6 +484,7 @@ table {
 
     td {
       padding: 0;
+
       &:nth-child(3) {
         display: none;
       }
@@ -508,6 +510,11 @@ table {
   position: fixed;
   top: 0;
   right: 0;
+}
+
+.carbonads-wrapper {
+  opacity: 0;
+  height: 126px;
 }
 
 .donation-options,
