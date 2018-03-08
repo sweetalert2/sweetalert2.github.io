@@ -9042,8 +9042,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   loadStyleSheet('./styles/carbon-ads.css');
   loadStyleSheet('./styles/bootstrap4-buttons.css');
-  loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-  loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css');
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css');
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js');
