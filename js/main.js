@@ -531,10 +531,12 @@ document.querySelector('.examples .dynamic-queue button').onclick = () => {
   ])
 }
 
-document.querySelector('.modal-types button').onclick = (e) => {
-  var type = document.querySelector(e.currentTarget).getAttribute('class').slice(5)
-  swal(type + '!', '', type)
-}
+document.querySelectorAll('.modal-types button').forEach(button => {
+  button.onclick = (e) => {
+    var type = e.target.getAttribute('class').slice(5)
+    swal(type + '!', '', type)
+  }
+})
 
 // BuySellAds
 if (typeof _bsa !== 'undefined' && _bsa) {

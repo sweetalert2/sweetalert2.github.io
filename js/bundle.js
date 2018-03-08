@@ -9814,10 +9814,12 @@ document.querySelector('.examples .dynamic-queue button').onclick = function () 
   }]);
 };
 
-document.querySelector('.modal-types button').onclick = function (e) {
-  var type = document.querySelector(e.currentTarget).getAttribute('class').slice(5);
-  swal(type + '!', '', type);
-};
+document.querySelectorAll('.modal-types button').forEach(function (button) {
+  button.onclick = function (e) {
+    var type = e.target.getAttribute('class').slice(5);
+    swal(type + '!', '', type);
+  };
+});
 
 // BuySellAds
 if (typeof _bsa !== 'undefined' && _bsa) {
