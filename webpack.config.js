@@ -31,11 +31,7 @@ module.exports = {
           handler: 'networkFirst'
         },
         {
-          urlPattern: /^https:\/\/unpkg\.com\/sweetalert2\@latest\/dist\/sweetalert2\.all\.js/,
-          handler: 'networkFirst'
-        },
-        {
-          urlPattern: /^https:\/\/cdnjs\.cloudflare\.com\/.*\.css/,
+          urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/npm\/.*/,
           handler: 'networkFirst'
         },
         {
