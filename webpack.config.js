@@ -33,6 +33,10 @@ module.exports = {
         {
           urlPattern: /^https:\/\/unpkg\.com\/sweetalert2\@latest\/dist\/sweetalert2\.all\.js/,
           handler: 'networkFirst'
+        },
+        {
+          urlPattern: /^https:\/\/unsplash\.it\/400\/200\/\?random/,
+          handler: 'networkFirst'
         }
       ],
       minify: true
