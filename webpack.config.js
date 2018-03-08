@@ -35,6 +35,10 @@ module.exports = {
           handler: 'networkFirst'
         },
         {
+          urlPattern: /^https:\/\/cdnjs\.cloudflare\.com\/.*\.css/,
+          handler: 'networkFirst'
+        },
+        {
           urlPattern: /^https:\/\/unsplash\.it\/400\/200\/\?random/,
           handler: 'networkFirst'
         }
