@@ -502,7 +502,7 @@ document.querySelector('.examples .chaining-modals button').onclick = () => {
 
   swal.queue(steps).then((result) => {
     swal.resetDefaults()
-    setCarbonFooter()
+    setBuySellAdsFooter()
 
     if (result.value) {
       swal({

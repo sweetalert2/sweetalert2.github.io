@@ -9,6 +9,7 @@ before_script:
   - yarn install
 
 script:
+  - standard js/main.js
   - awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results
   - gulp sass-lint
 
