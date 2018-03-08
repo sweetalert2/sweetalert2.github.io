@@ -9784,7 +9784,7 @@ document.querySelector('.examples .chaining-modals button').onclick = function (
 
   swal.queue(steps).then(function (result) {
     swal.resetDefaults();
-    setCarbonFooter();
+    setBuySellAdsFooter();
 
     if (result.value) {
       swal({
