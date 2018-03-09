@@ -22,7 +22,7 @@ body {
 }
 
 header {
-  max-width: 650px;
+  max-width: 40.625rem;
   margin: auto;
 
   .logo {
@@ -32,8 +32,8 @@ header {
 
   h1,
   h2 {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.25em;
+    line-height: 1.5em;
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
@@ -67,34 +67,28 @@ header {
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 1.75em;
   color: $dovegray;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed', sans-serif;
-  margin-top: 100px;
+  margin-top: 6em;
   text-align: center;
   position: relative;
-
-  &.download-section {
-    margin-top: 50px;
-    padding-top: 40px;
-  }
 
   &::after {
     content: '';
     background-color: $porcelain;
-    height: 4px;
-    width: 700px;
+    height: .25em;
+    width: 43.75rem;
     left: 50%;
-    margin-left: -350px;
+    margin-left: -21.875rem;
     position: absolute;
-    margin-top: -50px;
-    border-radius: 2px;
+    margin-top: -2em;
+    border-radius: .125em;
 
-    @media all and (max-width: 740px) {
+    @media all and (max-width: 46.25rem) {
       width: auto;
-      left: 20px;
-      right: 20px;
+      left: 1.25em;
+      right: 1.25em;
       margin-left: 0;
     }
   }
@@ -112,11 +106,11 @@ a {
 }
 
 p {
-  max-width: 826px;
-  margin: 30px auto;
-  font-size: 17px;
+  max-width: 51.625rem;
+  margin: 1.875em auto;
+  font-size: 1.0625em;
   font-weight: 300;
-  line-height: 25px;
+  line-height: 1.5625em;
   text-align: left;
 
   &.center {
@@ -127,9 +121,9 @@ p {
     font-weight: 600;
   }
 
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 46.875rem) {
     text-align: center;
-    padding: 0 10px;
+    padding: 0 .625em;
   }
 }
 
@@ -142,10 +136,10 @@ button,
   color: $white;
   border: 0;
   box-shadow: none;
-  font-size: 18px;
+  font-size: 1.125em;
   font-weight: 500;
-  border-radius: 3px;
-  padding: 15px 35px;
+  border-radius: .1875em;
+  padding: .9em 2.1875em;
   cursor: pointer;
   white-space: nowrap;
 
@@ -156,7 +150,7 @@ button,
   &:focus {
     &:not(.swal2-close) {
       &:not(.btn) {
-        box-shadow: 0 0 0 2px $athens, 0 0 0 4px $chateaugray;
+        box-shadow: 0 0 0 .125em $athens, 0 0 0 .25em $chateaugray;
         outline: none;
       }
     }
@@ -194,7 +188,7 @@ button,
   text-transform: uppercase;
   font-weight: 500;
   background-color: $white-button;
-  border-radius: 2px;
+  border-radius: .125em;
   cursor: pointer;
 
   &:hover {
@@ -202,43 +196,41 @@ button,
   }
 
   &.download {
-    top: 30px;
+    top: 1.8em;
     color: $cornflowerblue;
   }
 
   &.cdn {
-    top: 90px;
+    top: 5.6em;
     color: $cinnabar;
   }
 
   &.donate {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     background-color: $white;
     color: $curiousblue;
     font-weight: 600;
-    top: 160px;
-
-    img {
-      vertical-align: -9px;
-    }
+    top: 10em;
   }
 
-  @media all and (max-width: 1150px) {
-    display: none;
+  @media all and (max-width: 71.875rem) {
+    display: none !important;
   }
 }
 
 .center-container {
-  max-width: 725px;
-  margin: 70px auto;
+  max-width: 45.3125rem;
+  margin: 4.375em auto;
 }
 
 pre {
   background-color: $armadillo;
   color: lighten($black, 97);
-  padding: 10px;
-  border-radius: 5px;
+  padding: .625em;
+  border-radius: .3125em;
   text-align: left;
-  font-size: 14px;
   overflow: hidden;
 
   .str {
@@ -273,67 +265,67 @@ pre {
 
 kbd {
   border: 1px solid $regentgray;
-  border-radius: 3px;
-  padding: 0 2px;
+  border-radius: .1875em;
+  padding: 0 .125em;
 }
 
 .showcase {
   background-color: $porcelain;
-  margin-top: 15px;
-  padding: 20px;
+  margin-top: .9em;
+  padding: 1.25em;
   display: inline-block;
-  width: 383px;
+  width: 23.9375em;
   vertical-align: top;
   position: relative;
 
-  @media all and (max-width: 865px) {
-    padding: 0 10px;
+  @media all and (max-width: 54.0625rem) {
+    padding: 0 .625em;
 
     &.normal,
     img {
       display: none;
     }
   }
-  @media all and (max-width: 423px) {
+  @media all and (max-width: 26.4375rem) {
     width: 90%;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 1em;
     color: lighten($black, 70);
-    line-height: 22px;
+    line-height: 1.375em;
     margin: 0 auto;
     font-weight: 800;
   }
 
   &.sweet {
-    padding-top: 14px;
+    padding-top: .875em;
 
     button {
-      margin-top: 13px;
+      margin-top: .8125em;
     }
   }
 
   button {
-    margin: 20px;
+    margin: 1.25em;
   }
 
   .vs-icon {
     @include retina-background('vs_icon');
-    width: 69px;
-    height: 69px;
+    width: 4.3125em;
+    height: 4.3125em;
     position: absolute;
-    right: -34px;
-    top: 60px;
+    right: -2.125em;
+    top: 3.75em;
     z-index: 2;
 
-    @media all and (max-width: 865px) {
-      margin: 5px auto;
+    @media all and (max-width: 54.0625rem) {
+      margin: .3125em auto;
       right: auto;
       left: 50%;
-      margin-left: -35px;
+      margin-left: -2.1875em;
       top: auto;
-      bottom: -35px;
+      bottom: -2.1875em;
     }
   }
 }
@@ -341,11 +333,11 @@ kbd {
 
 .examples {
   list-style-type: none;
-  width: 750px;
+  width: 46.875rem;
   margin: 0 auto;
   text-align: left;
   padding-left: 0;
-  @media all and (max-width: 758px) {
+  @media all and (max-width: 47.375rem) {
     width: auto;
   }
 
@@ -358,7 +350,7 @@ kbd {
     display: inline-block;
     vertical-align: top;
 
-    @media all and (max-width: 758px) {
+    @media all and (max-width: 47.375rem) {
       display: block;
       max-width: none;
       margin: 0 auto;
@@ -366,11 +358,11 @@ kbd {
   }
 
   .ui {
-    width: 300px;
+    width: 18.75rem;
     text-align: center;
 
     button {
-      margin-top: 12px;
+      margin-top: .75em;
     }
 
     p {
@@ -380,26 +372,20 @@ kbd {
   }
 
   pre {
-    max-width: 420px;
-    margin-top: 67px;
+    max-width: 30.25em;
+    margin-top: 2.5em;
 
-    @media all and (max-width: 758px) {
-      margin-top: 16px !important;
-      margin-bottom: 60px;
-    }
-  }
-
-  .warning {
-    pre {
-      margin-top: 93px;
+    @media all and (max-width: 47.375rem) {
+      margin-top: 1em !important;
+      margin-bottom: 3.75em;
     }
   }
 }
 
 
 ol {
-  max-width: 725px;
-  margin: 70px auto;
+  max-width: 45.3125rem;
+  margin: 4.375em auto;
   list-style-position: inside;
   padding-left: 0;
 
@@ -407,21 +393,20 @@ ol {
     color: $chateaugray;
 
     p {
-      margin-bottom: 10px;
+      margin-bottom: .625em;
     }
   }
 }
 
 
 table {
-  width: 725px;
-  font-size: 14px;
-  margin: 10px auto;
+  width: 45.3125rem;
+  margin: .625em auto;
   text-align: left;
   border-collapse: collapse;
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 46.875rem) {
     width: auto;
-    margin: 10px auto;
+    margin: .625em auto;
   }
 
   th {
@@ -432,8 +417,8 @@ table {
     position: relative;
     white-space: nowrap;
 
-    @media all and (max-width: 360px) {
-      padding: 10px 4px;
+    @media all and (max-width: 22.5rem) {
+      padding: .625em .25em;
     }
   }
 
@@ -441,11 +426,11 @@ table {
     padding: .625em 1.25em;
     vertical-align: top;
 
-    @media all and (max-width: 360px) {
-      padding: 10px 4px;
+    @media all and (max-width: 22.5rem) {
+      padding: .625em .25em;
 
       b {
-        font-size: 13px;
+        font-size: .8125em;
       }
     }
   }
@@ -453,7 +438,7 @@ table {
 
 .modal-types,
 .input-types {
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 46.875rem) {
     th,
     td {
       &:nth-child(2) {
@@ -472,7 +457,7 @@ table {
 }
 
 .dismiss-reasons {
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 46.875rem) {
     tr {
       display: flex;
       flex-direction: column;
@@ -502,7 +487,7 @@ table {
 }
 
 .mobile-hidden {
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 46.875rem) {
     display: none;
   }
 }
@@ -520,30 +505,28 @@ table {
 .frameworks-integrations,
 .donation-options,
 .collaborators {
-  max-width: 700px;
+  max-width: 43.75rem;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  font-size: 20px;
+  font-size: 1.25em;
 
   a {
     display: inline-block;
-    min-width: 110px;
+    min-width: 6.875em;
     text-decoration: none;
-    font-size: 13px;
   }
 
   img {
-    margin-top: 10px;
+    width: 5em;
+    height: 5em;
+    margin-top: .625em;
   }
 }
 
-.frameworks-integrations,
-.donation-options {
-  a {
-    font-size: 20px;
-  }
+.collaborators {
+  font-size: .8125em;
 }
 
 .hall-of-donators {
@@ -553,11 +536,7 @@ table {
 }
 
 .stats {
-  font-size: 13px;
+  font-size: .8125em;
   opacity: 0;
-  margin-top: 7px;
-}
-
-.collaborators {
-  font-size: 16px;
+  margin-top: .4375em;
 }
