@@ -38,8 +38,8 @@ module.exports = {
           urlPattern: /^https:\/\/unsplash\.it\/400\/200\/\?random/,
           handler: 'networkFirst'
         }
-      ],
-      minify: true
+      ]
+      // minify: true
     })
   ]
 }
