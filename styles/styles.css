@@ -369,6 +369,7 @@ table {
 .carbonads-wrapper {
   height: 126px; }
 
+.frameworks-integrations,
 .donation-options,
 .collaborators {
   max-width: 700px;
@@ -381,16 +382,19 @@ table {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-size: 20px; }
+  .frameworks-integrations a,
   .donation-options a,
   .collaborators a {
     display: inline-block;
     min-width: 110px;
     text-decoration: none;
     font-size: 13px; }
+  .frameworks-integrations img,
   .donation-options img,
   .collaborators img {
     margin-top: 10px; }
 
+.frameworks-integrations a,
 .donation-options a {
   font-size: 20px; }
 
