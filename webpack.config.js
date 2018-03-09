@@ -21,13 +21,19 @@ module.exports = {
     }),
     new SWPrecacheWebpackPlugin({
       staticFileGlobs: [
-        'styles/**/*.css',
-        'js/bundle.js',
         'images/**/*'
       ],
       runtimeCaching: [
         {
           urlPattern: '/',
+          handler: 'networkFirst'
+        },
+        {
+          urlPattern: '/styles/**/*.css',
+          handler: 'networkFirst'
+        },
+        {
+          urlPattern: '/js/bundle.js',
           handler: 'networkFirst'
         },
         {
