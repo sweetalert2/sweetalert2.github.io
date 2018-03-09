@@ -289,6 +289,7 @@ toolbox.router.get("/", toolbox.networkFirst, {});
 toolbox.router.get("/styles/**/*.css", toolbox.networkFirst, {});
 toolbox.router.get("/js/bundle.js", toolbox.networkFirst, {});
 toolbox.router.get(/^https:\/\/cdn\.jsdelivr\.net\/npm\/.*/, toolbox.networkFirst, {});
+toolbox.router.get(/^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/, toolbox.networkFirst, {});
 toolbox.router.get(/^https:\/\/unsplash\.it\/400\/200\/\?random/, toolbox.networkFirst, {});
 
 
