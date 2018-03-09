@@ -41,6 +41,10 @@ module.exports = {
           handler: 'networkFirst'
         },
         {
+          urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/,
+          handler: 'networkFirst'
+        },
+        {
           urlPattern: /^https:\/\/unsplash\.it\/400\/200\/\?random/,
           handler: 'networkFirst'
         }
