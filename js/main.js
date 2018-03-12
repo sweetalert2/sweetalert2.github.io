@@ -1,4 +1,4 @@
-/* global swal, fetch, MutationObserver, FileReader, _bsa */
+/* global swal, fetch, MutationObserver, FileReader, _bsa, gtag */
 
 document.addEventListener('DOMContentLoaded', () => {
   var loadStyleSheet = (src) => { // eslint-disable-line
@@ -557,3 +557,29 @@ function setBuySellAdsFooter () {
 
 var observer = new MutationObserver(setBuySellAdsFooter)
 observer.observe(document.querySelector('.carbonads-wrapper .bsa-cpc'), {childList: true})
+
+// https://developers.google.com/analytics/devguides/collection/gtagjs/events
+const gtagEvent = (eventName, eventParameters) => {
+  console.log('GA event: ' + eventName, eventParameters)
+
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, eventParameters)
+  }
+}
+
+// https://developers.google.com/web/fundamentals/app-install-banners/
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.userChoice.then((choiceResult) => {
+    console.log(choiceResult.outcome)
+
+    gtagEvent(choiceResult.outcome, {
+      event_category: 'PWA - Add to home screen'
+    })
+
+    if (choiceResult.outcome === 'dismissed') {
+      console.log('User cancelled home screen install')
+    } else {
+      console.log('User added to home screen')
+    }
+  })
+})
