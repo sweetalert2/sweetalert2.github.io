@@ -9866,6 +9866,34 @@ window.addEventListener('beforeinstallprompt', function (e) {
     }
   });
 });
+
+document.querySelector('.examples .inputValue-promise button').onclick = function () {
+  var inputValue = fetch('https://ipsidekick.com/json').then(function (response) {
+    return response.json();
+  }).then(function (response) {
+    return Promise.resolve(response.country.name);
+  });
+
+  swal({
+    title: 'Your location is ...',
+    text: '(if wrong, change it)',
+    input: 'text',
+    inputValue: inputValue,
+    showCancelButton: true,
+    confirmButtonText: 'Confirm',
+    allowOutsideClick: function allowOutsideClick() {
+      return !swal.isLoading();
+    }
+  }).then(function (result) {
+    if (result.value) {
+      swal({
+        type: 'success',
+        title: 'Thanks!',
+        html: 'Your country is: ' + result.value
+      });
+    }
+  });
+};
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(329)))
 
 /***/ }),
