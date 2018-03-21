@@ -373,6 +373,38 @@ swal({
 })</pre>
     </li>
 
+  <li class="inputValue-promise" id="inputValue-promise">
+        <div class="ui">
+          <p>Use a Promise as inputValue</p>
+          <button aria-label="Try me! Example: inputValue as Promise">Try me!</button>
+        </div>
+        <pre>
+  <span class="func">var</span> inputValue = fetch(<span class="str">'https://ipsidekick.com/json'</span>)
+    .<span class="tag">then</span>(response => response.json())
+    .<span class="tag">then</span>(response => {
+      <span class="tag">return</span> <span class="func">Promise</span>.resolve(response.country.name)
+    })
+
+  swal({
+    title: <span class="str">'Your location is ...'</span>,
+    text: <span class="str">'(if wrong, change it)'</span>,
+    input: <span class="str">'text'</span>,
+    inputValue: inputValue, 
+    showCancelButton: <span class="val">true</span>,
+    confirmButtonText: <span class="str">'Confirm'</span>,
+    allowOutsideClick: () => !swal.isLoading()
+  }).<span class="tag">then</span>((result) => {
+    <span class="tag">if</span> (result.value) {
+      swal({
+        type: <span class="str">'success'</span>,
+        title: <span class="str">'Thanks!'</span>,
+        html: <span class="str">'Your country is: '</span> + result.value
+      })
+    }
+        </pre>
+      </li>
+
+
     <li class="chaining-modals" id="chaining-modals">
       <div class="ui">
         <p>Chaining modals (queue) example</p>
@@ -751,8 +783,8 @@ swal.queue([{
       </tr>
       <tr id="input-value">
         <td><b>inputValue</b></td>
-        <td><i>''</i></td>
-        <td>Input field initial value.</td>
+        <td><i>''<br>Promise</i></td>
+        <td>Input field initial value. If the input type is <strong>text</strong>, <strong>email</strong>, <strong>number</strong>, <strong>tel</strong> or <strong>textarea</strong> a Promise is accepted as inputValue.</td>
       </tr>
       <tr id="input-options">
         <td><b>inputOptions</b></td>
