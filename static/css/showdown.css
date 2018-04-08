@@ -1,0 +1,30 @@
+.showdown {
+}
+
+.showdown > div {
+  display: inline-block;
+  height: 180px;
+  vertical-align: bottom;
+}
+
+.showdown > div.vs {
+  padding: 4px;
+  width: 60px;
+  /* background-image: url("/img/vs_icon.png"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+}
+
+.showdown > div.alert,
+.showdown > div.swal {
+  padding: 12px;
+  width: 286px;
+  min-width: 250px;
+  text-align: left;
+}
+
+.showdown .heading {
+  text-align: center;
+  font-size: 23px;
+}

@@ -1,6 +1,6 @@
 const React = require('react')
 
-const CompLibrary = require('../../core/CompLibrary.js')
+const CompLibrary = require('../core/CompLibrary.js')
 const Container = CompLibrary.Container
 const GridBlock = CompLibrary.GridBlock
 
@@ -8,17 +8,17 @@ class Help extends React.Component {
   render () {
     const supportLinks = [
       {
-        content:
-          'Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)',
-        title: 'Browse Docs'
+        title: 'Browse Docs',
+        content: 'The best way to learn more is by using the [documentation on this site](/docs/doc1.html)'
       },
       {
-        content: 'Ask questions about the documentation and project',
-        title: 'Join the community'
+        title: 'Post a question',
+        content: 'If you can\'t figure out how to do what you want to do, [read and post questions on Stack Overflow](https://stackoverflow.com/questions/tagged/sweetalert2/)'
+
       },
       {
-        content: "Find out what's new with this project",
-        title: 'Stay up to date'
+        title: 'Chat with us',
+        content: 'To talk with us or other members of the community, [check us out on Gitter](https://gitter.im/sweetalert2/Lobby)'
       }
     ]
 

@@ -1,37 +1,32 @@
-const users = [
-  {
-    caption: 'User1',
-    image: '/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true
-  }
-]
+const remarkablePluginExampleCode = require('remarkable-plugin-example-code')
+
+const repoUrl = 'https://github.com/sweetalert2/sweetalert2'
 
 const siteConfig = {
+  repoUrl,
+  organizationName: 'SweetAlert2',
   title: 'SweetAlert2',
   projectName: 'SweetAlert2',
-  tagline: 'A BEAUTIFUL, RESPONSIVE, CUSTOMIZABLE, ACCESSIBLE (WAI-ARIA) REPLACEMENT FOR JAVASCRIPT\'S POPUP BOXES\n' +
-  'ZERO DEPENDENCIES',
+  tagline: 'A beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript\'s popup boxes',
   url: 'https://sweetalert2.github.io',
   baseUrl: '/',
+  link: path => siteConfig.baseUrl + path,
   customDocsPath: 'sweetalert2.github.io/docs',
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'examples-basic', label: 'Examples'},
+    {doc: 'installing', label: 'Guides'},
+    {doc: 'options', label: 'API'},
     {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'}
+    {href: repoUrl, label: 'GitHub'}
   ],
-  users,
-  /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/sweetalert2-logo.png',
+  footerIcon: 'img/sweetalert2-icon.png',
   favicon: 'img/favicon.png',
-  /* colors for website */
+  ogImage: 'img/sweetalert2-logo.png',
   colors: {
-    primaryColor: '#2E8555',
-    secondaryColor: '#205C3B'
+    primaryColor: '#4F5E75',
+    secondaryColor: '#FD7871'
   },
-  /* custom fonts for website */
   /* fonts: {
     myFont: [
       "Times New Roman",
@@ -42,21 +37,22 @@ const siteConfig = {
       "system-ui"
     ]
   }, */
-  // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
-  copyright:
-    'Copyright © ' +
-    new Date().getFullYear() +
-    ' Your Name or Your Company Name',
-  // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
+  copyright: '❤',
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default'
   },
-  scripts: ['https://buttons.github.io/buttons.js'],
-  // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/sweetalert2/sweetalert2'
-  /* On page navigation for the current documentation page */
-  // onPageNav: 'separate',
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    'https://unpkg.com/babel-polyfill@6/browser.js',
+    'https://unpkg.com/sweetalert2@7',
+    'https://unpkg.com/example-code-dom@1',
+    '/js/execute-button.js'
+  ],
+  onPageNav: 'separate',
+  disableHeaderTitle: true,
+  markdownPlugins: [remarkablePluginExampleCode],
+  gaTrackingId: 'UA-83618163-1'
 }
 
 module.exports = siteConfig
