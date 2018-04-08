@@ -7,6 +7,8 @@
 ## Development
 
 ```sh
-yarn install
-gulp watch
+yarn
+yarn start
 ```
+
+And don't forget to lint your code with `yarn lint` and fix some lint errors with `yarn fix`.

@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "sweetalert2.github.io",
+  "description": "Documentation for SweetAlert2",
+  "scripts": {
+    "lint": "standard",
+    "fix": "standard --fix",
+    "test": "npm run lint",
+    "start": "docusaurus-start",
+    "build": "docusaurus-build",
+    "publish": "npm run build && npx gh-pages -d build/SweetAlert2",
+    "write-translations": "docusaurus-write-translations",
+    "version": "docusaurus-version"
+  },
+  "devDependencies": {
+    "docusaurus": "^1.0.9",
+    "standard": "^11.0.0"
+  },
+  "license": "MIT"
+}
