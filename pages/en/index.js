@@ -31,7 +31,7 @@ const CarbonAds = props => (
 )
 
 const StatsSection = props => (
-  <div class='stats mobile-hidden'>
+  <div className='stats'>
     Current version: <a href='https://github.com/sweetalert2/sweetalert2/releases' id='current-version' aria-label='Current version ' /> ●
     Latest update: <a href='https://github.com/sweetalert2/sweetalert2/commits/master' id='latest-update' aria-label='Latest update ' /> ●
     Downloads last month: <a href='https://npm-stat.com/charts.html?package=sweetalert2' id='downloads-last-month' aria-label='Downloads last month ' />
