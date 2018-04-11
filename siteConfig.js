@@ -42,13 +42,6 @@ const siteConfig = {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default'
   },
-  scripts: [
-    'https://buttons.github.io/buttons.js',
-    'https://unpkg.com/babel-polyfill@6/browser.js',
-    'https://unpkg.com/sweetalert2@7',
-    'https://unpkg.com/example-code-dom@1',
-    '/js/execute-button.js'
-  ],
   onPageNav: 'separate',
   disableHeaderTitle: true,
   markdownPlugins: [remarkablePluginExampleCode],

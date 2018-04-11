@@ -1,5 +1,15 @@
 const React = require('react')
 
+const cdnScripts = [
+  'https://buttons.github.io/buttons.js',
+  'https://unpkg.com/babel-polyfill@6/browser.js',
+  'https://unpkg.com/sweetalert2@7',
+  'https://unpkg.com/example-code-dom@1'
+]
+const localScripts = [
+  'js/execute-button.js'
+]
+
 module.exports = props => (<footer className='nav-footer' id='footer'>
   <section className='sitemap'>
     <a href={props.config.baseUrl} className='nav-home'>
@@ -54,6 +64,7 @@ module.exports = props => (<footer className='nav-footer' id='footer'>
   <section className='copyright'>
     {props.config.copyright}
   </section>
-
+  {cdnScripts.map(url => <script src={url} key={url} />)}
+  {localScripts.map(url => <script src={props.config.link(url)} key={url} />)}
 </footer>
 )
