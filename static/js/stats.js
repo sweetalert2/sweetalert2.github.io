@@ -1,3 +1,5 @@
+/* global fetch */
+
 var stats = {}
 
 // latest release
