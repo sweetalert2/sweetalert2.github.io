@@ -1,0 +1,19 @@
+{
+  "docs": {
+    "Examples": [
+      "examples-basic",
+      "examples-advanced"
+    ],
+    "Guides": [
+      "installing",
+      "basic-usage",
+      "handling-dismissals",
+      "modal-types",
+      "input-types"
+    ],
+    "API": [
+      "options",
+      "methods"
+    ]
+  }
+}

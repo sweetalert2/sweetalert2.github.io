@@ -1,0 +1,93 @@
+@charset "UTF-8";
+.carbonads-wrapper > div {
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 300px;
+  border: solid 1px #8d98a5;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px #fff;
+          box-shadow: inset 0 1px #fff;
+  text-shadow: 0 1px #fff;
+  font-size: 12px;
+  line-height: 1.5; }
+  .carbonads-wrapper > div a {
+    color: #8d98a5;
+    -webkit-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out; }
+    .carbonads-wrapper > div a:hover {
+      color: #f77; }
+  .carbonads-wrapper > div span {
+    position: relative;
+    display: block;
+    overflow: hidden; }
+  .carbonads-wrapper > div .carbon-img {
+    float: left;
+    margin-right: 1em; }
+    .carbonads-wrapper > div .carbon-img img {
+      display: block; }
+  .carbonads-wrapper > div .carbon-text {
+    display: block;
+    float: left;
+    max-width: calc(100% - 130px - 1em);
+    text-align: left; }
+  .carbonads-wrapper > div .carbon-poweredby {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    font-size: 11px; }
+
+.carbonads-wrapper .bsa-cpc {
+  display: none; }
+
+.bsa-cpc #_default_ {
+  position: relative;
+  padding: 0 1em;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5; }
+
+.bsa-cpc .default-ad {
+  display: none; }
+
+.bsa-cpc ._default_ {
+  display: inline;
+  overflow: hidden;
+  line-height: 1; }
+  .bsa-cpc ._default_ > * {
+    vertical-align: middle; }
+
+.bsa-cpc a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500; }
+  .bsa-cpc a:hover {
+    color: #87d25f;
+    text-decoration: none; }
+
+.bsa-cpc .default-image {
+  display: none; }
+
+.bsa-cpc .default-title {
+  position: relative;
+  margin-left: 8px; }
+  .bsa-cpc .default-title::before {
+    position: relative;
+    top: -1px;
+    left: -8px;
+    padding: 2px 5px;
+    border: solid 1px #87d25f;
+    border-radius: 2px;
+    color: #87d25f;
+    content: 'Sponsor';
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1; }
+  .bsa-cpc .default-title::after {
+    content: ' — '; }
+
+.bsa-cpc .default-title,
+.bsa-cpc .default-description {
+  display: inline; }

@@ -1,28 +1,19 @@
 {
+  "private": true,
   "name": "sweetalert2.github.io",
-  "repository": "sweetalert2/sweetalert2.github.io",
-  "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
   "scripts": {
-    "build": "gulp sass && webpack",
-    "start": "gulp watch"
+    "lint": "standard",
+    "fix": "standard --fix",
+    "test": "npm run lint",
+    "start": "docusaurus-start",
+    "build": "docusaurus-build",
+    "publish": "npm run build && npx gh-pages -d build/SweetAlert2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.23.5",
-    "exports-loader": "^0.7.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sass-lint": "^1.3.4",
-    "imports-loader": "^0.8.0",
-    "standard": "^11.0.0",
-    "sw-precache-webpack-plugin": "^0.11.4",
-    "webpack": "^3.10.0",
-    "whatwg-fetch": "^2.0.3"
+    "docusaurus": "^1.0.9",
+    "remarkable-plugin-example-code": "^1.1.0",
+    "standard": "^11.0.0"
   },
   "license": "MIT"
 }

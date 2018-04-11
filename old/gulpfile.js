@@ -42,6 +42,6 @@ gulp.task('watch', () => {
   ]).on('change', browserSync.reload)
 
   gulp.watch([
-    'styles/*.scss',
+    'styles/*.scss'
   ], ['sass'])
 })

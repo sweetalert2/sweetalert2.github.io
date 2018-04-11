@@ -1,0 +1,4 @@
+---
+id: methods
+title: Methods
+---
