@@ -487,23 +487,16 @@ document.querySelector('.examples .ajax-request button').onclick = () => {
 }
 
 document.querySelector('.examples .chaining-modals button').onclick = () => {
-  swal.setDefaults({
+  swal.mixin({
     input: 'text',
     confirmButtonText: 'Next &rarr;',
     showCancelButton: true,
     progressSteps: ['1', '2', '3']
-  })
-
-  var steps = [
+  }).queue([
     {title: 'Question 1', text: 'Chaining swal2 modals is easy'},
     'Question 2',
     'Question 3'
-  ]
-
-  swal.queue(steps).then((result) => {
-    swal.resetDefaults()
-    setBuySellAdsFooter()
-
+  ]).then((result) => {
     if (result.value) {
       swal({
         title: 'All done!',
