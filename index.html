@@ -344,30 +344,26 @@ swal({
       </div>
       <pre>
 swal({
-  title: <span class="str">'Submit email to run ajax request'</span>,
-  input: <span class="str">'email'</span>,
+  title: <span class="str">'Submit your Github username'</span>,
+  input: <span class="str">'text'</span>,
   showCancelButton: <span class="val">true</span>,
-  confirmButtonText: <span class="str">'Submit'</span>,
+  confirmButtonText: <span class="str">'Look up'</span>,
   showLoaderOnConfirm: <span class="val">true</span>,
-  preConfirm: (email) => {
-    <span class="tag">return new</span> <span class="func">Promise</span>((resolve) => {
-      <span class="func">setTimeout</span>(() => {
-        <span class="tag">if</span> (email === <span class="str">'taken@example.com'</span>) {
-          swal.showValidationError(
-            <span class="str">'This email is already taken.'</span>
-          )
-        }
-        resolve()
-      }, <span class="val">2000</span>)
-    })
+  preConfirm: (login) => {
+    <span class="tag">return</span> <span class="func">fetch</span>(<span class="str">`//api.github.com/users/<span class="val">${login}</span>`</span>)
+      .<span class="func">then</span>(response => response.<span class="func">json</span>())
+      .<span class="func">catch</span>(error => {
+        swal.showValidationError(
+          <span class="str">`Request failed: <span class="val">${error}</span>`</span>
+        )
+      })
   },
   allowOutsideClick: () => !swal.isLoading()
 }).<span class="tag">then</span>((result) => {
   <span class="tag">if</span> (result.value) {
     swal({
-      type: <span class="str">'success'</span>,
-      title: <span class="str">'Ajax request finished!'</span>,
-      html: <span class="str">'Submitted email: '</span> + result.value
+      title: <span class="str">`<span class="val">${result.value.login}</span>'s avatar`</span>,
+      imageUrl: result.value.avatar_url
     })
   }
 })</pre>

@@ -9743,19 +9743,16 @@ document.querySelector('.input-type-multiple').onclick = function () {
 
 document.querySelector('.examples .ajax-request button').onclick = function () {
   swal({
-    title: 'Submit email to run ajax request',
-    input: 'email',
+    title: 'Submit your Github username to run ajax request',
+    input: 'text',
     showCancelButton: true,
-    confirmButtonText: 'Submit',
+    confirmButtonText: 'Look up',
     showLoaderOnConfirm: true,
-    preConfirm: function preConfirm(email) {
-      return new Promise(function (resolve) {
-        setTimeout(function () {
-          if (email === 'taken@example.com') {
-            swal.showValidationError('This email is already taken.');
-          }
-          resolve();
-        }, 2000);
+    preConfirm: function preConfirm(username) {
+      return fetch('//api.github.com/users/' + username).then(function (response) {
+        return response.json();
+      }).catch(function (error) {
+        swal.showValidationError('Request failed: ' + error);
       });
     },
     allowOutsideClick: function allowOutsideClick() {
@@ -9764,9 +9761,8 @@ document.querySelector('.examples .ajax-request button').onclick = function () {
   }).then(function (result) {
     if (result.value) {
       swal({
-        type: 'success',
-        title: 'Ajax request finished!',
-        html: 'Submitted email: <strong>' + result.value + '</strong>'
+        title: result.value.login + '\'s avatar',
+        imageUrl: result.value.avatar_url
       });
     }
   });
