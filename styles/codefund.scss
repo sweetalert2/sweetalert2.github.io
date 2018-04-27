@@ -1,0 +1,55 @@
+@import 'colors';
+
+#codefund_ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+  #cf_ad {
+    max-width: initial;
+
+    .cf-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      background-color: $gallery;
+    }
+
+    .cf-img-wrapper {
+      text-align: center;
+      text-decoration: none;
+
+      &::before {
+        margin: 0 .5em;
+        padding: .2em .6em;
+        color: $white;
+        background-color: $fruit-salad;
+        border-radius: .3em;
+        content: 'Supporter';
+      }
+    }
+
+    .cf-img {
+      margin: .5em 0;
+      width: auto;
+      height: 2em;
+    }
+
+    .cf-text {
+      text-decoration: none;
+    }
+
+    .cf-powered-by {
+      margin-left: .5em;
+    }
+  }
+}
+
+@media all and (max-width: 46.875rem) {
+  #codefund_ad {
+    position: initial;
+  }
+}
