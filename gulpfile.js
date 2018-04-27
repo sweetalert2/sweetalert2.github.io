@@ -7,7 +7,8 @@ const browserSync = require('browser-sync').create()
 gulp.task('sass', ['sass-lint'], (cb) => {
   return gulp.src([
     'styles/styles.scss',
-    'styles/carbon-ads.scss'
+    'styles/carbon-ads.scss',
+    'styles/codefund.scss'
   ])
     .pipe(sass())
     .pipe(autoprefix())
@@ -17,7 +18,8 @@ gulp.task('sass', ['sass-lint'], (cb) => {
 gulp.task('sass-lint', () => {
   return gulp.src([
     'styles/styles.scss',
-    'styles/carbon-ads.scss'
+    'styles/carbon-ads.scss',
+    'styles/codefund.scss'
   ])
     .pipe(sassLint())
     .pipe(sassLint.format())
@@ -42,6 +44,6 @@ gulp.task('watch', () => {
   ]).on('change', browserSync.reload)
 
   gulp.watch([
-    'styles/*.scss',
+    'styles/*.scss'
   ], ['sass'])
 })

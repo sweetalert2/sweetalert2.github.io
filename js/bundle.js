@@ -9041,6 +9041,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   loadStyleSheet('./styles/carbon-ads.css');
+  loadStyleSheet('./styles/codefund.css');
   loadStyleSheet('./styles/bootstrap4-buttons.css');
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css');
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css');
@@ -9769,19 +9770,12 @@ document.querySelector('.examples .ajax-request button').onclick = function () {
 };
 
 document.querySelector('.examples .chaining-modals button').onclick = function () {
-  swal.setDefaults({
+  swal.mixin({
     input: 'text',
     confirmButtonText: 'Next &rarr;',
     showCancelButton: true,
     progressSteps: ['1', '2', '3']
-  });
-
-  var steps = [{ title: 'Question 1', text: 'Chaining swal2 modals is easy' }, 'Question 2', 'Question 3'];
-
-  swal.queue(steps).then(function (result) {
-    swal.resetDefaults();
-    setBuySellAdsFooter();
-
+  }).queue([{ title: 'Question 1', text: 'Chaining swal2 modals is easy' }, 'Question 2', 'Question 3']).then(function (result) {
     if (result.value) {
       swal({
         title: 'All done!',

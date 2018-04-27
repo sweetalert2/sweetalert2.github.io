@@ -1,0 +1,42 @@
+#codefund_ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3; }
+  #codefund_ad #cf_ad {
+    max-width: initial; }
+    #codefund_ad #cf_ad .cf-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 0;
+      background-color: #eee; }
+    #codefund_ad #cf_ad .cf-img-wrapper {
+      text-align: center;
+      text-decoration: none; }
+      #codefund_ad #cf_ad .cf-img-wrapper::before {
+        margin: 0 .5em;
+        padding: .2em .6em;
+        color: #fff;
+        background-color: #4caf50;
+        border-radius: .3em;
+        content: 'Supporter'; }
+    #codefund_ad #cf_ad .cf-img {
+      margin: .5em 0;
+      width: auto;
+      height: 2em; }
+    #codefund_ad #cf_ad .cf-text {
+      text-decoration: none; }
+    #codefund_ad #cf_ad .cf-powered-by {
+      margin-left: .5em; }
+
+@media all and (max-width: 46.875rem) {
+  #codefund_ad {
+    position: initial; } }
