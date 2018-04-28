@@ -9804,7 +9804,7 @@ document.querySelector('.examples .dynamic-queue button').onclick = function () 
   }]);
 };
 
-document.querySelectorAll('.modal-types button').forEach(function (button) {
+Array.from(document.querySelectorAll('.modal-types button')).forEach(function (button) {
   button.onclick = function (e) {
     var type = e.target.getAttribute('class').slice(5);
     swal(type + '!', '', type);
