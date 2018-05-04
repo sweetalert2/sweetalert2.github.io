@@ -5,7 +5,7 @@
   right: 0;
   z-index: 3; }
   #codefund_ad #cf_ad {
-    max-width: initial; }
+    max-width: 100%; }
     #codefund_ad #cf_ad .cf-wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
