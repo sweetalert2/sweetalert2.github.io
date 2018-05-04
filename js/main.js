@@ -539,7 +539,7 @@ if (typeof _bsa !== 'undefined' && _bsa) {
 
 function setBuySellAdsFooter () {
   if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('.carbonads-wrapper .bsa-cpc').textContent) {
-    swal.setDefaults({
+    window.swal = swal.mixin({
       footer: document.querySelector('.carbonads-wrapper .bsa-cpc')
     })
   }
