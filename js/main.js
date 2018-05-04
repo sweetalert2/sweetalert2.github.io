@@ -256,7 +256,7 @@ document.querySelector('.examples .custom-width-padding-background button').oncl
   swal({
     title: 'Custom width, padding, background.',
     width: 600,
-    padding: 100,
+    padding: '3em',
     background: '#fff url(/images/trees.png)',
     backdrop: `
       rgba(0,0,123,0.4)
