@@ -19,8 +19,8 @@
     }
 
     .cf-img-wrapper {
-      text-align: center;
-      text-decoration: none;
+      display: flex;
+      align-items: center;
 
       &::before {
         margin: 0 .5em;
