@@ -588,3 +588,29 @@ window.addEventListener('beforeinstallprompt', (e) => {
     }
   })
 })
+
+document.querySelector('.examples .inputValue-promise button').onclick = () => {
+  var inputValue = fetch('https://ipsidekick.com/json')
+    .then(response => response.json())
+    .then(response => {
+      return Promise.resolve(response.country.name)
+    })
+
+  swal({
+    title: 'Your location is ...',
+    text: '(if wrong, change it)',
+    input: 'text',
+    inputValue: inputValue, 
+    showCancelButton: true,
+    confirmButtonText: 'Confirm',
+    allowOutsideClick: () => !swal.isLoading()
+  }).then((result) => {
+   if (result.value) {
+     swal({
+       type: 'success',
+       title: 'Thanks!',
+       html: 'Your country is: ' + result.value
+     })
+   }
+})
+}
