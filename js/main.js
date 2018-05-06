@@ -521,6 +521,21 @@ document.querySelector('.examples .dynamic-queue button').onclick = () => {
   ])
 }
 
+document.querySelector('.examples .mixin button').onclick = () => {
+  const toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    footer: ''
+  })
+
+  toast({
+    type: 'success',
+    title: 'Signed in successfully'
+  })
+}
+
 Array.from(document.querySelectorAll('.modal-types button')).forEach(button => {
   button.onclick = (e) => {
     var type = e.target.getAttribute('class').slice(5)

@@ -19,8 +19,12 @@
       padding: 0;
       background-color: #eee; }
     #codefund_ad #cf_ad .cf-img-wrapper {
-      text-align: center;
-      text-decoration: none; }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
       #codefund_ad #cf_ad .cf-img-wrapper::before {
         margin: 0 .5em;
         padding: .2em .6em;

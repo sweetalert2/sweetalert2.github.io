@@ -812,8 +812,30 @@ swal.queue([{
     </table>
 
     <p class="center">
-      You can easily reuse configuration by creating your own `swal` with <strong>swal.mixin({ ...options }) </strong>.
+      You can easily reuse configuration by creating your own `swal` with <strong>swal.mixin({ ...options })</strong>:
     </p>
+
+    <ul class="examples">
+      <li class="mixin" id="mixin">
+        <div class="ui">
+          <p>Mixin example</p>
+          <button aria-label="Try me! Example: Mixin">Try me!</button>
+        </div>
+        <pre>
+<span class="val">const</span> toast = swal.mixin({
+  toast: <span class="val">true</span>,
+  position: <span class="str">'top-end'</span>,
+  showConfirmButton: <span class="val">false</span>,
+  timer: <span class="val">3000</span>
+});
+
+toast({
+  type: <span class="str">'success'</span>,
+  title: <span class="str">'Signed in successfully'</span>
+})
+</pre>
+      </li>
+    </ul>
   </div>
 
 

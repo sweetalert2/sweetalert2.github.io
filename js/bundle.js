@@ -9804,6 +9804,21 @@ document.querySelector('.examples .dynamic-queue button').onclick = function () 
   }]);
 };
 
+document.querySelector('.examples .mixin button').onclick = function () {
+  var toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    footer: ''
+  });
+
+  toast({
+    type: 'success',
+    title: 'Signed in successfully'
+  });
+};
+
 Array.from(document.querySelectorAll('.modal-types button')).forEach(function (button) {
   button.onclick = function (e) {
     var type = e.target.getAttribute('class').slice(5);
