@@ -210,28 +210,28 @@ document.querySelector('.examples .warning.confirm button').onclick = () => {
 }
 
 document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
-  swal({
+  const swalWithBootstrapButtons = swal.mixin({
+    confirmButtonClass: 'btn btn-success',
+    cancelButtonClass: 'btn btn-danger',
+    buttonsStyling: false
+  })
+  swalWithBootstrapButtons({
     title: 'Are you sure?',
     text: 'Buttons below are styled with Bootstrap classes',
     type: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
     confirmButtonText: 'Yes, delete it!',
     cancelButtonText: 'No, cancel!',
-    confirmButtonClass: 'btn btn-success',
-    cancelButtonClass: 'btn btn-danger',
-    buttonsStyling: false,
     reverseButtons: true
   }).then((result) => {
     if (result.value) {
-      swal(
+      swalWithBootstrapButtons(
         'Deleted!',
         'Your file has been deleted.',
         'success'
       )
     } else if (result.dismiss === swal.DismissReason.cancel) {
-      swal(
+      swalWithBootstrapButtons(
         'Cancelled',
         'Your imaginary file is safe :)',
         'error'
@@ -585,6 +585,34 @@ window.addEventListener('beforeinstallprompt', (e) => {
       console.log('User cancelled home screen install')
     } else {
       console.log('User added to home screen')
+    }
+  })
+})
+
+Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
+  pre.addEventListener('click', (e) => {
+    if (e.offsetY < 0) {
+      const codepenValue = {
+        js_external: 'https://unpkg.com/sweetalert2'
+      }
+      if (pre.getAttribute('data-codepen-html')) {
+        codepenValue.html = pre.getAttribute('data-codepen-html')
+      }
+      if (pre.getAttribute('data-codepen-css-external')) {
+        codepenValue.css_external = pre.getAttribute('data-codepen-css-external')
+      }
+
+      codepenValue.js = ''
+      if (pre.getAttribute('data-codepen-js-before')) {
+        codepenValue.js = pre.getAttribute('data-codepen-js-before') + '\n'
+      }
+      codepenValue.js += pre.innerText.replace(/\/images/g, window.location.href + 'images')
+      if (pre.getAttribute('data-codepen-js-after')) {
+        codepenValue.js += '\n' + pre.getAttribute('data-codepen-js-after')
+      }
+
+      document.getElementById('codepen-data').value = JSON.stringify(codepenValue)
+      document.getElementById('codepen-form').submit()
     }
   })
 })

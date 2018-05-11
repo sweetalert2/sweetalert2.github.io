@@ -180,7 +180,7 @@ pre {
   padding: .625em;
   border-radius: .3125em;
   text-align: left;
-  overflow: hidden; }
+  position: relative; }
   pre .str {
     color: #e6db74; }
   pre .func {
@@ -196,6 +196,32 @@ pre {
     pre .comment a {
       color: #8d98a5;
       text-decoration: underline; }
+  pre:hover::after {
+    opacity: 1;
+    top: -2em; }
+  pre::after {
+    content: 'Try it on CodePen';
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 13em;
+    height: 2em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: 0;
+    right: .5em;
+    padding-left: .8em;
+    opacity: 0;
+    background: #000 url("/images/codepen.svg") 11.6em 0.2em no-repeat;
+    background-size: 1.6em;
+    cursor: pointer;
+    -webkit-transition: top .2s ease-in-out, opacity .2s ease-in-out;
+    transition: top .2s ease-in-out, opacity .2s ease-in-out; }
+    @media all and (max-width: 46.875rem) {
+      pre::after {
+        display: none; } }
 
 kbd {
   border: 1px solid #8d98a5;

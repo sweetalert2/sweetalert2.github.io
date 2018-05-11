@@ -235,7 +235,7 @@ pre {
   padding: .625em;
   border-radius: .3125em;
   text-align: left;
-  overflow: hidden;
+  position: relative;
 
   .str {
     color: $chenin;
@@ -263,6 +263,34 @@ pre {
     a {
       color: $regentgray;
       text-decoration: underline;
+    }
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+      top: -2em;
+    }
+  }
+
+  &::after {
+    content: 'Try it on CodePen';
+    position: absolute;
+    display: flex;
+    width: 13em;
+    height: 2em;
+    align-items: center;
+    top: 0;
+    right: .5em;
+    padding-left: .8em;
+    opacity: 0;
+    background: $black url('/images/codepen.svg') 11.6em .2em no-repeat;
+    background-size: 1.6em;
+    cursor: pointer;
+    transition: top .2s ease-in-out, opacity .2s ease-in-out;
+
+    @media all and (max-width: 46.875rem) {
+      display: none;
     }
   }
 }
