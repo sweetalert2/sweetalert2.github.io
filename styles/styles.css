@@ -196,10 +196,10 @@ pre {
     pre .comment a {
       color: #8d98a5;
       text-decoration: underline; }
-  pre:hover::after {
+  pre.code-sample:hover::after {
     opacity: 1;
     top: -2em; }
-  pre::after {
+  pre.code-sample::after {
     content: 'Try it on CodePen';
     position: absolute;
     display: -webkit-box;
@@ -220,7 +220,7 @@ pre {
     -webkit-transition: top .2s ease-in-out, opacity .2s ease-in-out;
     transition: top .2s ease-in-out, opacity .2s ease-in-out; }
     @media all and (max-width: 46.875rem) {
-      pre::after {
+      pre.code-sample::after {
         display: none; } }
 
 kbd {
