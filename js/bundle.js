@@ -9876,7 +9876,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(function (pre) 
   pre.addEventListener('click', function (e) {
     if (e.offsetY < 0) {
       var codepenValue = {
-        js_external: 'https://unpkg.com/sweetalert2'
+        js_external: 'https://unpkg.com/sweetalert2;https://unpkg.com/promise-polyfill'
       };
       if (pre.getAttribute('data-codepen-html')) {
         codepenValue.html = pre.getAttribute('data-codepen-html');
