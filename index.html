@@ -211,7 +211,7 @@ swal({
   confirmButtonColor: <span class="str">'#3085d6'</span>,
   cancelButtonColor: <span class="str">'#d33'</span>,
   confirmButtonText: <span class="str">'Yes, delete it!'</span>
-}).<span class="tag">then</span>((result) => {
+}).<span class="func">then</span>((result) => {
   <span class="tag">if</span> (result.value) {
     swal(
       <span class="str">'Deleted!'</span>,
@@ -242,7 +242,7 @@ swalWithBootstrapButtons({
   confirmButtonText: <span class="str">'Yes, delete it!'</span>,
   cancelButtonText: <span class="str">'No, cancel!'</span>,
   reverseButtons: <span class="val">true</span>
-}).<span class="tag">then</span>((result) => {
+}).<span class="func">then</span>((result) => {
   <span class="tag">if</span> (result.value) {
     swalWithBootstrapButtons(
       <span class="str">'Deleted!'</span>,
@@ -312,7 +312,7 @@ swal({
   onOpen: () => {
     swal.showLoading()
   }
-}).<span class="tag">then</span>((result) => {
+}).<span class="func">then</span>((result) => {
   <span class="tag">if</span> (
     <span class="comment">// <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a></span>
     result.dismiss === swal.DismissReason.timer
@@ -347,12 +347,20 @@ swal({
 swal({
   title: <span class="str">'Submit your Github username'</span>,
   input: <span class="str">'text'</span>,
+  inputAttributes: {
+    autocapitalize: <span class="str">'off'</span>
+  },
   showCancelButton: <span class="val">true</span>,
   confirmButtonText: <span class="str">'Look up'</span>,
   showLoaderOnConfirm: <span class="val">true</span>,
   preConfirm: (login) => {
     <span class="tag">return</span> <span class="func">fetch</span>(<span class="str">`//api.github.com/users/<span class="val">${login}</span>`</span>)
-      .<span class="func">then</span>(response => response.<span class="func">json</span>())
+      .<span class="func">then</span>(response => {
+        <span class="tag">if</span> (!response.ok) {
+          <span class="tag">throw</span> <span class="func">new</span> Error(response.statusText)
+        }
+        <span class="tag">return</span> response.<span class="func">json</span>()
+      })
       .<span class="func">catch</span>(error => {
         swal.showValidationError(
           <span class="str">`Request failed: <span class="val">${error}</span>`</span>
@@ -360,7 +368,7 @@ swal({
       })
   },
   allowOutsideClick: () => !swal.isLoading()
-}).<span class="tag">then</span>((result) => {
+}).<span class="func">then</span>((result) => {
   <span class="tag">if</span> (result.value) {
     swal({
       title: <span class="str">`<span class="val">${result.value.login}</span>'s avatar`</span>,
@@ -419,8 +427,8 @@ swal.queue([{
   showLoaderOnConfirm: <span class="val">true</span>,
   preConfirm: () => {
     <span class="tag">return</span> fetch(ipAPI)
-      .<span class="tag">then</span>(response => response.json())
-      .<span class="tag">then</span>(data => swal.insertQueueStep(data.ip))
+      .<span class="func">then</span>(response => response.json())
+      .<span class="func">then</span>(data => swal.insertQueueStep(data.ip))
       .<span class="tag">catch</span>(() => {
         swal.insertQueueStep({
           type: <span class="str">'error'</span>,
