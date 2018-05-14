@@ -183,7 +183,9 @@ pre {
   position: relative; }
   @media all and (max-width: 30rem) {
     pre {
-      font-size: .8em; } }
+      max-width: 30.25em;
+      font-size: .8em;
+      margin: 0 auto; } }
   pre .str {
     color: #e6db74; }
   pre .func {
