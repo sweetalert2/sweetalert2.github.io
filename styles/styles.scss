@@ -238,7 +238,9 @@ pre {
   position: relative;
 
   @media all and (max-width: 30rem) {
+    max-width: 30.25em;
     font-size: .8em;
+    margin: 0 auto;
   }
 
   .str {
