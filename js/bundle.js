@@ -9148,8 +9148,8 @@ document.querySelector('.examples .message button').onclick = function () {
 document.querySelector('.examples .timer button').onclick = function () {
   swal({
     title: 'Auto close alert!',
-    text: 'I will close in 5 seconds.',
-    timer: 5000,
+    text: 'I will close in 2 seconds.',
+    timer: 2000,
     onOpen: function onOpen() {
       swal.showLoading();
     }
