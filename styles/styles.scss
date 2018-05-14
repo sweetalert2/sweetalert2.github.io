@@ -237,6 +237,10 @@ pre {
   text-align: left;
   position: relative;
 
+  @media all and (max-width: 30rem) {
+    font-size: .8em;
+  }
+
   .str {
     color: $chenin;
   }

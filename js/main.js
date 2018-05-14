@@ -113,8 +113,8 @@ document.querySelector('.examples .message button').onclick = () => {
 document.querySelector('.examples .timer button').onclick = () => {
   swal({
     title: 'Auto close alert!',
-    text: 'I will close in 5 seconds.',
-    timer: 5000,
+    text: 'I will close in 2 seconds.',
+    timer: 2000,
     onOpen: () => {
       swal.showLoading()
     }
