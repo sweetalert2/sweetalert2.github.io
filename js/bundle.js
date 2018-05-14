@@ -9746,14 +9746,20 @@ document.querySelector('.examples .ajax-request button').onclick = function () {
   swal({
     title: 'Submit your Github username to run ajax request',
     input: 'text',
+    inputAttributes: {
+      autocapitalize: 'off'
+    },
     showCancelButton: true,
     confirmButtonText: 'Look up',
     showLoaderOnConfirm: true,
     preConfirm: function preConfirm(username) {
       return fetch('//api.github.com/users/' + username).then(function (response) {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
         return response.json();
       }).catch(function (error) {
-        swal.showValidationError('Request failed: ' + error);
+        swal.showValidationError(error);
       });
     },
     allowOutsideClick: function allowOutsideClick() {
