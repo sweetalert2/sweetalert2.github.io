@@ -1,4 +1,4 @@
-/* global swal, fetch, MutationObserver, FileReader, _bsa, gtag */
+/* global swal, fetch, MutationObserver, FileReader, _bsa */
 
 document.addEventListener('DOMContentLoaded', () => {
   var loadStyleSheet = (src) => { // eslint-disable-line
