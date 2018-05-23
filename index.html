@@ -51,9 +51,7 @@
     <h1>A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes</h1>
     <h2>Zero dependencies</h2>
     <div class="carbonads-wrapper">
-      <script src="//cdn.carbonads.com/carbon.js?serve=CKYILKQJ&placement=sweetalert2githubio" id="_carbonads_js" async ></script>
-      <script src="//m.servedby-buysellads.com/monetization.js" async></script>
-      <div class="bsa-cpc"></div>
+      <script src="//cdn.carbonads.com/carbon.js?serve=CKYILKQJ&placement=sweetalert2githubio" id="_carbonads_js" defer></script>
     </div>
     <div class="stats mobile-hidden">
       Current version: <a href="https://github.com/sweetalert2/sweetalert2/releases" id="current-version" aria-label="Current version "></a> ●
@@ -1415,8 +1413,13 @@ swal({
   <p class="center">Feel free to fork SweetAlert2 on <a href="https://github.com/sweetalert2/sweetalert2" class="github">GitHub</a> if you have any features that you want to add!</p>
 
 
+  <!-- BuySellads -->
+  <script src="//m.servedby-buysellads.com/monetization.js" defer></script>
+  <div class="bsa-cpc"></div>
+
+
   <!-- CodeFund -->
-  <script src="https://codefund.io/scripts/73544951-de9a-4bb3-8d48-204a2737c57f/embed.js"></script>
+  <script src="https://codefund.io/scripts/73544951-de9a-4bb3-8d48-204a2737c57f/embed.js" defer></script>
   <div id="codefund_ad"></div>
 
 
@@ -1427,6 +1430,6 @@ swal({
   <form id="codepen-form" action="https://codepen.io/pen/define" method="POST" target="_blank">
     <input type="hidden" name="data" id="codepen-data">
   </form>
-  <script src="./js/bundle.js"></script>
+  <script src="./js/bundle.js" defer></script>
 </body>
 </html>
