@@ -4,23 +4,22 @@ const autoprefix = require('gulp-autoprefixer')
 const sassLint = require('gulp-sass-lint')
 const browserSync = require('browser-sync').create()
 
+const styles = [
+  'styles/styles.scss',
+  'styles/buysellads.scss',
+  'styles/carbon-ads.scss',
+  'styles/codefund.scss'
+]
+
 gulp.task('sass', ['sass-lint'], (cb) => {
-  return gulp.src([
-    'styles/styles.scss',
-    'styles/carbon-ads.scss',
-    'styles/codefund.scss'
-  ])
+  return gulp.src(styles)
     .pipe(sass())
     .pipe(autoprefix())
     .pipe(gulp.dest('styles'))
 })
 
 gulp.task('sass-lint', () => {
-  return gulp.src([
-    'styles/styles.scss',
-    'styles/carbon-ads.scss',
-    'styles/codefund.scss'
-  ])
+  return gulp.src(styles)
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(link)
   }
 
+  loadStyleSheet('./styles/buysellads.css')
   loadStyleSheet('./styles/carbon-ads.css')
   loadStyleSheet('./styles/codefund.css')
   loadStyleSheet('./styles/bootstrap4-buttons.css')
@@ -561,15 +562,15 @@ if (typeof _bsa !== 'undefined' && _bsa) {
 }
 
 function setBuySellAdsFooter () {
-  if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('.carbonads-wrapper .bsa-cpc').textContent) {
+  if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('body > .bsa-cpc').textContent) {
     window.swal = swal.mixin({
-      footer: document.querySelector('.carbonads-wrapper .bsa-cpc')
+      footer: document.querySelector('body > .bsa-cpc')
     })
   }
 }
 
 var observer = new MutationObserver(setBuySellAdsFooter)
-observer.observe(document.querySelector('.carbonads-wrapper .bsa-cpc'), {childList: true})
+observer.observe(document.querySelector('body > .bsa-cpc'), {childList: true})
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 const gtagEvent = (eventName, eventParameters) => {
