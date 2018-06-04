@@ -178,7 +178,7 @@ swal({
   type: <span class="str">'success'</span>,
   title: <span class="str">'Your work has been saved'</span>,
   showConfirmButton: <span class="val">false</span>,
-  timer: <span class="str">1500</span>
+  timer: <span class="val">1500</span>
 })</pre>
     </li>
 
@@ -303,12 +303,20 @@ swal({
         <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre class="code-sample">
+<span class="val">let</span> timerInterval
 swal({
   title: <span class="str">'Auto close alert!'</span>,
-  text: <span class="str">'I will close in 2 seconds.'</span>,
+  html: <span class="str">'I will close in &lt;strong>&lt;/strong> seconds.'</span>,
   timer: <span class="val">2000</span>,
   onOpen: () => {
     swal.showLoading()
+    timerInterval = <span class="func">setInterval</span>(() => {
+      swal.getContent().querySelector(<span class="str">'strong'</span>)
+        .textContent = swal.getTimerLeft()
+    }, <span class="val">100</span>)
+  },
+  onClose: () => {
+    <span class="func">clearInterval</span>(timerInterval)
   }
 }).<span class="func">then</span>((result) => {
   <span class="tag">if</span> (
@@ -605,7 +613,7 @@ swal.queue([{
       <tr id="timer">
         <td><b>timer</b></td>
         <td><i>null</i></td>
-        <td>Auto close timer of the modal. Set in ms (milliseconds).</td>
+        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a></td>
       </tr>
       <tr>
         <td><b>animation</b></td>
@@ -1292,6 +1300,10 @@ swal({
       <tr>
         <td><i>swal.isLoading()</i></td>
         <td>Determine if modal is in the loading state. Related methods: <a href="#showLoading">swal.showLoading()</a> and  <a href="#hideLoading">swal.hideLoading()</a></td>
+      </tr>
+      <tr id="getTimerLeft">
+        <td><i>swal.getTimerLeft()</i></td>
+        <td>Returns the time left in case when <a href="#timer">timer</a> parameter is set.</td>
       </tr>
       <tr>
         <td><i>swal.clickConfirm()</i></td>

@@ -9029,7 +9029,7 @@ module.exports = function (regExp, replace) {
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-/* global swal, fetch, MutationObserver, FileReader, _bsa, gtag */
+/* global swal, fetch, MutationObserver, FileReader, _bsa */
 
 document.addEventListener('DOMContentLoaded', function () {
   var loadStyleSheet = function loadStyleSheet(src) {
@@ -9147,12 +9147,19 @@ document.querySelector('.examples .message button').onclick = function () {
 };
 
 document.querySelector('.examples .timer button').onclick = function () {
+  var timerInterval = void 0;
   swal({
     title: 'Auto close alert!',
-    text: 'I will close in 2 seconds.',
+    html: 'I will close in <strong></strong> milliseconds.',
     timer: 2000,
     onOpen: function onOpen() {
       swal.showLoading();
+      timerInterval = setInterval(function () {
+        swal.getContent().querySelector('strong').textContent = swal.getTimerLeft();
+      }, 100);
+    },
+    onClose: function onClose() {
+      clearInterval(timerInterval);
     }
   }).then(function (result) {
     if (result.dismiss === swal.DismissReason.timer) {

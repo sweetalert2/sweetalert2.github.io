@@ -112,12 +112,19 @@ document.querySelector('.examples .message button').onclick = () => {
 }
 
 document.querySelector('.examples .timer button').onclick = () => {
+  let timerInterval
   swal({
     title: 'Auto close alert!',
-    text: 'I will close in 2 seconds.',
+    html: 'I will close in <strong></strong> milliseconds.',
     timer: 2000,
     onOpen: () => {
       swal.showLoading()
+      timerInterval = setInterval(() => {
+        swal.getContent().querySelector('strong').textContent = swal.getTimerLeft()
+      }, 100)
+    },
+    onClose: () => {
+      clearInterval(timerInterval)
     }
   }).then((result) => {
     if (result.dismiss === swal.DismissReason.timer) {
