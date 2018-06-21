@@ -221,49 +221,6 @@ button,
   }
 }
 
-.top-right-button {
-  position: absolute;
-  right: 80px;
-  width: 170px;
-  height: 50px;
-  line-height: 50px;
-  margin: 0;
-  z-index: 3;
-  text-transform: uppercase;
-  font-weight: 500;
-  background-color: $white-button;
-  border-radius: .125em;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &.download {
-    top: 1.8em;
-    color: $cornflowerblue;
-  }
-
-  &.cdn {
-    top: 5.6em;
-    color: $cinnabar;
-  }
-
-  &.donate {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: $white;
-    color: $curiousblue;
-    font-weight: 600;
-    top: 10em;
-  }
-
-  @media all and (max-width: 71.875rem) {
-    display: none !important;
-  }
-}
-
 .center-container {
   max-width: 45.3125rem;
   margin: 4.375em auto;
