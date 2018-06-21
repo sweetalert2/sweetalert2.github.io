@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300");
 html,
 body {
@@ -13,6 +14,47 @@ body {
   @media all and (max-width: 54.0625rem) {
     body {
       padding-bottom: 0; } }
+
+nav {
+  position: fixed;
+  top: 3em;
+  left: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-transition: left .5s ease-in-out;
+  transition: left .5s ease-in-out; }
+  @media all and (max-width: 74rem) {
+    nav {
+      display: none; } }
+  @media all and (max-width: 77rem) {
+    nav {
+      left: 0; } }
+  nav a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: .4em 1em;
+    text-decoration: none !important;
+    border-bottom: 1px solid #e2e5e8;
+    opacity: .7; }
+    nav a:before {
+      content: '›';
+      margin-right: 1em; }
+    nav a:hover {
+      opacity: 1; }
+    nav a span {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      text-align: left; }
 
 header {
   max-width: 40.625rem;

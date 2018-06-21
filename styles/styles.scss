@@ -25,6 +25,46 @@ body {
   }
 }
 
+nav {
+  position: fixed;
+  top: 3em;
+  left: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: left .5s ease-in-out;
+
+  @media all and (max-width: 74rem) {
+    display: none;
+  }
+
+  @media all and (max-width: 77rem) {
+    left: 0;
+  }
+
+  a {
+    display: flex;
+    padding: .4em 1em;
+    text-decoration: none !important;
+    border-bottom: 1px solid $porcelain;
+    opacity: .7;
+
+    &:before {
+      content: '›';
+      margin-right: 1em;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    span {
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+}
+
 header {
   max-width: 40.625rem;
   margin: auto;
