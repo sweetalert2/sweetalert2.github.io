@@ -174,44 +174,6 @@ button,
     .button.cancel:active {
       background-color: #b7b7b7; }
 
-.top-right-button {
-  position: absolute;
-  right: 80px;
-  width: 170px;
-  height: 50px;
-  line-height: 50px;
-  margin: 0;
-  z-index: 3;
-  text-transform: uppercase;
-  font-weight: 500;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: .125em;
-  cursor: pointer; }
-  .top-right-button:hover {
-    text-decoration: none; }
-  .top-right-button.download {
-    top: 1.8em;
-    color: #2196f3; }
-  .top-right-button.cdn {
-    top: 5.6em;
-    color: #eb4c36; }
-  .top-right-button.donate {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    background-color: #fff;
-    color: #3085d6;
-    font-weight: 600;
-    top: 10em; }
-  @media all and (max-width: 71.875rem) {
-    .top-right-button {
-      display: none !important; } }
-
 .center-container {
   max-width: 45.3125rem;
   margin: 4.375em auto; }
