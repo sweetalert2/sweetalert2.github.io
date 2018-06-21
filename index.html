@@ -70,7 +70,7 @@
   <div class="showcase normal">
     <h4>Normal alert</h4>
     <button>Show normal alert</button>
-    <pre><span class="func">alert</span>(<span class="str">'You clicked the button!'</span>)</pre>
+    <pre><code>alert('You clicked the button!')</code></pre>
     <div class="vs-icon"></div>
   </div>
 
@@ -78,12 +78,12 @@
     <img src="/images/swal2-logo.png" width="178" height="30" alt="SweetAlert2">
     <button aria-label="Show SweetAlert2 success message">Show success message</button>
     <pre class="code-sample">
-swal(
-  <span class="str">'Good job!'</span>,
-  <span class="str">'You clicked the button!'</span>,
-  <span class="str">'success'</span>
-)</pre>
-  </div>
+<code>swal(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)</code></pre>
+</div>
 
   <div class="center-container">
     <p>Pretty cool huh? SweetAlert2 automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable, as you can see below!</p>
@@ -99,7 +99,7 @@ swal(
         <p>A basic message</p>
         <button aria-label="Try me! Example: A basic message">Try me!</button>
       </div>
-      <pre class="code-sample">swal(<span class="str">'Any fool can use a computer'</span>)</pre>
+      <pre class="code-sample"><code>swal('Any fool can use a computer')</code></pre>
     </li>
 
     <li class="title-text">
@@ -108,11 +108,11 @@ swal(
         <button aria-label="Try me! Example: A title with a text under">Try me!</button>
       </div>
       <pre class="code-sample">
-swal(
-  <span class="str">'The Internet?'</span>,
-  <span class="str">'That thing is still around?'</span>,
-  <span class="str">'question'</span>
-)</pre>
+<code>swal(
+  'The Internet?',
+  'That thing is still around?',
+  'question'
+)</code></pre>
     </li>
 
     <li class="error">
@@ -121,12 +121,12 @@ swal(
         <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  type: <span class="str">'error'</span>,
-  title: <span class="str">'Oops...'</span>,
-  text: <span class="str">'Something went wrong!'</span>,
-  footer: <span class="str">'&lt;a href>Why do I have this issue?&lt;/a>'</span>,
-})</pre>
+<code>swal({
+  type: 'error',
+  title: 'Oops...',
+  text: 'Something went wrong!',
+  footer: '&lt;a href>Why do I have this issue?&lt;/a>'
+})</code></pre>
     </li>
 
     <li id="long-text">
@@ -135,11 +135,11 @@ swal({
         <button aria-label="Try me! Example: A modal window with a long content inside">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  imageUrl: <span class="str">'/images/robot.jpg'</span>,
-  imageHeight: <span class="val">1512</span>,
-  imageAlt: <span class="str">'A tall image'</span>
-})</pre>
+<code>swal({
+  imageUrl: '/images/robot.jpg',
+  imageHeight: 1512,
+  imageAlt: 'A tall image'
+})</code></pre>
     </li>
 
     <li class="html" id="custom-html">
@@ -148,23 +148,23 @@ swal({
         <button aria-label="Try me! Example: Custom HTML description and buttons">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-swal({
-  title: <span class="str">'&lt;i&gt;HTML&lt;/i&gt; &lt;u&gt;example&lt;/u&gt;'</span>,
-  type: <span class="str">'info'</span>,
+<code>swal({
+  title: '&lt;i&gt;HTML&lt;/i&gt; &lt;u&gt;example&lt;/u&gt;',
+  type: 'info',
   html:
-    <span class="str">'You can use &lt;b&gt;bold text&lt;/b&gt;, '</span> +
-    <span class="str">'&lt;a href="//github.com"&gt;links&lt;/a&gt; '</span> +
-    <span class="str">'and other HTML tags'</span>,
-  showCloseButton: <span class="val">true</span>,
-  showCancelButton: <span class="val">true</span>,
-  focusConfirm: <span class="val">false</span>,
+    'You can use &lt;b&gt;bold text&lt;/b&gt;, ' +
+    '&lt;a href="//github.com"&gt;links&lt;/a&gt; ' +
+    'and other HTML tags',
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
   confirmButtonText:
-    <span class="str">'&lt;i class="fa fa-thumbs-up"&gt;&lt;/i&gt; Great!'</span>,
-  confirmButtonAriaLabel: <span class="str">'Thumbs up, great!'</span>,
+    '&lt;i class="fa fa-thumbs-up"&gt;&lt;/i&gt; Great!',
+  confirmButtonAriaLabel: 'Thumbs up, great!',
   cancelButtonText:
-  <span class="str">'&lt;i class="fa fa-thumbs-down"&gt;&lt;/i&gt;'</span>,
-  cancelButtonAriaLabel: <span class="str">'Thumbs down'</span>,
-})</pre>
+    '&lt;i class="fa fa-thumbs-down"&gt;&lt;/i&gt;',
+  cancelButtonAriaLabel: 'Thumbs down',
+})</code></pre>
     </li>
 
     <li id="position">
@@ -173,13 +173,13 @@ swal({
         <button aria-label="Try me! Example: A custom positioned dialog">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  position: <span class="str">'top-end'</span>,
-  type: <span class="str">'success'</span>,
-  title: <span class="str">'Your work has been saved'</span>,
-  showConfirmButton: <span class="val">false</span>,
-  timer: <span class="val">1500</span>
-})</pre>
+<code>swal({
+  position: 'top-end',
+  type: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})</code></pre>
     </li>
 
     <li id="custom-animation">
@@ -188,11 +188,11 @@ swal({
         <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
-swal({
-  title: <span class="str">'Custom animation with Animate.css'</span>,
-  animation: <span class="val">false</span>,
-  customClass: <span class="str">'animated tada'</span>
-})</pre>
+<code>swal({
+  title: 'Custom animation with Animate.css',
+  animation: false,
+  customClass: 'animated tada'
+})</code></pre>
     </li>
 
     <li class="warning confirm" id="confirm-dialog">
@@ -201,23 +201,23 @@ swal({
         <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  title: <span class="str">'Are you sure?'</span>,
-  text: <span class="str">"You won't be able to revert this!"</span>,
-  type: <span class="str">'warning'</span>,
-  showCancelButton: <span class="val">true</span>,
-  confirmButtonColor: <span class="str">'#3085d6'</span>,
-  cancelButtonColor: <span class="str">'#d33'</span>,
-  confirmButtonText: <span class="str">'Yes, delete it!'</span>
-}).<span class="func">then</span>((result) => {
-  <span class="tag">if</span> (result.value) {
+<code>swal({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
     swal(
-      <span class="str">'Deleted!'</span>,
-      <span class="str">'Your file has been deleted.'</span>,
-      <span class="str">'success'</span>
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
     )
   }
-})</pre>
+})</code></pre>
     </li>
 
     <li class="bootstrap-buttons" id="dismiss-handle">
@@ -226,38 +226,38 @@ swal({
         <button aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="http://sweetalert2.github.io/styles/bootstrap4-buttons.css">
-<span class="val">const</span> swalWithBootstrapButtons = swal.mixin({
-  confirmButtonClass: <span class="str">'btn btn-success'</span>,
-  cancelButtonClass: <span class="str">'btn btn-danger'</span>,
-  buttonsStyling: <span class="val">false</span>,
+<code>const swalWithBootstrapButtons = swal.mixin({
+  confirmButtonClass: 'btn btn-success',
+  cancelButtonClass: 'btn btn-danger',
+  buttonsStyling: false,
 })
 
 swalWithBootstrapButtons({
-  title: <span class="str">'Are you sure?'</span>,
-  text: <span class="str">"You won't be able to revert this!"</span>,
-  type: <span class="str">'warning'</span>,
-  showCancelButton: <span class="val">true</span>,
-  confirmButtonText: <span class="str">'Yes, delete it!'</span>,
-  cancelButtonText: <span class="str">'No, cancel!'</span>,
-  reverseButtons: <span class="val">true</span>
-}).<span class="func">then</span>((result) => {
-  <span class="tag">if</span> (result.value) {
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.value) {
     swalWithBootstrapButtons(
-      <span class="str">'Deleted!'</span>,
-      <span class="str">'Your file has been deleted.'</span>,
-      <span class="str">'success'</span>
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
     )
-  } <span class="tag">else if</span> (
-    <span class="comment">// <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a></span>
+  } else if (
+    // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
     result.dismiss === swal.DismissReason.cancel
   ) {
     swalWithBootstrapButtons(
-      <span class="str">'Cancelled'</span>,
-      <span class="str">'Your imaginary file is safe :)'</span>,
-      <span class="str">'error'</span>
+      'Cancelled',
+      'Your imaginary file is safe :)',
+      'error'
     )
   }
-})</pre>
+})</code></pre>
     </li>
 
     <li class="custom-image">
@@ -266,15 +266,15 @@ swalWithBootstrapButtons({
         <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  title: <span class="str">'Sweet!'</span>,
-  text: <span class="str">'Modal with a custom image.'</span>,
-  imageUrl: <span class="str">'https://unsplash.it/400/200'</span>,
-  imageWidth: <span class="val">400</span>,
-  imageHeight: <span class="val">200</span>,
-  imageAlt: <span class="str">'Custom image'</span>,
-  animation: <span class="val">false</span>
-})</pre>
+<code>swal({
+  title: 'Sweet!',
+  text: 'Modal with a custom image.',
+  imageUrl: 'https://unsplash.it/400/200',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Custom image',
+  animation: false
+})</code></pre>
     </li>
 
     <li class="custom-width-padding-background">
@@ -283,18 +283,18 @@ swal({
         <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  title: <span class="str">'Custom width, padding, background.'</span>,
-  width: <span class="val">600</span>,
-  padding: <span class="str">'3em'</span>,
-  background: <span class="str">'#fff url(/images/trees.png)'</span>,
-  backdrop: <span class="str">`
+<code>swal({
+  title: 'Custom width, padding, background.',
+  width: 600,
+  padding: '3em',
+  background: '#fff url(/images/trees.png)',
+  backdrop: `
     rgba(0,0,123,0.4)
     url("/images/nyan-cat.gif")
     center left
     no-repeat
-  `</span>
-})</pre>
+  `
+})</code></pre>
     </li>
 
     <li class="timer">
@@ -303,29 +303,29 @@ swal({
         <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre class="code-sample">
-<span class="val">let</span> timerInterval
+<code>let timerInterval
 swal({
-  title: <span class="str">'Auto close alert!'</span>,
-  html: <span class="str">'I will close in &lt;strong>&lt;/strong> seconds.'</span>,
-  timer: <span class="val">2000</span>,
+  title: 'Auto close alert!',
+  html: 'I will close in &lt;strong>&lt;/strong> seconds.',
+  timer: 2000,
   onOpen: () => {
     swal.showLoading()
-    timerInterval = <span class="func">setInterval</span>(() => {
-      swal.getContent().querySelector(<span class="str">'strong'</span>)
+    timerInterval = setInterval(() => {
+      swal.getContent().querySelector('strong')
         .textContent = swal.getTimerLeft()
-    }, <span class="val">100</span>)
+    }, 100)
   },
   onClose: () => {
-    <span class="func">clearInterval</span>(timerInterval)
+    clearInterval(timerInterval)
   }
-}).<span class="func">then</span>((result) => {
-  <span class="tag">if</span> (
-    <span class="comment">// <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a></span>
+}).then((result) => {
+  if (
+    // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
     result.dismiss === swal.DismissReason.timer
   ) {
-    console.log(<span class="str">'I was closed by the timer'</span>)
+    console.log('I was closed by the timer')
   }
-})</pre>
+})</code></pre>
     </li>
 
     <li class="rtl" id="rtl">
@@ -334,14 +334,14 @@ swal({
         <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-html='<div id="rtl-container" dir="rtl"></div>'>
-swal({
-  title: <span class="str">'هل تريد الاستمرار؟'</span>,
-  confirmButtonText:  <span class="str">'نعم'</span>,
-  cancelButtonText:  <span class="str">'لا'</span>,
-  showCancelButton: <span class="val">true</span>,
-  showCloseButton: <span class="val">true</span>,
-  target: document.getElementById(<span class="str">'rtl-container'</span>)
-})</pre>
+<code>swal({
+  title: 'هل تريد الاستمرار؟',
+  confirmButtonText:  'نعم',
+  cancelButtonText:  'لا',
+  showCancelButton: true,
+  showCloseButton: true,
+  target: document.getElementById('rtl-container')
+})</code></pre>
     </li>
 
     <li class="ajax-request" id="ajax-request">
@@ -350,38 +350,38 @@ swal({
         <button aria-label="Try me! Example: AJAX request">Try me!</button>
       </div>
       <pre class="code-sample">
-swal({
-  title: <span class="str">'Submit your Github username'</span>,
-  input: <span class="str">'text'</span>,
+<code>swal({
+  title: 'Submit your Github username',
+  input: 'text',
   inputAttributes: {
-    autocapitalize: <span class="str">'off'</span>
+    autocapitalize: 'off'
   },
-  showCancelButton: <span class="val">true</span>,
-  confirmButtonText: <span class="str">'Look up'</span>,
-  showLoaderOnConfirm: <span class="val">true</span>,
+  showCancelButton: true,
+  confirmButtonText: 'Look up',
+  showLoaderOnConfirm: true,
   preConfirm: (login) => {
-    <span class="tag">return</span> <span class="func">fetch</span>(<span class="str">`//api.github.com/users/<span class="val">${login}</span>`</span>)
-      .<span class="func">then</span>(response => {
-        <span class="tag">if</span> (!response.ok) {
-          <span class="tag">throw</span> <span class="func">new</span> Error(response.statusText)
+    return fetch(`//api.github.com/users/${login}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.statusText)
         }
-        <span class="tag">return</span> response.<span class="func">json</span>()
+        return response.json()
       })
-      .<span class="func">catch</span>(error => {
+      .catch(error => {
         swal.showValidationError(
-          <span class="str">`Request failed: <span class="val">${error}</span>`</span>
+          `Request failed: ${error}`
         )
       })
   },
   allowOutsideClick: () => !swal.isLoading()
-}).<span class="func">then</span>((result) => {
-  <span class="tag">if</span> (result.value) {
+}).then((result) => {
+  if (result.value) {
     swal({
-      title: <span class="str">`<span class="val">${result.value.login}</span>'s avatar`</span>,
+      title: `${result.value.login}'s avatar`,
       imageUrl: result.value.avatar_url
     })
   }
-})</pre>
+})</code></pre>
     </li>
 
     <li class="chaining-modals" id="chaining-modals">
@@ -390,30 +390,30 @@ swal({
         <button aria-label="Try me! Example: Chaining modals (queue)">Try me!</button>
       </div>
       <pre class="code-sample">
-swal.mixin({
-  input: <span class="str">'text'</span>,
-  confirmButtonText: <span class="str">'Next &amp;rarr;'</span>,
-  showCancelButton: <span class="val">true</span>,
-  progressSteps: [<span class="str">'1'</span>, <span class="str">'2'</span>, <span class="str">'3'</span>]
+<code>swal.mixin({
+  input: 'text',
+  confirmButtonText: 'Next &amp;rarr;',
+  showCancelButton: true,
+  progressSteps: ['1', '2', '3']
 }).queue([
   {
-    title: <span class="str">'Question 1'</span>,
-    text: <span class="str">'Chaining swal2 modals is easy'</span>
+    title: 'Question 1',
+    text: 'Chaining swal2 modals is easy'
   },
-  <span class="str">'Question 2'</span>,
-  <span class="str">'Question 3'</span>
+  'Question 2',
+  'Question 3'
 ]).then((result) => {
-  <span class="tag">if</span> (result.value) {
+  if (result.value) {
     swal({
-      title: <span class="str">'All done!'</span>,
+      title: 'All done!',
       html:
-        <span class="str">'Your answers: &lt;pre&gt;'</span> +
+        'Your answers: &lt;pre&gt;' +
           JSON.stringify(result.value) +
-        <span class="str">'&lt;/pre&gt;'</span>,
-      confirmButtonText: <span class="str">'Lovely!'</span>
+        '&lt;/pre&gt;',
+      confirmButtonText: 'Lovely!'
     })
   }
-})</pre>
+})</code></pre>
     </li>
 
     <li class="dynamic-queue" id="dynamic-queue">
@@ -422,27 +422,27 @@ swal.mixin({
         <button aria-label="Try me! Example: Dynamic queue">Try me!</button>
       </div>
       <pre class="code-sample">
-<span class="val">const</span> ipAPI = <span class="str">'https://api.ipify.org?format=json'</span>
+<code>const ipAPI = 'https://api.ipify.org?format=json'
 
 swal.queue([{
-  title: <span class="str">'Your public IP'</span>,
-  confirmButtonText: <span class="str">'Show my public IP'</span>,
+  title: 'Your public IP',
+  confirmButtonText: 'Show my public IP',
   text:
-    <span class="str">'Your public IP will be received '</span> +
-    <span class="str">'via AJAX request'</span>,
-  showLoaderOnConfirm: <span class="val">true</span>,
+    'Your public IP will be received ' +
+    'via AJAX request',
+  showLoaderOnConfirm: true,
   preConfirm: () => {
-    <span class="tag">return</span> fetch(ipAPI)
-      .<span class="func">then</span>(response => response.json())
-      .<span class="func">then</span>(data => swal.insertQueueStep(data.ip))
-      .<span class="tag">catch</span>(() => {
+    return fetch(ipAPI)
+      .then(response => response.json())
+      .then(data => swal.insertQueueStep(data.ip))
+      .catch(() => {
         swal.insertQueueStep({
-          type: <span class="str">'error'</span>,
-          title: <span class="str">'Unable to get your public IP'</span>
+          type: 'error',
+          title: 'Unable to get your public IP'
         })
       })
   }
-}])</pre>
+}])</code></pre>
     </li>
   </ul>
 
@@ -450,9 +450,9 @@ swal.queue([{
   <!-- Download & Install -->
   <div class="center-container download-section">
     <h3 id="download">Download & install</h3>
-    <pre class="center">$ npm install sweetalert2</pre>
+    <pre class="center"><code>$ npm install sweetalert2</code></pre>
     <p>Or</p>
-    <pre class="center">$ bower install sweetalert2</pre>
+    <pre class="center"><code>$ bower install sweetalert2</code></pre>
     <p>
       Or download from CDN:
       <a href="https://unpkg.com/sweetalert2" target="_blank" rel="noopener" class="nowrap">unpkg.com/sweetalert2 <i class="fa fa-external-link"></i></a> |
@@ -465,27 +465,30 @@ swal.queue([{
     <h3 id="usage">Usage</h3>
       <div class="mobile-hidden">
         <p>1. Initialize the plugin by referencing the necessary files:</p>
-        <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"sweetalert2.all.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-  <span class="comment">&lt;!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser --&gt;</span>
-  &lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/promise-polyfill"</span>&gt;&lt;/<span class="tag">script</span>&gt;</pre>
+        <pre>
+<code>&lt;script src="sweetalert2.all.min.js"&gt;&lt;/script&gt;
+&lt;!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser --&gt;
+&lt;script src="https://unpkg.com/promise-polyfill"&gt;&lt;/script&gt;</code></pre>
         <p class="mobile-hidden">You can also include the stylesheet separately if desired:</p>
-        <pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"sweetalert2.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-  &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">href</span>=<span class="str">"sweetalert2.min.css"</span>&gt;</pre>
+        <pre>
+<code>&lt;script src="sweetalert2.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="sweetalert2.min.css"&gt;</code></pre>
         <p>Or</p>
       </div>
-      <pre><span class="comment">// ES6 Modules or TypeScript</span>
-<span class="val">import</span> swal <span class="val">from</span> <span class="str">'sweetalert2'</span>
+      <pre>
+<code>// ES6 Modules or TypeScript
+import swal from 'sweetalert2'
 
-<span class="comment">// CommonJS</span>
-<span class="val">const</span> swal = <span class="func">require</span>(<span class="str">'sweetalert2'</span>)</pre>
+// CommonJS
+const swal = require('sweetalert2')</code></pre>
 
     <p class="mobile-hidden">2. Call the sweetAlert2-function after the page has loaded</p>
-<pre>swal({
-  title: <span class="str">'Error!'</span>,
-  text: <span class="str">'Do you want to continue'</span>,
-  type: <span class="str">'error'</span>,
-  confirmButtonText: <span class="str">'Cool'</span>
-})</pre>
+<pre><code>swal({
+  title: 'Error!',
+  text: 'Do you want to continue',
+  type: 'error',
+  confirmButtonText: 'Cool'</span>
+})</code></pre>
   </div>
 
   <div class="center-container">
@@ -848,18 +851,18 @@ swal.queue([{
           <button aria-label="Try me! Example: Mixin">Try me!</button>
         </div>
         <pre class="code-sample">
-<span class="val">const</span> toast = swal.mixin({
-  toast: <span class="val">true</span>,
-  position: <span class="str">'top-end'</span>,
-  showConfirmButton: <span class="val">false</span>,
-  timer: <span class="val">3000</span>
+<code>const toast = swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
 });
 
 toast({
-  type: <span class="str">'success'</span>,
-  title: <span class="str">'Signed in successfully'</span>
+  type: 'success',
+  title: 'Signed in successfully'
 })
-</pre>
+</code></pre>
       </li>
     </ul>
   </div>
@@ -954,19 +957,19 @@ toast({
       <td><strong>text</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getName () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: name} = <span class="func">await</span> swal({
-  title: <span class="str">'What is your name?'</span>,
-  input: <span class="str">'text'</span>,
-  inputPlaceholder: <span class="str">'Enter your name or nickname'</span>,
-  showCancelButton: <span class="val">true</span>,
+<code>const {value: name} = await swal({
+  title: 'What is your name?',
+  input: 'text',
+  inputPlaceholder: 'Enter your name or nickname',
+  showCancelButton: true,
   inputValidator: (value) => {
-    <span class="tag">return</span> !value <span class="val">&&</span> <span class="str">'You need to write something!'</span>
+    return !value && 'You need to write something!'
   }
 })
 
-<span class="tag">if</span> (name) {
-  swal({type: <span class="str">'success'</span>, title: <span class="str">'Hi, '</span> + name})
-}</pre>
+if (name) {
+  swal({type: 'success', title: 'Hi, ' + name})
+}</code></pre>
       </td>
       <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>
     </tr>
@@ -975,15 +978,15 @@ toast({
       <td><strong>email</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getEmail () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: email} = <span class="func">await</span> swal({
-  title: <span class="str">'Input email address'</span>,
-  input: <span class="str">'email'</span>,
-  inputPlaceholder: <span class="str">'Enter your email address'</span>
+<code>const {value: email} = await swal({
+  title: 'Input email address',
+  input: 'email',
+  inputPlaceholder: 'Enter your email address'
 })
 
-<span class="tag">if</span> (email) {
-  swal(<span class="str">'Entered email: '</span> + email)
-}</pre>
+if (email) {
+  swal('Entered email: ' + email)
+}</code></pre>
       </td>
       <td><button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button></td>
     </tr>
@@ -992,14 +995,14 @@ toast({
       <td><strong>url</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getUrl () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: url} = <span class="func">await</span> swal({
-  input: <span class="str">'url'</span>,
-  inputPlaceholder: <span class="str">'Enter the URL'</span>
+<code>const {value: url} = await swal({
+  input: 'url',
+  inputPlaceholder: 'Enter the URL'
 })
 
-<span class="tag">if</span> (url) {
-  swal(<span class="str">'Entered URL: '</span> + url)
-}</pre>
+if (url) {
+  swal('Entered URL: ' + url)
+}</code></pre>
       </td>
       <td><button class="input-type-url">Try me!</button></td>
     </tr>
@@ -1008,20 +1011,20 @@ toast({
       <td><strong>password</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getPassword () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: password} = <span class="func">await</span> swal({
-  title: <span class="str">'Enter your password'</span>,
-  input: <span class="str">'password'</span>,
-  inputPlaceholder: <span class="str">'Enter your password'</span>,
+<code>const {value: password} = await swal({
+  title: 'Enter your password',
+  input: 'password',
+  inputPlaceholder: 'Enter your password',
   inputAttributes: {
-    <span class="str">'maxlength'</span>: <span class="val">10</span>,
-    <span class="str">'autocapitalize'</span>: <span class="str">'off'</span>,
-    <span class="str">'autocorrect'</span>: <span class="str">'off'</span>
+    maxlength: 10,
+    autocapitalize: 'off',
+    autocorrect: 'off'
   }
 })
 
-<span class="tag">if</span> (password) {
-  swal(<span class="str">'Entered password: '</span> + password)
-}</pre>
+if (password) {
+  swal('Entered password: ' + password)
+}</code></pre>
       </td>
       <td><button class="input-type-password" aria-label="Try me! Example: input type password">Try me!</button></td>
     </tr>
@@ -1030,15 +1033,15 @@ toast({
       <td><strong>textarea</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getText () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: text} = <span class="func">await</span> swal({
-  input: <span class="str">'textarea'</span>,
-  inputPlaceholder: <span class="str">'Type your message here'</span>,
-  showCancelButton: <span class="val">true</span>
+<code>const {value: text} = await swal({
+  input: 'textarea',
+  inputPlaceholder: 'Type your message here',
+  showCancelButton: true
 })
 
-<span class="tag">if</span> (text) {
+if (text) {
   swal(text)
-}</pre>
+}</code></pre>
       </td>
       <td><button class="input-type-textarea" aria-label="Try me! Example: input type textarea">Try me!</button></td>
     </tr>
@@ -1047,30 +1050,30 @@ toast({
       <td><strong>select</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getCountry () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: country} = <span class="func">await</span> swal({
-  title: <span class="str">'Select Ukraine'</span>,
-  input: <span class="str">'select'</span>,
+<code>const {value: country} = await swal({
+  title: 'Select Ukraine',
+  input: 'select',
   inputOptions: {
-    <span class="str">'SRB'</span>: <span class="str">'Serbia'</span>,
-    <span class="str">'UKR'</span>: <span class="str">'Ukraine'</span>,
-    <span class="str">'HRV'</span>: <span class="str">'Croatia'</span>
+    'SRB': 'Serbia',
+    'UKR': 'Ukraine',
+    'HRV': 'Croatia'
   },
-  inputPlaceholder: <span class="str">'Select country'</span>,
-  showCancelButton: <span class="val">true</span>,
+  inputPlaceholder: 'Select country',
+  showCancelButton: true,
   inputValidator: (value) => {
-    <span class="tag">return new</span> <span class="func">Promise</span>((resolve) => {
-      <span class="tag">if</span> (value === <span class="str">'UKR'</span>) {
+    return new Promise((resolve) => {
+      if (value === 'UKR') {
         resolve()
-      } <span class="tag">else</span> {
-        resolve(<span class="str">'You need to select Ukraine :)'</span>)
+      } else {
+        resolve('You need to select Ukraine :)')
       }
     })
   }
 })
 
-<span class="tag">if</span> (country) {
-  swal(<span class="str">'You selected: '</span> + country)
-}</pre>
+if (country) {
+  swal('You selected: ' + country)
+}</code></pre>
       </td>
       <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
     </tr>
@@ -1079,29 +1082,29 @@ toast({
       <td><strong>radio</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getColor () {" data-codepen-js-after="})()">
-<span class="comment">// inputOptions can be an object or Promise</span>
-<span class="func">var</span> inputOptions = <span class="tag">new</span> <span class="func">Promise</span>((resolve) => {
-  <span class="func">setTimeout</span>(() => {
+<code>// inputOptions can be an object or Promise
+const inputOptions = new Promise((resolve) => {
+  setTimeout(() => {
     resolve({
-      <span class="str">'#ff0000'</span>: <span class="str">'Red'</span>,
-      <span class="str">'#00ff00'</span>: <span class="str">'Green'</span>,
-      <span class="str">'#0000ff'</span>: <span class="str">'Blue'</span>
+      '#ff0000': 'Red',
+      '#00ff00': 'Green',
+      '#0000ff': 'Blue'
     })
-  }, <span class="val">2000</span>)
+  }, 2000)
 })
 
-<span class="val">const</span> {value: color} = <span class="func">await</span> swal({
-  title: <span class="str">'Select color'</span>,
-  input: <span class="str">'radio'</span>,
+const {value: color} = await swal({
+  title: 'Select color',
+  input: 'radio',
   inputOptions: inputOptions,
   inputValidator: (value) => {
-    <span class="tag">return</span> !value && <span class="str">'You need to choose something!'</span>
+    return !value && 'You need to choose something!'
   }
 })
 
-<span class="tag">if</span> (color) {
-  swal({html: <span class="str">'You selected: '</span> + color})
-}</pre>
+if (color) {
+  swal({html: 'You selected: ' + color})
+}</code></pre>
       </td>
       <td><button class="input-type-radio" aria-label="Try me! Example: input type radio">Try me!</button></td>
     </tr>
@@ -1110,22 +1113,22 @@ toast({
       <td><strong>checkbox</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function acceptTermsAndConditions () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: accept} = <span class="func">await</span> swal({
-  title: <span class="str">'Terms and conditions'</span>,
-  input: <span class="str">'checkbox'</span>,
-  inputValue: <span class="val">1</span>,
+<code>const {value: accept} = await swal({
+  title: 'Terms and conditions',
+  input: 'checkbox',
+  inputValue: 1,
   inputPlaceholder:
-    <span class="str">'I agree with the terms and conditions'</span>,
+    'I agree with the terms and conditions',
   confirmButtonText:
-    <span class="str">'Continue &lt;i class="fa fa-arrow-right&gt;&lt;/i&gt;'</span>,
+    'Continue &lt;i class="fa fa-arrow-right&gt;&lt;/i&gt;',
   inputValidator: (result) => {
-    <span class="tag">return</span> !result && <span class="str">'You need to agree with T&amp;C'</span>
+    return !result && 'You need to agree with T&amp;C'
   }
 })
 
-<span class="tag">if</span> (accept) {
-  swal(<span class="str">'You agreed with T&amp;C :)'</span>)
-}</pre>
+if (accept) {
+  swal('You agreed with T&amp;C :)')
+}</code></pre>
 
       </td>
       <td><button class="input-type-checkbox" aria-label="Try me! Example: input type checkbox">Try me!</button></td>
@@ -1135,26 +1138,26 @@ toast({
       <td><strong>file</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: file} = <span class="func">await</span> swal({
-  title: <span class="str">'Select image'</span>,
-  input: <span class="str">'file'</span>,
+<code>const {value: file} = await swal({
+  title: 'Select image',
+  input: 'file',
   inputAttributes: {
-    <span class="str">'accept'</span>: <span class="str">'image/*'</span>,
-    <span class="str">'aria-label'</span>: <span class="str">'Upload your profile picture'</span>
+    'accept': 'image/*',
+    'aria-label': 'Upload your profile picture'
   }
 })
 
-<span class="tag">if</span> (file) {
-  <span class="func">var</span> reader = <span class="tag">new</span> <span class="func">FileReader</span>
+if (file) {
+  const reader = new FileReader
   reader.onload = (e) => {
     swal({
-      title: <span class="str">'Your uploaded picture'</span>,
+      title: 'Your uploaded picture',
       imageUrl: e.target.result,
-      imageAlt: <span class="str">'The uploaded picture'</span>
+      imageAlt: 'The uploaded picture'
     })
   }
   reader.readAsDataURL(file)
-}</pre>
+}</code></pre>
       </td>
       <td><button class="input-type-file" aria-label="Try me! Example: input type file">Try me!</button></td>
     </tr>
@@ -1163,17 +1166,17 @@ toast({
       <td><strong>range</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-swal({
-  title: <span class="str">'How old are you?',</span>
-  type: <span class="str">'question',</span>
-  input: <span class="str">'range',</span>
+<code>swal({
+  title: 'How old are you?',
+  type: 'question',
+  input: 'range',
   inputAttributes: {
-    min: <span class="val">8</span>,
-    max: <span class="val">120</span>,
-    step: <span class="val">1</span>
+    min: 8,
+    max: 120,
+    step: 1
   },
-  inputValue: <span class="val">25</span>
-})</pre>
+  inputValue: 25</span>
+})</code></pre>
       </td>
       <td><button class="input-type-range" aria-label="Try me! Example: input type range">Try me!</button></td>
     </tr>
@@ -1190,23 +1193,23 @@ swal({
       <td class="mobile-hidden"></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
-<span class="val">const</span> {value: formValues} = <span class="func">await</span> swal({
-  title: <span class="str">'Multiple inputs'</span>,
+<code>const {value: formValues} = await swal({
+  title: 'Multiple inputs',
   html:
-    <span class="str">'&lt;input id="swal-input1" class="swal2-input"&gt;'</span> +
-    <span class="str">'&lt;input id="swal-input2" class="swal2-input"&gt;'</span>,
-  focusConfirm: <span class="val">false</span>,
+    '&lt;input id="swal-input1" class="swal2-input"&gt;' +
+    '&lt;input id="swal-input2" class="swal2-input"&gt;',
+  focusConfirm: false,
   preConfirm: () => {
-    <span class="tag">return</span> [
-      document.getElementById(<span class="str">'swal-input1'</span>).value,
-      document.getElementById(<span class="str">'swal-input2'</span>).value
+    return [
+      document.getElementById('swal-input1'</span>).value,
+      document.getElementById('swal-input2'</span>).value
     ]
   }
 })
 
-<span class="tag">if</span> (formValues) {
-  swal(<span class="func">JSON</span>.stringify(formValues))
-}</pre>
+if (formValues) {
+  swal(json.stringify(formValues))
+}</code></pre>
 
       </td>
       <td><button class="input-type-multiple" aria-label="Try me! Example: multiple inputs">Try me!</button></td>

@@ -1,4 +1,13 @@
 /* global swal, fetch, MutationObserver, FileReader, _bsa */
+import hljs from '../node_modules/highlight.js/lib/highlight'
+import hljsJS from '../node_modules/highlight.js/lib/languages/javascript'
+import hljsXML from '../node_modules/highlight.js/lib/languages/xml'
+import '../node_modules/highlight.js/styles/atom-one-dark.css'
+
+// Syntax highlighting with highlight.js
+hljs.registerLanguage('javascript', hljsJS)
+hljs.registerLanguage('xml', hljsXML)
+hljs.initHighlightingOnLoad()
 
 document.addEventListener('DOMContentLoaded', () => {
   var loadStyleSheet = (src) => { // eslint-disable-line
@@ -369,7 +378,7 @@ document.querySelector('.input-type-select').onclick = () => {
 
 document.querySelector('.input-type-radio').onclick = () => {
   (async function getColor () {
-    var inputOptionsPromise = new Promise((resolve) => {
+    const inputOptionsPromise = new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           '#FF0000': 'Red',
@@ -420,7 +429,7 @@ document.querySelector('.input-type-file').onclick = () => {
       }
     })
     if (file) {
-      var reader = new FileReader()
+      const reader = new FileReader()
       reader.onload = (e) => {
         swal({
           title: 'Your uploaded picture',

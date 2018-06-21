@@ -230,10 +230,8 @@ button,
 }
 
 pre {
-  background-color: $armadillo;
   color: lighten($black, 97);
-  padding: .625em;
-  border-radius: .3125em;
+  background: $shark;
   text-align: left;
   position: relative;
 
@@ -243,24 +241,10 @@ pre {
     margin: 0 auto;
   }
 
-  .str {
-    color: $chenin;
-  }
-
-  .func {
-    color: $spray;
-  }
-
-  .val {
-    color: $melrose;
-  }
-
-  .tag {
-    color: $salmon;
-  }
-
-  .attr {
-    color: $pear;
+  code {
+    display: block;
+    padding: .5em;
+    border-radius: .3125em;
   }
 
   .comment {
@@ -413,7 +397,7 @@ kbd {
   }
 
   pre {
-    max-width: 30.25em;
+    max-width: 33em;
     margin-top: 2.5em;
 
     @media all and (max-width: 47.375rem) {

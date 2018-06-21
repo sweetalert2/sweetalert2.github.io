@@ -175,10 +175,8 @@ button,
   margin: 4.375em auto; }
 
 pre {
-  background-color: #49483e;
   color: #f7f7f7;
-  padding: .625em;
-  border-radius: .3125em;
+  background: #282c34;
   text-align: left;
   position: relative; }
   @media all and (max-width: 30rem) {
@@ -186,16 +184,10 @@ pre {
       max-width: 30.25em;
       font-size: .8em;
       margin: 0 auto; } }
-  pre .str {
-    color: #e6db74; }
-  pre .func {
-    color: #66d9ef; }
-  pre .val {
-    color: #c3bcff; }
-  pre .tag {
-    color: #f77; }
-  pre .attr {
-    color: #a6e22d; }
+  pre code {
+    display: block;
+    padding: .5em;
+    border-radius: .3125em; }
   pre .comment {
     color: #8d98a5; }
     pre .comment a {
@@ -312,7 +304,7 @@ kbd {
       margin-bottom: 0;
       padding: 0 2em; }
   .examples pre {
-    max-width: 30.25em;
+    max-width: 33em;
     margin-top: 2.5em; }
     @media all and (max-width: 47.375rem) {
       .examples pre {
