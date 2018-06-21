@@ -561,7 +561,7 @@ document.querySelector('.examples .mixin button').onclick = () => {
   })
 }
 
-Array.from(document.querySelectorAll('.modal-types button')).forEach(button => {
+Array.from(document.querySelectorAll('.popup-types button')).forEach(button => {
   button.onclick = (e) => {
     var type = e.target.getAttribute('class').slice(5)
     swal(type + '!', '', type)

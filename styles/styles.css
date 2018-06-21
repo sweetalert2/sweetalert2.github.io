@@ -74,19 +74,19 @@ header {
     header h2 a {
       color: #3085d6; }
 
-.modal-types td {
+.popup-types td {
   vertical-align: middle;
   text-align: center;
   width: 33%; }
 
-.modal-types .swal2-icon,
-.modal-types button {
+.popup-types .swal2-icon,
+.popup-types button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto !important; }
 
-.modal-types .swal2-success::before, .modal-types .swal2-success::after {
+.popup-types .swal2-success::before, .popup-types .swal2-success::after {
   background: transparent !important; }
 
 h3 {
@@ -354,8 +354,8 @@ table {
           font-size: .8125em; } }
 
 @media all and (max-width: 46.875rem) {
-  .modal-types th:nth-child(2),
-  .modal-types td:nth-child(2),
+  .popup-types th:nth-child(2),
+  .popup-types td:nth-child(2),
   .input-types th:nth-child(2),
   .input-types td:nth-child(2) {
     display: none; } }
