@@ -470,25 +470,29 @@ swal.queue([{
 
   <div class="center-container">
     <h3 id="usage">Usage</h3>
-      <div class="mobile-hidden">
-        <p>1. Initialize the plugin by referencing the necessary files:</p>
-        <pre>
+    <div class="mobile-hidden">
+      <p>1. Initialize the plugin by referencing the necessary files:</p>
+      <pre>
 <code>&lt;script src="sweetalert2.all.min.js"&gt;&lt;/script&gt;
 &lt;!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser --&gt;
 &lt;script src="https://unpkg.com/promise-polyfill"&gt;&lt;/script&gt;</code></pre>
-        <p class="mobile-hidden">You can also include the stylesheet separately if desired:</p>
-        <pre>
+      <p class="mobile-hidden">You can also include the stylesheet separately if desired:</p>
+      <pre>
 <code>&lt;script src="sweetalert2.min.js"&gt;&lt;/script&gt;
 &lt;link rel="stylesheet" href="sweetalert2.min.css"&gt;</code></pre>
-        <p>Or</p>
-      </div>
-      <pre>
+      <p>Or</p>
+    </div>
+    <pre>
 <code>// ES6 Modules or TypeScript
 import swal from 'sweetalert2'
 
 // CommonJS
 const swal = require('sweetalert2')</code></pre>
+    <p>It's possible to import JS and CSS separately, e.g. if you need to customize styles:</p>
+    <pre>
+<code>import swal from 'sweetalert2/src/sweetalert2.js'
 
+import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     <p class="mobile-hidden">2. Call the sweetAlert2-function after the page has loaded</p>
 <pre><code>swal({
   title: 'Error!',
