@@ -597,7 +597,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
-        js_external: 'https://unpkg.com/sweetalert2;https://unpkg.com/promise-polyfill'
+        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2;https://cdn.jsdelivr.net/npm/promise-polyfill'
       }
       if (pre.getAttribute('data-codepen-html')) {
         codepenValue.html = pre.getAttribute('data-codepen-html')
