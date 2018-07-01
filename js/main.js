@@ -522,7 +522,7 @@ document.querySelector('.examples .chaining-modals button').onclick = () => {
     if (result.value) {
       swal({
         title: 'All done!',
-        html: 'Your answers: <pre>' + JSON.stringify(result.value) + '</pre>',
+        html: 'Your answers: <pre><code>' + JSON.stringify(result.value) + '</code></pre>',
         confirmButtonText: 'Lovely!'
       })
     }

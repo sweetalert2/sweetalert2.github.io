@@ -414,9 +414,9 @@ swal({
     swal({
       title: 'All done!',
       html:
-        'Your answers: &lt;pre&gt;' +
+        'Your answers: &lt;pre&gt;&lt;code&gt;' +
           JSON.stringify(result.value) +
-        '&lt;/pre&gt;',
+        '&lt;/code&gt;&lt;/pre&gt;',
       confirmButtonText: 'Lovely!'
     })
   }
@@ -487,12 +487,14 @@ import swal from 'sweetalert2'
 
 // CommonJS
 const swal = require('sweetalert2')</code></pre>
-    <p>It's possible to import JS and CSS separately, e.g. if you need to customize styles:</p>
-    <pre>
+    <div class="mobile-hidden">
+      <p>It's possible to import JS and CSS separately, e.g. if you need to customize styles:</p>
+      <pre>
 <code>import swal from 'sweetalert2/src/sweetalert2.js'
 
 import 'sweetalert2/src/sweetalert2.scss'</code></pre>
-    <p class="mobile-hidden">2. Call the sweetAlert2-function after the page has loaded</p>
+      <p>2. Call the sweetAlert2-function after the page has loaded</p>
+    </div>
 <pre><code>swal({
   title: 'Error!',
   text: 'Do you want to continue',

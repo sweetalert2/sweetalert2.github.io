@@ -45,7 +45,7 @@ nav {
     text-decoration: none !important;
     border-bottom: 1px solid #e2e5e8;
     opacity: .7; }
-    nav a:before {
+    nav a::before {
       content: '›';
       margin-right: 1em; }
     nav a:hover {
@@ -183,11 +183,6 @@ pre {
   background: #282c34;
   text-align: left;
   position: relative; }
-  @media all and (max-width: 30rem) {
-    pre {
-      max-width: 30.25em;
-      font-size: .8em;
-      margin: 0 auto; } }
   pre code {
     display: block;
     padding: .5em;
@@ -223,6 +218,9 @@ pre {
     @media all and (max-width: 46.875rem) {
       pre.code-sample::after {
         display: none; } }
+
+.swal2-content code {
+  text-align: center; }
 
 kbd {
   border: 1px solid #8d98a5;
@@ -297,7 +295,8 @@ kbd {
       .examples pre {
         display: block;
         max-width: none;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        font-size: .8em; } }
   .examples .ui {
     width: 18.75rem;
     text-align: center; }
