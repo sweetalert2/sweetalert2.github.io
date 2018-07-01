@@ -49,7 +49,7 @@ nav {
     border-bottom: 1px solid $porcelain;
     opacity: .7;
 
-    &:before {
+    &::before {
       content: '›';
       margin-right: 1em;
     }
@@ -232,12 +232,6 @@ pre {
   text-align: left;
   position: relative;
 
-  @media all and (max-width: 30rem) {
-    max-width: 30.25em;
-    font-size: .8em;
-    margin: 0 auto;
-  }
-
   code {
     display: block;
     padding: .5em;
@@ -281,6 +275,12 @@ pre {
         display: none;
       }
     }
+  }
+}
+
+.swal2-content {
+  code {
+    text-align: center;
   }
 }
 
@@ -375,6 +375,7 @@ kbd {
       display: block;
       max-width: none;
       margin: 0 auto;
+      font-size: .8em;
     }
   }
 
