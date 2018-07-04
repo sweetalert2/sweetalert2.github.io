@@ -204,8 +204,8 @@ document.querySelector('.examples .error button').onclick = () => {
 
 document.querySelector('.examples #long-text button').onclick = () => {
   swal({
-    imageUrl: './images/robot.jpg',
-    imageHeight: 1512,
+    imageUrl: 'https://placeholder.pics/svg/300x1500',
+    imageHeight: 1500,
     imageAlt: 'A tall image'
   })
 }
