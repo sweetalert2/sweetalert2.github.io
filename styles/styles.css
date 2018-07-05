@@ -37,7 +37,7 @@ nav {
   @media all and (max-width: 77rem) {
     nav {
       left: 0; } }
-  nav a {
+  nav [href*='#'] {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -45,16 +45,37 @@ nav {
     text-decoration: none !important;
     border-bottom: 1px solid #e2e5e8;
     opacity: .7; }
-    nav a::before {
+    nav [href*='#']::before {
       content: '›';
       margin-right: 1em; }
-    nav a:hover {
+    nav [href*='#']:hover {
       opacity: 1; }
-    nav a span {
+    nav [href*='#'] span {
       -webkit-box-flex: 1;
           -ms-flex-positive: 1;
               flex-grow: 1;
       text-align: left; }
+  nav .share-the-love {
+    margin: 2em 0 0 .6em;
+    text-align: left;
+    font-size: 1.1em; }
+    nav .share-the-love .fa-heart-o {
+      color: #eb4c36; }
+    nav .share-the-love .social-buttons {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-top: .2em; }
+      nav .share-the-love .social-buttons a {
+        text-decoration: none;
+        margin-right: .4em; }
+      nav .share-the-love .social-buttons .facebook-button {
+        color: #425f9c; }
+      nav .share-the-love .social-buttons .twitter-button {
+        color: #1da1f3; }
 
 header {
   max-width: 40.625rem;
