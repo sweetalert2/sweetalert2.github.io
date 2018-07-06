@@ -71,11 +71,16 @@ nav {
       margin-top: .2em; }
       nav .share-the-love .social-buttons a {
         text-decoration: none;
-        margin-right: .4em; }
+        display: inline-block;
+        width: 1.2em; }
       nav .share-the-love .social-buttons .facebook-button {
         color: #425f9c; }
       nav .share-the-love .social-buttons .twitter-button {
         color: #1da1f3; }
+      nav .share-the-love .social-buttons > * {
+        opacity: .8; }
+        nav .share-the-love .social-buttons > *:hover {
+          opacity: 1; }
 
 header {
   max-width: 40.625rem;
