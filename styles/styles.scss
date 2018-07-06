@@ -80,7 +80,8 @@ nav {
 
       a {
         text-decoration: none;
-        margin-right: .4em;
+        display: inline-block;
+        width: 1.2em;
       }
 
       .facebook-button {
@@ -89,6 +90,14 @@ nav {
 
       .twitter-button {
         color: $twitter;
+      }
+
+      > * {
+        opacity: .8;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
