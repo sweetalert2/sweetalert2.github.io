@@ -999,10 +999,17 @@ toast({
       <td><strong>text</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getName () {" data-codepen-js-after="})()">
-<code>const {value: name} = await swal({
-  title: 'What is your name?',
+<code>const inputValue = fetch('https://ipsidekick.com/json')
+  .then(response => response.json())
+  .then(response => {
+    return Promise.resolve(response.country.name)
+  })
+
+
+const {value: name} = await swal({
+  title: 'Enter your location',
   input: 'text',
-  inputPlaceholder: 'Enter your name or nickname',
+  inputValue: inputValue,
   showCancelButton: true,
   inputValidator: (value) => {
     return !value && 'You need to write something!'
@@ -1010,7 +1017,7 @@ toast({
 })
 
 if (name) {
-  swal({type: 'success', title: 'Hi, ' + name})
+  swal(`You are from ${location}`)
 }</code></pre>
       </td>
       <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>

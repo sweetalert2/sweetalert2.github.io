@@ -286,16 +286,22 @@ document.querySelector('.examples .custom-width-padding-background button').oncl
 
 document.querySelector('.input-type-text').onclick = () => {
   (async function getName () {
-    const {value: name} = await swal({
-      title: 'What is your name?',
+    const inputValue = fetch('https://ipsidekick.com/json')
+      .then(response => response.json())
+      .then(response => {
+        return Promise.resolve(response.country.name)
+      })
+
+    const {value: location} = await swal({
+      title: 'Enter your location',
       input: 'text',
-      inputPlaceholder: 'Enter your name or nickname',
+      inputValue: inputValue,
       showCancelButton: true,
       inputValidator: (value) => {
         return !value && 'You need to write something!'
       }
     })
-    name && swal({type: 'success', title: `Hi, ${name}`})
+    location && swal(`You are from ${location}`)
   })()
 }
 

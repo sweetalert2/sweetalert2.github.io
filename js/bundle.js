@@ -9317,30 +9317,35 @@ document.querySelector('.examples .custom-width-padding-background button').oncl
 document.querySelector('.input-type-text').onclick = function () {
   (function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var _ref2, name;
+      var inputValue, _ref2, location;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              inputValue = fetch('https://ipsidekick.com/json').then(function (response) {
+                return response.json();
+              }).then(function (response) {
+                return Promise.resolve(response.country.name);
+              });
+              _context.next = 3;
               return swal({
-                title: 'What is your name?',
+                title: 'Enter your location',
                 input: 'text',
-                inputPlaceholder: 'Enter your name or nickname',
+                inputValue: inputValue,
                 showCancelButton: true,
                 inputValidator: function inputValidator(value) {
                   return !value && 'You need to write something!';
                 }
               });
 
-            case 2:
+            case 3:
               _ref2 = _context.sent;
-              name = _ref2.value;
+              location = _ref2.value;
 
-              name && swal({ type: 'success', title: 'Hi, ' + name });
+              location && swal('You are from ' + location);
 
-            case 5:
+            case 6:
             case 'end':
               return _context.stop();
           }
