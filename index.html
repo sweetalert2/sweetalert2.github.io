@@ -690,6 +690,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>true</i></td>
         <td>If set to <strong>false</strong>, SweetAlert2 will allow <strong>keydown</strong> events propagation to the document.</td>
       </tr>
+      <tr id="keydown-listener-capture">
+        <td><b>keydownListenerCapture</b></td>
+        <td><i>false</i></td>
+        <td>Useful for those who are using SweetAlert2 along with Bootstrap modals. By default <strong>keydownListenerCapture</strong> is <strong>false</strong> which means when a user hits <kbd>Esc</kbd>, both SweetAlert2 and Bootstrap modals will be closed. Set <strong>keydownListenerCapture</strong> to <strong>true</strong> to fix that behavior.</td>
+      </tr>
       <tr>
         <td><b>showConfirmButton</b></td>
         <td><i>true</i></td>
