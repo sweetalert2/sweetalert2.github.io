@@ -144,7 +144,7 @@ document.querySelector('.examples .timer button').onclick = () => {
 
 document.querySelector('.examples .html button').onclick = () => {
   swal({
-    title: '<i>HTML</i> <u>example</u>',
+    title: '<strong>HTML <u>example</u></strong>',
     type: 'info',
     html:
       'You can use <b>bold text</b>, ' +
