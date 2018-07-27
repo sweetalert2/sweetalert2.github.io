@@ -9190,7 +9190,7 @@ document.querySelector('.examples .timer button').onclick = function () {
 
 document.querySelector('.examples .html button').onclick = function () {
   swal({
-    title: '<i>HTML</i> <u>example</u>',
+    title: '<strong>HTML <u>example</u></strong>',
     type: 'info',
     html: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
     showCloseButton: true,
