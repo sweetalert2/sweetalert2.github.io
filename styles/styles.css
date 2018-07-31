@@ -208,7 +208,8 @@ pre {
   color: #f7f7f7;
   background: #282c34;
   text-align: left;
-  position: relative; }
+  position: relative;
+  line-height: 1.2; }
   pre code {
     display: block;
     padding: .5em;
