@@ -1008,16 +1008,15 @@ toast({
     <tr id="input-text">
       <td><strong>text</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getName () {" data-codepen-js-after="})()">
-<code>const inputValue = fetch('https://ipsidekick.com/json')
+        <pre class="code-sample" data-codepen-js-before="(async function getIpAddress () {" data-codepen-js-after="})()">
+<code>const ipAPI = 'https://api.ipify.org?format=json'
+
+const inputValue = fetch(ipAPI)
   .then(response => response.json())
-  .then(response => {
-    return Promise.resolve(response.country.name)
-  })
+  .then(data => data.ip)
 
-
-const {value: name} = await swal({
-  title: 'Enter your location',
+const {value: ipAddress} = await swal({
+  title: 'Enter your IP address',
   input: 'text',
   inputValue: inputValue,
   showCancelButton: true,
@@ -1026,8 +1025,8 @@ const {value: name} = await swal({
   }
 })
 
-if (name) {
-  swal(`You are from ${location}`)
+if (ipAddress) {
+  swal(`Your IP address is ${ipAddress}`)
 }</code></pre>
       </td>
       <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>
@@ -1522,6 +1521,6 @@ if (formValues) {
   <form id="codepen-form" action="https://codepen.io/pen/define" method="POST" target="_blank">
     <input type="hidden" name="data" id="codepen-data">
   </form>
-  <script src="./js/bundle.js" defer></script>
+  <script src="./dist/bundle.js" defer></script>
 </body>
 </html>
