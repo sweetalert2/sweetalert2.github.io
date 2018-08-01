@@ -285,15 +285,15 @@ document.querySelector('.examples .custom-width-padding-background button').oncl
 }
 
 document.querySelector('.input-type-text').onclick = () => {
-  (async function getName () {
-    const inputValue = fetch('https://ipsidekick.com/json')
-      .then(response => response.json())
-      .then(response => {
-        return Promise.resolve(response.country.name)
-      })
+  (async function getIpAddress () {
+    const ipAPI = 'https://api.ipify.org?format=json'
 
-    const {value: location} = await swal({
-      title: 'Enter your location',
+    const inputValue = fetch(ipAPI)
+      .then(response => response.json())
+      .then(data => data.ip)
+
+    const {value: ipAddress} = await swal({
+      title: 'Enter your IP address',
       input: 'text',
       inputValue: inputValue,
       showCancelButton: true,
@@ -301,7 +301,7 @@ document.querySelector('.input-type-text').onclick = () => {
         return !value && 'You need to write something!'
       }
     })
-    location && swal(`You are from ${location}`)
+    ipAddress && swal(`Your IP address is ${ipAddress}`)
   })()
 }
 

@@ -3,6 +3,8 @@ const sass = require('gulp-sass')
 const autoprefix = require('gulp-autoprefixer')
 const sassLint = require('gulp-sass-lint')
 const browserSync = require('browser-sync').create()
+const webpack = require('webpack')
+const webpackStream = require('webpack-stream')
 
 const styles = [
   'styles/styles.scss',
@@ -34,6 +36,41 @@ gulp.task('watch', () => {
     reloadOnRestart: true,
     https: false,
     server: ['./']
+  })
+
+  gulp.watch([
+    'src/app.js'
+  ]).on('change', () => {
+    return gulp.src('src/app.js')
+      .pipe(webpackStream({
+        entry: ['babel-polyfill', './src/app.js'],
+        output: {
+          filename: 'bundle.js'
+        },
+        module: {
+          rules: [
+            {
+              test: /\.js?$/,
+              exclude: /(node_modules)/,
+              use: 'babel-loader'
+            },
+            {
+              test: /\.css?$/,
+              use: [
+                'style-loader',
+                'css-loader'
+              ]
+            }
+          ]
+        },
+        plugins: [
+          new webpack.ProvidePlugin({
+            'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+          })
+        ],
+        mode: 'production'
+      }))
+      .pipe(gulp.dest('dist/'))
   })
 
   gulp.watch([
