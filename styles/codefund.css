@@ -17,7 +17,8 @@
           -ms-flex-pack: center;
               justify-content: center;
       padding: 0;
-      background-color: #eee; }
+      background-color: #eee;
+      font-family: inherit; }
       @media all and (max-width: 46.875rem) {
         #codefund_ad #cf_ad .cf-wrapper {
           -webkit-box-orient: vertical;
