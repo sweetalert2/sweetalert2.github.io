@@ -465,3 +465,9 @@ table {
   font-size: .8125em;
   opacity: 0;
   margin-top: .4375em; }
+
+.unselectable {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }

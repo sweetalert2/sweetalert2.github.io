@@ -603,3 +603,7 @@ table {
   opacity: 0;
   margin-top: .4375em;
 }
+
+.unselectable {
+  user-select: none;
+}

@@ -487,9 +487,9 @@ swal.queue([{
   <!-- Download & Install -->
   <div class="center-container download-section">
     <h3 id="download">Download & install</h3>
-    <pre class="center"><code>$ npm install sweetalert2</code></pre>
+    <pre class="center"><code><span class="unselectable">$ </span>npm install sweetalert2</code></pre>
     <p>Or</p>
-    <pre class="center"><code>$ bower install sweetalert2</code></pre>
+    <pre class="center"><code><span class="unselectable">$ </span>bower install sweetalert2</code></pre>
     <p>
       Or download from CDN:
       <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">jsdelivr.com/package/npm/sweetalert2 <i class="fa fa-external-link"></i></a>
@@ -529,7 +529,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   title: 'Error!',
   text: 'Do you want to continue',
   type: 'error',
-  confirmButtonText: 'Cool'</span>
+  confirmButtonText: 'Cool'
 })</code></pre>
   </div>
 
@@ -580,14 +580,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>The title of the modal, as text. Useful to avoid HTML injection.</td>
       </tr>
       <tr>
-        <td><b>text</b></td>
-        <td><i>null</i></td>
-        <td>A description for the modal. It can either be added to the object under the key "text" or passed as the second parameter of the function.</td>
-      </tr>
-      <tr>
         <td><b>html</b></td>
         <td><i>null</i></td>
-        <td>A HTML description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
+        <td>A HTML description for the modal. It can either be added to the object under the key "html" or passed as the second parameter of the function.</td>
+      </tr>
+      <tr>
+        <td><b>text</b></td>
+        <td><i>null</i></td>
+        <td>A description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
       </tr>
       <tr>
         <td><b>type</b></td>
@@ -1233,7 +1233,7 @@ if (file) {
     max: 120,
     step: 1
   },
-  inputValue: 25</span>
+  inputValue: 25
 })</code></pre>
       </td>
       <td><button class="input-type-range" aria-label="Try me! Example: input type range">Try me!</button></td>
@@ -1259,8 +1259,8 @@ if (file) {
   focusConfirm: false,
   preConfirm: () => {
     return [
-      document.getElementById('swal-input1'</span>).value,
-      document.getElementById('swal-input2'</span>).value
+      document.getElementById('swal-input1').value,
+      document.getElementById('swal-input2').value
     ]
   }
 })
@@ -1373,7 +1373,7 @@ if (formValues) {
       </tr>
       <tr>
         <td><i>swal.isLoading()</i></td>
-        <td>Determine if modal is in the loading state. Related methods: <a href="#showLoading">swal.showLoading()</a> and  <a href="#hideLoading">swal.hideLoading()</a></td>
+        <td>Determine if modal is in the loading state. Related methods: <a href="#showLoading" class="nowrap">swal.showLoading()</a> and <a href="#hideLoading" class="nowrap">swal.hideLoading()</a></td>
       </tr>
       <tr id="getTimerLeft">
         <td><i>swal.getTimerLeft()</i></td>
