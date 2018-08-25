@@ -7,6 +7,5 @@
 ## Development
 
 ```sh
-yarn install
-gulp watch
+yarn start
 ```
