@@ -7,13 +7,18 @@ body {
 
 body {
   background-color: #f2f4f6;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   color: #555;
   padding-bottom: 2em; }
   @media all and (max-width: 54.0625rem) {
     body {
       padding-bottom: 0; } }
+
+body,
+input,
+textarea,
+select {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 nav {
   position: fixed;

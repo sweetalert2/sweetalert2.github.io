@@ -15,14 +15,19 @@ body {
 
 body {
   background-color: $athens;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-  Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   color: $emperor;
   padding-bottom: 2em;
   @media all and (max-width: 54.0625rem) {
     padding-bottom: 0;
   }
+}
+
+body,
+input,
+textarea,
+select {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 nav {
