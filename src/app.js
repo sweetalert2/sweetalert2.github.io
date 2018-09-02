@@ -346,7 +346,7 @@ document.querySelector('.input-type-textarea').onclick = () => {
   (async function getMessage () {
     const {value: text} = await swal({
       input: 'textarea',
-      inputPlaceholder: 'Type your message here',
+      inputPlaceholder: 'Type your message here...',
       inputAttributes: {
         'aria-label': 'Type your message here'
       },
