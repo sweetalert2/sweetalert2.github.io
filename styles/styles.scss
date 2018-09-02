@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
 
 @import 'colors';
 
@@ -277,6 +278,8 @@ pre {
   line-height: 1.2;
 
   code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: .8em;
     display: block;
     padding: .5em;
     border-radius: .3125em;
