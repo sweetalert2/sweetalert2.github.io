@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 html,
 body {
   margin: 0;
@@ -216,6 +217,8 @@ pre {
   position: relative;
   line-height: 1.2; }
   pre code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: .8em;
     display: block;
     padding: .5em;
     border-radius: .3125em; }
