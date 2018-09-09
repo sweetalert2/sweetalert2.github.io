@@ -626,3 +626,12 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
     }
   })
 })
+
+// CodeFund close button
+var codefundAd = document.querySelector('#codefund_ad')
+codefundAd.addEventListener('click', function (e) {
+  if (e.offsetX > codefundAd.clientWidth - 30) {
+    e.preventDefault()
+    codefundAd.parentNode.removeChild(codefundAd)
+  }
+})

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #codefund_ad {
   position: fixed;
   bottom: 0;
@@ -16,7 +17,7 @@
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      padding: 0;
+      padding: 0 30px 0 0;
       background-color: #eee;
       font-family: inherit; }
       @media all and (max-width: 46.875rem) {
@@ -44,10 +45,32 @@
       width: auto;
       height: 2em; }
     #codefund_ad #cf_ad .cf-text {
+      text-align: center;
       text-decoration: none; }
     #codefund_ad #cf_ad .cf-powered-by {
-      margin-left: .5em; }
+      margin-left: .5em;
+      text-align: center; }
+  #codefund_ad::after {
+    content: '×';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1.6em;
+    width: 30px;
+    cursor: pointer; }
 
 @media all and (max-width: 46.875rem) {
-  #codefund_ad {
-    position: initial; } }
+  #codefund_ad::after {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; } }
