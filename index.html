@@ -66,6 +66,7 @@
         <!-- Facebook -->
         <a
             href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsweetalert2.github.io&t="
+            rel="noopener"
             title="Share on Facebook"
             onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"
             class="facebook-button"
@@ -76,6 +77,7 @@
         <!-- Twitter -->
         <a
             href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fsweetalert2.github.io&text=:%20https%3A%2F%2Fsweetalert2.github.io"
+            rel="noopener"
             title="Tweet"
             onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"
             class="twitter-button"
@@ -537,14 +539,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     <h3 id="frameworks-integrations">Integrations with major JS frameworks</h3>
     <div class="frameworks-integrations">
       <div>
-        <a href="https://github.com/sweetalert2/ngx-sweetalert2" target="_blank" aria-label="Angular integration">
+        <a href="https://github.com/sweetalert2/ngx-sweetalert2" target="_blank" rel="noopener" aria-label="Angular integration">
           Angular
           <br>
           <img src="/images/angular.svg" width="125" alt="">
         </a>
       </div>
       <div>
-        <a href="https://github.com/sweetalert2/sweetalert2-react-content" target="_blank" aria-label="React integration">
+        <a href="https://github.com/sweetalert2/sweetalert2-react-content" target="_blank" rel="noopener" aria-label="React integration">
           React
           <br>
           <img src="/images/react.svg" width="125" alt="">
@@ -1247,7 +1249,7 @@ if (file) {
     </p>
   </div>
   <table class="input-types">
-    <tr id="multiple-inputs">
+    <tr>
       <td class="mobile-hidden"></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
