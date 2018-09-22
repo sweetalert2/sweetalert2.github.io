@@ -48,7 +48,7 @@
       text-align: center;
       text-decoration: none; }
     #codefund_ad #cf_ad .cf-powered-by {
-      margin-left: .5em;
+      margin: 0 1em;
       text-align: center; }
   #codefund_ad::after {
     content: '×';
