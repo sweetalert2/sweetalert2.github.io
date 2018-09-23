@@ -407,7 +407,7 @@ swal({
         return response.json()
       })
       .catch(error => {
-        swal.showValidationError(
+        swal.showValidationMessage(
           `Request failed: ${error}`
         )
       })
@@ -1390,14 +1390,6 @@ if (formValues) {
         <td>Click the "Cancel"-button programmatically.</td>
       </tr>
       <tr>
-        <td><i>swal.showValidationError(error)</i></td>
-        <td>Show validation error message.</td>
-      </tr>
-      <tr>
-        <td><i>swal.resetValidationError()</i></td>
-        <td>Hide validation error message.</td>
-      </tr>
-      <tr>
         <td><i>swal.getInput()</i></td>
         <td>Get the input DOM node, this method works with <a href="#input-parameter">input parameter</a>.</td>
       </tr>
@@ -1408,6 +1400,18 @@ if (formValues) {
       <tr>
         <td><i>swal.enableInput()</i></td>
         <td>Enable input.</td>
+      </tr>
+      <tr>
+        <td><i>swal.showValidationMessage(error)</i></td>
+        <td>Show the validation message DOM node.</td>
+      </tr>
+      <tr>
+        <td><i>swal.resetValidationMessage()</i></td>
+        <td>Hide the validation message DOM node.</td>
+      </tr>
+      <tr>
+        <td><i>swal.getValidationMessage()</i></td>
+        <td>Get the validation message DOM node.</td>
       </tr>
       <tr>
         <td><i>swal.queue([Array])</i></td>
