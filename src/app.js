@@ -1,4 +1,4 @@
-/* global swal, fetch, MutationObserver, FileReader, _bsa */
+/* global swal, fetch, MutationObserver, FileReader, _bsa, _native */
 import hljs from '../node_modules/highlight.js/lib/highlight'
 import hljsJS from '../node_modules/highlight.js/lib/languages/javascript'
 import hljsXML from '../node_modules/highlight.js/lib/languages/xml'
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadStyleSheet('./styles/buysellads.css')
   loadStyleSheet('./styles/carbon-ads.css')
-  loadStyleSheet('./styles/codefund.css')
+  loadStyleSheet('./styles/native-js.css')
   loadStyleSheet('./styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css')
@@ -623,11 +623,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
   })
 })
 
-// CodeFund close button
-var codefundAd = document.querySelector('#codefund_ad')
-codefundAd.addEventListener('click', function (e) {
-  if (e.offsetX > codefundAd.clientWidth - 30) {
-    e.preventDefault()
-    codefundAd.parentNode.removeChild(codefundAd)
-  }
+// BuySellAdd native.js (fixed footer)
+_native.init('CK7DKKQI', {
+  targetClass: 'native-js'
 })

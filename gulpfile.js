@@ -10,7 +10,7 @@ const styles = [
   'styles/styles.scss',
   'styles/buysellads.scss',
   'styles/carbon-ads.scss',
-  'styles/codefund.scss'
+  'styles/native-js.scss'
 ]
 
 gulp.task('sass', ['sass-lint'], (cb) => {
@@ -43,7 +43,7 @@ gulp.task('watch', () => {
   ]).on('change', () => {
     return gulp.src('src/app.js')
       .pipe(webpackStream({
-        entry: ['babel-polyfill', './src/app.js'],
+        entry: ['babel-polyfill', './src/native.js', './src/app.js'],
         output: {
           filename: 'bundle.js'
         },
@@ -68,6 +68,7 @@ gulp.task('watch', () => {
             'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
           })
         ],
+        // mode: 'development'
         mode: 'production'
       }))
       .pipe(gulp.dest('dist/'))
