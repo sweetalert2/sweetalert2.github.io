@@ -1520,9 +1520,27 @@ if (formValues) {
   <div class="bsa-cpc"></div>
 
 
-  <!-- CodeFund -->
-  <script src="https://codefund.io/scripts/73544951-de9a-4bb3-8d48-204a2737c57f/embed.js" defer></script>
-  <div id="codefund_ad"></div>
+  <!--
+    The following <div> and the content will be replaced by the values of the ads.
+    It’s also why the .native-js in the CSS is set to hidden by default, and only set to display where there is ads available.
+  -->
+  <div class="native-js">
+    <a href="#native_link#" class="native-flex #native_index#">
+      <style>
+        .#native_index# .native-cta {
+          border-color: #native_bg_color#;
+        }
+
+        .#native_index# .native-img {
+          background-color: #native_bg_color#;
+        }
+      </style>
+      <div class="native-img"><img src="#native_logo#"></div>
+      <div class="native-desc"><span class="native-sponsor">Sponsored</span>#native_desc#</div>
+      <div class="native-cta">#native_cta#</div>
+    </a>
+    <div class="native-close" onclick="_native.hide()">&#x2573;</div>
+  </div>
 
 
   <!-- GitHub corner -->
