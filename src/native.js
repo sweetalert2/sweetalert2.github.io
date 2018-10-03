@@ -58,10 +58,10 @@ window._native = (function () {
       _local.setItem('native_hidden_date', new Date())
     }
 
-    var selectedClass = document.querySelectorAll('.' + _options['targetClass'])
+    var selectedClass = Array.from(document.querySelectorAll('.' + _options['targetClass']))
     selectedClass.forEach(function (className, index) {
       var selectedTarget = document.getElementsByClassName(_options['targetClass'])[index]
-      selectedTarget.innerHTML = null
+      selectedTarget.innerHTML = ''
       selectedTarget.style.display = 'none'
     })
   }
@@ -117,7 +117,7 @@ window._native = (function () {
 window._native_go = function (json) {
   var options = window._native.options()
   var ads = window._native.sanitize(json['ads'])
-  var selectedClass = document.querySelectorAll('.' + options['targetClass'])
+  var selectedClass = Array.from(document.querySelectorAll('.' + options['targetClass']))
 
   if (ads.length < 1) {
     selectedClass.forEach(function (className, index) {
@@ -158,11 +158,11 @@ window._native_go = function (json) {
         .replace(new RegExp('#' + prefix + '_color_hover#', 'g'), ad['textColorHover'])
         .replace(new RegExp('#' + prefix + '_title#', 'g'), ad['title'])
 
-      selectedTarget.innerHTML = null
+      selectedTarget.innerHTML = ''
       selectedTarget.innerHTML += adInnerHtml + window._native.pixel(ad['pixel'], ad['timestamp'])
       selectedTarget.setAttribute('data-state', 'visible')
     } else {
-      selectedTarget.innerHTML = null
+      selectedTarget.innerHTML = ''
       selectedTarget.style.display = 'none'
     }
   })
