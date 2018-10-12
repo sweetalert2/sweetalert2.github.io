@@ -353,28 +353,29 @@ document.querySelector('.input-type-textarea').onclick = () => {
 }
 
 document.querySelector('.input-type-select').onclick = () => {
-  (async function getCountry () {
-    const {value: country} = await swal({
-      title: 'Select Ukraine',
+  (async function getFruit () {
+    const {value: fruit} = await swal({
+      title: 'Select field validation',
       input: 'select',
       inputOptions: {
-        'SRB': 'Serbia',
-        'UKR': 'Ukraine',
-        'HRV': 'Croatia'
+        'apples': 'Apples',
+        'bananas': 'Bananas',
+        'grapes': 'Grapes',
+        'oranges': 'Oranges'
       },
-      inputPlaceholder: 'Select country',
+      inputPlaceholder: 'Select a fruit',
       showCancelButton: true,
       inputValidator: (value) => {
         return new Promise((resolve) => {
-          if (value === 'UKR') {
+          if (value === 'oranges') {
             resolve()
           } else {
-            resolve('You need to select Ukraine :)')
+            resolve('You need to select oranges :)')
           }
         })
       }
     })
-    country && swal({html: 'You selected: <strong>' + country + '</strong>'})
+    fruit && swal({html: 'You selected: <strong>' + fruit + '</strong>'})
   })()
 }
 
