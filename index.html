@@ -1112,30 +1112,31 @@ if (text) {
     <tr id="input-select">
       <td><strong>select</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getCountry () {" data-codepen-js-after="})()">
-<code>const {value: country} = await swal({
-  title: 'Select Ukraine',
+        <pre class="code-sample" data-codepen-js-before="(async function getFruit () {" data-codepen-js-after="})()">
+<code>const {value: fruit} = await swal({
+  title: 'Select field validation',
   input: 'select',
   inputOptions: {
-    'SRB': 'Serbia',
-    'UKR': 'Ukraine',
-    'HRV': 'Croatia'
+    'apples': 'Apples',
+    'bananas': 'Bananas',
+    'grapes': 'Grapes',
+    'oranges': 'Oranges'
   },
-  inputPlaceholder: 'Select country',
+  inputPlaceholder: 'Select a fruit',
   showCancelButton: true,
   inputValidator: (value) => {
     return new Promise((resolve) => {
-      if (value === 'UKR') {
+      if (value === 'oranges') {
         resolve()
       } else {
-        resolve('You need to select Ukraine :)')
+        resolve('You need to select oranges :)')
       }
     })
   }
 })
 
-if (country) {
-  swal('You selected: ' + country)
+if (fruit) {
+  swal('You selected: ' + fruit)
 }</code></pre>
       </td>
       <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
