@@ -23,7 +23,7 @@ select {
 
 nav {
   position: fixed;
-  top: 3em;
+  top: 2em;
   left: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -437,7 +437,8 @@ table {
 
 .frameworks-integrations,
 .donation-options,
-.collaborators {
+.collaborators,
+.backers {
   max-width: 43.75rem;
   margin: auto;
   display: -webkit-box;
@@ -450,19 +451,24 @@ table {
   font-size: 1.25em; }
   .frameworks-integrations a,
   .donation-options a,
-  .collaborators a {
+  .collaborators a,
+  .backers a {
     display: inline-block;
     min-width: 6.875em;
     text-decoration: none; }
   .frameworks-integrations img,
   .donation-options img,
-  .collaborators img {
+  .collaborators img,
+  .backers img {
     width: 5em;
     height: 5em;
     margin-top: .625em; }
 
 .collaborators {
   font-size: .8125em; }
+
+.backers {
+  font-size: 1.25em; }
 
 .hall-of-donators {
   display: inline-block;

@@ -33,7 +33,7 @@ select {
 
 nav {
   position: fixed;
-  top: 3em;
+  top: 2em;
   left: 1em;
   display: flex;
   flex-direction: column;
@@ -575,7 +575,8 @@ table {
 
 .frameworks-integrations,
 .donation-options,
-.collaborators {
+.collaborators,
+.backers {
   max-width: 43.75rem;
   margin: auto;
   display: flex;
@@ -598,6 +599,10 @@ table {
 
 .collaborators {
   font-size: .8125em;
+}
+
+.backers {
+  font-size: 1.25em;
 }
 
 .hall-of-donators {
