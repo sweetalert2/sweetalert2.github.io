@@ -84,6 +84,32 @@ function showStats () {
   }
 }
 
+function ordinalSuffix (i) {
+  i = parseInt(i)
+  const j = i % 10
+  const k = i % 100
+  if (j === 1 && k !== 11) {
+    return i + 'st'
+  }
+  if (j === 2 && k !== 12) {
+    return i + 'nd'
+  }
+  if (j === 3 && k !== 13) {
+    return i + 'rd'
+  }
+  return i + 'th'
+}
+
+fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
+  .then(response => response.json())
+  .then(response => {
+    document.querySelector('.jsdelivr-info').innerHTML =
+      'sweetalert2 is the <strong>' + ordinalSuffix(response.rank) + '</strong>' +
+      ' most popular package on jsDelivr, with ' +
+      '<strong>' + parseInt(response.total).toLocaleString() + '</strong>' +
+      ' CDN hits in the last month'
+  })
+
 document.querySelector('.showcase.normal button').onclick = () => {
   window.alert('You clicked the button!')
 }

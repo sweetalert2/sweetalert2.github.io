@@ -13,13 +13,6 @@ const styles = [
   'styles/native-js.scss'
 ]
 
-gulp.task('sass', ['sass-lint'], (cb) => {
-  return gulp.src(styles)
-    .pipe(sass())
-    .pipe(autoprefix())
-    .pipe(gulp.dest('styles'))
-})
-
 gulp.task('sass-lint', () => {
   return gulp.src(styles)
     .pipe(sassLint())
@@ -27,7 +20,14 @@ gulp.task('sass-lint', () => {
     .pipe(sassLint.failOnError())
 })
 
-gulp.task('default', ['sass'])
+gulp.task('sass', gulp.series('sass-lint', () => {
+  return gulp.src(styles)
+    .pipe(sass())
+    .pipe(autoprefix())
+    .pipe(gulp.dest('styles'))
+}))
+
+gulp.task('default', gulp.series('sass'))
 
 gulp.task('watch', () => {
   browserSync.init({
@@ -82,5 +82,5 @@ gulp.task('watch', () => {
 
   gulp.watch([
     'styles/*.scss'
-  ], ['sass'])
+  ], gulp.series('sass'))
 })
