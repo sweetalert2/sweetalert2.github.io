@@ -116,7 +116,7 @@
     <img src="/images/swal2-logo.png" width="178" height="30" alt="SweetAlert2">
     <button aria-label="Show SweetAlert2 success message">Show success message</button>
     <pre class="code-sample">
-<code>swal(
+<code>Swal(
   'Good job!',
   'You clicked the button!',
   'success'
@@ -137,7 +137,7 @@
         <p>A basic message</p>
         <button aria-label="Try me! Example: A basic message">Try me!</button>
       </div>
-      <pre class="code-sample"><code>swal('Any fool can use a computer')</code></pre>
+      <pre class="code-sample"><code>Swal('Any fool can use a computer')</code></pre>
     </li>
 
     <li class="title-text">
@@ -146,7 +146,7 @@
         <button aria-label="Try me! Example: A title with a text under">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal(
+<code>Swal(
   'The Internet?',
   'That thing is still around?',
   'question'
@@ -159,7 +159,7 @@
         <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   type: 'error',
   title: 'Oops...',
   text: 'Something went wrong!',
@@ -173,7 +173,7 @@
         <button aria-label="Try me! Example: A modal window with a long content inside">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   imageUrl: 'https://placeholder.pics/svg/300x1500',
   imageHeight: 1500,
   imageAlt: 'A tall image'
@@ -186,7 +186,7 @@
         <button aria-label="Try me! Example: Custom HTML description and buttons">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-<code class="lang-javascript">swal({
+<code class="lang-javascript">Swal({
   title: '&lt;strong&gt;HTML &lt;u&gt;example&lt;/u&gt;&lt;/strong&gt;',
   type: 'info',
   html:
@@ -211,7 +211,7 @@
         <button aria-label="Try me! Example: A custom positioned dialog">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   position: 'top-end',
   type: 'success',
   title: 'Your work has been saved',
@@ -226,7 +226,7 @@
         <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
-<code>swal({
+<code>Swal({
   title: 'Custom animation with Animate.css',
   animation: false,
   customClass: 'animated tada'
@@ -239,7 +239,7 @@
         <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
   type: 'warning',
@@ -249,7 +249,7 @@
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.value) {
-    swal(
+    Swal(
       'Deleted!',
       'Your file has been deleted.',
       'success'
@@ -264,7 +264,7 @@
         <button aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="http://sweetalert2.github.io/styles/bootstrap4-buttons.css">
-<code>const swalWithBootstrapButtons = swal.mixin({
+<code>const swalWithBootstrapButtons = Swal.mixin({
   confirmButtonClass: 'btn btn-success',
   cancelButtonClass: 'btn btn-danger',
   buttonsStyling: false,
@@ -287,7 +287,7 @@ swalWithBootstrapButtons({
     )
   } else if (
     // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
-    result.dismiss === swal.DismissReason.cancel
+    result.dismiss === Swal.DismissReason.cancel
   ) {
     swalWithBootstrapButtons(
       'Cancelled',
@@ -304,7 +304,7 @@ swalWithBootstrapButtons({
         <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   title: 'Sweet!',
   text: 'Modal with a custom image.',
   imageUrl: 'https://unsplash.it/400/200',
@@ -321,7 +321,7 @@ swalWithBootstrapButtons({
         <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   title: 'Custom width, padding, background.',
   width: 600,
   padding: '3em',
@@ -342,15 +342,15 @@ swalWithBootstrapButtons({
       </div>
       <pre class="code-sample">
 <code>let timerInterval
-swal({
+Swal({
   title: 'Auto close alert!',
   html: 'I will close in &lt;strong>&lt;/strong> seconds.',
   timer: 2000,
   onOpen: () => {
-    swal.showLoading()
+    Swal.showLoading()
     timerInterval = setInterval(() => {
-      swal.getContent().querySelector('strong')
-        .textContent = swal.getTimerLeft()
+      Swal.getContent().querySelector('strong')
+        .textContent = Swal.getTimerLeft()
     }, 100)
   },
   onClose: () => {
@@ -359,7 +359,7 @@ swal({
 }).then((result) => {
   if (
     // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
-    result.dismiss === swal.DismissReason.timer
+    result.dismiss === Swal.DismissReason.timer
   ) {
     console.log('I was closed by the timer')
   }
@@ -372,7 +372,7 @@ swal({
         <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-html='<div id="rtl-container" dir="rtl"></div>'>
-<code>swal({
+<code>Swal({
   title: 'هل تريد الاستمرار؟',
   confirmButtonText:  'نعم',
   cancelButtonText:  'لا',
@@ -388,7 +388,7 @@ swal({
         <button aria-label="Try me! Example: AJAX request">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal({
+<code>Swal({
   title: 'Submit your Github username',
   input: 'text',
   inputAttributes: {
@@ -406,15 +406,15 @@ swal({
         return response.json()
       })
       .catch(error => {
-        swal.showValidationMessage(
+        Swal.showValidationMessage(
           `Request failed: ${error}`
         )
       })
   },
-  allowOutsideClick: () => !swal.isLoading()
+  allowOutsideClick: () => !Swal.isLoading()
 }).then((result) => {
   if (result.value) {
-    swal({
+    Swal({
       title: `${result.value.login}'s avatar`,
       imageUrl: result.value.avatar_url
     })
@@ -428,7 +428,7 @@ swal({
         <button aria-label="Try me! Example: Chaining modals (queue)">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>swal.mixin({
+<code>Swal.mixin({
   input: 'text',
   confirmButtonText: 'Next &amp;rarr;',
   showCancelButton: true,
@@ -442,7 +442,7 @@ swal({
   'Question 3'
 ]).then((result) => {
   if (result.value) {
-    swal({
+    Swal({
       title: 'All done!',
       html:
         'Your answers: &lt;pre&gt;&lt;code&gt;' +
@@ -462,7 +462,7 @@ swal({
       <pre class="code-sample">
 <code>const ipAPI = 'https://api.ipify.org?format=json'
 
-swal.queue([{
+Swal.queue([{
   title: 'Your public IP',
   confirmButtonText: 'Show my public IP',
   text:
@@ -472,9 +472,9 @@ swal.queue([{
   preConfirm: () => {
     return fetch(ipAPI)
       .then(response => response.json())
-      .then(data => swal.insertQueueStep(data.ip))
+      .then(data => Swal.insertQueueStep(data.ip))
       .catch(() => {
-        swal.insertQueueStep({
+        Swal.insertQueueStep({
           type: 'error',
           title: 'Unable to get your public IP'
         })
@@ -515,19 +515,19 @@ swal.queue([{
     </div>
     <pre>
 <code>// ES6 Modules or TypeScript
-import swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 
 // CommonJS
-const swal = require('sweetalert2')</code></pre>
+const Swal = require('sweetalert2')</code></pre>
     <div class="mobile-hidden">
       <p>It's possible to import JS and CSS separately, e.g. if you need to customize styles:</p>
       <pre>
-<code>import swal from 'sweetalert2/dist/sweetalert2.js'
+<code>import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <p>2. Call the sweetAlert2-function after the page has loaded</p>
     </div>
-<pre><code>swal({
+<pre><code>Swal({
   title: 'Error!',
   text: 'Do you want to continue',
   type: 'error',
@@ -750,7 +750,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>buttonsStyling</b></td>
         <td><i>true</i></td>
-        <td>Apply default swal2 styling to buttons. If you want to use your own classes (e.g. Bootstrap classes) set this parameter to <strong>false</strong>.</td>
+        <td>Apply default styling to buttons. If you want to use your own classes (e.g. Bootstrap classes) set this parameter to <strong>false</strong>.</td>
       </tr>
       <tr>
         <td><b>reverseButtons</b></td>
@@ -860,7 +860,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>currentProgressStep</b></td>
         <td><i>null</i></td>
-        <td>Current active progress step. The default is <strong>swal.getQueueStep()</strong></td>
+        <td>Current active progress step. The default is <strong>Swal.getQueueStep()</strong></td>
       </tr>
       <tr>
         <td><b>progressStepsDistance</b></td>
@@ -900,7 +900,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     </table>
 
     <p class="center">
-      You can easily reuse configuration by creating your own `swal` with <strong>swal.mixin({ ...options })</strong>:
+      You can easily reuse configuration by creating your own `Swal` with <strong>Swal.mixin({ ...options })</strong>:
     </p>
 
     <ul class="examples">
@@ -910,7 +910,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <button aria-label="Try me! Example: Mixin">Try me!</button>
         </div>
         <pre class="code-sample">
-<code>const toast = swal.mixin({
+<code>const toast = Swal.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
@@ -931,7 +931,7 @@ toast({
   <div class="center-container">
     <h3 id="handling-dismissals">Handling Dismissals</h3>
 
-    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
+    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>Swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
 
     <table class="dismiss-reasons">
       <tr class="titles">
@@ -940,27 +940,27 @@ toast({
         <th>Related configuration</th>
       </tr>
       <tr>
-        <td><strong class="nowrap">swal.DismissReason.backdrop</strong></td>
+        <td><strong class="nowrap">Swal.DismissReason.backdrop</strong></td>
         <td>The user clicked the backdrop.</td>
         <td><a href="#allow-outside-click">allowOutsideClick</a></td>
       </tr>
       <tr>
-        <td><strong class="nowrap">swal.DismissReason.cancel</strong></td>
+        <td><strong class="nowrap">Swal.DismissReason.cancel</strong></td>
         <td>The user clicked the cancel button.</td>
         <td><a href="#show-cancel-button">showCancelButton</a></td>
       </tr>
       <tr>
-        <td><strong class="nowrap">swal.DismissReason.close</strong></td>
+        <td><strong class="nowrap">Swal.DismissReason.close</strong></td>
         <td>The user clicked the close button.</td>
         <td><a href="#show-close-button">showCloseButton</a></td>
       </tr>
       <tr>
-        <td><strong class="nowrap">swal.DismissReason.esc</strong></td>
+        <td><strong class="nowrap">Swal.DismissReason.esc</strong></td>
         <td>The user clicked the <kbd>Esc</kbd> key.</td>
         <td><a href="#allow-escape-key">allowEscapeKey</a></td>
       </tr>
       <tr>
-        <td><strong class="nowrap">swal.DismissReason.timer</strong></td>
+        <td><strong class="nowrap">Swal.DismissReason.timer</strong></td>
         <td>The timer ran out, and the alert closed automatically.</td>
         <td><a href="#timer">timer</a></td>
       </tr>
@@ -1022,7 +1022,7 @@ const inputValue = fetch(ipAPI)
   .then(response => response.json())
   .then(data => data.ip)
 
-const {value: ipAddress} = await swal({
+const {value: ipAddress} = await Swal({
   title: 'Enter your IP address',
   input: 'text',
   inputValue: inputValue,
@@ -1033,7 +1033,7 @@ const {value: ipAddress} = await swal({
 })
 
 if (ipAddress) {
-  swal(`Your IP address is ${ipAddress}`)
+  Swal(`Your IP address is ${ipAddress}`)
 }</code></pre>
       </td>
       <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>
@@ -1043,14 +1043,14 @@ if (ipAddress) {
       <td><strong>email</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getEmail () {" data-codepen-js-after="})()">
-<code>const {value: email} = await swal({
+<code>const {value: email} = await Swal({
   title: 'Input email address',
   input: 'email',
   inputPlaceholder: 'Enter your email address'
 })
 
 if (email) {
-  swal('Entered email: ' + email)
+  Swal('Entered email: ' + email)
 }</code></pre>
       </td>
       <td><button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button></td>
@@ -1060,13 +1060,13 @@ if (email) {
       <td><strong>url</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getUrl () {" data-codepen-js-after="})()">
-<code>const {value: url} = await swal({
+<code>const {value: url} = await Swal({
   input: 'url',
   inputPlaceholder: 'Enter the URL'
 })
 
 if (url) {
-  swal('Entered URL: ' + url)
+  Swal('Entered URL: ' + url)
 }</code></pre>
       </td>
       <td><button class="input-type-url">Try me!</button></td>
@@ -1076,7 +1076,7 @@ if (url) {
       <td><strong>password</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getPassword () {" data-codepen-js-after="})()">
-<code>const {value: password} = await swal({
+<code>const {value: password} = await Swal({
   title: 'Enter your password',
   input: 'password',
   inputPlaceholder: 'Enter your password',
@@ -1088,7 +1088,7 @@ if (url) {
 })
 
 if (password) {
-  swal('Entered password: ' + password)
+  Swal('Entered password: ' + password)
 }</code></pre>
       </td>
       <td><button class="input-type-password" aria-label="Try me! Example: input type password">Try me!</button></td>
@@ -1098,14 +1098,14 @@ if (password) {
       <td><strong>textarea</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getText () {" data-codepen-js-after="})()">
-<code>const {value: text} = await swal({
+<code>const {value: text} = await Swal({
   input: 'textarea',
   inputPlaceholder: 'Type your message here...',
   showCancelButton: true
 })
 
 if (text) {
-  swal(text)
+  Swal(text)
 }</code></pre>
       </td>
       <td><button class="input-type-textarea" aria-label="Try me! Example: input type textarea">Try me!</button></td>
@@ -1115,7 +1115,7 @@ if (text) {
       <td><strong>select</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFruit () {" data-codepen-js-after="})()">
-<code>const {value: fruit} = await swal({
+<code>const {value: fruit} = await Swal({
   title: 'Select field validation',
   input: 'select',
   inputOptions: {
@@ -1138,7 +1138,7 @@ if (text) {
 })
 
 if (fruit) {
-  swal('You selected: ' + fruit)
+  Swal('You selected: ' + fruit)
 }</code></pre>
       </td>
       <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
@@ -1159,7 +1159,7 @@ const inputOptions = new Promise((resolve) => {
   }, 2000)
 })
 
-const {value: color} = await swal({
+const {value: color} = await Swal({
   title: 'Select color',
   input: 'radio',
   inputOptions: inputOptions,
@@ -1169,7 +1169,7 @@ const {value: color} = await swal({
 })
 
 if (color) {
-  swal({html: 'You selected: ' + color})
+  Swal({html: 'You selected: ' + color})
 }</code></pre>
       </td>
       <td><button class="input-type-radio" aria-label="Try me! Example: input type radio">Try me!</button></td>
@@ -1179,7 +1179,7 @@ if (color) {
       <td><strong>checkbox</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function acceptTermsAndConditions () {" data-codepen-js-after="})()">
-<code>const {value: accept} = await swal({
+<code>const {value: accept} = await Swal({
   title: 'Terms and conditions',
   input: 'checkbox',
   inputValue: 1,
@@ -1193,7 +1193,7 @@ if (color) {
 })
 
 if (accept) {
-  swal('You agreed with T&amp;C :)')
+  Swal('You agreed with T&amp;C :)')
 }</code></pre>
 
       </td>
@@ -1204,7 +1204,7 @@ if (accept) {
       <td><strong>file</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>const {value: file} = await swal({
+<code>const {value: file} = await Swal({
   title: 'Select image',
   input: 'file',
   inputAttributes: {
@@ -1216,7 +1216,7 @@ if (accept) {
 if (file) {
   const reader = new FileReader
   reader.onload = (e) => {
-    swal({
+    Swal({
       title: 'Your uploaded picture',
       imageUrl: e.target.result,
       imageAlt: 'The uploaded picture'
@@ -1232,7 +1232,7 @@ if (file) {
       <td><strong>range</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>swal({
+<code>Swal({
   title: 'How old are you?',
   type: 'question',
   input: 'range',
@@ -1259,7 +1259,7 @@ if (file) {
       <td class="mobile-hidden"></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
-<code>const {value: formValues} = await swal({
+<code>const {value: formValues} = await Swal({
   title: 'Multiple inputs',
   html:
     '&lt;input id="swal-input1" class="swal2-input"&gt;' +
@@ -1274,7 +1274,7 @@ if (file) {
 })
 
 if (formValues) {
-  swal(json.stringify(formValues))
+  Swal(json.stringify(formValues))
 }</code></pre>
 
       </td>
@@ -1296,163 +1296,163 @@ if (formValues) {
         </th>
       </tr>
       <tr>
-        <td><i>swal.isVisible()</i></td>
+        <td><i>Swal.isVisible()</i></td>
         <td>Determine if modal is shown.</td>
       </tr>
       <tr>
-        <td><i>swal.mixin({ ...options })</i></td>
-        <td>Returns an extended version of `swal` containing `params` as defaults. Useful for reusing Swal configuration.</td>
+        <td><i>Swal.mixin({ ...options })</i></td>
+        <td>Returns an extended version of `Swal` containing `params` as defaults. Useful for reusing Swal configuration.</td>
       </tr>
       <tr>
-        <td><i>swal.setDefaults({ ...options })</i></td>
-        <td><strong>Deprecated, use swal.mixin() instead.</strong> Set default options to be used</td>
+        <td><i>Swal.setDefaults({ ...options })</i></td>
+        <td><strong>Deprecated, use Swal.mixin() instead.</strong> Set default options to be used</td>
       </tr>
       <tr>
-        <td><i>swal.resetDefaults()</i></td>
-        <td><strong>Deprecated, use swal.mixin() instead.</strong>Resets default options to their original value.</td>
+        <td><i>Swal.resetDefaults()</i></td>
+        <td><strong>Deprecated, use Swal.mixin() instead.</strong>Resets default options to their original value.</td>
       </tr>
       <tr>
-        <td><i>swal.close()</i> or <i>swal.closeModal()</i></td>
+        <td><i>Swal.close()</i> or <i>Swal.closeModal()</i></td>
         <td>Close the currently open SweetAlert2 modal programmatically.</td>
       </tr>
       <tr>
-        <td><i>swal.getTitle()</i></td>
+        <td><i>Swal.getTitle()</i></td>
         <td>Get the modal title.</td>
       </tr>
       <tr>
-        <td><i>swal.getCloseButton()</i></td>
+        <td><i>Swal.getCloseButton()</i></td>
         <td>Get the close button.</td>
       </tr>
       <tr>
-        <td><i>swal.getContent()</i></td>
+        <td><i>Swal.getContent()</i></td>
         <td>Get the modal content.</td>
       </tr>
       <tr>
-        <td><i>swal.getImage()</i></td>
+        <td><i>Swal.getImage()</i></td>
         <td>Get the <a href="#image">image</a>.</td>
       </tr>
       <tr>
-        <td><i>swal.getActions()</i></td>
+        <td><i>Swal.getActions()</i></td>
         <td>Get the actions block (buttons container).</td>
       </tr>
       <tr>
-        <td><i>swal.getFooter()</i></td>
+        <td><i>Swal.getFooter()</i></td>
         <td>Get the modal footer.</td>
       </tr>
       <tr>
-        <td><i>swal.getFocusableElements()</i></td>
+        <td><i>Swal.getFocusableElements()</i></td>
         <td>Get all focusable elements in the popup.</td>
       </tr>
       <tr>
-        <td><i>swal.getConfirmButton()</i></td>
+        <td><i>Swal.getConfirmButton()</i></td>
         <td>Get the "Confirm" button.</td>
       </tr>
       <tr>
-        <td><i>swal.getCancelButton()</i></td>
+        <td><i>Swal.getCancelButton()</i></td>
         <td>Get the "Cancel" button.</td>
       </tr>
       <tr>
-        <td><i>swal.getButtonsWrapper()</i></td>
+        <td><i>Swal.getButtonsWrapper()</i></td>
         <td><strong>Deprecated, use getActions() instead.</strong> Get the buttons wrapper.</td>
       </tr>
       <tr>
-        <td><i>swal.enableButtons()</i></td>
+        <td><i>Swal.enableButtons()</i></td>
         <td>Enable "Confirm" and "Cancel" buttons.</td>
       </tr>
       <tr>
-        <td><i>swal.disableButtons()</i></td>
+        <td><i>Swal.disableButtons()</i></td>
         <td>Disable "Confirm" and "Cancel" buttons.</td>
       </tr>
       <tr>
-        <td><i>swal.enableConfirmButton()</i></td>
+        <td><i>Swal.enableConfirmButton()</i></td>
         <td>Enable the "Confirm"-button only.</td>
       </tr>
       <tr>
-        <td><i>swal.disableConfirmButton()</i></td>
+        <td><i>Swal.disableConfirmButton()</i></td>
         <td>Disable the "Confirm"-button only.</td>
       </tr>
       <tr id="showLoading">
-        <td><i>swal.showLoading()</i> or <i>swal.enableLoading()</i></td>
+        <td><i>Swal.showLoading()</i> or <i>Swal.enableLoading()</i></td>
         <td>Disable buttons and show loader. This is useful with AJAX requests.</td>
       </tr>
       <tr id="hideLoading">
-        <td><i>swal.hideLoading()</i> or <i>swal.disableLoading()</i></td>
+        <td><i>Swal.hideLoading()</i> or <i>Swal.disableLoading()</i></td>
         <td>Enable buttons and hide loader.</td>
       </tr>
       <tr>
-        <td><i>swal.isLoading()</i></td>
-        <td>Determine if modal is in the loading state. Related methods: <a href="#showLoading" class="nowrap">swal.showLoading()</a> and <a href="#hideLoading" class="nowrap">swal.hideLoading()</a></td>
+        <td><i>Swal.isLoading()</i></td>
+        <td>Determine if modal is in the loading state. Related methods: <a href="#showLoading" class="nowrap">Swal.showLoading()</a> and <a href="#hideLoading" class="nowrap">Swal.hideLoading()</a></td>
       </tr>
       <tr id="getTimerLeft">
-        <td><i>swal.getTimerLeft()</i></td>
+        <td><i>Swal.getTimerLeft()</i></td>
         <td>Returns the time left in case when <a href="#timer">timer</a> parameter is set.</td>
       </tr>
       <tr>
-        <td><i>swal.clickConfirm()</i></td>
+        <td><i>Swal.clickConfirm()</i></td>
         <td>Click the "Confirm"-button programmatically.</td>
       </tr>
       <tr>
-        <td><i>swal.clickCancel()</i></td>
+        <td><i>Swal.clickCancel()</i></td>
         <td>Click the "Cancel"-button programmatically.</td>
       </tr>
       <tr>
-        <td><i>swal.getInput()</i></td>
+        <td><i>Swal.getInput()</i></td>
         <td>Get the input DOM node, this method works with <a href="#input-parameter">input parameter</a>.</td>
       </tr>
       <tr>
-        <td><i>swal.disableInput()</i></td>
+        <td><i>Swal.disableInput()</i></td>
         <td>Disable input. A disabled input element is unusable and un-clickable.</td>
       </tr>
       <tr>
-        <td><i>swal.enableInput()</i></td>
+        <td><i>Swal.enableInput()</i></td>
         <td>Enable input.</td>
       </tr>
       <tr>
-        <td><i>swal.showValidationMessage(error)</i></td>
+        <td><i>Swal.showValidationMessage(error)</i></td>
         <td>Show the validation message DOM node.</td>
       </tr>
       <tr>
-        <td><i>swal.resetValidationMessage()</i></td>
+        <td><i>Swal.resetValidationMessage()</i></td>
         <td>Hide the validation message DOM node.</td>
       </tr>
       <tr>
-        <td><i>swal.getValidationMessage()</i></td>
+        <td><i>Swal.getValidationMessage()</i></td>
         <td>Get the validation message DOM node.</td>
       </tr>
       <tr>
-        <td><i>swal.queue([Array])</i></td>
+        <td><i>Swal.queue([Array])</i></td>
         <td>Provide array of SweetAlert2 parameters to show multiple modals, one modal after another. See <a href="#chaining-modals">usage example</a></td>
       </tr>
       <tr>
-        <td><i>swal.getQueueStep()</i></td>
+        <td><i>Swal.getQueueStep()</i></td>
         <td>Get the index of current modal in queue. When there's no active queue, <strong>null</strong> will be returned.</td>
       </tr>
       <tr>
-        <td><i>swal.insertQueueStep()</i></td>
+        <td><i>Swal.insertQueueStep()</i></td>
         <td>Insert a modal to queue, you can specify modal positioning with second parameter. By default a modal will be added to the end of a queue.</td>
       </tr>
       <tr>
-        <td><i>swal.deleteQueueStep(index)</i></td>
+        <td><i>Swal.deleteQueueStep(index)</i></td>
         <td>Delete a modal at <strong>index</strong> from queue.</td>
       </tr>
       <tr>
-        <td><i>swal.getProgressSteps()</i></td>
+        <td><i>Swal.getProgressSteps()</i></td>
         <td>Progress steps getter.</td>
       </tr>
       <tr>
-        <td><i>swal.setProgressSteps([])</i></td>
+        <td><i>Swal.setProgressSteps([])</i></td>
         <td>Progress steps setter.</td>
       </tr>
       <tr>
-        <td><i>swal.showProgressSteps()</i></td>
+        <td><i>Swal.showProgressSteps()</i></td>
         <td>Show progress steps.</td>
       </tr>
       <tr>
-        <td><i>swal.hideProgressSteps()</i></td>
+        <td><i>Swal.hideProgressSteps()</i></td>
         <td>Hide progress steps.</td>
       </tr>
       <tr>
-        <td><i>swal.isValidParameter({String})</i></td>
+        <td><i>Swal.isValidParameter({String})</i></td>
         <td>Determine if parameter name is valid.</td>
       </tr>
     </table>
