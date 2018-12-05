@@ -660,7 +660,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr id="timer">
         <td><b>timer</b></td>
         <td><i>null</i></td>
-        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a></td>
+        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a> and <a href="#stopTimer">Swal.stopTimer()</a>.</td>
       </tr>
       <tr>
         <td><b>animation</b></td>
@@ -1386,6 +1386,10 @@ if (formValues) {
       <tr id="getTimerLeft">
         <td><i>Swal.getTimerLeft()</i></td>
         <td>Returns the time left in case when <a href="#timer">timer</a> parameter is set.</td>
+      </tr>
+      <tr id="stopTimer">
+        <td><i>Swal.stopTimer()</i></td>
+        <td>Stops the timer in case when <a href="#timer">timer</a> parameter is set. Returns the time left</td>
       </tr>
       <tr>
         <td><i>Swal.clickConfirm()</i></td>
