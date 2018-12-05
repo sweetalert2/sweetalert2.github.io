@@ -1,4 +1,4 @@
-/* global swal, fetch, MutationObserver, FileReader, _bsa, _native */
+/* global Swal, MutationObserver, FileReader, fetch, _bsa, _native */
 import hljs from '../node_modules/highlight.js/lib/highlight'
 import hljsJS from '../node_modules/highlight.js/lib/languages/javascript'
 import hljsXML from '../node_modules/highlight.js/lib/languages/xml'
@@ -115,11 +115,11 @@ document.querySelector('.showcase.normal button').onclick = () => {
 }
 
 document.querySelector('.showcase.sweet button').onclick = () => {
-  swal('Good job!', 'You clicked the button!', 'success')
+  Swal('Good job!', 'You clicked the button!', 'success')
 }
 
 document.querySelector('.paypal').onclick = () => {
-  swal({
+  Swal({
     title: 'How would you like to pay?',
     input: 'select',
     inputOptions: {
@@ -139,33 +139,33 @@ document.querySelector('.paypal').onclick = () => {
 }
 
 document.querySelector('.examples .message button').onclick = () => {
-  swal('Any fool can use a computer')
+  Swal('Any fool can use a computer')
 }
 
 document.querySelector('.examples .timer button').onclick = () => {
   let timerInterval
-  swal({
+  Swal({
     title: 'Auto close alert!',
     html: 'I will close in <strong></strong> milliseconds.',
     timer: 2000,
     onOpen: () => {
-      swal.showLoading()
+      Swal.showLoading()
       timerInterval = setInterval(() => {
-        swal.getContent().querySelector('strong').textContent = swal.getTimerLeft()
+        Swal.getContent().querySelector('strong').textContent = Swal.getTimerLeft()
       }, 100)
     },
     onClose: () => {
       clearInterval(timerInterval)
     }
   }).then((result) => {
-    if (result.dismiss === swal.DismissReason.timer) {
+    if (result.dismiss === Swal.DismissReason.timer) {
       console.log('I was closed by the timer')
     }
   })
 }
 
 document.querySelector('.examples .html button').onclick = () => {
-  swal({
+  Swal({
     title: '<strong>HTML <u>example</u></strong>',
     type: 'info',
     html:
@@ -183,7 +183,7 @@ document.querySelector('.examples .html button').onclick = () => {
 }
 
 document.querySelector('.examples #position button').onclick = () => {
-  swal({
+  Swal({
     position: 'top-end',
     type: 'success',
     title: 'Your work has been saved',
@@ -193,7 +193,7 @@ document.querySelector('.examples #position button').onclick = () => {
 }
 
 document.querySelector('.examples .rtl button').onclick = () => {
-  swal({
+  Swal({
     title: 'هل تريد الاستمرار؟',
     confirmButtonText: 'نعم',
     cancelButtonText: 'لا',
@@ -204,7 +204,7 @@ document.querySelector('.examples .rtl button').onclick = () => {
 }
 
 document.querySelector('#custom-animation button').onclick = () => {
-  swal({
+  Swal({
     title: 'Custom animation with Animate.css',
     animation: false,
     customClass: 'animated tada'
@@ -212,11 +212,11 @@ document.querySelector('#custom-animation button').onclick = () => {
 }
 
 document.querySelector('.examples .title-text button').onclick = () => {
-  swal('The Internet?', 'That thing is still around?', 'question')
+  Swal('The Internet?', 'That thing is still around?', 'question')
 }
 
 document.querySelector('.examples .error button').onclick = () => {
-  swal({
+  Swal({
     type: 'error',
     title: 'Oops...',
     text: 'Something went wrong!',
@@ -225,7 +225,7 @@ document.querySelector('.examples .error button').onclick = () => {
 }
 
 document.querySelector('.examples #long-text button').onclick = () => {
-  swal({
+  Swal({
     imageUrl: 'https://placeholder.pics/svg/300x1500',
     imageHeight: 1500,
     imageAlt: 'A tall image'
@@ -233,7 +233,7 @@ document.querySelector('.examples #long-text button').onclick = () => {
 }
 
 document.querySelector('.examples .warning.confirm button').onclick = () => {
-  swal({
+  Swal({
     title: 'Are you sure?',
     text: 'You won\'t be able to revert this!',
     type: 'warning',
@@ -243,13 +243,13 @@ document.querySelector('.examples .warning.confirm button').onclick = () => {
     confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
     if (result.value) {
-      swal('Deleted!', 'Your file has been deleted!', 'success')
+      Swal('Deleted!', 'Your file has been deleted!', 'success')
     }
   })
 }
 
 document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
-  const swalWithBootstrapButtons = swal.mixin({
+  const swalWithBootstrapButtons = Swal.mixin({
     confirmButtonClass: 'btn btn-success',
     cancelButtonClass: 'btn btn-danger',
     buttonsStyling: false
@@ -269,7 +269,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
         'Your file has been deleted.',
         'success'
       )
-    } else if (result.dismiss === swal.DismissReason.cancel) {
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
       swalWithBootstrapButtons(
         'Cancelled',
         'Your imaginary file is safe :)',
@@ -280,7 +280,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
 }
 
 document.querySelector('.examples .custom-image button').onclick = () => {
-  swal({
+  Swal({
     title: 'Sweet!',
     text: 'Modal with a custom image.',
     imageUrl: 'https://unsplash.it/400/200/?random',
@@ -292,7 +292,7 @@ document.querySelector('.examples .custom-image button').onclick = () => {
 }
 
 document.querySelector('.examples .custom-width-padding-background button').onclick = () => {
-  swal({
+  Swal({
     title: 'Custom width, padding, background.',
     width: 600,
     padding: '3em',
@@ -314,7 +314,7 @@ document.querySelector('.input-type-text').onclick = () => {
       .then(response => response.json())
       .then(data => data.ip)
 
-    const {value: ipAddress} = await swal({
+    const {value: ipAddress} = await Swal({
       title: 'Enter your IP address',
       input: 'text',
       inputValue: inputValue,
@@ -323,34 +323,34 @@ document.querySelector('.input-type-text').onclick = () => {
         return !value && 'You need to write something!'
       }
     })
-    ipAddress && swal(`Your IP address is ${ipAddress}`)
+    ipAddress && Swal(`Your IP address is ${ipAddress}`)
   })()
 }
 
 document.querySelector('.input-type-email').onclick = () => {
   (async function getEmail () {
-    const {value: email} = await swal({
+    const {value: email} = await Swal({
       title: 'Input email address',
       input: 'email',
       inputPlaceholder: 'Enter your email address'
     })
-    email && swal({html: 'Entered email: <strong>' + email + '</strong>'})
+    email && Swal({html: 'Entered email: <strong>' + email + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-url').onclick = () => {
   (async function getUrl () {
-    const {value: url} = await swal({
+    const {value: url} = await Swal({
       input: 'url',
       inputPlaceholder: 'Enter the URL'
     })
-    url && swal({html: 'Entered URL: <strong>' + url + '</strong>'})
+    url && Swal({html: 'Entered URL: <strong>' + url + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-password').onclick = () => {
   (async function getPassword () {
-    const {value: password} = await swal({
+    const {value: password} = await Swal({
       title: 'Enter your password',
       input: 'password',
       inputPlaceholder: 'Enter your password',
@@ -360,13 +360,13 @@ document.querySelector('.input-type-password').onclick = () => {
         'autocorrect': 'off'
       }
     })
-    password && swal({html: 'Entered password: <strong>' + password + '</strong>'})
+    password && Swal({html: 'Entered password: <strong>' + password + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-textarea').onclick = () => {
   (async function getMessage () {
-    const {value: text} = await swal({
+    const {value: text} = await Swal({
       input: 'textarea',
       inputPlaceholder: 'Type your message here...',
       inputAttributes: {
@@ -374,13 +374,13 @@ document.querySelector('.input-type-textarea').onclick = () => {
       },
       showCancelButton: true
     })
-    text && swal(text)
+    text && Swal(text)
   })()
 }
 
 document.querySelector('.input-type-select').onclick = () => {
   (async function getFruit () {
-    const {value: fruit} = await swal({
+    const {value: fruit} = await Swal({
       title: 'Select field validation',
       input: 'select',
       inputOptions: {
@@ -401,7 +401,7 @@ document.querySelector('.input-type-select').onclick = () => {
         })
       }
     })
-    fruit && swal({html: 'You selected: <strong>' + fruit + '</strong>'})
+    fruit && Swal({html: 'You selected: <strong>' + fruit + '</strong>'})
   })()
 }
 
@@ -417,7 +417,7 @@ document.querySelector('.input-type-radio').onclick = () => {
       }, 2000)
     })
 
-    const {value: color} = await swal({
+    const {value: color} = await Swal({
       title: 'Select color',
       input: 'radio',
       inputOptions: inputOptionsPromise,
@@ -426,13 +426,13 @@ document.querySelector('.input-type-radio').onclick = () => {
       }
     })
 
-    color && swal({html: 'You selected: <strong>' + color + '</strong>'})
+    color && Swal({html: 'You selected: <strong>' + color + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-checkbox').onclick = () => {
   (async function acceptTerms () {
-    const {value: accept} = await swal({
+    const {value: accept} = await Swal({
       title: 'Terms and conditions',
       input: 'checkbox',
       inputValue: 1,
@@ -443,13 +443,13 @@ document.querySelector('.input-type-checkbox').onclick = () => {
       }
     })
 
-    accept && swal({text: 'You agreed with T&C :)'})
+    accept && Swal({text: 'You agreed with T&C :)'})
   })()
 }
 
 document.querySelector('.input-type-file').onclick = () => {
   (async function getColor () {
-    const {value: file} = await swal({
+    const {value: file} = await Swal({
       title: 'Select image',
       input: 'file',
       inputAttributes: {
@@ -460,7 +460,7 @@ document.querySelector('.input-type-file').onclick = () => {
     if (file) {
       const reader = new FileReader()
       reader.onload = (e) => {
-        swal({
+        Swal({
           title: 'Your uploaded picture',
           imageUrl: e.target.result,
           imageAlt: 'The uploaded picture'
@@ -472,7 +472,7 @@ document.querySelector('.input-type-file').onclick = () => {
 }
 
 document.querySelector('.input-type-range').onclick = () => {
-  swal({
+  Swal({
     title: 'How old are you?',
     type: 'question',
     input: 'range',
@@ -487,7 +487,7 @@ document.querySelector('.input-type-range').onclick = () => {
 
 document.querySelector('.input-type-multiple').onclick = () => {
   (async function getForm () {
-    const {value: formValues} = await swal({
+    const {value: formValues} = await Swal({
       title: 'Multiple inputs',
       html:
         '<input id="swal-input1" class="swal2-input" placeholder="first input field">' +
@@ -500,12 +500,12 @@ document.querySelector('.input-type-multiple').onclick = () => {
         ]
       }
     })
-    formValues && swal(JSON.stringify(formValues))
+    formValues && Swal(JSON.stringify(formValues))
   })()
 }
 
 document.querySelector('.examples .ajax-request button').onclick = () => {
-  swal({
+  Swal({
     title: 'Submit your Github username to run ajax request',
     input: 'text',
     inputAttributes: {
@@ -523,13 +523,13 @@ document.querySelector('.examples .ajax-request button').onclick = () => {
           return response.json()
         })
         .catch(error => {
-          swal.showValidationError(error)
+          Swal.showValidationError(error)
         })
     },
-    allowOutsideClick: () => !swal.isLoading()
+    allowOutsideClick: () => !Swal.isLoading()
   }).then((result) => {
     if (result.value) {
-      swal({
+      Swal({
         title: `${result.value.login}'s avatar`,
         imageUrl: result.value.avatar_url
       })
@@ -538,7 +538,7 @@ document.querySelector('.examples .ajax-request button').onclick = () => {
 }
 
 document.querySelector('.examples .chaining-modals button').onclick = () => {
-  swal.mixin({
+  Swal.mixin({
     input: 'text',
     confirmButtonText: 'Next &rarr;',
     showCancelButton: true,
@@ -549,7 +549,7 @@ document.querySelector('.examples .chaining-modals button').onclick = () => {
     'Question 3'
   ]).then((result) => {
     if (result.value) {
-      swal({
+      Swal({
         title: 'All done!',
         html: 'Your answers: <pre><code>' + JSON.stringify(result.value) + '</code></pre>',
         confirmButtonText: 'Lovely!'
@@ -559,7 +559,7 @@ document.querySelector('.examples .chaining-modals button').onclick = () => {
 }
 
 document.querySelector('.examples .dynamic-queue button').onclick = () => {
-  swal.queue([
+  Swal.queue([
     {
       title: 'Your public IP',
       confirmButtonText: 'Show my public IP',
@@ -568,15 +568,15 @@ document.querySelector('.examples .dynamic-queue button').onclick = () => {
       preConfirm: () => {
         return fetch('https://api.ipify.org?format=json')
           .then(response => response.json())
-          .then(data => swal.insertQueueStep(data.ip))
-          .catch(() => swal.insertQueueStep({type: 'error', title: 'Unable to get your public IP'}))
+          .then(data => Swal.insertQueueStep(data.ip))
+          .catch(() => Swal.insertQueueStep({type: 'error', title: 'Unable to get your public IP'}))
       }
     }
   ])
 }
 
 document.querySelector('.examples .mixin button').onclick = () => {
-  const toast = swal.mixin({
+  const toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
@@ -593,7 +593,7 @@ document.querySelector('.examples .mixin button').onclick = () => {
 Array.from(document.querySelectorAll('.popup-types button')).forEach(button => {
   button.onclick = (e) => {
     var type = e.target.getAttribute('class').slice(5)
-    swal(type + '!', '', type)
+    Swal(type + '!', '', type)
   }
 })
 
@@ -608,7 +608,7 @@ if (typeof _bsa !== 'undefined' && _bsa) {
 
 function setBuySellAdsFooter () {
   if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('body > .bsa-cpc').textContent) {
-    window.swal = swal.mixin({
+    window.Swal = Swal.mixin({
       footer: document.querySelector('body > .bsa-cpc')
     })
   }
