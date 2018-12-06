@@ -660,7 +660,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr id="timer">
         <td><b>timer</b></td>
         <td><i>null</i></td>
-        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a> and <a href="#stopTimer">Swal.stopTimer()</a>.</td>
+        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
       </tr>
       <tr>
         <td><b>animation</b></td>
@@ -1390,6 +1390,18 @@ if (formValues) {
       <tr id="stopTimer">
         <td><i>Swal.stopTimer()</i></td>
         <td>Stops the timer in case when <a href="#timer">timer</a> parameter is set. Returns the time left</td>
+      </tr>
+      <tr id="resumeTimer">
+        <td><i>Swal.resumeTimer()</i></td>
+        <td>Resume the <a href="#timer">timer</a> previously stopped. Returns the time left</td>
+      </tr>
+      <tr id="toggleTimer">
+        <td><i>Swal.toggleTimer()</i></td>
+        <td>Toggle state of the <a href="#timer">timer</a> between stopped and running. Returns the time left</td>
+      </tr>
+      <tr id="increaseTimer">
+        <td><i>Swal.increaseTimer(n)</i></td>
+        <td>Increase the <a href="#timer">timer</a> by <strong>n</strong> milliseconds. Returns the time left</td>
       </tr>
       <tr>
         <td><i>Swal.clickConfirm()</i></td>
