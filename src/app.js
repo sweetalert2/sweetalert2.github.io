@@ -575,6 +575,54 @@ document.querySelector('.examples .dynamic-queue button').onclick = () => {
   ])
 }
 
+document.querySelector('.examples .timer-functions button').onclick = () => {
+  let timerInterval
+  Swal({
+    title: 'Auto close alert!',
+    html: 'I will close in <strong></strong> seconds.' + '<br/><br/>' +
+    '<button type="button" id="increase-timer" class="btn btn-warning">I need 5 more seconds!</button><br/>' +
+    '<button type="button" id="stop-timer" class="btn btn-danger">Please stop the timer!!</button><br/>' +
+    '<button type="button" id="resume-timer" class="btn btn-success" disabled>Phew... you can restart now!</button><br/>' +
+    '<button type="button" id="toggle-timer" class="btn btn-primary">Toggle</button>',
+    timer: 10000,
+    backdrop: false,
+    onOpen: () => {
+      Swal.showLoading()
+
+      function toggleButtons () {
+        Swal.getContent().querySelector('#stop-timer').disabled = !Swal.getContent().querySelector('#stop-timer').disabled
+        Swal.getContent().querySelector('#resume-timer').disabled = !Swal.getContent().querySelector('#resume-timer').disabled
+      }
+
+      Swal.getContent().querySelector('#stop-timer').addEventListener('click', () => {
+        console.log(Swal.stopTimer())
+        toggleButtons()
+      })
+
+      Swal.getContent().querySelector('#resume-timer').addEventListener('click', () => {
+        console.log(Swal.resumeTimer())
+        toggleButtons()
+      })
+
+      Swal.getContent().querySelector('#toggle-timer').addEventListener('click', () => {
+        console.log(Swal.toggleTimer())
+        toggleButtons()
+      })
+
+      Swal.getContent().querySelector('#increase-timer').addEventListener('click', () => {
+        console.log(Swal.increaseTimer(5000))
+      })
+      timerInterval = setInterval(() => {
+        Swal.getContent().querySelector('strong')
+          .textContent = (Swal.getTimerLeft() / 1000).toFixed(0)
+      }, 100)
+    },
+    onClose: () => {
+      clearInterval(timerInterval)
+    }
+  })
+}
+
 document.querySelector('.examples .mixin button').onclick = () => {
   const toast = Swal.mixin({
     toast: true,
