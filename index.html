@@ -517,8 +517,8 @@ Swal({
     Swal.showLoading()
 
     function toggleButtons () {
-      stop.disabled = !stop.disabled
-      resume.disabled = !resume.disabled
+      stop.disabled = !Swal.isTimerRunning()
+      resume.disabled = Swal.isTimerRunning()
     }
 
     stop.addEventListener('click', () => {

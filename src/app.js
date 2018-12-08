@@ -597,8 +597,8 @@ document.querySelector('.examples .timer-functions button').onclick = () => {
       Swal.showLoading()
 
       function toggleButtons () {
-        stop.disabled = !stop.disabled
-        resume.disabled = !resume.disabled
+        stop.disabled = !Swal.isTimerRunning()
+        resume.disabled = Swal.isTimerRunning()
       }
 
       stop.addEventListener('click', () => {
