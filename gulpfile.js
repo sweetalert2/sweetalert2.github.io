@@ -14,37 +14,36 @@ const styles = [
 ]
 
 gulp.task('bundle', () => {
-  return gulp.src('src/app.js', './src/native.js')
-    .pipe(webpackStream({
-      entry: ['babel-polyfill', './src/native.js', './src/app.js'],
-      output: {
-        filename: 'bundle.js'
-      },
-      module: {
-        rules: [
-          {
-            test: /\.js?$/,
-            exclude: /(node_modules)/,
-            use: 'babel-loader'
-          },
-          {
-            test: /\.css?$/,
-            use: [
-              'style-loader',
-              'css-loader'
-            ]
-          }
-        ]
-      },
-      plugins: [
-        new webpack.ProvidePlugin({
-          'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
-        })
-      ],
-      // mode: 'development'
-      mode: 'production'
-    }))
-    .pipe(gulp.dest('dist/'))
+  return webpackStream({
+    entry: ['babel-polyfill', './src/native.js', './src/app.js'],
+    output: {
+      filename: 'bundle.js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js?$/,
+          exclude: /(node_modules)/,
+          use: 'babel-loader'
+        },
+        {
+          test: /\.css?$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        }
+      ]
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+      })
+    ],
+    // mode: 'development'
+    mode: 'production'
+  })
+  .pipe(gulp.dest('dist/'))
 })
 
 gulp.task('sass-lint', () => {
