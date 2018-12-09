@@ -11,7 +11,7 @@ body {
   text-align: center;
   color: #555;
   padding-bottom: 2em; }
-  @media all and (max-width: 54.0625rem) {
+  @media all and (max-width: 768px) {
     body {
       padding-bottom: 0; } }
 
@@ -37,10 +37,10 @@ nav {
           align-items: stretch;
   -webkit-transition: left .5s ease-in-out;
   transition: left .5s ease-in-out; }
-  @media all and (max-width: 74rem) {
+  @media all and (max-width: 1150px) {
     nav {
       display: none; } }
-  @media all and (max-width: 77rem) {
+  @media all and (max-width: 1200px) {
     nav {
       left: 0; } }
   nav [href*='#'] {
@@ -138,7 +138,7 @@ h3 {
     position: absolute;
     margin-top: -2em;
     border-radius: .125em; }
-    @media all and (max-width: 46.25rem) {
+    @media all and (max-width: 768px) {
       h3::after {
         width: auto;
         left: 1.25em;
@@ -164,7 +164,7 @@ p {
     text-align: center; }
   p strong {
     font-weight: 600; }
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     p {
       text-align: center;
       padding: 0 .625em; } }
@@ -250,7 +250,7 @@ pre {
     cursor: pointer;
     -webkit-transition: top .2s ease-in-out, opacity .2s ease-in-out;
     transition: top .2s ease-in-out, opacity .2s ease-in-out; }
-    @media all and (max-width: 46.875rem) {
+    @media all and (max-width: 768px) {
       pre.code-sample::after {
         display: none; } }
 
@@ -270,13 +270,13 @@ kbd {
   width: 23.9375em;
   vertical-align: top;
   position: relative; }
-  @media all and (max-width: 54.0625rem) {
+  @media all and (max-width: 768px) {
     .showcase {
       padding: 0 .625em; }
       .showcase.normal,
       .showcase img {
         display: none; } }
-  @media all and (max-width: 26.4375rem) {
+  @media all and (max-width: 360px) {
     .showcase {
       width: 90%; } }
   .showcase h4 {
@@ -301,7 +301,7 @@ kbd {
     right: -2.125em;
     top: 3.75em;
     z-index: 2; }
-    @media all and (max-width: 54.0625rem) {
+    @media all and (max-width: 768px) {
       .showcase .vs-icon {
         margin: .3125em auto;
         right: auto;
@@ -316,7 +316,7 @@ kbd {
   margin: 0 auto;
   text-align: left;
   padding-left: 0; }
-  @media all and (max-width: 47.375rem) {
+  @media all and (max-width: 768px) {
     .examples {
       width: auto; } }
   .examples li {
@@ -325,7 +325,7 @@ kbd {
   .examples pre {
     display: inline-block;
     vertical-align: top; }
-    @media all and (max-width: 47.375rem) {
+    @media all and (max-width: 768px) {
       .examples .ui,
       .examples pre {
         display: block;
@@ -342,9 +342,10 @@ kbd {
       margin-bottom: 0;
       padding: 0 2em; }
   .examples pre {
-    max-width: 33em;
+    width: 528px;
+    max-width: 100%;
     margin-top: 2.5em; }
-    @media all and (max-width: 47.375rem) {
+    @media all and (max-width: 768px) {
       .examples pre {
         margin-top: 1em !important;
         margin-bottom: 3.75em; } }
@@ -364,7 +365,7 @@ table {
   margin: .625em auto;
   text-align: left;
   border-collapse: collapse; }
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     table {
       width: auto;
       margin: .625em auto; } }
@@ -375,19 +376,19 @@ table {
     font-weight: 400;
     position: relative;
     white-space: nowrap; }
-    @media all and (max-width: 22.5rem) {
+    @media all and (max-width: 360px) {
       table th {
         padding: .625em .25em; } }
   table td {
     padding: .625em 1.25em;
     vertical-align: top; }
-    @media all and (max-width: 22.5rem) {
+    @media all and (max-width: 360px) {
       table td {
         padding: .625em .25em; }
         table td b {
           font-size: .8125em; } }
 
-@media all and (max-width: 46.875rem) {
+@media all and (max-width: 768px) {
   .popup-types th:nth-child(2),
   .popup-types td:nth-child(2),
   .input-types th:nth-child(2),
@@ -399,7 +400,7 @@ table {
   text-align: center;
   width: 33%; }
 
-@media all and (max-width: 46.875rem) {
+@media all and (max-width: 768px) {
   .dismiss-reasons tr {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -422,7 +423,7 @@ table {
 .nowrap {
   white-space: nowrap; }
 
-@media all and (max-width: 46.875rem) {
+@media all and (max-width: 768px) {
   .mobile-hidden {
     display: none; } }
 
