@@ -484,26 +484,29 @@ Swal.queue([{
     </li>
 
 
-    <li class="timer-functions" id="timer-functions">
+    <li class="timer-functions mobile-hidden" id="timer-functions">
       <div class="ui">
         <p>Timer functions example</p>
         <button aria-label="Try me! Example: Timer functions">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>let timerInterval
+<code class="lang-javascript">let timerInterval
 Swal({
   title: 'Auto close alert!',
-  html: 'I will close in &lt;strong&gt;&lt;/strong&gt; seconds.' + 
-  '&lt;br/&gt;&lt;br/&gt;' +
-  '&lt;button id="increase" class="btn btn-warning"&gt;' +
-   'I need 5 more seconds!&lt;/button&gt;&lt;br/&gt;' +
-  '&lt;button id="stop" class="btn btn-danger"&gt;' + 
-   'Please stop the timer!!&lt;/button&gt;&lt;br/&gt;' +
-  '&lt;button id="resume" class="btn btn-success"' +
-   'disabled&gt;Phew... you can restart now!&lt;/button&gt;' + 
-  '&lt;br/&gt;' +
-  '&lt;button id="toggle" class="btn btn-primary"&gt;' +
-   'Toggle&lt;/button&gt;',  
+  html:
+    'I will close in &lt;strong&gt;&lt;/strong&gt; seconds.&lt;br/&gt;&lt;br/&gt;' +
+    '&lt;button id="increase" class="btn btn-warning"&gt;' +
+      'I need 5 more seconds!' +
+    '&lt;/button&gt;&lt;br/&gt;' +
+    '&lt;button id="stop" class="btn btn-danger"&gt;' +
+      'Please stop the timer!!' +
+    '&lt;/button&gt;&lt;br/&gt;' +
+    '&lt;button id="resume" class="btn btn-success" disabled&gt;' +
+      'Phew... you can restart now!' +
+    '&lt;/button&gt;&lt;br/&gt;' +
+    '&lt;button id="toggle" class="btn btn-primary"&gt;' +
+      'Toggle' +
+    '&lt;/button&gt;',
   timer: 10000,
   onOpen: () => {
     const content = Swal.getContent()
@@ -513,7 +516,7 @@ Swal({
     const resume = $('#resume')
     const toggle = $('#toggle')
     const increase = $('#increase')
-    
+
     Swal.showLoading()
 
     function toggleButtons () {
@@ -539,6 +542,7 @@ Swal({
     increase.addEventListener('click', () => {
       Swal.increaseTimer(5000)
     })
+
     timerInterval = setInterval(() => {
       Swal.getContent().querySelector('strong')
         .textContent = (Swal.getTimerLeft() / 1000)
