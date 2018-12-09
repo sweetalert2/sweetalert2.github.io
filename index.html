@@ -482,6 +482,78 @@ Swal.queue([{
   }
 }])</code></pre>
     </li>
+
+
+    <li class="timer-functions mobile-hidden" id="timer-functions">
+      <div class="ui">
+        <p>Timer functions example</p>
+        <button aria-label="Try me! Example: Timer functions">Try me!</button>
+      </div>
+      <pre class="code-sample">
+<code class="lang-javascript">let timerInterval
+Swal({
+  title: 'Auto close alert!',
+  html:
+    'I will close in &lt;strong&gt;&lt;/strong&gt; seconds.&lt;br/&gt;&lt;br/&gt;' +
+    '&lt;button id="increase" class="btn btn-warning"&gt;' +
+      'I need 5 more seconds!' +
+    '&lt;/button&gt;&lt;br/&gt;' +
+    '&lt;button id="stop" class="btn btn-danger"&gt;' +
+      'Please stop the timer!!' +
+    '&lt;/button&gt;&lt;br/&gt;' +
+    '&lt;button id="resume" class="btn btn-success" disabled&gt;' +
+      'Phew... you can restart now!' +
+    '&lt;/button&gt;&lt;br/&gt;' +
+    '&lt;button id="toggle" class="btn btn-primary"&gt;' +
+      'Toggle' +
+    '&lt;/button&gt;',
+  timer: 10000,
+  onOpen: () => {
+    const content = Swal.getContent()
+    const $ = content.querySelector.bind(content)
+
+    const stop = $('#stop')
+    const resume = $('#resume')
+    const toggle = $('#toggle')
+    const increase = $('#increase')
+
+    Swal.showLoading()
+
+    function toggleButtons () {
+      stop.disabled = !Swal.isTimerRunning()
+      resume.disabled = Swal.isTimerRunning()
+    }
+
+    stop.addEventListener('click', () => {
+      Swal.stopTimer()
+      toggleButtons()
+    })
+
+    resume.addEventListener('click', () => {
+      Swal.resumeTimer()
+      toggleButtons()
+    })
+
+    toggle.addEventListener('click', () => {
+      Swal.toggleTimer()
+      toggleButtons()
+    })
+
+    increase.addEventListener('click', () => {
+      Swal.increaseTimer(5000)
+    })
+
+    timerInterval = setInterval(() => {
+      Swal.getContent().querySelector('strong')
+        .textContent = (Swal.getTimerLeft() / 1000)
+          .toFixed(0)
+    }, 100)
+  },
+  onClose: () => {
+    clearInterval(timerInterval)
+  }
+})</code></pre>
+    </li>
   </ul>
 
 
@@ -660,7 +732,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr id="timer">
         <td><b>timer</b></td>
         <td><i>null</i></td>
-        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a> and <a href="#stopTimer">Swal.stopTimer()</a>.</td>
+        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a>, <a href="#isTimerRunning">Swal.isTimerRunning()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
       </tr>
       <tr>
         <td><b>animation</b></td>
@@ -1390,6 +1462,22 @@ if (formValues) {
       <tr id="stopTimer">
         <td><i>Swal.stopTimer()</i></td>
         <td>Stops the timer in case when <a href="#timer">timer</a> parameter is set. Returns the time left</td>
+      </tr>
+      <tr id="resumeTimer">
+        <td><i>Swal.resumeTimer()</i></td>
+        <td>Resume the <a href="#timer">timer</a> previously stopped. Returns the time left</td>
+      </tr>
+      <tr id="toggleTimer">
+        <td><i>Swal.toggleTimer()</i></td>
+        <td>Toggle state of the <a href="#timer">timer</a> between stopped and running. Returns the time left</td>
+      </tr>
+      <tr id="isTimerRunning">
+          <td><i>Swal.isTimerRunning()</i></td>
+          <td>Returns the status of a <a href="#timer">timer</a>: <strong>true</strong> if is running, <strong>false</strong> if it's paused</td>
+      </tr>
+      <tr id="increaseTimer">
+        <td><i>Swal.increaseTimer(n)</i></td>
+        <td>Increase the <a href="#timer">timer</a> by <strong>n</strong> milliseconds. Returns the time left</td>
       </tr>
       <tr>
         <td><i>Swal.clickConfirm()</i></td>
