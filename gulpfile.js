@@ -13,35 +13,8 @@ const styles = [
   'styles/native-js.scss'
 ]
 
-gulp.task('sass-lint', () => {
-  return gulp.src(styles)
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
-})
-
-gulp.task('sass', gulp.series('sass-lint', () => {
-  return gulp.src(styles)
-    .pipe(sass())
-    .pipe(autoprefix())
-    .pipe(gulp.dest('styles'))
-}))
-
-gulp.task('default', gulp.series('sass'))
-
-gulp.task('watch', () => {
-  browserSync.init({
-    port: 8080,
-    notify: false,
-    reloadOnRestart: true,
-    https: false,
-    server: ['./']
-  })
-
-  gulp.watch([
-    'src/app.js'
-  ]).on('change', () => {
-    return gulp.src('src/app.js')
+gulp.task('bundle', () => {
+  return gulp.src('src/app.js', './src/native.js')
       .pipe(webpackStream({
         entry: ['babel-polyfill', './src/native.js', './src/app.js'],
         output: {
@@ -72,7 +45,38 @@ gulp.task('watch', () => {
         mode: 'production'
       }))
       .pipe(gulp.dest('dist/'))
+})
+
+gulp.task('sass-lint', () => {
+  return gulp.src(styles)
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+})
+
+gulp.task('sass', gulp.series('sass-lint', () => {
+  return gulp.src(styles)
+    .pipe(sass())
+    .pipe(autoprefix())
+    .pipe(gulp.dest('styles'))
+}))
+
+gulp.task('build', gulp.series('sass', 'bundle'))
+
+gulp.task('default', gulp.series('sass'))
+
+gulp.task('watch', () => {
+  browserSync.init({
+    port: 8080,
+    notify: false,
+    reloadOnRestart: true,
+    https: false,
+    server: ['./']
   })
+
+  gulp.watch([
+    'src/app.js'
+  ]).on('change', gulp.series('bundle'))
 
   gulp.watch([
     'index.html',
