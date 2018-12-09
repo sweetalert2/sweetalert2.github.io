@@ -39,7 +39,7 @@
   .native-flex:hover {
     text-decoration: none;
     color: #fff; }
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     .native-flex {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;

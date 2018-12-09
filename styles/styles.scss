@@ -19,7 +19,7 @@ body {
   text-align: center;
   color: $emperor;
   padding-bottom: 2em;
-  @media all and (max-width: 54.0625rem) {
+  @media all and (max-width: 768px) {
     padding-bottom: 0;
   }
 }
@@ -40,11 +40,11 @@ nav {
   align-items: stretch;
   transition: left .5s ease-in-out;
 
-  @media all and (max-width: 74rem) {
+  @media all and (max-width: 1150px) {
     display: none;
   }
 
-  @media all and (max-width: 77rem) {
+  @media all and (max-width: 1200px) {
     left: 0;
   }
 
@@ -173,7 +173,7 @@ h3 {
     margin-top: -2em;
     border-radius: .125em;
 
-    @media all and (max-width: 46.25rem) {
+    @media all and (max-width: 768px) {
       width: auto;
       left: 1.25em;
       right: 1.25em;
@@ -209,7 +209,7 @@ p {
     font-weight: 600;
   }
 
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     text-align: center;
     padding: 0 .625em;
   }
@@ -318,7 +318,7 @@ pre {
       cursor: pointer;
       transition: top .2s ease-in-out, opacity .2s ease-in-out;
 
-      @media all and (max-width: 46.875rem) {
+      @media all and (max-width: 768px) {
         display: none;
       }
     }
@@ -346,7 +346,7 @@ kbd {
   vertical-align: top;
   position: relative;
 
-  @media all and (max-width: 54.0625rem) {
+  @media all and (max-width: 768px) {
     padding: 0 .625em;
 
     &.normal,
@@ -354,7 +354,7 @@ kbd {
       display: none;
     }
   }
-  @media all and (max-width: 26.4375rem) {
+  @media all and (max-width: 360px) {
     width: 90%;
   }
 
@@ -387,7 +387,7 @@ kbd {
     top: 3.75em;
     z-index: 2;
 
-    @media all and (max-width: 54.0625rem) {
+    @media all and (max-width: 768px) {
       margin: .3125em auto;
       right: auto;
       left: 50%;
@@ -405,7 +405,7 @@ kbd {
   margin: 0 auto;
   text-align: left;
   padding-left: 0;
-  @media all and (max-width: 47.375rem) {
+  @media all and (max-width: 768px) {
     width: auto;
   }
 
@@ -418,7 +418,7 @@ kbd {
     display: inline-block;
     vertical-align: top;
 
-    @media all and (max-width: 47.375rem) {
+    @media all and (max-width: 768px) {
       display: block;
       max-width: none;
       margin: 0 auto;
@@ -442,10 +442,11 @@ kbd {
   }
 
   pre {
-    max-width: 33em;
+    width: 528px;
+    max-width: 100%;
     margin-top: 2.5em;
 
-    @media all and (max-width: 47.375rem) {
+    @media all and (max-width: 768px) {
       margin-top: 1em !important;
       margin-bottom: 3.75em;
     }
@@ -474,7 +475,7 @@ table {
   margin: .625em auto;
   text-align: left;
   border-collapse: collapse;
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     width: auto;
     margin: .625em auto;
   }
@@ -487,7 +488,7 @@ table {
     position: relative;
     white-space: nowrap;
 
-    @media all and (max-width: 22.5rem) {
+    @media all and (max-width: 360px) {
       padding: .625em .25em;
     }
   }
@@ -496,7 +497,7 @@ table {
     padding: .625em 1.25em;
     vertical-align: top;
 
-    @media all and (max-width: 22.5rem) {
+    @media all and (max-width: 360px) {
       padding: .625em .25em;
 
       b {
@@ -508,7 +509,7 @@ table {
 
 .popup-types,
 .input-types {
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     th,
     td {
       &:nth-child(2) {
@@ -527,7 +528,7 @@ table {
 }
 
 .dismiss-reasons {
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     tr {
       display: flex;
       flex-direction: column;
@@ -557,7 +558,7 @@ table {
 }
 
 .mobile-hidden {
-  @media all and (max-width: 46.875rem) {
+  @media all and (max-width: 768px) {
     display: none;
   }
 }
