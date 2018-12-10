@@ -148,7 +148,7 @@ document.querySelector('.examples .timer button').onclick = () => {
     title: 'Auto close alert!',
     html: 'I will close in <strong></strong> milliseconds.',
     timer: 2000,
-    onOpen: () => {
+    onBeforeOpen: () => {
       Swal.showLoading()
       timerInterval = setInterval(() => {
         Swal.getContent().querySelector('strong').textContent = Swal.getTimerLeft()
@@ -585,7 +585,7 @@ document.querySelector('.examples .timer-functions button').onclick = () => {
     '<button id="resume" class="btn btn-success" disabled>Phew... you can restart now!</button><br/>' +
     '<button id="toggle" class="btn btn-primary">Toggle</button>',
     timer: 10000,
-    onOpen: () => {
+    onBeforeOpen: () => {
       const content = Swal.getContent()
       const $ = content.querySelector.bind(content)
 

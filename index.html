@@ -346,7 +346,7 @@ Swal({
   title: 'Auto close alert!',
   html: 'I will close in &lt;strong>&lt;/strong> seconds.',
   timer: 2000,
-  onOpen: () => {
+  onBeforeOpen: () => {
     Swal.showLoading()
     timerInterval = setInterval(() => {
       Swal.getContent().querySelector('strong')
@@ -508,7 +508,7 @@ Swal({
       'Toggle' +
     '&lt;/button&gt;',
   timer: 10000,
-  onOpen: () => {
+  onBeforeOpen: () => {
     const content = Swal.getContent()
     const $ = content.querySelector.bind(content)
 
