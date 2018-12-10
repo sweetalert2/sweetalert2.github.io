@@ -43,7 +43,7 @@ gulp.task('bundle', () => {
     // mode: 'development'
     mode: 'production'
   })
-  .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/'))
 })
 
 gulp.task('sass-lint', () => {
