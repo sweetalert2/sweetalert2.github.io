@@ -489,3 +489,30 @@ table {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
+
+@-webkit-keyframes border-flash {
+  0% {
+    border-color: #000; }
+  50% {
+    border-color: #f00; }
+  100% {
+    border-color: #000; } }
+
+@keyframes border-flash {
+  0% {
+    border-color: #000; }
+  50% {
+    border-color: #f00; }
+  100% {
+    border-color: #000; } }
+
+.flashing-border {
+  border: solid 15px;
+  -webkit-animation-name: border-flash;
+          animation-name: border-flash;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }

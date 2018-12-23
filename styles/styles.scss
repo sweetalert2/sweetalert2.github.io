@@ -625,3 +625,17 @@ table {
 .unselectable {
   user-select: none;
 }
+
+@keyframes border-flash {
+  0% { border-color: $black; }
+  50% { border-color: $red; }
+  100% { border-color:  $black; }
+}
+
+.flashing-border {
+  border: solid 15px;
+  animation-name: border-flash;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
