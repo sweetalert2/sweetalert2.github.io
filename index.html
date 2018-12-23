@@ -233,6 +233,20 @@
 })</code></pre>
     </li>
 
+    <li id="custom-container-class">
+      <div class="ui">
+        <p>Flashing border <br/>(using custom container class)</span></p>
+        <button aria-label="Try me! Example: custom container class">Try me!</button>
+      </div>
+      <pre class="code-sample">
+<code> Swal({
+    title: 'Error error!',
+    type: 'error',
+    customContainerClass: 'flashing-border'
+  })</code></pre>
+    </li>
+
+
     <li class="warning confirm" id="confirm-dialog">
       <div class="ui">
         <p>A confirm dialog, with a function attached to the "Confirm"-button...</p>
@@ -728,6 +742,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><b>customClass</b></td>
         <td><i>null</i></td>
         <td>A custom CSS class for the modal.</td>
+      </tr>
+      <tr>
+        <td><b>customContainerClass</b></td>
+        <td><i>null</i></td>
+        <td>A custom CSS class for the container of modal.</td>
       </tr>
       <tr id="timer">
         <td><b>timer</b></td>
