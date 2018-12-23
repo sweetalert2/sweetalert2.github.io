@@ -211,6 +211,14 @@ document.querySelector('#custom-animation button').onclick = () => {
   })
 }
 
+document.querySelector('#custom-container-class button').onclick = () => {
+  Swal({
+    title: 'Error error!',
+    type: 'error',
+    customContainerClass: 'flashing-border'
+  })
+}
+
 document.querySelector('.examples .title-text button').onclick = () => {
   Swal('The Internet?', 'That thing is still around?', 'question')
 }
