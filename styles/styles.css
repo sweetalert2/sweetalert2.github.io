@@ -128,7 +128,7 @@ h3 {
   margin-top: 6em;
   text-align: center;
   position: relative; }
-  h3::after {
+  h3::before {
     content: '';
     background-color: #e2e5e8;
     height: .25em;
@@ -139,7 +139,7 @@ h3 {
     margin-top: -2em;
     border-radius: .125em; }
     @media all and (max-width: 768px) {
-      h3::after {
+      h3::before {
         width: auto;
         left: 1.25em;
         right: 1.25em;
