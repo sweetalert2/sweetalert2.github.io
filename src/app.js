@@ -115,11 +115,11 @@ document.querySelector('.showcase.normal button').onclick = () => {
 }
 
 document.querySelector('.showcase.sweet button').onclick = () => {
-  Swal('Good job!', 'You clicked the button!', 'success')
+  Swal.fire('Good job!', 'You clicked the button!', 'success')
 }
 
 document.querySelector('.paypal').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'How would you like to pay?',
     input: 'select',
     inputOptions: {
@@ -139,12 +139,12 @@ document.querySelector('.paypal').onclick = () => {
 }
 
 document.querySelector('.examples .message button').onclick = () => {
-  Swal('Any fool can use a computer')
+  Swal.fire('Any fool can use a computer')
 }
 
 document.querySelector('.examples .timer button').onclick = () => {
   let timerInterval
-  Swal({
+  Swal.fire({
     title: 'Auto close alert!',
     html: 'I will close in <strong></strong> milliseconds.',
     timer: 2000,
@@ -165,7 +165,7 @@ document.querySelector('.examples .timer button').onclick = () => {
 }
 
 document.querySelector('.examples .html button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: '<strong>HTML <u>example</u></strong>',
     type: 'info',
     html:
@@ -183,7 +183,7 @@ document.querySelector('.examples .html button').onclick = () => {
 }
 
 document.querySelector('.examples #position button').onclick = () => {
-  Swal({
+  Swal.fire({
     position: 'top-end',
     type: 'success',
     title: 'Your work has been saved',
@@ -193,7 +193,7 @@ document.querySelector('.examples #position button').onclick = () => {
 }
 
 document.querySelector('.examples .rtl button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'هل تريد الاستمرار؟',
     confirmButtonText: 'نعم',
     cancelButtonText: 'لا',
@@ -204,7 +204,7 @@ document.querySelector('.examples .rtl button').onclick = () => {
 }
 
 document.querySelector('#custom-animation button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'Custom animation with Animate.css',
     animation: false,
     customClass: 'animated tada'
@@ -212,11 +212,11 @@ document.querySelector('#custom-animation button').onclick = () => {
 }
 
 document.querySelector('.examples .title-text button').onclick = () => {
-  Swal('The Internet?', 'That thing is still around?', 'question')
+  Swal.fire('The Internet?', 'That thing is still around?', 'question')
 }
 
 document.querySelector('.examples .error button').onclick = () => {
-  Swal({
+  Swal.fire({
     type: 'error',
     title: 'Oops...',
     text: 'Something went wrong!',
@@ -225,7 +225,7 @@ document.querySelector('.examples .error button').onclick = () => {
 }
 
 document.querySelector('.examples #long-text button').onclick = () => {
-  Swal({
+  Swal.fire({
     imageUrl: 'https://placeholder.pics/svg/300x1500',
     imageHeight: 1500,
     imageAlt: 'A tall image'
@@ -233,7 +233,7 @@ document.querySelector('.examples #long-text button').onclick = () => {
 }
 
 document.querySelector('.examples .warning.confirm button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'Are you sure?',
     text: 'You won\'t be able to revert this!',
     type: 'warning',
@@ -243,7 +243,7 @@ document.querySelector('.examples .warning.confirm button').onclick = () => {
     confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
     if (result.value) {
-      Swal('Deleted!', 'Your file has been deleted!', 'success')
+      Swal.fire('Deleted!', 'Your file has been deleted!', 'success')
     }
   })
 }
@@ -254,7 +254,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
     cancelButtonClass: 'btn btn-danger',
     buttonsStyling: false
   })
-  swalWithBootstrapButtons({
+  swalWithBootstrapButtons.fire({
     title: 'Are you sure?',
     text: 'Buttons below are styled with Bootstrap classes',
     type: 'warning',
@@ -264,7 +264,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
     reverseButtons: true
   }).then((result) => {
     if (result.value) {
-      swalWithBootstrapButtons(
+      swalWithBootstrapButtons.fire(
         'Deleted!',
         'Your file has been deleted.',
         'success'
@@ -280,7 +280,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
 }
 
 document.querySelector('.examples .custom-image button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'Sweet!',
     text: 'Modal with a custom image.',
     imageUrl: 'https://unsplash.it/400/200/?random',
@@ -292,7 +292,7 @@ document.querySelector('.examples .custom-image button').onclick = () => {
 }
 
 document.querySelector('.examples .custom-width-padding-background button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'Custom width, padding, background.',
     width: 600,
     padding: '3em',
@@ -314,7 +314,7 @@ document.querySelector('.input-type-text').onclick = () => {
       .then(response => response.json())
       .then(data => data.ip)
 
-    const {value: ipAddress} = await Swal({
+    const {value: ipAddress} = await Swal.fire({
       title: 'Enter your IP address',
       input: 'text',
       inputValue: inputValue,
@@ -323,34 +323,34 @@ document.querySelector('.input-type-text').onclick = () => {
         return !value && 'You need to write something!'
       }
     })
-    ipAddress && Swal(`Your IP address is ${ipAddress}`)
+    ipAddress && Swal.fire(`Your IP address is ${ipAddress}`)
   })()
 }
 
 document.querySelector('.input-type-email').onclick = () => {
   (async function getEmail () {
-    const {value: email} = await Swal({
+    const {value: email} = await Swal.fire({
       title: 'Input email address',
       input: 'email',
       inputPlaceholder: 'Enter your email address'
     })
-    email && Swal({html: 'Entered email: <strong>' + email + '</strong>'})
+    email && Swal.fire({html: 'Entered email: <strong>' + email + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-url').onclick = () => {
   (async function getUrl () {
-    const {value: url} = await Swal({
+    const {value: url} = await Swal.fire({
       input: 'url',
       inputPlaceholder: 'Enter the URL'
     })
-    url && Swal({html: 'Entered URL: <strong>' + url + '</strong>'})
+    url && Swal.fire({html: 'Entered URL: <strong>' + url + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-password').onclick = () => {
   (async function getPassword () {
-    const {value: password} = await Swal({
+    const {value: password} = await Swal.fire({
       title: 'Enter your password',
       input: 'password',
       inputPlaceholder: 'Enter your password',
@@ -360,13 +360,13 @@ document.querySelector('.input-type-password').onclick = () => {
         'autocorrect': 'off'
       }
     })
-    password && Swal({html: 'Entered password: <strong>' + password + '</strong>'})
+    password && Swal.fire({html: 'Entered password: <strong>' + password + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-textarea').onclick = () => {
   (async function getMessage () {
-    const {value: text} = await Swal({
+    const {value: text} = await Swal.fire({
       input: 'textarea',
       inputPlaceholder: 'Type your message here...',
       inputAttributes: {
@@ -374,13 +374,13 @@ document.querySelector('.input-type-textarea').onclick = () => {
       },
       showCancelButton: true
     })
-    text && Swal(text)
+    text && Swal.fire(text)
   })()
 }
 
 document.querySelector('.input-type-select').onclick = () => {
   (async function getFruit () {
-    const {value: fruit} = await Swal({
+    const {value: fruit} = await Swal.fire({
       title: 'Select field validation',
       input: 'select',
       inputOptions: {
@@ -401,7 +401,7 @@ document.querySelector('.input-type-select').onclick = () => {
         })
       }
     })
-    fruit && Swal({html: 'You selected: <strong>' + fruit + '</strong>'})
+    fruit && Swal.fire({html: 'You selected: <strong>' + fruit + '</strong>'})
   })()
 }
 
@@ -417,7 +417,7 @@ document.querySelector('.input-type-radio').onclick = () => {
       }, 2000)
     })
 
-    const {value: color} = await Swal({
+    const {value: color} = await Swal.fire({
       title: 'Select color',
       input: 'radio',
       inputOptions: inputOptionsPromise,
@@ -426,13 +426,13 @@ document.querySelector('.input-type-radio').onclick = () => {
       }
     })
 
-    color && Swal({html: 'You selected: <strong>' + color + '</strong>'})
+    color && Swal.fire({html: 'You selected: <strong>' + color + '</strong>'})
   })()
 }
 
 document.querySelector('.input-type-checkbox').onclick = () => {
   (async function acceptTerms () {
-    const {value: accept} = await Swal({
+    const {value: accept} = await Swal.fire({
       title: 'Terms and conditions',
       input: 'checkbox',
       inputValue: 1,
@@ -443,13 +443,13 @@ document.querySelector('.input-type-checkbox').onclick = () => {
       }
     })
 
-    accept && Swal({text: 'You agreed with T&C :)'})
+    accept && Swal.fire({text: 'You agreed with T&C :)'})
   })()
 }
 
 document.querySelector('.input-type-file').onclick = () => {
   (async function getColor () {
-    const {value: file} = await Swal({
+    const {value: file} = await Swal.fire({
       title: 'Select image',
       input: 'file',
       inputAttributes: {
@@ -460,7 +460,7 @@ document.querySelector('.input-type-file').onclick = () => {
     if (file) {
       const reader = new FileReader()
       reader.onload = (e) => {
-        Swal({
+        Swal.fire({
           title: 'Your uploaded picture',
           imageUrl: e.target.result,
           imageAlt: 'The uploaded picture'
@@ -472,7 +472,7 @@ document.querySelector('.input-type-file').onclick = () => {
 }
 
 document.querySelector('.input-type-range').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'How old are you?',
     type: 'question',
     input: 'range',
@@ -487,7 +487,7 @@ document.querySelector('.input-type-range').onclick = () => {
 
 document.querySelector('.input-type-multiple').onclick = () => {
   (async function getForm () {
-    const {value: formValues} = await Swal({
+    const {value: formValues} = await Swal.fire({
       title: 'Multiple inputs',
       html:
         '<input id="swal-input1" class="swal2-input" placeholder="first input field">' +
@@ -500,12 +500,12 @@ document.querySelector('.input-type-multiple').onclick = () => {
         ]
       }
     })
-    formValues && Swal(JSON.stringify(formValues))
+    formValues && Swal.fire(JSON.stringify(formValues))
   })()
 }
 
 document.querySelector('.examples .ajax-request button').onclick = () => {
-  Swal({
+  Swal.fire({
     title: 'Submit your Github username to run ajax request',
     input: 'text',
     inputAttributes: {
@@ -529,7 +529,7 @@ document.querySelector('.examples .ajax-request button').onclick = () => {
     allowOutsideClick: () => !Swal.isLoading()
   }).then((result) => {
     if (result.value) {
-      Swal({
+      Swal.fire({
         title: `${result.value.login}'s avatar`,
         imageUrl: result.value.avatar_url
       })
@@ -549,7 +549,7 @@ document.querySelector('.examples .chaining-modals button').onclick = () => {
     'Question 3'
   ]).then((result) => {
     if (result.value) {
-      Swal({
+      Swal.fire({
         title: 'All done!',
         html: 'Your answers: <pre><code>' + JSON.stringify(result.value) + '</code></pre>',
         confirmButtonText: 'Lovely!'
@@ -577,7 +577,7 @@ document.querySelector('.examples .dynamic-queue button').onclick = () => {
 
 document.querySelector('.examples .timer-functions button').onclick = () => {
   let timerInterval
-  Swal({
+  Swal.fire({
     title: 'Auto close alert!',
     html: 'I will close in <strong></strong> seconds.<br/><br/>' +
     '<button id="increase" class="btn btn-warning">I need 5 more seconds!</button><br/>' +
@@ -632,7 +632,7 @@ document.querySelector('.examples .timer-functions button').onclick = () => {
 }
 
 document.querySelector('.examples .mixin button').onclick = () => {
-  const toast = Swal.mixin({
+  const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
@@ -640,7 +640,7 @@ document.querySelector('.examples .mixin button').onclick = () => {
     footer: ''
   })
 
-  toast({
+  Toast.fire({
     type: 'success',
     title: 'Signed in successfully'
   })
@@ -649,7 +649,7 @@ document.querySelector('.examples .mixin button').onclick = () => {
 Array.from(document.querySelectorAll('.popup-types button')).forEach(button => {
   button.onclick = (e) => {
     var type = e.target.getAttribute('class').slice(5)
-    Swal(type + '!', '', type)
+    Swal.fire(type + '!', '', type)
   }
 })
 

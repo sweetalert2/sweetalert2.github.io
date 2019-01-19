@@ -41,7 +41,7 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
 
   <!-- This is what you need -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <!--.......................-->
 </head>
 
@@ -116,7 +116,7 @@
     <img src="/images/swal2-logo.png" width="178" height="30" alt="SweetAlert2">
     <button aria-label="Show SweetAlert2 success message">Show success message</button>
     <pre class="code-sample">
-<code>Swal(
+<code>Swal.fire(
   'Good job!',
   'You clicked the button!',
   'success'
@@ -137,7 +137,7 @@
         <p>A basic message</p>
         <button aria-label="Try me! Example: A basic message">Try me!</button>
       </div>
-      <pre class="code-sample"><code>Swal('Any fool can use a computer')</code></pre>
+      <pre class="code-sample"><code>Swal.fire('Any fool can use a computer')</code></pre>
     </li>
 
     <li class="title-text" id="title-text-example">
@@ -146,7 +146,7 @@
         <button aria-label="Try me! Example: A title with a text under">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal(
+<code>Swal.fire(
   'The Internet?',
   'That thing is still around?',
   'question'
@@ -159,7 +159,7 @@
         <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   type: 'error',
   title: 'Oops...',
   text: 'Something went wrong!',
@@ -173,7 +173,7 @@
         <button aria-label="Try me! Example: A modal window with a long content inside">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   imageUrl: 'https://placeholder.pics/svg/300x1500',
   imageHeight: 1500,
   imageAlt: 'A tall image'
@@ -186,7 +186,7 @@
         <button aria-label="Try me! Example: Custom HTML description and buttons">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-<code class="lang-javascript">Swal({
+<code class="lang-javascript">Swal.fire({
   title: '&lt;strong&gt;HTML &lt;u&gt;example&lt;/u&gt;&lt;/strong&gt;',
   type: 'info',
   html:
@@ -211,7 +211,7 @@
         <button aria-label="Try me! Example: A custom positioned dialog">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   position: 'top-end',
   type: 'success',
   title: 'Your work has been saved',
@@ -226,7 +226,7 @@
         <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
-<code>Swal({
+<code>Swal.fire({
   title: 'Custom animation with Animate.css',
   animation: false,
   customClass: 'animated tada'
@@ -239,7 +239,7 @@
         <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
   type: 'warning',
@@ -249,7 +249,7 @@
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.value) {
-    Swal(
+    Swal.fire(
       'Deleted!',
       'Your file has been deleted.',
       'success'
@@ -270,7 +270,7 @@
   buttonsStyling: false,
 })
 
-swalWithBootstrapButtons({
+swalWithBootstrapButtons.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
   type: 'warning',
@@ -280,7 +280,7 @@ swalWithBootstrapButtons({
   reverseButtons: true
 }).then((result) => {
   if (result.value) {
-    swalWithBootstrapButtons(
+    swalWithBootstrapButtons.fire(
       'Deleted!',
       'Your file has been deleted.',
       'success'
@@ -304,7 +304,7 @@ swalWithBootstrapButtons({
         <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   title: 'Sweet!',
   text: 'Modal with a custom image.',
   imageUrl: 'https://unsplash.it/400/200',
@@ -321,7 +321,7 @@ swalWithBootstrapButtons({
         <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   title: 'Custom width, padding, background.',
   width: 600,
   padding: '3em',
@@ -342,7 +342,7 @@ swalWithBootstrapButtons({
       </div>
       <pre class="code-sample">
 <code>let timerInterval
-Swal({
+Swal.fire({
   title: 'Auto close alert!',
   html: 'I will close in &lt;strong>&lt;/strong> seconds.',
   timer: 2000,
@@ -372,7 +372,7 @@ Swal({
         <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-html='<div id="rtl-container" dir="rtl"></div>'>
-<code>Swal({
+<code>Swal.fire({
   title: 'هل تريد الاستمرار؟',
   confirmButtonText:  'نعم',
   cancelButtonText:  'لا',
@@ -388,7 +388,7 @@ Swal({
         <button aria-label="Try me! Example: AJAX request">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal({
+<code>Swal.fire({
   title: 'Submit your Github username',
   input: 'text',
   inputAttributes: {
@@ -414,7 +414,7 @@ Swal({
   allowOutsideClick: () => !Swal.isLoading()
 }).then((result) => {
   if (result.value) {
-    Swal({
+    Swal.fire({
       title: `${result.value.login}'s avatar`,
       imageUrl: result.value.avatar_url
     })
@@ -442,7 +442,7 @@ Swal({
   'Question 3'
 ]).then((result) => {
   if (result.value) {
-    Swal({
+    Swal.fire({
       title: 'All done!',
       html:
         'Your answers: &lt;pre&gt;&lt;code&gt;' +
@@ -491,7 +491,7 @@ Swal.queue([{
       </div>
       <pre class="code-sample">
 <code class="lang-javascript">let timerInterval
-Swal({
+Swal.fire({
   title: 'Auto close alert!',
   html:
     'I will close in &lt;strong&gt;&lt;/strong&gt; seconds.&lt;br/&gt;&lt;br/&gt;' +
@@ -599,7 +599,7 @@ const Swal = require('sweetalert2')</code></pre>
 import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <p>2. Call the sweetAlert2-function after the page has loaded</p>
     </div>
-<pre><code>Swal({
+<pre><code>Swal.fire({
   title: 'Error!',
   text: 'Do you want to continue',
   type: 'error',
@@ -964,16 +964,6 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>null</i></td>
         <td>Function to run after modal has been disposed.</td>
       </tr>
-      <tr>
-        <td><b>useRejections</b></td>
-        <td><i>false</i></td>
-        <td><strong>Deprecated and will be removed in the next major release.</strong> Determines whether dismissals (outside click, cancel button, close button, <kbd>Esc</kbd> key, timer) should resolve with an object of the format <strong class="nowrap">{ dismiss: reason }</strong> or reject the promise.</td>
-      </tr>
-      <tr>
-        <td><b>expectRejections</b></td>
-        <td><i>false</i></td>
-        <td><strong>Deprecated and will be removed in the next major release.</strong> Determines whether given <strong>inputValidator</strong> and <strong>preConfirm</strong> functions should be expected to to signal validation errors by rejecting, or by their respective means (see documentation for each option). </td>
-      </tr>
     </table>
 
     <p class="center">
@@ -987,14 +977,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <button aria-label="Try me! Example: Mixin">Try me!</button>
         </div>
         <pre class="code-sample">
-<code>const toast = Swal.mixin({
+<code>const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000
 });
 
-toast({
+Toast.fire({
   type: 'success',
   title: 'Signed in successfully'
 })
@@ -1008,7 +998,7 @@ toast({
   <div class="center-container">
     <h3 id="handling-dismissals">Handling Dismissals</h3>
 
-    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>Swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
+    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>Swal.fire()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
 
     <table class="dismiss-reasons">
       <tr class="titles">
@@ -1099,7 +1089,7 @@ const inputValue = fetch(ipAPI)
   .then(response => response.json())
   .then(data => data.ip)
 
-const {value: ipAddress} = await Swal({
+const {value: ipAddress} = await Swal.fire({
   title: 'Enter your IP address',
   input: 'text',
   inputValue: inputValue,
@@ -1110,7 +1100,7 @@ const {value: ipAddress} = await Swal({
 })
 
 if (ipAddress) {
-  Swal(`Your IP address is ${ipAddress}`)
+  Swal.fire(`Your IP address is ${ipAddress}`)
 }</code></pre>
       </td>
       <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>
@@ -1120,14 +1110,14 @@ if (ipAddress) {
       <td><strong>email</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getEmail () {" data-codepen-js-after="})()">
-<code>const {value: email} = await Swal({
+<code>const {value: email} = await Swal.fire({
   title: 'Input email address',
   input: 'email',
   inputPlaceholder: 'Enter your email address'
 })
 
 if (email) {
-  Swal('Entered email: ' + email)
+  Swal.fire('Entered email: ' + email)
 }</code></pre>
       </td>
       <td><button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button></td>
@@ -1137,13 +1127,13 @@ if (email) {
       <td><strong>url</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getUrl () {" data-codepen-js-after="})()">
-<code>const {value: url} = await Swal({
+<code>const {value: url} = await Swal.fire({
   input: 'url',
   inputPlaceholder: 'Enter the URL'
 })
 
 if (url) {
-  Swal('Entered URL: ' + url)
+  Swal.fire('Entered URL: ' + url)
 }</code></pre>
       </td>
       <td><button class="input-type-url">Try me!</button></td>
@@ -1153,7 +1143,7 @@ if (url) {
       <td><strong>password</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getPassword () {" data-codepen-js-after="})()">
-<code>const {value: password} = await Swal({
+<code>const {value: password} = await Swal.fire({
   title: 'Enter your password',
   input: 'password',
   inputPlaceholder: 'Enter your password',
@@ -1165,7 +1155,7 @@ if (url) {
 })
 
 if (password) {
-  Swal('Entered password: ' + password)
+  Swal.fire('Entered password: ' + password)
 }</code></pre>
       </td>
       <td><button class="input-type-password" aria-label="Try me! Example: input type password">Try me!</button></td>
@@ -1175,14 +1165,14 @@ if (password) {
       <td><strong>textarea</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getText () {" data-codepen-js-after="})()">
-<code>const {value: text} = await Swal({
+<code>const {value: text} = await Swal.fire({
   input: 'textarea',
   inputPlaceholder: 'Type your message here...',
   showCancelButton: true
 })
 
 if (text) {
-  Swal(text)
+  Swal.fire(text)
 }</code></pre>
       </td>
       <td><button class="input-type-textarea" aria-label="Try me! Example: input type textarea">Try me!</button></td>
@@ -1192,7 +1182,7 @@ if (text) {
       <td><strong>select</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFruit () {" data-codepen-js-after="})()">
-<code>const {value: fruit} = await Swal({
+<code>const {value: fruit} = await Swal.fire({
   title: 'Select field validation',
   input: 'select',
   inputOptions: {
@@ -1215,7 +1205,7 @@ if (text) {
 })
 
 if (fruit) {
-  Swal('You selected: ' + fruit)
+  Swal.fire('You selected: ' + fruit)
 }</code></pre>
       </td>
       <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
@@ -1236,7 +1226,7 @@ const inputOptions = new Promise((resolve) => {
   }, 2000)
 })
 
-const {value: color} = await Swal({
+const {value: color} = await Swal.fire({
   title: 'Select color',
   input: 'radio',
   inputOptions: inputOptions,
@@ -1246,7 +1236,7 @@ const {value: color} = await Swal({
 })
 
 if (color) {
-  Swal({html: 'You selected: ' + color})
+  Swal.fire({html: 'You selected: ' + color})
 }</code></pre>
       </td>
       <td><button class="input-type-radio" aria-label="Try me! Example: input type radio">Try me!</button></td>
@@ -1256,7 +1246,7 @@ if (color) {
       <td><strong>checkbox</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function acceptTermsAndConditions () {" data-codepen-js-after="})()">
-<code>const {value: accept} = await Swal({
+<code>const {value: accept} = await Swal.fire({
   title: 'Terms and conditions',
   input: 'checkbox',
   inputValue: 1,
@@ -1270,7 +1260,7 @@ if (color) {
 })
 
 if (accept) {
-  Swal('You agreed with T&amp;C :)')
+  Swal.fire('You agreed with T&amp;C :)')
 }</code></pre>
 
       </td>
@@ -1281,7 +1271,7 @@ if (accept) {
       <td><strong>file</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>const {value: file} = await Swal({
+<code>const {value: file} = await Swal.fire({
   title: 'Select image',
   input: 'file',
   inputAttributes: {
@@ -1293,7 +1283,7 @@ if (accept) {
 if (file) {
   const reader = new FileReader
   reader.onload = (e) => {
-    Swal({
+    Swal.fire({
       title: 'Your uploaded picture',
       imageUrl: e.target.result,
       imageAlt: 'The uploaded picture'
@@ -1309,7 +1299,7 @@ if (file) {
       <td><strong>range</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>Swal({
+<code>Swal.fire({
   title: 'How old are you?',
   type: 'question',
   input: 'range',
@@ -1336,7 +1326,7 @@ if (file) {
       <td class="mobile-hidden"></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
-<code>const {value: formValues} = await Swal({
+<code>const {value: formValues} = await Swal.fire({
   title: 'Multiple inputs',
   html:
     '&lt;input id="swal-input1" class="swal2-input"&gt;' +
@@ -1351,7 +1341,7 @@ if (file) {
 })
 
 if (formValues) {
-  Swal(json.stringify(formValues))
+  Swal.fire(json.stringify(formValues))
 }</code></pre>
 
       </td>
@@ -1379,14 +1369,6 @@ if (formValues) {
       <tr>
         <td><i>Swal.mixin({ ...options })</i></td>
         <td>Returns an extended version of `Swal` containing `params` as defaults. Useful for reusing Swal configuration.</td>
-      </tr>
-      <tr>
-        <td><i>Swal.setDefaults({ ...options })</i></td>
-        <td><strong>Deprecated, use Swal.mixin() instead.</strong> Set default options to be used</td>
-      </tr>
-      <tr>
-        <td><i>Swal.resetDefaults()</i></td>
-        <td><strong>Deprecated, use Swal.mixin() instead.</strong>Resets default options to their original value.</td>
       </tr>
       <tr>
         <td><i>Swal.close()</i> or <i>Swal.closeModal()</i></td>
@@ -1427,10 +1409,6 @@ if (formValues) {
       <tr>
         <td><i>Swal.getCancelButton()</i></td>
         <td>Get the "Cancel" button.</td>
-      </tr>
-      <tr>
-        <td><i>Swal.getButtonsWrapper()</i></td>
-        <td><strong>Deprecated, use getActions() instead.</strong> Get the buttons wrapper.</td>
       </tr>
       <tr>
         <td><i>Swal.enableButtons()</i></td>
