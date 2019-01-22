@@ -1366,6 +1366,10 @@ if (formValues) {
         <td><i>Swal.mixin({ ...options })</i></td>
         <td>Returns an extended version of `Swal` containing `params` as defaults. Useful for reusing Swal configuration.</td>
       </tr>
+      <tr id="update">
+        <td><i>Swal.update({ ...options })</i></td>
+        <td>Updates popup options.</td>
+      </tr>
       <tr>
         <td><i>Swal.close()</i></td>
         <td>Close the currently open SweetAlert2 modal programmatically, the Promise returned by <strong>Swal.fire()</strong> will be resolved with an empty object <strong class="nowrap">{ }</strong></td>
@@ -1523,8 +1527,12 @@ if (formValues) {
         <td>Hide progress steps.</td>
       </tr>
       <tr>
-        <td><i>Swal.isValidParameter({String})</i></td>
+        <td><i>Swal.isValidParameter(param)</i></td>
         <td>Determine if parameter name is valid.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.isUpdatableParameter(param)</i></td>
+        <td>Determine if parameter name is valid for <a href="#update">Swal.update()</a> method.</td>
       </tr>
     </table>
   </div>
