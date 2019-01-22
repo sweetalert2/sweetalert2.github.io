@@ -523,7 +523,7 @@ document.querySelector('.examples .ajax-request button').onclick = () => {
           return response.json()
         })
         .catch(error => {
-          Swal.showValidationError(error)
+          Swal.showValidationMessage(error)
         })
     },
     allowOutsideClick: () => !Swal.isLoading()
