@@ -270,7 +270,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
         'success'
       )
     } else if (result.dismiss === Swal.DismissReason.cancel) {
-      swalWithBootstrapButtons(
+      swalWithBootstrapButtons.fire(
         'Cancelled',
         'Your imaginary file is safe :)',
         'error'
