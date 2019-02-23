@@ -138,6 +138,42 @@ document.querySelector('.paypal').onclick = () => {
   return false
 }
 
+document.querySelector('.cryptocurrencies').onclick = () => {
+  const wallets = {
+    bitcoin: '12BxefvPMtHePgfPRDL1SaZYSG4GwQmWoP',
+    ethereum: '0x36e2b10666e2c0dc343901895ba3697b5d3214d1',
+    bitcoincash: 'qqxs402qszgwuue00gwxw996lzhpa8up2unqm0y46g'
+  }
+  const showCryptocurrency = () => {
+    const cryptocurrency = Swal.getInput().value
+    const wallet = wallets[cryptocurrency]
+    Swal.update({
+      html: `
+        <strong class="${cryptocurrency}">${wallet}</strong>
+        <a href="${cryptocurrency}:${wallet}">
+          <img src="/images/qr-code-${cryptocurrency}.png" class="cryptocurrency-qr-code">
+        </a>
+      `
+    })
+  }
+  Swal.fire({
+    title: 'Choose your cryptocurrency',
+    input: 'select',
+    inputOptions: {
+      bitcoin: 'Bitcoin',
+      ethereum: 'Ether',
+      bitcoincash: 'Bitcoin Cash'
+    },
+    inputValue: 'bitcoin',
+    onOpen: () => {
+      Swal.getInput().onchange = showCryptocurrency
+      showCryptocurrency()
+    }
+  })
+
+  return false
+}
+
 document.querySelector('.examples .message button').onclick = () => {
   Swal.fire('Any fool can use a computer')
 }
