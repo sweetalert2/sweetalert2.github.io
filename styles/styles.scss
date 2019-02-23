@@ -613,7 +613,25 @@ table {
 .hall-of-donators {
   display: inline-block;
   font-size: 1.2em;
-  margin: 1em auto 0;
+  margin: 2em auto 0;
+}
+
+.cryptocurrency-qr-code {
+  width: 200px;
+  height: 200px;
+  margin-top: 1em;
+}
+
+.bitcoin {
+  color: $bitcoin;
+}
+
+.ethereum {
+  color: $ethereum;
+}
+
+.bitcoincash {
+  color: $bitcoincash;
 }
 
 .stats {
