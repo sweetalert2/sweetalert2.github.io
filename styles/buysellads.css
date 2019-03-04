@@ -14,8 +14,7 @@ body > .bsa-cpc {
 
 .bsa-cpc ._default_ {
   display: inline;
-  overflow: hidden;
-  line-height: 1; }
+  overflow: hidden; }
   .bsa-cpc ._default_ > * {
     vertical-align: middle; }
 
