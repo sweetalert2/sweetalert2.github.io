@@ -229,7 +229,9 @@
 <code>Swal.fire({
   title: 'Custom animation with Animate.css',
   animation: false,
-  customClass: 'animated tada'
+  customClass: {
+    popup: 'animated tada'
+  }
 })</code></pre>
     </li>
 
@@ -265,8 +267,10 @@
       </div>
       <pre class="code-sample" data-codepen-css-external="http://sweetalert2.github.io/styles/bootstrap4-buttons.css">
 <code>const swalWithBootstrapButtons = Swal.mixin({
-  confirmButtonClass: 'btn btn-success',
-  cancelButtonClass: 'btn btn-danger',
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
   buttonsStyling: false,
 })
 
@@ -720,15 +724,30 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>'false'</i></td>
         <td>Paired with window position, sets the direction the modal should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
       </tr>
-      <tr>
+      <tr id="custom-class">
         <td><b>customClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the modal.</td>
+        <td>A custom CSS class for the modal. If a string value is provided, the classname will be applied to the popup. If an object is provided, the classnames will be applied to the corresponding fields:
+ <pre><code>customClass: {
+  container: 'container-class',
+  popup: 'popup-class',
+  header: 'header-class',
+  title: 'title-class',
+  closeButton: 'close-button-class',
+  image: 'image-class',
+  content: 'content-class',
+  input: 'input-class',
+  actions: 'actions-class',
+  confirmButton: 'confirm-button-class',
+  cancelButton: 'cancel-button-class',
+  footer: 'footer-class'
+}</code></pre>
+        </td>
       </tr>
       <tr>
         <td><b>customContainerClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the container of the modal.</td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the container of the modal.</td>
       </tr>
       <tr id="timer">
         <td><b>timer</b></td>
@@ -803,12 +822,12 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>confirmButtonClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the "Confirm"-button.</td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the "Confirm"-button.</td>
       </tr>
       <tr>
         <td><b>cancelButtonClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the "Cancel"-button.</td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the "Cancel"-button.</td>
       </tr>
       <tr>
         <td><b>confirmButtonAriaLabel</b></td>
@@ -888,7 +907,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>imageClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the customized icon.</td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the customized icon.</td>
       </tr>
       <tr id="input-placeholder">
         <td><b>inputPlaceholder</b></td>
@@ -928,7 +947,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr id="input-class">
         <td><b>inputClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the input field.</td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the input field.</td>
       </tr>
       <tr>
         <td><b>progressSteps</b></td>

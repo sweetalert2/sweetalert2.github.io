@@ -243,7 +243,9 @@ document.querySelector('#custom-animation button').onclick = () => {
   Swal.fire({
     title: 'Custom animation with Animate.css',
     animation: false,
-    customClass: 'animated tada'
+    customClass: {
+      popup: 'animated tada'
+    }
   })
 }
 
@@ -286,8 +288,10 @@ document.querySelector('.examples .warning.confirm button').onclick = () => {
 
 document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
   const swalWithBootstrapButtons = Swal.mixin({
-    confirmButtonClass: 'btn btn-success',
-    cancelButtonClass: 'btn btn-danger',
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
     buttonsStyling: false
   })
   swalWithBootstrapButtons.fire({
