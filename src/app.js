@@ -4,6 +4,8 @@ import hljsJS from '../node_modules/highlight.js/lib/languages/javascript'
 import hljsXML from '../node_modules/highlight.js/lib/languages/xml'
 import '../node_modules/highlight.js/styles/atom-one-dark.css'
 
+const $ = document.querySelector.bind(document)
+
 // Syntax highlighting with highlight.js
 hljs.registerLanguage('javascript', hljsJS)
 hljs.registerLanguage('xml', hljsXML)
@@ -103,22 +105,22 @@ function ordinalSuffix (i) {
 fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
   .then(response => response.json())
   .then(response => {
-    document.querySelector('.jsdelivr-info').innerHTML =
+    $('.jsdelivr-info').innerHTML =
       'sweetalert2 is the <strong>' + ordinalSuffix(response.rank) + '</strong>' +
       ' most popular package on jsDelivr, with ' +
       '<strong>' + parseInt(response.total).toLocaleString() + '</strong>' +
       ' CDN hits in the last month'
   })
 
-document.querySelector('.showcase.normal button').onclick = () => {
+$('.showcase.normal button').onclick = () => {
   window.alert('You clicked the button!')
 }
 
-document.querySelector('.showcase.sweet button').onclick = () => {
+$('.showcase.sweet button').onclick = () => {
   Swal.fire('Good job!', 'You clicked the button!', 'success')
 }
 
-document.querySelector('.paypal').onclick = () => {
+$('.paypal').onclick = () => {
   Swal.fire({
     title: 'How would you like to pay?',
     input: 'select',
@@ -138,7 +140,7 @@ document.querySelector('.paypal').onclick = () => {
   return false
 }
 
-document.querySelector('.cryptocurrencies').onclick = () => {
+$('.cryptocurrencies').onclick = () => {
   const wallets = {
     bitcoin: '12BxefvPMtHePgfPRDL1SaZYSG4GwQmWoP',
     ethereum: '0x36e2b10666e2c0dc343901895ba3697b5d3214d1',
@@ -174,11 +176,11 @@ document.querySelector('.cryptocurrencies').onclick = () => {
   return false
 }
 
-document.querySelector('.examples .message button').onclick = () => {
+$('.examples .message button').onclick = () => {
   Swal.fire('Any fool can use a computer')
 }
 
-document.querySelector('.examples .timer button').onclick = () => {
+$('.examples .timer button').onclick = () => {
   let timerInterval
   Swal.fire({
     title: 'Auto close alert!',
@@ -200,7 +202,7 @@ document.querySelector('.examples .timer button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .html button').onclick = () => {
+$('.examples .html button').onclick = () => {
   Swal.fire({
     title: '<strong>HTML <u>example</u></strong>',
     type: 'info',
@@ -218,7 +220,7 @@ document.querySelector('.examples .html button').onclick = () => {
   })
 }
 
-document.querySelector('.examples #position button').onclick = () => {
+$('.examples #position button').onclick = () => {
   Swal.fire({
     position: 'top-end',
     type: 'success',
@@ -228,7 +230,7 @@ document.querySelector('.examples #position button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .rtl button').onclick = () => {
+$('.examples .rtl button').onclick = () => {
   Swal.fire({
     title: 'هل تريد الاستمرار؟',
     confirmButtonText: 'نعم',
@@ -239,7 +241,7 @@ document.querySelector('.examples .rtl button').onclick = () => {
   })
 }
 
-document.querySelector('#custom-animation button').onclick = () => {
+$('#custom-animation button').onclick = () => {
   Swal.fire({
     title: 'Custom animation with Animate.css',
     animation: false,
@@ -249,11 +251,11 @@ document.querySelector('#custom-animation button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .title-text button').onclick = () => {
+$('.examples .title-text button').onclick = () => {
   Swal.fire('The Internet?', 'That thing is still around?', 'question')
 }
 
-document.querySelector('.examples .error button').onclick = () => {
+$('.examples .error button').onclick = () => {
   Swal.fire({
     type: 'error',
     title: 'Oops...',
@@ -262,7 +264,7 @@ document.querySelector('.examples .error button').onclick = () => {
   })
 }
 
-document.querySelector('.examples #long-text button').onclick = () => {
+$('.examples #long-text button').onclick = () => {
   Swal.fire({
     imageUrl: 'https://placeholder.pics/svg/300x1500',
     imageHeight: 1500,
@@ -270,7 +272,7 @@ document.querySelector('.examples #long-text button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .warning.confirm button').onclick = () => {
+$('.examples .warning.confirm button').onclick = () => {
   Swal.fire({
     title: 'Are you sure?',
     text: 'You won\'t be able to revert this!',
@@ -286,7 +288,7 @@ document.querySelector('.examples .warning.confirm button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
+$('.examples .bootstrap-buttons button').onclick = () => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: 'btn btn-success',
@@ -319,7 +321,7 @@ document.querySelector('.examples .bootstrap-buttons button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .custom-image button').onclick = () => {
+$('.examples .custom-image button').onclick = () => {
   Swal.fire({
     title: 'Sweet!',
     text: 'Modal with a custom image.',
@@ -331,7 +333,7 @@ document.querySelector('.examples .custom-image button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .custom-width-padding-background button').onclick = () => {
+$('.examples .custom-width-padding-background button').onclick = () => {
   Swal.fire({
     title: 'Custom width, padding, background.',
     width: 600,
@@ -346,7 +348,7 @@ document.querySelector('.examples .custom-width-padding-background button').oncl
   })
 }
 
-document.querySelector('.input-type-text').onclick = () => {
+$('.input-type-text').onclick = () => {
   (async function getIpAddress () {
     const ipAPI = 'https://api.ipify.org?format=json'
 
@@ -367,7 +369,7 @@ document.querySelector('.input-type-text').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-email').onclick = () => {
+$('.input-type-email').onclick = () => {
   (async function getEmail () {
     const {value: email} = await Swal.fire({
       title: 'Input email address',
@@ -378,7 +380,7 @@ document.querySelector('.input-type-email').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-url').onclick = () => {
+$('.input-type-url').onclick = () => {
   (async function getUrl () {
     const {value: url} = await Swal.fire({
       input: 'url',
@@ -388,7 +390,7 @@ document.querySelector('.input-type-url').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-password').onclick = () => {
+$('.input-type-password').onclick = () => {
   (async function getPassword () {
     const {value: password} = await Swal.fire({
       title: 'Enter your password',
@@ -404,7 +406,7 @@ document.querySelector('.input-type-password').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-textarea').onclick = () => {
+$('.input-type-textarea').onclick = () => {
   (async function getMessage () {
     const {value: text} = await Swal.fire({
       input: 'textarea',
@@ -418,7 +420,7 @@ document.querySelector('.input-type-textarea').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-select').onclick = () => {
+$('.input-type-select').onclick = () => {
   (async function getFruit () {
     const {value: fruit} = await Swal.fire({
       title: 'Select field validation',
@@ -445,7 +447,7 @@ document.querySelector('.input-type-select').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-radio').onclick = () => {
+$('.input-type-radio').onclick = () => {
   (async function getColor () {
     const inputOptionsPromise = new Promise((resolve) => {
       setTimeout(() => {
@@ -470,7 +472,7 @@ document.querySelector('.input-type-radio').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-checkbox').onclick = () => {
+$('.input-type-checkbox').onclick = () => {
   (async function acceptTerms () {
     const {value: accept} = await Swal.fire({
       title: 'Terms and conditions',
@@ -487,7 +489,7 @@ document.querySelector('.input-type-checkbox').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-file').onclick = () => {
+$('.input-type-file').onclick = () => {
   (async function getColor () {
     const {value: file} = await Swal.fire({
       title: 'Select image',
@@ -511,7 +513,7 @@ document.querySelector('.input-type-file').onclick = () => {
   })()
 }
 
-document.querySelector('.input-type-range').onclick = () => {
+$('.input-type-range').onclick = () => {
   Swal.fire({
     title: 'How old are you?',
     type: 'question',
@@ -525,7 +527,7 @@ document.querySelector('.input-type-range').onclick = () => {
   })
 }
 
-document.querySelector('.input-type-multiple').onclick = () => {
+$('.input-type-multiple').onclick = () => {
   (async function getForm () {
     const {value: formValues} = await Swal.fire({
       title: 'Multiple inputs',
@@ -544,7 +546,7 @@ document.querySelector('.input-type-multiple').onclick = () => {
   })()
 }
 
-document.querySelector('.examples .ajax-request button').onclick = () => {
+$('.examples .ajax-request button').onclick = () => {
   Swal.fire({
     title: 'Submit your Github username to run ajax request',
     input: 'text',
@@ -577,7 +579,7 @@ document.querySelector('.examples .ajax-request button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .chaining-modals button').onclick = () => {
+$('.examples .chaining-modals button').onclick = () => {
   Swal.mixin({
     input: 'text',
     confirmButtonText: 'Next &rarr;',
@@ -598,7 +600,7 @@ document.querySelector('.examples .chaining-modals button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .dynamic-queue button').onclick = () => {
+$('.examples .dynamic-queue button').onclick = () => {
   Swal.queue([
     {
       title: 'Your public IP',
@@ -615,7 +617,7 @@ document.querySelector('.examples .dynamic-queue button').onclick = () => {
   ])
 }
 
-document.querySelector('.examples .timer-functions button').onclick = () => {
+$('.examples .timer-functions button').onclick = () => {
   let timerInterval
   Swal.fire({
     title: 'Auto close alert!',
@@ -671,7 +673,7 @@ document.querySelector('.examples .timer-functions button').onclick = () => {
   })
 }
 
-document.querySelector('.examples .mixin button').onclick = () => {
+$('.examples .mixin button').onclick = () => {
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -703,15 +705,15 @@ if (typeof _bsa !== 'undefined' && _bsa) {
 }
 
 function setBuySellAdsFooter () {
-  if (typeof _bsa !== 'undefined' && _bsa && document.querySelector('body > .bsa-cpc').textContent) {
+  if (typeof _bsa !== 'undefined' && _bsa && $('body > .bsa-cpc').textContent) {
     window.Swal = Swal.mixin({
-      footer: document.querySelector('body > .bsa-cpc')
+      footer: $('body > .bsa-cpc')
     })
   }
 }
 
 var observer = new MutationObserver(setBuySellAdsFooter)
-observer.observe(document.querySelector('body > .bsa-cpc'), {childList: true})
+observer.observe($('body > .bsa-cpc'), {childList: true})
 
 // Do not show 'Add to homescreen' prompt
 window.addEventListener('beforeinstallprompt', (e) => {
