@@ -392,8 +392,7 @@ Swal.fire({
   confirmButtonText:  'نعم',
   cancelButtonText:  'لا',
   showCancelButton: true,
-  showCloseButton: true,
-  target: document.getElementById('rtl-container')
+  showCloseButton: true
 })</code></pre>
     </li>
 
@@ -1091,18 +1090,23 @@ Toast.fire({
     </tr>
     <tr>
       <td><strong>warning</strong></td>
-      <td><div class="swal2-icon swal2-warning"><span class="swal2-icon-text">!</span></div></td>
+      <td><div class="swal2-icon swal2-warning"></div></td>
       <td><button class="type-warning" aria-label="Try me! Example: warning modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>info</strong></td>
-      <td><div class="swal2-icon swal2-info"><span class="swal2-icon-text">i</span></div></td>
+      <td><div class="swal2-icon swal2-info"></div></td>
       <td><button class="type-info" aria-label="Try me! Example: info modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>question</strong></td>
-      <td><div class="swal2-icon swal2-question"><span class="swal2-icon-text">?</span></div></td>
+      <td><div class="swal2-icon swal2-question"></div></td>
       <td><button class="type-question" aria-label="Try me! Example: question modal">Try me!</button></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Note: for Arabic and Persian languages there's the built-in class <strong class="nowrap">swal2-arabic-question-mark</strong> to flip the question mark icon, see <a href="#rtl">the RTL example</a>.
+      </td>
     </tr>
   </table>
 
