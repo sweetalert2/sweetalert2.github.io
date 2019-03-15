@@ -41,7 +41,7 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
 
   <!-- This is what you need -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7"></script>
   <!--.......................-->
 </head>
 
@@ -92,8 +92,8 @@
     <div class="version-selector">
       Version:
       <select id="version">
-        <option value="8.x" selected>8.x</option>
-        <option value="7.x">7.x</option>
+        <option value="8.x">8.x</option>
+        <option value="7.x" selected>7.x</option>
       </select>
     </div>
   </nav>
@@ -123,7 +123,7 @@
     <img src="/images/swal2-logo.png" width="178" height="30" alt="SweetAlert2">
     <button aria-label="Show SweetAlert2 success message">Show success message</button>
     <pre class="code-sample">
-<code>Swal.fire(
+<code>Swal(
   'Good job!',
   'You clicked the button!',
   'success'
@@ -144,7 +144,7 @@
         <p>A basic message</p>
         <button aria-label="Try me! Example: A basic message">Try me!</button>
       </div>
-      <pre class="code-sample"><code>Swal.fire('Any fool can use a computer')</code></pre>
+      <pre class="code-sample"><code>Swal('Any fool can use a computer')</code></pre>
     </li>
 
     <li class="title-text" id="title-text-example">
@@ -153,7 +153,7 @@
         <button aria-label="Try me! Example: A title with a text under">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire(
+<code>Swal(
   'The Internet?',
   'That thing is still around?',
   'question'
@@ -166,7 +166,7 @@
         <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   type: 'error',
   title: 'Oops...',
   text: 'Something went wrong!',
@@ -180,7 +180,7 @@
         <button aria-label="Try me! Example: A modal window with a long content inside">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   imageUrl: 'https://placeholder.pics/svg/300x1500',
   imageHeight: 1500,
   imageAlt: 'A tall image'
@@ -193,7 +193,7 @@
         <button aria-label="Try me! Example: Custom HTML description and buttons">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-<code class="lang-javascript">Swal.fire({
+<code class="lang-javascript">Swal({
   title: '&lt;strong&gt;HTML &lt;u&gt;example&lt;/u&gt;&lt;/strong&gt;',
   type: 'info',
   html:
@@ -218,7 +218,7 @@
         <button aria-label="Try me! Example: A custom positioned dialog">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   position: 'top-end',
   type: 'success',
   title: 'Your work has been saved',
@@ -233,12 +233,10 @@
         <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
-<code>Swal.fire({
+<code>Swal({
   title: 'Custom animation with Animate.css',
   animation: false,
-  customClass: {
-    popup: 'animated tada'
-  }
+  customClass: 'animated tada'
 })</code></pre>
     </li>
 
@@ -248,7 +246,7 @@
         <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
   type: 'warning',
@@ -258,7 +256,7 @@
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.value) {
-    Swal.fire(
+    Swal(
       'Deleted!',
       'Your file has been deleted.',
       'success'
@@ -274,14 +272,12 @@
       </div>
       <pre class="code-sample" data-codepen-css-external="http://sweetalert2.github.io/styles/bootstrap4-buttons.css">
 <code>const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
+  confirmButtonClass: 'btn btn-success',
+  cancelButtonClass: 'btn btn-danger',
   buttonsStyling: false,
 })
 
-swalWithBootstrapButtons.fire({
+swalWithBootstrapButtons({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
   type: 'warning',
@@ -291,7 +287,7 @@ swalWithBootstrapButtons.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.value) {
-    swalWithBootstrapButtons.fire(
+    swalWithBootstrapButtons(
       'Deleted!',
       'Your file has been deleted.',
       'success'
@@ -300,7 +296,7 @@ swalWithBootstrapButtons.fire({
     // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
     result.dismiss === Swal.DismissReason.cancel
   ) {
-    swalWithBootstrapButtons.fire(
+    swalWithBootstrapButtons(
       'Cancelled',
       'Your imaginary file is safe :)',
       'error'
@@ -315,7 +311,7 @@ swalWithBootstrapButtons.fire({
         <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   title: 'Sweet!',
   text: 'Modal with a custom image.',
   imageUrl: 'https://unsplash.it/400/200',
@@ -332,7 +328,7 @@ swalWithBootstrapButtons.fire({
         <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   title: 'Custom width, padding, background.',
   width: 600,
   padding: '3em',
@@ -353,7 +349,7 @@ swalWithBootstrapButtons.fire({
       </div>
       <pre class="code-sample">
 <code>let timerInterval
-Swal.fire({
+Swal({
   title: 'Auto close alert!',
   html: 'I will close in &lt;strong>&lt;/strong> seconds.',
   timer: 2000,
@@ -383,7 +379,7 @@ Swal.fire({
         <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre class="code-sample" data-codepen-html='<div id="rtl-container" dir="rtl"></div>'>
-<code>Swal.fire({
+<code>Swal({
   title: 'هل تريد الاستمرار؟',
   confirmButtonText:  'نعم',
   cancelButtonText:  'لا',
@@ -399,7 +395,7 @@ Swal.fire({
         <button aria-label="Try me! Example: AJAX request">Try me!</button>
       </div>
       <pre class="code-sample">
-<code>Swal.fire({
+<code>Swal({
   title: 'Submit your Github username',
   input: 'text',
   inputAttributes: {
@@ -425,7 +421,7 @@ Swal.fire({
   allowOutsideClick: () => !Swal.isLoading()
 }).then((result) => {
   if (result.value) {
-    Swal.fire({
+    Swal({
       title: `${result.value.login}'s avatar`,
       imageUrl: result.value.avatar_url
     })
@@ -453,7 +449,7 @@ Swal.fire({
   'Question 3'
 ]).then((result) => {
   if (result.value) {
-    Swal.fire({
+    Swal({
       title: 'All done!',
       html:
         'Your answers: &lt;pre&gt;&lt;code&gt;' +
@@ -502,7 +498,7 @@ Swal.queue([{
       </div>
       <pre class="code-sample">
 <code class="lang-javascript">let timerInterval
-Swal.fire({
+Swal({
   title: 'Auto close alert!',
   html:
     'I will close in &lt;strong&gt;&lt;/strong&gt; seconds.&lt;br/&gt;&lt;br/&gt;' +
@@ -572,8 +568,12 @@ Swal.fire({
   <div class="center-container download-section">
     <h3 id="download">Download & install</h3>
     <pre class="center"><code><span class="unselectable">$ </span>npm install sweetalert2</code></pre>
-    <p>Or grab from <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">jsdelivr CDN <i class="fa fa-external-link"></i></a></p>
-    <pre class="center"><code>&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@8">&lt;/script></code></pre>
+    <p>Or</p>
+    <pre class="center"><code><span class="unselectable">$ </span>bower install sweetalert2</code></pre>
+    <p>
+      Or download from CDN:
+      <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">jsdelivr.com/package/npm/sweetalert2 <i class="fa fa-external-link"></i></a>
+    </p>
     <p class="jsdelivr-info mobile-hidden"></p>
   </div>
 
@@ -606,7 +606,7 @@ const Swal = require('sweetalert2')</code></pre>
 import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <p>2. Call the sweetAlert2-function after the page has loaded</p>
     </div>
-<pre><code>Swal.fire({
+<pre><code>Swal({
   title: 'Error!',
   text: 'Do you want to continue',
   type: 'error',
@@ -731,30 +731,15 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>'false'</i></td>
         <td>Paired with window position, sets the direction the modal should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
       </tr>
-      <tr id="custom-class">
+      <tr>
         <td><b>customClass</b></td>
         <td><i>''</i></td>
-        <td>A custom CSS class for the modal. If a string value is provided, the classname will be applied to the popup. If an object is provided, the classnames will be applied to the corresponding fields:
- <pre><code>customClass: {
-  container: 'container-class',
-  popup: 'popup-class',
-  header: 'header-class',
-  title: 'title-class',
-  closeButton: 'close-button-class',
-  image: 'image-class',
-  content: 'content-class',
-  input: 'input-class',
-  actions: 'actions-class',
-  confirmButton: 'confirm-button-class',
-  cancelButton: 'cancel-button-class',
-  footer: 'footer-class'
-}</code></pre>
-        </td>
+        <td>A custom CSS class for the modal.</td>
       </tr>
       <tr>
         <td><b>customContainerClass</b></td>
         <td><i>''</i></td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the container of the modal.</td>
+        <td>A custom CSS class for the container of the modal.</td>
       </tr>
       <tr id="timer">
         <td><b>timer</b></td>
@@ -829,12 +814,12 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>confirmButtonClass</b></td>
         <td><i>''</i></td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the "Confirm"-button.</td>
+        <td>A custom CSS class for the "Confirm"-button.</td>
       </tr>
       <tr>
         <td><b>cancelButtonClass</b></td>
         <td><i>''</i></td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the "Cancel"-button.</td>
+        <td>A custom CSS class for the "Cancel"-button.</td>
       </tr>
       <tr>
         <td><b>confirmButtonAriaLabel</b></td>
@@ -881,11 +866,6 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>false</i></td>
         <td>Set to <strong>true</strong> to disable buttons and show that something is loading. Use it in combination with the <a href="#pre-confirm"><strong>preConfirm</strong></a> parameter.</td>
       </tr>
-      <tr id="scrollbar-padding">
-        <td><b>scrollbarPadding</b></td>
-        <td><i>true</i></td>
-        <td>Set to <strong>false</strong> to disable body padding adjustment when the page scrollbar gets hidden while the modal is shown</td>
-      </tr>
       <tr id="pre-confirm">
         <td><b>preConfirm</b></td>
         <td><i>null</i></td>
@@ -914,7 +894,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>imageClass</b></td>
         <td><i>''</i></td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the customized icon.</td>
+        <td>A custom CSS class for the customized icon.</td>
       </tr>
       <tr id="input-placeholder">
         <td><b>inputPlaceholder</b></td>
@@ -928,8 +908,8 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="input-options">
         <td><b>inputOptions</b></td>
-        <td><i>{}</i></td>
-        <td>If <strong>input</strong> parameter is set to <strong>"select"</strong> or <strong>"radio"</strong>, you can provide options. Can be a Map or a plain object, with keys that represent option values and values that represent option text, or a Promise that resolves with one of those types.</td>
+        <td><i>{} <br> Map <br> Promise</i></td>
+        <td>If <strong>input</strong> parameter is set to <strong>"select"</strong> or <strong>"radio"</strong>, you can provide options. Object keys will represent options values, object values will represent options text values.</td>
       </tr>
       <tr id="input-auto-trim">
         <td><b>inputAutoTrim</b></td>
@@ -954,7 +934,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr id="input-class">
         <td><b>inputClass</b></td>
         <td><i>''</i></td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the input field.</td>
+        <td>A custom CSS class for the input field.</td>
       </tr>
       <tr>
         <td><b>progressSteps</b></td>
@@ -991,6 +971,16 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>null</i></td>
         <td>Function to run after modal has been disposed.</td>
       </tr>
+      <tr>
+        <td><b>useRejections</b></td>
+        <td><i>false</i></td>
+        <td><strong>Deprecated and will be removed in the next major release.</strong> Determines whether dismissals (outside click, cancel button, close button, <kbd>Esc</kbd> key, timer) should resolve with an object of the format <strong class="nowrap">{ dismiss: reason }</strong> or reject the promise.</td>
+      </tr>
+      <tr>
+        <td><b>expectRejections</b></td>
+        <td><i>false</i></td>
+        <td><strong>Deprecated and will be removed in the next major release.</strong> Determines whether given <strong>inputValidator</strong> and <strong>preConfirm</strong> functions should be expected to to signal validation errors by rejecting, or by their respective means (see documentation for each option). </td>
+      </tr>
     </table>
 
     <p class="center">
@@ -1004,14 +994,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <button aria-label="Try me! Example: Mixin">Try me!</button>
         </div>
         <pre class="code-sample">
-<code>const Toast = Swal.mixin({
+<code>const toast = Swal.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000
 });
 
-Toast.fire({
+toast({
   type: 'success',
   title: 'Signed in successfully'
 })
@@ -1025,7 +1015,7 @@ Toast.fire({
   <div class="center-container">
     <h3 id="handling-dismissals">Handling Dismissals</h3>
 
-    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>Swal.fire()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
+    <p class="center">When an alert is dismissed by the user, the Promise returned by <strong>Swal()</strong> will be resolved with an object <strong class="nowrap">{ dismiss: reason }</strong> documenting the reason it was dismissed:</p>
 
     <table class="dismiss-reasons">
       <tr class="titles">
@@ -1116,7 +1106,7 @@ const inputValue = fetch(ipAPI)
   .then(response => response.json())
   .then(data => data.ip)
 
-const {value: ipAddress} = await Swal.fire({
+const {value: ipAddress} = await Swal({
   title: 'Enter your IP address',
   input: 'text',
   inputValue: inputValue,
@@ -1127,7 +1117,7 @@ const {value: ipAddress} = await Swal.fire({
 })
 
 if (ipAddress) {
-  Swal.fire(`Your IP address is ${ipAddress}`)
+  Swal(`Your IP address is ${ipAddress}`)
 }</code></pre>
       </td>
       <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>
@@ -1137,14 +1127,14 @@ if (ipAddress) {
       <td><strong>email</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getEmail () {" data-codepen-js-after="})()">
-<code>const {value: email} = await Swal.fire({
+<code>const {value: email} = await Swal({
   title: 'Input email address',
   input: 'email',
   inputPlaceholder: 'Enter your email address'
 })
 
 if (email) {
-  Swal.fire('Entered email: ' + email)
+  Swal('Entered email: ' + email)
 }</code></pre>
       </td>
       <td><button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button></td>
@@ -1154,13 +1144,13 @@ if (email) {
       <td><strong>url</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getUrl () {" data-codepen-js-after="})()">
-<code>const {value: url} = await Swal.fire({
+<code>const {value: url} = await Swal({
   input: 'url',
   inputPlaceholder: 'Enter the URL'
 })
 
 if (url) {
-  Swal.fire('Entered URL: ' + url)
+  Swal('Entered URL: ' + url)
 }</code></pre>
       </td>
       <td><button class="input-type-url">Try me!</button></td>
@@ -1170,7 +1160,7 @@ if (url) {
       <td><strong>password</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getPassword () {" data-codepen-js-after="})()">
-<code>const {value: password} = await Swal.fire({
+<code>const {value: password} = await Swal({
   title: 'Enter your password',
   input: 'password',
   inputPlaceholder: 'Enter your password',
@@ -1182,7 +1172,7 @@ if (url) {
 })
 
 if (password) {
-  Swal.fire('Entered password: ' + password)
+  Swal('Entered password: ' + password)
 }</code></pre>
       </td>
       <td><button class="input-type-password" aria-label="Try me! Example: input type password">Try me!</button></td>
@@ -1192,14 +1182,14 @@ if (password) {
       <td><strong>textarea</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getText () {" data-codepen-js-after="})()">
-<code>const {value: text} = await Swal.fire({
+<code>const {value: text} = await Swal({
   input: 'textarea',
   inputPlaceholder: 'Type your message here...',
   showCancelButton: true
 })
 
 if (text) {
-  Swal.fire(text)
+  Swal(text)
 }</code></pre>
       </td>
       <td><button class="input-type-textarea" aria-label="Try me! Example: input type textarea">Try me!</button></td>
@@ -1209,7 +1199,7 @@ if (text) {
       <td><strong>select</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFruit () {" data-codepen-js-after="})()">
-<code>const {value: fruit} = await Swal.fire({
+<code>const {value: fruit} = await Swal({
   title: 'Select field validation',
   input: 'select',
   inputOptions: {
@@ -1232,7 +1222,7 @@ if (text) {
 })
 
 if (fruit) {
-  Swal.fire('You selected: ' + fruit)
+  Swal('You selected: ' + fruit)
 }</code></pre>
       </td>
       <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
@@ -1253,7 +1243,7 @@ const inputOptions = new Promise((resolve) => {
   }, 2000)
 })
 
-const {value: color} = await Swal.fire({
+const {value: color} = await Swal({
   title: 'Select color',
   input: 'radio',
   inputOptions: inputOptions,
@@ -1263,7 +1253,7 @@ const {value: color} = await Swal.fire({
 })
 
 if (color) {
-  Swal.fire({html: 'You selected: ' + color})
+  Swal({html: 'You selected: ' + color})
 }</code></pre>
       </td>
       <td><button class="input-type-radio" aria-label="Try me! Example: input type radio">Try me!</button></td>
@@ -1273,7 +1263,7 @@ if (color) {
       <td><strong>checkbox</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function acceptTermsAndConditions () {" data-codepen-js-after="})()">
-<code>const {value: accept} = await Swal.fire({
+<code>const {value: accept} = await Swal({
   title: 'Terms and conditions',
   input: 'checkbox',
   inputValue: 1,
@@ -1287,7 +1277,7 @@ if (color) {
 })
 
 if (accept) {
-  Swal.fire('You agreed with T&amp;C :)')
+  Swal('You agreed with T&amp;C :)')
 }</code></pre>
 
       </td>
@@ -1298,7 +1288,7 @@ if (accept) {
       <td><strong>file</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>const {value: file} = await Swal.fire({
+<code>const {value: file} = await Swal({
   title: 'Select image',
   input: 'file',
   inputAttributes: {
@@ -1310,7 +1300,7 @@ if (accept) {
 if (file) {
   const reader = new FileReader
   reader.onload = (e) => {
-    Swal.fire({
+    Swal({
       title: 'Your uploaded picture',
       imageUrl: e.target.result,
       imageAlt: 'The uploaded picture'
@@ -1326,7 +1316,7 @@ if (file) {
       <td><strong>range</strong></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>Swal.fire({
+<code>Swal({
   title: 'How old are you?',
   type: 'question',
   input: 'range',
@@ -1353,7 +1343,7 @@ if (file) {
       <td class="mobile-hidden"></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
-<code>const {value: formValues} = await Swal.fire({
+<code>const {value: formValues} = await Swal({
   title: 'Multiple inputs',
   html:
     '&lt;input id="swal-input1" class="swal2-input"&gt;' +
@@ -1368,7 +1358,7 @@ if (file) {
 })
 
 if (formValues) {
-  Swal.fire(json.stringify(formValues))
+  Swal(json.stringify(formValues))
 }</code></pre>
 
       </td>
@@ -1397,17 +1387,17 @@ if (formValues) {
         <td><i>Swal.mixin({ ...options })</i></td>
         <td>Returns an extended version of `Swal` containing `params` as defaults. Useful for reusing Swal configuration.</td>
       </tr>
-      <tr id="update">
-        <td><i>Swal.update({ ...options })</i></td>
-        <td>Updates popup options.</td>
+      <tr>
+        <td><i>Swal.setDefaults({ ...options })</i></td>
+        <td><strong>Deprecated, use Swal.mixin() instead.</strong> Set default options to be used</td>
       </tr>
       <tr>
-        <td><i>Swal.close()</i></td>
-        <td>Close the currently open SweetAlert2 modal programmatically, the Promise returned by <strong>Swal.fire()</strong> will be resolved with an empty object <strong class="nowrap">{ }</strong></td>
+        <td><i>Swal.resetDefaults()</i></td>
+        <td><strong>Deprecated, use Swal.mixin() instead.</strong>Resets default options to their original value.</td>
       </tr>
       <tr>
-        <td><i>Swal.getHeader()</i></td>
-        <td>Get the modal header. The header contains progress steps, the icon, the image, the title, and the close button.</td>
+        <td><i>Swal.close()</i> or <i>Swal.closeModal()</i></td>
+        <td>Close the currently open SweetAlert2 modal programmatically.</td>
       </tr>
       <tr>
         <td><i>Swal.getTitle()</i></td>
@@ -1444,6 +1434,10 @@ if (formValues) {
       <tr>
         <td><i>Swal.getCancelButton()</i></td>
         <td>Get the "Cancel" button.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.getButtonsWrapper()</i></td>
+        <td><strong>Deprecated, use getActions() instead.</strong> Get the buttons wrapper.</td>
       </tr>
       <tr>
         <td><i>Swal.enableButtons()</i></td>
@@ -1562,12 +1556,8 @@ if (formValues) {
         <td>Hide progress steps.</td>
       </tr>
       <tr>
-        <td><i>Swal.isValidParameter(param)</i></td>
+        <td><i>Swal.isValidParameter({String})</i></td>
         <td>Determine if parameter name is valid.</td>
-      </tr>
-      <tr>
-        <td><i>Swal.isUpdatableParameter(param)</i></td>
-        <td>Determine if parameter name is valid for <a href="#update">Swal.update()</a> method.</td>
       </tr>
     </table>
   </div>
@@ -1621,11 +1611,6 @@ if (formValues) {
         <img src="https://avatars2.githubusercontent.com/u/12075795?v=4&s=200" alt=""><br>Unique-P GmbH
       </a>
     </div>
-    <div>
-      <a href="https://sextoycollective.com/" target="_blank" rel="noopener" aria-label="STC (NSFW)">
-        <img src="https://joinmastodon.org/static/media/sextoycollective.6d29c7f5.jpg" width="200" alt=""><br>STC (NSFW)
-      </a>
-    </div>
   </div>
 
   <!-- Donations -->
@@ -1636,14 +1621,7 @@ if (formValues) {
       <a href class="paypal" aria-label="Donate with PayPal">
         PayPal
         <br>
-        <img src="/images/paypal.png" alt="">
-      </a>
-    </div>
-    <div>
-      <a href class="cryptocurrencies" aria-label="Donate with Cryptocurrencies">
-        Cryptocurrencies
-        <br>
-        <img src="/images/cryptocurrencies.png" alt="">
+        <img src="/images/paypal.png" width="125" alt="">
       </a>
     </div>
   </div>

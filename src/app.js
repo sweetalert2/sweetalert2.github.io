@@ -140,7 +140,7 @@ $('.paypal').onclick = () => {
   return false
 }
 
-$('.cryptocurrencies').onclick = () => {
+$('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
     bitcoin: '12BxefvPMtHePgfPRDL1SaZYSG4GwQmWoP',
     ethereum: '0x36e2b10666e2c0dc343901895ba3697b5d3214d1',
@@ -173,8 +173,8 @@ $('.cryptocurrencies').onclick = () => {
     }
   })
 
-  return false
-}
+  e.preventDefault()
+})
 
 $('.examples .message button').onclick = () => {
   Swal.fire('Any fool can use a computer')
@@ -747,6 +747,18 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
       document.getElementById('codepen-form').submit()
     }
   })
+})
+
+// Version selector
+$('#version').addEventListener('change', () => {
+  switch ($('#version').value) {
+    case '7.x':
+      window.location.assign('v7.html')
+      break
+    default:
+      window.location.assign('/')
+      break
+  }
 })
 
 // BuySellAdd native.js (fixed footer)
