@@ -233,6 +233,10 @@ $('.examples #position button').onclick = () => {
 $('.examples .rtl button').onclick = () => {
   Swal.fire({
     title: 'هل تريد الاستمرار؟',
+    type: 'question',
+    customClass: {
+      icon: 'swal2-arabic-question-mark'
+    },
     confirmButtonText: 'نعم',
     cancelButtonText: 'لا',
     showCancelButton: true,
