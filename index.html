@@ -1130,7 +1130,9 @@ const {value: ipAddress} = await Swal.fire({
   inputValue: inputValue,
   showCancelButton: true,
   inputValidator: (value) => {
-    return !value && 'You need to write something!'
+    if (!value) {
+      return 'You need to write something!'
+    }
   }
 })
 
@@ -1258,7 +1260,7 @@ const inputOptions = new Promise((resolve) => {
       '#00ff00': 'Green',
       '#0000ff': 'Blue'
     })
-  }, 2000)
+  }, 1000)
 })
 
 const {value: color} = await Swal.fire({
@@ -1266,7 +1268,9 @@ const {value: color} = await Swal.fire({
   input: 'radio',
   inputOptions: inputOptions,
   inputValidator: (value) => {
-    return !value && 'You need to choose something!'
+    if (!value) {
+      return 'You need to choose something!'
+    }
   }
 })
 

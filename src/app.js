@@ -366,7 +366,9 @@ $('.input-type-text').onclick = () => {
       inputValue: inputValue,
       showCancelButton: true,
       inputValidator: (value) => {
-        return !value && 'You need to write something!'
+        if (!value) {
+          return 'You need to write something!'
+        }
       }
     })
     ipAddress && Swal.fire(`Your IP address is ${ipAddress}`)
@@ -460,7 +462,7 @@ $('.input-type-radio').onclick = () => {
           '#00FF00': 'Green',
           '#0000FF': 'Blue'
         })
-      }, 2000)
+      }, 1000)
     })
 
     const {value: color} = await Swal.fire({
@@ -468,7 +470,9 @@ $('.input-type-radio').onclick = () => {
       input: 'radio',
       inputOptions: inputOptionsPromise,
       inputValidator: (value) => {
-        return !value && 'You need to choose something!'
+        if (!value) {
+          return 'You need to choose something!'
+        }
       }
     })
 
