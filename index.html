@@ -1365,22 +1365,24 @@ if (file) {
       <td class="mobile-hidden"></td>
       <td>
         <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
-<code>const {value: formValues} = await Swal.fire({
-  title: 'Multiple inputs',
-  html:
-    '&lt;input id="swal-input1" class="swal2-input"&gt;' +
-    '&lt;input id="swal-input2" class="swal2-input"&gt;',
-  focusConfirm: false,
-  preConfirm: () => {
-    return [
-      document.getElementById('swal-input1').value,
-      document.getElementById('swal-input2').value
-    ]
-  }
-})
+<code>const myFunc = async function() {
+  const {value: formValues} = await Swal.fire({
+    title: 'Multiple inputs',
+    html:
+      '&lt;input id="swal-input1" class="swal2-input"&gt;' +
+      '&lt;input id="swal-input2" class="swal2-input"&gt;',
+    focusConfirm: false,
+    preConfirm: () => {
+      return [
+        document.getElementById('swal-input1').value,
+        document.getElementById('swal-input2').value
+      ]
+    }
+  })
 
-if (formValues) {
-  Swal.fire(json.stringify(formValues))
+  if (formValues) {
+    Swal.fire(JSON.stringify(formValues))
+  }
 }</code></pre>
 
       </td>
