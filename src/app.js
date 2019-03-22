@@ -732,7 +732,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
-        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2;https://cdn.jsdelivr.net/npm/promise-polyfill',
+        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2',
         css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}'
       }
       if (pre.getAttribute('data-codepen-html')) {
