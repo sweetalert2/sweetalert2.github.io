@@ -87,6 +87,7 @@ nav {
         opacity: .8; }
         nav .share-the-love .social-buttons > *:hover {
           opacity: 1; }
+  nav .theme-selector,
   nav .version-selector {
     margin: 2em 0 0 .6em;
     text-align: left;
