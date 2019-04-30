@@ -70,15 +70,15 @@ fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
 
 function showStats () {
   if (stats.latestRelease && stats.recentActivity && stats.downloadsLastMonth) {
-    var currentVersion = document.getElementById('current-version')
+    var currentVersion = $('#current-version')
     currentVersion.innerText = stats.latestRelease
     currentVersion.setAttribute('aria-label', currentVersion.getAttribute('aria-label') + stats.latestRelease)
 
-    var latestUpdate = document.getElementById('latest-update')
+    var latestUpdate = $('#latest-update')
     latestUpdate.innerText = stats.recentActivity
     latestUpdate.setAttribute('aria-label', latestUpdate.getAttribute('aria-label') + stats.recentActivity)
 
-    var downloads = document.getElementById('downloads-last-month')
+    var downloads = $('#downloads-last-month')
     downloads.innerText = stats.downloadsLastMonth
     downloads.setAttribute('aria-label', downloads.getAttribute('aria-label') + stats.downloadsLastMonth)
 
@@ -751,10 +751,15 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
         codepenValue.js += '\n' + pre.getAttribute('data-codepen-js-after')
       }
 
-      document.getElementById('codepen-data').value = JSON.stringify(codepenValue)
-      document.getElementById('codepen-form').submit()
+      $('#codepen-data').value = JSON.stringify(codepenValue)
+      $('#codepen-form').submit()
     }
   })
+})
+
+// Theme selector
+$('#theme').addEventListener('change', () => {
+  $('#theme-styles').setAttribute('href', $('#theme').value)
 })
 
 // Version selector
