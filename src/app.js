@@ -120,26 +120,6 @@ $('.showcase.sweet button').onclick = () => {
   Swal.fire('Good job!', 'You clicked the button!', 'success')
 }
 
-$('.paypal').onclick = () => {
-  Swal.fire({
-    title: 'How would you like to pay?',
-    input: 'select',
-    inputOptions: {
-      eur: 'In Euros',
-      usd: 'In US Dollars',
-      '': 'In other currencies'
-    },
-    inputValue: 'eur',
-    confirmButtonText: 'Pay with PayPal'
-  }).then((result) => {
-    if (result.value !== undefined) {
-      window.location.assign('https://www.paypal.me/limonte/5' + result.value)
-    }
-  })
-
-  return false
-}
-
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
     bitcoin: '12BxefvPMtHePgfPRDL1SaZYSG4GwQmWoP',
