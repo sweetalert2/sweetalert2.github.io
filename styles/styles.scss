@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
+@import url('https://fonts.googleapis.com/css?family=Montserrat'); // Montserrat (for logo)
 @import 'colors';
 
 @mixin retina-background($url, $type: png) {
@@ -122,8 +123,13 @@ header {
   margin: auto;
 
   .logo {
-    max-width: 90%;
-    margin: 2em 0 1em;
+    margin: 0.5em;
+    color: rgb(110, 74, 121);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    font-weight: bolder;
+    line-height: 1em;
+    text-align: center;
   }
 
   h1,
@@ -651,4 +657,109 @@ table {
 
 .unselectable {
   user-select: none;
+}
+
+// LOGO ANIMATION
+$bounce-logo-width: 60px;
+$bounce-logo-height: $bounce-logo-width;
+$bounce-logo-stage-width: 80%;
+$bounce-logo-stage-height: 100px;
+$bounce-logo-animation-duration: 3s;
+$bounce-logo-animation-delay: 2s;
+
+@keyframes logo-bounce {
+  from {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+
+  20% {
+    // bottom: $bounce-logo-stage-height - $bounce-logo-height;
+    bottom: $bounce-logo-stage-height;
+    animation-timing-function: ease-in;
+  }
+
+  40% {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+
+  60% {
+    // bottom: ($bounce-logo-stage-height - $bounce-logo-height) * .7;
+    bottom: ($bounce-logo-stage-height) * .7;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    bottom: ($bounce-logo-stage-height) * .5;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide {
+  from {
+    left: - $bounce-logo-width;
+  }
+
+  to {
+    left: $bounce-logo-stage-width;
+  }
+}
+
+#logo-bouncer {
+  position: absolute;
+  bottom: 0;
+  width: $bounce-logo-width;
+  height: $bounce-logo-height;
+  animation-name: logo-bounce;
+  animation-duration: $bounce-logo-animation-duration;
+  animation-delay: $bounce-logo-animation-delay;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#logo-spinner {
+  animation-name: spin;
+  animation-duration: $bounce-logo-animation-duration / 2;
+  animation-timing-function: linear;
+  animation-delay: $bounce-logo-animation-delay;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+}
+
+#logo-slider {
+  position: absolute;
+  left: - $bounce-logo-width;
+  width: $bounce-logo-width;
+  height: $bounce-logo-stage-height;
+  animation-name: slide;
+  animation-duration: $bounce-logo-animation-duration;
+  animation-timing-function: linear;
+  animation-delay: $bounce-logo-animation-delay;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#logo-container {
+  position: relative;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
 }
