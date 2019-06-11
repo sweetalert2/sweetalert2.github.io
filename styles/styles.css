@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 html,
 body {
   margin: 0;
@@ -97,8 +98,13 @@ header {
   max-width: 40.625rem;
   margin: auto; }
   header .logo {
-    margin: 2em 0 1em;
-    max-width: 90%; }
+    font-family: 'Montserrat';
+    color: #6e4a79;
+    font-size: 5em;
+    font-weight: bolder;
+    line-height: 1em;
+    text-align: center;
+    margin: 0.5em; }
   header h1,
   header h2 {
     font-size: 1.25em;
@@ -508,3 +514,139 @@ table {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
+
+@-webkit-keyframes logo-bounce {
+  from {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  20% {
+    bottom: 100px;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  40% {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  60% {
+    bottom: 70px;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  80% {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  100% {
+    bottom: 50px;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+@keyframes logo-bounce {
+  from {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  20% {
+    bottom: 100px;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  40% {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  60% {
+    bottom: 70px;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  80% {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  100% {
+    bottom: 50px;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes slide {
+  from {
+    left: -60px; }
+  to {
+    left: 80%; } }
+
+@keyframes slide {
+  from {
+    left: -60px; }
+  to {
+    left: 80%; } }
+
+#logo-bouncer {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 0;
+  -webkit-animation-name: logo-bounce;
+          animation-name: logo-bounce;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+#logo-spinner {
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+#logo-slider {
+  position: absolute;
+  width: 60px;
+  height: 100px;
+  left: -60px;
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+#logo-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 2; }
