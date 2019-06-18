@@ -107,8 +107,9 @@ header {
     margin: 0.5em; }
   header h1,
   header h2 {
-    font-size: 1.25em;
-    line-height: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    line-height: 1.2em;
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
