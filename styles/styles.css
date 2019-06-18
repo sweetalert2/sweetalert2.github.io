@@ -36,7 +36,8 @@ nav {
       -ms-flex-align: stretch;
           align-items: stretch;
   -webkit-transition: left .5s ease-in-out;
-  transition: left .5s ease-in-out; }
+  transition: left .5s ease-in-out;
+  z-index: 1; }
   @media all and (max-width: 1150px) {
     nav {
       display: none; } }
