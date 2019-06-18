@@ -11,6 +11,25 @@
 	.st5{fill:#A575AF;}
 	.st6{fill:none;stroke:#8A3D97;stroke-width:8.2;stroke-miterlimit:10;}
 	.st7{fill:#8A3D97;}
+
+
+	@keyframes popup-hair {
+		to {
+			visibility: unset
+		}
+	}
+
+	#Livello_2 .st5{
+		visibility: hidden;
+
+		animation-name: popup-hair;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+		animation-duration: .1;
+		animation-delay: 2.5s;
+		animation-fill-mode: forwards;
+	}
+
 </style>
 <circle id="XMLID_151_" class="st0" cx="145.6" cy="147.1" r="100.2"/>
 <path id="XMLID_150_" class="st1" d="M113.4,39.9c12.9-4,23.2-3.7,29.3-3c6.8,0.8,12.1,2.5,22,5.7c7.1,2.3,12.2,3.9,18.7,7.3
