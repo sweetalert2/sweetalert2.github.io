@@ -92,10 +92,10 @@ header {
     text-align: center; }
   header h1,
   header h2 {
-    display: block;
-    font-size: 1.25em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
     font-weight: 300;
-    line-height: 1.5em;
+    line-height: 1.2em;
     text-align: center;
     text-transform: uppercase; }
     header h1 a,
