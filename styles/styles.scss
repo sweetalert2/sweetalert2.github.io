@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
-
 @import 'colors';
 
 @mixin retina-background($url, $type: png) {
@@ -19,6 +18,7 @@ body {
   text-align: center;
   color: $emperor;
   padding-bottom: 2em;
+
   @media all and (max-width: 768px) {
     padding-bottom: 0;
   }
@@ -362,6 +362,7 @@ kbd {
       display: none;
     }
   }
+
   @media all and (max-width: 360px) {
     width: 90%;
   }
@@ -406,13 +407,13 @@ kbd {
   }
 }
 
-
 .examples {
   list-style-type: none;
   max-width: 900px;
   margin: 0 auto;
   text-align: left;
   padding-left: 0;
+
   @media all and (max-width: 768px) {
     width: auto;
   }
@@ -461,7 +462,6 @@ kbd {
   }
 }
 
-
 ol {
   max-width: 45.3125rem;
   margin: 4.375em auto;
@@ -477,12 +477,12 @@ ol {
   }
 }
 
-
 table {
   width: 45.3125rem;
   margin: .625em auto;
   text-align: left;
   border-collapse: collapse;
+
   @media all and (max-width: 768px) {
     width: auto;
     margin: .625em auto;
