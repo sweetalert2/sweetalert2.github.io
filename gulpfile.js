@@ -46,7 +46,7 @@ gulp.task('bundle', () => {
     .pipe(gulp.dest('dist/'))
 })
 
-gulp.task('style-lint', () => {
+gulp.task('stylelint', () => {
   return gulp.src(styles)
     .pipe(stylelint({
       reporters: [
@@ -55,7 +55,7 @@ gulp.task('style-lint', () => {
     }))
 })
 
-gulp.task('sass', gulp.series('style-lint', () => {
+gulp.task('sass', gulp.series('stylelint', () => {
   return gulp.src(styles)
     .pipe(sass())
     .pipe(autoprefix())

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp watch",
-    "lint": "eslint *.js js/main.js && gulp sass-lint"
+    "lint": "eslint *.js js/main.js && gulp stylelint"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
