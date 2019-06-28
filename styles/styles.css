@@ -639,7 +639,7 @@ table {
           animation-delay: 2s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
-  #logo-spinner img {
+  #logo-spinner svg {
     width: 5em; }
 
 #logo-slider {
@@ -655,5 +655,28 @@ table {
           animation-duration: 2.5s;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@-webkit-keyframes popup-hair {
+  to {
+    visibility: unset; } }
+
+@keyframes popup-hair {
+  to {
+    visibility: unset; } }
+
+.hair {
+  visibility: hidden;
+  -webkit-animation-name: popup-hair;
+          animation-name: popup-hair;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: .1;
+          animation-duration: .1;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
