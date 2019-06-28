@@ -596,8 +596,8 @@ table {
 
 @-webkit-keyframes logo-slide {
   from {
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
     visibility: visible; }
   to {
     -webkit-transform: translate3d(0%, 0, 0);
@@ -606,8 +606,8 @@ table {
 
 @keyframes logo-slide {
   from {
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
     visibility: visible; }
   to {
     -webkit-transform: translate3d(0%, 0, 0);
