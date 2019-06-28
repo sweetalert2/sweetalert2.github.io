@@ -549,7 +549,7 @@ table {
 @-webkit-keyframes logo-slide {
   from {
     visibility: visible;
-    transform: translate3d(-50%, 0, 0); }
+    transform: translate3d(-100%, 0, 0); }
   to {
     visibility: visible;
     transform: translate3d(0%, 0, 0); } }
@@ -557,7 +557,7 @@ table {
 @keyframes logo-slide {
   from {
     visibility: visible;
-    transform: translate3d(-50%, 0, 0); }
+    transform: translate3d(-100%, 0, 0); }
   to {
     visibility: visible;
     transform: translate3d(0%, 0, 0); } }
