@@ -736,7 +736,7 @@ $bouncing-logo-min-height: 35%;
   animation-iteration-count: 2;
   animation-fill-mode: forwards;
 
-  & img {
+  & svg {
     width: $bouncing-logo-width;
   }
 }
