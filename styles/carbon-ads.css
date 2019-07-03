@@ -2,40 +2,40 @@
   opacity: 1; }
   .carbonads-wrapper > div {
     display: block;
-    overflow: hidden;
+    max-width: 300px;
     margin: 0 auto;
     padding: 1em;
-    max-width: 300px;
+    overflow: hidden;
     border: solid 1px #8d98a5;
     border-radius: 2px;
     -webkit-box-shadow: inset 0 1px #fff;
             box-shadow: inset 0 1px #fff;
-    text-shadow: 0 1px #fff;
     font-size: 12px;
-    line-height: 1.5; }
+    line-height: 1.5;
+    text-shadow: 0 1px #fff; }
     .carbonads-wrapper > div a {
-      color: #8d98a5;
       -webkit-transition: color .15s ease-in-out;
-      transition: color .15s ease-in-out; }
+      transition: color .15s ease-in-out;
+      color: #8d98a5; }
       .carbonads-wrapper > div a:hover {
         color: #f77; }
     .carbonads-wrapper > div span {
-      position: relative;
       display: block;
+      position: relative;
       overflow: hidden; }
     .carbonads-wrapper > div .carbon-img {
-      float: left;
-      margin-right: 1em; }
+      margin-right: 1em;
+      float: left; }
       .carbonads-wrapper > div .carbon-img img {
         display: block; }
     .carbonads-wrapper > div .carbon-text {
       display: block;
-      float: left;
       max-width: calc(100% - 130px - 1em);
+      float: left;
       text-align: left; }
     .carbonads-wrapper > div .carbon-poweredby {
+      display: block;
       position: absolute;
       right: 0;
       bottom: 0;
-      display: block;
       font-size: 11px; }

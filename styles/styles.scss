@@ -14,10 +14,10 @@ body {
 }
 
 body {
-  background-color: $athens;
-  text-align: center;
-  color: $emperor;
   padding-bottom: 2em;
+  background-color: $athens;
+  color: $emperor;
+  text-align: center;
 
   @media all and (max-width: 768px) {
     padding-bottom: 0;
@@ -32,14 +32,14 @@ select {
 }
 
 nav {
+  display: flex;
   position: fixed;
+  z-index: 1;
   top: 2em;
   left: 1em;
-  display: flex;
   flex-direction: column;
   align-items: stretch;
   transition: left .5s ease-in-out;
-  z-index: 1;
 
   @media all and (max-width: 1150px) {
     display: none;
@@ -52,9 +52,9 @@ nav {
   [href*='#'] {
     display: flex;
     padding: .4em 1em;
-    text-decoration: none !important;
     border-bottom: 1px solid $porcelain;
     opacity: .7;
+    text-decoration: none !important;
 
     &::before {
       content: '›';
@@ -73,8 +73,8 @@ nav {
 
   .share-the-love {
     margin: 2em 0 0 .6em;
-    text-align: left;
     font-size: 1.1em;
+    text-align: left;
 
     .fa-heart-o {
       color: $cinnabar;
@@ -86,9 +86,9 @@ nav {
       margin-top: .2em;
 
       a {
-        text-decoration: none;
         display: inline-block;
         width: 1.2em;
+        text-decoration: none;
       }
 
       .facebook-button {
@@ -112,8 +112,8 @@ nav {
   .theme-selector,
   .version-selector {
     margin: 2em 0 0 .6em;
-    text-align: left;
     font-size: 1.1em;
+    text-align: left;
   }
 }
 
@@ -122,18 +122,18 @@ header {
   margin: auto;
 
   .logo {
-    margin: 2em 0 1em;
     max-width: 90%;
+    margin: 2em 0 1em;
   }
 
   h1,
   h2 {
-    font-size: 1.25em;
-    line-height: 1.5em;
-    text-transform: uppercase;
-    font-weight: 300;
-    text-align: center;
     display: block;
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
 
     a {
       color: $curiousblue;
@@ -143,9 +143,9 @@ header {
 
 .popup-types {
   td {
-    vertical-align: middle;
-    text-align: center;
     width: 33%;
+    text-align: center;
+    vertical-align: middle;
   }
 
   .swal2-icon,
@@ -163,37 +163,37 @@ header {
 }
 
 h3 {
-  font-size: 1.75em;
-  color: $dovegray;
-  text-transform: uppercase;
-  margin-top: 6em;
-  text-align: center;
   position: relative;
+  margin-top: 6em;
+  color: $dovegray;
+  font-size: 1.75em;
+  text-align: center;
+  text-transform: uppercase;
 
   &::before {
     content: '';
-    background-color: $porcelain;
-    height: .25em;
-    width: 43.75rem;
-    left: 50%;
-    margin-left: -21.875rem;
     position: absolute;
+    left: 50%;
+    width: 43.75rem;
+    height: .25em;
     margin-top: -2em;
+    margin-left: -21.875rem;
     border-radius: .125em;
+    background-color: $porcelain;
 
     @media all and (max-width: 768px) {
-      width: auto;
-      left: 1.25em;
       right: 1.25em;
+      left: 1.25em;
+      width: auto;
       margin-left: 0;
     }
   }
 }
 
 a {
-  text-decoration: none;
   color: $cornflowerblue;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
@@ -218,8 +218,8 @@ p {
   }
 
   @media all and (max-width: 768px) {
-    text-align: center;
     padding: 0 .625em;
+    text-align: center;
   }
 }
 
@@ -228,16 +228,16 @@ button,
   $btn-blue: #3085d6;
   $btn-gray: #d0d0d0;
 
-  background-color: $btn-blue;
-  color: $white;
+  padding: .9em 2.1875em;
   border: 0;
+  border-radius: .1875em;
+  background-color: $btn-blue;
   box-shadow: none;
+  color: $white;
   font-size: 1.125em;
   font-weight: 500;
-  border-radius: .1875em;
-  padding: .9em 2.1875em;
-  cursor: pointer;
   white-space: nowrap;
+  cursor: pointer;
 
   &:hover {
     background-color: darken($btn-blue, 3%);
@@ -246,8 +246,8 @@ button,
   &:focus {
     &:not(.swal2-close) {
       &:not(.btn) {
-        box-shadow: 0 0 0 .125em $athens, 0 0 0 .25em $chateaugray;
         outline: none;
+        box-shadow: 0 0 0 .125em $athens, 0 0 0 .25em $chateaugray;
       }
     }
   }
@@ -279,18 +279,18 @@ button,
 }
 
 pre {
-  color: lighten($black, 97);
-  background: $shark;
-  text-align: left;
   position: relative;
+  background: $shark;
+  color: lighten($black, 97);
   line-height: 1.2;
+  text-align: left;
 
   code {
-    font-family: 'Source Code Pro', monospace;
-    font-size: .8em;
     display: block;
     padding: .5em;
     border-radius: .3125em;
+    font-family: 'Source Code Pro', monospace;
+    font-size: .8em;
   }
 
   .comment {
@@ -305,26 +305,26 @@ pre {
   &.code-sample {
     &:hover {
       &::after {
-        opacity: 1;
         top: -2em;
+        opacity: 1;
       }
     }
 
     &::after {
       content: 'Try it on CodePen';
-      position: absolute;
       display: flex;
-      width: 13em;
-      height: 2em;
-      align-items: center;
+      position: absolute;
       top: 0;
       right: .5em;
+      align-items: center;
+      width: 13em;
+      height: 2em;
       padding-left: .8em;
+      transition: top .2s ease-in-out, opacity .2s ease-in-out;
       opacity: 0;
       background: $black url('/images/codepen.svg') 11.6em .2em no-repeat;
       background-size: 1.6em;
       cursor: pointer;
-      transition: top .2s ease-in-out, opacity .2s ease-in-out;
 
       @media all and (max-width: 768px) {
         display: none;
@@ -340,19 +340,19 @@ pre {
 }
 
 kbd {
+  padding: 0 .125em;
   border: 1px solid $regentgray;
   border-radius: .1875em;
-  padding: 0 .125em;
 }
 
 .showcase {
-  background-color: $porcelain;
+  display: inline-block;
+  position: relative;
+  width: 23.9375em;
   margin-top: .9em;
   padding: 1.25em;
-  display: inline-block;
-  width: 23.9375em;
+  background-color: $porcelain;
   vertical-align: top;
-  position: relative;
 
   @media all and (max-width: 768px) {
     padding: 0 .625em;
@@ -368,11 +368,11 @@ kbd {
   }
 
   h4 {
-    font-size: 1em;
-    color: lighten($black, 70);
-    line-height: 1.375em;
     margin: 0 auto;
+    color: lighten($black, 70);
+    font-size: 1em;
     font-weight: 800;
+    line-height: 1.375em;
   }
 
   &.sweet {
@@ -389,30 +389,30 @@ kbd {
 
   .vs-icon {
     @include retina-background('vs_icon');
+    position: absolute;
+    z-index: 2;
+    top: 3.75em;
+    right: -2.125em;
     width: 4.3125em;
     height: 4.3125em;
-    position: absolute;
-    right: -2.125em;
-    top: 3.75em;
-    z-index: 2;
 
     @media all and (max-width: 768px) {
-      margin: .3125em auto;
-      right: auto;
-      left: 50%;
-      margin-left: -2.1875em;
       top: auto;
+      right: auto;
       bottom: -2.1875em;
+      left: 50%;
+      margin: .3125em auto;
+      margin-left: -2.1875em;
     }
   }
 }
 
 .examples {
-  list-style-type: none;
   max-width: 900px;
   margin: 0 auto;
-  text-align: left;
   padding-left: 0;
+  list-style-type: none;
+  text-align: left;
 
   @media all and (max-width: 768px) {
     width: auto;
@@ -444,9 +444,9 @@ kbd {
     }
 
     p {
-      text-align: center;
       margin-bottom: 0;
       padding: 0 2em;
+      text-align: center;
     }
   }
 
@@ -465,8 +465,8 @@ kbd {
 ol {
   max-width: 45.3125rem;
   margin: 4.375em auto;
-  list-style-position: inside;
   padding-left: 0;
+  list-style-position: inside;
 
   li {
     color: $chateaugray;
@@ -480,8 +480,8 @@ ol {
 table {
   width: 45.3125rem;
   margin: .625em auto;
-  text-align: left;
   border-collapse: collapse;
+  text-align: left;
 
   @media all and (max-width: 768px) {
     width: auto;
@@ -489,11 +489,11 @@ table {
   }
 
   th {
-    background-color: $white;
+    position: relative;
     padding: .625em 1.25em;
+    background-color: $white;
     color: $dovegray;
     font-weight: 400;
-    position: relative;
     white-space: nowrap;
 
     @media all and (max-width: 360px) {
@@ -529,9 +529,9 @@ table {
 
 .input-types {
   td {
-    vertical-align: middle;
-    text-align: center;
     width: 33%;
+    text-align: center;
+    vertical-align: middle;
   }
 }
 
@@ -590,11 +590,11 @@ table {
 .donation-options,
 .collaborators,
 .backers {
-  max-width: 43.75rem;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 43.75rem;
+  margin: auto;
   font-size: 1.25em;
 
   a {
@@ -620,8 +620,8 @@ table {
 
 .hall-of-donators {
   display: inline-block;
-  font-size: 1.2em;
   margin: 2em auto 0;
+  font-size: 1.2em;
 }
 
 .cryptocurrency-qr-code {
@@ -643,9 +643,9 @@ table {
 }
 
 .stats {
-  font-size: .8125em;
-  opacity: 0;
   margin-top: .4375em;
+  opacity: 0;
+  font-size: .8125em;
 }
 
 .unselectable {

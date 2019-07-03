@@ -5,9 +5,9 @@ body > .bsa-cpc {
 .bsa-cpc #_default_ {
   position: relative;
   padding: 0 1em;
-  text-align: left;
   font-size: 14px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  text-align: left; }
 
 .bsa-cpc .default-ad {
   display: none; }
@@ -20,8 +20,8 @@ body > .bsa-cpc {
 
 .bsa-cpc a {
   color: inherit;
-  text-decoration: none;
-  font-weight: 500; }
+  font-weight: 500;
+  text-decoration: none; }
   .bsa-cpc a:hover {
     color: #87d25f;
     text-decoration: none; }
@@ -33,6 +33,7 @@ body > .bsa-cpc {
   position: relative;
   margin-left: 8px; }
   .bsa-cpc .default-title::before {
+    content: 'Sponsor';
     position: relative;
     top: -1px;
     left: -8px;
@@ -40,10 +41,9 @@ body > .bsa-cpc {
     border: solid 1px #87d25f;
     border-radius: 2px;
     color: #87d25f;
-    content: 'Sponsor';
-    text-transform: uppercase;
     font-size: 10px;
-    line-height: 1; }
+    line-height: 1;
+    text-transform: uppercase; }
   .bsa-cpc .default-title::after {
     content: ' — '; }
 
