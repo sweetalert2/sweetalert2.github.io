@@ -340,7 +340,7 @@ $('.input-type-text').onclick = () => {
       .then(response => response.json())
       .then(data => data.ip)
 
-    const {value: ipAddress} = await Swal.fire({
+    const { value: ipAddress } = await Swal.fire({
       title: 'Enter your IP address',
       input: 'text',
       inputValue: inputValue,
@@ -357,28 +357,28 @@ $('.input-type-text').onclick = () => {
 
 $('.input-type-email').onclick = () => {
   (async function getEmail () {
-    const {value: email} = await Swal.fire({
+    const { value: email } = await Swal.fire({
       title: 'Input email address',
       input: 'email',
       inputPlaceholder: 'Enter your email address'
     })
-    email && Swal.fire({html: 'Entered email: <strong>' + email + '</strong>'})
+    email && Swal.fire({ html: 'Entered email: <strong>' + email + '</strong>' })
   })()
 }
 
 $('.input-type-url').onclick = () => {
   (async function getUrl () {
-    const {value: url} = await Swal.fire({
+    const { value: url } = await Swal.fire({
       input: 'url',
       inputPlaceholder: 'Enter the URL'
     })
-    url && Swal.fire({html: 'Entered URL: <strong>' + url + '</strong>'})
+    url && Swal.fire({ html: 'Entered URL: <strong>' + url + '</strong>' })
   })()
 }
 
 $('.input-type-password').onclick = () => {
   (async function getPassword () {
-    const {value: password} = await Swal.fire({
+    const { value: password } = await Swal.fire({
       title: 'Enter your password',
       input: 'password',
       inputPlaceholder: 'Enter your password',
@@ -388,13 +388,13 @@ $('.input-type-password').onclick = () => {
         'autocorrect': 'off'
       }
     })
-    password && Swal.fire({html: 'Entered password: <strong>' + password + '</strong>'})
+    password && Swal.fire({ html: 'Entered password: <strong>' + password + '</strong>' })
   })()
 }
 
 $('.input-type-textarea').onclick = () => {
   (async function getMessage () {
-    const {value: text} = await Swal.fire({
+    const { value: text } = await Swal.fire({
       input: 'textarea',
       inputPlaceholder: 'Type your message here...',
       inputAttributes: {
@@ -408,7 +408,7 @@ $('.input-type-textarea').onclick = () => {
 
 $('.input-type-select').onclick = () => {
   (async function getFruit () {
-    const {value: fruit} = await Swal.fire({
+    const { value: fruit } = await Swal.fire({
       title: 'Select field validation',
       input: 'select',
       inputOptions: {
@@ -429,7 +429,7 @@ $('.input-type-select').onclick = () => {
         })
       }
     })
-    fruit && Swal.fire({html: 'You selected: <strong>' + fruit + '</strong>'})
+    fruit && Swal.fire({ html: 'You selected: <strong>' + fruit + '</strong>' })
   })()
 }
 
@@ -445,7 +445,7 @@ $('.input-type-radio').onclick = () => {
       }, 1000)
     })
 
-    const {value: color} = await Swal.fire({
+    const { value: color } = await Swal.fire({
       title: 'Select color',
       input: 'radio',
       inputOptions: inputOptionsPromise,
@@ -456,13 +456,13 @@ $('.input-type-radio').onclick = () => {
       }
     })
 
-    color && Swal.fire({html: 'You selected: <strong>' + color + '</strong>'})
+    color && Swal.fire({ html: 'You selected: <strong>' + color + '</strong>' })
   })()
 }
 
 $('.input-type-checkbox').onclick = () => {
   (async function acceptTerms () {
-    const {value: accept} = await Swal.fire({
+    const { value: accept } = await Swal.fire({
       title: 'Terms and conditions',
       input: 'checkbox',
       inputValue: 1,
@@ -473,13 +473,13 @@ $('.input-type-checkbox').onclick = () => {
       }
     })
 
-    accept && Swal.fire({text: 'You agreed with T&C :)'})
+    accept && Swal.fire({ text: 'You agreed with T&C :)' })
   })()
 }
 
 $('.input-type-file').onclick = () => {
   (async function getColor () {
-    const {value: file} = await Swal.fire({
+    const { value: file } = await Swal.fire({
       title: 'Select image',
       input: 'file',
       inputAttributes: {
@@ -517,7 +517,7 @@ $('.input-type-range').onclick = () => {
 
 $('.input-type-multiple').onclick = () => {
   (async function getForm () {
-    const {value: formValues} = await Swal.fire({
+    const { value: formValues } = await Swal.fire({
       title: 'Multiple inputs',
       html:
         '<input id="swal-input1" class="swal2-input" placeholder="first input field">' +
@@ -574,7 +574,7 @@ $('.examples .chaining-modals button').onclick = () => {
     showCancelButton: true,
     progressSteps: ['1', '2', '3']
   }).queue([
-    {title: 'Question 1', text: 'Chaining swal2 modals is easy'},
+    { title: 'Question 1', text: 'Chaining swal2 modals is easy' },
     'Question 2',
     'Question 3'
   ]).then((result) => {
@@ -599,7 +599,7 @@ $('.examples .dynamic-queue button').onclick = () => {
         return fetch('https://api.ipify.org?format=json')
           .then(response => response.json())
           .then(data => Swal.insertQueueStep(data.ip))
-          .catch(() => Swal.insertQueueStep({type: 'error', title: 'Unable to get your public IP'}))
+          .catch(() => Swal.insertQueueStep({ type: 'error', title: 'Unable to get your public IP' }))
       }
     }
   ])
@@ -701,7 +701,7 @@ function setBuySellAdsFooter () {
 }
 
 var observer = new MutationObserver(setBuySellAdsFooter)
-observer.observe($('body > .bsa-cpc'), {childList: true})
+observer.observe($('body > .bsa-cpc'), { childList: true })
 
 // Do not show 'Add to homescreen' prompt
 window.addEventListener('beforeinstallprompt', (e) => {
