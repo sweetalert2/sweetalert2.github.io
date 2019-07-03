@@ -1,16 +1,16 @@
 @import 'colors';
 
 .native-js {
+  display: flex;
   position: fixed;
+  z-index: 10;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
-  display: flex;
+  align-items: center;
+  opacity: 0;
   background: $shark;
   font-size: 14px;
-  opacity: 0;
-  align-items: center;
 
   &[data-state='visible'] {
     visibility: visible;
@@ -21,18 +21,18 @@
 .native-flex {
   display: flex;
   flex-grow: 1;
+  align-items: center;
   justify-content: center;
-  padding: 10px 0;
   height: 100%;
+  padding: 10px 0;
   color: $white;
-  text-decoration: none;
   font-weight: 400;
   line-height: 1.4;
-  align-items: center;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
     color: $white;
+    text-decoration: none;
   }
 
   @media all and (max-width: 768px) {
@@ -46,17 +46,17 @@
   padding: 2px 4px;
   border: solid 1px $white;
   border-radius: 2px;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  font-weight: 600;
   font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
 .native-img {
   display: flex;
-  margin: 0 10px;
-  height: 100%;
   align-items: center;
+  height: 100%;
+  margin: 0 10px;
 
   img {
     height: 27px;
@@ -70,10 +70,10 @@
 .native-cta {
   top: 1px;
   border-bottom: solid 2px $white;
+  font-size: 12px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
-  letter-spacing: 1px;
-  font-size: 12px;
 }
 
 .native-close {
