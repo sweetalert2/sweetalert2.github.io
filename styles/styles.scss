@@ -389,6 +389,7 @@ kbd {
 
   .vs-icon {
     @include retina-background('vs_icon');
+
     position: absolute;
     z-index: 2;
     top: 3.75em;

@@ -9,7 +9,7 @@
     "lint": "eslint *.js src/*.js && gulp stylelint"
   },
   "devDependencies": {
-    "@sweetalert2/stylelint-config": "^1.0.1",
+    "@sweetalert2/stylelint-config": "^1.1.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
