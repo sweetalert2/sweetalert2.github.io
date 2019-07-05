@@ -11,7 +11,7 @@
   "devDependencies": {
     "@sweetalert2/stylelint-config": "^1.0.1",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.5",
@@ -24,7 +24,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "exports-loader": "^0.7.0",
     "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^4.1.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-sass": "^4.0.0",
     "gulp-stylelint": "^9.0.0",
     "highlight.js": "^9.12.0",
@@ -33,7 +33,7 @@
     "stylelint": "^10.1.0",
     "webpack": "^4.0.0",
     "webpack-stream": "^5.1.0",
-    "whatwg-fetch": "^2.0.0"
+    "whatwg-fetch": "^3.0.0"
   },
   "license": "MIT"
 }
