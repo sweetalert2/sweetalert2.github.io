@@ -132,14 +132,14 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@sweetalert2/stylelint-config@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/stylelint-config/-/stylelint-config-1.1.1.tgz#727d9cab21b1c6845eeed6d03dc4b5f5fe12055e"
-  integrity sha512-ZgVYXrZ86VQoTH9992Dpq66j0EQsNAE/n5YsO0MbjkhebjNFhGLm40j3//0mbBseYpoNy9+bpINgKRBVIIZXVQ==
+"@sweetalert2/stylelint-config@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/stylelint-config/-/stylelint-config-1.1.2.tgz#5633b7d07040899bcc6d2901bcfa123c9bdd99f1"
+  integrity sha512-/RUEp69sPg7Ty10TFwwTGVTgfbJrVlHZu8yVujembfMFk+P5vmTWKo5LBjvDvSoXzDKJbkG/6DWOBqzMj07SRQ==
   dependencies:
     stylelint-config-property-sort-order-smacss "^5.0.0"
     stylelint-config-standard "^18.3.0"
-    stylelint-csstree-validator "^1.4.0"
+    stylelint-csstree-validator "^1.4.1"
     stylelint-scss "^3.9.0"
 
 "@types/events@*":
@@ -6922,10 +6922,10 @@ stylelint-config-standard@^18.3.0:
   dependencies:
     stylelint-config-recommended "^2.2.0"
 
-stylelint-csstree-validator@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/stylelint-csstree-validator/-/stylelint-csstree-validator-1.4.0.tgz#f660350c300d98565540c48748a3f23e075e15ca"
-  integrity sha512-7XiJT4cvn77dyT+Dr9uc9w22UB+gdQ0UUNc6DG9ler5isnavsYRTuf0wsmvwGWym/WorDNv2yAIBOfG1gOS57g==
+stylelint-csstree-validator@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/stylelint-csstree-validator/-/stylelint-csstree-validator-1.4.1.tgz#263ce772039d621ce2a2a2dd4e1c28a7c3f42648"
+  integrity sha512-c6ChYcoxmBOub/jzv3bCAyEP3p8ymez7af3xn93fv5H2BP5uVZ3tcNS++dVn4nQEZOssRXwcu8iHFy31gEQXNw==
   dependencies:
     css-tree "1.0.0-alpha.30"
 
