@@ -3,8 +3,26 @@ import hljs from 'highlight.js/lib/highlight'
 import hljsJS from 'highlight.js/lib/languages/javascript'
 import hljsXML from 'highlight.js/lib/languages/xml'
 import 'highlight.js/styles/atom-one-dark.css'
+import examples from './examples'
 
 const $ = document.querySelector.bind(document)
+
+// Render <pre> elements for examples
+Object.values(examples).forEach(example => {
+  const preElement = $(`pre[data-example-id='${example.id}']`)
+  preElement.className = 'code-sample'
+  if (example.fnString.slice(0, 5) === 'async') {
+    preElement.dataset.codepenJsBefore = '(async () => {\n'
+    preElement.dataset.codepenJsAfter = '\n})()'
+  }
+  const codeElement = document.createElement('code')
+  codeElement.innerText = unindent(example.fnString.split('\n').slice(1, -1)).join('\n')
+  preElement.appendChild(codeElement)
+})
+function unindent (lines) {
+  const baseIndent = [...lines[0]].findIndex(char => char !== ' ')
+  return lines.map(line => line.slice(baseIndent))
+}
 
 // Syntax highlighting with highlight.js
 hljs.registerLanguage('javascript', hljsJS)
@@ -111,14 +129,6 @@ fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
       '<strong>' + parseInt(response.total).toLocaleString() + '</strong>' +
       ' CDN hits in the last month'
   })
-
-$('.showcase.normal button').onclick = () => {
-  window.alert('You clicked the button!')
-}
-
-$('.showcase.sweet button').onclick = () => {
-  Swal.fire('Good job!', 'You clicked the button!', 'success')
-}
 
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
@@ -330,29 +340,6 @@ $('.examples .custom-width-padding-background button').onclick = () => {
       no-repeat
     `
   })
-}
-
-$('.input-type-text').onclick = () => {
-  (async function getIpAddress () {
-    const ipAPI = 'https://api.ipify.org?format=json'
-
-    const inputValue = fetch(ipAPI)
-      .then(response => response.json())
-      .then(data => data.ip)
-
-    const { value: ipAddress } = await Swal.fire({
-      title: 'Enter your IP address',
-      input: 'text',
-      inputValue: inputValue,
-      showCancelButton: true,
-      inputValidator: (value) => {
-        if (!value) {
-          return 'You need to write something!'
-        }
-      }
-    })
-    ipAddress && Swal.fire(`Your IP address is ${ipAddress}`)
-  })()
 }
 
 $('.input-type-email').onclick = () => {
@@ -758,3 +745,15 @@ $('#version').addEventListener('change', () => {
 _native.init('CK7DKKQI', {
   targetClass: 'native-js'
 })
+
+// Define window.executeExample for use in HTML
+window.executeExample = async (id) => {
+  const exampleFn = examples[id].fn
+  console.log(`Executing example ${id}...`)
+  try {
+    await exampleFn()
+  } catch (error) {
+    console.error(error)
+  }
+  console.log(`Executed example ${id}.`)
+}
