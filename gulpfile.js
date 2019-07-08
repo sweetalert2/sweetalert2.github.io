@@ -3,7 +3,6 @@ const sass = require('gulp-sass')
 const autoprefix = require('gulp-autoprefixer')
 const stylelint = require('gulp-stylelint')
 const browserSync = require('browser-sync').create()
-const webpack = require('webpack')
 const webpackStream = require('webpack-stream')
 
 const styles = [
@@ -15,7 +14,7 @@ const styles = [
 
 gulp.task('bundle', () => {
   return webpackStream({
-    entry: ['babel-polyfill', './src/native.js', './src/app.js'],
+    entry: ['babel-polyfill', 'whatwg-fetch', './src/native.js', './src/app.js'],
     output: {
       filename: 'bundle.js'
     },
@@ -35,11 +34,6 @@ gulp.task('bundle', () => {
         }
       ]
     },
-    plugins: [
-      new webpack.ProvidePlugin({
-        'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
-      })
-    ],
     // mode: 'development'
     mode: 'production'
   })

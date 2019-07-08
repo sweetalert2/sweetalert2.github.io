@@ -10,6 +10,7 @@ before_script:
 
 script:
   - yarn run lint
+  - yarn run build
   - awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define"
 
 notifications:
