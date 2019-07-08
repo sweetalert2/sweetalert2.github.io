@@ -23,7 +23,6 @@ select {
 
 nav {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   z-index: 1;
@@ -31,10 +30,8 @@ nav {
   left: 1em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
           align-items: stretch;
   -webkit-transition: left .5s ease-in-out;
   transition: left .5s ease-in-out; }
@@ -46,7 +43,6 @@ nav {
       left: 0; } }
   nav [href*='#'] {
     display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding: .4em 1em;
     border-bottom: 1px solid #e2e5e8;
@@ -59,7 +55,6 @@ nav {
       opacity: 1; }
     nav [href*='#'] span {
       -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
               flex-grow: 1;
       text-align: left; }
   nav .share-the-love {
@@ -70,10 +65,8 @@ nav {
       color: #eb4c36; }
     nav .share-the-love .social-buttons {
       display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
-          -ms-flex-align: center;
               align-items: center;
       margin-top: .2em; }
       nav .share-the-love .social-buttons a {
@@ -120,7 +113,6 @@ header {
 .popup-types .swal2-icon,
 .popup-types button {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 auto !important; }
 
@@ -181,8 +173,7 @@ button,
   border: 0;
   border-radius: .1875em;
   background-color: #3085d6;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   color: #fff;
   font-size: 1.125em;
   font-weight: 500;
@@ -194,8 +185,7 @@ button,
   button:focus:not(.swal2-close):not(.btn),
   .button:focus:not(.swal2-close):not(.btn) {
     outline: none;
-    -webkit-box-shadow: 0 0 0 0.125em #f2f4f6, 0 0 0 0.25em #a7adb2;
-            box-shadow: 0 0 0 0.125em #f2f4f6, 0 0 0 0.25em #a7adb2; }
+    box-shadow: 0 0 0 0.125em #f2f4f6, 0 0 0 0.25em #a7adb2; }
   button::-moz-focus-inner,
   .button::-moz-focus-inner {
     border: 0; }
@@ -239,13 +229,11 @@ pre {
   pre.code-sample::after {
     content: 'Try it on CodePen';
     display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: absolute;
     top: 0;
     right: .5em;
     -webkit-box-align: center;
-        -ms-flex-align: center;
             align-items: center;
     width: 13em;
     height: 2em;
@@ -409,11 +397,9 @@ table {
 @media all and (max-width: 768px) {
   .dismiss-reasons tr {
     display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
             flex-direction: column;
     padding: .625em 1.25em; }
   .dismiss-reasons th {
@@ -450,12 +436,9 @@ table {
 .collaborators,
 .backers {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   max-width: 43.75rem;
   margin: auto;
   font-size: 1.25em; }
