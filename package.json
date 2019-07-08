@@ -9,11 +9,11 @@
     "lint": "eslint *.js src/*.js && gulp stylelint"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
     "@sweetalert2/stylelint-config": "^1.1.2",
-    "babel-core": "^6.26.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.5",
     "css-loader": "^3.0.0",
     "eslint": "^6.0.0",
