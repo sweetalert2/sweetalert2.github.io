@@ -383,9 +383,9 @@ $('.input-type-password').onclick = () => {
       input: 'password',
       inputPlaceholder: 'Enter your password',
       inputAttributes: {
-        'maxlength': 10,
-        'autocapitalize': 'off',
-        'autocorrect': 'off'
+        maxlength: 10,
+        autocapitalize: 'off',
+        autocorrect: 'off'
       }
     })
     password && Swal.fire({ html: 'Entered password: <strong>' + password + '</strong>' })
@@ -412,10 +412,10 @@ $('.input-type-select').onclick = () => {
       title: 'Select field validation',
       input: 'select',
       inputOptions: {
-        'apples': 'Apples',
-        'bananas': 'Bananas',
-        'grapes': 'Grapes',
-        'oranges': 'Oranges'
+        apples: 'Apples',
+        bananas: 'Bananas',
+        grapes: 'Grapes',
+        oranges: 'Oranges'
       },
       inputPlaceholder: 'Select a fruit',
       showCancelButton: true,
@@ -483,7 +483,7 @@ $('.input-type-file').onclick = () => {
       title: 'Select image',
       input: 'file',
       inputAttributes: {
-        'accept': 'image/*',
+        accept: 'image/*',
         'aria-label': 'Upload your profile picture'
       }
     })
