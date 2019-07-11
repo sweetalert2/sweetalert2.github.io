@@ -86,7 +86,7 @@ window._native = (function () {
         return Object.keys(ad).length > 0
       })
       .filter(function (ad) {
-        return ad.hasOwnProperty('statlink')
+        return Object.prototype.hasOwnProperty.call(ad, 'statlink')
       })
   }
 
