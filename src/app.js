@@ -1,8 +1,8 @@
 /* global Swal, MutationObserver, FileReader, fetch, _bsa, _native */
-import hljs from '../node_modules/highlight.js/lib/highlight'
-import hljsJS from '../node_modules/highlight.js/lib/languages/javascript'
-import hljsXML from '../node_modules/highlight.js/lib/languages/xml'
-import '../node_modules/highlight.js/styles/atom-one-dark.css'
+import hljs from 'highlight.js/lib/highlight'
+import hljsJS from 'highlight.js/lib/languages/javascript'
+import hljsXML from 'highlight.js/lib/languages/xml'
+import 'highlight.js/styles/atom-one-dark.css'
 
 const $ = document.querySelector.bind(document)
 
