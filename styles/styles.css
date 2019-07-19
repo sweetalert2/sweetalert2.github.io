@@ -658,18 +658,18 @@ table {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
-@-webkit-keyframes popup-hair {
+@-webkit-keyframes logo-end-popup {
   to {
     visibility: unset; } }
 
-@keyframes popup-hair {
+@keyframes logo-end-popup {
   to {
     visibility: unset; } }
 
 .hair {
   visibility: hidden;
-  -webkit-animation-name: popup-hair;
-          animation-name: popup-hair;
+  -webkit-animation-name: logo-end-popup;
+          animation-name: logo-end-popup;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
@@ -680,3 +680,20 @@ table {
           animation-delay: 4.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
+
+#logo-track {
+  visibility: hidden;
+  -webkit-animation-name: logo-end-popup;
+          animation-name: logo-end-popup;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: .1;
+          animation-duration: .1;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+  #logo-track img {
+    height: 5em; }

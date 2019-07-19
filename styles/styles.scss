@@ -754,7 +754,7 @@ $bouncing-logo-min-height: 35%;
   animation-fill-mode: forwards;
 }
 
-@keyframes popup-hair {
+@keyframes logo-animation-end-popup {
   to {
     visibility: unset
   }
@@ -763,10 +763,24 @@ $bouncing-logo-min-height: 35%;
 .hair {
   visibility: hidden;
 
-  animation-name: popup-hair;
+  animation-name: logo-animation-end-popup;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-duration: .1;
   animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
   animation-fill-mode: forwards;
+}
+
+#logo-track {
+  visibility: hidden;
+
+  animation-name: logo-animation-end-popup;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-duration: .1;
+  animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
+  animation-fill-mode: forwards;
+  & img {
+    height: $bouncing-logo-width;
+  }
 }
