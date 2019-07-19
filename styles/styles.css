@@ -597,6 +597,23 @@ table {
           animation-name: logo-slide;
   -webkit-animation-duration: 2.5s;
           animation-duration: 2.5s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@-webkit-keyframes logo-animation-end-popup {
+  to {
+    visibility: visible; } }
+
+@keyframes logo-animation-end-popup {
+  to {
+    visibility: visible; } }
+
+.hair {
+  visibility: hidden;
+  -webkit-animation-name: logo-animation-end-popup;
+          animation-name: logo-animation-end-popup;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-delay: 2s;
@@ -605,3 +622,20 @@ table {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
+
+#logo-track {
+  visibility: hidden;
+  -webkit-animation-name: logo-animation-end-popup;
+          animation-name: logo-animation-end-popup;
+  -webkit-animation-duration: .1s;
+          animation-duration: .1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+  #logo-track img {
+    height: 5em; }
