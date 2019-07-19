@@ -615,6 +615,7 @@ table {
     visibility: visible; } }
 
 #logo-bouncer {
+  display: inline-block;
   -webkit-animation-name: logo-bounce;
           animation-name: logo-bounce;
   -webkit-animation-iteration-count: 1;
@@ -658,18 +659,18 @@ table {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
-@-webkit-keyframes logo-end-popup {
+@-webkit-keyframes logo-animation-end-popup {
   to {
     visibility: unset; } }
 
-@keyframes logo-end-popup {
+@keyframes logo-animation-end-popup {
   to {
     visibility: unset; } }
 
 .hair {
   visibility: hidden;
-  -webkit-animation-name: logo-end-popup;
-          animation-name: logo-end-popup;
+  -webkit-animation-name: logo-animation-end-popup;
+          animation-name: logo-animation-end-popup;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
@@ -683,8 +684,10 @@ table {
 
 #logo-track {
   visibility: hidden;
-  -webkit-animation-name: logo-end-popup;
-          animation-name: logo-end-popup;
+  display: inline-block;
+  max-width: 40rem;
+  -webkit-animation-name: logo-animation-end-popup;
+          animation-name: logo-animation-end-popup;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;

@@ -722,6 +722,8 @@ $bouncing-logo-min-height: 35%;
 }
 
 #logo-bouncer {
+  display: inline-block;
+
   animation-name: logo-bounce;
   animation-iteration-count: 1;
   animation-duration: $bouncing-logo-animation-duration;
@@ -773,6 +775,8 @@ $bouncing-logo-min-height: 35%;
 
 #logo-track {
   visibility: hidden;
+  display: inline-block;
+  max-width: 40rem;
 
   animation-name: logo-animation-end-popup;
   animation-timing-function: linear;
