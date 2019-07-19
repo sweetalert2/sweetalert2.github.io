@@ -563,6 +563,7 @@ table {
     transform: translate3d(0%, 0, 0); } }
 
 #logo-bouncer {
+  display: inline-block;
   -webkit-animation-name: logo-bounce;
           animation-name: logo-bounce;
   -webkit-animation-duration: 2.5s;
@@ -624,7 +625,9 @@ table {
           animation-fill-mode: forwards; }
 
 #logo-track {
+  display: inline-block;
   visibility: hidden;
+  max-width: 40rem;
   -webkit-animation-name: logo-animation-end-popup;
           animation-name: logo-animation-end-popup;
   -webkit-animation-duration: .1s;
