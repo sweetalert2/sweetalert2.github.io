@@ -661,11 +661,11 @@ table {
 
 @-webkit-keyframes logo-animation-end-popup {
   to {
-    visibility: unset; } }
+    visibility: visible; } }
 
 @keyframes logo-animation-end-popup {
   to {
-    visibility: unset; } }
+    visibility: visible; } }
 
 .hair {
   visibility: hidden;
