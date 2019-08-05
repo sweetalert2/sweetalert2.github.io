@@ -55,7 +55,7 @@ module.exports = {
       confirmButtonAriaLabel: 'Thumbs up, great!',
       cancelButtonText:
         '<i class="fa fa-thumbs-down"></i>',
-      cancelButtonAriaLabel: 'Thumbs down',
+      cancelButtonAriaLabel: 'Thumbs down'
     })
   },
   customPosition () {
@@ -101,7 +101,7 @@ module.exports = {
         confirmButton: 'btn btn-success',
         cancelButton: 'btn btn-danger'
       },
-      buttonsStyling: false,
+      buttonsStyling: false
     })
 
     swalWithBootstrapButtons.fire({
@@ -188,8 +188,8 @@ module.exports = {
       customClass: {
         icon: 'swal2-arabic-question-mark'
       },
-      confirmButtonText:  'نعم',
-      cancelButtonText:  'لا',
+      confirmButtonText: 'نعم',
+      cancelButtonText: 'لا',
       showCancelButton: true,
       showCloseButton: true
     })
@@ -247,7 +247,7 @@ module.exports = {
           title: 'All done!',
           html:
             'Your answers: <pre><code>' +
-            JSON.stringify(result.value) +
+              JSON.stringify(result.value) +
             '</code></pre>',
           confirmButtonText: 'Lovely!'
         })
@@ -284,16 +284,16 @@ module.exports = {
       html:
         'I will close in <strong></strong> seconds.<br/><br/>' +
         '<button id="increase" class="btn btn-warning">' +
-        'I need 5 more seconds!' +
+          'I need 5 more seconds!' +
         '</button><br/>' +
         '<button id="stop" class="btn btn-danger">' +
-        'Please stop the timer!!' +
+          'Please stop the timer!!' +
         '</button><br/>' +
         '<button id="resume" class="btn btn-success" disabled>' +
-        'Phew... you can restart now!' +
+          'Phew... you can restart now!' +
         '</button><br/>' +
         '<button id="toggle" class="btn btn-primary">' +
-        'Toggle' +
+          'Toggle' +
         '</button>',
       timer: 10000,
       onBeforeOpen: () => {
@@ -334,7 +334,7 @@ module.exports = {
         timerInterval = setInterval(() => {
           Swal.getContent().querySelector('strong')
             .textContent = (Swal.getTimerLeft() / 1000)
-            .toFixed(0)
+              .toFixed(0)
         }, 100)
       },
       onClose: () => {
@@ -350,7 +350,7 @@ module.exports = {
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000
-    });
+    })
 
     Toast.fire({
       type: 'success',
