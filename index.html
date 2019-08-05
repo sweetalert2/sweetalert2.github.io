@@ -864,7 +864,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   <!-- Input Types -->
   <h3 id="input-types">Input Types</h3>
   <table class="input-types">
-    <tr id="input-text">
+    <tr>
       <td><strong>text</strong></td>
       <td>
         <pre data-example-id="textInput"></pre>
@@ -876,219 +876,117 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </td>
     </tr>
 
-    <tr id="input-email">
+    <tr>
       <td><strong>email</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getEmail () {" data-codepen-js-after="})()">
-<code>const {value: email} = await Swal.fire({
-  title: 'Input email address',
-  input: 'email',
-  inputPlaceholder: 'Enter your email address'
-})
-
-if (email) {
-  Swal.fire('Entered email: ' + email)
-}</code></pre>
+        <pre data-example-id="emailInput"></pre>
       </td>
-      <td><button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type email" onclick="executeExample('emailInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-url">
+    <tr>
       <td><strong>url</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getUrl () {" data-codepen-js-after="})()">
-<code>const {value: url} = await Swal.fire({
-  input: 'url',
-  inputPlaceholder: 'Enter the URL'
-})
-
-if (url) {
-  Swal.fire('Entered URL: ' + url)
-}</code></pre>
+        <pre data-example-id="urlInput"></pre>
       </td>
-      <td><button class="input-type-url">Try me!</button></td>
+      <td>
+        <button onclick="executeExample('urlInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-password">
+    <tr>
       <td><strong>password</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getPassword () {" data-codepen-js-after="})()">
-<code>const {value: password} = await Swal.fire({
-  title: 'Enter your password',
-  input: 'password',
-  inputPlaceholder: 'Enter your password',
-  inputAttributes: {
-    maxlength: 10,
-    autocapitalize: 'off',
-    autocorrect: 'off'
-  }
-})
-
-if (password) {
-  Swal.fire('Entered password: ' + password)
-}</code></pre>
+        <pre data-example-id="passwordInput"></pre>
       </td>
-      <td><button class="input-type-password" aria-label="Try me! Example: input type password">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type password" onclick="executeExample('passwordInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-textarea">
+    <tr>
       <td><strong>textarea</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getText () {" data-codepen-js-after="})()">
-<code>const {value: text} = await Swal.fire({
-  input: 'textarea',
-  inputPlaceholder: 'Type your message here...',
-  showCancelButton: true
-})
-
-if (text) {
-  Swal.fire(text)
-}</code></pre>
+        <pre data-example-id="textareaInput"></pre>
       </td>
-      <td><button class="input-type-textarea" aria-label="Try me! Example: input type textarea">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type textarea" onclick="executeExample('textareaInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-select">
+    <tr>
       <td><strong>select</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getFruit () {" data-codepen-js-after="})()">
-<code>const {value: fruit} = await Swal.fire({
-  title: 'Select field validation',
-  input: 'select',
-  inputOptions: {
-    'apples': 'Apples',
-    'bananas': 'Bananas',
-    'grapes': 'Grapes',
-    'oranges': 'Oranges'
-  },
-  inputPlaceholder: 'Select a fruit',
-  showCancelButton: true,
-  inputValidator: (value) => {
-    return new Promise((resolve) => {
-      if (value === 'oranges') {
-        resolve()
-      } else {
-        resolve('You need to select oranges :)')
-      }
-    })
-  }
-})
-
-if (fruit) {
-  Swal.fire('You selected: ' + fruit)
-}</code></pre>
+        <pre data-example-id="selectInput"></pre>
       </td>
-      <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type select" onclick="executeExample('selectInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-radio">
+    <tr>
       <td><strong>radio</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getColor () {" data-codepen-js-after="})()">
-<code>// inputOptions can be an object or Promise
-const inputOptions = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve({
-      '#ff0000': 'Red',
-      '#00ff00': 'Green',
-      '#0000ff': 'Blue'
-    })
-  }, 1000)
-})
-
-const {value: color} = await Swal.fire({
-  title: 'Select color',
-  input: 'radio',
-  inputOptions: inputOptions,
-  inputValidator: (value) => {
-    if (!value) {
-      return 'You need to choose something!'
-    }
-  }
-})
-
-if (color) {
-  Swal.fire({html: 'You selected: ' + color})
-}</code></pre>
+        <pre data-example-id="radioInput"></pre>
       </td>
-      <td><button class="input-type-radio" aria-label="Try me! Example: input type radio">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type radio" onclick="executeExample('radioInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-checkbox">
+    <tr>
       <td><strong>checkbox</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function acceptTermsAndConditions () {" data-codepen-js-after="})()">
-<code>const {value: accept} = await Swal.fire({
-  title: 'Terms and conditions',
-  input: 'checkbox',
-  inputValue: 1,
-  inputPlaceholder:
-    'I agree with the terms and conditions',
-  confirmButtonText:
-    'Continue &lt;i class="fa fa-arrow-right&gt;&lt;/i&gt;',
-  inputValidator: (result) => {
-    return !result && 'You need to agree with T&amp;C'
-  }
-})
-
-if (accept) {
-  Swal.fire('You agreed with T&amp;C :)')
-}</code></pre>
-
+        <pre data-example-id="checkboxInput"></pre>
       </td>
-      <td><button class="input-type-checkbox" aria-label="Try me! Example: input type checkbox">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type checkbox" onclick="executeExample('checkboxInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-file">
+    <tr>
       <td><strong>file</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>const {value: file} = await Swal.fire({
-  title: 'Select image',
-  input: 'file',
-  inputAttributes: {
-    'accept': 'image/*',
-    'aria-label': 'Upload your profile picture'
-  }
-})
-
-if (file) {
-  const reader = new FileReader
-  reader.onload = (e) => {
-    Swal.fire({
-      title: 'Your uploaded picture',
-      imageUrl: e.target.result,
-      imageAlt: 'The uploaded picture'
-    })
-  }
-  reader.readAsDataURL(file)
-}</code></pre>
+        <pre data-example-id="fileInput"></pre>
       </td>
-      <td><button class="input-type-file" aria-label="Try me! Example: input type file">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type file" onclick="executeExample('fileInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
-    <tr id="input-range">
+    <tr>
       <td><strong>range</strong></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getImage () {" data-codepen-js-after="})()">
-<code>Swal.fire({
-  title: 'How old are you?',
-  type: 'question',
-  input: 'range',
-  inputAttributes: {
-    min: 8,
-    max: 120,
-    step: 1
-  },
-  inputValue: 25
-})</code></pre>
+        <pre data-example-id="rangeInput"></pre>
       </td>
-      <td><button class="input-type-range" aria-label="Try me! Example: input type range">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: input type range" onclick="executeExample('rangeInput')">
+          Try me!
+        </button>
+      </td>
     </tr>
   </table>
 
   <div class="center-container">
-    <p id="multiple-inputs">
+    <p>
       Multiple inputs aren't supported, you can achieve them by using <strong>html</strong> and <strong>preConfirm</strong> parameters.<br>
       Inside the <strong>preConfirm()</strong> function you can return (or, if async, resolve with) the custom result:
     </p>
@@ -1097,27 +995,13 @@ if (file) {
     <tr>
       <td class="mobile-hidden"></td>
       <td>
-        <pre class="code-sample" data-codepen-js-before="(async function getFormValues () {" data-codepen-js-after="})()">
-<code>const {value: formValues} = await Swal.fire({
-  title: 'Multiple inputs',
-  html:
-    '&lt;input id="swal-input1" class="swal2-input"&gt;' +
-    '&lt;input id="swal-input2" class="swal2-input"&gt;',
-  focusConfirm: false,
-  preConfirm: () => {
-    return [
-      document.getElementById('swal-input1').value,
-      document.getElementById('swal-input2').value
-    ]
-  }
-})
-
-if (formValues) {
-  Swal.fire(JSON.stringify(formValues))
-}</code></pre>
-
+        <pre data-example-id="multipleInputs"></pre>
       </td>
-      <td><button class="input-type-multiple" aria-label="Try me! Example: multiple inputs">Try me!</button></td>
+      <td>
+        <button aria-label="Try me! Example: multiple inputs" onclick="executeExample('multipleInputs')">
+          Try me!
+        </button>
+      </td>
     </tr>
 
   </table>

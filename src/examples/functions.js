@@ -1,4 +1,4 @@
-/* globals Swal, alert, fetch */
+/* globals Swal, alert, fetch, FileReader */
 
 module.exports = {
   // Top of page
@@ -378,6 +378,185 @@ module.exports = {
       }
     })
 
-    ipAddress && Swal.fire(`Your IP address is ${ipAddress}`)
+    if (ipAddress) {
+      Swal.fire(`Your IP address is ${ipAddress}`)
+    }
+  },
+  async emailInput () {
+    const { value: email } = await Swal.fire({
+      title: 'Input email address',
+      input: 'email',
+      inputPlaceholder: 'Enter your email address'
+    })
+
+    if (email) {
+      Swal.fire('Entered email: ' + email)
+    }
+  },
+  async urlInput () {
+    const { value: url } = await Swal.fire({
+      input: 'url',
+      inputPlaceholder: 'Enter the URL'
+    })
+
+    if (url) {
+      Swal.fire('Entered URL: ' + url)
+    }
+  },
+  async passwordInput () {
+    const { value: password } = await Swal.fire({
+      title: 'Enter your password',
+      input: 'password',
+      inputPlaceholder: 'Enter your password',
+      inputAttributes: {
+        maxlength: 10,
+        autocapitalize: 'off',
+        autocorrect: 'off'
+      }
+    })
+
+    if (password) {
+      Swal.fire('Entered password: ' + password)
+    }
+  },
+  async textareaInput () {
+    const { value: text } = await Swal.fire({
+      input: 'textarea',
+      inputPlaceholder: 'Type your message here...',
+      inputAttributes: {
+        'aria-label': 'Type your message here'
+      },
+      showCancelButton: true
+    })
+
+    if (text) {
+      Swal.fire(text)
+    }
+  },
+  async selectInput () {
+    const { value: fruit } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: 'Apples',
+        bananas: 'Bananas',
+        grapes: 'Grapes',
+        oranges: 'Oranges'
+      },
+      inputPlaceholder: 'Select a fruit',
+      showCancelButton: true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value === 'oranges') {
+            resolve()
+          } else {
+            resolve('You need to select oranges :)')
+          }
+        })
+      }
+    })
+
+    if (fruit) {
+      Swal.fire('You selected: ' + fruit)
+    }
+  },
+  async radioInput () {
+    /* inputOptions can be an object or Promise */
+    const inputOptions = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          '#ff0000': 'Red',
+          '#00ff00': 'Green',
+          '#0000ff': 'Blue'
+        })
+      }, 1000)
+    })
+
+    const { value: color } = await Swal.fire({
+      title: 'Select color',
+      input: 'radio',
+      inputOptions: inputOptions,
+      inputValidator: (value) => {
+        if (!value) {
+          return 'You need to choose something!'
+        }
+      }
+    })
+
+    if (color) {
+      Swal.fire({ html: 'You selected: ' + color })
+    }
+  },
+  async checkboxInput () {
+    const { value: accept } = await Swal.fire({
+      title: 'Terms and conditions',
+      input: 'checkbox',
+      inputValue: 1,
+      inputPlaceholder:
+        'I agree with the terms and conditions',
+      confirmButtonText:
+        'Continue <i class="fa fa-arrow-right></i>',
+      inputValidator: (result) => {
+        return !result && 'You need to agree with T&C'
+      }
+    })
+
+    if (accept) {
+      Swal.fire('You agreed with T&C :)')
+    }
+  },
+  async fileInput () {
+    const { value: file } = await Swal.fire({
+      title: 'Select image',
+      input: 'file',
+      inputAttributes: {
+        accept: 'image/*',
+        'aria-label': 'Upload your profile picture'
+      }
+    })
+
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        Swal.fire({
+          title: 'Your uploaded picture',
+          imageUrl: e.target.result,
+          imageAlt: 'The uploaded picture'
+        })
+      }
+      reader.readAsDataURL(file)
+    }
+  },
+  rangeInput () {
+    Swal.fire({
+      title: 'How old are you?',
+      type: 'question',
+      input: 'range',
+      inputAttributes: {
+        min: 8,
+        max: 120,
+        step: 1
+      },
+      inputValue: 25
+    })
+  },
+  async multipleInputs () {
+    const { value: formValues } = await Swal.fire({
+      title: 'Multiple inputs',
+      html:
+        '<input id="swal-input1" class="swal2-input">' +
+        '<input id="swal-input2" class="swal2-input">',
+      focusConfirm: false,
+      preConfirm: () => {
+        return [
+          document.getElementById('swal-input1').value,
+          document.getElementById('swal-input2').value
+        ]
+      }
+    })
+
+    if (formValues) {
+      Swal.fire(JSON.stringify(formValues))
+    }
   }
 }
