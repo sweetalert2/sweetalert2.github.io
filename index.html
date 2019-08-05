@@ -761,24 +761,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     </p>
 
     <ul class="examples">
-      <li class="mixin" id="mixin">
+      <li>
         <div class="ui">
           <p>Mixin example</p>
-          <button aria-label="Try me! Example: Mixin">Try me!</button>
+          <button aria-label="Try me! Example: Mixin" onclick="executeExample('mixin')">
+            Try me!
+          </button>
         </div>
-        <pre class="code-sample">
-<code>const Toast = Swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000
-});
-
-Toast.fire({
-  type: 'success',
-  title: 'Signed in successfully'
-})
-</code></pre>
+        <pre data-example-id="mixin"></pre>
       </li>
     </ul>
   </div>

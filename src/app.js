@@ -346,21 +346,6 @@ $('.input-type-multiple').onclick = () => {
   })()
 }
 
-$('.examples .mixin button').onclick = () => {
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    footer: ''
-  })
-
-  Toast.fire({
-    type: 'success',
-    title: 'Signed in successfully'
-  })
-}
-
 Array.from(document.querySelectorAll('.popup-types button')).forEach(button => {
   button.onclick = (e) => {
     var type = e.target.getAttribute('class').slice(5)

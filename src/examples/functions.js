@@ -13,7 +13,7 @@ module.exports = {
     )
   },
 
-  // Examples
+  // Examples section
   basicMessage () {
     Swal.fire('Any fool can use a computer')
   },
@@ -343,7 +343,22 @@ module.exports = {
     })
   },
 
-  // Input types
+  // Configuration section
+  mixin () {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    Toast.fire({
+      type: 'success',
+      title: 'Signed in successfully'
+    })
+  },
+
+  // Input Types section
   async textInput () {
     const ipAPI = 'https://api.ipify.org?format=json'
 
