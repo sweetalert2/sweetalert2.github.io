@@ -148,434 +148,175 @@
 
   <ul class="examples">
 
-    <li class="message" id="message-example">
+    <li>
       <div class="ui">
         <p>A basic message</p>
-        <button aria-label="Try me! Example: A basic message">Try me!</button>
+        <button aria-label="Try me! Example: A basic message" onclick="executeExample('basicMessage')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample"><code>Swal.fire('Any fool can use a computer')</code></pre>
+      <pre data-example-id="basicMessage"></pre>
     </li>
 
-    <li class="title-text" id="title-text-example">
+    <li>
       <div class="ui">
         <p>A title with a text under</p>
-        <button aria-label="Try me! Example: A title with a text under">Try me!</button>
+        <button aria-label="Try me! Example: A title with a text under" onclick="executeExample('titleText')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire(
-  'The Internet?',
-  'That thing is still around?',
-  'question'
-)</code></pre>
+      <pre data-example-id="titleText"></pre>
     </li>
 
-    <li class="error" id="error-example">
+    <li>
       <div class="ui">
         <p>A modal with a title, an error icon, a text, and a footer</p>
-        <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer">Try me!</button>
+        <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer" onclick="executeExample('errorType')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  type: 'error',
-  title: 'Oops...',
-  text: 'Something went wrong!',
-  footer: '&lt;a href>Why do I have this issue?&lt;/a>'
-})</code></pre>
+      <pre data-example-id="errorType"></pre>
     </li>
 
-    <li id="long-text">
+    <li>
       <div class="ui">
         <p>A modal window with a long content inside:</p>
-        <button aria-label="Try me! Example: A modal window with a long content inside">Try me!</button>
+        <button aria-label="Try me! Example: A modal window with a long content inside" onclick="executeExample('longText')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  imageUrl: 'https://placeholder.pics/svg/300x1500',
-  imageHeight: 1500,
-  imageAlt: 'A tall image'
-})</code></pre>
+      <pre data-example-id="longText"></pre>
     </li>
 
-    <li class="html" id="custom-html">
+    <li>
       <div class="ui">
         <p>Custom HTML description and buttons with ARIA labels</p>
-        <button aria-label="Try me! Example: Custom HTML description and buttons">Try me!</button>
+        <button aria-label="Try me! Example: Custom HTML description and buttons" onclick="executeExample('customHtml')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-<code class="lang-javascript">Swal.fire({
-  title: '&lt;strong&gt;HTML &lt;u&gt;example&lt;/u&gt;&lt;/strong&gt;',
-  type: 'info',
-  html:
-    'You can use &lt;b&gt;bold text&lt;/b&gt;, ' +
-    '&lt;a href="//github.com"&gt;links&lt;/a&gt; ' +
-    'and other HTML tags',
-  showCloseButton: true,
-  showCancelButton: true,
-  focusConfirm: false,
-  confirmButtonText:
-    '&lt;i class="fa fa-thumbs-up"&gt;&lt;/i&gt; Great!',
-  confirmButtonAriaLabel: 'Thumbs up, great!',
-  cancelButtonText:
-    '&lt;i class="fa fa-thumbs-down"&gt;&lt;/i&gt;',
-  cancelButtonAriaLabel: 'Thumbs down',
-})</code></pre>
+      <pre data-example-id="customHtml" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"></pre>
     </li>
 
-    <li id="position">
+    <li>
       <div class="ui">
         <p>A custom positioned dialog</p>
-        <button aria-label="Try me! Example: A custom positioned dialog">Try me!</button>
+        <button aria-label="Try me! Example: A custom positioned dialog" onclick="executeExample('customPosition')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  position: 'top-end',
-  type: 'success',
-  title: 'Your work has been saved',
-  showConfirmButton: false,
-  timer: 1500
-})</code></pre>
+      <pre data-example-id="customPosition"></pre>
     </li>
 
-    <li id="custom-animation">
+    <li>
       <div class="ui">
         <p>Custom animation <span class="nowrap">(<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1">Animate.css <i class="fa fa-external-link"></i></a>)</span></p>
-        <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
+        <button aria-label="Try me! Example: jQuery HTML with custom animation" onclick="executeExample('customAnimation')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
-<code>Swal.fire({
-  title: 'Custom animation with Animate.css',
-  animation: false,
-  customClass: {
-    popup: 'animated tada'
-  }
-})</code></pre>
+      <pre data-example-id="customAnimation" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css"></pre>
     </li>
 
-    <li class="warning confirm" id="confirm-dialog">
+    <li>
       <div class="ui">
         <p>A confirm dialog, with a function attached to the "Confirm"-button...</p>
-        <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button">Try me!</button>
+        <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-}).then((result) => {
-  if (result.value) {
-    Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
-  }
-})</code></pre>
+      <pre data-example-id="warningConfirm"></pre>
     </li>
 
-    <li class="bootstrap-buttons" id="dismiss-handle">
+    <li>
       <div class="ui">
         <p>... and by passing a parameter, you can execute something else for "Cancel".</p>
-        <button aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'">Try me!</button>
+        <button aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'" onclick="executeExample('handleDismiss')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample" data-codepen-css-external="http://sweetalert2.github.io/styles/bootstrap4-buttons.css">
-<code>const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false,
-})
-
-swalWithBootstrapButtons.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Yes, delete it!',
-  cancelButtonText: 'No, cancel!',
-  reverseButtons: true
-}).then((result) => {
-  if (result.value) {
-    swalWithBootstrapButtons.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
-  } else if (
-    // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    swalWithBootstrapButtons.fire(
-      'Cancelled',
-      'Your imaginary file is safe :)',
-      'error'
-    )
-  }
-})</code></pre>
+      <pre data-example-id="handleDismiss" data-codepen-css-external="http://sweetalert2.github.io/styles/bootstrap4-buttons.css"></pre>
     </li>
 
-    <li class="custom-image" id="custom-image-example">
+    <li>
       <div class="ui">
         <p>A message with a custom image and CSS animation disabled</p>
-        <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled">Try me!</button>
+        <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled" onclick="executeExample('customImage')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  title: 'Sweet!',
-  text: 'Modal with a custom image.',
-  imageUrl: 'https://unsplash.it/400/200',
-  imageWidth: 400,
-  imageHeight: 200,
-  imageAlt: 'Custom image',
-  animation: false
-})</code></pre>
+      <pre data-example-id="customImage"></pre>
     </li>
 
-    <li class="custom-width-padding-background" id="custom-width-padding-background">
+    <li>
       <div class="ui">
         <p>A message with custom width, padding, background and animated Nyan Cat</p>
-        <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
+        <button aria-label="Try me! Example: A message with custom width, padding and background" onclick="executeExample('customWidth')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  title: 'Custom width, padding, background.',
-  width: 600,
-  padding: '3em',
-  background: '#fff url(/images/trees.png)',
-  backdrop: `
-    rgba(0,0,123,0.4)
-    url("/images/nyan-cat.gif")
-    center left
-    no-repeat
-  `
-})</code></pre>
+      <pre data-example-id="customWidth"></pre>
     </li>
 
-    <li class="timer" id="timer-example">
+    <li>
       <div class="ui">
         <p>A message with auto close timer</p>
-        <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
+        <button aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('timer')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>let timerInterval
-Swal.fire({
-  title: 'Auto close alert!',
-  html: 'I will close in &lt;strong>&lt;/strong> seconds.',
-  timer: 2000,
-  onBeforeOpen: () => {
-    Swal.showLoading()
-    timerInterval = setInterval(() => {
-      Swal.getContent().querySelector('strong')
-        .textContent = Swal.getTimerLeft()
-    }, 100)
-  },
-  onClose: () => {
-    clearInterval(timerInterval)
-  }
-}).then((result) => {
-  if (
-    // <a href="#handling-dismissals" tabindex="-1">Read more about handling dismissals</a>
-    result.dismiss === Swal.DismissReason.timer
-  ) {
-    console.log('I was closed by the timer')
-  }
-})</code></pre>
+      <pre data-example-id="timer"></pre>
     </li>
 
-    <li class="rtl" id="rtl">
+    <li>
       <div class="ui">
         <p>Right-to-left support for Arabic, Hebrew, and other RTL languages</p>
-        <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
+        <button aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('rtl')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample" data-codepen-html='<body dir="rtl"></body>'>
-<code>Swal.fire({
-  title: 'هل تريد الاستمرار؟',
-  type: 'question',
-  customClass: {
-    icon: 'swal2-arabic-question-mark'
-  },
-  confirmButtonText:  'نعم',
-  cancelButtonText:  'لا',
-  showCancelButton: true,
-  showCloseButton: true
-})</code></pre>
+      <pre data-example-id="rtl" data-codepen-html='<body dir="rtl"></body>'></pre>
     </li>
 
-    <li class="ajax-request" id="ajax-request">
+    <li>
       <div class="ui">
         <p>AJAX request example</p>
-        <button aria-label="Try me! Example: AJAX request">Try me!</button>
+        <button aria-label="Try me! Example: AJAX request" onclick="executeExample('ajaxRequest')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.fire({
-  title: 'Submit your Github username',
-  input: 'text',
-  inputAttributes: {
-    autocapitalize: 'off'
-  },
-  showCancelButton: true,
-  confirmButtonText: 'Look up',
-  showLoaderOnConfirm: true,
-  preConfirm: (login) => {
-    return fetch(`//api.github.com/users/${login}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(response.statusText)
-        }
-        return response.json()
-      })
-      .catch(error => {
-        Swal.showValidationMessage(
-          `Request failed: ${error}`
-        )
-      })
-  },
-  allowOutsideClick: () => !Swal.isLoading()
-}).then((result) => {
-  if (result.value) {
-    Swal.fire({
-      title: `${result.value.login}'s avatar`,
-      imageUrl: result.value.avatar_url
-    })
-  }
-})</code></pre>
+      <pre data-example-id="ajaxRequest"></pre>
     </li>
 
-    <li class="chaining-modals" id="chaining-modals">
+    <li>
       <div class="ui">
         <p>Chaining modals (queue) example</p>
-        <button aria-label="Try me! Example: Chaining modals (queue)">Try me!</button>
+        <button aria-label="Try me! Example: Chaining modals (queue)" onclick="executeExample('chainingModals')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>Swal.mixin({
-  input: 'text',
-  confirmButtonText: 'Next &amp;rarr;',
-  showCancelButton: true,
-  progressSteps: ['1', '2', '3']
-}).queue([
-  {
-    title: 'Question 1',
-    text: 'Chaining swal2 modals is easy'
-  },
-  'Question 2',
-  'Question 3'
-]).then((result) => {
-  if (result.value) {
-    Swal.fire({
-      title: 'All done!',
-      html:
-        'Your answers: &lt;pre&gt;&lt;code&gt;' +
-          JSON.stringify(result.value) +
-        '&lt;/code&gt;&lt;/pre&gt;',
-      confirmButtonText: 'Lovely!'
-    })
-  }
-})</code></pre>
+      <pre data-example-id="chainingModals"></pre>
     </li>
 
-    <li class="dynamic-queue" id="dynamic-queue">
+    <li>
       <div class="ui">
         <p>Dynamic queue example</p>
-        <button aria-label="Try me! Example: Dynamic queue">Try me!</button>
+        <button aria-label="Try me! Example: Dynamic queue" onclick="executeExample('dynamicQueue')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code>const ipAPI = 'https://api.ipify.org?format=json'
-
-Swal.queue([{
-  title: 'Your public IP',
-  confirmButtonText: 'Show my public IP',
-  text:
-    'Your public IP will be received ' +
-    'via AJAX request',
-  showLoaderOnConfirm: true,
-  preConfirm: () => {
-    return fetch(ipAPI)
-      .then(response => response.json())
-      .then(data => Swal.insertQueueStep(data.ip))
-      .catch(() => {
-        Swal.insertQueueStep({
-          type: 'error',
-          title: 'Unable to get your public IP'
-        })
-      })
-  }
-}])</code></pre>
+      <pre data-example-id="dynamicQueue"></pre>
     </li>
 
 
-    <li class="timer-functions mobile-hidden" id="timer-functions">
+    <li>
       <div class="ui">
         <p>Timer functions example</p>
-        <button aria-label="Try me! Example: Timer functions">Try me!</button>
+        <button aria-label="Try me! Example: Timer functions" onclick="executeExample('timerFunctions')">
+          Try me!
+        </button>
       </div>
-      <pre class="code-sample">
-<code class="lang-javascript">let timerInterval
-Swal.fire({
-  title: 'Auto close alert!',
-  html:
-    'I will close in &lt;strong&gt;&lt;/strong&gt; seconds.&lt;br/&gt;&lt;br/&gt;' +
-    '&lt;button id="increase" class="btn btn-warning"&gt;' +
-      'I need 5 more seconds!' +
-    '&lt;/button&gt;&lt;br/&gt;' +
-    '&lt;button id="stop" class="btn btn-danger"&gt;' +
-      'Please stop the timer!!' +
-    '&lt;/button&gt;&lt;br/&gt;' +
-    '&lt;button id="resume" class="btn btn-success" disabled&gt;' +
-      'Phew... you can restart now!' +
-    '&lt;/button&gt;&lt;br/&gt;' +
-    '&lt;button id="toggle" class="btn btn-primary"&gt;' +
-      'Toggle' +
-    '&lt;/button&gt;',
-  timer: 10000,
-  onBeforeOpen: () => {
-    const content = Swal.getContent()
-    const $ = content.querySelector.bind(content)
-
-    const stop = $('#stop')
-    const resume = $('#resume')
-    const toggle = $('#toggle')
-    const increase = $('#increase')
-
-    Swal.showLoading()
-
-    function toggleButtons () {
-      stop.disabled = !Swal.isTimerRunning()
-      resume.disabled = Swal.isTimerRunning()
-    }
-
-    stop.addEventListener('click', () => {
-      Swal.stopTimer()
-      toggleButtons()
-    })
-
-    resume.addEventListener('click', () => {
-      Swal.resumeTimer()
-      toggleButtons()
-    })
-
-    toggle.addEventListener('click', () => {
-      Swal.toggleTimer()
-      toggleButtons()
-    })
-
-    increase.addEventListener('click', () => {
-      Swal.increaseTimer(5000)
-    })
-
-    timerInterval = setInterval(() => {
-      Swal.getContent().querySelector('strong')
-        .textContent = (Swal.getTimerLeft() / 1000)
-          .toFixed(0)
-    }, 100)
-  },
-  onClose: () => {
-    clearInterval(timerInterval)
-  }
-})</code></pre>
+      <pre data-example-id="timerFunctions"></pre>
     </li>
   </ul>
 
