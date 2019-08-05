@@ -7,10 +7,10 @@ import examples from './examples'
 
 const $ = document.querySelector.bind(document)
 
-// Render <pre> elements for examples
-Object.values(examples).forEach(example => {
-  const preElement = $(`pre[data-example-id='${example.id}']`)
+// Render `<pre data-example-id="...">` elements
+for (const preElement of document.querySelectorAll('pre[data-example-id]')) {
   preElement.className = 'code-sample'
+  const example = examples[preElement.dataset.exampleId]
   if (example.fnString.slice(0, 5) === 'async') {
     preElement.dataset.codepenJsBefore = '(async () => {\n'
     preElement.dataset.codepenJsAfter = '\n})()'
@@ -19,7 +19,7 @@ Object.values(examples).forEach(example => {
   codeElement.className = 'lang-javascript'
   codeElement.innerText = unindent(example.fnString.split('\n').slice(1, -1)).join('\n')
   preElement.appendChild(codeElement)
-})
+}
 function unindent (lines) {
   const baseIndent = [...lines[0]].findIndex(char => char !== ' ')
   return lines.map(line => line.slice(baseIndent))
