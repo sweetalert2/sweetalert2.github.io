@@ -160,7 +160,7 @@ module.exports = {
     let timerInterval
     Swal.fire({
       title: 'Auto close alert!',
-      html: 'I will close in <strong></strong> seconds.',
+      html: 'I will close in <strong></strong> milliseconds.',
       timer: 2000,
       onBeforeOpen: () => {
         Swal.showLoading()
