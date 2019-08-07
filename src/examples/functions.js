@@ -185,6 +185,8 @@ module.exports = {
     Swal.fire({
       title: 'هل تريد الاستمرار؟',
       type: 'question',
+      // do-not-display
+      target: document.getElementById('rtl-container'),
       customClass: {
         icon: 'swal2-arabic-question-mark'
       },

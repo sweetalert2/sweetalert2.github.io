@@ -8,7 +8,7 @@ const functions = require('./functions')
 
 const functionStrings = {}
 Object.entries(functions).forEach(([id, fn]) => {
-  functionStrings[id] = String(fn)
+  functionStrings[id] = String(fn).replace(/\s*\/\/ do-not-display\n.*\n/g, '\n')
 })
 
 module.exports = functionStrings
