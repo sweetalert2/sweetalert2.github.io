@@ -45,7 +45,7 @@ module.exports = {
       type: 'info',
       html:
         'You can use <b>bold text</b>, ' +
-        '<a href="//github.com">links</a> ' +
+        '<a href="//sweetalert2.github.io">links</a> ' +
         'and other HTML tags',
       showCloseButton: true,
       showCancelButton: true,
