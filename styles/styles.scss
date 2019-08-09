@@ -747,7 +747,9 @@ $bouncing-logo-min-height: 35%;
   margin-top: 10%;
   animation-name: logo-slide;
   animation-duration: $bouncing-logo-animation-duration;
+  animation-timing-function: linear;
   animation-delay: $bouncing-logo-animation-delay;
+  animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
@@ -760,8 +762,9 @@ $bouncing-logo-min-height: 35%;
 .hair {
   visibility: hidden;
   animation-name: logo-animation-end-popup;
+  animation-duration: .1s;
   animation-timing-function: linear;
-  animation-delay: $bouncing-logo-animation-delay;
+  animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

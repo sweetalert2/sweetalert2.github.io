@@ -598,8 +598,12 @@ table {
           animation-name: logo-slide;
   -webkit-animation-duration: 2.5s;
           animation-duration: 2.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
@@ -615,10 +619,12 @@ table {
   visibility: hidden;
   -webkit-animation-name: logo-animation-end-popup;
           animation-name: logo-animation-end-popup;
+  -webkit-animation-duration: .1s;
+          animation-duration: .1s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
