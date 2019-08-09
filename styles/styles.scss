@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
+@import url('https://fonts.googleapis.com/css?family=Montserrat'); // Montserrat (for logo)
 @import 'colors';
 
 @mixin retina-background($url, $type: png) {
@@ -122,16 +123,21 @@ header {
   margin: auto;
 
   .logo {
-    max-width: 90%;
-    margin: 2em 0 1em;
+    margin: 0.5em;
+    color: rgb(110, 74, 121);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    font-weight: bolder;
+    line-height: 1em;
+    text-align: center;
   }
 
   h1,
   h2 {
-    display: block;
-    font-size: 1.25em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
     font-weight: 300;
-    line-height: 1.5em;
+    line-height: 1.2em;
     text-align: center;
     text-transform: uppercase;
 
@@ -651,4 +657,130 @@ table {
 
 .unselectable {
   user-select: none;
+}
+
+// LOGO ANIMATION
+$bouncing-logo-width: 5em;
+$bouncing-logo-animation-duration: 2.5s;
+$bouncing-logo-animation-delay: 2s;
+$bouncing-logo-max-height: -60%;
+$bouncing-logo-min-height: 35%;
+
+@keyframes logo-bounce {
+  from {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+
+  20% {
+    transform: translate3d(0, $bouncing-logo-max-height, 0);
+    animation-timing-function: ease-in;
+  }
+
+  40% {
+    transform: translate3d(0, $bouncing-logo-min-height, 0);
+    animation-timing-function: ease-out;
+  }
+
+  60% {
+    transform: translate3d(0, $bouncing-logo-max-height / 2, 0);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: translate3d(0, $bouncing-logo-min-height, 0);
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    transform: translate3d(0, 0%, 0);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-slide {
+  from {
+    visibility: visible;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    visibility: visible;
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+#logo-bouncer {
+  display: inline-block;
+  animation-name: logo-bounce;
+  animation-duration: $bouncing-logo-animation-duration;
+  animation-delay: $bouncing-logo-animation-delay;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#logo-spinner {
+  animation-name: logo-spin;
+  animation-duration: $bouncing-logo-animation-duration / 2;
+  animation-timing-function: linear;
+  animation-delay: $bouncing-logo-animation-delay;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+
+  & svg {
+    width: $bouncing-logo-width;
+  }
+}
+
+#logo-slider {
+  visibility: hidden;
+  margin-top: 10%;
+  animation-name: logo-slide;
+  animation-duration: $bouncing-logo-animation-duration;
+  animation-timing-function: linear;
+  animation-delay: $bouncing-logo-animation-delay;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logo-animation-end-popup {
+  to {
+    visibility: visible;
+  }
+}
+
+.hair {
+  visibility: hidden;
+  animation-name: logo-animation-end-popup;
+  animation-duration: .1s;
+  animation-timing-function: linear;
+  animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#logo-track {
+  display: inline-block;
+  visibility: hidden;
+  max-width: 40rem;
+  animation-name: logo-animation-end-popup;
+  animation-duration: .1s;
+  animation-timing-function: linear;
+  animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  & img {
+    height: $bouncing-logo-width;
+  }
 }

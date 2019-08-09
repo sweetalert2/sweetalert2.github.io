@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 html,
 body {
   margin: 0;
@@ -82,14 +83,19 @@ header {
   max-width: 40.625rem;
   margin: auto; }
   header .logo {
-    max-width: 90%;
-    margin: 2em 0 1em; }
+    margin: 0.5em;
+    color: #6e4a79;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    font-weight: bolder;
+    line-height: 1em;
+    text-align: center; }
   header h1,
   header h2 {
-    display: block;
-    font-size: 1.25em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
     font-weight: 300;
-    line-height: 1.5em;
+    line-height: 1.2em;
     text-align: center;
     text-transform: uppercase; }
     header h1 a,
@@ -475,3 +481,170 @@ table {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
+
+@-webkit-keyframes logo-bounce {
+  from {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  20% {
+    transform: translate3d(0, -60%, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  40% {
+    transform: translate3d(0, 35%, 0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  60% {
+    transform: translate3d(0, -30%, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  80% {
+    transform: translate3d(0, 35%, 0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  100% {
+    transform: translate3d(0, 0%, 0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+@keyframes logo-bounce {
+  from {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  20% {
+    transform: translate3d(0, -60%, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  40% {
+    transform: translate3d(0, 35%, 0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  60% {
+    transform: translate3d(0, -30%, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  80% {
+    transform: translate3d(0, 35%, 0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  100% {
+    transform: translate3d(0, 0%, 0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+@-webkit-keyframes logo-spin {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes logo-slide {
+  from {
+    visibility: visible;
+    transform: translate3d(-100%, 0, 0); }
+  to {
+    visibility: visible;
+    transform: translate3d(0%, 0, 0); } }
+
+@keyframes logo-slide {
+  from {
+    visibility: visible;
+    transform: translate3d(-100%, 0, 0); }
+  to {
+    visibility: visible;
+    transform: translate3d(0%, 0, 0); } }
+
+#logo-bouncer {
+  display: inline-block;
+  -webkit-animation-name: logo-bounce;
+          animation-name: logo-bounce;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+#logo-spinner {
+  -webkit-animation-name: logo-spin;
+          animation-name: logo-spin;
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+  #logo-spinner svg {
+    width: 5em; }
+
+#logo-slider {
+  visibility: hidden;
+  margin-top: 10%;
+  -webkit-animation-name: logo-slide;
+          animation-name: logo-slide;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@-webkit-keyframes logo-animation-end-popup {
+  to {
+    visibility: visible; } }
+
+@keyframes logo-animation-end-popup {
+  to {
+    visibility: visible; } }
+
+.hair {
+  visibility: hidden;
+  -webkit-animation-name: logo-animation-end-popup;
+          animation-name: logo-animation-end-popup;
+  -webkit-animation-duration: .1s;
+          animation-duration: .1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+#logo-track {
+  display: inline-block;
+  visibility: hidden;
+  max-width: 40rem;
+  -webkit-animation-name: logo-animation-end-popup;
+          animation-name: logo-animation-end-popup;
+  -webkit-animation-duration: .1s;
+          animation-duration: .1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+  #logo-track img {
+    height: 5em; }
