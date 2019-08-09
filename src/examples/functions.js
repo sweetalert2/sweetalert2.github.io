@@ -497,7 +497,7 @@ module.exports = {
       inputPlaceholder:
         'I agree with the terms and conditions',
       confirmButtonText:
-        'Continue <i class="fa fa-arrow-right></i>',
+        'Continue <i class="fa fa-arrow-right"></i>',
       inputValidator: (result) => {
         return !result && 'You need to agree with T&C'
       }
