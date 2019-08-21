@@ -782,5 +782,19 @@ $bouncing-logo-min-height: 35%;
 
   & img {
     height: $bouncing-logo-width;
+
+    @media all and (max-width: 768px) {
+      width: 17rem;
+    }
+  }
+}
+
+#logo-text {
+  width: 28em;
+
+  @media all and (max-width: 768px) {
+    #logo-text {
+      width: 22em;
+    }
   }
 }
