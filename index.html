@@ -803,6 +803,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>Function to run when modal opens, provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
+        <td><b>onRender</b></td>
+        <td><i>null</i></td>
+        <td>Function to run after modal DOM has been updated. Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>. If you want to perform changes in the modal's DOM, that survive <strong>Swal.update()</strong>, <strong>onRender</strong> is a good place for that.</td>
+      </tr>
+      <tr>
         <td><b>onClose</b></td>
         <td><i>null</i></td>
         <td>Function to run when modal closes, provides modal DOM element as the first argument.</td>
