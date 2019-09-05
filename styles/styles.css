@@ -633,6 +633,7 @@ table {
 #logo-track {
   display: inline-block;
   visibility: hidden;
+  max-width: 40rem;
   -webkit-animation-name: logo-animation-end-popup;
           animation-name: logo-animation-end-popup;
   -webkit-animation-duration: .1s;
@@ -646,18 +647,13 @@ table {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
   #logo-track img {
-    width: 22em; }
-  @media all and (max-width: 768px) {
-    #logo-track img {
-      width: 17rem;
-    }
-  }
+    height: 5em; }
+    @media all and (max-width: 768px) {
+      #logo-track img {
+        width: 17rem; } }
 
-  #logo-text {
-    width: 28em;
-  }
+#logo-text {
+  width: 28em; }
   @media all and (max-width: 768px) {
-    #logo-text {
-      width: 22em;
-    }
-  }
+    #logo-text #logo-text {
+      width: 22em; } }
