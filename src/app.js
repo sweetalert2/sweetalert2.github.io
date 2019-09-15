@@ -133,9 +133,9 @@ fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
 
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
-    bitcoin: '12BxefvPMtHePgfPRDL1SaZYSG4GwQmWoP',
-    ethereum: '0x36e2b10666e2c0dc343901895ba3697b5d3214d1',
-    bitcoincash: 'qqxs402qszgwuue00gwxw996lzhpa8up2unqm0y46g'
+    bitcoin: '16Z7RvFv7PsV3XzFvchYwPnRfw9KeLTZQJ',
+    ethereum: '0x192096161eB2273f12b1cB4E31aBB09Bfc03a7F3',
+    bitcoincash: 'qz28x66hrljtdz3052p8ya3cmkwwva5avy0msz2ej3'
   }
   const showCryptocurrency = () => {
     const cryptocurrency = Swal.getInput().value
