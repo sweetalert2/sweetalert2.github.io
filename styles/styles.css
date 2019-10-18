@@ -424,7 +424,7 @@ table {
 .frameworks-integrations,
 .donation-options,
 .collaborators,
-.backers {
+.sponsors {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -434,19 +434,19 @@ table {
   .frameworks-integrations div,
   .donation-options div,
   .collaborators div,
-  .backers div {
+  .sponsors div {
     margin: 1em 0; }
   .frameworks-integrations a,
   .donation-options a,
   .collaborators a,
-  .backers a {
+  .sponsors a {
     display: inline-block;
     min-width: 6.875em;
     text-decoration: none; }
   .frameworks-integrations img,
   .donation-options img,
   .collaborators img,
-  .backers img {
+  .sponsors img {
     width: 5em;
     height: 5em;
     margin-top: .625em; }
@@ -454,7 +454,7 @@ table {
 .collaborators {
   font-size: .8125em; }
 
-.backers {
+.sponsors {
   font-size: 1.25em; }
 
 .hall-of-donators {
