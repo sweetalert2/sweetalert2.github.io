@@ -427,10 +427,15 @@ table {
 .backers {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   max-width: 43.75rem;
   margin: auto;
   font-size: 1.25em; }
+  .frameworks-integrations div,
+  .donation-options div,
+  .collaborators div,
+  .backers div {
+    margin: 1em 0; }
   .frameworks-integrations a,
   .donation-options a,
   .collaborators a,
