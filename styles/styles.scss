@@ -286,6 +286,8 @@ button,
 
 pre {
   position: relative;
+  max-width: 95%;
+  margin: 0 auto;
   background: $shark;
   color: lighten($black, 97);
   line-height: 1.2;
@@ -436,8 +438,6 @@ kbd {
 
     @media all and (max-width: 768px) {
       display: block;
-      max-width: none;
-      margin: 0 auto;
       font-size: .8em;
     }
   }
@@ -459,7 +459,6 @@ kbd {
 
   pre {
     width: 528px;
-    max-width: 100%;
     margin-top: 2.5em;
 
     @media all and (max-width: 768px) {
@@ -795,10 +794,5 @@ $bouncing-logo-min-height: 35%;
 
 #logo-text {
   width: 28em;
-
-  @media all and (max-width: 768px) {
-    #logo-text {
-      width: 22em;
-    }
-  }
+  max-width: 95%;
 }
