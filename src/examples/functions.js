@@ -160,12 +160,12 @@ module.exports = {
     let timerInterval
     Swal.fire({
       title: 'Auto close alert!',
-      html: 'I will close in <strong></strong> milliseconds.',
+      html: 'I will close in <b></b> milliseconds.',
       timer: 2000,
       onBeforeOpen: () => {
         Swal.showLoading()
         timerInterval = setInterval(() => {
-          Swal.getContent().querySelector('strong')
+          Swal.getContent().querySelector('b')
             .textContent = Swal.getTimerLeft()
         }, 100)
       },
@@ -257,7 +257,7 @@ module.exports = {
     })
   },
   dynamicQueue () {
-    const ipAPI = 'https://api.ipify.org?format=json'
+    const ipAPI = '//api.ipify.org?format=json'
 
     Swal.queue([{
       title: 'Your public IP',
@@ -297,7 +297,7 @@ module.exports = {
 
   // Input Types section
   async textInput () {
-    const ipAPI = 'https://api.ipify.org?format=json'
+    const ipAPI = '//api.ipify.org?format=json'
 
     const inputValue = fetch(ipAPI)
       .then(response => response.json())
@@ -432,7 +432,7 @@ module.exports = {
       inputPlaceholder:
         'I agree with the terms and conditions',
       confirmButtonText:
-        'Continue <i class="fa fa-arrow-right"></i>',
+        'Continue<i class="fa fa-arrow-right"></i>',
       inputValidator: (result) => {
         return !result && 'You need to agree with T&C'
       }
