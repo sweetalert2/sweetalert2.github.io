@@ -204,6 +204,8 @@ button,
 
 pre {
   position: relative;
+  max-width: 95%;
+  margin: 0 auto;
   background: #282c34;
   color: #f7f7f7;
   line-height: 1.2;
@@ -316,8 +318,6 @@ kbd {
       .examples .ui,
       .examples pre {
         display: block;
-        max-width: none;
-        margin: 0 auto;
         font-size: .8em; } }
   .examples .ui {
     width: 18.75rem;
@@ -330,7 +330,6 @@ kbd {
       text-align: center; }
   .examples pre {
     width: 528px;
-    max-width: 100%;
     margin-top: 2.5em; }
     @media all and (max-width: 768px) {
       .examples pre {
@@ -658,7 +657,5 @@ table {
         width: 17rem; } }
 
 #logo-text {
-  width: 28em; }
-  @media all and (max-width: 768px) {
-    #logo-text #logo-text {
-      width: 22em; } }
+  width: 28em;
+  max-width: 95%; }
