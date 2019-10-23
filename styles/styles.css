@@ -23,13 +23,18 @@ select {
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 nav {
+  display: -webkit-box;
   display: flex;
   position: fixed;
   z-index: 1;
   top: 2em;
   left: 1em;
-  flex-direction: column;
-  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+          align-items: stretch;
+  -webkit-transition: left .5s ease-in-out;
   transition: left .5s ease-in-out; }
   @media all and (max-width: 1150px) {
     nav {
@@ -38,6 +43,7 @@ nav {
     nav {
       left: 0; } }
   nav [href*='#'] {
+    display: -webkit-box;
     display: flex;
     padding: .4em 1em;
     border-bottom: 1px solid #e2e5e8;
@@ -49,7 +55,8 @@ nav {
     nav [href*='#']:hover {
       opacity: 1; }
     nav [href*='#'] span {
-      flex-grow: 1;
+      -webkit-box-flex: 1;
+              flex-grow: 1;
       text-align: left; }
   nav .share-the-love {
     margin: 2em 0 0 .6em;
@@ -58,8 +65,10 @@ nav {
     nav .share-the-love .fa-heart-o {
       color: #eb4c36; }
     nav .share-the-love .social-buttons {
+      display: -webkit-box;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+              align-items: center;
       margin-top: .2em; }
       nav .share-the-love .social-buttons a {
         display: inline-block;
@@ -109,6 +118,7 @@ header {
 
 .popup-types .swal2-icon,
 .popup-types button {
+  display: -webkit-box;
   display: flex;
   margin: 0 auto !important; }
 
@@ -228,14 +238,17 @@ pre {
     opacity: 1; }
   pre.code-sample::after {
     content: 'Try it on CodePen';
+    display: -webkit-box;
     display: flex;
     position: absolute;
     top: 0;
     right: .5em;
-    align-items: center;
+    -webkit-box-align: center;
+            align-items: center;
     width: 13em;
     height: 2em;
     padding-left: .8em;
+    -webkit-transition: top .2s ease-in-out, opacity .2s ease-in-out;
     transition: top .2s ease-in-out, opacity .2s ease-in-out;
     opacity: 0;
     background: #000 url("/images/codepen.svg") 11.6em 0.2em no-repeat;
@@ -394,8 +407,11 @@ table {
 
 @media all and (max-width: 768px) {
   .dismiss-reasons tr {
+    display: -webkit-box;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
     padding: .625em 1.25em; }
   .dismiss-reasons th {
     display: none; }
@@ -430,9 +446,11 @@ table {
 .donation-options,
 .collaborators,
 .sponsors {
+  display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
   max-width: 43.75rem;
   margin: auto;
   font-size: 1.25em; }
@@ -461,6 +479,15 @@ table {
 
 .sponsors {
   font-size: 1.25em; }
+
+.banners img {
+  -webkit-transition: box-shadow .1s ease-out;
+  transition: box-shadow .1s ease-out;
+  border: 1px solid #ccc;
+  border-radius: .3em; }
+  .banners img:hover {
+    border: 1px solid #aaa;
+    box-shadow: 1px 1px 2px #ccc; }
 
 .hall-of-donators {
   display: inline-block;
@@ -498,23 +525,28 @@ table {
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; }
   20% {
-    transform: translate3d(0, -60%, 0);
+    -webkit-transform: translate3d(0, -60%, 0);
+            transform: translate3d(0, -60%, 0);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in; }
   40% {
-    transform: translate3d(0, 35%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+            transform: translate3d(0, 35%, 0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; }
   60% {
-    transform: translate3d(0, -30%, 0);
+    -webkit-transform: translate3d(0, -30%, 0);
+            transform: translate3d(0, -30%, 0);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in; }
   80% {
-    transform: translate3d(0, 35%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+            transform: translate3d(0, 35%, 0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; }
   100% {
-    transform: translate3d(0, 0%, 0);
+    -webkit-transform: translate3d(0, 0%, 0);
+            transform: translate3d(0, 0%, 0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; } }
 
@@ -524,53 +556,66 @@ table {
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; }
   20% {
-    transform: translate3d(0, -60%, 0);
+    -webkit-transform: translate3d(0, -60%, 0);
+            transform: translate3d(0, -60%, 0);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in; }
   40% {
-    transform: translate3d(0, 35%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+            transform: translate3d(0, 35%, 0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; }
   60% {
-    transform: translate3d(0, -30%, 0);
+    -webkit-transform: translate3d(0, -30%, 0);
+            transform: translate3d(0, -30%, 0);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in; }
   80% {
-    transform: translate3d(0, 35%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+            transform: translate3d(0, 35%, 0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; }
   100% {
-    transform: translate3d(0, 0%, 0);
+    -webkit-transform: translate3d(0, 0%, 0);
+            transform: translate3d(0, 0%, 0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out; } }
 
 @-webkit-keyframes logo-spin {
   from {
-    transform: rotate(0); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
   to {
-    transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 @keyframes logo-spin {
   from {
-    transform: rotate(0); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
   to {
-    transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 @-webkit-keyframes logo-slide {
   from {
     visibility: visible;
-    transform: translate3d(-100%, 0, 0); }
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); }
   to {
     visibility: visible;
-    transform: translate3d(0%, 0, 0); } }
+    -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0); } }
 
 @keyframes logo-slide {
   from {
     visibility: visible;
-    transform: translate3d(-100%, 0, 0); }
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); }
   to {
     visibility: visible;
-    transform: translate3d(0%, 0, 0); } }
+    -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0); } }
 
 #logo-bouncer {
   display: inline-block;
