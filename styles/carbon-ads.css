@@ -13,6 +13,7 @@
     line-height: 1.5;
     text-shadow: 0 1px #fff; }
     .carbonads-wrapper > div a {
+      -webkit-transition: color .15s ease-in-out;
       transition: color .15s ease-in-out;
       color: #8d98a5; }
       .carbonads-wrapper > div a:hover {

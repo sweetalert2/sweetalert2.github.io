@@ -1,11 +1,13 @@
 .native-js {
+  display: -webkit-box;
   display: flex;
   position: fixed;
   z-index: 10;
   right: 0;
   bottom: 0;
   left: 0;
-  align-items: center;
+  -webkit-box-align: center;
+          align-items: center;
   opacity: 0;
   background: #282c34;
   font-size: 14px; }
@@ -14,10 +16,14 @@
     opacity: 1; }
 
 .native-flex {
+  display: -webkit-box;
   display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
   height: 100%;
   padding: 10px 0;
   color: #fff;
@@ -29,7 +35,9 @@
     text-decoration: none; }
   @media all and (max-width: 768px) {
     .native-flex {
-      flex-direction: column; } }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column; } }
 
 .native-sponsor {
   top: -1px;
@@ -43,8 +51,10 @@
   text-transform: uppercase; }
 
 .native-img {
+  display: -webkit-box;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+          align-items: center;
   height: 100%;
   margin: 0 10px; }
   .native-img img {
