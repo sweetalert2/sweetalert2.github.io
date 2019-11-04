@@ -111,18 +111,18 @@ header {
     header h2 a {
       color: #3085d6; }
 
-.popup-types td {
+.popup-icons td {
   width: 33%;
   text-align: center;
   vertical-align: middle; }
 
-.popup-types .swal2-icon,
-.popup-types button {
+.popup-icons .swal2-icon,
+.popup-icons button {
   display: -webkit-box;
   display: flex;
   margin: 0 auto !important; }
 
-.popup-types .swal2-success::before, .popup-types .swal2-success::after {
+.popup-icons .swal2-success::before, .popup-icons .swal2-success::after {
   background: transparent !important; }
 
 h3 {
@@ -242,7 +242,7 @@ pre {
     display: flex;
     position: absolute;
     top: 0;
-    right: .5em;
+    right: 0;
     -webkit-box-align: center;
             align-items: center;
     width: 13em;
@@ -253,6 +253,7 @@ pre {
     opacity: 0;
     background: #000 url("/images/codepen.svg") 11.6em 0.2em no-repeat;
     background-size: 1.6em;
+    font-size: .8em;
     cursor: pointer; }
     @media all and (max-width: 768px) {
       pre.code-sample::after {
@@ -390,9 +391,13 @@ table {
         table td b {
           font-size: .8125em; } }
 
+#api pre {
+  max-width: 100%;
+  margin: 0; }
+
 @media all and (max-width: 768px) {
-  .popup-types th:nth-child(2),
-  .popup-types td:nth-child(2),
+  .popup-icons th:nth-child(2),
+  .popup-icons td:nth-child(2),
   .input-types th:nth-child(2),
   .input-types td:nth-child(2) {
     display: none; } }

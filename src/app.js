@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStyleSheet('./styles/native-js.css')
   loadStyleSheet('./styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css')
 })
 
 var stats = {}
@@ -167,10 +167,10 @@ $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) =
   e.preventDefault()
 })
 
-Array.from(document.querySelectorAll('.popup-types button')).forEach(button => {
+Array.from(document.querySelectorAll('.popup-icons button')).forEach(button => {
   button.onclick = (e) => {
-    var type = e.target.getAttribute('class').slice(5)
-    Swal.fire(type + '!', '', type)
+    var icon = e.target.getAttribute('class').slice(5)
+    Swal.fire('Icon ' + icon, '', icon)
   }
 })
 
@@ -203,7 +203,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
-        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2',
+        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2@9',
         css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}'
       }
       if (pre.getAttribute('data-codepen-html')) {
@@ -238,6 +238,9 @@ $('#version').addEventListener('change', () => {
   switch ($('#version').value) {
     case '7.x':
       window.location.assign('v7.html')
+      break
+    case '8.x':
+      window.location.assign('v8.html')
       break
     default:
       window.location.assign('/')
