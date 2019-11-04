@@ -147,7 +147,7 @@ header {
   }
 }
 
-.popup-types {
+.popup-icons {
   td {
     width: 33%;
     text-align: center;
@@ -325,7 +325,7 @@ pre {
       display: flex;
       position: absolute;
       top: 0;
-      right: .5em;
+      right: 0;
       align-items: center;
       width: 13em;
       height: 2em;
@@ -334,6 +334,7 @@ pre {
       opacity: 0;
       background: $black url('/images/codepen.svg') 11.6em .2em no-repeat;
       background-size: 1.6em;
+      font-size: .8em;
       cursor: pointer;
 
       @media all and (max-width: 768px) {
@@ -524,7 +525,14 @@ table {
   }
 }
 
-.popup-types,
+#api {
+  pre {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.popup-icons,
 .input-types {
   @media all and (max-width: 768px) {
     th,

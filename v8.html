@@ -16,7 +16,8 @@
   <title>SweetAlert2 - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes</title>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
 
   <meta property="og:title" content="SweetAlert2">
   <meta property="og:description" name="description" content="A beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes">
@@ -26,21 +27,21 @@
   <link rel="icon" href="/images/favicon.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/styles.css?2">
 
-  <link rel="preload" href="https://unsplash.it/400/200" as="image">
+  <link rel="preload" href="https://unsplash.it/400/200/?random" as="image">
 
   <!-- https://goo.gl/qRE0vM -->
   <meta name="theme-color" content="#f2f4f6">
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.css" id="theme-styles">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" id="theme-styles">
 
   <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
 
   <!------ This is what you need ------>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
   <!--...............................-->
 </head>
 
@@ -52,7 +53,7 @@
     <a href="#frameworks-integrations"><span>Integrations</span></a>
     <a href="#configuration"><span>Configuration</span></a>
     <a href="#handling-dismissals"><span>Dismissals</span></a>
-    <a href="#icons"><span>Icons</span></a>
+    <a href="#popup-types"><span>Popup Types</span></a>
     <a href="#input-types"><span>Input Types</span></a>
     <a href="#methods"><span>Methods</span></a>
     <a href="#collaborators"><span>Collaborators</span></a>
@@ -93,18 +94,16 @@
       <select id="theme">
         <option value="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.css" selected>Default</option>
         <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark/dark.css">Dark</option>
-        <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">Bootstrap 4</option>
         <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css">Minimal</option>
         <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless/borderless.css">Borderless</option>
-        <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.css">Material UI</option>
       </select>
     </div>
 
     <div class="version-selector">
       Version:
       <select id="version">
-        <option value="9.x" selected>9.x</option>
-        <option value="8.x">8.x</option>
+        <option value="9.x">9.x</option>
+        <option value="8.x" selected>8.x</option>
         <option value="7.x">7.x</option>
       </select>
     </div>
@@ -257,12 +256,12 @@
 
     <li id="custom-animation">
       <div class="ui">
-        <p>Custom animation with <a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1" class="nowrap">Animate.css <i class="fa fa-external-link"></i></a></p>
+        <p>Custom animation <span class="nowrap">(<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1">Animate.css <i class="fa fa-external-link"></i></a>)</span></p>
         <button aria-label="Try me! Example: jQuery HTML with custom animation" onclick="executeExample('customAnimation')">
           Try me!
         </button>
       </div>
-      <pre data-example-id="customAnimation" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"></pre>
+      <pre data-example-id="customAnimation" data-codepen-css-external="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css"></pre>
     </li>
 
     <li id="confirm-dialog">
@@ -287,8 +286,8 @@
 
     <li id="custom-image-example">
       <div class="ui">
-        <p>A message with a custom image</p>
-        <button aria-label="Try me! Example: A message with a custom image" onclick="executeExample('customImage')">
+        <p>A message with a custom image and CSS animation disabled</p>
+        <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled" onclick="executeExample('customImage')">
           Try me!
         </button>
       </div>
@@ -362,7 +361,7 @@
     <h3 id="download">Download & install</h3>
     <pre class="center"><code><span class="unselectable">$ </span>npm install sweetalert2</code></pre>
     <p>Or grab from <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">jsdelivr CDN <i class="fa fa-external-link"></i></a></p>
-    <pre class="center"><code>&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@9">&lt;/script></code></pre>
+    <pre class="center"><code>&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@8">&lt;/script></code></pre>
     <p class="jsdelivr-info mobile-hidden"></p>
   </div>
 
@@ -398,7 +397,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
 <pre><code>Swal.fire({
   title: 'Error!',
   text: 'Do you want to continue',
-  icon: 'error',
+  type: 'error',
   confirmButtonText: 'Cool'
 })</code></pre>
   </div>
@@ -429,7 +428,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
 
     <p class="center">Here are the keys that you can use if you pass an object into sweetAlert2:</p>
 
-    <table id="api">
+    <table>
       <tr class="titles">
         <th>
           Argument
@@ -460,36 +459,9 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>A description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
       </tr>
       <tr>
-        <td><b>icon</b></td>
+        <td><b>type</b></td>
         <td><i>null</i></td>
-        <td>The icon of the modal. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "icon" or passed as the third parameter of the function.</td>
-      </tr>
-      <tr>
-        <td><b>iconHtml</b></td>
-        <td><i>null</i></td>
-        <td>The custom HTML content for an icon.</td>
-      </tr>
-      <tr id="show-class">
-        <td><b>showClass</b></td>
-        <td><i>null</i></td>
-        <td>CSS classes for animations when showing a popup (fade in):
- <pre><code>showClass: {
-  popup: 'popup-class',
-  backdrop: 'popup-class',
-  icon: 'icon-class'
-}</code></pre>
-        </td>
-      </tr>
-      <tr id="hide-class">
-        <td><b>hideClass</b></td>
-        <td><i>null</i></td>
-        <td>CSS classes for animations when hiding a popup (fade out):
- <pre><code>hideClass: {
-  popup: 'popup-class',
-  backdrop: 'popup-class',
-  icon: 'icon-class'
-}</code></pre>
-        </td>
+        <td>The type of the modal. SweetAlert2 comes with 5 built-in types which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "type" or passed as the third parameter of the function.</td>
       </tr>
       <tr>
         <td><b>footer</b></td>
@@ -568,6 +540,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
 }</code></pre>
         </td>
       </tr>
+      <tr>
+        <td><b>customContainerClass</b></td>
+        <td><i>''</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the container of the modal.</td>
+      </tr>
       <tr id="timer">
         <td><b>timer</b></td>
         <td><i>null</i></td>
@@ -576,7 +553,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>animation</b></td>
         <td><i>true</i></td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#show-class">showClass</a> and <a href="#hide-class">hideClass</a> instead.</strong><br>If set to <strong>false</strong>, modal CSS animation will be disabled.</td>
+        <td>If set to <strong>false</strong>, modal CSS animation will be disabled.</td>
       </tr>
       <tr>
         <td><b>heightAuto</b></td>
@@ -637,6 +614,16 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><b>cancelButtonColor</b></td>
         <td><i>null</i></td>
         <td>Use this to change the background color of the "Cancel"-button. The default color is <strong>#aaa</strong></td>
+      </tr>
+      <tr>
+        <td><b>confirmButtonClass</b></td>
+        <td><i>''</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the "Confirm"-button.</td>
+      </tr>
+      <tr>
+        <td><b>cancelButtonClass</b></td>
+        <td><i>''</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the "Cancel"-button.</td>
       </tr>
       <tr>
         <td><b>confirmButtonAriaLabel</b></td>
@@ -725,6 +712,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><i>''</i></td>
         <td>An alternative text for the custom image icon.</td>
       </tr>
+      <tr>
+        <td><b>imageClass</b></td>
+        <td><i>''</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the customized icon.</td>
+      </tr>
       <tr id="input-placeholder">
         <td><b>inputPlaceholder</b></td>
         <td><i>''</i></td>
@@ -769,6 +761,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td><b>validationMessage</b></td>
         <td><i>null</i></td>
         <td>A custom validation message for default validators (email, url).</td>
+      </tr>
+      <tr id="input-class">
+        <td><b>inputClass</b></td>
+        <td><i>''</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#custom-class">customClass</a> instead.</strong> <br>A custom CSS class for the input field.</td>
       </tr>
       <tr>
         <td><b>progressSteps</b></td>
@@ -870,9 +867,9 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     </table>
   </div>
 
-  <!-- Icons -->
-  <h3 id="icons">Icons</h3>
-  <table class="popup-icons">
+  <!-- Popup Types -->
+  <h3 id="popup-types">Popup Types</h3>
+  <table class="popup-types">
     <tr>
       <td><strong>success</strong></td>
       <td>
@@ -889,25 +886,30 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <td><strong>error</strong></td>
       <td>
         <div class="swal2-icon swal2-error">
-          <span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span>
+         <span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span>
         </div>
       </td>
       <td><button class="type-error" aria-label="Try me! Example: error modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>warning</strong></td>
-      <td><div class="swal2-icon swal2-warning"><div class="swal2-icon-content">!</div></div></td>
+      <td><div class="swal2-icon swal2-warning"></div></td>
       <td><button class="type-warning" aria-label="Try me! Example: warning modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>info</strong></td>
-      <td><div class="swal2-icon swal2-info"><div class="swal2-icon-content">i</div></div></td>
+      <td><div class="swal2-icon swal2-info"></div></td>
       <td><button class="type-info" aria-label="Try me! Example: info modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>question</strong></td>
-      <td><div class="swal2-icon swal2-question"><div class="swal2-icon-content">?</div></div></td>
+      <td><div class="swal2-icon swal2-question"></div></td>
       <td><button class="type-question" aria-label="Try me! Example: question modal">Try me!</button></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Note: for Arabic and Persian languages there's the built-in class <strong class="nowrap">swal2-arabic-question-mark</strong> to flip the question mark icon, see <a href="#rtl">the RTL example</a>.
+      </td>
     </tr>
   </table>
 
@@ -1098,10 +1100,6 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>Get the modal title.</td>
       </tr>
       <tr>
-        <td><i>Swal.getProgressSteps()</i></td>
-        <td>Get the progress steps.</td>
-      </tr>
-      <tr>
         <td><i>Swal.getCloseButton()</i></td>
         <td>Get the close button.</td>
       </tr>
@@ -1140,6 +1138,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><i>Swal.disableButtons()</i></td>
         <td>Disable "Confirm" and "Cancel" buttons.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.enableConfirmButton()</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#getConfirmButton">Swal.getConfirmButton()</a> instead.</strong> <br> Enable the "Confirm"-button only.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.disableConfirmButton()</i></td>
+        <td><strong>Deprecated and will be removed in the next major release, use <a href="#getConfirmButton">Swal.getConfirmButton()</a> instead.</strong> <br> Disable the "Confirm"-button only.</td>
       </tr>
       <tr id="showLoading">
         <td><i>Swal.showLoading()</i> or <i>Swal.enableLoading()</i></td>
@@ -1224,6 +1230,22 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><i>Swal.deleteQueueStep(index)</i></td>
         <td>Delete a modal at <strong>index</strong> from queue.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.getProgressSteps()</i></td>
+        <td>Progress steps getter.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.setProgressSteps([])</i></td>
+        <td>Progress steps setter.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.showProgressSteps()</i></td>
+        <td>Show progress steps.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.hideProgressSteps()</i></td>
+        <td>Hide progress steps.</td>
       </tr>
       <tr>
         <td><i>Swal.isValidParameter(param)</i></td>
@@ -1395,6 +1417,6 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   <form id="codepen-form" action="https://codepen.io/pen/define" method="POST" target="_blank">
     <input type="hidden" name="data" id="codepen-data">
   </form>
-  <script src="./dist/bundle.js" defer></script>
+  <script src="./dist/bundle-v8.js" defer></script>
 </body>
 </html>

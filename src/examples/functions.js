@@ -26,7 +26,7 @@ module.exports = {
   },
   errorType () {
     Swal.fire({
-      type: 'error',
+      icon: 'error',
       title: 'Oops...',
       text: 'Something went wrong!',
       footer: '<a href>Why do I have this issue?</a>'
@@ -42,7 +42,7 @@ module.exports = {
   customHtml () {
     Swal.fire({
       title: '<strong>HTML <u>example</u></strong>',
-      type: 'info',
+      icon: 'info',
       html:
         'You can use <b>bold text</b>, ' +
         '<a href="//sweetalert2.github.io">links</a> ' +
@@ -61,7 +61,7 @@ module.exports = {
   customPosition () {
     Swal.fire({
       position: 'top-end',
-      type: 'success',
+      icon: 'success',
       title: 'Your work has been saved',
       showConfirmButton: false,
       timer: 1500
@@ -70,9 +70,11 @@ module.exports = {
   customAnimation () {
     Swal.fire({
       title: 'Custom animation with Animate.css',
-      animation: false,
-      customClass: {
-        popup: 'animated tada'
+      showClass: {
+        popup: 'animated fadeInDown faster'
+      },
+      hideClass: {
+        popup: 'animated fadeOutUp faster'
       }
     })
   },
@@ -80,7 +82,7 @@ module.exports = {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      type: 'warning',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
@@ -107,7 +109,7 @@ module.exports = {
     swalWithBootstrapButtons.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      type: 'warning',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, delete it!',
       cancelButtonText: 'No, cancel!',
@@ -139,7 +141,6 @@ module.exports = {
       imageWidth: 400,
       imageHeight: 200,
       imageAlt: 'Custom image',
-      animation: false
     })
   },
   customWidth () {
@@ -184,12 +185,10 @@ module.exports = {
   rtl () {
     Swal.fire({
       title: 'هل تريد الاستمرار؟',
-      type: 'question',
+      icon: 'question',
+      iconHtml: '؟',
       // do-not-display
       target: document.getElementById('rtl-container'),
-      customClass: {
-        icon: 'swal2-arabic-question-mark'
-      },
       confirmButtonText: 'نعم',
       cancelButtonText: 'لا',
       showCancelButton: true,
@@ -272,7 +271,7 @@ module.exports = {
           .then(data => Swal.insertQueueStep(data.ip))
           .catch(() => {
             Swal.insertQueueStep({
-              type: 'error',
+              icon: 'error',
               title: 'Unable to get your public IP'
             })
           })
@@ -290,7 +289,7 @@ module.exports = {
     })
 
     Toast.fire({
-      type: 'success',
+      icon: 'success',
       title: 'Signed in successfully'
     })
   },
@@ -467,7 +466,7 @@ module.exports = {
   rangeInput () {
     Swal.fire({
       title: 'How old are you?',
-      type: 'question',
+      icon: 'question',
       input: 'range',
       inputAttributes: {
         min: 8,
