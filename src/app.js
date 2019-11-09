@@ -31,11 +31,13 @@ hljs.registerLanguage('xml', hljsXML)
 hljs.initHighlightingOnLoad()
 
 document.addEventListener('DOMContentLoaded', () => {
-  var loadStyleSheet = (src) => { // eslint-disable-line
+  var loadStyleSheet = (src, addToHead = true) => { // eslint-disable-line
     var link = document.createElement('link')
     link.rel = 'stylesheet'
     link.href = src
-    document.head.appendChild(link)
+    if (addToHead) {
+      document.head.appendChild(link)
+    }
   }
 
   loadStyleSheet('./styles/buysellads.css')
@@ -44,6 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStyleSheet('./styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css')
+
+  const themes = ['default', 'dark', 'bootstrap-4', 'minimal', 'borderless', 'material-ui']
+  themes.forEach((theme) => {
+    loadStyleSheet(`https://cdn.jsdelivr.net/npm/@sweetalert2/theme-${theme}/${theme}.css`, false)
+  })
 })
 
 var stats = {}
