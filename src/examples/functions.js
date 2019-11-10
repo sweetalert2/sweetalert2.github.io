@@ -178,7 +178,7 @@ module.exports = {
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.timer
       ) {
-        console.log('I was closed by the timer')
+        console.log('I was closed by the timer') // eslint-disable-line
       }
     })
   },

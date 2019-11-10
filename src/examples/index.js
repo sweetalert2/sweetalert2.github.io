@@ -6,7 +6,7 @@ import functionStrings from /* preval */ './functionStrings'
 // Combine `functions` & `functionStrings` into one `examples` object
 const examples = {}
 Object.entries(functions).forEach(([id, fn]) => {
-  examples[id] = {id, fn, fnString: functionStrings[id]}
+  examples[id] = { id, fn, fnString: functionStrings[id] }
 })
 
 export default examples
