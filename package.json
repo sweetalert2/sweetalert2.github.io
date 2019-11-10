@@ -6,11 +6,12 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp watch",
-    "lint": "eslint *.js src/*.js && gulp stylelint"
+    "lint": "eslint *.js src/**/*.js && gulp stylelint"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
+    "@sweetalert2/eslint-config": "^1.0.0",
     "@sweetalert2/stylelint-config": "^1.1.5",
     "babel-loader": "^8.0.6",
     "babel-plugin-preval": "^3.0.1",
@@ -18,11 +19,6 @@
     "browser-sync": "^2.23.5",
     "css-loader": "^3.0.0",
     "eslint": "^6.0.0",
-    "eslint-config-standard": "^14.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-standard": "^4.0.0",
     "exports-loader": "^0.7.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^7.0.0",
@@ -32,6 +28,7 @@
     "imports-loader": "^0.8.0",
     "style-loader": "^1.0.0",
     "stylelint": "^11.0.0",
+    "typescript": "^3.7.2",
     "webpack": "^4.0.0",
     "webpack-stream": "^5.1.0",
     "whatwg-fetch": "^3.0.0"
