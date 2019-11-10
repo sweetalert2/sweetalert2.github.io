@@ -163,6 +163,7 @@ module.exports = {
       title: 'Auto close alert!',
       html: 'I will close in <b></b> milliseconds.',
       timer: 2000,
+      timerProgressBar: true,
       onBeforeOpen: () => {
         Swal.showLoading()
         timerInterval = setInterval(() => {
@@ -285,7 +286,8 @@ module.exports = {
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
-      timer: 3000
+      timer: 3000,
+      timerProgressBar: true
     })
 
     Toast.fire({
