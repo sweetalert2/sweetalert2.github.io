@@ -284,6 +284,8 @@ module.exports = {
   mixin () {
     const Toast = Swal.mixin({
       toast: true,
+      // do-not-display
+      footer: '', // prevent adding ads to toast's footer, as they're ruining the look
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000,
