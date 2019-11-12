@@ -613,6 +613,7 @@ table {
 .sponsors {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between; // IE11
   justify-content: space-evenly;
   max-width: 43.75rem;
   margin: auto;
