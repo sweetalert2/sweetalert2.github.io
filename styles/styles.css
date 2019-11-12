@@ -258,13 +258,14 @@ kbd {
   display: inline-block;
   position: relative;
   width: 23.9375em;
+  max-width: 94%;
   margin-top: .9em;
   padding: 1.25em;
   background-color: #e2e5e8;
   vertical-align: top; }
   @media all and (max-width: 768px) {
     .showcase {
-      padding: 0 .625em; }
+      padding: 0 .625em .625em; }
       .showcase.normal,
       .showcase img {
         display: none; } }
