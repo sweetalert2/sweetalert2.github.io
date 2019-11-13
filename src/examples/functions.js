@@ -245,12 +245,13 @@ module.exports = {
       'Question 3'
     ]).then((result) => {
       if (result.value) {
+        const answers = JSON.stringify(result.value)
         Swal.fire({
           title: 'All done!',
-          html:
-            'Your answers: <pre><code>' +
-              JSON.stringify(result.value) +
-            '</code></pre>',
+          html: `
+            Your answers:
+            <pre><code>${answers}</code></pre>
+          `,
           confirmButtonText: 'Lovely!'
         })
       }
@@ -334,7 +335,7 @@ module.exports = {
     })
 
     if (email) {
-      Swal.fire('Entered email: ' + email)
+      Swal.fire(`Entered email: ${email}`)
     }
   },
   async urlInput () {
@@ -344,7 +345,7 @@ module.exports = {
     })
 
     if (url) {
-      Swal.fire('Entered URL: ' + url)
+      Swal.fire(`Entered URL: ${url}`)
     }
   },
   async passwordInput () {
@@ -360,7 +361,7 @@ module.exports = {
     })
 
     if (password) {
-      Swal.fire('Entered password: ' + password)
+      Swal.fire(`Entered password: ${password}`)
     }
   },
   async textareaInput () {
@@ -401,7 +402,7 @@ module.exports = {
     })
 
     if (fruit) {
-      Swal.fire('You selected: ' + fruit)
+      Swal.fire(`You selected: ${fruit}`)
     }
   },
   async radioInput () {
@@ -428,7 +429,7 @@ module.exports = {
     })
 
     if (color) {
-      Swal.fire({ html: 'You selected: ' + color })
+      Swal.fire({ html: `You selected: ${color}` })
     }
   },
   async checkboxInput () {
