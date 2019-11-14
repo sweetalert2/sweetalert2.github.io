@@ -1,11 +1,13 @@
-/* global Swal, MutationObserver, fetch, _bsa, _native */
+/* global MutationObserver, fetch, _bsa, _native */
 import hljs from 'highlight.js/lib/highlight'
 import hljsJS from 'highlight.js/lib/languages/javascript'
 import hljsXML from 'highlight.js/lib/languages/xml'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
+import showSidebar from './sidebar'
 
 const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
 
 // Render `<pre data-example-id="...">` elements
 for (const preElement of document.querySelectorAll('pre[data-example-id]')) {
@@ -32,7 +34,7 @@ hljs.initHighlightingOnLoad()
 
 document.addEventListener('DOMContentLoaded', () => {
   var loadStyleSheet = (src, addToHead = true) => { // eslint-disable-line
-    var link = document.createElement('link')
+    const link = document.createElement('link')
     link.rel = 'stylesheet'
     link.href = src
     if (addToHead) {
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-var stats = {}
+const stats = {}
 
 // latest release
 fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
@@ -73,14 +75,14 @@ fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
     if (!response[0] || !response[0].commit) {
       return
     }
-    var recentActivity = response[0].commit.author.date
+    let recentActivity = response[0].commit.author.date
     recentActivity = new Date(recentActivity)
-    var today = new Date()
-    var diffDays = parseInt((today - recentActivity) / (1000 * 60 * 60 * 24))
+    const today = new Date()
+    const diffDays = parseInt((today - recentActivity) / (1000 * 60 * 60 * 24))
     switch (diffDays) {
       case 0: recentActivity = 'today'; break
       case 1: recentActivity = 'yesterday'; break
-      default: recentActivity = diffDays + ' days ago'; break
+      default: recentActivity = `${diffDays} days ago`; break
     }
     stats.recentActivity = recentActivity
     showStats()
@@ -96,15 +98,15 @@ fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
 
 function showStats () {
   if (stats.latestRelease && stats.recentActivity && stats.downloadsLastMonth) {
-    var currentVersion = $('#current-version')
+    const currentVersion = $('#current-version')
     currentVersion.innerText = stats.latestRelease
     currentVersion.setAttribute('aria-label', currentVersion.getAttribute('aria-label') + stats.latestRelease)
 
-    var latestUpdate = $('#latest-update')
+    const latestUpdate = $('#latest-update')
     latestUpdate.innerText = stats.recentActivity
     latestUpdate.setAttribute('aria-label', latestUpdate.getAttribute('aria-label') + stats.recentActivity)
 
-    var downloads = $('#downloads-last-month')
+    const downloads = $('#downloads-last-month')
     downloads.innerText = stats.downloadsLastMonth
     downloads.setAttribute('aria-label', downloads.getAttribute('aria-label') + stats.downloadsLastMonth)
 
@@ -117,25 +119,25 @@ function ordinalSuffix (i) {
   const j = i % 10
   const k = i % 100
   if (j === 1 && k !== 11) {
-    return i + 'st'
+    return `${i}st`
   }
   if (j === 2 && k !== 12) {
-    return i + 'nd'
+    return `${i}nd`
   }
   if (j === 3 && k !== 13) {
-    return i + 'rd'
+    return `${i}rd`
   }
-  return i + 'th'
+  return `${i}th`
 }
 
 fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
   .then(response => response.json())
   .then(response => {
     $('.jsdelivr-info').innerHTML =
-      'sweetalert2 is the <strong>' + ordinalSuffix(response.rank) + '</strong>' +
-      ' most popular package on jsDelivr, with ' +
-      '<strong>' + parseInt(response.total).toLocaleString() + '</strong>' +
-      ' CDN hits in the last month'
+      `sweetalert2 is the <strong>${ordinalSuffix(response.rank)}</strong>` +
+      ` most popular package on jsDelivr, with ` +
+      `<strong>${parseInt(response.total).toLocaleString()}</strong>` +
+      ` CDN hits in the last month`
   })
 
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
@@ -176,8 +178,8 @@ $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) =
 
 Array.from(document.querySelectorAll('.popup-icons button')).forEach(button => {
   button.onclick = (e) => {
-    var icon = e.target.getAttribute('class').slice(5)
-    Swal.fire('Icon ' + icon, '', icon)
+    const icon = e.target.getAttribute('class').slice(5)
+    Swal.fire(`Icon ${icon}`, '', icon)
   }
 })
 
@@ -186,7 +188,7 @@ if (typeof _bsa !== 'undefined' && _bsa) {
   _bsa.init('default', 'CKYDK5QE', 'placement:sweetalert2githubio', {
     target: '.bsa-cpc',
     align: 'horizontal',
-    disable_css: 'true'
+    disable_css: 'true' // eslint-disable-line
   })
 }
 
@@ -198,7 +200,7 @@ function setBuySellAdsFooter () {
   }
 }
 
-var observer = new MutationObserver(setBuySellAdsFooter)
+const observer = new MutationObserver(setBuySellAdsFooter)
 observer.observe($('body > .bsa-cpc'), { childList: true })
 
 // Do not show 'Add to homescreen' prompt
@@ -210,27 +212,40 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
-        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2@9',
+        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2@9', // eslint-disable-line
         css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}'
       }
       if (pre.getAttribute('data-codepen-html')) {
         codepenValue.html = pre.getAttribute('data-codepen-html')
       }
       if (pre.getAttribute('data-codepen-css-external')) {
-        codepenValue.css_external = pre.getAttribute('data-codepen-css-external')
+        codepenValue.css_external = pre.getAttribute('data-codepen-css-external') // eslint-disable-line
       }
 
       codepenValue.js = ''
       if (pre.getAttribute('data-codepen-js-before')) {
-        codepenValue.js = pre.getAttribute('data-codepen-js-before') + '\n'
+        codepenValue.js = `${pre.getAttribute('data-codepen-js-before')}\n`
       }
-      codepenValue.js += pre.innerText.replace(/\/images/g, window.location.href + 'images')
+      codepenValue.js += pre.innerText.replace(/\/images/g, `${window.location.href}images`)
       if (pre.getAttribute('data-codepen-js-after')) {
-        codepenValue.js += '\n' + pre.getAttribute('data-codepen-js-after')
+        codepenValue.js += `\n${pre.getAttribute('data-codepen-js-after')}`
       }
 
       $('#codepen-data').value = JSON.stringify(codepenValue)
       $('#codepen-form').submit()
+    }
+  })
+})
+
+// Show sidebar
+$('#show-sidebar').addEventListener('click', () => {
+  showSidebar()
+})
+
+$$('nav a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', () => {
+    if (Swal.getPopup() && Swal.getPopup().contains(link)) {
+      Swal.close()
     }
   })
 })
@@ -263,11 +278,9 @@ _native.init('CK7DKKQI', {
 // Define window.executeExample for use in HTML
 window.executeExample = async (id) => {
   const exampleFn = examples[id].fn
-  console.log(`Executing example ${id}...`)
   try {
     await exampleFn()
   } catch (error) {
     console.error(error)
   }
-  console.log(`Executed example ${id}.`)
 }

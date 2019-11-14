@@ -88,6 +88,32 @@ nav {
     font-size: 1.1em;
     text-align: left; }
 
+#show-sidebar {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #f2f4f6;
+  font-size: 1.8em;
+  cursor: pointer; }
+  @media all and (max-width: 1150px) {
+    #show-sidebar {
+      display: -webkit-box;
+      display: flex; } }
+
+.sidebar {
+  padding: 0 !important; }
+  .sidebar nav {
+    display: block !important;
+    position: initial; }
+
 header {
   max-width: 40.625rem;
   margin: auto; }
@@ -127,7 +153,8 @@ header {
 
 h3 {
   position: relative;
-  margin-top: 6em;
+  margin-top: 3em;
+  padding-top: 3em;
   color: #666;
   font-size: 1.75em;
   text-align: center;
@@ -418,9 +445,18 @@ table {
 .nowrap {
   white-space: nowrap; }
 
+.border-radius-0 {
+  border-radius: 0 !important; }
+
+.flex-center {
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center; }
+
 @media all and (max-width: 768px) {
   .mobile-hidden {
-    display: none; } }
+    display: none !important; } }
 
 .github-corner {
   position: fixed;
