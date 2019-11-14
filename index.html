@@ -171,7 +171,7 @@
 
   <div class="showcase normal">
     <h4>Normal alert</h4>
-    <button onclick="executeExample('normalAlert')">
+    <button class="show-example-btn" onclick="executeExample('normalAlert')">
       Show normal alert
     </button>
     <pre data-example-id="normalAlert"></pre>
@@ -180,7 +180,7 @@
 
   <div class="showcase sweet">
     <img src="/images/SweetAlert2.png" height="30" alt="SweetAlert2">
-    <button aria-label="Show SweetAlert2 success message" onclick="executeExample('sweetAlert')">
+    <button class="show-example-btn" aria-label="Show SweetAlert2 success message" onclick="executeExample('sweetAlert')">
       Show success message
     </button>
     <pre data-example-id="sweetAlert"></pre>
@@ -198,7 +198,7 @@
     <li id="message-example">
       <div class="ui">
         <p>A basic message</p>
-        <button aria-label="Try me! Example: A basic message" onclick="executeExample('basicMessage')">
+        <button class="show-example-btn" aria-label="Try me! Example: A basic message" onclick="executeExample('basicMessage')">
           Try me!
         </button>
       </div>
@@ -208,7 +208,7 @@
     <li id="title-text-example">
       <div class="ui">
         <p>A title with a text under</p>
-        <button aria-label="Try me! Example: A title with a text under" onclick="executeExample('titleText')">
+        <button class="show-example-btn" aria-label="Try me! Example: A title with a text under" onclick="executeExample('titleText')">
           Try me!
         </button>
       </div>
@@ -218,7 +218,7 @@
     <li id="serror-example">
       <div class="ui">
         <p>A modal with a title, an error icon, a text, and a footer</p>
-        <button aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer" onclick="executeExample('errorType')">
+        <button class="show-example-btn" aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer" onclick="executeExample('errorType')">
           Try me!
         </button>
       </div>
@@ -228,7 +228,7 @@
     <li id="long-text">
       <div class="ui">
         <p>A modal window with a long content inside:</p>
-        <button aria-label="Try me! Example: A modal window with a long content inside" onclick="executeExample('longText')">
+        <button class="show-example-btn" aria-label="Try me! Example: A modal window with a long content inside" onclick="executeExample('longText')">
           Try me!
         </button>
       </div>
@@ -238,7 +238,7 @@
     <li id="custom-html">
       <div class="ui">
         <p>Custom HTML description and buttons with ARIA labels</p>
-        <button aria-label="Try me! Example: Custom HTML description and buttons" onclick="executeExample('customHtml')">
+        <button class="show-example-btn" aria-label="Try me! Example: Custom HTML description and buttons" onclick="executeExample('customHtml')">
           Try me!
         </button>
       </div>
@@ -248,7 +248,7 @@
     <li id="position">
       <div class="ui">
         <p>A custom positioned dialog</p>
-        <button aria-label="Try me! Example: A custom positioned dialog" onclick="executeExample('customPosition')">
+        <button class="show-example-btn" aria-label="Try me! Example: A custom positioned dialog" onclick="executeExample('customPosition')">
           Try me!
         </button>
       </div>
@@ -258,7 +258,7 @@
     <li id="custom-animation">
       <div class="ui">
         <p>Custom animation with <a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener" tabindex="-1" class="nowrap">Animate.css <i class="fa fa-external-link"></i></a></p>
-        <button aria-label="Try me! Example: jQuery HTML with custom animation" onclick="executeExample('customAnimation')">
+        <button class="show-example-btn" aria-label="Try me! Example: jQuery HTML with custom animation" onclick="executeExample('customAnimation')">
           Try me!
         </button>
       </div>
@@ -268,7 +268,7 @@
     <li id="confirm-dialog">
       <div class="ui">
         <p>A confirm dialog, with a function attached to the "Confirm"-button...</p>
-        <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
+        <button class="show-example-btn" aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
           Try me!
         </button>
       </div>
@@ -278,7 +278,7 @@
     <li id="dismiss-handle">
       <div class="ui">
         <p>... and by passing a parameter, you can execute something else for "Cancel".</p>
-        <button aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'" onclick="executeExample('handleDismiss')">
+        <button class="show-example-btn" aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'" onclick="executeExample('handleDismiss')">
           Try me!
         </button>
       </div>
@@ -288,7 +288,7 @@
     <li id="custom-image-example">
       <div class="ui">
         <p>A message with a custom image</p>
-        <button aria-label="Try me! Example: A message with a custom image" onclick="executeExample('customImage')">
+        <button class="show-example-btn" aria-label="Try me! Example: A message with a custom image" onclick="executeExample('customImage')">
           Try me!
         </button>
       </div>
@@ -298,7 +298,7 @@
     <li id="custom-width-padding-background">
       <div class="ui">
         <p>A message with custom width, padding, background and animated Nyan Cat</p>
-        <button aria-label="Try me! Example: A message with custom width, padding and background" onclick="executeExample('customWidth')">
+        <button class="show-example-btn" aria-label="Try me! Example: A message with custom width, padding and background" onclick="executeExample('customWidth')">
           Try me!
         </button>
       </div>
@@ -308,7 +308,7 @@
     <li id="timer-example">
       <div class="ui">
         <p>A message with auto close timer</p>
-        <button aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('timer')">
+        <button class="show-example-btn" aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('timer')">
           Try me!
         </button>
       </div>
@@ -318,7 +318,7 @@
     <li id="rtl">
       <div class="ui">
         <p>Right-to-left support for Arabic, Hebrew, and other RTL languages</p>
-        <button aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('rtl')">
+        <button class="show-example-btn" aria-label="Try me! Example: A message with auto close timer" onclick="executeExample('rtl')">
           Try me!
         </button>
       </div>
@@ -328,7 +328,7 @@
     <li id="ajax-request">
       <div class="ui">
         <p>AJAX request example</p>
-        <button aria-label="Try me! Example: AJAX request" onclick="executeExample('ajaxRequest')">
+        <button class="show-example-btn" aria-label="Try me! Example: AJAX request" onclick="executeExample('ajaxRequest')">
           Try me!
         </button>
       </div>
@@ -338,7 +338,7 @@
     <li id="chaining-modals">
       <div class="ui">
         <p>Chaining modals (queue) example</p>
-        <button aria-label="Try me! Example: Chaining modals (queue)" onclick="executeExample('chainingModals')">
+        <button class="show-example-btn" aria-label="Try me! Example: Chaining modals (queue)" onclick="executeExample('chainingModals')">
           Try me!
         </button>
       </div>
@@ -348,7 +348,7 @@
     <li id="dynamic-queue">
       <div class="ui">
         <p>Dynamic queue example</p>
-        <button aria-label="Try me! Example: Dynamic queue" onclick="executeExample('dynamicQueue')">
+        <button class="show-example-btn" aria-label="Try me! Example: Dynamic queue" onclick="executeExample('dynamicQueue')">
           Try me!
         </button>
       </div>
@@ -826,7 +826,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     <li id="mixin">
       <div class="ui">
         <p>Mixin example</p>
-        <button aria-label="Try me! Example: Mixin" onclick="executeExample('mixin')">
+        <button class="show-example-btn" aria-label="Try me! Example: Mixin" onclick="executeExample('mixin')">
           Try me!
         </button>
       </div>
@@ -887,7 +887,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <div class="swal2-success-circular-line-right"></div>
         </div>
       </td>
-      <td><button class="type-success" aria-label="Try me! Example: success modal">Try me!</button></td>
+      <td><button class="show-example-btn" class="type-success" aria-label="Try me! Example: success modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>error</strong></td>
@@ -896,22 +896,22 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span>
         </div>
       </td>
-      <td><button class="type-error" aria-label="Try me! Example: error modal">Try me!</button></td>
+      <td><button class="show-example-btn" class="type-error" aria-label="Try me! Example: error modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>warning</strong></td>
       <td><div class="swal2-icon swal2-warning"><div class="swal2-icon-content">!</div></div></td>
-      <td><button class="type-warning" aria-label="Try me! Example: warning modal">Try me!</button></td>
+      <td><button class="show-example-btn" class="type-warning" aria-label="Try me! Example: warning modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>info</strong></td>
       <td><div class="swal2-icon swal2-info"><div class="swal2-icon-content">i</div></div></td>
-      <td><button class="type-info" aria-label="Try me! Example: info modal">Try me!</button></td>
+      <td><button class="show-example-btn" class="type-info" aria-label="Try me! Example: info modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>question</strong></td>
       <td><div class="swal2-icon swal2-question"><div class="swal2-icon-content">?</div></div></td>
-      <td><button class="type-question" aria-label="Try me! Example: question modal">Try me!</button></td>
+      <td><button class="show-example-btn" class="type-question" aria-label="Try me! Example: question modal">Try me!</button></td>
     </tr>
   </table>
 
@@ -925,7 +925,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="textInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type text" onclick="executeExample('textInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type text" onclick="executeExample('textInput')">
           Try me!
         </button>
       </td>
@@ -937,7 +937,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="emailInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type email" onclick="executeExample('emailInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type email" onclick="executeExample('emailInput')">
           Try me!
         </button>
       </td>
@@ -949,7 +949,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="urlInput"></pre>
       </td>
       <td>
-        <button onclick="executeExample('urlInput')">
+        <button class="show-example-btn" onclick="executeExample('urlInput')">
           Try me!
         </button>
       </td>
@@ -961,7 +961,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="passwordInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type password" onclick="executeExample('passwordInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type password" onclick="executeExample('passwordInput')">
           Try me!
         </button>
       </td>
@@ -973,7 +973,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="textareaInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type textarea" onclick="executeExample('textareaInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type textarea" onclick="executeExample('textareaInput')">
           Try me!
         </button>
       </td>
@@ -985,7 +985,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="selectInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type select" onclick="executeExample('selectInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type select" onclick="executeExample('selectInput')">
           Try me!
         </button>
       </td>
@@ -997,7 +997,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="radioInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type radio" onclick="executeExample('radioInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type radio" onclick="executeExample('radioInput')">
           Try me!
         </button>
       </td>
@@ -1009,7 +1009,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="checkboxInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type checkbox" onclick="executeExample('checkboxInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type checkbox" onclick="executeExample('checkboxInput')">
           Try me!
         </button>
       </td>
@@ -1021,7 +1021,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="fileInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type file" onclick="executeExample('fileInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type file" onclick="executeExample('fileInput')">
           Try me!
         </button>
       </td>
@@ -1033,7 +1033,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="rangeInput"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: input type range" onclick="executeExample('rangeInput')">
+        <button class="show-example-btn" aria-label="Try me! Example: input type range" onclick="executeExample('rangeInput')">
           Try me!
         </button>
       </td>
@@ -1053,7 +1053,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <pre data-example-id="multipleInputs"></pre>
       </td>
       <td>
-        <button aria-label="Try me! Example: multiple inputs" onclick="executeExample('multipleInputs')">
+        <button class="show-example-btn" aria-label="Try me! Example: multiple inputs" onclick="executeExample('multipleInputs')">
           Try me!
         </button>
       </td>

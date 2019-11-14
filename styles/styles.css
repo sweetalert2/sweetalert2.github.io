@@ -173,8 +173,7 @@ p {
       padding: 0 .625em;
       text-align: center; } }
 
-button,
-.button {
+.show-example-btn {
   padding: .9em 2.1875em;
   border: 0;
   border-radius: .1875em;
@@ -185,28 +184,15 @@ button,
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer; }
-  button:hover,
-  .button:hover {
+  .show-example-btn:hover {
     background-color: #297dce; }
-  button:focus:not(.swal2-close):not(.btn),
-  .button:focus:not(.swal2-close):not(.btn) {
+  .show-example-btn:focus {
     outline: none;
     box-shadow: 0 0 0 0.125em #f2f4f6, 0 0 0 0.25em #a7adb2; }
-  button::-moz-focus-inner,
-  .button::-moz-focus-inner {
+  .show-example-btn::-moz-focus-inner {
     border: 0; }
-  button:active,
-  .button:active {
+  .show-example-btn:active {
     background-color: #236bb0; }
-  button.cancel,
-  .button.cancel {
-    background-color: #d0d0d0; }
-    button.cancel:hover,
-    .button.cancel:hover {
-      background-color: #c8c8c8; }
-    button.cancel:active,
-    .button.cancel:active {
-      background-color: #b7b7b7; }
 
 .center-container {
   max-width: 45.3125rem;
