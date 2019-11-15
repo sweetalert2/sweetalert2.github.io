@@ -14,7 +14,7 @@
     "@sweetalert2/eslint-config": "^1.0.0",
     "@sweetalert2/stylelint-config": "^1.1.5",
     "babel-loader": "^8.0.6",
-    "babel-plugin-preval": "^3.0.1",
+    "babel-plugin-preval": "^4.0.0",
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.23.5",
     "css-loader": "^3.0.0",
