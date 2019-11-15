@@ -178,7 +178,7 @@ $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) =
 
 Array.from(document.querySelectorAll('.popup-icons button')).forEach(button => {
   button.onclick = (e) => {
-    const icon = e.target.getAttribute('class').slice(5)
+    const icon = e.target.getAttribute('data-icon')
     Swal.fire(`Icon ${icon}`, '', icon)
   }
 })
