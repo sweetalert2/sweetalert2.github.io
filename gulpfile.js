@@ -1,7 +1,6 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefix = require('gulp-autoprefixer')
-const stylelint = require('gulp-stylelint')
 const browserSync = require('browser-sync').create()
 const webpackStream = require('webpack-stream')
 
@@ -40,21 +39,12 @@ gulp.task('bundle', () => {
     .pipe(gulp.dest('dist/'))
 })
 
-gulp.task('stylelint', () => {
-  return gulp.src(styles)
-    .pipe(stylelint({
-      reporters: [
-        { formatter: 'string', console: true }
-      ]
-    }))
-})
-
-gulp.task('sass', gulp.series('stylelint', () => {
+gulp.task('sass', () => {
   return gulp.src(styles)
     .pipe(sass())
     .pipe(autoprefix())
     .pipe(gulp.dest('styles'))
-}))
+})
 
 gulp.task('build', gulp.series('sass', 'bundle'))
 
