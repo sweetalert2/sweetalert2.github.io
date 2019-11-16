@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp watch",
-    "lint": "gulp stylelint && eslint *.js src/app.js src/**/*.js"
+    "lint": "stylelint styles/*.scss && eslint *.js src/app.js src/**/*.js"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
@@ -23,7 +23,6 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-sass": "^4.0.0",
-    "gulp-stylelint": "^10.0.0",
     "highlight.js": "^9.12.0",
     "imports-loader": "^0.8.0",
     "style-loader": "^1.0.0",
