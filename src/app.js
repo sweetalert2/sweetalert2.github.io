@@ -242,7 +242,7 @@ $('#show-sidebar').addEventListener('click', () => {
   showSidebar()
 })
 
-$$('nav a[href^="#"]').forEach((link) => {
+Array.from($$('nav a[href^="#"]')).forEach((link) => {
   link.addEventListener('click', () => {
     if (Swal.getPopup() && Swal.getPopup().contains(link)) {
       Swal.close()
