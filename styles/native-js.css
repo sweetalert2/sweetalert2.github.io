@@ -1,4 +1,4 @@
-.native-js {
+#native-js-footer .native-fixed {
   display: -webkit-box;
   display: flex;
   position: fixed;
@@ -8,70 +8,29 @@
   left: 0;
   -webkit-box-align: center;
           align-items: center;
-  opacity: 0;
-  background: #282c34;
-  font-size: 14px; }
-  .native-js[data-state='visible'] {
-    visibility: visible;
-    opacity: 1; }
-
-.native-flex {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-flex: 1;
-          flex-grow: 1;
-  -webkit-box-align: center;
-          align-items: center;
   -webkit-box-pack: center;
           justify-content: center;
-  height: 100%;
-  padding: 10px 0;
-  color: #fff;
-  font-weight: 400;
-  line-height: 1.4;
-  text-decoration: none; }
-  .native-flex:hover {
-    color: #fff;
+  background-color: #111;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.075);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  #native-js-footer .native-fixed .native-link {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    padding: 10px 14px;
+    color: #eee;
     text-decoration: none; }
-  @media all and (max-width: 768px) {
-    .native-flex {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-              flex-direction: column; } }
-
-.native-sponsor {
-  top: -1px;
-  margin-right: 5px;
-  padding: 2px 4px;
-  border: solid 1px #fff;
-  border-radius: 2px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  text-transform: uppercase; }
-
-.native-img {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  height: 100%;
-  margin: 0 10px; }
-  .native-img img {
-    height: 27px; }
-
-.native-desc {
-  margin: 0 10px; }
-
-.native-cta {
-  top: 1px;
-  border-bottom: solid 2px #fff;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap; }
-
-.native-close {
-  padding: 10px;
-  color: #fff;
-  cursor: pointer; }
+  #native-js-footer .native-fixed .native-sponsor {
+    margin-right: 1em;
+    padding: 6px 10px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase; }
+  #native-js-footer .native-fixed .native-text {
+    font-size: 14px;
+    line-height: 1.3; }

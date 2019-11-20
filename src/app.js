@@ -185,10 +185,23 @@ Array.from(document.querySelectorAll('.popup-icons button')).forEach(button => {
 
 // BuySellAds
 if (typeof _bsa !== 'undefined' && _bsa) {
+  // Default
   _bsa.init('default', 'CKYDK5QE', 'placement:sweetalert2githubio', {
     target: '.bsa-cpc',
     align: 'horizontal',
     disable_css: 'true' // eslint-disable-line
+  })
+  // Fixed footer, taken from https://codepen.io/team/buysellads/pen/vPLazv
+  _bsa.init('custom', 'CK7DKKQI', 'placement:sweetalert2githubio', {
+    target: '#native-js-footer',
+    template: `
+      <div style="background-color: ##backgroundColor##" class="native-fixed">
+        <a style="color: ##textColor##" class="native-link" href="##link##">
+          <div class="native-sponsor" style="background-color: ##textColor##; color: ##backgroundColor##">Sponsor</div>
+          <div class="native-text">##company## — ##description##</div>
+        </a>
+      </div>
+    `
   })
 }
 
@@ -268,11 +281,6 @@ $('#version').addEventListener('change', () => {
       window.location.assign('/')
       break
   }
-})
-
-// BuySellAdd native.js (fixed footer)
-_native.init('CK7DKKQI', {
-  targetClass: 'native-js'
 })
 
 // Define window.executeExample for use in HTML
