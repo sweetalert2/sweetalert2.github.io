@@ -292,8 +292,12 @@ p {
 }
 
 .center-container {
-  max-width: 45.3125rem;
+  max-width: 725px;
   margin: 4.375em auto;
+}
+
+.code-label {
+  margin: 1em 1.2em .2em;
 }
 
 pre {
@@ -623,6 +627,19 @@ table {
 .carbonads-wrapper {
   height: 126px;
   opacity: 0;
+}
+
+.themes {
+  margin-top: 0;
+
+  h4 {
+    margin: 2em 0 .5em;
+  }
+
+  img {
+    width: 534px;
+    max-width: 95%;
+  }
 }
 
 .frameworks-integrations,
