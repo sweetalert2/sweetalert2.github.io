@@ -57,6 +57,7 @@
     <a href="#input-types"><span>Input Types</span></a>
     <a href="#methods" class="mobile-hidden"><span>Methods</span></a>
     <a href="#collaborators"><span>Collaborators</span></a>
+    <a href="#themes"><span>Themes</span></a>
     <a href="#donations"><span>Donations</span></a>
     <a href="#sponsors"><span>Sponsors</span></a>
 
@@ -1244,6 +1245,40 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     </table>
   </div>
 
+  <!-- Themes -->
+  <h3 id="themes">Themes</h3>
+    <div class="themes center-container">
+      <h4> Dark </h4>
+      <a href="https://github.com/sweetalert2/sweetalert2-themes/tree/master/dark"><img src="images/themes-dark.png" width="70%" alt="theme-dark"></a>
+      <h4>Minimal</h4>
+      <a href="https://github.com/sweetalert2/sweetalert2-themes/tree/master/minimal"><img src="images/themes-minimal.png" width="70%" alt="theme-minimal"></a>
+      <h4>Borderless</h4>
+      <a href="https://github.com/sweetalert2/sweetalert2-themes/tree/master/borderless"><img src="images/themes-borderless.png" width="70%" alt="theme-borderless"></a>
+      <h4>Bootstrap 4</h4>
+      <a href="https://github.com/sweetalert2/sweetalert2-themes/tree/master/bootstrap-4"><img src="images/themes-bootstrap4.png" width="70%" alt="theme-bootstrap4"></a>
+      <h4>Material UI</h4>
+      <a href="https://github.com/sweetalert2/sweetalert2-themes/tree/master/material-ui"><img src="images/themes-materialui.png" width="70%" alt="theme-materialui"></a>
+      <h4>Install</h4>
+        <p>You can install all themes at once:</p>
+        <pre><code>$ npm install --save sweetalert2 @sweetalert2/themes</code></pre>
+        <p>Or just a single theme @sweetalert2/theme-&lt;theme_name&gt;, e.g.</p>
+        <pre><code>npm install --save sweetalert2 @sweetalert2/theme-dark</code></pre>
+        <p>Or from jsdelivr CDN, e.g.:</p>
+        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"&gt;&lt/script&gt;</code></pre>
+      <h4>Usage</h4>
+      <p>With CSS:</p>
+        <pre><code>&lt;!-- Include a required theme --&gt;
+&lt;link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css"&gt;
+&lt;script src="sweetalert2/dist/sweetalert2.min.js"&gt;&lt;/script&gt;</code></pre>
+    <p>With SASS:</p>
+<pre><code>// your-app.js
+import Swal from 'sweetalert2/src/sweetalert2.js'
+
+// your-app.scss
+@import '~@sweetalert2/themes/dark/dark.scss';</code></pre>
+    </div>
+  </h3>
 
   <!-- Collaborators -->
   <h3 id="collaborators">Collaborators</h3>
