@@ -1,4 +1,6 @@
-/* global MutationObserver, fetch, _bsa, _native */
+/* global MutationObserver, fetch, _bsa */
+import 'babel-polyfill'
+import 'whatwg-fetch'
 import hljs from 'highlight.js/lib/highlight'
 import hljsJS from 'highlight.js/lib/languages/javascript'
 import hljsXML from 'highlight.js/lib/languages/xml'
