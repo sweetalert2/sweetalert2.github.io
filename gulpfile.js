@@ -13,7 +13,7 @@ const styles = [
 
 gulp.task('bundle', () => {
   return webpackStream({
-    entry: ['babel-polyfill', 'whatwg-fetch', './src/native.js', './src/app.js'],
+    entry: './src/app.js',
     output: {
       filename: 'bundle.js'
     },
