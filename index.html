@@ -450,59 +450,56 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><b>title</b></td>
-        <td><i>null</i></td>
+        <td><i>''</i></td>
         <td>The title of the modal, as HTML. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
       </tr>
       <tr>
         <td><b>titleText</b></td>
-        <td><i>null</i></td>
+        <td><i>''</i></td>
         <td>The title of the modal, as text. Useful to avoid HTML injection.</td>
       </tr>
       <tr>
         <td><b>html</b></td>
-        <td><i>null</i></td>
+        <td><i>''</i></td>
         <td>A HTML description for the modal. It can either be added to the object under the key "html" or passed as the second parameter of the function.</td>
       </tr>
       <tr>
         <td><b>text</b></td>
-        <td><i>null</i></td>
+        <td><i>''</i></td>
         <td>A description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
       </tr>
       <tr>
         <td><b>icon</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>The icon of the modal. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "icon" or passed as the third parameter of the function.</td>
       </tr>
       <tr>
         <td><b>iconHtml</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>The custom HTML content for an icon.</td>
       </tr>
       <tr id="show-class">
         <td><b>showClass</b></td>
-        <td><i>null</i></td>
-        <td>CSS classes for animations when showing a popup (fade in):
- <pre><code>showClass: {
-  popup: 'popup-class',
-  backdrop: 'popup-class',
-  icon: 'icon-class'
-}</code></pre>
-        </td>
+        <td><i><pre><code>{
+  popup: 'swal2-show',
+  backdrop: 'swal2-backdrop-show',
+  icon: 'swal2-icon-show'
+}</code></i></td>
+        <td>CSS classes for animations when showing a popup (fade in)</td>
       </tr>
       <tr id="hide-class">
         <td><b>hideClass</b></td>
-        <td><i>null</i></td>
-        <td>CSS classes for animations when hiding a popup (fade out):
- <pre><code>hideClass: {
-  popup: 'popup-class',
-  backdrop: 'popup-class',
-  icon: 'icon-class'
-}</code></pre>
+        <td><i><pre><code>{
+  popup: 'swal2-hide',
+  backdrop: 'swal2-backdrop-hide',
+  icon: 'swal2-icon-hide'
+}</code></pre></i></td>
+        <td>CSS classes for animations when hiding a popup (fade out)
         </td>
       </tr>
       <tr>
         <td><b>footer</b></td>
-        <td><i>null</i></td>
+        <td><i>''</i></td>
         <td>The footer of the modal. Can be either plain text or HTML.</td>
       </tr>
       <tr>
@@ -522,7 +519,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="input-parameter">
         <td><b>input</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>
           Input field type, can be
           <strong>text</strong>, <strong>email</strong>, <strong>password</strong>,
@@ -533,17 +530,17 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><b>width</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Modal window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>. The default width is <strong>32rem</strong>.</td>
       </tr>
       <tr>
         <td><b>padding</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Modal window padding. The default padding is <strong>1.25rem</strong>.</td>
       </tr>
       <tr>
         <td><b>background</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Modal window background (CSS background property). The default background is <strong>'#fff'</strong>.</td>
       </tr>
       <tr>
@@ -553,12 +550,12 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><b>grow</b></td>
-        <td><i>'false'</i></td>
+        <td><i>false</i></td>
         <td>Paired with window position, sets the direction the modal should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
       </tr>
       <tr id="custom-class">
         <td><b>customClass</b></td>
-        <td><i>''</i></td>
+        <td><i>undefined</i></td>
         <td>A custom CSS class for the modal. If a string value is provided, the classname will be applied to the popup. If an object is provided, the classnames will be applied to the corresponding fields:
  <pre><code>customClass: {
   container: 'container-class',
@@ -579,7 +576,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="timer">
         <td><b>timer</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a>, <a href="#isTimerRunning">Swal.isTimerRunning()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
       </tr>
       <tr id="timer-progress-bar">
@@ -644,12 +641,12 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><b>confirmButtonColor</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Use this to change the background color of the "Confirm"-button. The default color is <strong>#3085d6</strong></td>
       </tr>
       <tr>
         <td><b>cancelButtonColor</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Use this to change the background color of the "Cancel"-button. The default color is <strong>#aaa</strong></td>
       </tr>
       <tr>
@@ -709,7 +706,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="pre-confirm">
         <td><b>preConfirm</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Function to execute before confirm, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
           <ul>
             <li><strong>false</strong> to prevent a popup from closing</li>
@@ -721,17 +718,17 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="image">
         <td><b>imageUrl</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Add a customized icon for the modal. Should contain a string with the path or URL to the image.</td>
       </tr>
       <tr>
         <td><b>imageWidth</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>If imageUrl is set, you can specify imageWidth to describes image width in px.</td>
       </tr>
       <tr>
         <td><b>imageHeight</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Custom image height in px.</td>
       </tr>
       <tr>
@@ -770,7 +767,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="input-validator">
         <td><b>inputValidator</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Validator for input field, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
           <ul>
             <li>a <strong>falsy</strong> value (<strong>undefined</strong>, <strong>null</strong>, <strong>false</strong>) for indicating <i>success</i></li>
@@ -781,7 +778,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr id="validation-message">
         <td><b>validationMessage</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>A custom validation message for default validators (email, url).</td>
       </tr>
       <tr>
@@ -791,7 +788,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><b>currentProgressStep</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Current active progress step. The default is <strong>Swal.getQueueStep()</strong></td>
       </tr>
       <tr>
@@ -801,27 +798,27 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><b>onBeforeOpen</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Function to run when modal built, but not shown yet. Provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
         <td><b>onOpen</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Function to run when modal opens, provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
         <td><b>onRender</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Function to run after modal DOM has been updated. Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>. If you want to perform changes in the modal's DOM, that survive <strong>Swal.update()</strong>, <strong>onRender</strong> is a good place for that.</td>
       </tr>
       <tr>
         <td><b>onClose</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Function to run when modal closes, provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
         <td><b>onAfterClose</b></td>
-        <td><i>null</i></td>
+        <td><i>undefined</i></td>
         <td>Function to run after modal has been disposed.</td>
       </tr>
     </table>
