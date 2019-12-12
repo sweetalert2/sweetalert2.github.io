@@ -109,7 +109,7 @@ nav {
       display: flex; } }
 
 .sidebar {
-  padding: 0 !important; }
+  padding: 0; }
   .sidebar nav {
     display: block !important;
     position: initial; }
@@ -450,7 +450,7 @@ table {
   white-space: nowrap; }
 
 .border-radius-0 {
-  border-radius: 0 !important; }
+  border-radius: 0; }
 
 .flex-center {
   -webkit-box-align: center;
