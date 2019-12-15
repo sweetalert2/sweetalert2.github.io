@@ -1,9 +1,11 @@
 #!/usr/bin/node
+const execSync = require('child_process').execSync
+const npmPrefix = execSync('npm config get prefix').toString().trim()
 
 let puppeteer
 try {
   // eslint-disable-next-line import/no-absolute-path
-  puppeteer = require('/home/limon/.npm-packages/lib/node_modules/puppeteer')
+  puppeteer = require(`${npmPrefix}/lib/node_modules/puppeteer`)
 } catch (e) {
   console.error('\n❗  For using this tool please install puppeteer globally: npm i -g puppeteer\n')
   process.exit(1)
