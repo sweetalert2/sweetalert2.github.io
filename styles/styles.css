@@ -518,6 +518,8 @@ table {
 
 .sponsors {
   font-size: 1.25em; }
+  .sponsors div {
+    margin: 1em; }
 
 .banners img {
   -webkit-transition: box-shadow .1s ease-out;
