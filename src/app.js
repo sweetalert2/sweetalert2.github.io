@@ -74,6 +74,9 @@ fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
     stats.latestRelease = response[0].name
     showStats()
   })
+  .catch(() => {
+    // ignore
+  })
 
 // recent activity
 fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
@@ -94,6 +97,9 @@ fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
     stats.recentActivity = recentActivity
     showStats()
   })
+  .catch(() => {
+    // ignore
+  })
 
 // number of downloads last month
 fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
@@ -101,6 +107,9 @@ fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
   .then(response => {
     stats.downloadsLastMonth = response.downloads.toLocaleString()
     showStats()
+  })
+  .catch(() => {
+    // ignore
   })
 
 function showStats () {
