@@ -17,6 +17,7 @@ gulp.task('bundle', () => {
     output: {
       filename: 'bundle.js'
     },
+    devtool: 'source-map',
     module: {
       rules: [
         {
