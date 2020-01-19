@@ -8,6 +8,11 @@ import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
 import showSidebar from './sidebar'
 
+// fallback in case jsdelivr failed to deliver
+if (typeof Swal === 'undefined') {
+  window.Swal = require('sweetalert2')
+}
+
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
