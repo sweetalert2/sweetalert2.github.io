@@ -167,8 +167,10 @@ module.exports = {
       onBeforeOpen: () => {
         Swal.showLoading()
         timerInterval = setInterval(() => {
-          Swal.getContent().querySelector('b')
-            .textContent = Swal.getTimerLeft()
+          if (Swal.getContent()) {
+            Swal.getContent().querySelector('b')
+              .textContent = Swal.getTimerLeft()
+          }
         }, 100)
       },
       onClose: () => {
