@@ -155,6 +155,9 @@ fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
       `<strong>${parseInt(response.total).toLocaleString()}</strong>` +
       ` CDN hits in the last month`
   })
+  .catch(() => {
+    // ignore
+  })
 
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
