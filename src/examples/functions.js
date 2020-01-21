@@ -1,4 +1,5 @@
 /* globals Swal, alert, fetch, FileReader */
+/* eslint-disable no-console */
 
 module.exports = {
   // Top of page
@@ -167,9 +168,12 @@ module.exports = {
       onBeforeOpen: () => {
         Swal.showLoading()
         timerInterval = setInterval(() => {
-          if (Swal.getContent()) {
-            Swal.getContent().querySelector('b')
-              .textContent = Swal.getTimerLeft()
+          const content = Swal.getContent()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
           }
         }, 100)
       },
@@ -177,11 +181,9 @@ module.exports = {
         clearInterval(timerInterval)
       }
     }).then((result) => {
-      if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.timer
-      ) {
-        console.log('I was closed by the timer') // eslint-disable-line
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
       }
     })
   },
