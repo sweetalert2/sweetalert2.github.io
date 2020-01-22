@@ -834,12 +834,17 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><b>onClose</b></td>
         <td><i>undefined</i></td>
-        <td>Function to run when modal closes, provides modal DOM element as the first argument.</td>
+        <td>Function to run when modal closes by user interaction (and not by another popup), provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
         <td><b>onAfterClose</b></td>
         <td><i>undefined</i></td>
-        <td>Function to run after modal has been disposed.</td>
+        <td>Function to run after popup has been disposed by user interaction (and not by another popup).</td>
+      </tr>
+      <tr>
+        <td><b>onDestroy</b></td>
+        <td><i>undefined</i></td>
+        <td>Function to run after popup has been destroyed either by user interaction or by another popup.</td>
       </tr>
     </table>
 
