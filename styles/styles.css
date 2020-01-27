@@ -521,6 +521,16 @@ table {
   .sponsors div {
     margin: 1em; }
 
+.ultimate-sponsor-banner-placeholder {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center; }
+  .ultimate-sponsor-banner-placeholder > * {
+    margin: .5em; }
+
 .banners img {
   -webkit-transition: box-shadow .1s ease-out;
   transition: box-shadow .1s ease-out;

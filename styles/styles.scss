@@ -684,6 +684,16 @@ table {
   }
 }
 
+.ultimate-sponsor-banner-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    margin: .5em;
+  }
+}
+
 .banners {
   img {
     transition: box-shadow .1s ease-out;
