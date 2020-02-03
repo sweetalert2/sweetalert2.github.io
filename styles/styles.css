@@ -521,15 +521,21 @@ table {
   .sponsors div {
     margin: 1em; }
 
-.ultimate-sponsor-banner-placeholder {
+.ultimate-sponsor-placeholder {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
           align-items: center;
   -webkit-box-pack: center;
-          justify-content: center; }
-  .ultimate-sponsor-banner-placeholder > * {
-    margin: .5em; }
+          justify-content: center;
+  width: 884px;
+  max-width: 96%;
+  height: 100px;
+  border: 1px solid #aaa; }
+  .ultimate-sponsor-placeholder img {
+    width: 32px;
+    height: 32px;
+    margin: 1em; }
 
 .banners img {
   -webkit-transition: box-shadow .1s ease-out;
