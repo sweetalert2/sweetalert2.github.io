@@ -530,7 +530,7 @@ table {
           justify-content: center;
   width: 884px;
   max-width: 96%;
-  height: 100px;
+  padding: 1em 0;
   border: 1px solid #aaa; }
   .ultimate-sponsor-placeholder img {
     width: 32px;
