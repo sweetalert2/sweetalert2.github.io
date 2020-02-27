@@ -371,6 +371,10 @@ kbd {
         margin-top: 1em !important;
         margin-bottom: 3.75em; } }
 
+#multiple-inputs pre,
+#mixin pre {
+  width: 550px; }
+
 ol {
   max-width: 45.3125rem;
   margin: 4.375em auto;

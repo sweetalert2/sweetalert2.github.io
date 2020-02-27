@@ -457,85 +457,111 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     <table id="api">
       <tr class="titles">
         <th>
-          Argument
+          Argument<br>
+          (<i>Default value</i>)
         </th>
-        <th>Default value</th>
         <th>
           Description
         </th>
       </tr>
       <tr>
-        <td><b>title</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>title</b><br>
+          <i>''</i>
+        </td>
         <td>The title of the modal, as HTML. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
       </tr>
       <tr>
-        <td><b>titleText</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>titleText</b><br>
+          <i>''</i>
+        </td>
         <td>The title of the modal, as text. Useful to avoid HTML injection.</td>
       </tr>
       <tr>
-        <td><b>html</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>html</b><br>
+          <i>''</i>
+        </td>
         <td>A HTML description for the modal. It can either be added to the object under the key "html" or passed as the second parameter of the function.</td>
       </tr>
       <tr>
-        <td><b>text</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>text</b><br>
+          <i>''</i>
+        </td>
         <td>A description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
       </tr>
       <tr>
-        <td><b>icon</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>icon</b><br>
+          <i>undefined</i>
+        </td>
         <td>The icon of the modal. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "icon" or passed as the third parameter of the function.</td>
       </tr>
       <tr>
-        <td><b>iconHtml</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>iconHtml</b><br>
+          <i>undefined</i>
+        </td>
         <td>The custom HTML content for an icon.</td>
       </tr>
       <tr id="show-class">
-        <td><b>showClass</b></td>
-        <td><i><pre><code>{
+        <td>
+          <b>showClass</b><br>
+          <i><pre><code>{
   popup: 'swal2-show',
   backdrop: 'swal2-backdrop-show',
   icon: 'swal2-icon-show'
-}</code></pre></i></td>
+}</code></pre></i>
+        </td>
         <td>CSS classes for animations when showing a popup (fade in)</td>
       </tr>
       <tr id="hide-class">
-        <td><b>hideClass</b></td>
-        <td><i><pre><code>{
+        <td>
+          <b>hideClass</b><br>
+          <i><pre><code>{
   popup: 'swal2-hide',
   backdrop: 'swal2-backdrop-hide',
   icon: 'swal2-icon-hide'
-}</code></pre></i></td>
+}</code></pre></i>
+        </td>
         <td>CSS classes for animations when hiding a popup (fade out)
         </td>
       </tr>
       <tr>
-        <td><b>footer</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>footer</b><br>
+          <i>''</i>
+        </td>
         <td>The footer of the modal. Can be either plain text or HTML.</td>
       </tr>
       <tr>
-        <td><b>backdrop</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>backdrop</b><br>
+          <i>true</i>
+        </td>
         <td>Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop. Can be either a <strong>boolean</strong> or a <strong>string</strong> which will be assigned to the CSS <strong>background</strong> property.</td>
       </tr>
       <tr>
-        <td><b>toast</b></td>
-        <td><i>false</i></td>
-        <td> Whether or not an alert should be treated as a toast notification. This option is normally coupled with the <strong>position</strong> parameter and a timer. Toasts are NEVER autofocused.</td>
+        <td>
+          <b>toast</b><br>
+          <i>false</i>
+        </td>
+        <td>Whether or not an alert should be treated as a toast notification. This option is normally coupled with the <strong>position</strong> parameter and a timer. Toasts are NEVER autofocused.</td>
       </tr>
       <tr>
-        <td><b>target</b></td>
-        <td><i>'body'</i></td>
+        <td>
+          <b>target</b><br>
+          <i>'body'</i>
+        </td>
         <td>The container element for adding modal into.</td>
       </tr>
-      <tr id="input-parameter">
-        <td><b>input</b></td>
-        <td><i>undefined</i></td>
+      <tr id="input">
+        <td>
+          <b>input</b><br>
+          <i>undefined</i>
+        </td>
         <td>
           Input field type, can be
           <strong>text</strong>, <strong>email</strong>, <strong>password</strong>,
@@ -545,33 +571,45 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
       </tr>
       <tr>
-        <td><b>width</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>width</b><br>
+          <i>undefined</i>
+        </td>
         <td>Modal window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>. The default width is <strong>32rem</strong>.</td>
       </tr>
       <tr>
-        <td><b>padding</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>padding</b><br>
+          <i>undefined</i>
+        </td>
         <td>Modal window padding. The default padding is <strong>1.25rem</strong>.</td>
       </tr>
       <tr>
-        <td><b>background</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>background</b><br>
+          <i>undefined</i>
+        </td>
         <td>Modal window background (CSS background property). The default background is <strong>'#fff'</strong>.</td>
       </tr>
       <tr>
-        <td><b>position</b></td>
-        <td><i>'center'</i></td>
+        <td>
+          <b>position</b><br>
+          <i>'center'</i>
+        </td>
         <td>Modal window position, can be <strong>'top'</strong>, <strong>'top-start'</strong>, <strong>'top-end'</strong>, <strong>'center'</strong>, <strong>'center-start'</strong>, <strong>'center-end'</strong>, <strong>'bottom'</strong>, <strong>'bottom-start'</strong>, or <strong>'bottom-end'</strong>.</td>
       </tr>
       <tr>
-        <td><b>grow</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>grow</b><br>
+          <i>false</i>
+        </td>
         <td>Paired with window position, sets the direction the modal should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
       </tr>
       <tr id="custom-class">
-        <td><b>customClass</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>customClass</b><br>
+          <i>undefined</i>
+        </td>
         <td>A custom CSS class for the modal:
  <pre><code>customClass: {
   container: 'container-class',
@@ -591,138 +629,192 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
       </tr>
       <tr id="timer">
-        <td><b>timer</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>timer</b><br>
+          <i>undefined</i>
+        </td>
         <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a>, <a href="#isTimerRunning">Swal.isTimerRunning()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
       </tr>
       <tr id="timer-progress-bar">
-        <td><b>timerProgressBar</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>timerProgressBar</b><br>
+          <i>false</i>
+        </td>
         <td>If set to true, the timer will have a progress bar at the bottom of a popup. Mostly, this feature is useful with toasts.</td>
       </tr>
       <tr>
-        <td><b>animation</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>animation</b><br>
+          <i>true</i>
+        </td>
         <td><strong>Deprecated and will be removed in the next major release, use <a href="#show-class">showClass</a> and <a href="#hide-class">hideClass</a> instead.</strong><br>If set to <strong>false</strong>, modal CSS animation will be disabled.</td>
       </tr>
       <tr>
-        <td><b>heightAuto</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>heightAuto</b><br>
+          <i>true</i>
+        </td>
         <td>By default, SweetAlert2 sets html's and body's CSS <strong>height</strong> to <strong>auto !important</strong>. If this behavior isn't compatible with your project's layout, set <strong>heightAuto</strong> to <strong>false</strong>.</td>
       </tr>
       <tr id="allow-outside-click">
-        <td><b>allowOutsideClick</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>allowOutsideClick</b><br>
+          <i>true</i>
+        </td>
         <td>If set to <strong>false</strong>, the user can't dismiss the modal by clicking outside it.<br>You can also pass a custom function returning a boolean value, e.g. if you want to disable outside clicks for the loading state of a modal.</td>
       </tr>
       <tr id="allow-escape-key">
-        <td><b>allowEscapeKey</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>allowEscapeKey</b><br>
+          <i>true</i>
+        </td>
         <td>If set to <strong>false</strong>, the user can't dismiss the modal by pressing the <kbd>Esc</kbd> key. You can also pass a custom function returning a boolean value, e.g. if you want to disable the <kbd>Esc</kbd> key for the loading state of a modal.</td>
       </tr>
       <tr id="allow-enter-key">
-        <td><b>allowEnterKey</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>allowEnterKey</b><br>
+          <i>true</i>
+        </td>
         <td>If set to <strong>false</strong>, the user can't confirm the modal by pressing the Enter or Space keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value.</td>
       </tr>
       <tr id="stop-keydown-propagation">
-        <td><b>stopKeydownPropagation</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>stopKeydownPropagation</b><br>
+          <i>true</i>
+        </td>
         <td>If set to <strong>false</strong>, SweetAlert2 will allow <strong>keydown</strong> events propagation to the document.</td>
       </tr>
       <tr id="keydown-listener-capture">
-        <td><b>keydownListenerCapture</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>keydownListenerCapture</b><br>
+          <i>false</i>
+        </td>
         <td>Useful for those who are using SweetAlert2 along with Bootstrap modals. By default <strong>keydownListenerCapture</strong> is <strong>false</strong> which means when a user hits <kbd>Esc</kbd>, both SweetAlert2 and Bootstrap modals will be closed. Set <strong>keydownListenerCapture</strong> to <strong>true</strong> to fix that behavior.</td>
       </tr>
       <tr>
-        <td><b>showConfirmButton</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>showConfirmButton</b><br>
+          <i>true</i>
+        </td>
         <td>If set to <strong>false</strong>, a "Confirm"-button will not be shown. It can be useful when you're using custom HTML description.</td>
       </tr>
       <tr id="show-cancel-button">
-        <td><b>showCancelButton</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>showCancelButton</b><br>
+          <i>false</i>
+        </td>
         <td>If set to <strong>true</strong>, a "Cancel"-button will be shown, which the user can click on to dismiss the modal.</td>
       </tr>
       <tr>
-        <td><b>confirmButtonText</b></td>
-        <td><i>'OK'</i></td>
+        <td>
+          <b>confirmButtonText</b><br>
+          <i>'OK'</i>
+        </td>
         <td>Use this to change the text on the "Confirm"-button.</td>
       </tr>
       <tr>
-        <td><b>cancelButtonText</b></td>
-        <td><i>'Cancel'</i></td>
+        <td>
+          <b>cancelButtonText</b><br>
+          <i>'Cancel'</i>
+        </td>
         <td>Use this to change the text on the "Cancel"-button.</td>
       </tr>
       <tr>
-        <td><b>confirmButtonColor</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>confirmButtonColor</b><br>
+          <i>undefined</i>
+        </td>
         <td>Use this to change the background color of the "Confirm"-button. The default color is <strong>#3085d6</strong></td>
       </tr>
       <tr>
-        <td><b>cancelButtonColor</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>cancelButtonColor</b><br>
+          <i>undefined</i>
+        </td>
         <td>Use this to change the background color of the "Cancel"-button. The default color is <strong>#aaa</strong></td>
       </tr>
       <tr>
-        <td><b>confirmButtonAriaLabel</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>confirmButtonAriaLabel</b><br>
+          <i>''</i>
+        </td>
         <td>Use this to change the <strong>aria-label</strong> for the "Confirm"-button.</td>
       </tr>
       <tr>
-        <td><b>cancelButtonAriaLabel</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>cancelButtonAriaLabel</b><br>
+          <i>''</i>
+        </td>
         <td>Use this to change the <strong>aria-label</strong> for the "Cancel"-button.</td>
       </tr>
       <tr>
-        <td><b>buttonsStyling</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>buttonsStyling</b><br>
+          <i>true</i>
+        </td>
         <td>Apply default styling to buttons. If you want to use your own classes (e.g. Bootstrap classes) set this parameter to <strong>false</strong>.</td>
       </tr>
       <tr>
-        <td><b>reverseButtons</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>reverseButtons</b><br>
+          <i>false</i>
+        </td>
         <td>Set to <strong>true</strong> if you want to invert default buttons positions ("Confirm"-button on the right side).</td>
       </tr>
       <tr>
-        <td><b>focusConfirm</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>focusConfirm</b><br>
+          <i>true</i>
+        </td>
         <td> Set to <strong>false</strong> if you want to focus the first element in tab order instead of "Confirm"-button by default.</td>
       </tr>
       <tr>
-        <td><b>focusCancel</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>focusCancel</b><br>
+          <i>false</i>
+        </td>
         <td>Set to <strong>true</strong> if you want to focus the "Cancel"-button by default.</td>
       </tr>
       <tr id="show-close-button">
-        <td><b>showCloseButton</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>showCloseButton</b><br>
+          <i>false</i>
+        </td>
         <td>Set to <strong>true</strong> to show close button in top right corner of the modal.</td>
       </tr>
       <tr>
-        <td><b>closeButtonHtml</b></td>
-        <td><i>'&amp;times;'</i></td>
+        <td>
+          <b>closeButtonHtml</b><br>
+          <i>'&amp;times;'</i>
+        </td>
         <td>Use this to change the content of the close button.</td>
       </tr>
       <tr>
-        <td><b>closeButtonAriaLabel</b></td>
-        <td><i>'Close this dialog'</i></td>
+        <td>
+          <b>closeButtonAriaLabel</b><br>
+          <i>'Close this dialog'</i>
+        </td>
         <td>Use this to change the <strong>aria-label</strong> for the close button.</td>
       </tr>
       <tr>
-        <td><b>showLoaderOnConfirm</b></td>
-        <td><i>false</i></td>
+        <td>
+          <b>showLoaderOnConfirm</b><br>
+          <i>false</i>
+        </td>
         <td>Set to <strong>true</strong> to disable buttons and show that something is loading. Use it in combination with the <a href="#pre-confirm"><strong>preConfirm</strong></a> parameter.</td>
       </tr>
       <tr id="scrollbar-padding">
-        <td><b>scrollbarPadding</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>scrollbarPadding</b><br>
+          <i>true</i>
+        </td>
         <td>Set to <strong>false</strong> to disable body padding adjustment when the page scrollbar gets hidden while the modal is shown</td>
       </tr>
       <tr id="pre-confirm">
-        <td><b>preConfirm</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>preConfirm</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to execute before confirm, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
           <ul>
             <li><strong>false</strong> to prevent a popup from closing</li>
@@ -733,33 +825,45 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
       </tr>
       <tr id="image">
-        <td><b>imageUrl</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>imageUrl</b><br>
+          <i>undefined</i>
+        </td>
         <td>Add a customized icon for the modal. Should contain a string with the path or URL to the image.</td>
       </tr>
       <tr>
-        <td><b>imageWidth</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>imageWidth</b><br>
+          <i>undefined</i>
+        </td>
         <td>If imageUrl is set, you can specify imageWidth to describes image width in px.</td>
       </tr>
       <tr>
-        <td><b>imageHeight</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>imageHeight</b><br>
+          <i>undefined</i>
+        </td>
         <td>Custom image height in px.</td>
       </tr>
       <tr>
-        <td><b>imageAlt</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>imageAlt</b><br>
+          <i>''</i>
+        </td>
         <td>An alternative text for the custom image icon.</td>
       </tr>
       <tr id="input-placeholder">
-        <td><b>inputPlaceholder</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>inputPlaceholder</b><br>
+          <i>''</i>
+        </td>
         <td>Input field placeholder.</td>
       </tr>
       <tr id="input-value">
-        <td><b>inputValue</b></td>
-        <td><i>''</i></td>
+        <td>
+          <b>inputValue</b><br>
+          <i>''</i>
+        </td>
         <td>
           Input field initial value. <br><br>
           If the input type is <b>checkbox</b>, <b>inputValue</b> will represent the <b>checked</b> state. <br><br>
@@ -767,23 +871,31 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
       </tr>
       <tr id="input-options">
-        <td><b>inputOptions</b></td>
-        <td><i>{}</i></td>
+        <td>
+          <b>inputOptions</b><br>
+          <i>{}</i>
+        </td>
         <td>If <strong>input</strong> parameter is set to <strong>"select"</strong> or <strong>"radio"</strong>, you can provide options. Can be a Map or a plain object, with keys that represent option values and values that represent option text, or a Promise that resolves with one of those types.</td>
       </tr>
       <tr id="input-auto-trim">
-        <td><b>inputAutoTrim</b></td>
-        <td><i>true</i></td>
+        <td>
+          <b>inputAutoTrim</b><br>
+          <i>true</i>
+        </td>
         <td>Automatically remove whitespaces from both ends of a result string. Set this parameter to <strong>false</strong> to disable auto-trimming.</td>
       </tr>
       <tr id="input-attributes">
-        <td><b>inputAttributes</b></td>
-        <td><i>{}</i></td>
+        <td>
+          <b>inputAttributes</b><br>
+          <i>{}</i>
+        </td>
         <td>HTML input attributes (e.g. <strong>min</strong>, <strong>max</strong>, <strong>autocomplete</strong>, <strong>accept</strong>), that are added to the input field. Object keys will represent attributes names, object values will represent attributes values.</td>
       </tr>
       <tr id="input-validator">
-        <td><b>inputValidator</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>inputValidator</b><br>
+          <i>undefined</i>
+        </td>
         <td>Validator for input field, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
           <ul>
             <li>a <strong>falsy</strong> value (<strong>undefined</strong>, <strong>null</strong>, <strong>false</strong>) for indicating <i>success</i></li>
@@ -793,53 +905,73 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
       </tr>
       <tr id="validation-message">
-        <td><b>validationMessage</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>validationMessage</b><br>
+          <i>undefined</i>
+        </td>
         <td>A custom validation message for default validators (email, url).</td>
       </tr>
       <tr>
-        <td><b>progressSteps</b></td>
-        <td><i>[]</i></td>
+        <td>
+          <b>progressSteps</b><br>
+          <i>[]</i>
+        </td>
         <td>Progress steps, useful for modal queues, see <a href="#chaining-modals">usage example</a>.</td>
       </tr>
       <tr>
-        <td><b>currentProgressStep</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>currentProgressStep</b><br>
+          <i>undefined</i>
+        </td>
         <td>Current active progress step. The default is <strong>Swal.getQueueStep()</strong></td>
       </tr>
       <tr>
-        <td><b>progressStepsDistance</b></td>
-        <td><i>'40px'</i></td>
+        <td>
+          <b>progressStepsDistance</b><br>
+          <i>'40px'</i>
+        </td>
         <td>Distance between progress steps.</td>
       </tr>
       <tr>
-        <td><b>onBeforeOpen</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>onBeforeOpen</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to run when modal built, but not shown yet. Provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
-        <td><b>onOpen</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>onOpen</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to run when modal opens, provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
-        <td><b>onRender</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>onRender</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to run after modal DOM has been updated. Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>. If you want to perform changes in the modal's DOM, that survive <strong>Swal.update()</strong>, <strong>onRender</strong> is a good place for that.</td>
       </tr>
       <tr>
-        <td><b>onClose</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>onClose</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to run when modal closes by user interaction (and not by another popup), provides modal DOM element as the first argument.</td>
       </tr>
       <tr>
-        <td><b>onAfterClose</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>onAfterClose</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to run after popup has been disposed by user interaction (and not by another popup).</td>
       </tr>
       <tr>
-        <td><b>onDestroy</b></td>
-        <td><i>undefined</i></td>
+        <td>
+          <b>onDestroy</b><br>
+          <i>undefined</i>
+        </td>
         <td>Function to run after popup has been destroyed either by user interaction or by another popup.</td>
       </tr>
     </table>
@@ -1065,17 +1197,16 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </button>
       </td>
     </tr>
-  </table>
 
-  <div class="center-container">
-    <p id="multiple-inputs">
-      Multiple inputs aren't supported, you can achieve them by using <strong>html</strong> and <strong>preConfirm</strong> parameters.<br>
-      Inside the <strong>preConfirm()</strong> function you can return (or, if async, resolve with) the custom result:
-    </p>
-  </div>
-  <table class="input-types">
-    <tr>
-      <td class="mobile-hidden"></td>
+    <td colspan="3" class="mobile-hidden">
+      <p>
+        Multiple inputs aren't supported, you can achieve them by using <strong>html</strong> and <strong>preConfirm</strong> parameters.<br>
+        Inside the <strong>preConfirm()</strong> function you can return (or, if async, resolve with) the custom result:
+      </p>
+    </td>
+
+    <tr id="multiple-inputs" class="mobile-hidden">
+      <td></td>
       <td>
         <pre data-example-id="multipleInputs"></pre>
       </td>
@@ -1085,7 +1216,6 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </button>
       </td>
     </tr>
-
   </table>
 
   <div class="mobile-hidden">
