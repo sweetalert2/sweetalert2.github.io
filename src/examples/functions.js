@@ -459,7 +459,7 @@ module.exports = {
       title: 'Select image',
       input: 'file',
       inputAttributes: {
-        accept: 'image/*',
+        'accept': 'image/*',
         'aria-label': 'Upload your profile picture'
       }
     })
