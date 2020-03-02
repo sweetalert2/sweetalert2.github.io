@@ -159,6 +159,41 @@ fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
     // ignore
   })
 
+$('.paypal') && $('.paypal').addEventListener('click', (e) => {
+  const currencies = {
+    'UW5EA4KTHM4B6': 'United States dollar (US$)',
+    'TKTWHJGUWLR7E': 'Euro (€)',
+    'FE4JP23V88G3C': 'Japanese yen (¥)',
+    'QJ3KEXBUHCL3C': 'Pound sterling (£)',
+    'SG3T6NCCQFYE2': 'Australian dollar (A$)',
+    '4SB64A93A7VZ8': 'Canadian dollar (C$)',
+    'UGHWAA7MRH7MQ': ' Swiss franc (CHF)',
+    'CPZP4SJAFZKAU': 'Hong Kong dollar (HK$)',
+    'F42C5XL3M3JCQ': 'New Zealand dollar (NZ$)',
+    'GRRZTRQLA4NWL': 'Swedish krona (kr)',
+    '386ALCBUUFXES': 'Singapore dollar (S$)',
+    'XFPKPQDZWFKAW': 'Norwegian krone (kr)',
+    'WSXP62LE49PPN': 'Mexican peso ($)',
+    '98BDRFSZAPV3Q': 'Russian ruble (₽)',
+    'LYFEH4N33DHQC': 'Brazilian real (R$)',
+    '5HL8BJ97RRANU': 'New Taiwan dollar (NT$)',
+    'T7RD9MRR3MXTG': 'Danish krone (kr)',
+    'SHAUMPM36UNP6': 'Polish złoty (zł)',
+  }
+  Swal.fire({
+    title: 'Choose your currency',
+    input: 'select',
+    inputOptions: currencies,
+    inputValue: 'USD',
+  }).then((result) => {
+    if (result.value) {
+      location.assign(`https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${result.value}`)
+    }
+  })
+
+  e.preventDefault()
+})
+
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
     bitcoin: '16Z7RvFv7PsV3XzFvchYwPnRfw9KeLTZQJ',
