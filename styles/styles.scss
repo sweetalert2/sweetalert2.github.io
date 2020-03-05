@@ -490,7 +490,7 @@ kbd {
   }
 }
 
-#multiple-inputs,
+#multiple-inputs-example,
 #mixin {
   pre {
     width: 550px;
@@ -663,6 +663,7 @@ table {
   font-size: 1.25em;
 
   div {
+    flex: 1;
     margin: 1em 0;
   }
 
