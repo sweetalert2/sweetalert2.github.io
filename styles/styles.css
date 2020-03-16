@@ -31,10 +31,10 @@ nav {
   flex-direction: column;
   align-items: stretch;
   transition: left .5s ease-in-out; }
-  @media all and (max-width: 1150px) {
+  @media all and (max-width: 1260px) {
     nav {
       display: none; } }
-  @media all and (max-width: 1200px) {
+  @media all and (max-width: 1300px) {
     nav {
       left: 0; } }
   nav [href*='#'] {
@@ -92,7 +92,7 @@ nav {
   background-color: #f2f4f6;
   font-size: 1.8em;
   cursor: pointer; }
-  @media all and (max-width: 1150px) {
+  @media all and (max-width: 1260px) {
     #show-sidebar {
       display: flex; } }
 
@@ -270,12 +270,14 @@ kbd {
 .showcase {
   display: inline-block;
   position: relative;
-  width: 23.9375em;
+  width: 21em;
   max-width: 94%;
   margin-top: .9em;
-  padding: 1.25em;
+  padding: 1em;
   background-color: #e2e5e8;
   vertical-align: top; }
+  .showcase.normal button {
+    margin: 3.35em; }
   @media all and (max-width: 768px) {
     .showcase {
       padding: 0 .625em .625em; }
@@ -296,7 +298,7 @@ kbd {
     .showcase.sweet button {
       margin-top: .8125em; }
   .showcase button {
-    margin: 1.25em; }
+    margin: 2em; }
   .showcase .vs-icon {
     background-image: -webkit-image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
     background-image: image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);

@@ -92,7 +92,7 @@
 
     <div class="theme-selector">
       Theme:
-      <select id="theme">
+      <select id="theme" autocomplete="off">
         <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default/default.css" selected>Default</option>
         <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark/dark.css">Dark</option>
         <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">Bootstrap 4</option>
@@ -188,7 +188,7 @@
 
   <div class="showcase normal">
     <h4>Normal alert</h4>
-    <button class="show-example-btn" onclick="executeExample('normalAlert')">
+    <button onclick="executeExample('normalAlert')">
       Show normal alert
     </button>
     <pre data-example-id="normalAlert"></pre>
