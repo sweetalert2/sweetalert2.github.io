@@ -42,11 +42,11 @@ nav {
   align-items: stretch;
   transition: left .5s ease-in-out;
 
-  @media all and (max-width: 1150px) {
+  @media all and (max-width: 1260px) {
     display: none;
   }
 
-  @media all and (max-width: 1200px) {
+  @media all and (max-width: 1300px) {
     left: 0;
   }
 
@@ -132,7 +132,7 @@ nav {
   font-size: 1.8em;
   cursor: pointer;
 
-  @media all and (max-width: 1150px) {
+  @media all and (max-width: 1260px) {
     display: flex;
   }
 }
@@ -375,12 +375,18 @@ kbd {
 .showcase {
   display: inline-block;
   position: relative;
-  width: 23.9375em;
+  width: 21em;
   max-width: 94%;
   margin-top: .9em;
-  padding: 1.25em;
+  padding: 1em;
   background-color: $porcelain;
   vertical-align: top;
+
+  &.normal {
+    button {
+      margin: 3.35em;
+    }
+  }
 
   @media all and (max-width: 768px) {
     padding: 0 .625em .625em;
@@ -412,7 +418,7 @@ kbd {
   }
 
   button {
-    margin: 1.25em;
+    margin: 2em;
   }
 
   .vs-icon {
