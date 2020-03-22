@@ -647,7 +647,21 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>animation</b><br>
           <i>true</i>
         </td>
-        <td><strong>Deprecated and will be removed in the next major release, use <a href="#show-class">showClass</a> and <a href="#hide-class">hideClass</a> instead.</strong><br>If set to <strong>false</strong>, modal CSS animation will be disabled.</td>
+        <td>
+          <strong>Deprecated and will be removed in the next major release, use <a href="#show-class">showClass</a> and <a href="#hide-class">hideClass</a> instead:</strong>
+<pre><code>Swal.fire({
+  ...,
+  showClass: {
+    popup: 'swal2-noanimation',
+    backdrop: 'swal2-noanimation'
+  },
+  hideClass: {
+    popup: '',
+    backdrop: ''
+  }
+})</code></pre>
+          <br>If set to <strong>false</strong>, modal CSS animation will be disabled.
+        </td>
       </tr>
       <tr>
         <td>
