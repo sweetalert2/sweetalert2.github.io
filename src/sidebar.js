@@ -8,7 +8,6 @@ export default () => {
     customClass: {
       container: 'sidebar',
       popup: 'border-radius-0',
-      footer: 'flex-center'
     },
     showClass: {
       popup: 'animated fadeInLeft faster'

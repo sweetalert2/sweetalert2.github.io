@@ -98,6 +98,11 @@ nav {
 
 .sidebar {
   padding: 0; }
+  .sidebar .swal2-footer {
+    justify-content: space-around; }
+    @media all and (max-width: 480px) {
+      .sidebar .swal2-footer {
+        flex-direction: column; } }
   .sidebar nav {
     display: block !important;
     position: initial; }
