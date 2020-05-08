@@ -1,9 +1,7 @@
 /* global MutationObserver, fetch, _bsa */
 import 'babel-polyfill'
 import 'whatwg-fetch'
-import hljs from 'highlight.js/lib/highlight'
-import hljsJS from 'highlight.js/lib/languages/javascript'
-import hljsXML from 'highlight.js/lib/languages/xml'
+import hljs from 'highlight.js/lib/core.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
 import showSidebar from './sidebar'
@@ -35,8 +33,8 @@ function unindent (lines) {
 }
 
 // Syntax highlighting with highlight.js
-hljs.registerLanguage('javascript', hljsJS)
-hljs.registerLanguage('xml', hljsXML)
+hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
 hljs.initHighlightingOnLoad()
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStyleSheet('./styles/native-js.css')
   loadStyleSheet('./styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4.0.0/animate.min.css')
 
   const themes = ['default', 'dark', 'bootstrap-4', 'minimal', 'borderless', 'material-ui']
   themes.forEach((theme) => {
