@@ -72,10 +72,10 @@ module.exports = {
     Swal.fire({
       title: 'Custom animation with Animate.css',
       showClass: {
-        popup: 'animated fadeInDown faster'
+        popup: 'animate__animated animate__fadeInDown'
       },
       hideClass: {
-        popup: 'animated fadeOutUp faster'
+        popup: 'animate__animated animate__fadeOutUp'
       }
     })
   },
