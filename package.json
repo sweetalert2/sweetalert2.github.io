@@ -18,7 +18,7 @@
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.23.5",
     "css-loader": "^3.0.0",
-    "eslint": "^6.0.0",
+    "eslint": "^7.0.0",
     "exports-loader": "^0.7.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^7.0.0",
