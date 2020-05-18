@@ -147,11 +147,13 @@ function ordinalSuffix (i) {
 fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
   .then(response => response.json())
   .then(response => {
-    $('.jsdelivr-info').innerHTML =
-      `sweetalert2 is the <strong>${ordinalSuffix(response.rank)}</strong>` +
-      ` most popular package on jsDelivr, with ` +
-      `<strong>${parseInt(response.total).toLocaleString()}</strong>` +
-      ` CDN hits in the last month`
+    if (response.rank && response.total) {
+      $('.jsdelivr-info').innerHTML =
+        `sweetalert2 is the <strong>${ordinalSuffix(response.rank)}</strong>` +
+        ` most popular package on jsDelivr, with ` +
+        `<strong>${parseInt(response.total).toLocaleString()}</strong>` +
+        ` CDN hits in the last month`
+    }
   })
   .catch(() => {
     // ignore
