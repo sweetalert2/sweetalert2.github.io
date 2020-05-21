@@ -22,8 +22,17 @@ gulp.task('bundle', () => {
       rules: [
         {
           test: /\.js?$/,
-          exclude: /(node_modules)/,
-          use: 'babel-loader'
+          // https://github.com/webpack/webpack/issues/2031#issuecomment-219040479
+          exclude: /node_modules\/(?!(highlight.js|ANOTHER-ONE)\/).*/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+                plugins: ['babel-plugin-preval']
+              }
+            }
+          ]
         },
         {
           test: /\.css?$/,
