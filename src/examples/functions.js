@@ -398,7 +398,7 @@ module.exports = {
           broccoli: 'Broccoli',
           carrot: 'Carrot'
         },
-        icecream: 'Ice cream'
+        'icecream': 'Ice cream'
       },
       inputPlaceholder: 'Select a fruit',
       showCancelButton: true,
