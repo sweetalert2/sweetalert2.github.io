@@ -387,10 +387,18 @@ module.exports = {
       title: 'Select field validation',
       input: 'select',
       inputOptions: {
-        apples: 'Apples',
-        bananas: 'Bananas',
-        grapes: 'Grapes',
-        oranges: 'Oranges'
+        'Fruits': {
+          apples: 'Apples',
+          bananas: 'Bananas',
+          grapes: 'Grapes',
+          oranges: 'Oranges'
+        },
+        'Vegetables': {
+          potato: 'Potato',
+          broccoli: 'Broccoli',
+          carrot: 'Carrot'
+        },
+        'icecream': 'Ice cream'
       },
       inputPlaceholder: 'Select a fruit',
       showCancelButton: true,
