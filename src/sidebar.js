@@ -10,10 +10,10 @@ export default () => {
       popup: 'border-radius-0',
     },
     showClass: {
-      popup: 'animated fadeInLeft faster'
+      popup: 'animate__animated animate__fadeInLeft animate__faster'
     },
     hideClass: {
-      popup: 'animated fadeOutLeft faster'
+      popup: 'animate__animated animate__fadeOutLeft animate__faster'
     },
     onClose: () => {
       nav = Swal.getContent().querySelector('nav')
