@@ -485,6 +485,7 @@ table {
   .collaborators div,
   .sponsors div {
     flex: 1;
+    flex-basis: auto;
     margin: 1em 0; }
   .frameworks-integrations a,
   .donation-options a,
