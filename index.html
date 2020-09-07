@@ -31,8 +31,8 @@
   <!-- https://goo.gl/qRE0vM -->
   <meta name="theme-color" content="#f2f4f6">
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.css" id="theme-styles">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" id="theme-styles">
 
   <link rel="stylesheet" href="./styles/styles.css">
 
@@ -40,7 +40,7 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
 
   <!-- This is what you need -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
   <!--...............................-->
 </head>
 
@@ -108,9 +108,10 @@
     <div class="version-selector mobile-hidden">
       Version:
       <select id="version">
-        <option value="9.x" selected>9.x</option>
-        <option value="8.x">8.x</option>
-        <option value="7.x">7.x</option>
+        <option value="10.x" selected>v10.x</option>
+        <option value="9.x">v9.x</option>
+        <option value="8.x">v8.x</option>
+        <option value="7.x">v7.x</option>
       </select>
     </div>
   </nav>
@@ -272,6 +273,16 @@
       <pre data-example-id="customHtml" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"></pre>
     </li>
 
+    <li id="three-buttons">
+      <div class="ui">
+        <p>A dialog with three buttons</p>
+        <button class="show-example-btn" aria-label="Try me! Example: A custom positioned dialog" onclick="executeExample('threeButtons')">
+          Try me!
+        </button>
+      </div>
+      <pre data-example-id="threeButtons"></pre>
+    </li>
+
     <li id="position">
       <div class="ui">
         <p>A custom positioned dialog</p>
@@ -389,7 +400,7 @@
     <h3 id="download">Download & install</h3>
     <pre class="center"><code><span class="unselectable">$ </span>npm install sweetalert2</code></pre>
     <p>Or grab from <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">jsdelivr CDN <i class="fa fa-external-link"></i></a></p>
-    <pre class="center"><code>&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"&gt;&lt;/script&gt;</code></pre>
+    <pre class="center"><code>&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"&gt;&lt;/script&gt;</code></pre>
     <p class="jsdelivr-info mobile-hidden"></p>
   </div>
 
@@ -625,6 +636,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   input: 'input-class',
   actions: 'actions-class',
   confirmButton: 'confirm-button-class',
+  denyButton: 'confirm-button-class',
   cancelButton: 'cancel-button-class',
   footer: 'footer-class'
 }</code></pre>
@@ -712,7 +724,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>showConfirmButton</b><br>
           <i>true</i>
         </td>
-        <td>If set to <strong>false</strong>, a "Confirm"-button will not be shown. It can be useful when you're using custom HTML description.</td>
+        <td>If set to <strong>false</strong>, a "Confirm"-button will not be shown.</td>
+      </tr>
+      <tr>
+        <td>
+          <b>showDenyButton</b><br>
+          <i>false</i>
+        </td>
+        <td>If set to <strong>true</strong>, a "Deny"-button will be shown. It can be useful when you want a popup with 3 buttons.</td>
       </tr>
       <tr id="show-cancel-button">
         <td>
@@ -730,6 +749,13 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td>
+          <b>denyButtonText</b><br>
+          <i>'No'</i>
+        </td>
+        <td>Use this to change the text on the "Deny"-button.</td>
+      </tr>
+      <tr>
+        <td>
           <b>cancelButtonText</b><br>
           <i>'Cancel'</i>
         </td>
@@ -744,6 +770,13 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td>
+          <b>denyButtonColor</b><br>
+          <i>undefined</i>
+        </td>
+        <td>Use this to change the background color of the "Deny"-button. The default color is <strong>#dd6b55</strong></td>
+      </tr>
+      <tr>
+        <td>
           <b>cancelButtonColor</b><br>
           <i>undefined</i>
         </td>
@@ -755,6 +788,13 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <i>''</i>
         </td>
         <td>Use this to change the <strong>aria-label</strong> for the "Confirm"-button.</td>
+      </tr>
+      <tr>
+        <td>
+          <b>denyButtonAriaLabel</b><br>
+          <i>''</i>
+        </td>
+        <td>Use this to change the <strong>aria-label</strong> for the "Deny"-button.</td>
       </tr>
       <tr>
         <td>
@@ -782,7 +822,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>focusConfirm</b><br>
           <i>true</i>
         </td>
-        <td> Set to <strong>false</strong> if you want to focus the first element in tab order instead of "Confirm"-button by default.</td>
+        <td>Set to <strong>false</strong> if you want to focus the first element in tab order instead of "Confirm"-button by default.</td>
+      </tr>
+      <tr>
+        <td>
+          <b>focusDeny</b><br>
+          <i>false</i>
+        </td>
+        <td>Set to <strong>true</strong> if you want to focus the "Deny"-button by default.</td>
       </tr>
       <tr>
         <td>
@@ -1347,6 +1394,10 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>Get the "Confirm" button.</td>
       </tr>
       <tr>
+        <td><i>Swal.getDenyButton()</i></td>
+        <td>Get the "Deny" button.</td>
+      </tr>
+      <tr>
         <td><i>Swal.getCancelButton()</i></td>
         <td>Get the "Cancel" button.</td>
       </tr>
@@ -1397,6 +1448,10 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><i>Swal.clickConfirm()</i></td>
         <td>Click the "Confirm"-button programmatically.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.clickDeny()</i></td>
+        <td>Click the "Deny"-button programmatically.</td>
       </tr>
       <tr>
         <td><i>Swal.clickCancel()</i></td>
@@ -1500,7 +1555,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
 
     <p class="code-label">Or from jsdelivr CDN, e.g.:</p>
     <pre><code>&lt;link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet"&gt;
-&lt;script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"&gt;&lt;/script&gt;</code></pre>
 
     <h4>Themes Usage</h4>
     <p class="code-label">With CSS:</p>

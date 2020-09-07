@@ -280,7 +280,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
-        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2@9', // eslint-disable-line
+        js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2@10', // eslint-disable-line
         css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}'
       }
       if (pre.getAttribute('data-codepen-html')) {
@@ -331,6 +331,9 @@ $('#version').addEventListener('change', () => {
       break
     case '8.x':
       window.location.assign('v8.html')
+      break
+    case '9.x':
+      window.location.assign('v9.html')
       break
     default:
       window.location.assign('/')
