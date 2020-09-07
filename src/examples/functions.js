@@ -89,7 +89,7 @@ module.exports = {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
-      if (result.value) {
+      if (result.isConfirmed) {
         Swal.fire(
           'Deleted!',
           'Your file has been deleted.',
@@ -116,7 +116,7 @@ module.exports = {
       cancelButtonText: 'No, cancel!',
       reverseButtons: true
     }).then((result) => {
-      if (result.value) {
+      if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
           'Deleted!',
           'Your file has been deleted.',
@@ -226,7 +226,7 @@ module.exports = {
       },
       allowOutsideClick: () => !Swal.isLoading()
     }).then((result) => {
-      if (result.value) {
+      if (result.isConfirmed) {
         Swal.fire({
           title: `${result.value.login}'s avatar`,
           imageUrl: result.value.avatar_url
