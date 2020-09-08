@@ -37,18 +37,20 @@ nav {
   @media all and (max-width: 1300px) {
     nav {
       left: 0; } }
-  nav [href*='#'] {
+  nav a {
     display: flex;
     padding: .4em 1em;
     border-bottom: 1px solid #e2e5e8;
     opacity: .7;
     text-decoration: none !important; }
-    nav [href*='#']::before {
+    nav a::before {
       content: '›';
       margin-right: 1em; }
-    nav [href*='#']:hover {
+    nav a:hover {
       opacity: 1; }
-    nav [href*='#'] span {
+    nav a.recipe-gallery {
+      color: magenta; }
+    nav a span {
       flex-grow: 1;
       text-align: left; }
   nav .theme-selector,
@@ -66,7 +68,7 @@ nav {
   .social-buttons a {
     display: flex;
     height: 30px;
-    text-decoration: none; }
+    text-decoration: none !important; }
   .social-buttons .facebook-button {
     color: #425f9c; }
   .social-buttons .twitter-button {
@@ -730,3 +732,16 @@ table {
 #logo-text {
   width: 28em;
   max-width: 95%; }
+
+.recipes-list {
+  list-style: none; }
+  .recipes-list li {
+    margin: 2em 0; }
+
+.gist-it-gist {
+  width: 800px;
+  max-width: 90%;
+  margin: 1em auto 4em;
+  font-size: .8rem; }
+  .gist-it-gist .prettyprint {
+    font-family: 'Source Code Pro', monospace !important; }

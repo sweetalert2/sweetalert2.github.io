@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  loadStyleSheet('./styles/buysellads.css')
-  loadStyleSheet('./styles/carbon-ads.css')
-  loadStyleSheet('./styles/native-js.css')
-  loadStyleSheet('./styles/bootstrap4-buttons.css')
+  loadStyleSheet('/styles/buysellads.css')
+  loadStyleSheet('/styles/carbon-ads.css')
+  loadStyleSheet('/styles/native-js.css')
+  loadStyleSheet('/styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4.0.0/animate.min.css')
 
@@ -62,53 +62,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const stats = {}
 
-// latest release
-fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
-  .then(response => response.json())
-  .then(response => {
-    if (!response[0] || !response[0].name) {
-      return
-    }
-    stats.latestRelease = response[0].name
-    showStats()
-  })
-  .catch(() => {
-    // ignore
-  })
+if ($('.stats')) {
+  // latest release
+  fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
+    .then(response => response.json())
+    .then(response => {
+      if (!response[0] || !response[0].name) {
+        return
+      }
+      stats.latestRelease = response[0].name
+      showStats()
+    })
+    .catch(() => {
+      // ignore
+    })
 
-// recent activity
-fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
-  .then(response => response.json())
-  .then(response => {
-    if (!response[0] || !response[0].commit) {
-      return
-    }
-    let recentActivity = response[0].commit.author.date
-    recentActivity = new Date(recentActivity)
-    const today = new Date()
-    const diffDays = parseInt((today - recentActivity) / (1000 * 60 * 60 * 24))
-    switch (diffDays) {
-      case 0: recentActivity = 'today'; break
-      case 1: recentActivity = 'yesterday'; break
-      default: recentActivity = `${diffDays} days ago`; break
-    }
-    stats.recentActivity = recentActivity
-    showStats()
-  })
-  .catch(() => {
-    // ignore
-  })
+  // recent activity
+  fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
+    .then(response => response.json())
+    .then(response => {
+      if (!response[0] || !response[0].commit) {
+        return
+      }
+      let recentActivity = response[0].commit.author.date
+      recentActivity = new Date(recentActivity)
+      const today = new Date()
+      const diffDays = parseInt((today - recentActivity) / (1000 * 60 * 60 * 24))
+      switch (diffDays) {
+        case 0: recentActivity = 'today'; break
+        case 1: recentActivity = 'yesterday'; break
+        default: recentActivity = `${diffDays} days ago`; break
+      }
+      stats.recentActivity = recentActivity
+      showStats()
+    })
+    .catch(() => {
+      // ignore
+    })
 
-// number of downloads last month
-fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
-  .then(response => response.json())
-  .then(response => {
-    stats.downloadsLastMonth = response.downloads.toLocaleString()
-    showStats()
-  })
-  .catch(() => {
-    // ignore
-  })
+  // number of downloads last month
+  fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
+    .then(response => response.json())
+    .then(response => {
+      stats.downloadsLastMonth = response.downloads.toLocaleString()
+      showStats()
+    })
+    .catch(() => {
+      // ignore
+    })
+}
 
 function showStats () {
   if (stats.latestRelease && stats.recentActivity && stats.downloadsLastMonth) {
@@ -268,8 +270,10 @@ function setBuySellAdsFooter () {
   }
 }
 
-const observer = new MutationObserver(setBuySellAdsFooter)
-observer.observe($('body > .bsa-cpc'), { childList: true })
+if ($('body > .bsa-cpc')) {
+  const observer = new MutationObserver(setBuySellAdsFooter)
+  observer.observe($('body > .bsa-cpc'), { childList: true })
+}
 
 // Do not show 'Add to homescreen' prompt
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -319,27 +323,31 @@ Array.from($$('nav a[href^="#"]')).forEach((link) => {
 })
 
 // Theme selector
-$('#theme').addEventListener('change', () => {
-  $('#theme-styles').setAttribute('href', $('#theme').value)
-})
+if ($('#theme')) {
+  $('#theme').addEventListener('change', () => {
+    $('#theme-styles').setAttribute('href', $('#theme').value)
+  })
+}
 
 // Version selector
-$('#version').addEventListener('change', () => {
-  switch ($('#version').value) {
-    case '7.x':
-      window.location.assign('v7.html')
-      break
-    case '8.x':
-      window.location.assign('v8.html')
-      break
-    case '9.x':
-      window.location.assign('v9.html')
-      break
-    default:
-      window.location.assign('/')
-      break
-  }
-})
+if ($('#version')) {
+  $('#version').addEventListener('change', () => {
+    switch ($('#version').value) {
+      case '7.x':
+        window.location.assign('v7.html')
+        break
+      case '8.x':
+        window.location.assign('v8.html')
+        break
+      case '9.x':
+        window.location.assign('v9.html')
+        break
+      default:
+        window.location.assign('/')
+        break
+    }
+  })
+}
 
 // Define window.executeExample for use in HTML
 window.executeExample = async (id) => {

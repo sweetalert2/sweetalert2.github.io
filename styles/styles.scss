@@ -50,7 +50,7 @@ nav {
     left: 0;
   }
 
-  [href*='#'] {
+  a {
     display: flex;
     padding: .4em 1em;
     border-bottom: 1px solid $porcelain;
@@ -64,6 +64,10 @@ nav {
 
     &:hover {
       opacity: 1;
+    }
+
+    &.recipe-gallery {
+      color: magenta;
     }
 
     span {
@@ -90,7 +94,7 @@ nav {
   a {
     display: flex;
     height: 30px;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
   .facebook-button {
@@ -893,4 +897,23 @@ $bouncing-logo-min-height: 35%;
 #logo-text {
   width: 28em;
   max-width: 95%;
+}
+
+.recipes-list {
+  list-style: none;
+
+  li {
+    margin: 2em 0;
+  }
+}
+
+.gist-it-gist {
+  width: 800px;
+  max-width: 90%;
+  margin: 1em auto 4em;
+  font-size: .8rem;
+
+  .prettyprint {
+    font-family: 'Source Code Pro', monospace !important;
+  }
 }
