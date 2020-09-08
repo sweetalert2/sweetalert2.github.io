@@ -51,33 +51,31 @@ nav {
     nav [href*='#'] span {
       flex-grow: 1;
       text-align: left; }
-  nav .share-the-love {
-    margin: 2em 0 0 .6em;
-    font-size: 1.1em;
-    text-align: left; }
-    nav .share-the-love .fa-heart-o {
-      color: #eb4c36; }
-    nav .share-the-love .social-buttons {
-      display: flex;
-      align-items: center;
-      margin-top: .2em; }
-      nav .share-the-love .social-buttons a {
-        display: inline-block;
-        width: 1.2em;
-        text-decoration: none; }
-      nav .share-the-love .social-buttons .facebook-button {
-        color: #425f9c; }
-      nav .share-the-love .social-buttons .twitter-button {
-        color: #1da1f3; }
-      nav .share-the-love .social-buttons > * {
-        opacity: .8; }
-        nav .share-the-love .social-buttons > *:hover {
-          opacity: 1; }
   nav .theme-selector,
   nav .version-selector {
     margin: 2em 0 0 .6em;
     font-size: 1.1em;
     text-align: left; }
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .2em 0 1em;
+  font-size: 2em; }
+  .social-buttons a {
+    display: flex;
+    height: 30px;
+    text-decoration: none; }
+  .social-buttons .facebook-button {
+    color: #425f9c; }
+  .social-buttons .twitter-button {
+    color: #1da1f3; }
+  .social-buttons > * {
+    margin: 0 .3em;
+    opacity: .8; }
+    .social-buttons > *:hover {
+      opacity: 1; }
 
 #show-sidebar {
   display: none;

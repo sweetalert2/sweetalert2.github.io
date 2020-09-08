@@ -72,49 +72,42 @@ nav {
     }
   }
 
-  .share-the-love {
-    margin: 2em 0 0 .6em;
-    font-size: 1.1em;
-    text-align: left;
-
-    .fa-heart-o {
-      color: $cinnabar;
-    }
-
-    .social-buttons {
-      display: flex;
-      align-items: center;
-      margin-top: .2em;
-
-      a {
-        display: inline-block;
-        width: 1.2em;
-        text-decoration: none;
-      }
-
-      .facebook-button {
-        color: $facebook;
-      }
-
-      .twitter-button {
-        color: $twitter;
-      }
-
-      > * {
-        opacity: .8;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
   .theme-selector,
   .version-selector {
     margin: 2em 0 0 .6em;
     font-size: 1.1em;
     text-align: left;
+  }
+}
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .2em 0 1em;
+  font-size: 2em;
+
+  a {
+    display: flex;
+    height: 30px;
+    text-decoration: none;
+  }
+
+  .facebook-button {
+    color: $facebook;
+  }
+
+  .twitter-button {
+    color: $twitter;
+  }
+
+  > * {
+    margin: 0 .3em;
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
