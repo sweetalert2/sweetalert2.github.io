@@ -21,6 +21,7 @@ export default () => {
     onAfterClose: () => {
       document.body.insertBefore(nav, document.querySelector('#show-sidebar'))
     },
+    width: 320,
     footer: `This sidebar is powered by SweetAlert2 as well :)
       <a href="https://github.com/sweetalert2/sweetalert2.github.io/blob/master/src/sidebar.js" class="nowrap" target="_blank">Code ↗</a>`
   })
