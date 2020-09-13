@@ -137,7 +137,12 @@ nav {
 .sidebar {
   padding: 0;
 
+  .swal2-content {
+    padding: 0;
+  }
+
   .swal2-footer {
+    align-items: center;
     justify-content: space-around;
 
     @media all and (max-width: 480px) {
