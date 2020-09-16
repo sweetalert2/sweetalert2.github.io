@@ -94,6 +94,8 @@ nav {
   a {
     display: flex;
     height: 30px;
+    overflow: hidden;
+    border-radius: 4px;
     text-decoration: none !important;
   }
 

@@ -68,6 +68,8 @@ nav {
   .social-buttons a {
     display: flex;
     height: 30px;
+    overflow: hidden;
+    border-radius: 4px;
     text-decoration: none !important; }
   .social-buttons .facebook-button {
     color: #425f9c; }
