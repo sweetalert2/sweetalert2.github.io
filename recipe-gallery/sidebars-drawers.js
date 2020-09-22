@@ -49,6 +49,7 @@ await Swal.fire({
 // RIGHT SIDEBAR
 await Swal.fire({
   title: 'Right sidebar 👋',
+  html: Swal.version,
   position: 'top-end',
   showClass: {
     popup: `
