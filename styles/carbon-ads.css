@@ -42,3 +42,5 @@
       letter-spacing: 1px;
       line-height: 1;
       text-transform: uppercase; }
+  .carbonads-wrapper + .show-example-btn {
+    margin-top: 2em; }
