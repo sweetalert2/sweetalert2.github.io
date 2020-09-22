@@ -246,7 +246,7 @@ $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) =
       bitcoincash: 'Bitcoin Cash'
     },
     inputValue: 'bitcoin',
-    onOpen: () => {
+    didOpen: () => {
       Swal.getInput().onchange = showCryptocurrency
       showCryptocurrency()
     },
