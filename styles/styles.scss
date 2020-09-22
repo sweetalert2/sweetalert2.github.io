@@ -558,6 +558,10 @@ table {
     padding: .625em 1.25em;
     vertical-align: top;
 
+    .deprecated {
+      color: #600;
+    }
+
     @media all and (max-width: 360px) {
       padding: .625em .25em;
 

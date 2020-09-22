@@ -18,7 +18,7 @@ Swal.fire({
     max: 1000,
     step: inputStep
   },
-  onOpen: () => {
+  didOpen: () => {
     const inputRange = Swal.getInput()
     const inputNumber = Swal.getContent().querySelector('#range-value')
 

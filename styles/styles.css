@@ -403,6 +403,8 @@ table {
   table td {
     padding: .625em 1.25em;
     vertical-align: top; }
+    table td .deprecated {
+      color: #600; }
     @media all and (max-width: 360px) {
       table td {
         padding: .625em .25em; }

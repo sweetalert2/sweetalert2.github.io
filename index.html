@@ -1019,51 +1019,95 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td>
           <b>progressStepsDistance</b><br>
-          <i>'40px'</i>
+          <i>undefined</i>
         </td>
         <td>Distance between progress steps.</td>
       </tr>
       <tr>
         <td>
-          <b>onBeforeOpen</b><br>
+          <b>willOpen</b><br>
           <i>undefined</i>
         </td>
-        <td>Function to run when modal built, but not shown yet. Provides modal DOM element as the first argument.</td>
+        <td>Popup lifecycle hook. Synchronously runs before the popup is shown on screen. Provides popup DOM element as the argument.</td>
       </tr>
       <tr>
         <td>
-          <b>onOpen</b><br>
-          <i>undefined</i>
+          <b class="deprecated">onBeforeOpen</b>
         </td>
-        <td>Function to run when modal opens, provides modal DOM element as the first argument.</td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>willOpen</strong> instead</td>
       </tr>
       <tr>
         <td>
-          <b>onRender</b><br>
+          <b>didOpen</b><br>
           <i>undefined</i>
         </td>
-        <td>Function to run after modal DOM has been updated. Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>. If you want to perform changes in the modal's DOM, that survive <strong>Swal.update()</strong>, <strong>onRender</strong> is a good place for that.</td>
+        <td>Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM element as the argument.</td>
       </tr>
       <tr>
         <td>
-          <b>onClose</b><br>
-          <i>undefined</i>
+          <b class="deprecated">onOpen</b><br>
         </td>
-        <td>Function to run when modal closes by user interaction (and not by another popup), provides modal DOM element as the first argument.</td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didOpen</strong> instead</td>
       </tr>
       <tr>
         <td>
-          <b>onAfterClose</b><br>
+          <b>didRender</b><br>
           <i>undefined</i>
         </td>
-        <td>Function to run after popup has been disposed by user interaction (and not by another popup).</td>
+        <td>
+          Popup lifecycle hook. Synchronously runs after the popup DOM has been updated (ie. just before the popup is repainted on the screen).<br>
+          Provides popup DOM element as the argument.<br>
+          Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>.<br>
+          If you want to perform changes in the popup's DOM, that survive <strong>Swal.update()</strong>, prefer <strong>didRender</strong> over <strong>willOpen</strong>.
+        </td>
       </tr>
       <tr>
         <td>
-          <b>onDestroy</b><br>
+          <b class="deprecated">onRender</b>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didRender</strong> instead</td>
+      </tr>
+      <tr>
+        <td>
+          <b>willClose</b><br>
           <i>undefined</i>
         </td>
-        <td>Function to run after popup has been destroyed either by user interaction or by another popup.</td>
+        <td>Popup lifecycle hook. Synchronously runs when the popup closes by user interaction (and not due to another popup being fired). Provides popup DOM element as the argument.</td>
+      </tr>
+      <tr>
+        <td>
+          <b class="deprecated">onClose</b>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>willClose</strong> instead</td>
+      </tr>
+      <tr>
+        <td>
+          <b>didClose</b><br>
+          <i>undefined</i>
+        </td>
+        <td>Popup lifecycle hook. Asynchronously runs after the popup has been disposed by user interaction (and not due to another popup being fired).</td>
+      </tr>
+      <tr>
+        <td>
+          <b class="deprecated">onAfterClose</b><br>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didClose</strong> instead</td>
+      </tr>
+      <tr>
+        <td>
+          <b>didDestroy</b><br>
+          <i>undefined</i>
+        </td>
+        <td>
+          Popup lifecycle hook. Synchronously runs after popup has been destroyed either by user interaction or by another popup.<br>
+          If you have cleanup operations that you need to reliably execute each time a popup is closed, prefer <strong>didDestroy</strong> over <strong>didClose</strong>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b class="deprecated">onDestroy</b><br>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didDestroy</strong> instead</td>
       </tr>
     </table>
 

@@ -181,7 +181,7 @@ module.exports = {
       html: 'I will close in <b></b> milliseconds.',
       timer: 2000,
       timerProgressBar: true,
-      onBeforeOpen: () => {
+      willOpen: () => {
         Swal.showLoading()
         timerInterval = setInterval(() => {
           const content = Swal.getContent()
@@ -311,7 +311,7 @@ module.exports = {
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
-      onOpen: (toast) => {
+      didOpen: (toast) => {
         toast.addEventListener('mouseenter', Swal.stopTimer)
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       }
