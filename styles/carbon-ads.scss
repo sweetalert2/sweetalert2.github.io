@@ -60,4 +60,8 @@
       text-transform: uppercase;
     }
   }
+
+  & + .show-example-btn {
+    margin-top: 2em;
+  }
 }
