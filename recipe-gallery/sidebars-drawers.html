@@ -12,12 +12,22 @@
     gtag('config', 'UA-83618163-1');
   </script>
   <!-- Google Analytics end -->
-  <title>Side Panel (Drawer) - SweetAlert2 example</title>
+  <title>Sidebars and Drawers (Left, Right, Top, Bottom) - SweetAlert2 example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/images/favicon.png">
   <link rel="stylesheet" href="/styles/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <style>
+    .swal2-container {
+      padding: 0;
+      overflow: hidden !important;
+    }
+
+    .swal2-popup {
+      border-radius: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -45,19 +55,19 @@
   </div>
 
   <p><a href="/recipe-gallery"><i class="fa fa-arrow-left"></i> Back to Recipe Gallery</a></p>
-  <h1>Side Panel (Drawer)</h1>
+  <h1>Sidebars and Drawers (Left, Right, Top, Bottom)</h1>
 
-  <p>In this example custom animations are provided by <a href="https://animate.style/" target="_blank" rel="noreferrer noopener" class="nowrap">Animate.css</a></p>
+  <p>In this example custom animations are powered by <a href="https://animate.style/" target="_blank" rel="noreferrer noopener" class="nowrap">Animate.css</a>, but it's possible to use any custom animations.</p>
 
   <div class="carbonads-wrapper">
     <script src="//cdn.carbonads.com/carbon.js?serve=CKYILKQJ&placement=sweetalert2githubio" id="_carbonads_js" defer></script>
   </div>
 
-  <script src="https://gist-it.appspot.com/github/sweetalert2/sweetalert2.github.io/blob/master/recipe-gallery/drawer.js?slice=1:-1&footer=no"></script>
-
   <button class="show-example-btn" onclick="showExample()">Try me!</button>
 
-  <script src="./drawer.js"></script>
+  <script src="https://gist-it.appspot.com/github/sweetalert2/sweetalert2.github.io/blob/master/recipe-gallery/sidebars-drawers.js?slice=1:-1&footer=no"></script>
+
+  <script src="./sidebars-drawers.js"></script>
   <script src="/dist/bundle.js"></script>
 </body>
 </html>
