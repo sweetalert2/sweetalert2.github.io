@@ -16,9 +16,9 @@ body {
 
 body {
   padding-bottom: 2em;
-  background-color: $athens;
-  color: $emperor;
-  text-align: center;
+  background-color: $athens !important;
+  color: $emperor !important;
+  text-align: center !important;
 
   @media all and (max-width: 768px) {
     padding-bottom: 0;
@@ -250,7 +250,7 @@ a {
 
 p {
   max-width: 51.625rem;
-  margin: 1.875em auto;
+  margin: 1.875em auto !important;
   font-size: 1.0625em;
   font-weight: 300;
   line-height: 1.5625em;
@@ -318,7 +318,7 @@ pre {
   margin: 0 auto;
   background: $shark;
   color: lighten($black, 97);
-  font-size: 1.2em;
+  font-size: 1.2em !important;
   line-height: 1.2;
   text-align: left;
 
