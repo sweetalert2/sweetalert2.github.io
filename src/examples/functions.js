@@ -334,6 +334,7 @@ module.exports = {
     const { value: ipAddress } = await Swal.fire({
       title: 'Enter your IP address',
       input: 'text',
+      inputLabel: 'Your IP address',
       inputValue: inputValue,
       showCancelButton: true,
       inputValidator: (value) => {
@@ -351,6 +352,7 @@ module.exports = {
     const { value: email } = await Swal.fire({
       title: 'Input email address',
       input: 'email',
+      inputLabel: 'Your email address',
       inputPlaceholder: 'Enter your email address'
     })
 
@@ -361,6 +363,7 @@ module.exports = {
   async urlInput () {
     const { value: url } = await Swal.fire({
       input: 'url',
+      inputLabel: 'URL address',
       inputPlaceholder: 'Enter the URL'
     })
 
@@ -372,6 +375,7 @@ module.exports = {
     const { value: password } = await Swal.fire({
       title: 'Enter your password',
       input: 'password',
+      inputLabel: 'Password',
       inputPlaceholder: 'Enter your password',
       inputAttributes: {
         maxlength: 10,
@@ -387,6 +391,7 @@ module.exports = {
   async textareaInput () {
     const { value: text } = await Swal.fire({
       input: 'textarea',
+      inputLabel: 'Message',
       inputPlaceholder: 'Type your message here...',
       inputAttributes: {
         'aria-label': 'Type your message here'
@@ -505,6 +510,7 @@ module.exports = {
       title: 'How old are you?',
       icon: 'question',
       input: 'range',
+      inputLabel: 'Your age',
       inputAttributes: {
         min: 8,
         max: 120,
