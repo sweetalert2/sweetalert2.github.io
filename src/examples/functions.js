@@ -469,7 +469,7 @@ module.exports = {
     const { value: accept } = await Swal.fire({
       title: 'Terms and conditions',
       input: 'checkbox',
-      inputValue: 1,
+      inputValue: '1',
       inputPlaceholder:
         'I agree with the terms and conditions',
       confirmButtonText:
