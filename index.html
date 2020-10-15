@@ -915,6 +915,16 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           See <a href="#ajax-request">usage example</a>.
         </td>
       </tr>
+      <tr>
+        <td>
+          <b>returnInputValueOnDeny</b><br>
+          <i>false</i>
+        </td>
+        <td>
+          If you want to return the input value as <strong>result.value</strong> when denying the popup, set to <strong>true</strong>.
+          Otherwise, the denying will set <strong>result.value</strong> to <strong>false</strong>.
+        </td>
+      </tr>
       <tr id="image">
         <td>
           <b>imageUrl</b><br>
@@ -1150,7 +1160,10 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><strong>isDenied</strong></td>
-        <td>The "Deny" button was clicked, the <strong>value</strong> will be <strong>false</strong></td>
+        <td>
+          The "Deny" button was clicked, the <strong>value</strong> will be <strong>false</strong>.<br>
+          Alternatively, if there's an input in a popup, you can use <strong>returnInputValueOnDeny: true</strong> to return the input's value.
+        </td>
       </tr>
       <tr>
         <td><strong>isDismissed</strong></td>
