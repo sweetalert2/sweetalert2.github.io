@@ -686,8 +686,11 @@ table {
 
   div {
     flex: 1;
-    flex-basis: auto; // IE11
     margin: 1em 0;
+
+    @media all and (-ms-high-contrast: none) { // IE11
+      flex-basis: auto;
+    }
   }
 
   a {
