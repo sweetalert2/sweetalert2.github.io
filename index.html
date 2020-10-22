@@ -908,13 +908,26 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>preConfirm</b><br>
           <i>undefined</i>
         </td>
-        <td>Function to execute before confirm, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
+        <td>Function to execute before confirming, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
           <ul>
             <li><strong>false</strong> to prevent a popup from closing</li>
             <li>anything else to pass that value as the <strong>result.value</strong> of <strong>Swal.fire()</strong></li>
             <li><strong>undefined</strong> to keep the default <strong>result.value</strong></li>
           </ul>
           See <a href="#ajax-request">usage example</a>.
+        </td>
+      </tr>
+      <tr id="pre-deny">
+        <td>
+          <b>preDeny</b><br>
+          <i>undefined</i>
+        </td>
+        <td>Function to execute before denying, may be async (Promise-returning) or sync. <br>Returned (or resolved) value can be:
+          <ul>
+            <li><strong>false</strong> to prevent a popup from closing</li>
+            <li>anything else to pass that value as the <strong>result.value</strong> of <strong>Swal.fire()</strong></li>
+            <li><strong>undefined</strong> to keep the default <strong>result.value</strong></li>
+          </ul>
         </td>
       </tr>
       <tr>
