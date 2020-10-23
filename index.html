@@ -496,35 +496,38 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>title</b><br>
           <i>''</i>
         </td>
-        <td>The title of the modal, as HTML. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
+        <td>The title of the popup, as HTML.</td>
       </tr>
       <tr>
         <td>
           <b>titleText</b><br>
           <i>''</i>
         </td>
-        <td>The title of the modal, as text. Useful to avoid HTML injection.</td>
+        <td>The title of the popup, as text. Useful to avoid HTML injection.</td>
       </tr>
       <tr>
         <td>
           <b>html</b><br>
           <i>''</i>
         </td>
-        <td>A HTML description for the modal. It can either be added to the object under the key "html" or passed as the second parameter of the function.</td>
+        <td>
+          A HTML description for the popup.<br><br>
+          [Security] SweetAlert2 does NOT sanitize this parameter. It is the developer's responsibility to escape any user input when using the <strong>html</strong> option, so XSS attacks would be prevented.
+        </td>
       </tr>
       <tr>
         <td>
           <b>text</b><br>
           <i>''</i>
         </td>
-        <td>A description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
+        <td>A description for the popup. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
       </tr>
       <tr>
         <td>
           <b>icon</b><br>
           <i>undefined</i>
         </td>
-        <td>The icon of the modal. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "icon" or passed as the third parameter of the function.</td>
+        <td>The icon of the popup. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key "icon" or passed as the third parameter of the function.</td>
       </tr>
       <tr>
         <td>
@@ -568,7 +571,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>footer</b><br>
           <i>''</i>
         </td>
-        <td>The footer of the modal. Can be either plain text or HTML.</td>
+        <td>The footer of the popup. Can be either plain text or HTML.</td>
       </tr>
       <tr>
         <td>
@@ -589,7 +592,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>target</b><br>
           <i>'body'</i>
         </td>
-        <td>The container element for adding modal into.</td>
+        <td>The container element for adding popup into.</td>
       </tr>
       <tr id="input">
         <td>
@@ -609,42 +612,42 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>width</b><br>
           <i>undefined</i>
         </td>
-        <td>Modal window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>. The default width is <strong>32rem</strong>.</td>
+        <td>Popup window width, including paddings (<i>box-sizing: border-box</i>). Can be in <strong>px</strong> or <strong>%</strong>. The default width is <strong>32rem</strong>.</td>
       </tr>
       <tr>
         <td>
           <b>padding</b><br>
           <i>undefined</i>
         </td>
-        <td>Modal window padding. The default padding is <strong>1.25rem</strong>.</td>
+        <td>Popup window padding. The default padding is <strong>1.25rem</strong>.</td>
       </tr>
       <tr>
         <td>
           <b>background</b><br>
           <i>undefined</i>
         </td>
-        <td>Modal window background (CSS background property). The default background is <strong>'#fff'</strong>.</td>
+        <td>Popup window background (CSS background property). The default background is <strong>'#fff'</strong>.</td>
       </tr>
       <tr>
         <td>
           <b>position</b><br>
           <i>'center'</i>
         </td>
-        <td>Modal window position, can be <strong>'top'</strong>, <strong>'top-start'</strong>, <strong>'top-end'</strong>, <strong>'center'</strong>, <strong>'center-start'</strong>, <strong>'center-end'</strong>, <strong>'bottom'</strong>, <strong>'bottom-start'</strong>, or <strong>'bottom-end'</strong>.</td>
+        <td>Popup window position, can be <strong>'top'</strong>, <strong>'top-start'</strong>, <strong>'top-end'</strong>, <strong>'center'</strong>, <strong>'center-start'</strong>, <strong>'center-end'</strong>, <strong>'bottom'</strong>, <strong>'bottom-start'</strong>, or <strong>'bottom-end'</strong>.</td>
       </tr>
       <tr>
         <td>
           <b>grow</b><br>
           <i>false</i>
         </td>
-        <td>Paired with window position, sets the direction the modal should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
+        <td>Paired with window position, sets the direction the popup should grow in, can be set to <strong>'row'</strong>, <strong>'column'</strong>, <strong>'fullscreen'</strong>, or <strong>false</strong>.</td>
       </tr>
       <tr id="custom-class">
         <td>
           <b>customClass</b><br>
           <i>undefined</i>
         </td>
-        <td>A custom CSS class for the modal:
+        <td>A custom CSS class for the popup:
  <pre><code>customClass: {
   container: '...',
   popup: '...',
@@ -670,7 +673,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>timer</b><br>
           <i>undefined</i>
         </td>
-        <td>Auto close timer of the modal. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a>, <a href="#isTimerRunning">Swal.isTimerRunning()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
+        <td>Auto close timer of the popup. Set in ms (milliseconds). See also <a href="#getTimerLeft">Swal.getTimerLeft()</a>, <a href="#stopTimer">Swal.stopTimer()</a>, <a href="#resumeTimer">Swal.resumeTimer()</a>, <a href="#toggleTimer">Swal.toggleTimer()</a>, <a href="#isTimerRunning">Swal.isTimerRunning()</a> and <a href="#increaseTimer">Swal.increaseTimer()</a>.</td>
       </tr>
       <tr id="timer-progress-bar">
         <td>
@@ -697,7 +700,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     backdrop: ''
   }
 })</code></pre>
-          <br>If set to <strong>false</strong>, modal CSS animation will be disabled.
+          <br>If set to <strong>false</strong>, popup CSS animation will be disabled.
         </td>
       </tr>
       <tr>
@@ -712,21 +715,21 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>allowOutsideClick</b><br>
           <i>true</i>
         </td>
-        <td>If set to <strong>false</strong>, the user can't dismiss the modal by clicking outside it.<br>You can also pass a custom function returning a boolean value, e.g. if you want to disable outside clicks for the loading state of a modal.</td>
+        <td>If set to <strong>false</strong>, the user can't dismiss the popup by clicking outside it.<br>You can also pass a custom function returning a boolean value, e.g. if you want to disable outside clicks for the loading state of a popup.</td>
       </tr>
       <tr id="allow-escape-key">
         <td>
           <b>allowEscapeKey</b><br>
           <i>true</i>
         </td>
-        <td>If set to <strong>false</strong>, the user can't dismiss the modal by pressing the <kbd>Esc</kbd> key. You can also pass a custom function returning a boolean value, e.g. if you want to disable the <kbd>Esc</kbd> key for the loading state of a modal.</td>
+        <td>If set to <strong>false</strong>, the user can't dismiss the popup by pressing the <kbd>Esc</kbd> key. You can also pass a custom function returning a boolean value, e.g. if you want to disable the <kbd>Esc</kbd> key for the loading state of a popup.</td>
       </tr>
       <tr id="allow-enter-key">
         <td>
           <b>allowEnterKey</b><br>
           <i>true</i>
         </td>
-        <td>If set to <strong>false</strong>, the user can't confirm the modal by pressing the <kbd>Enter</kbd> or <kbd>Space</kbd> keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value.</td>
+        <td>If set to <strong>false</strong>, the user can't confirm the popup by pressing the <kbd>Enter</kbd> or <kbd>Space</kbd> keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value.</td>
       </tr>
       <tr id="stop-keydown-propagation">
         <td>
@@ -866,7 +869,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>showCloseButton</b><br>
           <i>false</i>
         </td>
-        <td>Set to <strong>true</strong> to show close button in top right corner of the modal.</td>
+        <td>Set to <strong>true</strong> to show close button in top right corner of the popup.</td>
       </tr>
       <tr>
         <td>
@@ -901,7 +904,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>scrollbarPadding</b><br>
           <i>true</i>
         </td>
-        <td>Set to <strong>false</strong> to disable body padding adjustment when the page scrollbar gets hidden while the modal is shown</td>
+        <td>Set to <strong>false</strong> to disable body padding adjustment when the page scrollbar gets hidden while the popup is shown</td>
       </tr>
       <tr id="pre-confirm">
         <td>
@@ -945,7 +948,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>imageUrl</b><br>
           <i>undefined</i>
         </td>
-        <td>Add a customized icon for the modal. Should contain a string with the path or URL to the image.</td>
+        <td>Add a customized icon for the popup. Should contain a string with the path or URL to the image.</td>
       </tr>
       <tr>
         <td>
@@ -1039,7 +1042,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>progressSteps</b><br>
           <i>[]</i>
         </td>
-        <td>Progress steps, useful for modal queues, see <a href="#chaining-modals">usage example</a>.</td>
+        <td>Progress steps, useful for queues, see <a href="#chaining-modals">usage example</a>.</td>
       </tr>
       <tr>
         <td>
@@ -1442,7 +1445,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.isVisible()</i></td>
-        <td>Determine if modal is shown.</td>
+        <td>Determine if popup is shown.</td>
       </tr>
       <tr>
         <td><i>Swal.mixin({ ...options })</i></td>
@@ -1454,7 +1457,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.close()</i></td>
-        <td>Close the currently open SweetAlert2 modal programmatically, the Promise returned by <strong>Swal.fire()</strong> will be resolved with an empty object <strong class="nowrap">{ }</strong></td>
+        <td>Close the currently open SweetAlert2 popup programmatically, the Promise returned by <strong>Swal.fire()</strong> will be resolved with an empty object <strong class="nowrap">{ }</strong></td>
       </tr>
       <tr>
         <td><i>Swal.getContainer()</i></td>
@@ -1462,11 +1465,11 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.getHeader()</i></td>
-        <td>Get the modal header. The header contains progress steps, the icon, the image, the title, and the close button.</td>
+        <td>Get the popup header. The header contains progress steps, the icon, the image, the title, and the close button.</td>
       </tr>
       <tr>
         <td><i>Swal.getTitle()</i></td>
-        <td>Get the modal title.</td>
+        <td>Get the popup title.</td>
       </tr>
       <tr>
         <td><i>Swal.getProgressSteps()</i></td>
@@ -1478,7 +1481,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.getContent()</i></td>
-        <td>Get the modal content.</td>
+        <td>Get the popup content.</td>
       </tr>
       <tr>
         <td><i>Swal.getImage()</i></td>
@@ -1490,7 +1493,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.getFooter()</i></td>
-        <td>Get the modal footer.</td>
+        <td>Get the popup footer.</td>
       </tr>
       <tr>
         <td><i>Swal.getFocusableElements()</i></td>
@@ -1526,7 +1529,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.isLoading()</i></td>
-        <td>Determine if modal is in the loading state. Related methods: <a href="#showLoading" class="nowrap">Swal.showLoading()</a> and <a href="#hideLoading" class="nowrap">Swal.hideLoading()</a></td>
+        <td>Determine if popup is in the loading state. Related methods: <a href="#showLoading" class="nowrap">Swal.showLoading()</a> and <a href="#hideLoading" class="nowrap">Swal.hideLoading()</a></td>
       </tr>
       <tr id="getTimerLeft">
         <td><i>Swal.getTimerLeft()</i></td>
@@ -1590,19 +1593,19 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td><i>Swal.queue([Array])</i></td>
-        <td>Provide array of SweetAlert2 parameters to show multiple modals, one modal after another. See <a href="#chaining-modals">usage example</a></td>
+        <td>Provide array of SweetAlert2 parameters to show multiple popups, one popup after another. See <a href="#chaining-modals">usage example</a></td>
       </tr>
       <tr>
         <td><i>Swal.getQueueStep()</i></td>
-        <td>Get the index of current modal in queue. When there's no active queue, <strong>null</strong> will be returned.</td>
+        <td>Get the index of current popup in queue. When there's no active queue, <strong>null</strong> will be returned.</td>
       </tr>
       <tr>
         <td><i>Swal.insertQueueStep()</i></td>
-        <td>Insert a modal to queue, you can specify modal positioning with second parameter. By default a modal will be added to the end of a queue.</td>
+        <td>Insert a popup to queue, you can specify popup positioning with second parameter. By default a popup will be added to the end of a queue.</td>
       </tr>
       <tr>
         <td><i>Swal.deleteQueueStep(index)</i></td>
-        <td>Delete a modal at <strong>index</strong> from queue.</td>
+        <td>Delete a popup at <strong>index</strong> from queue.</td>
       </tr>
       <tr>
         <td><i>Swal.isValidParameter(param)</i></td>
