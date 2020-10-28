@@ -3,6 +3,7 @@ module.exports = {
     '@sweetalert2/eslint-config'
   ],
   globals: {
-    Swal: true
+    Swal: true,
+    frenchkiss: true
   }
 }
