@@ -1,7 +1,7 @@
 window.showExample = () => {
 Swal.fire({
   text: 'Toast with custom target',
-  target: '#dummy-target',
+  target: '#custom-target',
   customClass: {
     container: 'position-absolute'
   },
