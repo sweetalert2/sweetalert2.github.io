@@ -15,10 +15,15 @@ export default () => {
     hideClass: {
       popup: 'animate__animated animate__fadeOutLeft animate__faster'
     },
-    onClose: () => {
+    willOpen: () => {
+      Swal.getContent().querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => Swal.close())
+      })
+    },
+    willClose: () => {
       nav = Swal.getContent().querySelector('nav')
     },
-    onAfterClose: () => {
+    didClose: () => {
       document.body.insertBefore(nav, document.querySelector('#show-sidebar'))
     },
     width: 320,

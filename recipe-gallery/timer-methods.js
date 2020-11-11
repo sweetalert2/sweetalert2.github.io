@@ -59,7 +59,7 @@ Swal.fire({
           .toFixed(0)
     }, 100)
   },
-  onClose: () => {
+  willClose: () => {
     clearInterval(timerInterval)
   }
 })

@@ -193,7 +193,7 @@ module.exports = {
           }
         }, 100)
       },
-      onClose: () => {
+      willClose: () => {
         clearInterval(timerInterval)
       }
     }).then((result) => {
