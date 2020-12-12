@@ -60,6 +60,7 @@
     <a href="/#usage"><span>Usage</span></a>
     <a href="/#frameworks-integrations"><span>Integrations</span></a>
     <a href="/#configuration" class="mobile-hidden"><span>Configuration</span></a>
+    <a href="/#declarative-templates" class="mobile-hidden"><span>Declarative templates</span></a>
     <a href="/#handling-buttons"><span>Handling Buttons</span></a>
     <a href="/#handling-dismissals"><span>Dismissals</span></a>
     <a href="/#icons"><span>Icons</span></a>
@@ -684,7 +685,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       </tr>
       <tr>
         <td>
-          <b>animation</b><br>
+          <b class="deprecated">animation</b><br>
           <i>true</i>
         </td>
         <td>
@@ -1161,6 +1162,94 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </button>
       </div>
       <pre data-example-id="mixin"></pre>
+    </li>
+  </ul>
+
+  <!-- Declarative templates -->
+  <div class="center-container mobile-hidden">
+    <h3 id="declarative-templates">Declarative templates and declarative triggering</h3>
+    <p class="center">There's also the declaratvie way to define a popup, via the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template" target="_blank" rel="noreferrer noopener" tabindex="-1"><strong>&lt;template&gt;</strong></a> tag. This is handy when you want to define popup on server side (SSR).</p>
+  </div>
+
+  <ul class="examples mobile-hidden">
+    <li id="declarative-template">
+      <div class="ui">
+        <p>Declarative template example</p>
+        <button class="show-example-btn" aria-label="Try me! Example: Declarative template" onclick="executeExample('declarativeTemplate')">
+          Try me!
+        </button>
+      </div>
+      <template id="my-template">
+        <swal-title>Save changes to "Untitled 1" before closing?</swal-title>
+        <swal-icon type="warning" color="red"></swal-icon>
+        <swal-button type="confirm">Save As</swal-button>
+        <swal-button type="cancel">Cancel</swal-button>
+        <swal-button type="deny">Close without Saving</swal-button>
+        <swal-param name="allowEscapeKey" value="false" />
+        <swal-param name="customClass" value='{ "popup": "my-popup" }'></swal-param>
+      </template>
+      <div style="display: inline-flex; flex-direction: column;">
+        <pre style="margin-top: 10px;"><code class="language-html">&lt;template id="my-template"&gt;
+  &lt;swal-title&gt;
+    Save changes to "Untitled 1" before closing?
+  &lt;/swal-title&gt;
+  &lt;swal-icon type="warning" color="red"&gt;&lt;/swal-icon&gt;
+  &lt;swal-button type="confirm"&gt;
+    Save As
+  &lt;/swal-button&gt;
+  &lt;swal-button type="cancel"&gt;
+    Cancel
+  &lt;/swal-button&gt;
+  &lt;swal-button type="deny"&gt;
+    Close without Saving
+  &lt;/swal-button&gt;
+  &lt;swal-param name="allowEscapeKey" value="false" /&gt;
+  &lt;swal-param
+    name="customClass"
+    value='{ "popup": "my-popup" }' /&gt;
+&lt;/template&gt;</code></pre>
+        <pre data-example-id="declarativeTemplate" style="margin-top: 10px;"></pre>
+      </div>
+    </li>
+  </ul>
+
+  <div class="center-container mobile-hidden">
+    <p class="center">Supported template elements:</p>
+    <pre><code class="language-html">&lt;swal-title&gt;...&lt;/swal-title&gt;
+&lt;swal-html&gt;...&lt;/swal-html&gt;
+&lt;swal-footer&gt;...&lt;/swal-footer&gt;
+&lt;swal-param name="..." value="..." /&gt;
+&lt;swal-button type="..." color="..." aria-label="..."&gt;...&lt;/swal-button&gt;
+&lt;swal-image src="..." width="..." height="..." alt="..." /&gt;
+&lt;swal-icon type="..." color="..."&gt;...&lt;/swal-icon&gt;
+&lt;swal-input type="..." label="..." placeholder="..." value="..." /&gt;
+&lt;swal-input-option value="..."&gt;...&lt;/swal-input-option&gt;</code></pre>
+  </div>
+
+  <div class="center-container mobile-hidden">
+    <p id="declarative-triggering" class="center">And you can even trigger SweetAlert2 popups declaratively! Use the <strong>bindClickHandler()</strong> method for that:</p>
+  </div>
+
+  <ul class="examples mobile-hidden">
+    <li>
+      <div class="ui">
+        <button class="show-example-btn" data-swal-template="#my-template">
+          Trigger modal
+        </button>
+        <button class="show-example-btn" data-swal-toast-template="#my-template">
+          Trigger toast
+        </button>
+      </div>
+      <div style="display: inline-flex; flex-direction: column;">
+        <pre style="margin-top: 10px;"><code class="language-html">&lt;button data-swal-template="#my-template"&gt;
+  Trigger modal
+&lt;/button&gt;
+
+&lt;button data-swal-toast-template="#my-template"&gt;
+  Trigger toast
+&lt;/button&gt;</code></pre>
+        <pre data-example-id="declarativeTriggering" data-codepen-html="<template id='my-template'>\n  <swal-title>Hey!</swal-title>\n</template>\n\n<button class='show-example-btn' data-swal-template='#my-template'>\n  Trigger modal\n</button>\n\n<button class='show-example-btn' data-swal-toast-template='#my-template'>\n  Trigger toast\n</button>" style="margin-top: 10px;"></pre>
+      </div>
     </li>
   </ul>
 
