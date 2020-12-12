@@ -58,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
   themes.forEach((theme) => {
     loadStyleSheet(`https://cdn.jsdelivr.net/npm/@sweetalert2/theme-${theme}/${theme}.css`, false)
   })
+
+  Swal.bindClickHandler()
+
+  Swal.mixin({
+    toast: true
+  }).bindClickHandler('data-swal-toast-template')
 })
 
 const stats = {}
@@ -311,7 +317,7 @@ Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
         css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}'
       }
       if (pre.getAttribute('data-codepen-html')) {
-        codepenValue.html = pre.getAttribute('data-codepen-html')
+        codepenValue.html = pre.getAttribute('data-codepen-html').replace(/\\n/g, '\n')
       }
       if (pre.getAttribute('data-codepen-css-external')) {
         codepenValue.css_external = pre.getAttribute('data-codepen-css-external') // eslint-disable-line

@@ -181,7 +181,7 @@ module.exports = {
       html: 'I will close in <b></b> milliseconds.',
       timer: 2000,
       timerProgressBar: true,
-      willOpen: () => {
+      didOpen: () => {
         Swal.showLoading()
         timerInterval = setInterval(() => {
           const content = Swal.getContent()
@@ -321,6 +321,22 @@ module.exports = {
       icon: 'success',
       title: 'Signed in successfully'
     })
+  },
+
+  // Declarative templates
+  declarativeTemplate () {
+    Swal.fire({
+      template: '#my-template'
+    })
+  },
+
+  // Declarative triggering
+  declarativeTriggering () {
+    Swal.bindClickHandler()
+
+    Swal.mixin({
+      toast: true,
+    }).bindClickHandler('data-swal-toast-template')
   },
 
   // Input Types section
