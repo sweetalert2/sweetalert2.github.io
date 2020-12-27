@@ -308,7 +308,7 @@ kbd {
     .showcase.sweet button {
       margin-top: .8125em; }
   .showcase button {
-    margin: 2em; }
+    margin: 2em auto; }
   .showcase .vs-icon {
     background-image: -webkit-image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
     background-image: image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
