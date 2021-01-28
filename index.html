@@ -845,7 +845,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
         <td>Set to <strong>true</strong> if you want to invert default buttons positions ("Confirm"-button on the right side).</td>
       </tr>
-      <tr>
+      <tr id="focusConfirm">
         <td>
           <b>focusConfirm</b><br>
           <i>true</i>
@@ -894,12 +894,19 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
         <td>Use this to change the HTML content of the loader.</td>
       </tr>
-      <tr>
+      <tr id="showLoaderOnConfirm">
         <td>
           <b>showLoaderOnConfirm</b><br>
           <i>false</i>
         </td>
-        <td>Set to <strong>true</strong> to disable buttons and show that something is loading. Use it in combination with the <a href="#preConfirm"><strong>preConfirm</strong></a> parameter.</td>
+        <td>Set to <strong>true</strong> to disable buttons and show the loader instead of the Confirm button. Use it in combination with the <a href="#preConfirm"><strong>preConfirm</strong></a> parameter.</td>
+      </tr>
+      <tr id="showLoaderOnDeny">
+        <td>
+          <b>showLoaderOnDeny</b><br>
+          <i>false</i>
+        </td>
+        <td>Set to <strong>true</strong> to disable buttons and show the loader instead of the Deny button. Use it in combination with the <a href="#preDeny"><strong>preDeny</strong></a> parameter.</td>
       </tr>
       <tr id="scrollbarPadding">
         <td>
