@@ -8,5 +8,6 @@ module.exports = {
   globals: {
     '$': 'readonly',
     'grecaptcha': 'readonly',
+    'flatpickr': 'readonly',
   }
 }
