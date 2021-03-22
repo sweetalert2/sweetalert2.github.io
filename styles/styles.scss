@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'); // Open Sans font
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
-@import url('https://fonts.googleapis.com/css?family=Montserrat'); // Montserrat (for logo)
 @import 'colors';
 
 @mixin retina-background($url, $type: png) {
@@ -18,6 +17,7 @@ body {
   padding-bottom: 2em;
   background-color: $athens !important;
   color: $emperor !important;
+  line-height: 1.5;
   text-align: center !important;
 
   @media all and (max-width: 768px) {
@@ -28,8 +28,9 @@ body {
 body,
 input,
 textarea,
-select {
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+select,
+button {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 nav {
@@ -165,7 +166,6 @@ header {
   .logo {
     margin: 0.5em;
     color: rgb(110, 74, 121);
-    font-family: 'Montserrat', sans-serif;
     font-size: 5em;
     font-weight: bolder;
     line-height: 1em;
@@ -174,7 +174,6 @@ header {
 
   h1,
   h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     font-weight: 300;
     line-height: 1.2em;
@@ -271,7 +270,7 @@ p {
 }
 
 .show-example-btn {
-  $btn-blue: #3085d6;
+  $btn-blue: #7367f0;
   $btn-gray: #d0d0d0;
 
   padding: .9em 2.1875em;
@@ -485,10 +484,6 @@ kbd {
     width: 18.75rem;
     margin: 0 auto;
     text-align: center;
-
-    button {
-      margin-top: .75em;
-    }
 
     p {
       margin-bottom: 0;

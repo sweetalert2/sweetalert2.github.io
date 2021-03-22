@@ -1,7 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300");
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 html,
 body {
   margin: 0;
@@ -11,6 +10,7 @@ body {
   padding-bottom: 2em;
   background-color: #f2f4f6 !important;
   color: #555 !important;
+  line-height: 1.5;
   text-align: center !important; }
   @media all and (max-width: 768px) {
     body {
@@ -19,8 +19,9 @@ body {
 body,
 input,
 textarea,
-select {
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+select,
+button {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 nav {
   display: flex;
@@ -118,14 +119,12 @@ header {
   header .logo {
     margin: 0.5em;
     color: #6e4a79;
-    font-family: 'Montserrat', sans-serif;
     font-size: 5em;
     font-weight: bolder;
     line-height: 1em;
     text-align: center; }
   header h1,
   header h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     font-weight: 300;
     line-height: 1.2em;
@@ -201,7 +200,7 @@ p {
   padding: .9em 2.1875em;
   border: 0;
   border-radius: .1875em;
-  background-color: #3085d6;
+  background-color: #7367f0;
   box-shadow: none;
   color: #fff;
   font-size: 1.125em;
@@ -209,14 +208,14 @@ p {
   white-space: nowrap;
   cursor: pointer; }
   .show-example-btn:hover {
-    background-color: #297dce; }
+    background-color: #6659ef; }
   .show-example-btn:focus {
     outline: none;
     box-shadow: 0 0 0 0.125em #f2f4f6, 0 0 0 0.25em #a7adb2; }
   .show-example-btn::-moz-focus-inner {
     border: 0; }
   .show-example-btn:active {
-    background-color: #236bb0; }
+    background-color: #4839eb; }
 
 .center-container {
   max-width: 725px;
@@ -353,8 +352,6 @@ kbd {
     width: 18.75rem;
     margin: 0 auto;
     text-align: center; }
-    .examples .ui button {
-      margin-top: .75em; }
     .examples .ui p {
       margin-bottom: 0;
       padding: 0 2em;
