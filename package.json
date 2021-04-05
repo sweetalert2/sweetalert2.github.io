@@ -9,7 +9,7 @@
     "lint": "stylelint styles/*.scss && eslint *.js src/app.js src/**/*.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.13",
+    "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "@sweetalert2/eslint-config": "^1.0.0",
     "@sweetalert2/stylelint-config": "^1.1.5",
@@ -27,7 +27,7 @@
     "stylelint": "^13.12.0",
     "sweetalert2": "^10.15.7",
     "typescript": "^4.2.3",
-    "webpack": "^5.28.0",
+    "webpack": "^5.30.0",
     "webpack-stream": "^6.0.0",
     "whatwg-fetch": "^3.6.2"
   },
