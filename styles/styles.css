@@ -211,7 +211,7 @@ p {
     background-color: #6659ef; }
   .show-example-btn:focus {
     outline: none;
-    box-shadow: 0 0 0 0.125em #f2f4f6, 0 0 0 0.25em #a7adb2; }
+    box-shadow: 0 0 0 3px rgba(115, 103, 240, 0.5); }
   .show-example-btn::-moz-focus-inner {
     border: 0; }
   .show-example-btn:active {
@@ -408,9 +408,21 @@ table {
         table td b {
           font-size: .8125em; } }
 
+#api tr td:first-child {
+  position: relative; }
+
 #api pre {
   max-width: 100%;
   margin: 0; }
+
+.hover-anchor {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 0; }
+
+tr:hover .hover-anchor {
+  display: block !important; }
 
 @media all and (max-width: 768px) {
   .popup-icons th:nth-child(2),
