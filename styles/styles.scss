@@ -290,7 +290,7 @@ p {
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 .125em $athens, 0 0 0 .25em $chateaugray;
+    box-shadow: 0 0 0 3px rgba(115, 103, 240, .5);
   }
 
   &::-moz-focus-inner {
@@ -568,9 +568,28 @@ table {
 }
 
 #api {
+  tr {
+    td:first-child {
+      position: relative;
+    }
+  }
+
   pre {
     max-width: 100%;
     margin: 0;
+  }
+}
+
+.hover-anchor {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+tr:hover {
+  .hover-anchor {
+    display: block !important;
   }
 }
 

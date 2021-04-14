@@ -38,7 +38,7 @@ hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
 hljs.initHighlightingOnLoad()
 
 document.addEventListener('DOMContentLoaded', () => {
-  var loadStyleSheet = (src, addToHead = true) => { // eslint-disable-line
+  const loadStyleSheet = (src, addToHead = true) => { // eslint-disable-line
     const link = document.createElement('link')
     link.rel = 'stylesheet'
     link.href = src
@@ -304,9 +304,12 @@ if ($('body > .bsa-cpc')) {
   observer.observe($('body > .bsa-cpc'), { childList: true })
 }
 
-// Do not show 'Add to homescreen' prompt
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault()
+Array.from(document.querySelectorAll('#api tr[id]')).forEach(tr => {
+  const anchor = document.createElement('a')
+  anchor.innerText = '#'
+  anchor.className = 'hover-anchor'
+  anchor.href = `/#${tr.id}`
+  tr.querySelector('td').appendChild(anchor)
 })
 
 Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
