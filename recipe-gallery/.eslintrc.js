@@ -9,5 +9,7 @@ module.exports = {
     '$': 'readonly',
     'grecaptcha': 'readonly',
     'flatpickr': 'readonly',
+    'Cropper': 'readonly',
+    'throttle': 'readonly',
   }
 }
