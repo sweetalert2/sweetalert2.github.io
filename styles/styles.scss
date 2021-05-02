@@ -160,7 +160,7 @@ nav {
 }
 
 header {
-  max-width: 40.625rem;
+  max-width: 650px;
   margin: auto;
 
   .logo {
@@ -220,10 +220,10 @@ h3 {
     content: '';
     position: absolute;
     left: 50%;
-    width: 43.75rem;
+    width: 700px;
     height: .25em;
     margin-top: -2em;
-    margin-left: -21.875rem;
+    margin-left: -350px;
     border-radius: .125em;
     background-color: $porcelain;
 
@@ -248,7 +248,7 @@ a {
 }
 
 p {
-  max-width: 51.625rem;
+  max-width: 826px;
   margin: 1.875em auto !important;
   font-size: 1.0625em;
   font-weight: 300;
@@ -481,7 +481,7 @@ kbd {
   }
 
   .ui {
-    width: 18.75rem;
+    width: 300px;
     margin: 0 auto;
     text-align: center;
 
@@ -511,7 +511,7 @@ kbd {
 }
 
 ol {
-  max-width: 45.3125rem;
+  max-width: 725px;
   margin: 4.375em auto;
   padding-left: 0;
   list-style-position: inside;
@@ -526,7 +526,7 @@ ol {
 }
 
 table {
-  width: 45.3125rem;
+  width: 725px;
   margin: .625em auto;
   border-collapse: collapse;
   text-align: left;
@@ -694,7 +694,8 @@ tr:hover {
   flex-wrap: wrap;
   justify-content: space-between; // IE11
   justify-content: space-evenly;
-  max-width: 43.75rem;
+  width: 700px;
+  max-width: 100%;
   margin: auto;
   font-size: 1.25em;
 
@@ -905,7 +906,7 @@ $bouncing-logo-min-height: 35%;
 #logo-track {
   display: inline-block;
   visibility: hidden;
-  max-width: 40rem;
+  max-width: 640px;
   animation-name: logo-animation-end-popup;
   animation-duration: .1s;
   animation-timing-function: linear;
@@ -917,7 +918,7 @@ $bouncing-logo-min-height: 35%;
     height: $bouncing-logo-width;
 
     @media all and (max-width: 768px) {
-      width: 17rem;
+      width: 272px;
     }
   }
 }
@@ -939,7 +940,7 @@ $bouncing-logo-min-height: 35%;
   width: 800px;
   max-width: 90%;
   margin: 1em auto 4em;
-  font-size: .8rem;
+  font-size: 13px;
 
   .prettyprint {
     font-family: 'Source Code Pro', monospace !important;
