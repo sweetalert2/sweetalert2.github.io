@@ -28,7 +28,6 @@ gulp.task('bundle', () => {
             {
               loader: 'babel-loader',
               options: {
-                presets: ['@babel/preset-env'],
                 plugins: ['babel-plugin-preval']
               }
             }

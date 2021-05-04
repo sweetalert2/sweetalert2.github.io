@@ -1,6 +1,4 @@
 /* global MutationObserver, fetch, _bsa */
-import 'babel-polyfill'
-import 'whatwg-fetch'
 import hljs from 'highlight.js/lib/core.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
@@ -35,7 +33,7 @@ function unindent (lines) {
 // Syntax highlighting with highlight.js
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
-hljs.initHighlightingOnLoad()
+hljs.highlightAll()
 
 document.addEventListener('DOMContentLoaded', () => {
   const loadStyleSheet = (src, addToHead = true) => { // eslint-disable-line
