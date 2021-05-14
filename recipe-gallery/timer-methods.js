@@ -19,7 +19,7 @@ Swal.fire({
     '</button>',
   timer: 10000,
   willOpen: () => {
-    const content = Swal.getContent()
+    const content = Swal.getHtmlContainer()
     const $ = content.querySelector.bind(content)
 
     const stop = $('#stop')
@@ -54,7 +54,7 @@ Swal.fire({
     })
 
     timerInterval = setInterval(() => {
-      Swal.getContent().querySelector('strong')
+      Swal.getHtmlContainer().querySelector('strong')
         .textContent = (Swal.getTimerLeft() / 1000)
           .toFixed(0)
     }, 100)

@@ -20,7 +20,7 @@ Swal.fire({
   },
   didOpen: () => {
     const inputRange = Swal.getInput()
-    const inputNumber = Swal.getContent().querySelector('#range-value')
+    const inputNumber = Swal.getHtmlContainer().querySelector('#range-value')
 
     // remove default output
     inputRange.nextElementSibling.style.display = 'none'

@@ -39,13 +39,16 @@
   <!-- https://goo.gl/qRE0vM -->
   <meta name="theme-color" content="#f2f4f6">
 
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" id="theme-styles">
 
   <link rel="stylesheet" href="/styles/styles.css">
 
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
+
   <!-- This is what you need -->
-  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
   <!--...............................-->
 </head>
 
@@ -86,8 +89,7 @@
     <div class="version-selector mobile-hidden">
       Version:
       <select id="version">
-        <option value="11.x" selected>v11.x</option>
-        <option value="10.x">v10.x</option>
+        <option value="10.x" selected>v10.x</option>
         <option value="9.x">v9.x</option>
         <option value="8.x">v8.x</option>
         <option value="7.x">v7.x</option>
@@ -378,6 +380,26 @@
       </div>
       <pre data-example-id="ajaxRequest"></pre>
     </li>
+
+    <li id="chaining-modals">
+      <div class="ui">
+        <p>Chaining modals (queue) example</p>
+        <button class="show-example-btn" aria-label="Try me! Example: Chaining modals (queue)" onclick="executeExample('chainingModals')">
+          Try me!
+        </button>
+      </div>
+      <pre data-example-id="chainingModals"></pre>
+    </li>
+
+    <li id="dynamic-queue">
+      <div class="ui">
+        <p>Dynamic queue example</p>
+        <button class="show-example-btn" aria-label="Try me! Example: Dynamic queue" onclick="executeExample('dynamicQueue')">
+          Try me!
+        </button>
+      </div>
+      <pre data-example-id="dynamicQueue"></pre>
+    </li>
   </ul>
 
 
@@ -386,7 +408,7 @@
     <h3 id="download">Download & install</h3>
     <pre class="center"><code><span class="unselectable">$ </span>npm install sweetalert2</code></pre>
     <p>Or grab from <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" class="nowrap">jsdelivr CDN <i class="fa fa-external-link"></i></a></p>
-    <pre class="center"><code>&lt;script src="//cdn.jsdelivr.net/npm/sweetalert2@11"&gt;&lt;/script&gt;</code></pre>
+    <pre class="center"><code>&lt;script src="//cdn.jsdelivr.net/npm/sweetalert2@10"&gt;&lt;/script&gt;</code></pre>
     <p class="jsdelivr-info mobile-hidden"></p>
   </div>
 
@@ -662,6 +684,27 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <i>false</i>
         </td>
         <td>If set to true, the timer will have a progress bar at the bottom of a popup. Mostly, this feature is useful with toasts.</td>
+      </tr>
+      <tr id="animation">
+        <td>
+          <b class="deprecated">animation</b><br>
+          <i>true</i>
+        </td>
+        <td>
+          <strong>Deprecated and will be removed in the next major release, use <a href="#showClass">showClass</a> and <a href="#hideClass">hideClass</a> instead:</strong>
+<pre><code>Swal.fire({
+  ...,
+  showClass: {
+    popup: 'swal2-noanimation',
+    backdrop: 'swal2-noanimation'
+  },
+  hideClass: {
+    popup: '',
+    backdrop: ''
+  }
+})</code></pre>
+          <br>If set to <strong>false</strong>, popup CSS animation will be disabled.
+        </td>
       </tr>
       <tr id="heightAuto">
         <td>
@@ -1017,14 +1060,14 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           <b>progressSteps</b><br>
           <i>[]</i>
         </td>
-        <td>Progress steps, useful for queues.</td>
+        <td>Progress steps, useful for queues, see <a href="#chaining-modals">usage example</a>.</td>
       </tr>
       <tr id="currentProgressStep">
         <td>
           <b>currentProgressStep</b><br>
           <i>undefined</i>
         </td>
-        <td>Current active progress step.</td>
+        <td>Current active progress step. The default is <strong>Swal.getQueueStep()</strong></td>
       </tr>
       <tr id="progressStepsDistance">
         <td>
@@ -1040,12 +1083,24 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
         <td>Popup lifecycle hook. Synchronously runs before the popup is shown on screen. Provides popup DOM element as the argument.</td>
       </tr>
+      <tr id="onBeforeOpen">
+        <td>
+          <b class="deprecated">onBeforeOpen</b>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>willOpen</strong> instead</td>
+      </tr>
       <tr id="didOpen">
         <td>
           <b>didOpen</b><br>
           <i>undefined</i>
         </td>
         <td>Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM element as the argument.</td>
+      </tr>
+      <tr id="onOpen">
+        <td>
+          <b class="deprecated">onOpen</b><br>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didOpen</strong> instead</td>
       </tr>
       <tr id="didRender">
         <td>
@@ -1059,6 +1114,12 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           If you want to perform changes in the popup's DOM, that survive <strong>Swal.update()</strong>, prefer <strong>didRender</strong> over <strong>willOpen</strong>.
         </td>
       </tr>
+      <tr id="onRender">
+        <td>
+          <b class="deprecated">onRender</b>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didRender</strong> instead</td>
+      </tr>
       <tr id="willClose">
         <td>
           <b>willClose</b><br>
@@ -1066,12 +1127,24 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         </td>
         <td>Popup lifecycle hook. Synchronously runs when the popup closes by user interaction (and not due to another popup being fired). Provides popup DOM element as the argument.</td>
       </tr>
+      <tr id="onClose">
+        <td>
+          <b class="deprecated">onClose</b>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>willClose</strong> instead</td>
+      </tr>
       <tr id="didClose">
         <td>
           <b>didClose</b><br>
           <i>undefined</i>
         </td>
         <td>Popup lifecycle hook. Asynchronously runs after the popup has been disposed by user interaction (and not due to another popup being fired).</td>
+      </tr>
+      <tr id="onAfterClose">
+        <td>
+          <b class="deprecated">onAfterClose</b><br>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didClose</strong> instead</td>
       </tr>
       <tr id="didDestroy">
         <td>
@@ -1082,6 +1155,12 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
           Popup lifecycle hook. Synchronously runs after popup has been destroyed either by user interaction or by another popup.<br>
           If you have cleanup operations that you need to reliably execute each time a popup is closed, prefer <strong>didDestroy</strong> over <strong>didClose</strong>.
         </td>
+      </tr>
+      <tr id="onDestroy">
+        <td>
+          <b class="deprecated">onDestroy</b><br>
+        </td>
+        <td><strong class="deprecated">Deprecated</strong>, use <strong>didDestroy</strong> instead</td>
       </tr>
     </table>
 
@@ -1491,6 +1570,10 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>Get the popup container which contains the backdrop.</td>
       </tr>
       <tr>
+        <td><i>Swal.getHeader()</i></td>
+        <td>Get the popup header. The header contains progress steps, the icon, the image, the title, and the close button.</td>
+      </tr>
+      <tr>
         <td><i>Swal.getTitle()</i></td>
         <td>Get the popup title.</td>
       </tr>
@@ -1505,6 +1588,10 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
       <tr>
         <td><i>Swal.getIcon()</i></td>
         <td>Get the <a href="#icons">icon</a>.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.getContent()</i></td>
+        <td>Get the popup content.</td>
       </tr>
       <tr>
         <td><i>Swal.getHtmlContainer()</i></td>
@@ -1622,6 +1709,22 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <td>Get the validation message DOM node.</td>
       </tr>
       <tr>
+        <td><i>Swal.queue([Array])</i></td>
+        <td>Provide array of SweetAlert2 parameters to show multiple popups, one popup after another. See <a href="#chaining-modals">usage example</a></td>
+      </tr>
+      <tr>
+        <td><i>Swal.getQueueStep()</i></td>
+        <td>Get the index of current popup in queue. When there's no active queue, <strong>null</strong> will be returned.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.insertQueueStep()</i></td>
+        <td>Insert a popup to queue, you can specify popup positioning with second parameter. By default a popup will be added to the end of a queue.</td>
+      </tr>
+      <tr>
+        <td><i>Swal.deleteQueueStep(index)</i></td>
+        <td>Delete a popup at <strong>index</strong> from queue.</td>
+      </tr>
+      <tr>
         <td><i>Swal.isValidParameter(param)</i></td>
         <td>Determine if parameter name is valid.</td>
       </tr>
@@ -1679,7 +1782,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
 
     <p class="code-label">Or from jsdelivr CDN, e.g.:</p>
     <pre><code>&lt;link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet"&gt;
-&lt;script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"&gt;&lt;/script&gt;</code></pre>
 
     <h4>Themes Usage</h4>
     <p class="code-label">With CSS:</p>
