@@ -15,13 +15,13 @@ Swal.fire({
       viewMode: 1,
       crop: throttle(function () {
         const croppedCanvas = cropper.getCroppedCanvas()
-        const preview = Swal.getContent().querySelector('#preview')
+        const preview = Swal.getHtmlContainer().querySelector('#preview')
         preview.src = croppedCanvas.toDataURL()
       }, 25)
     })
   },
   preConfirm: () => {
-    return Swal.getContent().querySelector('#preview').src
+    return Swal.getHtmlContainer().querySelector('#preview').src
   }
 })
 }

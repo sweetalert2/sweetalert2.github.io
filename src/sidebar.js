@@ -16,12 +16,12 @@ export default () => {
       popup: 'animate__animated animate__fadeOutLeft animate__faster'
     },
     willOpen: () => {
-      Swal.getContent().querySelectorAll('a').forEach((a) => {
+      Swal.getHtmlContainer().querySelectorAll('a').forEach((a) => {
         a.addEventListener('click', () => Swal.close())
       })
     },
     willClose: () => {
-      nav = Swal.getContent().querySelector('nav')
+      nav = Swal.getHtmlContainer().querySelector('nav')
     },
     didClose: () => {
       document.body.insertBefore(nav, document.querySelector('#show-sidebar'))

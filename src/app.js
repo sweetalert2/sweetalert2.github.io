@@ -372,6 +372,9 @@ if ($('#version')) {
       case '9.x':
         window.location.assign('v9.html')
         break
+      case '10.x':
+        window.location.assign('v10.html')
+        break
       default:
         window.location.assign('/')
         break
