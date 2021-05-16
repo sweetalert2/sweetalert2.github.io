@@ -5,6 +5,7 @@
 @mixin retina-background($url, $type: png) {
   background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 html,

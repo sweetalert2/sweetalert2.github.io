@@ -387,6 +387,7 @@ kbd {
   background-image: -webkit-image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
   background-image: image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
   background-repeat: no-repeat;
+  background-size: 100%;
   position: absolute;
   z-index: 2;
   top: 3.75em;
