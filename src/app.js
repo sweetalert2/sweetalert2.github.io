@@ -225,9 +225,10 @@ $('.paypal') && $('.paypal').addEventListener('click', (e) => {
 
 $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
   const wallets = {
-    bitcoin: '1KArrRga9czd88kMLkWS5mKkkWXKabQNbs',
+    bitcoin: '1K8GdfmiDXeKd1CWFRgmTf3V8kQXD92NJ7',
     ethereum: '0x192096161eB2273f12b1cB4E31aBB09Bfc03a7F3',
-    bitcoincash: 'qq7wkn50wnngtssc7ux37c8scyhwjl3ecv5e5wjg6e'
+    bitcoincash: 'qz28x66hrljtdz3052p8ya3cmkwwva5avy0msz2ej3',
+    stellar: 'GDUM4VJZYDNRHBTKUQBOPC374AP6MMMVOJDMSHIPEJPEMBCY4ZHH6NDY',
   }
   const showCryptocurrency = () => {
     const cryptocurrency = Swal.getInput().value
@@ -246,8 +247,9 @@ $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) =
     input: 'select',
     inputOptions: {
       bitcoin: 'Bitcoin',
-      ethereum: 'Ether',
-      bitcoincash: 'Bitcoin Cash'
+      ethereum: 'Ethereum',
+      bitcoincash: 'Bitcoin Cash',
+      stellar: 'Stellar',
     },
     inputValue: 'bitcoin',
     didOpen: () => {
