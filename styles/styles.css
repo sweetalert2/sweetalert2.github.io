@@ -702,6 +702,11 @@ tr:hover .hover-anchor {
   color: #5ca930;
 }
 
+.stellar {
+  display: block;
+  color: #192786;
+}
+
 .stats {
   margin-top: 0.4375em;
   opacity: 0;
