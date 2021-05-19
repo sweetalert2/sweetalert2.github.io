@@ -17,7 +17,7 @@ if (!theme) {
   process.exit(1)
 }
 
-;(async () => {
+(async () => {
   const browser = await puppeteer.launch({
     headless: false,
     slowMo: 50
@@ -30,11 +30,11 @@ if (!theme) {
     height: 800,
   })
 
-  await page.waitFor(1000)
+  await page.waitForTimeout(1000)
 
-  await page.select('#theme', `https://cdn.jsdelivr.net/npm/@sweetalert2/theme-${theme}/${theme}.css`)
+  await page.select('#theme', `//cdn.jsdelivr.net/npm/@sweetalert2/theme-${theme}/${theme}.css`)
 
-  await page.waitFor(1000)
+  await page.waitForTimeout(1000)
 
   const executionContext = await page.mainFrame().executionContext()
   const { width, height } = await executionContext.evaluate(
@@ -47,6 +47,7 @@ if (!theme) {
         footer: '',
       })
       window.Swal.getContainer().style.padding = 0
+      window.Swal.getContainer().style.gridTemplateRows = 'auto auto auto 0'
       const popup = window.Swal.getPopup()
       const conputedStyle = window.getComputedStyle(popup)
 
@@ -58,12 +59,14 @@ if (!theme) {
     theme
   )
 
-  await page.waitFor(1000)
+  await page.waitForTimeout(1000)
 
   await page.setViewport({
     width,
     height,
   })
+
+  await page.waitForTimeout(1000)
 
   await page.screenshot({
     path: `./images/themes-${theme}.png`

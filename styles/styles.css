@@ -615,7 +615,6 @@ tr:hover .hover-anchor {
 
 .frameworks-integrations,
 .donation-options,
-.collaborators,
 .sponsors {
   display: flex;
   flex-wrap: wrap;
@@ -628,7 +627,6 @@ tr:hover .hover-anchor {
 }
 .frameworks-integrations div,
 .donation-options div,
-.collaborators div,
 .sponsors div {
   flex: 1;
   margin: 1em 0;
@@ -636,14 +634,12 @@ tr:hover .hover-anchor {
 @media all and (-ms-high-contrast: none) {
   .frameworks-integrations div,
 .donation-options div,
-.collaborators div,
 .sponsors div {
     flex-basis: auto;
   }
 }
 .frameworks-integrations a,
 .donation-options a,
-.collaborators a,
 .sponsors a {
   display: inline-block;
   min-width: 6.875em;
@@ -651,7 +647,6 @@ tr:hover .hover-anchor {
 }
 .frameworks-integrations img,
 .donation-options img,
-.collaborators img,
 .sponsors img {
   width: 5em;
   height: 5em;
