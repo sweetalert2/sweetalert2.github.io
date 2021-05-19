@@ -618,7 +618,6 @@ tr:hover .hover-anchor {
 .sponsors {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   justify-content: space-evenly;
   width: 700px;
   max-width: 100%;
@@ -630,13 +629,6 @@ tr:hover .hover-anchor {
 .sponsors div {
   flex: 1;
   margin: 1em 0;
-}
-@media all and (-ms-high-contrast: none) {
-  .frameworks-integrations div,
-.donation-options div,
-.sponsors div {
-    flex-basis: auto;
-  }
 }
 .frameworks-integrations a,
 .donation-options a,

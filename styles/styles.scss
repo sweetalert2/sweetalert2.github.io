@@ -692,7 +692,6 @@ tr:hover {
 .sponsors {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; // IE11
   justify-content: space-evenly;
   width: 700px;
   max-width: 100%;
@@ -702,10 +701,6 @@ tr:hover {
   div {
     flex: 1;
     margin: 1em 0;
-
-    @media all and (-ms-high-contrast: none) { // IE11
-      flex-basis: auto;
-    }
   }
 
   a {
