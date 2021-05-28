@@ -233,14 +233,19 @@ p {
 p.center {
   text-align: center;
 }
-p strong {
-  font-weight: 600;
-}
 @media all and (max-width: 768px) {
   p {
     padding: 0 0.625em;
     text-align: center;
   }
+}
+
+strong {
+  padding: 2px 5px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+  color: #b9316f;
+  font-weight: 600;
 }
 
 .show-example-btn {
@@ -533,6 +538,10 @@ tr:hover .hover-anchor {
   display: block !important;
 }
 
+.popup-icons strong,
+.input-types strong {
+  color: #555;
+}
 @media all and (max-width: 768px) {
   .popup-icons th:nth-child(2),
 .popup-icons td:nth-child(2),
