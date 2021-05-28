@@ -17,7 +17,7 @@ body {
 body {
   padding-bottom: 2em;
   background-color: $athens !important;
-  color: $emperor !important;
+  color: #555 !important;
   line-height: 1.5;
   text-align: center !important;
 
@@ -260,14 +260,18 @@ p {
     text-align: center;
   }
 
-  strong {
-    font-weight: 600;
-  }
-
   @media all and (max-width: 768px) {
     padding: 0 .625em;
     text-align: center;
   }
+}
+
+strong {
+  padding: 2px 5px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+  color: #b9316f;
+  font-weight: 600;
 }
 
 .show-example-btn {
@@ -596,6 +600,10 @@ tr:hover {
 
 .popup-icons,
 .input-types {
+  strong {
+    color: #555;
+  }
+
   @media all and (max-width: 768px) {
     th,
     td {
