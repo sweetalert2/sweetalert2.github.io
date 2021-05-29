@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
 @import 'colors';
@@ -825,7 +827,7 @@ $bouncing-logo-min-height: 35%;
   }
 
   60% {
-    transform: translate3d(0, $bouncing-logo-max-height / 2, 0);
+    transform: translate3d(0, math.div($bouncing-logo-max-height, 2), 0); /* stylelint-disable-line */
     animation-timing-function: ease-in;
   }
 
@@ -873,7 +875,7 @@ $bouncing-logo-min-height: 35%;
 
 #logo-spinner {
   animation-name: logo-spin;
-  animation-duration: $bouncing-logo-animation-duration / 2;
+  animation-duration: math.div($bouncing-logo-animation-duration, 2); /* stylelint-disable-line */
   animation-timing-function: linear;
   animation-delay: $bouncing-logo-animation-delay;
   animation-iteration-count: 2;
