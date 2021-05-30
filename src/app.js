@@ -13,7 +13,14 @@ const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
 // Render `<pre data-example-id="...">` elements
-for (const preElement of document.querySelectorAll('pre[data-example-id]')) {
+const escapeHtml = (text) => {
+  const map = {
+    '<': '&lt;',
+    '>': '&gt;',
+  }
+  return text.replace(/[<>]/g, function (m) { return map[m] })
+}
+for (const preElement of $$('pre[data-example-id]')) {
   preElement.className = 'code-sample'
   const example = examples[preElement.dataset.exampleId]
   if (example.fnString.slice(0, 5) === 'async') {
@@ -22,7 +29,8 @@ for (const preElement of document.querySelectorAll('pre[data-example-id]')) {
   }
   const codeElement = document.createElement('code')
   codeElement.className = 'lang-javascript'
-  codeElement.innerText = unindent(example.fnString.split('\n').slice(1, -1)).join('\n')
+  codeElement.innerHTML = unindent(example.fnString.split('\n').slice(1, -1)).join('\n')
+  codeElement.innerHTML = escapeHtml(codeElement.innerHTML)
   preElement.appendChild(codeElement)
 }
 function unindent (lines) {
@@ -31,6 +39,7 @@ function unindent (lines) {
 }
 
 // Syntax highlighting with highlight.js
+hljs.configure({ cssSelector: 'pre:not([data-highlighjs-ignore]) code' })
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
 hljs.highlightAll()
@@ -262,7 +271,7 @@ $('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) =
   e.preventDefault()
 })
 
-Array.from(document.querySelectorAll('.popup-icons button')).forEach(button => {
+Array.from($$('.popup-icons button')).forEach(button => {
   button.onclick = (e) => {
     const icon = e.target.getAttribute('data-icon')
     Swal.fire(`Icon ${icon}`, '', icon)
@@ -304,7 +313,7 @@ if ($('body > .bsa-cpc')) {
   observer.observe($('body > .bsa-cpc'), { childList: true })
 }
 
-Array.from(document.querySelectorAll('#api tr[id]')).forEach(tr => {
+Array.from($$('#api tr[id]')).forEach(tr => {
   const anchor = document.createElement('a')
   anchor.innerText = '#'
   anchor.className = 'hover-anchor'
@@ -312,7 +321,7 @@ Array.from(document.querySelectorAll('#api tr[id]')).forEach(tr => {
   tr.querySelector('td').appendChild(anchor)
 })
 
-Array.from(document.querySelectorAll('pre.code-sample')).forEach(pre => {
+Array.from($$('pre.code-sample')).forEach(pre => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
