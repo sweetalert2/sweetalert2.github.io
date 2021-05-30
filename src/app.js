@@ -374,12 +374,6 @@ if ($('#theme')) {
 if ($('#version')) {
   $('#version').addEventListener('change', () => {
     switch ($('#version').value) {
-      case '7.x':
-        window.location.assign('v7.html')
-        break
-      case '8.x':
-        window.location.assign('v8.html')
-        break
       case '9.x':
         window.location.assign('v9.html')
         break
