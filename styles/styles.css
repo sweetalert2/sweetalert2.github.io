@@ -356,7 +356,7 @@ kbd {
   vertical-align: top;
 }
 .showcase.normal button {
-  margin: 3.35em;
+  margin: 40px;
 }
 @media all and (max-width: 768px) {
   .showcase {
@@ -380,10 +380,10 @@ kbd {
   line-height: 1.375em;
 }
 .showcase.sweet {
-  padding-top: 0.875em;
+  padding-top: 14px;
 }
 .showcase.sweet button {
-  margin-top: 0.8125em;
+  margin: 8px auto 25px;
 }
 .showcase button {
   margin: 2em auto;
@@ -747,6 +747,7 @@ tr:hover .hover-anchor {
   }
   60% {
     transform: translate3d(0, -30%, 0);
+    /* stylelint-disable-line */
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
@@ -780,6 +781,7 @@ tr:hover .hover-anchor {
   }
   60% {
     transform: translate3d(0, -30%, 0);
+    /* stylelint-disable-line */
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
@@ -849,6 +851,7 @@ tr:hover .hover-anchor {
           animation-name: logo-spin;
   -webkit-animation-duration: 1.25s;
           animation-duration: 1.25s;
+  /* stylelint-disable-line */
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-delay: 2s;
