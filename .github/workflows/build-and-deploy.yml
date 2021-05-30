@@ -1,4 +1,4 @@
-name: build
+name: Build and Deploy
 
 on:
   push:
@@ -27,7 +27,13 @@ jobs:
     - name: Setup ruby
       uses: actions/setup-ruby@v1
 
-    - name: Run awesome_bot
+    - name: Check for broken links
       run: |
         gem install awesome_bot
         awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define"
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.3
+      with:
+        branch: gh-pages
+        folder: .
