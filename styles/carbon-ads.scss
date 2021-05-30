@@ -1,0 +1,67 @@
+@import 'colors';
+
+.carbonads-wrapper {
+  opacity: 1;
+
+  #carbonads {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1em;
+    overflow: hidden;
+    border: solid 1px $regentgray;
+    border-radius: 2px;
+    box-shadow: inset 0 1px $white;
+    font-size: 12px;
+    line-height: 1.35;
+    text-shadow: 0 1px $white;
+
+    a {
+      transition: color .15s ease-in-out;
+      color: $regentgray;
+
+      &:hover {
+        color: $salmon;
+      }
+    }
+
+    span {
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carbon-img {
+      margin-right: 1em;
+      float: left;
+
+      img {
+        display: block;
+      }
+    }
+
+    .carbon-text {
+      display: block;
+      max-width: calc(100% - 130px - 1em);
+      margin-bottom: 20px;
+      float: left;
+      text-align: left;
+    }
+
+    .carbon-poweredby {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+
+  & + .show-example-btn {
+    margin-top: 2em;
+  }
+}
