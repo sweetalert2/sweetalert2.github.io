@@ -183,14 +183,9 @@ module.exports = {
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
         timerInterval = setInterval(() => {
-          const content = Swal.getHtmlContainer()
-          if (content) {
-            const b = content.querySelector('b')
-            if (b) {
-              b.textContent = Swal.getTimerLeft()
-            }
-          }
+          b.textContent = Swal.getTimerLeft()
         }, 100)
       },
       willClose: () => {
