@@ -1,5 +1,5 @@
 /* global MutationObserver, fetch, _bsa */
-import hljs from 'highlight.js/lib/core.js'
+import hljs from 'highlight.js/lib/core'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
 import showSidebar from './sidebar'
