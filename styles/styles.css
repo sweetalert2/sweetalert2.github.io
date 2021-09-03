@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 html,
 body {
+  scroll-behavior: smooth;
   margin: 0;
   font-size: 1rem;
 }
