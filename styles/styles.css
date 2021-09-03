@@ -128,8 +128,11 @@ nav .version-selector {
 .sidebar {
   padding: 0;
 }
-.sidebar .swal2-content {
-  padding: 0;
+.sidebar::after {
+  height: 0;
+}
+.sidebar .swal2-html-container {
+  margin: 2em 2.5em 1em 1em;
 }
 .sidebar .swal2-footer {
   align-items: center;
@@ -334,10 +337,6 @@ pre.code-sample::after {
   pre.code-sample::after {
     display: none;
   }
-}
-
-.swal2-content code {
-  text-align: center;
 }
 
 kbd {

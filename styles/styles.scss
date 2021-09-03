@@ -144,8 +144,12 @@ nav {
 .sidebar {
   padding: 0;
 
-  .swal2-content {
-    padding: 0;
+  &::after {
+    height: 0;
+  }
+
+  .swal2-html-container {
+    margin: 2em 2.5em 1em 1em;
   }
 
   .swal2-footer {
@@ -376,12 +380,6 @@ pre {
         display: none;
       }
     }
-  }
-}
-
-.swal2-content {
-  code {
-    text-align: center;
   }
 }
 
