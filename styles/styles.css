@@ -947,12 +947,15 @@ tr:hover .hover-anchor {
   margin: 2em 0;
 }
 
-.gist-it-gist {
+.emgithub-container {
   width: 800px;
   max-width: 90%;
-  margin: 1em auto 4em;
-  font-size: 13px;
+  margin: 2em auto 4em !important;
 }
-.gist-it-gist .prettyprint {
+.emgithub-container code {
   font-family: "Source Code Pro", monospace !important;
+  font-size: 14px;
+}
+.emgithub-container code table {
+  display: block;
 }
