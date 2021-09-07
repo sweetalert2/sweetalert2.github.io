@@ -2,7 +2,7 @@ window.showExample = () => {
 Swal.fire({
   title: 'SweetAlert2 + Recaptcha',
   html: '<div id="recaptcha"></div>',
-  onOpen: function () {
+  didOpen: () => {
     grecaptcha.render('recaptcha', {
       'sitekey': '6LdvplUUAAAAAK_Y5M_wR7s-UWuiSEdVrv8K-tCq'
     })
