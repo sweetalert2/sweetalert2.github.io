@@ -64,7 +64,7 @@ module.exports = {
       title: 'Do you want to save the changes?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: `Save`,
+      confirmButtonText: 'Save',
       denyButtonText: `Don't save`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */

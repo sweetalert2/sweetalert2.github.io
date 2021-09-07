@@ -11,5 +11,6 @@ module.exports = {
     'flatpickr': 'readonly',
     'Cropper': 'readonly',
     'throttle': 'readonly',
+    'sweetalert2ReactContent': 'readonly',
   }
 }

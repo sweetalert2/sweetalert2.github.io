@@ -1,5 +1,5 @@
 window.showExample = async () => {
-const MySwal = window.sweetalert2ReactContent(Swal)
+const MySwal = sweetalert2ReactContent(Swal)
 
 await MySwal.fire({
   title: <strong>Good job!</strong>,
