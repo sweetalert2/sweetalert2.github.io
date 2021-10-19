@@ -4,6 +4,7 @@
 .carbonads-wrapper #carbonads {
   display: block;
   max-width: 300px;
+  max-height: 100px;
   margin: 0 auto;
   padding: 1em;
   overflow: hidden;
@@ -36,6 +37,7 @@
 .carbonads-wrapper #carbonads .carbon-text {
   display: block;
   max-width: calc(100% - 130px - 1em);
+  max-height: 85px;
   margin-bottom: 20px;
   float: left;
   text-align: left;
