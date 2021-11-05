@@ -7,7 +7,7 @@ body {
 }
 
 .bsa-cpc {
-  #_default_ {
+  #_default_ { /* stylelint-disable-line selector-id-pattern */
     position: relative;
     padding: 0 1em;
     font-size: 14px;
@@ -19,7 +19,7 @@ body {
     display: none;
   }
 
-  ._default_ {
+  ._default_ { /* stylelint-disable-line selector-class-pattern */
     display: inline;
     overflow: hidden;
 
