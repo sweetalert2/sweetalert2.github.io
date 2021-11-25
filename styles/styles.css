@@ -103,10 +103,6 @@ nav .version-selector {
 }
 .social-buttons > * {
   margin: 0 0.3em;
-  opacity: 0.8;
-}
-.social-buttons > *:hover {
-  opacity: 1;
 }
 
 #show-sidebar {
