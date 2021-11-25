@@ -58,8 +58,9 @@ nav {
   a {
     display: flex;
     padding: .4em 1em;
+    transition: border-left .5s;
     border-bottom: 1px solid $porcelain;
-    opacity: .7;
+    border-left: 4px solid transparent;
     text-decoration: none !important;
 
     &::before {
@@ -68,7 +69,7 @@ nav {
     }
 
     &:hover {
-      opacity: 1;
+      border-left: 4px solid $curiousblue;
     }
 
     &.recipe-gallery {
@@ -278,7 +279,7 @@ strong {
 }
 
 .show-example-btn {
-  $btn-blue: #7367f0;
+  $btn-blue: #7066e0;
   $btn-gray: #d0d0d0;
 
   padding: .9em 2.1875em;

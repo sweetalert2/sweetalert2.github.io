@@ -52,8 +52,9 @@ nav {
 nav a {
   display: flex;
   padding: 0.4em 1em;
+  transition: border-left 0.5s;
   border-bottom: 1px solid #e2e5e8;
-  opacity: 0.7;
+  border-left: 4px solid transparent;
   text-decoration: none !important;
 }
 nav a::before {
@@ -61,7 +62,7 @@ nav a::before {
   margin-right: 1em;
 }
 nav a:hover {
-  opacity: 1;
+  border-left: 4px solid #3085d6;
 }
 nav a.recipe-gallery {
   color: magenta;
@@ -253,7 +254,7 @@ strong {
   padding: 0.9em 2.1875em;
   border: 0;
   border-radius: 0.1875em;
-  background-color: #7367f0;
+  background-color: #7066e0;
   box-shadow: none;
   color: #fff;
   font-size: 1.125em;
@@ -262,7 +263,7 @@ strong {
   cursor: pointer;
 }
 .show-example-btn:hover {
-  background-color: #6659ef;
+  background-color: #6459dd;
 }
 .show-example-btn:focus {
   outline: none;
@@ -272,7 +273,7 @@ strong {
   border: 0;
 }
 .show-example-btn:active {
-  background-color: #4839eb;
+  background-color: #483cd7;
 }
 
 .center-container {
