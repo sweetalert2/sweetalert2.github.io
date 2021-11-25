@@ -393,7 +393,7 @@ kbd {
 
   &.normal {
     button {
-      margin: 40px;
+      margin: 38px;
     }
   }
 
@@ -410,10 +410,10 @@ kbd {
     width: 90%;
   }
 
-  h4 {
+  .normal-alert {
     margin: 0 auto;
-    color: #736f6f;
-    font-size: 1em;
+    color: #896865;
+    font-size: 1.2em;
     font-weight: 800;
     line-height: 1.375em;
   }
