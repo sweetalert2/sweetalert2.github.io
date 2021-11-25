@@ -62,10 +62,13 @@ nav a::before {
   margin-right: 1em;
 }
 nav a:hover {
-  border-left: 4px solid #3085d6;
+  border-left: 4px solid #1f74b6;
 }
 nav a.recipe-gallery {
-  color: magenta;
+  color: #c712bb;
+}
+nav a.recipe-gallery:hover {
+  border-left: 4px solid #c712bb;
 }
 nav a span {
   flex-grow: 1;
@@ -166,10 +169,6 @@ header h2 {
   text-align: center;
   text-transform: uppercase;
 }
-header h1 a,
-header h2 a {
-  color: #3085d6;
-}
 
 .popup-icons td {
   width: 33%;
@@ -215,7 +214,7 @@ h3::before {
 }
 
 a {
-  color: #2196f3;
+  color: #1f74b6;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -372,7 +371,7 @@ kbd {
 }
 .showcase h4 {
   margin: 0 auto;
-  color: #b3b3b3;
+  color: #736f6f;
   font-size: 1em;
   font-weight: 800;
   line-height: 1.375em;
