@@ -69,11 +69,15 @@ nav {
     }
 
     &:hover {
-      border-left: 4px solid $curiousblue;
+      border-left: 4px solid #1f74b6;
     }
 
     &.recipe-gallery {
-      color: magenta;
+      color: #c712bb;
+
+      &:hover {
+        border-left: 4px solid #c712bb;
+      }
     }
 
     span {
@@ -184,10 +188,6 @@ header {
     line-height: 1.2em;
     text-align: center;
     text-transform: uppercase;
-
-    a {
-      color: $curiousblue;
-    }
   }
 }
 
@@ -242,7 +242,7 @@ h3 {
 }
 
 a {
-  color: $cornflowerblue;
+  color: #1f74b6;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -417,7 +417,7 @@ kbd {
 
   h4 {
     margin: 0 auto;
-    color: lighten($black, 70);
+    color: #736f6f;
     font-size: 1em;
     font-weight: 800;
     line-height: 1.375em;
