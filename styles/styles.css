@@ -928,6 +928,7 @@ tr:hover .hover-anchor {
   width: 800px;
   max-width: 90%;
   margin: 2em auto 4em !important;
+  text-align: left;
 }
 .emgithub-container code {
   font-family: "Source Code Pro", monospace !important;
