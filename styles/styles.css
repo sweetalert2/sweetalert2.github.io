@@ -255,7 +255,6 @@ strong {
   font-size: 1.125em;
   font-weight: 500;
   white-space: nowrap;
-  cursor: pointer;
 }
 .show-example-btn:hover {
   background-color: #6459dd;
