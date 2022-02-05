@@ -19,7 +19,7 @@ body {
 
 body {
   padding-bottom: 2em;
-  background-color: $athens !important;
+  background-color: $body-background !important;
   color: #555 !important;
   line-height: 1.5;
   text-align: center !important;
@@ -34,7 +34,8 @@ input,
 textarea,
 select,
 button {
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 nav {
@@ -46,7 +47,7 @@ nav {
   align-items: stretch;
   max-height: calc(100% - 4em);
   padding: 2em 0 2em 1em;
-  transition: left .5s ease-in-out;
+  transition: left 0.5s ease-in-out;
 
   @media all and (max-width: 1260px) {
     display: none;
@@ -59,8 +60,8 @@ nav {
   a {
     display: flex;
     margin-right: 15px;
-    padding: .4em 1em;
-    transition: border-left .5s;
+    padding: 0.4em 1em;
+    transition: border-left 0.5s;
     border-bottom: 1px solid $porcelain;
     border-left: 4px solid transparent;
     text-decoration: none !important;
@@ -90,7 +91,7 @@ nav {
 
   .theme-selector,
   .version-selector {
-    margin: 2em 0 0 .6em;
+    margin: 2em 0 0 0.6em;
     font-size: 1.1em;
     text-align: left;
   }
@@ -100,7 +101,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: .2em 0 1em;
+  margin: 0.2em 0 1em;
   font-size: 2em;
 
   a {
@@ -120,7 +121,7 @@ nav {
   }
 
   > * {
-    margin: 0 .3em;
+    margin: 0 0.3em;
   }
 }
 
@@ -134,7 +135,7 @@ nav {
   justify-content: center;
   width: 48px;
   height: 48px;
-  background-color: $athens;
+  background-color: $body-background;
   font-size: 1.8em;
   cursor: pointer;
 
@@ -146,8 +147,12 @@ nav {
 .sidebar {
   padding: 0;
 
+  .swal2-modal {
+    background: $body-background;
+  }
+
   .swal2-html-container {
-    margin: 2em 2.5em 1em 1em;
+    margin: 0 2em 0 0;
   }
 
   .swal2-footer {
@@ -162,6 +167,8 @@ nav {
   nav {
     display: block !important;
     position: initial;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 
@@ -223,10 +230,10 @@ h3 {
     position: absolute;
     left: 50%;
     width: 700px;
-    height: .25em;
+    height: 0.25em;
     margin-top: -2em;
     margin-left: -350px;
-    border-radius: .125em;
+    border-radius: 0.125em;
     background-color: $porcelain;
 
     @media all and (max-width: 768px) {
@@ -262,7 +269,7 @@ p {
   }
 
   @media all and (max-width: 768px) {
-    padding: 0 .625em;
+    padding: 0 0.625em;
     text-align: center;
   }
 }
@@ -279,9 +286,9 @@ strong {
   $btn-blue: #7066e0;
   $btn-gray: #d0d0d0;
 
-  padding: .9em 2.1875em;
+  padding: 0.9em 2.1875em;
   border: 0;
-  border-radius: .1875em;
+  border-radius: 0.1875em;
   background-color: $btn-blue;
   box-shadow: none;
   color: $white;
@@ -295,7 +302,7 @@ strong {
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(115, 103, 240, .5);
+    box-shadow: 0 0 0 3px rgba(115, 103, 240, 0.5);
   }
 
   &::-moz-focus-inner {
@@ -313,7 +320,7 @@ strong {
 }
 
 .code-label {
-  margin: 1em 1.2em .2em;
+  margin: 1em 1.2em 0.2em;
 }
 
 pre {
@@ -328,11 +335,11 @@ pre {
 
   code {
     display: block;
-    padding: .5em;
+    padding: 0.5em;
     overflow: hidden !important;
-    border-radius: .3125em;
+    border-radius: 0.3125em;
     font-family: 'Source Code Pro', monospace;
-    font-size: .8em;
+    font-size: 0.8em;
   }
 
   .comment {
@@ -361,12 +368,12 @@ pre {
       align-items: center;
       width: 13em;
       height: 2em;
-      padding-left: .8em;
-      transition: top .2s ease-in-out, opacity .2s ease-in-out;
+      padding-left: 0.8em;
+      transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
       opacity: 0;
-      background: $black url('/images/codepen.svg') 11.6em .2em no-repeat;
+      background: $black url('/images/codepen.svg') 11.6em 0.2em no-repeat;
       background-size: 1.6em;
-      font-size: .8em;
+      font-size: 0.8em;
       cursor: pointer;
 
       @media all and (max-width: 768px) {
@@ -377,9 +384,9 @@ pre {
 }
 
 kbd {
-  padding: 0 .125em;
+  padding: 0 0.125em;
   border: 1px solid $regentgray;
-  border-radius: .1875em;
+  border-radius: 0.1875em;
 }
 
 .showcase {
@@ -387,7 +394,7 @@ kbd {
   position: relative;
   width: 21em;
   max-width: 94%;
-  margin-top: .9em;
+  margin-top: 0.9em;
   padding: 1em;
   background-color: $porcelain;
   vertical-align: top;
@@ -399,7 +406,7 @@ kbd {
   }
 
   @media all and (max-width: 768px) {
-    padding: 0 .625em .625em;
+    padding: 0 0.625em 0.625em;
 
     &.normal,
     img {
@@ -446,7 +453,7 @@ kbd {
       right: auto;
       bottom: -2.1875em;
       left: 50%;
-      margin: .3125em auto;
+      margin: 0.3125em auto;
       margin-left: -2.1875em;
     }
   }
@@ -475,7 +482,7 @@ kbd {
 
     @media all and (max-width: 768px) {
       display: block;
-      font-size: .9em;
+      font-size: 0.9em;
     }
   }
 
@@ -519,37 +526,37 @@ ol {
     color: $chateaugray;
 
     p {
-      margin-bottom: .625em;
+      margin-bottom: 0.625em;
     }
   }
 }
 
 table {
   width: 725px;
-  margin: .625em auto;
+  margin: 0.625em auto;
   border-collapse: collapse;
   text-align: left;
 
   @media all and (max-width: 768px) {
     width: auto;
-    margin: .625em auto;
+    margin: 0.625em auto;
   }
 
   th {
     position: relative;
-    padding: .625em 1.25em;
+    padding: 0.625em 1.25em;
     background-color: $white;
     color: $dovegray;
     font-weight: 400;
     white-space: nowrap;
 
     @media all and (max-width: 360px) {
-      padding: .625em .25em;
+      padding: 0.625em 0.25em;
     }
   }
 
   td {
-    padding: .625em 1.25em;
+    padding: 0.625em 1.25em;
     vertical-align: top;
 
     .deprecated {
@@ -557,10 +564,10 @@ table {
     }
 
     @media all and (max-width: 360px) {
-      padding: .625em .25em;
+      padding: 0.625em 0.25em;
 
       b {
-        font-size: .8125em;
+        font-size: 0.8125em;
       }
     }
   }
@@ -625,7 +632,7 @@ tr:hover {
     tr {
       display: flex;
       flex-direction: column;
-      padding: .625em 1.25em;
+      padding: 0.625em 1.25em;
     }
 
     th {
@@ -680,7 +687,7 @@ tr:hover {
   margin-top: 0;
 
   h4 {
-    margin: 2em 0 .5em;
+    margin: 2em 0 0.5em;
   }
 
   img {
@@ -714,7 +721,7 @@ tr:hover {
   img {
     width: 5em;
     height: 5em;
-    margin-top: .625em;
+    margin-top: 0.625em;
   }
 }
 
@@ -728,9 +735,9 @@ tr:hover {
 
 .banners {
   img {
-    transition: box-shadow .1s ease-out;
+    transition: box-shadow 0.1s ease-out;
     border: 1px solid #ccc;
-    border-radius: .3em;
+    border-radius: 0.3em;
 
     &:hover {
       border: 1px solid #aaa;
@@ -769,9 +776,9 @@ tr:hover {
 }
 
 .stats {
-  margin-top: .4375em;
+  margin-top: 0.4375em;
   opacity: 0;
-  font-size: .8125em;
+  font-size: 0.8125em;
 }
 
 .unselectable {
@@ -850,7 +857,7 @@ $bouncing-logo-min-height: 35%;
 
 #logo-spinner {
   animation-name: logo-spin;
-  animation-duration: math.div($bouncing-logo-animation-duration, 2); /* stylelint-disable-line */
+  animation-duration: math.div($bouncing-logo-animation-duration, 2);
   animation-timing-function: linear;
   animation-delay: $bouncing-logo-animation-delay;
   animation-iteration-count: 2;
@@ -881,7 +888,7 @@ $bouncing-logo-min-height: 35%;
 .hair {
   visibility: hidden;
   animation-name: logo-animation-end-popup;
-  animation-duration: .1s;
+  animation-duration: 0.1s;
   animation-timing-function: linear;
   animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
   animation-iteration-count: 1;
@@ -893,7 +900,7 @@ $bouncing-logo-min-height: 35%;
   visibility: hidden;
   max-width: 640px;
   animation-name: logo-animation-end-popup;
-  animation-duration: .1s;
+  animation-duration: 0.1s;
   animation-timing-function: linear;
   animation-delay: $bouncing-logo-animation-delay + $bouncing-logo-animation-duration;
   animation-iteration-count: 1;
