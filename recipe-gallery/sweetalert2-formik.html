@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83618163-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'UA-83618163-1')
+    </script>
+    <!-- Google Analytics end -->
+    <title>SweetAlert2 + Formik example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@17/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2-react-content@4"></script>
+  </head>
+
+  <body>
+    <nav class="mobile-hidden">
+      <a href="/#examples"><span>Examples</span></a>
+      <a href="/recipe-gallery" class="recipe-gallery"><span>Recipe Gallery</span></a>
+      <a href="/#download"><span>Installation</span></a>
+      <a href="/#usage"><span>Usage</span></a>
+      <a href="/#frameworks-integrations"><span>Integrations</span></a>
+      <a href="/#configuration" class="mobile-hidden"><span>Configuration</span></a>
+      <a href="/#handling-buttons"><span>Handling Buttons</span></a>
+      <a href="/#handling-dismissals"><span>Dismissals</span></a>
+      <a href="/#icons"><span>Icons</span></a>
+      <a href="/#input-types"><span>Input Types</span></a>
+      <a href="/#methods" class="mobile-hidden"><span>Methods</span></a>
+      <a href="/#themes"><span>Themes</span></a>
+      <a href="/#donations"><span>Donations</span></a>
+      <a href="/#sponsors"><span>Sponsors</span></a>
+      <a href="/#nsfw-sponsors"><span>NSFW Sponsors</span></a>
+    </nav>
+
+    <div id="show-sidebar">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+
+    <p>
+      <a href="/recipe-gallery"><i class="fa fa-arrow-left"></i> Back to Recipe Gallery</a>
+    </p>
+    <h1>SweetAlert2 + Formik example</h1>
+
+    <div class="carbonads-wrapper">
+      <script
+        src="//cdn.carbonads.com/carbon.js?serve=CKYILKQJ&placement=sweetalert2githubio"
+        id="_carbonads_js"
+        defer
+      ></script>
+    </div>
+
+    <p>
+      Formik is one of the most popular libraries for building forms with React. Here's how you integrate it with
+      SweetAlert2.
+    </p>
+
+    <p>
+      First, get the Formik reference (<strong>formikRef</strong>) for accessing the form outside. Then, use
+      <strong>formikRef</strong> inside of <stong>preConfirm</stong> parameter to validate the form and return its
+      values.
+    </p>
+
+    <p>
+      Live demo:
+      <a href="https://sweetalert2.github.io/sweetalert2-webpack-demo/">
+        https://sweetalert2.github.io/sweetalert2-webpack-demo/
+      </a>
+    </p>
+
+    <p>
+      Source code:
+      <a href="https://github.com/sweetalert2/sweetalert2-webpack-demo/blob/master/swal2-formik.tsx">
+        https://github.com/sweetalert2/sweetalert2-webpack-demo/blob/master/swal2-formik.tsx
+      </a>
+    </p>
+
+    <script src="https://emgithub.com/embed.js?target=https://github.com/sweetalert2/sweetalert2-webpack-demo/blob/master/swal2-formik.tsx%23L7-L40&style=vs2015&showCopy=on"></script>
+
+    <script src="/dist/bundle.js"></script>
+  </body>
+</html>
