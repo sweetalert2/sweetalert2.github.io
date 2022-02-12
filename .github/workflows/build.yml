@@ -6,35 +6,35 @@ on:
       - master
   pull_request:
   schedule:
-    - cron:  '0 3 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Install npm dependencies
-      run: yarn install
+      - name: Install npm dependencies
+        run: yarn install
 
-    - name: Run linters
-      run: yarn lint
+      - name: Run linters
+        run: yarn lint
 
-    - name: Build
-      run: yarn build
+      - name: Build
+        run: yarn build
 
-    - name: Setup ruby
-      uses: actions/setup-ruby@v1
+      - name: Setup ruby
+        uses: actions/setup-ruby@v1
 
-    - name: Deploy 🚀
-      if: github.event_name == 'push'
-      uses: JamesIves/github-pages-deploy-action@4.1.3
-      with:
-        branch: gh-pages
-        folder: .
+      - name: Deploy 🚀
+        if: github.event_name == 'push'
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          branch: gh-pages
+          folder: .
 
-    - name: Check for broken links
-      run: |
-        gem install awesome_bot
-        awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define"
+      - name: Check for broken links
+        run: |
+          gem install awesome_bot
+          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://www.sexvibrators.in/"
