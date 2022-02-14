@@ -128,7 +128,7 @@ nav .version-selector {
 }
 
 .sidebar {
-  padding: 0;
+  padding: 0 !important;
 }
 .sidebar .swal2-modal {
   background: #f2f4f6;
@@ -585,7 +585,7 @@ tr:hover .hover-anchor {
 }
 
 .border-radius-0 {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .flex-center {

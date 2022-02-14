@@ -145,7 +145,7 @@ nav {
 }
 
 .sidebar {
-  padding: 0;
+  padding: 0 !important;
 
   .swal2-modal {
     background: $body-background;
@@ -658,7 +658,7 @@ tr:hover {
 }
 
 .border-radius-0 {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .flex-center {
