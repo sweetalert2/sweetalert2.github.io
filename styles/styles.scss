@@ -943,3 +943,9 @@ $bouncing-logo-min-height: 35%;
     }
   }
 }
+
+#docsearch {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 80px);
+}

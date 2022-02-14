@@ -942,3 +942,9 @@ tr:hover .hover-anchor {
 .emgithub-container code table {
   display: block;
 }
+
+#docsearch {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 80px);
+}
