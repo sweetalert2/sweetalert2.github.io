@@ -85,6 +85,17 @@
       <li><a href="/recipe-gallery/queue-with-back-button.html">Queue with a "Back" Button</a></li>
     </ul>
 
-    <script src="/dist/bundle.js"></script>
+    <script src="/dist/bundle.js" defer></script>
+
+    <div id="docsearch"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
+    <script>
+      docsearch({
+        appId: '38BPOKYOZ2',
+        apiKey: 'aa152d345260f94e9c0b177ed5437c9e',
+        indexName: 'sweetalert2',
+        container: '#docsearch',
+      })
+    </script>
   </body>
 </html>
