@@ -948,3 +948,12 @@ tr:hover .hover-anchor {
   top: 20px;
   left: calc(50% - 80px);
 }
+@media all and (max-width: 768px) {
+  #docsearch {
+    position: fixed;
+    top: auto;
+    right: 15px;
+    bottom: 13px;
+    left: auto;
+  }
+}

@@ -58,8 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStyleSheet('/styles/carbon-ads.css')
   loadStyleSheet('/styles/native-js.css')
   loadStyleSheet('/styles/bootstrap4-buttons.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4.0.0/animate.min.css')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/@docsearch/css@alpha')
 
   const themes = ['default', 'dark', 'bootstrap-4', 'minimal', 'borderless', 'material-ui']
   themes.forEach((theme) => {

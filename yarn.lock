@@ -276,11 +276,6 @@
     "@typescript-eslint/parser" "^5.0.0"
     eslint-config-prettier "^8.3.0"
 
-"@sweetalert2/prettier-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/prettier-config/-/prettier-config-1.0.1.tgz#6992ac7a65768e6bbf013b8d6578194ea55267c1"
-  integrity sha512-8wsVLywp8CSahMYqWQ0Um3ezVKQiPOBBaA9avGODpbnEIfwK+Ow21IyobQ20GvJy8G0LoX2kdwSEuBN6qLAOEw==
-
 "@sweetalert2/stylelint-config@^2.0.0":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@sweetalert2/stylelint-config/-/stylelint-config-2.0.6.tgz#9acc5554dd44a8de5379406257dcac8b60643c24"
