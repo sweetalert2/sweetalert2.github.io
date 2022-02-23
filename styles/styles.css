@@ -509,6 +509,9 @@ table td {
 table td .deprecated {
   color: #600;
 }
+table td h4 {
+  display: inline;
+}
 
 #api tr td:first-child {
   position: relative;
