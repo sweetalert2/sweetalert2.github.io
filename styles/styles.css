@@ -509,14 +509,6 @@ table td {
 table td .deprecated {
   color: #600;
 }
-@media all and (max-width: 360px) {
-  table td {
-    padding: 0.625em 0.25em;
-  }
-  table td b {
-    font-size: 0.8125em;
-  }
-}
 
 #api tr td:first-child {
   position: relative;
