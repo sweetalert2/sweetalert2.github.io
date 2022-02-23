@@ -563,12 +563,8 @@ table {
       color: #600;
     }
 
-    @media all and (max-width: 360px) {
-      padding: 0.625em 0.25em;
-
-      b {
-        font-size: 0.8125em;
-      }
+    h4 {
+      display: inline;
     }
   }
 }
