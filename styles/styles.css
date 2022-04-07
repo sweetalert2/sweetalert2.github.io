@@ -158,7 +158,7 @@ header {
 }
 header .logo {
   margin: 0.5em;
-  color: #6e4a79;
+  color: rgb(110, 74, 121);
   font-size: 5em;
   font-weight: bolder;
   line-height: 1em;
