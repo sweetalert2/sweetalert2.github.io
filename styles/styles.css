@@ -92,6 +92,7 @@ nav .version-selector {
 }
 .social-buttons a {
   display: flex;
+  flex-shrink: 0;
   height: 30px;
   overflow: hidden;
   border-radius: 4px;
@@ -244,7 +245,10 @@ p.center {
   }
 }
 
+h4,
 strong {
+  display: inline;
+  margin: 0;
   padding: 2px 5px;
   border-radius: 3px;
   background-color: #eaeaea;
@@ -508,9 +512,6 @@ table td {
 }
 table td .deprecated {
   color: #600;
-}
-table td h4 {
-  display: inline;
 }
 
 #api tr td:first-child {
@@ -938,9 +939,19 @@ tr:hover .hover-anchor {
   display: block;
 }
 
+#stop-war {
+  margin-left: 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+#stop-war a {
+  color: #555;
+  text-decoration: underline;
+}
+
 #docsearch {
   position: absolute;
-  top: 20px;
+  top: 50px;
   left: calc(50% - 80px);
 }
 @media all and (max-width: 768px) {
