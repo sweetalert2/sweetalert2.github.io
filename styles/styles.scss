@@ -274,7 +274,10 @@ p {
   }
 }
 
+h4,
 strong {
+  display: inline-block;
+  margin: 0;
   padding: 2px 5px;
   border-radius: 3px;
   background-color: #eaeaea;
@@ -561,10 +564,6 @@ table {
 
     .deprecated {
       color: #600;
-    }
-
-    h4 {
-      display: inline;
     }
   }
 }
@@ -940,10 +939,25 @@ $bouncing-logo-min-height: 35%;
   }
 }
 
+#stop-war {
+  margin-left: 30px;
+  font-size: 22px;
+  font-weight: bold;
+
+  a {
+    color: #555;
+    text-decoration: underline;
+  }
+}
+
 #docsearch {
   position: absolute;
-  top: 20px;
+  top: 50px;
   left: calc(50% - 80px);
+
+  button {
+    box-shadow: var(--docsearch-searchbox-shadow);
+  }
 
   @media all and (max-width: 768px) {
     position: fixed;
