@@ -953,6 +953,9 @@ tr:hover .hover-anchor {
   top: 50px;
   left: calc(50% - 80px);
 }
+#docsearch button {
+  box-shadow: var(--docsearch-searchbox-shadow);
+}
 @media all and (max-width: 768px) {
   #docsearch {
     position: fixed;

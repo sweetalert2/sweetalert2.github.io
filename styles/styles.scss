@@ -955,6 +955,10 @@ $bouncing-logo-min-height: 35%;
   top: 50px;
   left: calc(50% - 80px);
 
+  button {
+    box-shadow: var(--docsearch-searchbox-shadow);
+  }
+
   @media all and (max-width: 768px) {
     position: fixed;
     top: auto;
