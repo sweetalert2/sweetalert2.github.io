@@ -92,7 +92,6 @@ nav .version-selector {
 }
 .social-buttons a {
   display: flex;
-  flex-shrink: 0;
   height: 30px;
   overflow: hidden;
   border-radius: 4px;
@@ -247,7 +246,7 @@ p.center {
 
 h4,
 strong {
-  display: inline;
+  display: inline-block;
   margin: 0;
   padding: 2px 5px;
   border-radius: 3px;
