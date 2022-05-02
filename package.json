@@ -9,7 +9,7 @@
     "lint": "stylelint styles/*.scss && eslint *.js src/app.js src/**/*.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.17.10",
     "@sweetalert2/eslint-config": "^1.0.0",
     "@sweetalert2/stylelint-config": "^2.0.0",
     "babel-loader": "^8.0.6",
@@ -23,9 +23,9 @@
     "highlight.js": "^11.5.1",
     "postcss-scss": "^4.0.2",
     "style-loader": "^3.3.0",
-    "stylelint": "^14.1.0",
-    "sweetalert2": "^11.4.8",
-    "typescript": "^4.5.3",
+    "stylelint": "^14.8.1",
+    "sweetalert2": "^11.4.10",
+    "typescript": "^4.6.4",
     "webpack": "^5.71.0",
     "webpack-stream": "^7.0.0"
   },
