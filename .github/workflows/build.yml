@@ -37,4 +37,4 @@ jobs:
       - name: Check for broken links
         run: |
           gem install awesome_bot
-          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://www.sexdollsoff.com/,https://realsexdoll.com/"
+          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://www.sexdolltech.com/product-category/us-warehouse/"
