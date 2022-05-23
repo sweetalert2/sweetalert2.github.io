@@ -206,7 +206,7 @@ $('.paypal') && $('.paypal').addEventListener('click', (e) => {
     'QJ3KEXBUHCL3C': 'Pound sterling (£)',
     'SG3T6NCCQFYE2': 'Australian dollar (A$)',
     '4SB64A93A7VZ8': 'Canadian dollar (C$)',
-    'UGHWAA7MRH7MQ': ' Swiss franc (CHF)',
+    'UGHWAA7MRH7MQ': 'Swiss franc (CHF)',
     'CPZP4SJAFZKAU': 'Hong Kong dollar (HK$)',
     'F42C5XL3M3JCQ': 'New Zealand dollar (NZ$)',
     'GRRZTRQLA4NWL': 'Swedish krona (kr)',
