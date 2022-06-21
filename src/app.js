@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStyleSheet('/styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/@docsearch/css@alpha')
+  loadStyleSheet('https://cdn.jsdelivr.net/npm/@docsearch/css@3')
 
   const themes = ['default', 'dark', 'bootstrap-4', 'minimal', 'borderless', 'material-ui']
   themes.forEach((theme) => {

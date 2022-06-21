@@ -972,3 +972,9 @@ $bouncing-logo-min-height: 35%;
     left: auto;
   }
 }
+
+@media all and (max-width: 750px) {
+  .DocSearch-Container { /* stylelint-disable-line */
+    position: fixed !important;
+  }
+}
