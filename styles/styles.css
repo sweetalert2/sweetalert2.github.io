@@ -943,6 +943,12 @@ tr:hover .hover-anchor {
   font-size: 22px;
   font-weight: bold;
 }
+@media all and (max-width: 480px) {
+  #stop-war {
+    margin-top: 9px;
+    font-size: 18px;
+  }
+}
 #stop-war a {
   color: #555;
   text-decoration: underline;
