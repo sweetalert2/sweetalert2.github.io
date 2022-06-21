@@ -944,6 +944,11 @@ $bouncing-logo-min-height: 35%;
   font-size: 22px;
   font-weight: bold;
 
+  @media all and (max-width: 480px) {
+    margin-top: 9px;
+    font-size: 18px;
+  }
+
   a {
     color: #555;
     text-decoration: underline;
