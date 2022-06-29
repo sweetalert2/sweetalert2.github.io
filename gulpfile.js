@@ -61,7 +61,7 @@ gulp.task('default', gulp.series('sass'))
 
 gulp.task('watch', () => {
   browserSync.init({
-    port: 8080,
+    port: 8081,
     notify: false,
     reloadOnRestart: true,
     https: false,
