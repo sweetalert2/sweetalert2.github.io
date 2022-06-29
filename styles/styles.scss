@@ -251,6 +251,10 @@ a {
   text-decoration: none;
   cursor: pointer;
 
+  strong {
+    text-decoration: underline !important;
+  }
+
   &:hover {
     text-decoration: underline;
   }
