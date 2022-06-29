@@ -233,45 +233,6 @@ $('.paypal') && $('.paypal').addEventListener('click', (e) => {
   e.preventDefault()
 })
 
-$('.cryptocurrencies') && $('.cryptocurrencies').addEventListener('click', (e) => {
-  const wallets = {
-    bitcoin: '1K8GdfmiDXeKd1CWFRgmTf3V8kQXD92NJ7',
-    ethereum: '0x192096161eB2273f12b1cB4E31aBB09Bfc03a7F3',
-    bitcoincash: 'qz28x66hrljtdz3052p8ya3cmkwwva5avy0msz2ej3',
-    stellar: 'GDUM4VJZYDNRHBTKUQBOPC374AP6MMMVOJDMSHIPEJPEMBCY4ZHH6NDY',
-  }
-  const showCryptocurrency = () => {
-    const cryptocurrency = Swal.getInput().value
-    const wallet = wallets[cryptocurrency]
-    Swal.update({
-      html: `
-        <strong class="${cryptocurrency}">${wallet}</strong>
-        <a href="${cryptocurrency}:${wallet}">
-          <img src="/images/qr-code-${cryptocurrency}.png" class="cryptocurrency-qr-code">
-        </a>
-      `
-    })
-  }
-  Swal.fire({
-    title: 'Choose your cryptocurrency',
-    input: 'select',
-    inputOptions: {
-      bitcoin: 'Bitcoin',
-      ethereum: 'Ethereum',
-      bitcoincash: 'Bitcoin Cash',
-      stellar: 'Stellar',
-    },
-    inputValue: 'bitcoin',
-    didOpen: () => {
-      Swal.getInput().onchange = showCryptocurrency
-      showCryptocurrency()
-    },
-    width: 550
-  })
-
-  e.preventDefault()
-})
-
 Array.from($$('.popup-icons button')).forEach(button => {
   button.onclick = (e) => {
     const icon = e.target.getAttribute('data-icon')
