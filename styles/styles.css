@@ -706,7 +706,6 @@ tr:hover .hover-anchor {
 .unselectable {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -727,8 +726,7 @@ tr:hover .hover-anchor {
             animation-timing-function: ease-out;
   }
   60% {
-    transform: translate3d(0, -30%, 0);
-    /* stylelint-disable-line */
+    transform: translate3d(0, -30%, 0); /* stylelint-disable-line */
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
@@ -761,8 +759,7 @@ tr:hover .hover-anchor {
             animation-timing-function: ease-out;
   }
   60% {
-    transform: translate3d(0, -30%, 0);
-    /* stylelint-disable-line */
+    transform: translate3d(0, -30%, 0); /* stylelint-disable-line */
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
@@ -976,8 +973,7 @@ tr:hover .hover-anchor {
 }
 
 @media all and (max-width: 750px) {
-  .DocSearch-Container {
-    /* stylelint-disable-line */
+  .DocSearch-Container { /* stylelint-disable-line */
     position: fixed !important;
   }
 }
