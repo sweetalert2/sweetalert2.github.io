@@ -1125,6 +1125,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <swal-button type="deny">Close without Saving</swal-button>
         <swal-param name="allowEscapeKey" value="false"></swal-param>
         <swal-param name="customClass" value='{ "popup": "my-popup" }'></swal-param>
+        <swal-function-param name="didOpen" value="popup => console.log(popup)"></swal-param>
       </template>
       <div style="display: inline-flex; flex-direction: column;">
         <pre style="margin-top: 10px;"><code class="language-html">&lt;template id="my-template"&gt;
@@ -1145,6 +1146,9 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   &lt;swal-param
     name="customClass"
     value='{ "popup": "my-popup" }' /&gt;
+  &lt;swal-function-param
+    name="didOpen"
+    value="popup =&gt; console.log(popup)" /&gt;
 &lt;/template&gt;</code></pre>
         <pre data-example-id="declarativeTemplate" style="margin-top: 10px;"></pre>
       </div>

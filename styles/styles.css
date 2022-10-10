@@ -709,77 +709,30 @@ tr:hover .hover-anchor {
           user-select: none;
 }
 
-@-webkit-keyframes logo-bounce {
-  from {
-    bottom: 0;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  20% {
-    transform: translate3d(0, -60%, 0);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  40% {
-    transform: translate3d(0, 35%, 0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  60% {
-    transform: translate3d(0, -30%, 0); /* stylelint-disable-line */
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  80% {
-    transform: translate3d(0, 35%, 0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translate3d(0, 0%, 0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
-
 @keyframes logo-bounce {
   from {
     bottom: 0;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   20% {
     transform: translate3d(0, -60%, 0);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   40% {
     transform: translate3d(0, 35%, 0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   60% {
     transform: translate3d(0, -30%, 0); /* stylelint-disable-line */
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   80% {
     transform: translate3d(0, 35%, 0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   100% {
     transform: translate3d(0, 0%, 0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
-@-webkit-keyframes logo-spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
+    animation-timing-function: ease-out;
   }
 }
 @keyframes logo-spin {
@@ -788,16 +741,6 @@ tr:hover .hover-anchor {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes logo-slide {
-  from {
-    visibility: visible;
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    visibility: visible;
-    transform: translate3d(0%, 0, 0);
   }
 }
 @keyframes logo-slide {
@@ -812,31 +755,20 @@ tr:hover .hover-anchor {
 }
 #logo-bouncer {
   display: inline-block;
-  -webkit-animation-name: logo-bounce;
-          animation-name: logo-bounce;
-  -webkit-animation-duration: 2.5s;
-          animation-duration: 2.5s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: logo-bounce;
+  animation-duration: 2.5s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 #logo-spinner {
-  -webkit-animation-name: logo-spin;
-          animation-name: logo-spin;
-  -webkit-animation-duration: 1.25s;
-          animation-duration: 1.25s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 2;
-          animation-iteration-count: 2;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: logo-spin;
+  animation-duration: 1.25s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
 }
 #logo-spinner svg {
   width: 5em;
@@ -845,24 +777,12 @@ tr:hover .hover-anchor {
 #logo-slider {
   visibility: hidden;
   margin-top: 10%;
-  -webkit-animation-name: logo-slide;
-          animation-name: logo-slide;
-  -webkit-animation-duration: 2.5s;
-          animation-duration: 2.5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes logo-animation-end-popup {
-  to {
-    visibility: visible;
-  }
+  animation-name: logo-slide;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes logo-animation-end-popup {
@@ -872,36 +792,24 @@ tr:hover .hover-anchor {
 }
 .hair {
   visibility: hidden;
-  -webkit-animation-name: logo-animation-end-popup;
-          animation-name: logo-animation-end-popup;
-  -webkit-animation-duration: 0.1s;
-          animation-duration: 0.1s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-delay: 4.5s;
-          animation-delay: 4.5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: logo-animation-end-popup;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-delay: 4.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 #logo-track {
   display: inline-block;
   visibility: hidden;
   max-width: 640px;
-  -webkit-animation-name: logo-animation-end-popup;
-          animation-name: logo-animation-end-popup;
-  -webkit-animation-duration: 0.1s;
-          animation-duration: 0.1s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-delay: 4.5s;
-          animation-delay: 4.5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: logo-animation-end-popup;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-delay: 4.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 #logo-track img {
   height: 5em;
