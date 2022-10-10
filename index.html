@@ -1125,6 +1125,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <swal-button type="deny">Close without Saving</swal-button>
         <swal-param name="allowEscapeKey" value="false"></swal-param>
         <swal-param name="customClass" value='{ "popup": "my-popup" }'></swal-param>
+        <swal-function-param name="didOpen" value="popup => console.log(popup)"></swal-param>
       </template>
       <div style="display: inline-flex; flex-direction: column;">
         <pre style="margin-top: 10px;"><code class="language-html">&lt;template id="my-template"&gt;
@@ -1145,6 +1146,9 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
   &lt;swal-param
     name="customClass"
     value='{ "popup": "my-popup" }' /&gt;
+  &lt;swal-function-param
+    name="didOpen"
+    value="popup =&gt; console.log(popup)" /&gt;
 &lt;/template&gt;</code></pre>
         <pre data-example-id="declarativeTemplate" style="margin-top: 10px;"></pre>
       </div>
@@ -1156,7 +1160,10 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
     <pre><code class="language-html">&lt;swal-title&gt;...&lt;/swal-title&gt;
 &lt;swal-html&gt;...&lt;/swal-html&gt;
 &lt;swal-footer&gt;...&lt;/swal-footer&gt;
+
 &lt;swal-param name="..." value="..." /&gt;
+&lt;swal-function-param name="..." value="..." /&gt;
+
 &lt;swal-button type="..." color="..." aria-label="..."&gt;...&lt;/swal-button&gt;
 &lt;swal-image src="..." width="..." height="..." alt="..." /&gt;
 &lt;swal-icon type="..." color="..."&gt;...&lt;/swal-icon&gt;
