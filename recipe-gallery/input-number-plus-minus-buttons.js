@@ -6,19 +6,12 @@ Swal.fire({
     const input = Swal.getContainer().querySelector('duet-number-input')
     input.addEventListener('duetChange', (e) => {
       const value = e.detail.value
-      if (value < 0) {
-        Swal.getConfirmButton().disabled = true
-      } else {
-        Swal.getConfirmButton().disabled = false
-      }
+      Swal.getConfirmButton().disabled = value < 0
     })
   },
   preConfirm: () => {
     const value = Swal.getContainer().querySelector('duet-number-input').value
-    if (value < 0) {
-      Swal.showValidationMessage('Please enter a positive number')
-    }
-    return value
+    return value < 0 ? Swal.showValidationMessage('Please enter a positive value') : value
   },
 }).then(function (result) {
   Swal.fire(`Entered amount: ${result.value}`)
