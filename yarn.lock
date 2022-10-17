@@ -3898,10 +3898,19 @@ postcss-value-parser@^4.1.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.3.0, postcss@^8.3.11, postcss@^8.4.16, postcss@^8.4.7:
+postcss@^8.3.0, postcss@^8.3.11, postcss@^8.4.7:
   version "8.4.17"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.17.tgz#f87863ec7cd353f81f7ab2dec5d67d861bbb1be5"
   integrity sha512-UNxNOLQydcOFi41yHNMcKRZ39NeXlr8AxGuZJsdub8vIb12fHzcq37DTU/QtbI6WLxNg2gF9Z+8qtRwTj1UI1Q==
+  dependencies:
+    nanoid "^3.3.4"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
+
+postcss@^8.4.17:
+  version "8.4.18"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.18.tgz#6d50046ea7d3d66a85e0e782074e7203bc7fbca2"
+  integrity sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==
   dependencies:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
@@ -4746,10 +4755,10 @@ stylelint-scss@^4.1.0:
     postcss-selector-parser "^6.0.6"
     postcss-value-parser "^4.1.0"
 
-stylelint@^14.11.0:
-  version "14.13.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-14.13.0.tgz#0c0b8ba8c5cf39522a50c9928f5e44897c678538"
-  integrity sha512-NJSAdloiAB/jgVJKxMR90mWlctvmeBFGFVUvyKngi9+j/qPSJ5ZB+u8jOmGbLTnS7OHrII9NFGehPRyar8U5vg==
+stylelint@^14.14.0:
+  version "14.14.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-14.14.0.tgz#1acb52497c9a921f23f9c4014d4e0ee6eba768d0"
+  integrity sha512-yUI+4xXfPHVnueYddSQ/e1GuEA/2wVhWQbGj16AmWLtQJtn28lVxfS4b0CsWyVRPgd3Auzi0NXOthIEUhtQmmA==
   dependencies:
     "@csstools/selector-specificity" "^2.0.2"
     balanced-match "^2.0.0"
@@ -4774,7 +4783,7 @@ stylelint@^14.11.0:
     micromatch "^4.0.5"
     normalize-path "^3.0.0"
     picocolors "^1.0.0"
-    postcss "^8.4.16"
+    postcss "^8.4.17"
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
     postcss-safe-parser "^6.0.0"
@@ -4842,10 +4851,10 @@ svg-tags@^1.0.0:
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
   integrity sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==
 
-sweetalert2@^11.4.33:
-  version "11.5.0"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.5.0.tgz#6dee8dea9903cb5306b859614a0d757d489da46a"
-  integrity sha512-Ret0s0E8HMvGDkcHXnDVd8j7gijpGpuBhasiVzy+QAv+w0uEdFnjLMCfEOrIzbmVgeqxdzc6weBD0nucRGgKuA==
+sweetalert2@^11.5.2:
+  version "11.5.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.5.2.tgz#d0752eccb466e6cdf072009238580825bb2f64da"
+  integrity sha512-gVS4tSvYxY83RdgL7OQijDRP/othOA/v3JRjiWctGSRYY1NkX6sBirYLtgoRFprQ24HAQdbsWZiFg1k3uLoZZw==
 
 symbol-observable@1.0.1:
   version "1.0.1"
