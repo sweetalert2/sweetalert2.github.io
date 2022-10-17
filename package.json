@@ -23,8 +23,8 @@
     "highlight.js": "^11.5.1",
     "postcss-scss": "^4.0.5",
     "style-loader": "^3.3.0",
-    "stylelint": "^14.11.0",
-    "sweetalert2": "^11.4.33",
+    "stylelint": "^14.14.0",
+    "sweetalert2": "^11.5.2",
     "typescript": "^4.8.3",
     "webpack": "^5.74.0",
     "webpack-stream": "^7.0.0"
