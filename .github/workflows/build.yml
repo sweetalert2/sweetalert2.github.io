@@ -29,7 +29,7 @@ jobs:
 
       - name: Deploy 🚀
         if: github.event_name == 'push'
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .
@@ -37,4 +37,4 @@ jobs:
       - name: Check for broken links
         run: |
           gem install awesome_bot
-          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://gemwire.gg/en/free-fortnite-reward-codes-4/"
+          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://gemwire.gg/en/free-fortnite-reward-codes-4/,https://meifoxdoll.com/"
