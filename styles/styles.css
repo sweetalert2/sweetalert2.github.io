@@ -710,7 +710,7 @@ tr:hover .hover-anchor {
 }
 
 @keyframes logo-bounce {
-  from {
+  0% {
     bottom: 0;
     animation-timing-function: ease-out;
   }
