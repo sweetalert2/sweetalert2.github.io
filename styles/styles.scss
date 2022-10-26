@@ -808,7 +808,7 @@ $bouncing-logo-min-height: 35%;
   }
 
   60% {
-    transform: translate3d(0, math.div($bouncing-logo-max-height, 2), 0); /* stylelint-disable-line */
+    transform: translate3d(0, math.div($bouncing-logo-max-height, 2), 0);
     animation-timing-function: ease-in;
   }
 
