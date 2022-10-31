@@ -1,0 +1,32 @@
+{
+  "name": "sweetalert2.github.io",
+  "repository": "sweetalert2/sweetalert2.github.io",
+  "homepage": "https://sweetalert2.github.io/",
+  "description": "Documentation for SweetAlert2",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp watch",
+    "lint": "stylelint styles/*.scss && eslint *.js src/app.js src/**/*.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@sweetalert2/eslint-config": "^1.0.0",
+    "@sweetalert2/stylelint-config": "^2.0.0",
+    "babel-loader": "^9.0.0",
+    "babel-plugin-preval": "^5.0.0",
+    "browser-sync": "^2.27.5",
+    "css-loader": "^6.4.0",
+    "eslint": "^8.23.1",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-dart-sass": "^1.0.2",
+    "highlight.js": "^11.5.1",
+    "style-loader": "^3.3.0",
+    "stylelint": "^14.14.0",
+    "sweetalert2": "^11.5.2",
+    "typescript": "^4.8.3",
+    "webpack": "^5.74.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "license": "MIT"
+}
