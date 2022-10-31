@@ -1,0 +1,13 @@
+{
+  "extends": "@sweetalert2/stylelint-config",
+  "rules": {
+    "value-list-comma-newline-after": null,
+    "declaration-colon-newline-after": null,
+    "unit-no-unknown": [
+      true,
+      {
+        "ignoreUnits": ["x"]
+      }
+    ]
+  }
+}
