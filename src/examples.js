@@ -1,7 +1,6 @@
-/* globals Swal, alert, fetch, FileReader */
-/* eslint-disable no-console */
+import Swal from 'sweetalert2'
 
-module.exports = {
+const examples = {
   // Top of page
   normalAlert () {
     alert('You clicked the button!')
@@ -44,18 +43,19 @@ module.exports = {
     Swal.fire({
       title: '<strong>HTML <u>example</u></strong>',
       icon: 'info',
-      html:
-        'You can use <b>bold text</b>, ' +
-        '<a href="//sweetalert2.github.io">links</a> ' +
-        'and other HTML tags',
+      html: `
+        You can use <b>bold text</b>,
+        <a href="//sweetalert2.github.io">links</a>
+        and other HTML tags
+      `,
       showCloseButton: true,
       showCancelButton: true,
       focusConfirm: false,
-      confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Great!',
+      confirmButtonText: `
+        <i class="fa fa-thumbs-up"></i> Great!`,
       confirmButtonAriaLabel: 'Thumbs up, great!',
-      cancelButtonText:
-        '<i class="fa fa-thumbs-down"></i>',
+      cancelButtonText: `
+        <i class="fa fa-thumbs-down"></i>`,
       cancelButtonAriaLabel: 'Thumbs down'
     })
   },
@@ -138,10 +138,9 @@ module.exports = {
           'Your file has been deleted.',
           'success'
         )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
+      }
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire(
           'Cancelled',
           'Your imaginary file is safe :)',
@@ -184,7 +183,7 @@ module.exports = {
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading()
-        const b = Swal.getHtmlContainer().querySelector('b')
+        const b = Swal.getPopup().querySelector('b')
         timerInterval = setInterval(() => {
           b.textContent = Swal.getTimerLeft()
         }, 100)
@@ -204,7 +203,6 @@ module.exports = {
       title: 'هل تريد الاستمرار؟',
       icon: 'question',
       iconHtml: '؟',
-      // do-not-display
       target: document.getElementById('rtl-container'),
       confirmButtonText: 'نعم',
       cancelButtonText: 'لا',
@@ -223,7 +221,8 @@ module.exports = {
       confirmButtonText: 'Look up',
       showLoaderOnConfirm: true,
       preConfirm: (login) => {
-        return fetch(`//api.github.com/users/${login}`)
+        const usersUrl = `//api.github.com/users/${login}`
+        return fetch(usersUrl)
           .then(response => {
             if (!response.ok) {
               throw new Error(response.statusText)
@@ -246,70 +245,19 @@ module.exports = {
       }
     })
   },
-  chainingModals () {
-    Swal.mixin({
-      input: 'text',
-      confirmButtonText: 'Next &rarr;',
-      showCancelButton: true,
-      progressSteps: ['1', '2', '3']
-    }).queue([
-      {
-        title: 'Question 1',
-        text: 'Chaining swal2 modals is easy'
-      },
-      'Question 2',
-      'Question 3'
-    ]).then((result) => {
-      if (result.value) {
-        const answers = JSON.stringify(result.value)
-        Swal.fire({
-          title: 'All done!',
-          html: `
-            Your answers:
-            <pre><code>${answers}</code></pre>
-          `,
-          confirmButtonText: 'Lovely!'
-        })
-      }
-    })
-  },
-  dynamicQueue () {
-    const ipAPI = '//api.ipify.org?format=json'
-
-    Swal.queue([{
-      title: 'Your public IP',
-      confirmButtonText: 'Show my public IP',
-      text:
-        'Your public IP will be received ' +
-        'via AJAX request',
-      showLoaderOnConfirm: true,
-      preConfirm: () => {
-        return fetch(ipAPI)
-          .then(response => response.json())
-          .then(data => Swal.insertQueueStep(data.ip))
-          .catch(() => {
-            Swal.insertQueueStep({
-              icon: 'error',
-              title: 'Unable to get your public IP'
-            })
-          })
-      }
-    }])
-  },
 
   // Configuration section
   mixin () {
     const Toast = Swal.mixin({
       toast: true,
-      // do-not-display
       footer: '', // prevent adding ads to toast's footer, as they're ruining the look
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        toast.onmouseenter = Swal.stopTimer
+        toast.onmouseleave = Swal.resumeTimer
       }
     })
 
@@ -551,3 +499,20 @@ module.exports = {
     }
   }
 }
+
+Object.entries(examples).forEach(([id, fn]) => {
+  let fnString = String(fn)
+  fnString = fnString.replace(/Swal\$\d\./g, 'Swal.') // in dist folder Swal is Swal$1
+  // vite build encodes unicode to \uXXXX, so we need to decode it back
+  fnString = fnString.replace(/\\u..../g, (utfCharEncoded) => {
+    return JSON.parse(`"${utfCharEncoded}"`)
+  })
+  // skip some lines
+  fnString = fnString.replace(/\s+target: document.getElementById\(['"]rtl-container['"]\),/g, '')
+  fnString = fnString.replace(/\s+footer: ['"]['"],.*/g, '')
+  // remove ; which is added by Vite build
+  fnString = fnString.replace(/;/g, '')
+  examples[id] = { id, fn, fnString }
+})
+
+export default examples

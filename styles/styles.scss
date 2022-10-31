@@ -1,8 +1,18 @@
 @use 'sass:math';
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
 @import 'colors';
+
+// fonts
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/source-code-pro/400.css';
+
+// ads
+@import 'buysellads';
+@import 'carbon-ads';
+@import 'native-js';
+
+// boorstrap buttons
+@import 'bootstrap4-buttons';
 
 @mixin retina-background($url, $type: png) {
   background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);

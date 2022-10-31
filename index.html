@@ -33,20 +33,10 @@
 
   <link rel="icon" href="/images/favicon.png">
 
-  <link rel="preload" href="https://unsplash.it/400/200" as="image">
-  <link rel="preload" href="https://placeholder.pics/svg/300x1500" as="image">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
   <!-- https://goo.gl/qRE0vM -->
   <meta name="theme-color" content="#f2f4f6">
-
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
-
-  <link rel="stylesheet" href="/styles/styles.css">
-
-  <!-- This is what you need -->
-  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-  <!--...............................-->
 </head>
 
 <body>
@@ -1125,7 +1115,7 @@ import 'sweetalert2/src/sweetalert2.scss'</code></pre>
         <swal-button type="deny">Close without Saving</swal-button>
         <swal-param name="allowEscapeKey" value="false"></swal-param>
         <swal-param name="customClass" value='{ "popup": "my-popup" }'></swal-param>
-        <swal-function-param name="didOpen" value="popup => console.log(popup)"></swal-param>
+        <swal-function-param name="didOpen" value="popup => console.log(popup)"></swal-function-param>
       </template>
       <div style="display: inline-flex; flex-direction: column;">
         <pre style="margin-top: 10px;"><code class="language-html">&lt;template id="my-template"&gt;
@@ -2107,7 +2097,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
   <form id="codepen-form" action="https://codepen.io/pen/define" method="POST" target="_blank">
     <input type="hidden" name="data" id="codepen-data">
   </form>
-  <script src="/dist/bundle.js" defer></script>
+  <script type="module" src="/src/app.js" defer></script>
 
   <div id="docsearch"></div>
   <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>

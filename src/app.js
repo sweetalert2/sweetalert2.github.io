@@ -1,16 +1,17 @@
-/* global MutationObserver, fetch, _bsa */
+import Swal from 'sweetalert2'
 import hljs from 'highlight.js/lib/core'
-import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
 import showSidebar from './sidebar'
+import highlightJs from 'highlight.js/lib/languages/javascript'
+import highlightXml from 'highlight.js/lib/languages/xml'
 
-// fallback in case jsdelivr failed to deliver
-if (typeof Swal === 'undefined') {
-  window.Swal = require('sweetalert2')
-}
+import '../styles/styles.scss'
+import 'highlight.js/styles/atom-one-dark.css'
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
+
+window.Swal = Swal
 
 // Render `<pre data-example-id="...">` elements
 const escapeHtml = (text) => {
@@ -40,8 +41,8 @@ function unindent (lines) {
 
 // Syntax highlighting with highlight.js
 hljs.configure({ cssSelector: 'pre:not([data-highlighjs-ignore]) code' })
-hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
-hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
+hljs.registerLanguage('javascript', highlightJs)
+hljs.registerLanguage('xml', highlightXml)
 hljs.highlightAll()
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,13 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  loadStyleSheet('/styles/buysellads.css')
-  loadStyleSheet('/styles/carbon-ads.css')
-  loadStyleSheet('/styles/native-js.css')
-  loadStyleSheet('/styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css')
-  loadStyleSheet('https://cdn.jsdelivr.net/npm/@docsearch/css@3')
 
   const themes = ['default', 'dark', 'bootstrap-4', 'minimal', 'borderless', 'material-ui']
   themes.forEach((theme) => {

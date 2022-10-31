@@ -28,11 +28,11 @@ jobs:
         uses: actions/setup-ruby@v1
 
       - name: Deploy 🚀
-        if: github.event_name == 'push'
+        if: github.ref_name == 'main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .
+          folder: dist
 
       - name: Check for broken links
         run: |
