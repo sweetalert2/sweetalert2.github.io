@@ -28,5 +28,12 @@
     "webpack": "^5.74.0",
     "webpack-stream": "^7.0.0"
   },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "es5"
+  },
   "license": "MIT"
 }

@@ -368,7 +368,7 @@ kbd {
     padding: 0 0.625em 0.625em;
   }
   .showcase.normal,
-.showcase img {
+  .showcase img {
     display: none;
   }
 }
@@ -439,7 +439,7 @@ kbd {
 }
 @media all and (max-width: 768px) {
   .examples .ui,
-.examples pre {
+  .examples pre {
     display: block;
     font-size: 0.9em;
   }
@@ -541,9 +541,9 @@ tr:hover .hover-anchor {
 }
 @media all and (max-width: 768px) {
   .popup-icons th:nth-child(2),
-.popup-icons td:nth-child(2),
-.input-types th:nth-child(2),
-.input-types td:nth-child(2) {
+  .popup-icons td:nth-child(2),
+  .input-types th:nth-child(2),
+  .input-types td:nth-child(2) {
     display: none;
   }
 }
