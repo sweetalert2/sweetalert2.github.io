@@ -848,7 +848,7 @@ tr:hover .hover-anchor {
 @media all and (max-width: 480px) {
   #stop-war {
     margin-top: 9px;
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 #stop-war a {
@@ -875,7 +875,7 @@ tr:hover .hover-anchor {
 }
 
 @media all and (max-width: 750px) {
-  .DocSearch-Container { /* stylelint-disable-line */
+  .DocSearch-Container {
     position: fixed !important;
   }
 }
