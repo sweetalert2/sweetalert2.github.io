@@ -944,7 +944,7 @@ $bouncing-logo-min-height: 35%;
 
   @media all and (max-width: 480px) {
     margin-top: 9px;
-    font-size: 18px;
+    font-size: 17px;
   }
 
   a {
@@ -972,7 +972,8 @@ $bouncing-logo-min-height: 35%;
 }
 
 @media all and (max-width: 750px) {
-  .DocSearch-Container { /* stylelint-disable-line */
+  // stylelint-disable-next-line
+  .DocSearch-Container {
     position: fixed !important;
   }
 }
