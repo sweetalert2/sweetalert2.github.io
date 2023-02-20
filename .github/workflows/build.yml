@@ -25,7 +25,9 @@ jobs:
         run: yarn build
 
       - name: Setup ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
 
       - name: Deploy 🚀
         if: github.event_name == 'push'
