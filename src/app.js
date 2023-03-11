@@ -1,4 +1,3 @@
-/* global MutationObserver, fetch, _bsa */
 import hljs from 'highlight.js/lib/core'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
@@ -130,30 +129,6 @@ if ($('.stats')) {
     .catch(() => {
       // ignore
     })
-}
-
-function navigatorShare(e) {
-  e.preventDefault()
-  if (navigator.share) {
-    navigator
-      .share({
-        title: document.title,
-        url: location.origin,
-      })
-      .catch(console.error)
-  } else {
-    openPopup(this.href)
-  }
-}
-function openPopup(href) {
-  window.open(href, 'popup', 'width=600,height=600')
-}
-if ($('.social-buttons')) {
-  $('.facebook-button').addEventListener('click', navigatorShare)
-  $('.twitter-button').addEventListener('click', function (e) {
-    e.preventDefault()
-    openPopup(this.href)
-  })
 }
 
 function showStats() {
