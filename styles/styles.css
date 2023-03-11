@@ -83,30 +83,6 @@ nav .version-selector {
   text-align: left;
 }
 
-.social-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.2em 0 1em;
-  font-size: 2em;
-}
-.social-buttons a {
-  display: flex;
-  height: 30px;
-  overflow: hidden;
-  border-radius: 4px;
-  text-decoration: none !important;
-}
-.social-buttons .facebook-button {
-  color: #425f9c;
-}
-.social-buttons .twitter-button {
-  color: #1da1f3;
-}
-.social-buttons > * {
-  margin: 0 0.3em;
-}
-
 #show-sidebar {
   display: none;
   position: fixed;
@@ -354,7 +330,7 @@ kbd {
   position: relative;
   width: 21em;
   max-width: 94%;
-  margin-top: 0.9em;
+  margin-top: 1.5em;
   padding: 1em;
   background-color: #e2e5e8;
   vertical-align: top;
@@ -596,15 +572,10 @@ tr:hover .hover-anchor {
   }
 }
 
-.github-corner {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-.carbonads-wrapper {
-  height: 126px;
-  opacity: 0;
+[title="GitHub stars"] {
+  position: absolute;
+  top: 10px;
+  right: -5px;
 }
 
 .themes {
@@ -619,7 +590,6 @@ tr:hover .hover-anchor {
 }
 
 .frameworks-integrations,
-.donation-options,
 .sponsors {
   display: flex;
   flex-wrap: wrap;
@@ -630,20 +600,17 @@ tr:hover .hover-anchor {
   font-size: 1.25em;
 }
 .frameworks-integrations div,
-.donation-options div,
 .sponsors div {
   flex: 1;
   margin: 1em 0;
 }
 .frameworks-integrations a,
-.donation-options a,
 .sponsors a {
   display: inline-block;
   min-width: 6.875em;
   text-decoration: none;
 }
 .frameworks-integrations img,
-.donation-options img,
 .sponsors img {
   width: 5em;
   height: 5em;
@@ -691,7 +658,6 @@ tr:hover .hover-anchor {
 }
 
 .stats {
-  margin-top: 0.4375em;
   opacity: 0;
   font-size: 0.8125em;
 }
@@ -769,7 +735,7 @@ tr:hover .hover-anchor {
 
 #logo-slider {
   visibility: hidden;
-  margin-top: 10%;
+  margin-top: 30px;
   animation-name: logo-slide;
   animation-duration: 2.5s;
   animation-timing-function: linear;
@@ -839,26 +805,27 @@ tr:hover .hover-anchor {
   display: block;
 }
 
-#stop-war {
+#slava-ukraini {
+  margin-top: 6px;
   margin-left: 30px;
   font-size: 22px;
   font-weight: bold;
 }
 @media all and (max-width: 480px) {
-  #stop-war {
+  #slava-ukraini {
     margin-top: 9px;
     font-size: 17px;
   }
 }
-#stop-war a {
+#slava-ukraini a {
   color: #555;
   text-decoration: underline;
 }
 
 #docsearch {
-  position: absolute;
-  top: 50px;
-  left: calc(50% - 80px);
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0 2em !important;
 }
 #docsearch button {
   box-shadow: var(--docsearch-searchbox-shadow);

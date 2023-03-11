@@ -97,34 +97,6 @@ nav {
   }
 }
 
-.social-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.2em 0 1em;
-  font-size: 2em;
-
-  a {
-    display: flex;
-    height: 30px;
-    overflow: hidden;
-    border-radius: 4px;
-    text-decoration: none !important;
-  }
-
-  .facebook-button {
-    color: $facebook;
-  }
-
-  .twitter-button {
-    color: $twitter;
-  }
-
-  > * {
-    margin: 0 0.3em;
-  }
-}
-
 #show-sidebar {
   display: none;
   position: fixed;
@@ -400,7 +372,7 @@ kbd {
   position: relative;
   width: 21em;
   max-width: 94%;
-  margin-top: 0.9em;
+  margin-top: 1.5em;
   padding: 1em;
   background-color: $porcelain;
   vertical-align: top;
@@ -670,15 +642,10 @@ tr:hover {
   }
 }
 
-.github-corner {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-.carbonads-wrapper {
-  height: 126px;
-  opacity: 0;
+[title='GitHub stars'] {
+  position: absolute;
+  top: 10px;
+  right: -5px;
 }
 
 .themes {
@@ -695,7 +662,6 @@ tr:hover {
 }
 
 .frameworks-integrations,
-.donation-options,
 .sponsors {
   display: flex;
   flex-wrap: wrap;
@@ -768,7 +734,6 @@ tr:hover {
 }
 
 .stats {
-  margin-top: 0.4375em;
   opacity: 0;
   font-size: 0.8125em;
 }
@@ -862,7 +827,7 @@ $bouncing-logo-min-height: 35%;
 
 #logo-slider {
   visibility: hidden;
-  margin-top: 10%;
+  margin-top: 30px;
   animation-name: logo-slide;
   animation-duration: $bouncing-logo-animation-duration;
   animation-timing-function: linear;
@@ -936,7 +901,8 @@ $bouncing-logo-min-height: 35%;
   }
 }
 
-#stop-war {
+#slava-ukraini {
+  margin-top: 6px;
   margin-left: 30px;
   font-size: 22px;
   font-weight: bold;
@@ -953,9 +919,9 @@ $bouncing-logo-min-height: 35%;
 }
 
 #docsearch {
-  position: absolute;
-  top: 50px;
-  left: calc(50% - 80px);
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0 2em !important;
 
   button {
     box-shadow: var(--docsearch-searchbox-shadow);
