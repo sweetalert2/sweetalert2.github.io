@@ -1,4 +1,3 @@
-/* global MutationObserver, fetch, _bsa */
 import hljs from 'highlight.js/lib/core'
 import 'highlight.js/styles/atom-one-dark.css'
 import examples from './examples'
@@ -18,7 +17,9 @@ const escapeHtml = (text) => {
     '<': '&lt;',
     '>': '&gt;',
   }
-  return text.replace(/[<>]/g, function (m) { return map[m] })
+  return text.replace(/[<>]/g, function (m) {
+    return map[m]
+  })
 }
 for (const preElement of $$('pre[data-example-id]')) {
   preElement.className = 'code-sample'
@@ -33,9 +34,9 @@ for (const preElement of $$('pre[data-example-id]')) {
   codeElement.innerHTML = escapeHtml(codeElement.innerHTML)
   preElement.appendChild(codeElement)
 }
-function unindent (lines) {
-  const baseIndent = [...lines[0]].findIndex(char => char !== ' ')
-  return lines.map(line => line.slice(baseIndent))
+function unindent(lines) {
+  const baseIndent = [...lines[0]].findIndex((char) => char !== ' ')
+  return lines.map((line) => line.slice(baseIndent))
 }
 
 // Syntax highlighting with highlight.js
@@ -45,7 +46,8 @@ hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
 hljs.highlightAll()
 
 document.addEventListener('DOMContentLoaded', () => {
-  const loadStyleSheet = (src, addToHead = true) => { // eslint-disable-line
+  const loadStyleSheet = (src, addToHead = true) => {
+    // eslint-disable-line
     const link = document.createElement('link')
     link.rel = 'stylesheet'
     link.href = src
@@ -54,9 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  loadStyleSheet('/styles/buysellads.css')
-  loadStyleSheet('/styles/carbon-ads.css')
-  loadStyleSheet('/styles/native-js.css')
   loadStyleSheet('/styles/bootstrap4-buttons.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css')
   loadStyleSheet('https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css')
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Swal.bindClickHandler()
 
   Swal.mixin({
-    toast: true
+    toast: true,
   }).bindClickHandler('data-swal-toast-template')
 })
 
@@ -79,8 +78,8 @@ const stats = {}
 if ($('.stats')) {
   // latest release
   fetch('https://api.github.com/repos/sweetalert2/sweetalert2/tags')
-    .then(response => response.json())
-    .then(response => {
+    .then((response) => response.json())
+    .then((response) => {
       if (!response[0] || !response[0].name) {
         return
       }
@@ -93,8 +92,8 @@ if ($('.stats')) {
 
   // recent activity
   fetch('https://api.github.com/repos/sweetalert2/sweetalert2/commits')
-    .then(response => response.json())
-    .then(response => {
+    .then((response) => response.json())
+    .then((response) => {
       if (!response[0] || !response[0].commit) {
         return
       }
@@ -103,9 +102,15 @@ if ($('.stats')) {
       const today = new Date()
       const diffDays = parseInt((today - recentActivity) / (1000 * 60 * 60 * 24))
       switch (diffDays) {
-        case 0: recentActivity = 'today'; break
-        case 1: recentActivity = 'yesterday'; break
-        default: recentActivity = `${diffDays} days ago`; break
+        case 0:
+          recentActivity = 'today'
+          break
+        case 1:
+          recentActivity = 'yesterday'
+          break
+        default:
+          recentActivity = `${diffDays} days ago`
+          break
       }
       stats.recentActivity = recentActivity
       showStats()
@@ -116,8 +121,8 @@ if ($('.stats')) {
 
   // number of downloads last month
   fetch('https://api.npmjs.org/downloads/point/last-month/sweetalert2')
-    .then(response => response.json())
-    .then(response => {
+    .then((response) => response.json())
+    .then((response) => {
       stats.downloadsLastMonth = response.downloads.toLocaleString()
       showStats()
     })
@@ -126,30 +131,7 @@ if ($('.stats')) {
     })
 }
 
-function navigatorShare (e) {
-  e.preventDefault()
-  if (navigator.share) {
-    navigator.share({
-      title: document.title,
-      url: location.origin
-    })
-      .catch(console.error)
-  } else {
-    openPopup(this.href)
-  }
-}
-function openPopup (href) {
-  window.open(href, 'popup', 'width=600,height=600')
-}
-if ($('.social-buttons')) {
-  $('.facebook-button').addEventListener('click', navigatorShare)
-  $('.twitter-button').addEventListener('click', function (e) {
-    e.preventDefault()
-    openPopup(this.href)
-  })
-}
-
-function showStats () {
+function showStats() {
   if (stats.latestRelease && stats.recentActivity && stats.downloadsLastMonth) {
     const currentVersion = $('#current-version')
     currentVersion.innerText = stats.latestRelease
@@ -167,7 +149,7 @@ function showStats () {
   }
 }
 
-function ordinalSuffix (i) {
+function ordinalSuffix(i) {
   i = parseInt(i)
   const j = i % 10
   const k = i % 100
@@ -184,8 +166,8 @@ function ordinalSuffix (i) {
 }
 
 fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
-  .then(response => response.json())
-  .then(response => {
+  .then((response) => response.json())
+  .then((response) => {
     if (response.rank && response.total) {
       $('.jsdelivr-info').innerHTML =
         `sweetalert2 is the <strong>${ordinalSuffix(response.rank)}</strong>` +
@@ -198,49 +180,14 @@ fetch('https://data.jsdelivr.com/v1/package/npm/sweetalert2/stats/month')
     // ignore
   })
 
-Array.from($$('.popup-icons button')).forEach(button => {
+Array.from($$('.popup-icons button')).forEach((button) => {
   button.onclick = (e) => {
     const icon = e.target.getAttribute('data-icon')
     Swal.fire(`Icon ${icon}`, '', icon)
   }
 })
 
-// BuySellAds
-if (typeof _bsa !== 'undefined' && _bsa) {
-  // Default
-  _bsa.init('default', 'CKYDK5QE', 'placement:sweetalert2githubio', {
-    target: '.bsa-cpc',
-    align: 'horizontal',
-    disable_css: 'true' // eslint-disable-line
-  })
-  // Fixed footer, taken from https://codepen.io/team/buysellads/pen/vPLazv
-  _bsa.init('custom', 'CK7DKKQI', 'placement:sweetalert2githubio', {
-    target: '#native-js-footer',
-    template: `
-      <div style="background-color: ##backgroundColor##" class="native-fixed">
-        <a style="color: ##textColor##" class="native-link" href="##link##">
-          <div class="native-sponsor" style="background-color: ##textColor##; color: ##backgroundColor##">Sponsor</div>
-          <div class="native-text">##company## — ##description##</div>
-        </a>
-      </div>
-    `
-  })
-}
-
-function setBuySellAdsFooter () {
-  if (typeof _bsa !== 'undefined' && _bsa && $('body > .bsa-cpc').textContent) {
-    window.Swal = Swal.mixin({
-      footer: $('body > .bsa-cpc')
-    })
-  }
-}
-
-if ($('body > .bsa-cpc')) {
-  const observer = new MutationObserver(setBuySellAdsFooter)
-  observer.observe($('body > .bsa-cpc'), { childList: true })
-}
-
-Array.from($$('#api tr[id]')).forEach(tr => {
+Array.from($$('#api tr[id]')).forEach((tr) => {
   const anchor = document.createElement('a')
   anchor.innerText = '#'
   anchor.className = 'hover-anchor'
@@ -248,12 +195,12 @@ Array.from($$('#api tr[id]')).forEach(tr => {
   tr.querySelector('td').appendChild(anchor)
 })
 
-Array.from($$('pre.code-sample')).forEach(pre => {
+Array.from($$('pre.code-sample')).forEach((pre) => {
   pre.addEventListener('click', (e) => {
     if (e.offsetY < 0) {
       const codepenValue = {
         js_external: 'https://cdn.jsdelivr.net/npm/sweetalert2@11', // eslint-disable-line
-        css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}'
+        css: 'body {\n  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; \n}',
       }
       if (pre.getAttribute('data-codepen-html')) {
         codepenValue.html = pre.getAttribute('data-codepen-html').replace(/\\n/g, '\n')

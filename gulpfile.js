@@ -4,18 +4,13 @@ const autoprefix = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
 const webpackStream = require('webpack-stream')
 
-const styles = [
-  'styles/styles.scss',
-  'styles/buysellads.scss',
-  'styles/carbon-ads.scss',
-  'styles/native-js.scss'
-]
+const styles = ['styles/styles.scss']
 
 gulp.task('bundle', () => {
   return webpackStream({
     entry: './src/app.js',
     output: {
-      filename: 'bundle.js'
+      filename: 'bundle.js',
     },
     devtool: 'source-map',
     module: {
@@ -28,31 +23,24 @@ gulp.task('bundle', () => {
             {
               loader: 'babel-loader',
               options: {
-                plugins: ['babel-plugin-preval']
-              }
-            }
-          ]
+                plugins: ['babel-plugin-preval'],
+              },
+            },
+          ],
         },
         {
           test: /\.css?$/,
-          use: [
-            'style-loader',
-            'css-loader'
-          ]
-        }
-      ]
+          use: ['style-loader', 'css-loader'],
+        },
+      ],
     },
     // mode: 'development'
-    mode: 'production'
-  })
-    .pipe(gulp.dest('dist/'))
+    mode: 'production',
+  }).pipe(gulp.dest('dist/'))
 })
 
 gulp.task('sass', () => {
-  return gulp.src(styles)
-    .pipe(sass())
-    .pipe(autoprefix())
-    .pipe(gulp.dest('styles'))
+  return gulp.src(styles).pipe(sass()).pipe(autoprefix()).pipe(gulp.dest('styles'))
 })
 
 gulp.task('build', gulp.series('sass', 'bundle'))
@@ -65,20 +53,12 @@ gulp.task('watch', () => {
     notify: false,
     reloadOnRestart: true,
     https: false,
-    server: ['./']
+    server: ['./'],
   })
 
-  gulp.watch([
-    'src/**/*.js'
-  ]).on('change', gulp.series('bundle'))
+  gulp.watch(['src/**/*.js']).on('change', gulp.series('bundle'))
 
-  gulp.watch([
-    'index.html',
-    'js/bundle.js',
-    'styles/*.css'
-  ]).on('change', browserSync.reload)
+  gulp.watch(['index.html', 'js/bundle.js', 'styles/*.css']).on('change', browserSync.reload)
 
-  gulp.watch([
-    'styles/*.scss'
-  ], gulp.series('sass'))
+  gulp.watch(['styles/*.scss'], gulp.series('sass'))
 })
