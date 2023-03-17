@@ -909,7 +909,7 @@ $bouncing-logo-min-height: 35%;
 
   @media all and (max-width: 480px) {
     margin-top: 9px;
-    font-size: 17px;
+    font-size: 16px;
   }
 
   a {
@@ -929,10 +929,27 @@ $bouncing-logo-min-height: 35%;
 
   @media all and (max-width: 768px) {
     position: fixed;
+    z-index: 1;
     top: auto;
     right: 15px;
     bottom: 13px;
     left: auto;
+    zoom: 1.2;
+
+    button {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px #f2f4f6;
+      }
+    }
   }
 }
 
