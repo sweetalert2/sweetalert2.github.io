@@ -833,10 +833,25 @@ tr:hover .hover-anchor {
 @media all and (max-width: 768px) {
   #docsearch {
     position: fixed;
+    z-index: 1;
     top: auto;
     right: 15px;
     bottom: 13px;
     left: auto;
+    zoom: 1.2;
+  }
+  #docsearch button {
+    position: relative;
+  }
+  #docsearch button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #f2f4f6;
   }
 }
 
