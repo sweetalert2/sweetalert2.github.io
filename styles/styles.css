@@ -814,6 +814,7 @@ tr:hover .hover-anchor {
 @media all and (max-width: 480px) {
   #slava-ukraini {
     margin-top: 9px;
+    margin-left: 35px;
     font-size: 16px;
   }
 }
