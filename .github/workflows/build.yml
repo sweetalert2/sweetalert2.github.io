@@ -39,4 +39,4 @@ jobs:
       - name: Check for broken links
         run: |
           gem install awesome_bot
-          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://gemwire.gg/en/free-fortnite-reward-codes-4/,https://blowupdollshop.com/inflatable-sex-doll/,https://sextoystop.com/,https://sexydollies.com/,https://bululusexdoll.com/,https://www.bestrealdoll.com/collections/us-warehouse"
+          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://escortsear.ch/"
