@@ -15,7 +15,7 @@ body {
   line-height: 1.5;
   text-align: center !important;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   body {
     padding-bottom: 0;
   }
@@ -40,12 +40,12 @@ nav {
   padding: 2em 0 2em 1em;
   transition: left 0.5s ease-in-out;
 }
-@media all and (max-width: 1260px) {
+@media all and (width <= 1260px) {
   nav {
     display: none;
   }
 }
-@media all and (max-width: 1300px) {
+@media all and (width <= 1300px) {
   nav {
     left: 0;
   }
@@ -97,7 +97,7 @@ nav .version-selector {
   font-size: 1.8em;
   cursor: pointer;
 }
-@media all and (max-width: 1260px) {
+@media all and (width <= 1260px) {
   #show-sidebar {
     display: flex;
   }
@@ -116,7 +116,7 @@ nav .version-selector {
   align-items: center;
   justify-content: space-around;
 }
-@media all and (max-width: 480px) {
+@media all and (width <= 480px) {
   .sidebar .swal2-footer {
     flex-direction: column;
   }
@@ -183,7 +183,7 @@ h3::before {
   border-radius: 0.125em;
   background-color: #e2e5e8;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   h3::before {
     right: 1.25em;
     left: 1.25em;
@@ -216,7 +216,7 @@ p {
 p.center {
   text-align: center;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   p {
     padding: 0 0.625em;
     text-align: center;
@@ -313,7 +313,7 @@ pre.code-sample::after {
   font-size: 0.8em;
   cursor: pointer;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   pre.code-sample::after {
     display: none;
   }
@@ -338,7 +338,7 @@ kbd {
 .showcase.normal button {
   margin: 38px;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .showcase {
     padding: 0 0.625em 0.625em;
   }
@@ -347,7 +347,7 @@ kbd {
     display: none;
   }
 }
-@media all and (max-width: 360px) {
+@media all and (width <= 360px) {
   .showcase {
     width: 90%;
   }
@@ -380,12 +380,9 @@ kbd {
   width: 4.3125em;
   height: 4.3125em;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .showcase .vs-icon {
-    top: auto;
-    right: auto;
-    bottom: -2.1875em;
-    left: 50%;
+    inset: auto auto -2.1875em 50% auto;
     margin: 0.3125em auto;
     margin-left: -2.1875em;
   }
@@ -398,7 +395,7 @@ kbd {
   list-style-type: none;
   text-align: left;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .examples {
     width: auto;
   }
@@ -412,7 +409,7 @@ kbd {
   display: inline-block;
   vertical-align: top;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .examples .ui,
   .examples pre {
     display: block;
@@ -433,7 +430,7 @@ kbd {
   width: 528px;
   margin-top: 2.5em;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .examples pre {
     margin-top: 1em !important;
     margin-bottom: 3.75em;
@@ -464,7 +461,7 @@ table {
   border-collapse: collapse;
   text-align: left;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   table {
     width: auto;
     margin: 0.625em auto;
@@ -478,7 +475,7 @@ table th {
   font-weight: 400;
   white-space: nowrap;
 }
-@media all and (max-width: 360px) {
+@media all and (width <= 360px) {
   table th {
     padding: 0.625em 0.25em;
   }
@@ -514,7 +511,7 @@ tr:hover .hover-anchor {
 .input-types strong {
   color: #555;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .popup-icons th:nth-child(2),
   .popup-icons td:nth-child(2),
   .input-types th:nth-child(2),
@@ -532,7 +529,7 @@ tr:hover .hover-anchor {
   width: 510px;
 }
 
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .dismiss-reasons tr {
     display: flex;
     flex-direction: column;
@@ -566,7 +563,7 @@ tr:hover .hover-anchor {
   justify-content: center;
 }
 
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   .mobile-hidden {
     display: none !important;
   }
@@ -773,7 +770,7 @@ tr:hover .hover-anchor {
 #logo-track img {
   height: 5em;
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   #logo-track img {
     width: 272px;
   }
@@ -811,7 +808,7 @@ tr:hover .hover-anchor {
   font-size: 22px;
   font-weight: bold;
 }
-@media all and (max-width: 480px) {
+@media all and (width <= 480px) {
   #slava-ukraini {
     margin-top: 9px;
     margin-left: 35px;
@@ -831,14 +828,11 @@ tr:hover .hover-anchor {
 #docsearch button {
   box-shadow: var(--docsearch-searchbox-shadow);
 }
-@media all and (max-width: 768px) {
+@media all and (width <= 768px) {
   #docsearch {
     position: fixed;
     z-index: 1;
-    top: auto;
-    right: 15px;
-    bottom: 13px;
-    left: auto;
+    inset: auto 15px 13px auto;
     zoom: 1.2;
   }
   #docsearch button {
@@ -847,16 +841,13 @@ tr:hover .hover-anchor {
   #docsearch button::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     border-radius: 50%;
     box-shadow: 0 0 0 1px #f2f4f6;
   }
 }
 
-@media all and (max-width: 750px) {
+@media all and (width <= 750px) {
   .DocSearch-Container {
     position: fixed !important;
   }
