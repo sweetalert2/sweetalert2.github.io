@@ -1721,9 +1721,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.382"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.382.tgz#87e659b0f0d5f7b19759038871bac0a327191f82"
-  integrity sha512-czMavlW52VIPgutbVL9JnZIZuFijzsG1ww/1z2Otu1r1q+9Qe2bTsH3My3sZarlvwyqHM6+mnZfEnt2Vr4dsIg==
+  version "1.4.384"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.384.tgz#5c23b5579930dec9af2a93edafddbe991542eace"
+  integrity sha512-I97q0MmRAAqj53+a8vZsDkEXBZki+ehYAOPzwtQzALip52aEp2+BJqHFtTlsfjoqVZYwPpHC8wM6MbsSZQ/Eqw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -4859,9 +4859,9 @@ svg-tags@^1.0.0:
   integrity sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==
 
 sweetalert2@^11.5.2:
-  version "11.7.4"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.7.4.tgz#540e0258705e03b704ae29e0c9fdeca41d0ee08c"
-  integrity sha512-iDmhJpU64hWJZuK97oy4ldMYGhEb88sbjVxuDCu4FcIO4AmwnvfNdwQmOXod+z4ALCMSDK4RUJYXiyKQxuPjIA==
+  version "11.7.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.7.5.tgz#d905b792cfcb69d5db479f839151ce12d8804a8e"
+  integrity sha512-RBPKdK8Uf9/bz9r4vy7x6sGqf0MioSXt1po1lAwwcl3AwbjHVTc5S0yud4ZJKU1EhvJFVDrFoqIpHwWERwZJEA==
 
 table@^6.8.1:
   version "6.8.1"
