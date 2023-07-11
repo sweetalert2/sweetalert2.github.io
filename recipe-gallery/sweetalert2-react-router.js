@@ -34,14 +34,12 @@ const About = () => {
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <HistoryRouter history={browserHistory}>
-      <Link to={`${rootPath}/`}>Home</Link> {' | '}
-      <Link to={`${rootPath}/about`}>About</Link>
-      <Routes>
-        <Route path={`${rootPath}/`} element={<Home />} />
-        <Route path={`${rootPath}/about`} element={<About />} />
-      </Routes>
-    </HistoryRouter>
-  </React.StrictMode>
+  <HistoryRouter history={browserHistory}>
+    <Link to={`${rootPath}/`}>Home</Link> {' | '}
+    <Link to={`${rootPath}/about`}>About</Link>
+    <Routes>
+      <Route path={`${rootPath}/`} element={<Home />} />
+      <Route path={`${rootPath}/about`} element={<About />} />
+    </Routes>
+  </HistoryRouter>
 );
