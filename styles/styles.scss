@@ -425,12 +425,6 @@ kbd {
     right: -2.125em;
     width: 4.3125em;
     height: 4.3125em;
-
-    @media all and (width <= 768px) {
-      inset: auto auto -2.1875em 50% auto;
-      margin: 0.3125em auto;
-      margin-left: -2.1875em;
-    }
   }
 }
 

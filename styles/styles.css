@@ -380,13 +380,6 @@ kbd {
   width: 4.3125em;
   height: 4.3125em;
 }
-@media all and (width <= 768px) {
-  .showcase .vs-icon {
-    inset: auto auto -2.1875em 50% auto;
-    margin: 0.3125em auto;
-    margin-left: -2.1875em;
-  }
-}
 
 .examples {
   max-width: 900px;
