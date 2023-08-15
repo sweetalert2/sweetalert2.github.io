@@ -112,15 +112,6 @@ nav .version-selector {
 .sidebar .swal2-html-container {
   margin: 0 2em 0 0;
 }
-.sidebar .swal2-footer {
-  align-items: center;
-  justify-content: space-around;
-}
-@media all and (width <= 480px) {
-  .sidebar .swal2-footer {
-    flex-direction: column;
-  }
-}
 .sidebar nav {
   display: block !important;
   position: initial;
