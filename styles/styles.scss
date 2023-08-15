@@ -127,15 +127,6 @@ nav {
     margin: 0 2em 0 0;
   }
 
-  .swal2-footer {
-    align-items: center;
-    justify-content: space-around;
-
-    @media all and (width <= 480px) {
-      flex-direction: column;
-    }
-  }
-
   nav {
     display: block !important;
     position: initial;

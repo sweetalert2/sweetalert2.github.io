@@ -5,7 +5,7 @@
   "description": "Documentation for SweetAlert2",
   "scripts": {
     "build": "gulp build",
-    "start": "gulp watch",
+    "dev": "gulp watch",
     "lint": "stylelint styles/*.scss && eslint *.js src/app.js src/**/*.js"
   },
   "devDependencies": {
