@@ -8,5 +8,5 @@
 
 ```sh
 yarn install
-yarn start
+yarn dev
 ```
