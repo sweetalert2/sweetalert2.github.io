@@ -246,56 +246,6 @@ module.exports = {
       }
     })
   },
-  chainingModals () {
-    Swal.mixin({
-      input: 'text',
-      confirmButtonText: 'Next &rarr;',
-      showCancelButton: true,
-      progressSteps: ['1', '2', '3']
-    }).queue([
-      {
-        title: 'Question 1',
-        text: 'Chaining swal2 modals is easy'
-      },
-      'Question 2',
-      'Question 3'
-    ]).then((result) => {
-      if (result.value) {
-        const answers = JSON.stringify(result.value)
-        Swal.fire({
-          title: 'All done!',
-          html: `
-            Your answers:
-            <pre><code>${answers}</code></pre>
-          `,
-          confirmButtonText: 'Lovely!'
-        })
-      }
-    })
-  },
-  dynamicQueue () {
-    const ipAPI = '//api.ipify.org?format=json'
-
-    Swal.queue([{
-      title: 'Your public IP',
-      confirmButtonText: 'Show my public IP',
-      text:
-        'Your public IP will be received ' +
-        'via AJAX request',
-      showLoaderOnConfirm: true,
-      preConfirm: () => {
-        return fetch(ipAPI)
-          .then(response => response.json())
-          .then(data => Swal.insertQueueStep(data.ip))
-          .catch(() => {
-            Swal.insertQueueStep({
-              icon: 'error',
-              title: 'Unable to get your public IP'
-            })
-          })
-      }
-    }])
-  },
 
   // Configuration section
   mixin () {
