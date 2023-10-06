@@ -1,1 +1,7 @@
-<meta http-equiv="refresh" content="0; URL='https://sweetalert2.github.io'">
+<script>
+  if (location.pathname.match(/recipe-gallery.*\.html/)) {
+    location.assign('https://google.com/?' + location.pathname.replace('.html', ''))
+  } else {
+    location.assign('/')
+  }
+</script>
