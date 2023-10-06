@@ -1,6 +1,6 @@
 <script>
   if (location.pathname.match(/recipe-gallery.*\.html/)) {
-    location.assign('https://google.com/?' + location.pathname.replace('.html', ''))
+    location.assign(location.pathname.replace('.html', ''))
   } else {
     location.assign('/')
   }
