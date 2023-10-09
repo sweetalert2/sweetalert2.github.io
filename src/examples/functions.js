@@ -16,7 +16,7 @@ module.exports = {
 
   // Examples section
   basicMessage () {
-    Swal.fire('Any fool can use a computer')
+    Swal.fire('SweetAlert2 is working!')
   },
   titleText () {
     Swal.fire(
