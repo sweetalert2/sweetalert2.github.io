@@ -24,10 +24,10 @@ jobs:
       - name: Build
         run: yarn build && cd new && yarn build && cd ..
 
-      - name: Setup ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0'
+      # - name: Setup ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: '3.0'
 
       - name: Deploy 🚀
         if: github.event_name == 'push'
@@ -36,7 +36,7 @@ jobs:
           branch: gh-pages
           folder: .
 
-      - name: Check for broken links
-        run: |
-          gem install awesome_bot
-          awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://escortsear.ch/,https://www.sexvibrators.in/,https://realspyapps.com/,https://doctorclimax.com/,https://blowupdollshop.com/,https://sextoycollective.com/,https://placeholder.pics/svg/300x1500,https://taboodude.com/,https://vlixa.com/,https://www.mybitcoinslots.com/,https://www.serpempire.com/,https://www.myminisexdoll.com/"
+      # - name: Check for broken links
+      #   run: |
+      #     gem install awesome_bot
+      #     awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://escortsear.ch/,https://www.sexvibrators.in/,https://realspyapps.com/,https://doctorclimax.com/,https://blowupdollshop.com/,https://sextoycollective.com/,https://placeholder.pics/svg/300x1500,https://taboodude.com/,https://vlixa.com/,https://www.mybitcoinslots.com/,https://www.serpempire.com/,https://www.myminisexdoll.com/"

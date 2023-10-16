@@ -5,7 +5,7 @@
 @import 'colors';
 
 @mixin retina-background($url, $type: png) {
-  background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);
+  background-image: image-set(url('../images/#{$url}.#{$type}') 1x, url('../images/#{$url}@2x.#{$type}') 2x);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -340,7 +340,7 @@ pre {
       padding-left: 0.8em;
       transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
       opacity: 0;
-      background: $black url('/images/codepen.svg') 11.6em 0.2em no-repeat;
+      background: $black url('../images/codepen.svg') 11.6em 0.2em no-repeat;
       background-size: 1.6em;
       font-size: 0.8em;
       cursor: pointer;
