@@ -54,7 +54,7 @@ export function DeclarativeTemplates() {
       <div className="center-container mobile-hidden">
         <h3 id="declarative-templates">Declarative templates and declarative triggering</h3>
         <p className="center">
-          There's also the declarative way to define a popup, via the
+          There's also the declarative way to define a popup, via the{' '}
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"
             target="_blank"
@@ -62,7 +62,7 @@ export function DeclarativeTemplates() {
             tabIndex={-1}
           >
             <strong>&lt;template&gt;</strong>
-          </a>
+          </a>{' '}
           tag. This is handy when you want to define popup on server side (SSR).
         </p>
       </div>

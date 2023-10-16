@@ -473,19 +473,19 @@ export default {
     if (file) {
       const reader = new FileReader()
       reader.onload = (e) => {
-        const imageUrl = e.target?.result
-        if (typeof imageUrl === 'string') {
-          Swal.fire({
-            title: 'Your uploaded picture',
-            imageUrl,
-            imageAlt: 'The uploaded picture',
-          })
-        } else {
-          Swal.fire({
+        const target = e.target
+        if (!target || typeof target.result !== 'string') {
+          return Swal.fire({
             icon: 'error',
             text: 'The uploaded picture is invalid',
           })
         }
+        const imageUrl = target.result
+        Swal.fire({
+          title: 'Your uploaded picture',
+          imageUrl,
+          imageAlt: 'The uploaded picture',
+        })
       }
       reader.readAsDataURL(file)
     }

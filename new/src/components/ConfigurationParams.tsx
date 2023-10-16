@@ -109,9 +109,9 @@ export function ConfigurationParams() {
                 <i>
                   <CodeExample
                     code={`{
-popup: 'swal2-show',
-backdrop: 'swal2-backdrop-show',
-icon: 'swal2-icon-show'
+  popup: 'swal2-show',
+  backdrop: 'swal2-backdrop-show',
+  icon: 'swal2-icon-show'
 }`}
                     withoutCodepen
                   />
@@ -127,9 +127,9 @@ icon: 'swal2-icon-show'
                 <i>
                   <CodeExample
                     code={`{
-popup: 'swal2-hide',
-backdrop: 'swal2-backdrop-hide',
-icon: 'swal2-icon-hide'
+  popup: 'swal2-hide',
+  backdrop: 'swal2-backdrop-hide',
+  icon: 'swal2-icon-hide'
 }`}
                     withoutCodepen
                   />
@@ -280,24 +280,24 @@ icon: 'swal2-icon-hide'
                 A custom CSS class for the popup:
                 <CodeExample
                   code={`customClass: {
-container: '...',
-popup: '...',
-header: '...',
-title: '...',
-closeButton: '...',
-icon: '...',
-image: '...',
-htmlContainer: '...',
-input: '...',
-inputLabel: '...',
-validationMessage: '...',
-actions: '...',
-confirmButton: '...',
-denyButton: '...',
-cancelButton: '...',
-loader: '...',
-footer: '....',
-timerProgressBar: '....',
+  container: '...',
+  popup: '...',
+  header: '...',
+  title: '...',
+  closeButton: '...',
+  icon: '...',
+  image: '...',
+  htmlContainer: '...',
+  input: '...',
+  inputLabel: '...',
+  validationMessage: '...',
+  actions: '...',
+  confirmButton: '...',
+  denyButton: '...',
+  cancelButton: '...',
+  loader: '...',
+  footer: '....',
+  timerProgressBar: '....',
 }`}
                   withoutCodepen
                 />
@@ -366,7 +366,7 @@ timerProgressBar: '....',
               </td>
               <td>
                 If set to <strong>false</strong>, the user can't dismiss the popup by pressing the <kbd>Esc</kbd> key.
-                You can also pass a custom function returning a boolean value, e.g. if you want to disable the
+                You can also pass a custom function returning a boolean value, e.g. if you want to disable the{' '}
                 <kbd>Esc</kbd> key for the loading state of a popup.
               </td>
             </tr>
@@ -378,7 +378,7 @@ timerProgressBar: '....',
                 <i>true</i>
               </td>
               <td>
-                If set to <strong>false</strong>, the user can't confirm the popup by pressing the <kbd>Enter</kbd> or
+                If set to <strong>false</strong>, the user can't confirm the popup by pressing the <kbd>Enter</kbd> or{' '}
                 <kbd>Space</kbd> keys, unless they manually focus the confirm button. You can also pass a custom
                 function returning a boolean value.
               </td>
@@ -884,7 +884,7 @@ timerProgressBar: '....',
                 <i>{}</i>
               </td>
               <td>
-                HTML input attributes (e.g. <strong>min</strong>, <strong>max</strong>, <strong>autocomplete</strong>,
+                HTML input attributes (e.g. <strong>min</strong>, <strong>max</strong>, <strong>autocomplete</strong>,{' '}
                 <strong>accept</strong>), that are added to the input field. Object keys will represent attributes
                 names, object values will represent attributes values.
               </td>

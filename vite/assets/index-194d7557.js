@@ -1,7 +1,7 @@
-import { _ as __extends, e as dequal, c as __assign, f as createPackageJSON, d as createError, S as SandpackLogLevel, g as addPackageJSONIfNeeded, n as nullthrows, h as __spreadArray, a as __awaiter, b as __generator, j as extractErrorDetails } from "./recipeReact-9d7be5f6.js";
-import { S as SandpackClient } from "./base-80a1f760-f208403d.js";
-import "./client-66f59906.js";
-import "./index-608e70c6.js";
+import { _ as __extends, e as dequal, c as __assign, f as createPackageJSON, d as createError, S as SandpackLogLevel, g as addPackageJSONIfNeeded, n as nullthrows, h as __spreadArray, a as __awaiter, b as __generator, j as extractErrorDetails } from "./recipeReact-57e6318e.js";
+import { S as SandpackClient } from "./base-80a1f760-71e7e0f7.js";
+import "./client-6b11ec84.js";
+import "./index-d0a55090.js";
 var Protocol = (
   /** @class */
   function() {

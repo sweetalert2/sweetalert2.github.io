@@ -1,8 +1,8 @@
-import { _ as __extends, a as __awaiter, b as __generator } from "./recipeReact-9d7be5f6.js";
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from "./consoleHook-7a68abbd-ab2a3041.js";
-import { S as SandpackClient } from "./base-80a1f760-f208403d.js";
-import "./client-66f59906.js";
-import "./index-608e70c6.js";
+import { _ as __extends, a as __awaiter, b as __generator } from "./recipeReact-57e6318e.js";
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from "./consoleHook-7a68abbd-cdda4ad4.js";
+import { S as SandpackClient } from "./base-80a1f760-71e7e0f7.js";
+import "./client-6b11ec84.js";
+import "./index-d0a55090.js";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;

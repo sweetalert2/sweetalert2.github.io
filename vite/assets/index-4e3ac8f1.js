@@ -26,11 +26,11 @@ var __privateMethod = (obj, member, method) => {
   __accessCheck(obj, member, "access private method");
   return method;
 };
-import { _ as __extends, a as __awaiter, b as __generator, c as __assign, d as createError, n as nullthrows } from "./recipeReact-9d7be5f6.js";
-import { S as SandpackClient } from "./base-80a1f760-f208403d.js";
-import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from "./consoleHook-7a68abbd-ab2a3041.js";
-import "./client-66f59906.js";
-import "./index-608e70c6.js";
+import { _ as __extends, a as __awaiter, b as __generator, c as __assign, d as createError, n as nullthrows } from "./recipeReact-57e6318e.js";
+import { S as SandpackClient } from "./base-80a1f760-71e7e0f7.js";
+import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from "./consoleHook-7a68abbd-cdda4ad4.js";
+import "./client-6b11ec84.js";
+import "./index-d0a55090.js";
 var __create = Object.create;
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;

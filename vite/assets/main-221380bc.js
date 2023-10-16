@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports, r as reactExports, g as getDefaultExportFromCjs, c as client } from "./client-66f59906.js";
-import { e as examples, S as Swal, N as Nav } from "./index-608e70c6.js";
+import { j as jsxRuntimeExports, r as reactExports, g as getDefaultExportFromCjs, c as client } from "./client-6b11ec84.js";
+import { e as examples, S as Swal, N as Nav } from "./index-d0a55090.js";
 /*! @docsearch/js 3.5.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 function e(e2, t2) {
   var n2 = Object.keys(e2);
@@ -6996,9 +6996,9 @@ function ConfigurationParams() {
                 CodeExample,
                 {
                   code: `{
-popup: 'swal2-show',
-backdrop: 'swal2-backdrop-show',
-icon: 'swal2-icon-show'
+  popup: 'swal2-show',
+  backdrop: 'swal2-backdrop-show',
+  icon: 'swal2-icon-show'
 }`,
                   withoutCodepen: true
                 }
@@ -7015,9 +7015,9 @@ icon: 'swal2-icon-show'
                 CodeExample,
                 {
                   code: `{
-popup: 'swal2-hide',
-backdrop: 'swal2-backdrop-hide',
-icon: 'swal2-icon-hide'
+  popup: 'swal2-hide',
+  backdrop: 'swal2-backdrop-hide',
+  icon: 'swal2-icon-hide'
 }`,
                   withoutCodepen: true
                 }
@@ -7234,24 +7234,24 @@ icon: 'swal2-icon-hide'
                 CodeExample,
                 {
                   code: `customClass: {
-container: '...',
-popup: '...',
-header: '...',
-title: '...',
-closeButton: '...',
-icon: '...',
-image: '...',
-htmlContainer: '...',
-input: '...',
-inputLabel: '...',
-validationMessage: '...',
-actions: '...',
-confirmButton: '...',
-denyButton: '...',
-cancelButton: '...',
-loader: '...',
-footer: '....',
-timerProgressBar: '....',
+  container: '...',
+  popup: '...',
+  header: '...',
+  title: '...',
+  closeButton: '...',
+  icon: '...',
+  image: '...',
+  htmlContainer: '...',
+  input: '...',
+  inputLabel: '...',
+  validationMessage: '...',
+  actions: '...',
+  confirmButton: '...',
+  denyButton: '...',
+  cancelButton: '...',
+  loader: '...',
+  footer: '....',
+  timerProgressBar: '....',
 }`,
                   withoutCodepen: true
                 }
@@ -7343,6 +7343,7 @@ timerProgressBar: '....',
               ", the user can't dismiss the popup by pressing the ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { children: "Esc" }),
               " key. You can also pass a custom function returning a boolean value, e.g. if you want to disable the",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { children: "Esc" }),
               " key for the loading state of a popup."
             ] })
@@ -7360,6 +7361,7 @@ timerProgressBar: '....',
               ", the user can't confirm the popup by pressing the ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { children: "Enter" }),
               " or",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { children: "Space" }),
               " keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value."
             ] })
@@ -7985,6 +7987,7 @@ timerProgressBar: '....',
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "autocomplete" }),
               ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "accept" }),
               "), that are added to the input field. Object keys will represent attributes names, object values will represent attributes values."
             ] })
@@ -8220,6 +8223,7 @@ function DeclarativeTemplates() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "declarative-templates", children: "Declarative templates and declarative triggering" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "center", children: [
         "There's also the declarative way to define a popup, via the",
+        " ",
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "a",
           {
@@ -8230,6 +8234,7 @@ function DeclarativeTemplates() {
             children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "<template>" })
           }
         ),
+        " ",
         "tag. This is handy when you want to define popup on server side (SSR)."
       ] })
     ] }),

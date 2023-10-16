@@ -1,4 +1,4 @@
-import { a as commonjsGlobal, g as getDefaultExportFromCjs, R as React, b as createRoot, j as jsxRuntimeExports } from "./client-66f59906.js";
+import { a as commonjsGlobal, g as getDefaultExportFromCjs, R as React, b as createRoot, j as jsxRuntimeExports } from "./client-6b11ec84.js";
 var sweetalert2_all = { exports: {} };
 /*!
 * sweetalert2 v11.7.32
@@ -3365,20 +3365,19 @@ const functions = {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        var _a;
-        const imageUrl = (_a = e.target) == null ? void 0 : _a.result;
-        if (typeof imageUrl === "string") {
-          Swal.fire({
-            title: "Your uploaded picture",
-            imageUrl,
-            imageAlt: "The uploaded picture"
-          });
-        } else {
-          Swal.fire({
+        const target = e.target;
+        if (!target || typeof target.result !== "string") {
+          return Swal.fire({
             icon: "error",
             text: "The uploaded picture is invalid"
           });
         }
+        const imageUrl = target.result;
+        Swal.fire({
+          title: "Your uploaded picture",
+          imageUrl,
+          imageAlt: "The uploaded picture"
+        });
       };
       reader.readAsDataURL(file);
     }

@@ -1951,7 +1951,9 @@ tr:hover .hover-anchor {
   color: #192786;
 }
 .stats {
-  opacity: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   font-size: 0.8125em;
 }
 .unselectable {
