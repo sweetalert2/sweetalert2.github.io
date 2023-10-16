@@ -1,10 +1,13 @@
 import ReactDOM from 'react-dom/client'
+import { Nav } from "../src/components"
 
 export function RecipeGallery() {
   return (
     <>
-      <h1>RecipeGallery</h1>
-      <a href="./sweetalert2-react.html">react</a>
+      <Nav recipeGallery showBackToRecipeGalleryLink={false} />
+      <h1>Recipe Gallery</h1>
+      <p className="center">A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less.</p>
+      <a href="./sweetalert2-react.html">React example</a>
     </>
   )
 }
