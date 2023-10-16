@@ -11,8 +11,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@algolia/client-search": "^4.20.0",
+    "@docsearch/css": "^3.5.2",
+    "@docsearch/js": "^3.5.2",
+    "highlight.js": "^11.9.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "search-insights": "^2.9.0",
+    "sweetalert2": "^11.7.32",
+    "sweetalert2-react-content": "^5.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -23,6 +30,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "sass": "^1.69.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-html-inject": "^1.0.4"
