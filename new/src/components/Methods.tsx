@@ -41,7 +41,7 @@ export function Methods() {
                 <h4>Swal.close()</h4>
               </td>
               <td>
-                Close the currently open SweetAlert2 popup programmatically, the Promise returned by
+                Close the currently open SweetAlert2 popup programmatically, the Promise returned by{' '}
                 <strong>Swal.fire()</strong> will be resolved with an empty object{' '}
                 <strong className="nowrap">{`{}`}</strong>
               </td>
@@ -165,7 +165,7 @@ export function Methods() {
                 <br />
                 <br />
                 By default the loader be shown instead of the "Confirm" button, but if you want another button to be
-                replaced with a loader, just pass it like this:
+                replaced with a loader, just pass it like this:{' '}
                 <strong className="nowrap">Swal.showLoading(Swal.getDenyButton())</strong>
               </td>
             </tr>
@@ -180,11 +180,11 @@ export function Methods() {
                 <h4>Swal.isLoading()</h4>
               </td>
               <td>
-                Determine if popup is in the loading state. Related methods:
+                Determine if popup is in the loading state. Related methods:{' '}
                 <a href="#showLoading" className="nowrap">
                   Swal.showLoading()
                 </a>{' '}
-                and
+                and{' '}
                 <a href="#hideLoading" className="nowrap">
                   Swal.hideLoading()
                 </a>
@@ -227,7 +227,7 @@ export function Methods() {
                 <h4>Swal.isTimerRunning()</h4>
               </td>
               <td>
-                Returns the status of a <a href="#timer">timer</a>: <strong>true</strong> if is running,
+                Returns the status of a <a href="#timer">timer</a>: <strong>true</strong> if is running,{' '}
                 <strong>false</strong> if it's paused
               </td>
             </tr>
