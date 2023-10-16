@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports, r as reactExports, g as getDefaultExportFromCjs, c as client } from "./client-6b11ec84.js";
-import { e as examples, S as Swal, N as Nav } from "./index-d0a55090.js";
+import { j as jsxRuntimeExports, r as reactExports, g as getDefaultExportFromCjs, c as client } from "./client-764685b5.js";
+import { e as examples, S as Swal, N as Nav } from "./index-146f2017.js";
 /*! @docsearch/js 3.5.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 function e(e2, t2) {
   var n2 = Object.keys(e2);
@@ -8260,7 +8260,7 @@ function DeclarativeTemplates() {
             }
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: template, language: "xml", withoutCodepen: true }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: template, language: "xml", withoutCodepen: true, style: { marginTop: 0 } }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.declarativeTemplate.fnString, codepenHtml: template })
       ] })
     ] }) }),
@@ -8310,7 +8310,8 @@ function DeclarativeTemplates() {
 </button>
               `.trim(),
             language: "xml",
-            withoutCodepen: true
+            withoutCodepen: true,
+            style: { marginTop: 0 }
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -8703,6 +8704,7 @@ function InputTypes() {
         "Multiple inputs aren't supported, you can achieve them by using ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "html" }),
         " and",
+        " ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "preConfirm" }),
         " parameters.",
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
@@ -8769,6 +8771,7 @@ function Methods() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.close()" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
             "Close the currently open SweetAlert2 popup programmatically, the Promise returned by",
+            " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire()" }),
             " will be resolved with an empty object",
             " ",
@@ -8868,6 +8871,7 @@ function Methods() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
             'By default the loader be shown instead of the "Confirm" button, but if you want another button to be replaced with a loader, just pass it like this:',
+            " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: "Swal.showLoading(Swal.getDenyButton())" })
           ] })
         ] }),
@@ -8879,9 +8883,11 @@ function Methods() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isLoading()" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
             "Determine if popup is in the loading state. Related methods:",
+            " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#showLoading", className: "nowrap", children: "Swal.showLoading()" }),
             " ",
             "and",
+            " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#hideLoading", className: "nowrap", children: "Swal.hideLoading()" })
           ] })
         ] }),
@@ -8925,6 +8931,7 @@ function Methods() {
             ": ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "true" }),
             " if is running,",
+            " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
             " if it's paused"
           ] })

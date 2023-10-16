@@ -1,4 +1,4 @@
-import { a as commonjsGlobal, g as getDefaultExportFromCjs, R as React, b as createRoot, j as jsxRuntimeExports } from "./client-6b11ec84.js";
+import { a as commonjsGlobal, g as getDefaultExportFromCjs, R as React, b as createRoot, j as jsxRuntimeExports } from "./client-764685b5.js";
 var sweetalert2_all = { exports: {} };
 /*!
 * sweetalert2 v11.7.32

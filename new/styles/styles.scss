@@ -392,8 +392,12 @@ kbd {
   vertical-align: top;
 
   &.normal {
+    margin-right: 4px;
+
     button {
-      margin: 38px;
+      margin: 27px;
+      padding: 8px 16px;
+      font-size: 1.1em;
     }
   }
 

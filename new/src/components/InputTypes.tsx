@@ -190,7 +190,7 @@ export function InputTypes() {
           <tr id="multiple-inputs" className="mobile-hidden">
             <td colSpan={3}>
               <p>
-                Multiple inputs aren't supported, you can achieve them by using <strong>html</strong> and
+                Multiple inputs aren't supported, you can achieve them by using <strong>html</strong> and{' '}
                 <strong>preConfirm</strong> parameters.
                 <br />
                 Inside the <strong>preConfirm()</strong> function you can return (or, if async, resolve with) the custom

@@ -85,7 +85,7 @@ export function DeclarativeTemplates() {
                 __html: template,
               }}
             />
-            <CodeExample code={template} language="xml" withoutCodepen />
+            <CodeExample code={template} language="xml" withoutCodepen style={{ marginTop: 0 }} />
             <CodeExample code={examples.declarativeTemplate.fnString} codepenHtml={template} />
           </div>
         </li>
@@ -141,6 +141,7 @@ export function DeclarativeTemplates() {
               `.trim()}
               language="xml"
               withoutCodepen
+              style={{ marginTop: 0 }}
             />
             <CodeExample
               code={examples.declarativeTriggering.fnString}

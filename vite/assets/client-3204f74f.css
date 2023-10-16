@@ -1665,8 +1665,13 @@ kbd {
   background-color: #e2e5e8;
   vertical-align: top;
 }
+.showcase.normal {
+  margin-right: 4px;
+}
 .showcase.normal button {
-  margin: 38px;
+  margin: 27px;
+  padding: 8px 16px;
+  font-size: 1.1em;
 }
 @media all and (width <= 768px) {
   .showcase {
