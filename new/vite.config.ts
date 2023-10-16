@@ -12,6 +12,7 @@ export default defineConfig({
         main: 'index.html',
         recipeGallery: 'recipe-gallery/index.html',
         recipeReact: 'recipe-gallery/sweetalert2-react.html',
+        recipeQueueWithProgressSteps: 'recipe-gallery/queue-with-progress-steps.html',
       },
     },
   },
