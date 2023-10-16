@@ -1,4 +1,4 @@
-import { e as dequal } from "./recipeReact-6a33ec1d.js";
+import { e as dequal } from "./index-0d4b0de2.js";
 var SandpackClient = (
   /** @class */
   function() {

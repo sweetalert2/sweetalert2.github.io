@@ -1,4 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports, c as client, N as Nav } from "./index-1acc6323.js";
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from "./index-e107d7c8.js";
 var t$1 = "colors", n = "sizes", r$1 = "space", i$1 = { gap: r$1, gridGap: r$1, columnGap: r$1, gridColumnGap: r$1, rowGap: r$1, gridRowGap: r$1, inset: r$1, insetBlock: r$1, insetBlockEnd: r$1, insetBlockStart: r$1, insetInline: r$1, insetInlineEnd: r$1, insetInlineStart: r$1, margin: r$1, marginTop: r$1, marginRight: r$1, marginBottom: r$1, marginLeft: r$1, marginBlock: r$1, marginBlockEnd: r$1, marginBlockStart: r$1, marginInline: r$1, marginInlineEnd: r$1, marginInlineStart: r$1, padding: r$1, paddingTop: r$1, paddingRight: r$1, paddingBottom: r$1, paddingLeft: r$1, paddingBlock: r$1, paddingBlockEnd: r$1, paddingBlockStart: r$1, paddingInline: r$1, paddingInlineEnd: r$1, paddingInlineStart: r$1, top: r$1, right: r$1, bottom: r$1, left: r$1, scrollMargin: r$1, scrollMarginTop: r$1, scrollMarginRight: r$1, scrollMarginBottom: r$1, scrollMarginLeft: r$1, scrollMarginX: r$1, scrollMarginY: r$1, scrollMarginBlock: r$1, scrollMarginBlockEnd: r$1, scrollMarginBlockStart: r$1, scrollMarginInline: r$1, scrollMarginInlineEnd: r$1, scrollMarginInlineStart: r$1, scrollPadding: r$1, scrollPaddingTop: r$1, scrollPaddingRight: r$1, scrollPaddingBottom: r$1, scrollPaddingLeft: r$1, scrollPaddingX: r$1, scrollPaddingY: r$1, scrollPaddingBlock: r$1, scrollPaddingBlockEnd: r$1, scrollPaddingBlockStart: r$1, scrollPaddingInline: r$1, scrollPaddingInlineEnd: r$1, scrollPaddingInlineStart: r$1, fontSize: "fontSizes", background: t$1, backgroundColor: t$1, backgroundImage: t$1, borderImage: t$1, border: t$1, borderBlock: t$1, borderBlockEnd: t$1, borderBlockStart: t$1, borderBottom: t$1, borderBottomColor: t$1, borderColor: t$1, borderInline: t$1, borderInlineEnd: t$1, borderInlineStart: t$1, borderLeft: t$1, borderLeftColor: t$1, borderRight: t$1, borderRightColor: t$1, borderTop: t$1, borderTopColor: t$1, caretColor: t$1, color: t$1, columnRuleColor: t$1, fill: t$1, outline: t$1, outlineColor: t$1, stroke: t$1, textDecorationColor: t$1, fontFamily: "fonts", fontWeight: "fontWeights", lineHeight: "lineHeights", letterSpacing: "letterSpacings", blockSize: n, minBlockSize: n, maxBlockSize: n, inlineSize: n, minInlineSize: n, maxInlineSize: n, width: n, minWidth: n, maxWidth: n, height: n, minHeight: n, maxHeight: n, flexBasis: n, gridTemplateColumns: n, gridTemplateRows: n, borderWidth: "borderWidths", borderTopWidth: "borderWidths", borderRightWidth: "borderWidths", borderBottomWidth: "borderWidths", borderLeftWidth: "borderWidths", borderStyle: "borderStyles", borderTopStyle: "borderStyles", borderRightStyle: "borderStyles", borderBottomStyle: "borderStyles", borderLeftStyle: "borderStyles", borderRadius: "radii", borderTopLeftRadius: "radii", borderTopRightRadius: "radii", borderBottomRightRadius: "radii", borderBottomLeftRadius: "radii", boxShadow: "shadows", textShadow: "shadows", transition: "transitions", zIndex: "zIndices" }, o = (e, t2) => "function" == typeof t2 ? { "()": Function.prototype.toString.call(t2) } : t2, l = () => {
   const e = /* @__PURE__ */ Object.create(null);
   return (t2, n2, ...r2) => {
@@ -873,21 +873,21 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
           }
           return [3, 5];
         case 1:
-          return [4, __vitePreload(() => import("./index-b4408845.js"), true ? ["assets/index-b4408845.js","assets/base-80a1f760-eaaed84f.js","assets/consoleHook-7a68abbd-7040a605.js","assets/index-1acc6323.js","assets/index-083f921f.css"] : void 0).then(function(m2) {
+          return [4, __vitePreload(() => import("./index-8e344cbe.js"), true ? ["assets/index-8e344cbe.js","assets/base-80a1f760-057850cf.js","assets/consoleHook-7a68abbd-1f88e00a.js","assets/index-e107d7c8.js","assets/index-710d1bb6.css"] : void 0).then(function(m2) {
             return m2.SandpackNode;
           })];
         case 2:
           Client = _c2.sent();
           return [3, 7];
         case 3:
-          return [4, __vitePreload(() => import("./index-fc68d414-e97d3673.js"), true ? ["assets/index-fc68d414-e97d3673.js","assets/consoleHook-7a68abbd-7040a605.js","assets/base-80a1f760-eaaed84f.js","assets/index-1acc6323.js","assets/index-083f921f.css"] : void 0).then(function(m2) {
+          return [4, __vitePreload(() => import("./index-fc68d414-8db032b0.js"), true ? ["assets/index-fc68d414-8db032b0.js","assets/consoleHook-7a68abbd-1f88e00a.js","assets/base-80a1f760-057850cf.js","assets/index-e107d7c8.js","assets/index-710d1bb6.css"] : void 0).then(function(m2) {
             return m2.SandpackStatic;
           })];
         case 4:
           Client = _c2.sent();
           return [3, 7];
         case 5:
-          return [4, __vitePreload(() => import("./index-b48e6b61.js"), true ? ["assets/index-b48e6b61.js","assets/base-80a1f760-eaaed84f.js","assets/index-1acc6323.js","assets/index-083f921f.css"] : void 0).then(function(m2) {
+          return [4, __vitePreload(() => import("./index-1840d38b.js"), true ? ["assets/index-1840d38b.js","assets/base-80a1f760-057850cf.js","assets/index-e107d7c8.js","assets/index-710d1bb6.css"] : void 0).then(function(m2) {
             return m2.SandpackRuntime;
           })];
         case 6:
@@ -25315,7 +25315,7 @@ var useClient = function(_a2, filesState) {
   var prevEnvironment = reactExports.useRef(filesState.environment);
   var createClient = reactExports.useCallback(function(iframe, clientId, clientPropsOverride) {
     return __awaiter(void 0, void 0, void 0, function() {
-      var timeOut, shouldSetTimeout, client2, globalListeners;
+      var timeOut, shouldSetTimeout, client, globalListeners;
       var _a3, _b3, _c3;
       return __generator(this, function(_d2) {
         switch (_d2.label) {
@@ -25357,15 +25357,15 @@ var useClient = function(_a2, filesState) {
               sandboxId
             })];
           case 1:
-            client2 = _d2.sent();
+            client = _d2.sent();
             if (typeof unsubscribe.current !== "function") {
-              unsubscribe.current = client2.listen(handleMessage);
+              unsubscribe.current = client.listen(handleMessage);
             }
             unsubscribeClientListeners.current[clientId] = unsubscribeClientListeners.current[clientId] || {};
             if (queuedListeners.current[clientId]) {
               Object.keys(queuedListeners.current[clientId]).forEach(function(listenerId) {
                 var listener = queuedListeners.current[clientId][listenerId];
-                var unsubscribe2 = client2.listen(listener);
+                var unsubscribe2 = client.listen(listener);
                 unsubscribeClientListeners.current[clientId][listenerId] = unsubscribe2;
               });
               queuedListeners.current[clientId] = {};
@@ -25373,10 +25373,10 @@ var useClient = function(_a2, filesState) {
             globalListeners = Object.entries(queuedListeners.current.global);
             globalListeners.forEach(function(_a4) {
               var listenerId = _a4[0], listener = _a4[1];
-              var unsubscribe2 = client2.listen(listener);
+              var unsubscribe2 = client.listen(listener);
               unsubscribeClientListeners.current[clientId][listenerId] = unsubscribe2;
             });
-            clients.current[clientId] = client2;
+            clients.current[clientId] = client;
             return [
               2
               /*return*/
@@ -25500,11 +25500,11 @@ var useClient = function(_a2, filesState) {
   }, [createClient, state.status]);
   var unregisterBundler = function(clientId) {
     var _a3, _b3;
-    var client2 = clients.current[clientId];
-    if (client2) {
-      client2.destroy();
-      (_a3 = client2.iframe.contentWindow) === null || _a3 === void 0 ? void 0 : _a3.location.replace("about:blank");
-      client2.iframe.removeAttribute("src");
+    var client = clients.current[clientId];
+    if (client) {
+      client.destroy();
+      (_a3 = client.iframe.contentWindow) === null || _a3 === void 0 ? void 0 : _a3.location.replace("about:blank");
+      client.iframe.removeAttribute("src");
       delete clients.current[clientId];
     }
     delete registeredIframes.current[clientId];
@@ -25564,8 +25564,8 @@ var useClient = function(_a2, filesState) {
     if (clientId) {
       clients.current[clientId].dispatch(message);
     } else {
-      Object.values(clients.current).forEach(function(client2) {
-        client2.dispatch(message);
+      Object.values(clients.current).forEach(function(client) {
+        client.dispatch(message);
       });
     }
   };
@@ -25593,17 +25593,17 @@ var useClient = function(_a2, filesState) {
       var listenerId_2 = generateRandomId();
       queuedListeners.current.global[listenerId_2] = listener;
       var clientsList = Object.values(clients.current);
-      var currentClientUnsubscribeListeners_1 = clientsList.map(function(client2) {
-        return client2.listen(listener);
+      var currentClientUnsubscribeListeners_1 = clientsList.map(function(client) {
+        return client.listen(listener);
       });
       var unsubscribeListener = function() {
         currentClientUnsubscribeListeners_1.forEach(function(unsubscribe2) {
           return unsubscribe2();
         });
         delete queuedListeners.current.global[listenerId_2];
-        Object.values(unsubscribeClientListeners.current).forEach(function(client2) {
+        Object.values(unsubscribeClientListeners.current).forEach(function(client) {
           var _a3;
-          (_a3 = client2 === null || client2 === void 0 ? void 0 : client2[listenerId_2]) === null || _a3 === void 0 ? void 0 : _a3.call(client2);
+          (_a3 = client === null || client === void 0 ? void 0 : client[listenerId_2]) === null || _a3 === void 0 ? void 0 : _a3.call(client);
         });
       };
       return unsubscribeListener;
@@ -25616,14 +25616,14 @@ var useClient = function(_a2, filesState) {
     if (prevEnvironment.current !== filesState.environment) {
       prevEnvironment.current = filesState.environment;
       Object.entries(clients.current).forEach(function(_a3) {
-        var key = _a3[0], client2 = _a3[1];
-        registerBundler(client2.iframe, key);
+        var key = _a3[0], client = _a3[1];
+        registerBundler(client.iframe, key);
       });
     }
     if (recompileMode === "immediate") {
-      Object.values(clients.current).forEach(function(client2) {
-        if (client2.status === "done") {
-          client2.updateSandbox({
+      Object.values(clients.current).forEach(function(client) {
+        if (client.status === "done") {
+          client.updateSandbox({
             files: filesState.files,
             template: filesState.environment
           });
@@ -25635,9 +25635,9 @@ var useClient = function(_a2, filesState) {
         return;
       window.clearTimeout(debounceHook.current);
       debounceHook.current = window.setTimeout(function() {
-        Object.values(clients.current).forEach(function(client2) {
-          if (client2.status === "done") {
-            client2.updateSandbox({
+        Object.values(clients.current).forEach(function(client) {
+          if (client.status === "done") {
+            client.updateSandbox({
               files: filesState.files,
               template: filesState.environment
             });
@@ -27932,18 +27932,18 @@ var SandpackTests = function(_a2) {
     setState(function(oldState) {
       return __assign(__assign({}, oldState), { status: "running", specs: {} });
     });
-    var client2 = getClient();
-    if (client2) {
-      client2.dispatch({ type: "run-all-tests" });
+    var client = getClient();
+    if (client) {
+      client.dispatch({ type: "run-all-tests" });
     }
   }, [getClient]);
   var runSpec = reactExports.useCallback(function() {
     setState(function(oldState) {
       return __assign(__assign({}, oldState), { status: "running", specs: {} });
     });
-    var client2 = getClient();
-    if (client2) {
-      client2.dispatch({ type: "run-tests", path: sandpack.activeFile });
+    var client = getClient();
+    if (client) {
+      client.dispatch({ type: "run-tests", path: sandpack.activeFile });
     }
   }, [getClient, sandpack.activeFile]);
   var testFileRegex = /.*\.(test|spec)\.[tj]sx?$/;
@@ -28842,56 +28842,8 @@ var rtlLayoutClassName = css({
     flexDirection: "initial"
   }
 });
-function RecipeReact() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + React example" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "Use our official React integration: ",
-      " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-react-content", children: "https://github.com/sweetalert2/sweetalert2-react-content" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Sandpack,
-      {
-        theme: "dark",
-        customSetup: {
-          dependencies: {
-            "react": "latest",
-            "react-dom": "latest",
-            "sweetalert2": "latest",
-            "sweetalert2-react-content": "latest"
-          },
-          entry: "/App.js"
-        },
-        files: {
-          "/App.js": `import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
-const MySwal = withReactContent(Swal)
-
-MySwal.fire({
-  title: <strong>Good job!</strong>,
-  html: <i>You clicked the button!</i>,
-  icon: 'success'
-})`
-        },
-        options: {
-          showLineNumbers: true,
-          recompileMode: "delayed",
-          recompileDelay: 3e3,
-          classes: {
-            "sp-editor": "sp-h250",
-            "sp-preview": "sp-h400"
-          }
-        }
-      }
-    )
-  ] });
-}
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeReact, {}));
 export {
-  SandpackLogLevel as S,
+  Sandpack as S,
   __extends as _,
   __awaiter$1 as a,
   __generator$1 as b,
@@ -28899,9 +28851,10 @@ export {
   createError as d,
   dequal as e,
   createPackageJSON as f,
-  addPackageJSONIfNeeded as g,
-  __spreadArray$1 as h,
+  SandpackLogLevel as g,
+  addPackageJSONIfNeeded as h,
   invariant as i,
-  extractErrorDetails as j,
+  __spreadArray$1 as j,
+  extractErrorDetails as k,
   nullthrows as n
 };

@@ -7,7 +7,14 @@ export function RecipeGallery() {
       <Nav recipeGallery showBackToRecipeGalleryLink={false} />
       <h1>Recipe Gallery</h1>
       <p className="center">A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less.</p>
-      <a href="./sweetalert2-react.html">React example</a>
+      <ul className="recipes-list">
+        <li>
+          <a href="./queue-with-progress-steps.html">Queue with Progress Steps</a>
+        </li>
+        <li>
+          <a href="./sweetalert2-react.html">React example</a>
+        </li>
+      </ul>
     </>
   )
 }
