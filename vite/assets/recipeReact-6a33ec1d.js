@@ -1,5 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports, c as client } from "./client-764685b5.js";
-import { N as Nav } from "./index-146f2017.js";
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports, c as client, N as Nav } from "./index-1acc6323.js";
 var t$1 = "colors", n = "sizes", r$1 = "space", i$1 = { gap: r$1, gridGap: r$1, columnGap: r$1, gridColumnGap: r$1, rowGap: r$1, gridRowGap: r$1, inset: r$1, insetBlock: r$1, insetBlockEnd: r$1, insetBlockStart: r$1, insetInline: r$1, insetInlineEnd: r$1, insetInlineStart: r$1, margin: r$1, marginTop: r$1, marginRight: r$1, marginBottom: r$1, marginLeft: r$1, marginBlock: r$1, marginBlockEnd: r$1, marginBlockStart: r$1, marginInline: r$1, marginInlineEnd: r$1, marginInlineStart: r$1, padding: r$1, paddingTop: r$1, paddingRight: r$1, paddingBottom: r$1, paddingLeft: r$1, paddingBlock: r$1, paddingBlockEnd: r$1, paddingBlockStart: r$1, paddingInline: r$1, paddingInlineEnd: r$1, paddingInlineStart: r$1, top: r$1, right: r$1, bottom: r$1, left: r$1, scrollMargin: r$1, scrollMarginTop: r$1, scrollMarginRight: r$1, scrollMarginBottom: r$1, scrollMarginLeft: r$1, scrollMarginX: r$1, scrollMarginY: r$1, scrollMarginBlock: r$1, scrollMarginBlockEnd: r$1, scrollMarginBlockStart: r$1, scrollMarginInline: r$1, scrollMarginInlineEnd: r$1, scrollMarginInlineStart: r$1, scrollPadding: r$1, scrollPaddingTop: r$1, scrollPaddingRight: r$1, scrollPaddingBottom: r$1, scrollPaddingLeft: r$1, scrollPaddingX: r$1, scrollPaddingY: r$1, scrollPaddingBlock: r$1, scrollPaddingBlockEnd: r$1, scrollPaddingBlockStart: r$1, scrollPaddingInline: r$1, scrollPaddingInlineEnd: r$1, scrollPaddingInlineStart: r$1, fontSize: "fontSizes", background: t$1, backgroundColor: t$1, backgroundImage: t$1, borderImage: t$1, border: t$1, borderBlock: t$1, borderBlockEnd: t$1, borderBlockStart: t$1, borderBottom: t$1, borderBottomColor: t$1, borderColor: t$1, borderInline: t$1, borderInlineEnd: t$1, borderInlineStart: t$1, borderLeft: t$1, borderLeftColor: t$1, borderRight: t$1, borderRightColor: t$1, borderTop: t$1, borderTopColor: t$1, caretColor: t$1, color: t$1, columnRuleColor: t$1, fill: t$1, outline: t$1, outlineColor: t$1, stroke: t$1, textDecorationColor: t$1, fontFamily: "fonts", fontWeight: "fontWeights", lineHeight: "lineHeights", letterSpacing: "letterSpacings", blockSize: n, minBlockSize: n, maxBlockSize: n, inlineSize: n, minInlineSize: n, maxInlineSize: n, width: n, minWidth: n, maxWidth: n, height: n, minHeight: n, maxHeight: n, flexBasis: n, gridTemplateColumns: n, gridTemplateRows: n, borderWidth: "borderWidths", borderTopWidth: "borderWidths", borderRightWidth: "borderWidths", borderBottomWidth: "borderWidths", borderLeftWidth: "borderWidths", borderStyle: "borderStyles", borderTopStyle: "borderStyles", borderRightStyle: "borderStyles", borderBottomStyle: "borderStyles", borderLeftStyle: "borderStyles", borderRadius: "radii", borderTopLeftRadius: "radii", borderTopRightRadius: "radii", borderBottomRightRadius: "radii", borderBottomLeftRadius: "radii", boxShadow: "shadows", textShadow: "shadows", transition: "transitions", zIndex: "zIndices" }, o = (e, t2) => "function" == typeof t2 ? { "()": Function.prototype.toString.call(t2) } : t2, l = () => {
   const e = /* @__PURE__ */ Object.create(null);
   return (t2, n2, ...r2) => {
@@ -874,21 +873,21 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
           }
           return [3, 5];
         case 1:
-          return [4, __vitePreload(() => import("./index-3d4108ab.js"), true ? ["assets/index-3d4108ab.js","assets/base-80a1f760-abab3675.js","assets/consoleHook-7a68abbd-397e8d49.js","assets/client-764685b5.js","assets/client-3204f74f.css","assets/index-146f2017.js"] : void 0).then(function(m2) {
+          return [4, __vitePreload(() => import("./index-b4408845.js"), true ? ["assets/index-b4408845.js","assets/base-80a1f760-eaaed84f.js","assets/consoleHook-7a68abbd-7040a605.js","assets/index-1acc6323.js","assets/index-083f921f.css"] : void 0).then(function(m2) {
             return m2.SandpackNode;
           })];
         case 2:
           Client = _c2.sent();
           return [3, 7];
         case 3:
-          return [4, __vitePreload(() => import("./index-fc68d414-788d8d2c.js"), true ? ["assets/index-fc68d414-788d8d2c.js","assets/consoleHook-7a68abbd-397e8d49.js","assets/base-80a1f760-abab3675.js","assets/client-764685b5.js","assets/client-3204f74f.css","assets/index-146f2017.js"] : void 0).then(function(m2) {
+          return [4, __vitePreload(() => import("./index-fc68d414-e97d3673.js"), true ? ["assets/index-fc68d414-e97d3673.js","assets/consoleHook-7a68abbd-7040a605.js","assets/base-80a1f760-eaaed84f.js","assets/index-1acc6323.js","assets/index-083f921f.css"] : void 0).then(function(m2) {
             return m2.SandpackStatic;
           })];
         case 4:
           Client = _c2.sent();
           return [3, 7];
         case 5:
-          return [4, __vitePreload(() => import("./index-4e5aa55b.js"), true ? ["assets/index-4e5aa55b.js","assets/base-80a1f760-abab3675.js","assets/client-764685b5.js","assets/client-3204f74f.css","assets/index-146f2017.js"] : void 0).then(function(m2) {
+          return [4, __vitePreload(() => import("./index-b48e6b61.js"), true ? ["assets/index-b48e6b61.js","assets/base-80a1f760-eaaed84f.js","assets/index-1acc6323.js","assets/index-083f921f.css"] : void 0).then(function(m2) {
             return m2.SandpackRuntime;
           })];
         case 6:
@@ -28845,11 +28844,7 @@ var rtlLayoutClassName = css({
 });
 function RecipeReact() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "/recipe-gallery", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "fa fa-arrow-left" }),
-      " Back to Recipe Gallery"
-    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + React example" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
       "Use our official React integration: ",

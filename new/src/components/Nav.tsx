@@ -1,12 +1,32 @@
 import Swal from 'sweetalert2'
-import { showSidebar } from '../utils'
+import { ScrollToAnchor, showSidebar } from '../utils'
+import { DocSearch } from './DocSearch'
 
-export function Nav() {
+export function Nav({
+  recipeGallery = false,
+  showBackToRecipeGalleryLink = true,
+}: {
+  recipeGallery?: boolean
+  showBackToRecipeGalleryLink?: boolean
+}) {
   return (
     <>
       <Sidebar />
       <i className="fa fa-bars" id="show-sidebar" onClick={() => showSidebar()}></i>
       <link rel="stylesheet" id="current-theme" />
+
+      {recipeGallery ? (
+        <div className="recipe-gallery-top-nav">
+          {showBackToRecipeGalleryLink ? (
+            <a href="/recipe-gallery/">
+              <i className="fa fa-arrow-left"></i> Back to Recipe Gallery
+            </a>
+          ) : null}
+          <DocSearch />
+        </div>
+      ) : null}
+
+      <ScrollToAnchor />
     </>
   )
 }
@@ -17,7 +37,7 @@ export function Sidebar() {
       <a href="/#examples" onClick={() => Swal.close()}>
         <span>Examples</span>
       </a>
-      <a href="/recipe-gallery" className="recipe-gallery" onClick={() => Swal.close()}>
+      <a href="/recipe-gallery/" className="recipe-gallery" onClick={() => Swal.close()}>
         <span>Recipe Gallery</span>
       </a>
       <a href="/#download" onClick={() => Swal.close()}>

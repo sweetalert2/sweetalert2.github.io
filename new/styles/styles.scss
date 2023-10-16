@@ -896,6 +896,20 @@ $bouncing-logo-min-height: 35%;
   }
 }
 
+.recipe-gallery-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    margin-right: 20em;
+  }
+
+  #docsearch {
+    margin: 1em 0 !important;
+  }
+}
+
 .emgithub-container {
   width: 800px;
   max-width: 90%;

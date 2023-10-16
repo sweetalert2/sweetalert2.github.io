@@ -5,12 +5,7 @@ import { Nav } from '../src/components'
 export function RecipeReact() {
   return (
     <>
-      <Nav />
-      <p>
-        <a href="/recipe-gallery">
-          <i className="fa fa-arrow-left"></i> Back to Recipe Gallery
-        </a>
-      </p>
+      <Nav recipeGallery />
       <h1>SweetAlert2 + React example</h1>
       <p>
         Use our official React integration: {' '}

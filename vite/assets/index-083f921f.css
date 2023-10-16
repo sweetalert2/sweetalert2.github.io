@@ -2080,6 +2080,17 @@ tr:hover .hover-anchor {
 .recipes-list li {
   margin: 2em 0;
 }
+.recipe-gallery-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recipe-gallery-top-nav a {
+  margin-right: 20em;
+}
+.recipe-gallery-top-nav #docsearch {
+  margin: 1em 0 !important;
+}
 .emgithub-container {
   width: 800px;
   max-width: 90%;
