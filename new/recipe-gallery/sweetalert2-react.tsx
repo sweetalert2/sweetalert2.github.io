@@ -1,9 +1,57 @@
 import ReactDOM from 'react-dom/client'
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { Nav } from '../src/components'
 
 export function RecipeReact() {
   return (
     <>
-      <h1>Recipe React</h1>
+      <Nav />
+      <p>
+        <a href="/recipe-gallery">
+          <i className="fa fa-arrow-left"></i> Back to Recipe Gallery
+        </a>
+      </p>
+      <h1>SweetAlert2 + React example</h1>
+      <p>
+        Use our official React integration: {' '}
+        <a href="https://github.com/sweetalert2/sweetalert2-react-content">
+          https://github.com/sweetalert2/sweetalert2-react-content
+        </a>
+      </p>
+
+      <Sandpack
+        theme="dark"
+        customSetup={{
+          dependencies: {
+            'react': 'latest',
+            'react-dom': 'latest',
+            'sweetalert2': 'latest',
+            'sweetalert2-react-content': 'latest',
+          },
+          entry: '/App.js',
+        }}
+        files={{
+          '/App.js': `import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
+MySwal.fire({
+  title: <strong>Good job!</strong>,
+  html: <i>You clicked the button!</i>,
+  icon: 'success'
+})`,
+        }}
+        options={{
+          showLineNumbers: true,
+          recompileMode: 'delayed',
+          recompileDelay: 3000,
+          classes: {
+            'sp-editor': 'sp-h250',
+            'sp-preview': 'sp-h400',
+          },
+        }}
+      />
     </>
   )
 }
