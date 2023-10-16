@@ -1517,6 +1517,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+vite-plugin-html-inject@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vite-plugin-html-inject/-/vite-plugin-html-inject-1.0.4.tgz#f9e50ae902c127c3a96f8e06f9c8fbf26352f7c7"
+  integrity sha512-DYy2tM0jhhOhYa7Seb4Xv2/iTnyVAhm5o7DVQbPBdEwgWLnWFf304GxUyoxld8lEJH6qLIosPCK0Cmc/WS4Ytw==
+
 vite@^4.4.5:
   version "4.4.11"
   resolved "https://registry.yarnpkg.com/vite/-/vite-4.4.11.tgz#babdb055b08c69cfc4c468072a2e6c9ca62102b0"

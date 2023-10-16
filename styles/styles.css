@@ -299,7 +299,7 @@ pre.code-sample::after {
   padding-left: 0.8em;
   transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
   opacity: 0;
-  background: #000 url("/images/codepen.svg") 11.6em 0.2em no-repeat;
+  background: #000 url("../images/codepen.svg") 11.6em 0.2em no-repeat;
   background-size: 1.6em;
   font-size: 0.8em;
   cursor: pointer;
@@ -360,8 +360,8 @@ kbd {
   margin: 2em auto;
 }
 .showcase .vs-icon {
-  background-image: -webkit-image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
-  background-image: image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
+  background-image: -webkit-image-set(url("../images/vs_icon.png") 1x, url("../images/vs_icon@2x.png") 2x);
+  background-image: image-set(url("../images/vs_icon.png") 1x, url("../images/vs_icon@2x.png") 2x);
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
