@@ -1,4 +1,4 @@
-import { b as client, j as jsxRuntimeExports } from "./client-d8a4dc41.js";
+import { c as client, j as jsxRuntimeExports } from "./client-66f59906.js";
 function RecipeGallery() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "RecipeGallery" }),

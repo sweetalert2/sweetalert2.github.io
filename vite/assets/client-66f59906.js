@@ -39,6 +39,7 @@
     fetch(link.href, fetchOpts);
   }
 })();
+const styles = "";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getDefaultExportFromCjs(x2) {
   return x2 && x2.__esModule && Object.prototype.hasOwnProperty.call(x2, "default") ? x2["default"] : x2;
@@ -7588,9 +7589,9 @@ var m = reactDomExports;
 }
 export {
   React as R,
-  createRoot as a,
-  client as b,
-  commonjsGlobal as c,
+  commonjsGlobal as a,
+  createRoot as b,
+  client as c,
   getDefaultExportFromCjs as g,
   jsxRuntimeExports as j,
   reactExports as r

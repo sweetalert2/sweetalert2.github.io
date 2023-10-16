@@ -2134,3 +2134,26 @@ tr:hover .hover-anchor {
     position: fixed !important;
   }
 }
+.sp-wrapper {
+  width: 760px !important;
+  max-width: 95%;
+  margin: 0 auto !important;
+}
+.sp-layout {
+  flex-direction: column;
+}
+.sp-preview {
+  width: 100% !important;
+}
+.sp-h250 {
+  flex-basis: 250px !important;
+}
+.sp-h300 {
+  flex-basis: 300px !important;
+}
+.sp-h350 {
+  flex-basis: 350px !important;
+}
+.sp-h400 {
+  flex-basis: 400px !important;
+}
