@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="40 0 745.1 198.4" xml:space="preserve">
+<style type="text/css">
+	.dash{fill:none;stroke:#F5CC80;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:12.2947,12.2947;}
+</style>
+	<path id="left" class="dash" d="M50,160.2C59,82.4,125.1,22,205.3,22c82.3,0,149.8,63.6,156,144.3"/>
+	<path id="center" class="dash" d="M363.2,160.8c8.4-53.3,54.6-94,110.2-94c57.7,0,105.1,43.7,111,99.8"/>
+	<path id="right" class="dash" d="M586.3,160.1c9-66.5,66-117.9,135-117.9c24.7,0,47.8,6.6,67.8,18"/>
+</svg>
