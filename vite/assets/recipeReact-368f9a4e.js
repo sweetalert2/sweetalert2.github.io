@@ -1,5 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from "./index-e107d7c8.js";
-import { S as Sandpack } from "./index-0d4b0de2.js";
+import { c as client, j as jsxRuntimeExports, N as Nav } from "./index-7598f2e6.js";
+import { S as Sandpack } from "./index-b3e8266c.js";
 function RecipeReact() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),

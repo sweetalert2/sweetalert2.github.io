@@ -86,7 +86,11 @@ export function DeclarativeTemplates() {
               }}
             />
             <CodeExample code={template} language="xml" withoutCodepen style={{ marginTop: 0 }} />
-            <CodeExample code={examples.declarativeTemplate.fnString} codepenHtml={template} />
+            <CodeExample
+              code={examples.declarativeTemplate.fnString}
+              codepenHtml={template}
+              style={{ marginTop: 10 }}
+            />
           </div>
         </li>
       </ul>

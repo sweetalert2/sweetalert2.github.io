@@ -14138,7 +14138,7 @@ const functions = {
       icon: "error",
       title: "Oops...",
       text: "Something went wrong!",
-      footer: "<a href>Why do I have this issue?</a>"
+      footer: '<a href="#">Why do I have this issue?</a>'
     });
   },
   longText() {
@@ -14154,7 +14154,7 @@ const functions = {
       icon: "info",
       html: `
         You can use <b>bold text</b>,
-        <a href="//sweetalert2.github.io">links</a>,
+        <a href="#">links</a>,
         and other HTML tags
       `,
       showCloseButton: true,
@@ -14302,9 +14302,9 @@ const functions = {
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading();
-        const b2 = Swal.getPopup().querySelector("b");
+        const timer = Swal.getPopup().querySelector("b");
         timerInterval = setInterval(() => {
-          b2.textContent = `${Swal.getTimerLeft()}`;
+          timer.textContent = `${Swal.getTimerLeft()}`;
         }, 100);
       },
       willClose: () => {
@@ -14562,17 +14562,9 @@ const functions = {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e2) => {
-        const target = e2.target;
-        if (!target || typeof target.result !== "string") {
-          return Swal.fire({
-            icon: "error",
-            text: "The uploaded picture is invalid"
-          });
-        }
-        const imageUrl = target.result;
         Swal.fire({
           title: "Your uploaded picture",
-          imageUrl,
+          imageUrl: e2.target.result,
           imageAlt: "The uploaded picture"
         });
       };

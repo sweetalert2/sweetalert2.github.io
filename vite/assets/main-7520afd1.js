@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from "./index-e107d7c8.js";
+import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from "./index-7598f2e6.js";
 function Header() {
   const st4 = {
     fill: "#fa7471"
@@ -3151,9 +3151,44 @@ function Installation() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "usage", children: "Usage" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mobile-hidden", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "1. Initialize the plugin by referencing the necessary files:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "1. Import the plugin:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CodeExample,
+          {
+            code: `import Swal from 'sweetalert2'
+
+// or via CommonJS
+const Swal = require('sweetalert2')`,
+            withoutCodepen: true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mobile-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "It's also possible to import JS and CSS separately, e.g. if you need to customize styles:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CodeExample,
+            {
+              code: `import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'`,
+              withoutCodepen: true
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "2. Call the sweetAlert2-function after the page has loaded" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CodeExample,
+          {
+            code: `Swal.fire({
+  title: 'Error!',
+  text: 'Do you want to continue',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})`,
+            withoutCodepen: true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "As an old-school alternative, you can initialize the plugin by referencing the necessary files:" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: `<script src="sweetalert2.all.min.js"><\/script>`, withoutCodepen: true }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mobile-hidden", children: "You can also include the stylesheet separately if desired:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mobile-hidden", children: "Or with the stylesheet separately if desired:" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           CodeExample,
           {
@@ -3162,44 +3197,8 @@ function Installation() {
             language: "xml",
             withoutCodepen: true
           }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Or" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CodeExample,
-        {
-          code: `// ES6 Modules or TypeScript
-import Swal from 'sweetalert2'
-
-// CommonJS
-const Swal = require('sweetalert2')`,
-          withoutCodepen: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mobile-hidden", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "It's possible to import JS and CSS separately, e.g. if you need to customize styles:" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CodeExample,
-          {
-            code: `import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'`,
-            withoutCodepen: true
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "2. Call the sweetAlert2-function after the page has loaded" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CodeExample,
-        {
-          code: `Swal.fire({
-  title: 'Error!',
-  text: 'Do you want to continue',
-  icon: 'error',
-  confirmButtonText: 'Cool'
-})`,
-          withoutCodepen: true
-        }
-      )
+        )
+      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "frameworks-integrations", children: "Integrations with major JS frameworks" }),
@@ -3281,7 +3280,7 @@ function JsdelivrInfo() {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "jsdelivr-info mobile-hidden", children: [
       "sweetalert2 is the ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: ordinalSuffix(jsdelivrRank) }),
-      "most popular package on jsDelivr, with",
+      " most popular package on jsDelivr, with",
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: parseInt(jsdelivrTotal).toLocaleString() }),
       " CDN hits in the last month"
@@ -3380,6 +3379,7 @@ function ConfigurationParams() {
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "success" }),
               ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "info" }),
               ", and ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "question" }),
@@ -3460,10 +3460,12 @@ function ConfigurationParams() {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
               "Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop. Can be either a",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "boolean" }),
               " or a ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "string" }),
               " which will be assigned to the CSS",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "background" }),
               " property."
             ] })
@@ -3498,29 +3500,32 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Input field type, can be",
+              "Input field type, can be ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "text" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "email" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "password" }),
-              ", ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "number" }),
               ",",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "number" }),
+              ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "tel" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "range" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "textarea" }),
-              ", ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "select" }),
               ",",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "select" }),
+              ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "radio" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "checkbox" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "file" }),
-              " and ",
+              " and",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "url" }),
               "."
             ] })
@@ -3557,6 +3562,7 @@ function ConfigurationParams() {
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "em/rem" }),
               ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "%" }),
               ")."
             ] })
@@ -3572,6 +3578,7 @@ function ConfigurationParams() {
               "Color for title, content and footer (CSS ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "color" }),
               " property). The default color is",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'#545454'" }),
               "."
             ] })
@@ -3602,18 +3609,21 @@ function ConfigurationParams() {
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'top-start'" }),
               ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'top-end'" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'center'" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'center-start'" }),
               ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'center-end'" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'bottom'" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'bottom-start'" }),
               ", or",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'bottom-end'" }),
               "."
             ] })
@@ -4371,7 +4381,7 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "true" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Automatically focus the input when popup is shown. Set this parameter to",
+              "Automatically focus the input when popup is shown. Set this parameter to ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
               " to disable auto-focusing."
             ] })
@@ -4385,6 +4395,7 @@ function ConfigurationParams() {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
               "Automatically remove whitespaces from both ends of a result string. Set this parameter to",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
               " to disable auto-trimming."
             ] })
@@ -4483,6 +4494,7 @@ function ConfigurationParams() {
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "em/rem" }),
               ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "%" }),
               ")."
             ] })
@@ -4494,7 +4506,11 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Popup lifecycle hook. Synchronously runs before the popup is shown on screen. Provides popup DOM element as the argument." })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "Popup lifecycle hook. Synchronously runs before the popup is shown on screen. Provides popup DOM element as the argument. In previous versions, this hook was named ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onBeforeOpen" }),
+              "."
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "didOpen", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
@@ -4503,7 +4519,11 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM element as the argument." })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM element as the argument. In previous versions, this hook was named ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onOpen" }),
+              "."
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "didRender", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
@@ -4529,6 +4549,10 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "didRender" }),
               " over ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "willOpen" }),
+              ".",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "In previous versions, this hook was named ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onRender" }),
               "."
             ] })
           ] }),
@@ -4539,7 +4563,11 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Popup lifecycle hook. Synchronously runs when the popup closes by user interaction (and not due to another popup being fired). Provides popup DOM element as the argument." })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "Popup lifecycle hook. Synchronously runs when the popup closes by user interaction (and not due to another popup being fired). Provides popup DOM element as the argument. In previous versions, this hook was named ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onClose" }),
+              "."
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "didClose", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
@@ -4548,7 +4576,12 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Popup lifecycle hook. Asynchronously runs after the popup has been disposed by user interaction (and not due to another popup being fired)." })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "Popup lifecycle hook. Asynchronously runs after the popup has been disposed by user interaction (and not due to another popup being fired). In previous versions, this hook was named",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onAfterClose" }),
+              "."
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "didDestroy", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
@@ -4564,6 +4597,10 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "didDestroy" }),
               " over ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "didClose" }),
+              ".",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "In previous versions, this hook was named ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onDestroy" }),
               "."
             ] })
           ] })
@@ -4678,7 +4715,14 @@ function DeclarativeTemplates() {
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: template, language: "xml", withoutCodepen: true, style: { marginTop: 0 } }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.declarativeTemplate.fnString, codepenHtml: template })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CodeExample,
+          {
+            code: examples.declarativeTemplate.fnString,
+            codepenHtml: template,
+            style: { marginTop: 10 }
+          }
+        )
       ] })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container mobile-hidden", children: [
@@ -5192,7 +5236,7 @@ function Methods() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire()" }),
             " will be resolved with an empty object",
             " ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: `{}` })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: `{ }` })
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [

@@ -78,7 +78,7 @@ export function ConfigurationParams() {
               </td>
               <td>
                 The icon of the popup. SweetAlert2 comes with 5 built-in icon which will show a corresponding icon
-                animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>,
+                animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>,{' '}
                 <strong>info</strong>, and <strong>question</strong>. It can either be put in the array under the key
                 "icon" or passed as the third parameter of the function.
               </td>
@@ -154,8 +154,8 @@ export function ConfigurationParams() {
                 <i>true</i>
               </td>
               <td>
-                Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop. Can be either a
-                <strong>boolean</strong> or a <strong>string</strong> which will be assigned to the CSS
+                Whether or not SweetAlert2 should show a full screen click-to-dismiss backdrop. Can be either a{' '}
+                <strong>boolean</strong> or a <strong>string</strong> which will be assigned to the CSS{' '}
                 <strong>background</strong> property.
               </td>
             </tr>
@@ -189,10 +189,10 @@ export function ConfigurationParams() {
                 <i>undefined</i>
               </td>
               <td>
-                Input field type, can be
-                <strong>text</strong>, <strong>email</strong>, <strong>password</strong>, <strong>number</strong>,
-                <strong>tel</strong>, <strong>range</strong>, <strong>textarea</strong>, <strong>select</strong>,
-                <strong>radio</strong>, <strong>checkbox</strong>, <strong>file</strong> and <strong>url</strong>.
+                Input field type, can be <strong>text</strong>, <strong>email</strong>, <strong>password</strong>,{' '}
+                <strong>number</strong>, <strong>tel</strong>, <strong>range</strong>, <strong>textarea</strong>,{' '}
+                <strong>select</strong>, <strong>radio</strong>, <strong>checkbox</strong>, <strong>file</strong> and{' '}
+                <strong>url</strong>.
               </td>
             </tr>
             <tr id="width">
@@ -215,7 +215,7 @@ export function ConfigurationParams() {
                 <i>'0 0 1.25em'</i>
               </td>
               <td>
-                Popup window padding. Can be in any CSS unit (<strong>px</strong>, <strong>em/rem</strong>,
+                Popup window padding. Can be in any CSS unit (<strong>px</strong>, <strong>em/rem</strong>,{' '}
                 <strong>%</strong>).
               </td>
             </tr>
@@ -227,7 +227,7 @@ export function ConfigurationParams() {
                 <i>undefined</i>
               </td>
               <td>
-                Color for title, content and footer (CSS <strong>color</strong> property). The default color is
+                Color for title, content and footer (CSS <strong>color</strong> property). The default color is{' '}
                 <strong>'#545454'</strong>.
               </td>
             </tr>
@@ -250,9 +250,9 @@ export function ConfigurationParams() {
                 <i>'center'</i>
               </td>
               <td>
-                Popup window position, can be <strong>'top'</strong>, <strong>'top-start'</strong>,
-                <strong>'top-end'</strong>, <strong>'center'</strong>, <strong>'center-start'</strong>,
-                <strong>'center-end'</strong>, <strong>'bottom'</strong>, <strong>'bottom-start'</strong>, or
+                Popup window position, can be <strong>'top'</strong>, <strong>'top-start'</strong>,{' '}
+                <strong>'top-end'</strong>, <strong>'center'</strong>, <strong>'center-start'</strong>,{' '}
+                <strong>'center-end'</strong>, <strong>'bottom'</strong>, <strong>'bottom-start'</strong>, or{' '}
                 <strong>'bottom-end'</strong>.
               </td>
             </tr>
@@ -860,8 +860,8 @@ export function ConfigurationParams() {
                 <i>true</i>
               </td>
               <td>
-                Automatically focus the input when popup is shown. Set this parameter to
-                <strong>false</strong> to disable auto-focusing.
+                Automatically focus the input when popup is shown. Set this parameter to <strong>false</strong> to
+                disable auto-focusing.
               </td>
             </tr>
             <tr id="inputAutoTrim">
@@ -872,7 +872,7 @@ export function ConfigurationParams() {
                 <i>true</i>
               </td>
               <td>
-                Automatically remove whitespaces from both ends of a result string. Set this parameter to
+                Automatically remove whitespaces from both ends of a result string. Set this parameter to{' '}
                 <strong>false</strong> to disable auto-trimming.
               </td>
             </tr>
@@ -946,7 +946,7 @@ export function ConfigurationParams() {
                 <i>undefined</i>
               </td>
               <td>
-                Distance between progress steps. Can be in any CSS unit (<strong>px</strong>, <strong>em/rem</strong>,
+                Distance between progress steps. Can be in any CSS unit (<strong>px</strong>, <strong>em/rem</strong>,{' '}
                 <strong>%</strong>).
               </td>
             </tr>
@@ -959,7 +959,7 @@ export function ConfigurationParams() {
               </td>
               <td>
                 Popup lifecycle hook. Synchronously runs before the popup is shown on screen. Provides popup DOM element
-                as the argument.
+                as the argument. In previous versions, this hook was named <strong>onBeforeOpen</strong>.
               </td>
             </tr>
             <tr id="didOpen">
@@ -971,7 +971,7 @@ export function ConfigurationParams() {
               </td>
               <td>
                 Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM
-                element as the argument.
+                element as the argument. In previous versions, this hook was named <strong>onOpen</strong>.
               </td>
             </tr>
             <tr id="didRender">
@@ -990,6 +990,8 @@ export function ConfigurationParams() {
                 Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>.<br />
                 If you want to perform changes in the popup's DOM, that survive <strong>Swal.update()</strong>, prefer
                 <strong>didRender</strong> over <strong>willOpen</strong>.
+                <br />
+                In previous versions, this hook was named <strong>onRender</strong>.
               </td>
             </tr>
             <tr id="willClose">
@@ -1001,7 +1003,8 @@ export function ConfigurationParams() {
               </td>
               <td>
                 Popup lifecycle hook. Synchronously runs when the popup closes by user interaction (and not due to
-                another popup being fired). Provides popup DOM element as the argument.
+                another popup being fired). Provides popup DOM element as the argument. In previous versions, this hook
+                was named <strong>onClose</strong>.
               </td>
             </tr>
             <tr id="didClose">
@@ -1013,7 +1016,8 @@ export function ConfigurationParams() {
               </td>
               <td>
                 Popup lifecycle hook. Asynchronously runs after the popup has been disposed by user interaction (and not
-                due to another popup being fired).
+                due to another popup being fired). In previous versions, this hook was named{' '}
+                <strong>onAfterClose</strong>.
               </td>
             </tr>
             <tr id="didDestroy">
@@ -1029,6 +1033,8 @@ export function ConfigurationParams() {
                 <br />
                 If you have cleanup operations that you need to reliably execute each time a popup is closed, prefer
                 <strong>didDestroy</strong> over <strong>didClose</strong>.
+                <br />
+                In previous versions, this hook was named <strong>onDestroy</strong>.
               </td>
             </tr>
           </tbody>

@@ -1,4 +1,4 @@
-import { e as dequal } from "./index-0d4b0de2.js";
+import { e as dequal } from "./index-b3e8266c.js";
 var SandpackClient = (
   /** @class */
   function() {

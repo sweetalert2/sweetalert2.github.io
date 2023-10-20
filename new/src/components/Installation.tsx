@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { CodeExample } from './CodeExample'
 
 export function Installation() {
@@ -28,43 +28,42 @@ export function Installation() {
       <div className="center-container">
         <h3 id="usage">Usage</h3>
         <div className="mobile-hidden">
-          <p>1. Initialize the plugin by referencing the necessary files:</p>
+          <p>1. Import the plugin:</p>
+          <CodeExample
+            code={`import Swal from 'sweetalert2'
+
+// or via CommonJS
+const Swal = require('sweetalert2')`}
+            withoutCodepen
+          />
+          <div className="mobile-hidden">
+            <p>It's also possible to import JS and CSS separately, e.g. if you need to customize styles:</p>
+            <CodeExample
+              code={`import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'`}
+              withoutCodepen
+            />
+            <p>2. Call the sweetAlert2-function after the page has loaded</p>
+          </div>
+          <CodeExample
+            code={`Swal.fire({
+  title: 'Error!',
+  text: 'Do you want to continue',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+})`}
+            withoutCodepen
+          />
+          <p>As an old-school alternative, you can initialize the plugin by referencing the necessary files:</p>
           <CodeExample code={`<script src="sweetalert2.all.min.js"></script>`} withoutCodepen />
-          <p className="mobile-hidden">You can also include the stylesheet separately if desired:</p>
+          <p className="mobile-hidden">Or with the stylesheet separately if desired:</p>
           <CodeExample
             code={`<script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">`}
             language="xml"
             withoutCodepen
           />
-          <p>Or</p>
         </div>
-        <CodeExample
-          code={`// ES6 Modules or TypeScript
-import Swal from 'sweetalert2'
-
-// CommonJS
-const Swal = require('sweetalert2')`}
-          withoutCodepen
-        />
-        <div className="mobile-hidden">
-          <p>It's possible to import JS and CSS separately, e.g. if you need to customize styles:</p>
-          <CodeExample
-            code={`import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'`}
-            withoutCodepen
-          />
-          <p>2. Call the sweetAlert2-function after the page has loaded</p>
-        </div>
-        <CodeExample
-          code={`Swal.fire({
-  title: 'Error!',
-  text: 'Do you want to continue',
-  icon: 'error',
-  confirmButtonText: 'Cool'
-})`}
-          withoutCodepen
-        />
       </div>
 
       <div className="center-container">
@@ -149,7 +148,7 @@ function JsdelivrInfo() {
   if (jsdelivrRank && jsdelivrTotal) {
     return (
       <p className="jsdelivr-info mobile-hidden">
-        sweetalert2 is the <strong>{ordinalSuffix(jsdelivrRank)}</strong>most popular package on jsDelivr, with{' '}
+        sweetalert2 is the <strong>{ordinalSuffix(jsdelivrRank)}</strong> most popular package on jsDelivr, with{' '}
         <strong>{parseInt(jsdelivrTotal).toLocaleString()}</strong> CDN hits in the last month
       </p>
     )
