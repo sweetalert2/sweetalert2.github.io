@@ -11,8 +11,9 @@ export default defineConfig({
       input: {
         main: 'index.html',
         recipeGallery: 'recipe-gallery/index.html',
-        recipeReact: 'recipe-gallery/sweetalert2-react.html',
         recipeQueueWithProgressSteps: 'recipe-gallery/queue-with-progress-steps.html',
+        recipeBootstrapCustomLoader: 'recipe-gallery/bootstrap-custom-loader.html',
+        recipeReact: 'recipe-gallery/sweetalert2-react.html',
       },
     },
   },

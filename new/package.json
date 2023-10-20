@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.20.0",
+    "@codesandbox/sandpack-react": "^2.9.0",
     "@docsearch/css": "^3.5.2",
     "@docsearch/js": "^3.5.2",
     "highlight.js": "^11.9.0",
-    "@codesandbox/sandpack-react": "^2.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "search-insights": "^2.9.0",
