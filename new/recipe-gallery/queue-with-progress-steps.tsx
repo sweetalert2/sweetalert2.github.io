@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Sandpack } from "@codesandbox/sandpack-react";
+import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
 
 export function QueueWithProgressStepsRecipe() {
