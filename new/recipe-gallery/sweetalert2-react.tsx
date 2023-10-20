@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Sandpack } from "@codesandbox/sandpack-react";
+import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
 
 export function RecipeReact() {
@@ -8,7 +8,7 @@ export function RecipeReact() {
       <Nav recipeGallery />
       <h1>SweetAlert2 + React example</h1>
       <p>
-        Use our official React integration: {' '}
+        Use our official React integration:{' '}
         <a href="https://github.com/sweetalert2/sweetalert2-react-content">
           https://github.com/sweetalert2/sweetalert2-react-content
         </a>

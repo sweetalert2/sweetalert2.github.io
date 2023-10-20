@@ -5,7 +5,7 @@ function RecipeReact() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + React example" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "Use our official React integration: ",
+      "Use our official React integration:",
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-react-content", children: "https://github.com/sweetalert2/sweetalert2-react-content" })
     ] }),
