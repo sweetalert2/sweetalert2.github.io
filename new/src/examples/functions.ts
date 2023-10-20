@@ -29,7 +29,7 @@ export default {
       icon: 'error',
       title: 'Oops...',
       text: 'Something went wrong!',
-      footer: '<a href>Why do I have this issue?</a>',
+      footer: '<a href="#">Why do I have this issue?</a>',
     })
   },
   longText() {
@@ -45,7 +45,7 @@ export default {
       icon: 'info',
       html: `
         You can use <b>bold text</b>,
-        <a href="//sweetalert2.github.io">links</a>,
+        <a href="#">links</a>,
         and other HTML tags
       `,
       showCloseButton: true,
@@ -196,9 +196,9 @@ export default {
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading()
-        const b = Swal.getPopup()!.querySelector('b')
+        const timer = Swal.getPopup()!.querySelector('b')
         timerInterval = setInterval(() => {
-          b!.textContent = `${Swal.getTimerLeft()}`
+          timer!.textContent = `${Swal.getTimerLeft()}`
         }, 100)
       },
       willClose: () => {
@@ -473,17 +473,9 @@ export default {
     if (file) {
       const reader = new FileReader()
       reader.onload = (e) => {
-        const target = e.target
-        if (!target || typeof target.result !== 'string') {
-          return Swal.fire({
-            icon: 'error',
-            text: 'The uploaded picture is invalid',
-          })
-        }
-        const imageUrl = target.result
         Swal.fire({
           title: 'Your uploaded picture',
-          imageUrl,
+          imageUrl: e.target!.result as string,
           imageAlt: 'The uploaded picture',
         })
       }

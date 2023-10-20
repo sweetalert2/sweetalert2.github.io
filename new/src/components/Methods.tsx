@@ -43,7 +43,7 @@ export function Methods() {
               <td>
                 Close the currently open SweetAlert2 popup programmatically, the Promise returned by{' '}
                 <strong>Swal.fire()</strong> will be resolved with an empty object{' '}
-                <strong className="nowrap">{`{}`}</strong>
+                <strong className="nowrap">{`{ }`}</strong>
               </td>
             </tr>
             <tr>
