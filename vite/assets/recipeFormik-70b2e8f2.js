@@ -1,5 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-60c2e8b4.js';
-import { _ as __vitePreload, S as Sandpack } from './index-0aac3d58.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-afd1224a.js';
+import { _ as __vitePreload, S as Sandpack } from './index-86d6113f.js';
 
 const src = (await __vitePreload(() => import('./sweetalert2-formik-src-347a1f61.js'),true?[]:void 0)).default;
 client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeFormik, {}));

@@ -1,6 +1,6 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './index-0aac3d58.js';
-import { S as SandpackClient } from './base-80a1f760-72678001.js';
-import './index-60c2e8b4.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './index-86d6113f.js';
+import { S as SandpackClient } from './base-80a1f760-4fcc0133.js';
+import './index-afd1224a.js';
 
 /**
  * This file is a copy of the resolver from the `codesandbox-api` package.

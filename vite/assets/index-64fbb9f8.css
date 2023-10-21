@@ -2178,6 +2178,9 @@ tr:hover .hover-anchor {
 .sp-h400 {
   flex-basis: 400px !important;
 }
+.sp-h550 {
+  flex-basis: 550px !important;
+}
 .sp-h600 {
   flex-basis: 600px !important;
 }
