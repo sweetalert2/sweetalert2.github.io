@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator } from './index-c3cf696d.js';
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-7a68abbd-8bba3b06.js';
-import { S as SandpackClient } from './base-80a1f760-975bf819.js';
-import './index-c72ab0a0.js';
+import { a as __extends, b as __awaiter, c as __generator } from './index-0aac3d58.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-7a68abbd-0c1790f3.js';
+import { S as SandpackClient } from './base-80a1f760-72678001.js';
+import './index-60c2e8b4.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
