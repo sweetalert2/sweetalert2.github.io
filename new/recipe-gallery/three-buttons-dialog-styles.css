@@ -1,0 +1,19 @@
+.my-actions {
+  margin: 2em 2em 0;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.right-gap {
+  margin-right: auto;
+}
