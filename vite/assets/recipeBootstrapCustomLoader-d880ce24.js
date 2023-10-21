@@ -1,5 +1,6 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from "./index-7598f2e6.js";
-import { S as Sandpack } from "./index-b3e8266c.js";
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-c72ab0a0.js';
+import { S as Sandpack } from './index-c3cf696d.js';
+
 function BootstrapCustomLoaderRecipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),

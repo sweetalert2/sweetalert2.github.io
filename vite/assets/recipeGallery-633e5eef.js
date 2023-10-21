@@ -1,4 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from "./index-7598f2e6.js";
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-c72ab0a0.js';
+
 function RecipeGallery() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true, showBackToRecipeGalleryLink: false }),

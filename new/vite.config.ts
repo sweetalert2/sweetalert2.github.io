@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react(), injectHTML()],
   build: {
     minify: false,
+    target: 'esnext',
     rollupOptions: {
       input: {
         main: 'index.html',

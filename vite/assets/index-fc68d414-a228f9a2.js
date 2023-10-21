@@ -1,7 +1,8 @@
-import { _ as __extends, a as __awaiter, b as __generator } from "./index-b3e8266c.js";
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from "./consoleHook-7a68abbd-0e063161.js";
-import { S as SandpackClient } from "./base-80a1f760-73b565ae.js";
-import "./index-7598f2e6.js";
+import { a as __extends, b as __awaiter, c as __generator } from './index-c3cf696d.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-7a68abbd-8bba3b06.js';
+import { S as SandpackClient } from './base-80a1f760-975bf819.js';
+import './index-c72ab0a0.js';
+
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -32,6 +33,8 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// node_modules/.pnpm/mime-db@1.52.0/node_modules/mime-db/db.json
 var require_db = __commonJS({
   "node_modules/.pnpm/mime-db@1.52.0/node_modules/mime-db/db.json"(exports, module2) {
     module2.exports = {
@@ -8555,11 +8558,15 @@ var require_db = __commonJS({
     };
   }
 });
+
+// node_modules/.pnpm/mime-db@1.52.0/node_modules/mime-db/index.js
 var require_mime_db = __commonJS({
   "node_modules/.pnpm/mime-db@1.52.0/node_modules/mime-db/index.js"(exports, module2) {
     module2.exports = require_db();
   }
 });
+
+// src/lib/main.ts
 var main_exports = {};
 __export(main_exports, {
   PreviewController: () => PreviewController,
@@ -8568,19 +8575,25 @@ __export(main_exports, {
   normalizeFilepath: () => normalizeFilepath
 });
 var main = __toCommonJS(main_exports);
+
+// src/preview/relay/constants.ts
 var CHANNEL_NAME = "$CSB_RELAY";
+
+// src/lib/mime.ts
 var import_mime_db = __toESM(require_mime_db());
 var extensionMap = /* @__PURE__ */ new Map();
 var entries = Object.entries(import_mime_db.default);
 for (const [mimetype, entry] of entries) {
   const extensions = entry.extensions;
-  if (extensions == null ? void 0 : extensions.length) {
+  if (extensions?.length) {
     for (const ext of extensions) {
       extensionMap.set(ext, mimetype);
     }
   }
 }
 var EXTENSIONS_MAP = extensionMap;
+
+// src/lib/utils.ts
 var counter = 0;
 function generateRandomId() {
   const now = Date.now();
@@ -8588,6 +8601,8 @@ function generateRandomId() {
   const count = counter += 1;
   return (+`${now}${randomNumber}${count}`).toString(16);
 }
+
+// src/lib/main.ts
 function normalizeFilepath(filepath) {
   const split = filepath.split("/").filter(Boolean);
   const normalized = split.join("/");
@@ -8741,193 +8756,200 @@ var PreviewController = class {
     }
   }
 };
-var insertHtmlAfterRegex = function(regex, content, insertable) {
-  var match = regex.exec(content);
-  if (match && match.length >= 1) {
-    var offset = match.index + match[0].length;
-    var prefix = content.substring(0, offset);
-    var suffix = content.substring(offset);
-    return prefix + insertable + suffix;
-  }
-};
-var readBuffer = function(content) {
-  if (typeof content === "string") {
-    return content;
-  } else {
-    return new TextDecoder().decode(content);
-  }
-};
-var validateHtml = function(content) {
-  var contentString = readBuffer(content);
-  var domParser = new DOMParser();
-  var doc = domParser.parseFromString(contentString, "text/html");
-  if (!doc.documentElement.getAttribute("lang")) {
-    doc.documentElement.setAttribute("lang", "en");
-  }
-  var html = doc.documentElement.outerHTML;
-  return "<!DOCTYPE html>\n" + html;
-};
-var SandpackStatic = (
-  /** @class */
-  function(_super) {
-    __extends(SandpackStatic2, _super);
-    function SandpackStatic2(selector, sandboxSetup, options) {
-      if (options === void 0) {
-        options = {};
-      }
-      var _a;
-      var _this = _super.call(this, selector, sandboxSetup, options) || this;
-      _this.files = /* @__PURE__ */ new Map();
-      _this.status = "initializing";
-      _this.emitter = new EventEmitter();
-      _this.previewController = new main.PreviewController({
-        baseUrl: (_a = options.bundlerURL) !== null && _a !== void 0 ? _a : "https://preview.sandpack-static-server.codesandbox.io",
-        // filepath is always normalized to start with / and not end with a slash
-        getFileContent: function(filepath) {
-          var content = _this.files.get(filepath);
-          if (!content) {
-            throw new Error("File not found");
-          }
-          if (filepath.endsWith(".html") || filepath.endsWith(".htm")) {
-            try {
-              content = validateHtml(content);
-              content = _this.injectProtocolScript(content);
-              content = _this.injectExternalResources(content, options.externalResources);
-              content = _this.injectScriptIntoHead(content, {
-                script: consoleHook,
-                scope: { channelId: generateRandomId$1() }
-              });
-            } catch (err) {
-              console.error("Runtime injection failed", err);
-            }
-          }
-          return content;
-        }
-      });
-      if (typeof selector === "string") {
-        _this.selector = selector;
-        var element = document.querySelector(selector);
-        _this.element = element;
-        _this.iframe = document.createElement("iframe");
-      } else {
-        _this.element = selector;
-        _this.iframe = selector;
-      }
-      if (!_this.iframe.getAttribute("sandbox")) {
-        _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts");
-        _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-write;");
-      }
-      _this.eventListener = _this.eventListener.bind(_this);
-      if (typeof window !== "undefined") {
-        window.addEventListener("message", _this.eventListener);
-      }
-      _this.updateSandbox();
-      return _this;
+
+var insertHtmlAfterRegex = function (regex, content, insertable) {
+    var match = regex.exec(content);
+    if (match && match.length >= 1) {
+        var offset = match.index + match[0].length;
+        var prefix = content.substring(0, offset);
+        var suffix = content.substring(offset);
+        return prefix + insertable + suffix;
     }
-    SandpackStatic2.prototype.injectContentIntoHead = function(content, contentToInsert) {
-      var _a;
-      content = readBuffer(content);
-      content = (_a = insertHtmlAfterRegex(/<head[^<>]*>/g, content, "\n" + contentToInsert)) !== null && _a !== void 0 ? _a : contentToInsert + "\n" + content;
-      return content;
-    };
-    SandpackStatic2.prototype.injectProtocolScript = function(content) {
-      var scriptToInsert = '<script>\n  window.addEventListener("message", (message) => {\n    if(message.data.type === "refresh") {\n      window.location.reload();\n    }\n  })\n<\/script>';
-      return this.injectContentIntoHead(content, scriptToInsert);
-    };
-    SandpackStatic2.prototype.injectExternalResources = function(content, externalResources) {
-      if (externalResources === void 0) {
-        externalResources = [];
-      }
-      var tagsToInsert = externalResources.map(function(resource) {
-        var match = resource.match(/\.([^.]*)$/);
-        var fileType = match === null || match === void 0 ? void 0 : match[1];
-        if (fileType === "css" || resource.includes("fonts.googleapis")) {
-          return '<link rel="stylesheet" href="' + resource + '">';
-        }
-        if (fileType === "js") {
-          return '<script src="' + resource + '"><\/script>';
-        }
-        throw new Error("Unable to determine file type for external resource: " + resource);
-      }).join("\n");
-      return this.injectContentIntoHead(content, tagsToInsert);
-    };
-    SandpackStatic2.prototype.injectScriptIntoHead = function(content, opts) {
-      var script = opts.script, _a = opts.scope, scope = _a === void 0 ? {} : _a;
-      var scriptToInsert = ("\n    <script>\n      const scope = " + JSON.stringify(scope) + ";\n      " + script + "\n    <\/script>\n    ").trim();
-      return this.injectContentIntoHead(content, scriptToInsert);
-    };
-    SandpackStatic2.prototype.updateSandbox = function(setup, _isInitializationCompile) {
-      if (setup === void 0) {
-        setup = this.sandboxSetup;
-      }
-      var modules = fromBundlerFilesToFS(setup.files);
-      this.dispatch({
-        codesandbox: true,
-        modules,
-        template: setup.template,
-        type: "compile"
-      });
-    };
-    SandpackStatic2.prototype.compile = function(files) {
-      return __awaiter(this, void 0, void 0, function() {
-        var previewUrl;
-        return __generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              this.files = new Map(Object.entries(files));
-              return [4, this.previewController.initPreview()];
-            case 1:
-              previewUrl = _a.sent();
-              this.iframe.setAttribute("src", previewUrl);
-              this.status = "done";
-              this.dispatch({ type: "done", compilatonError: false });
-              this.dispatch({
-                type: "urlchange",
-                url: previewUrl,
-                back: false,
-                forward: false
-              });
-              return [
-                2
-                /*return*/
-              ];
-          }
-        });
-      });
-    };
-    SandpackStatic2.prototype.eventListener = function(evt) {
-      if (evt.source !== this.iframe.contentWindow) {
-        return;
-      }
-      var message = evt.data;
-      if (!message.codesandbox) {
-        return;
-      }
-      this.dispatch(message);
-    };
-    SandpackStatic2.prototype.dispatch = function(message) {
-      var _a;
-      switch (message.type) {
-        case "compile":
-          this.compile(message.modules);
-          break;
-        default:
-          (_a = this.iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(message, "*");
-          this.emitter.dispatch(message);
-      }
-    };
-    SandpackStatic2.prototype.listen = function(listener) {
-      return this.emitter.listener(listener);
-    };
-    SandpackStatic2.prototype.destroy = function() {
-      this.emitter.cleanup();
-      if (typeof window !== "undefined") {
-        window.removeEventListener("message", this.eventListener);
-      }
-    };
-    return SandpackStatic2;
-  }(SandpackClient)
-);
-export {
-  SandpackStatic
 };
+var readBuffer = function (content) {
+    if (typeof content === "string") {
+        return content;
+    }
+    else {
+        return new TextDecoder().decode(content);
+    }
+};
+var validateHtml = function (content) {
+    // Make it a string
+    var contentString = readBuffer(content);
+    var domParser = new DOMParser();
+    var doc = domParser.parseFromString(contentString, "text/html");
+    if (!doc.documentElement.getAttribute("lang")) {
+        doc.documentElement.setAttribute("lang", "en");
+    }
+    var html = doc.documentElement.outerHTML;
+    return "<!DOCTYPE html>\n" + html;
+};
+
+var SandpackStatic = /** @class */ (function (_super) {
+    __extends(SandpackStatic, _super);
+    function SandpackStatic(selector, sandboxSetup, options) {
+        if (options === void 0) { options = {}; }
+        var _a;
+        var _this = _super.call(this, selector, sandboxSetup, options) || this;
+        _this.files = new Map();
+        _this.status = "initializing";
+        _this.emitter = new EventEmitter();
+        _this.previewController = new main.PreviewController({
+            baseUrl: (_a = options.bundlerURL) !== null && _a !== void 0 ? _a : "https://preview.sandpack-static-server.codesandbox.io",
+            // filepath is always normalized to start with / and not end with a slash
+            getFileContent: function (filepath) {
+                var content = _this.files.get(filepath);
+                if (!content) {
+                    throw new Error("File not found");
+                }
+                if (filepath.endsWith(".html") || filepath.endsWith(".htm")) {
+                    try {
+                        content = validateHtml(content);
+                        content = _this.injectProtocolScript(content);
+                        content = _this.injectExternalResources(content, options.externalResources);
+                        content = _this.injectScriptIntoHead(content, {
+                            script: consoleHook,
+                            scope: { channelId: generateRandomId$1() }
+                        });
+                    }
+                    catch (err) {
+                        console.error("Runtime injection failed", err);
+                    }
+                }
+                return content;
+            }
+        });
+        if (typeof selector === "string") {
+            _this.selector = selector;
+            var element = document.querySelector(selector);
+            _this.element = element;
+            _this.iframe = document.createElement("iframe");
+        }
+        else {
+            _this.element = selector;
+            _this.iframe = selector;
+        }
+        if (!_this.iframe.getAttribute("sandbox")) {
+            _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts");
+            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-write;");
+        }
+        _this.eventListener = _this.eventListener.bind(_this);
+        if (typeof window !== "undefined") {
+            window.addEventListener("message", _this.eventListener);
+        }
+        // Dispatch very first compile action
+        _this.updateSandbox();
+        return _this;
+    }
+    SandpackStatic.prototype.injectContentIntoHead = function (content, contentToInsert) {
+        var _a;
+        // Make it a string
+        content = readBuffer(content);
+        // Inject script
+        content =
+            (_a = insertHtmlAfterRegex(/<head[^<>]*>/g, content, "\n" + contentToInsert)) !== null && _a !== void 0 ? _a : contentToInsert + "\n" + content;
+        return content;
+    };
+    SandpackStatic.prototype.injectProtocolScript = function (content) {
+        var scriptToInsert = "<script>\n  window.addEventListener(\"message\", (message) => {\n    if(message.data.type === \"refresh\") {\n      window.location.reload();\n    }\n  })\n</script>";
+        return this.injectContentIntoHead(content, scriptToInsert);
+    };
+    SandpackStatic.prototype.injectExternalResources = function (content, externalResources) {
+        if (externalResources === void 0) { externalResources = []; }
+        var tagsToInsert = externalResources
+            .map(function (resource) {
+            var match = resource.match(/\.([^.]*)$/);
+            var fileType = match === null || match === void 0 ? void 0 : match[1];
+            if (fileType === "css" || resource.includes("fonts.googleapis")) {
+                return "<link rel=\"stylesheet\" href=\"" + resource + "\">";
+            }
+            if (fileType === "js") {
+                return "<script src=\"" + resource + "\"></script>";
+            }
+            throw new Error("Unable to determine file type for external resource: " + resource);
+        })
+            .join("\n");
+        return this.injectContentIntoHead(content, tagsToInsert);
+    };
+    SandpackStatic.prototype.injectScriptIntoHead = function (content, opts) {
+        var script = opts.script, _a = opts.scope, scope = _a === void 0 ? {} : _a;
+        var scriptToInsert = ("\n    <script>\n      const scope = " + JSON.stringify(scope) + ";\n      " + script + "\n    </script>\n    ").trim();
+        return this.injectContentIntoHead(content, scriptToInsert);
+    };
+    SandpackStatic.prototype.updateSandbox = function (setup, _isInitializationCompile) {
+        if (setup === void 0) { setup = this.sandboxSetup; }
+        var modules = fromBundlerFilesToFS(setup.files);
+        /**
+         * Pass init files to the bundler
+         */
+        this.dispatch({
+            codesandbox: true,
+            modules: modules,
+            template: setup.template,
+            type: "compile"
+        });
+    };
+    SandpackStatic.prototype.compile = function (files) {
+        return __awaiter(this, void 0, void 0, function () {
+            var previewUrl;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.files = new Map(Object.entries(files));
+                        return [4 /*yield*/, this.previewController.initPreview()];
+                    case 1:
+                        previewUrl = _a.sent();
+                        this.iframe.setAttribute("src", previewUrl);
+                        this.status = "done";
+                        this.dispatch({ type: "done", compilatonError: false });
+                        this.dispatch({
+                            type: "urlchange",
+                            url: previewUrl,
+                            back: false,
+                            forward: false
+                        });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    // Handles message windows coming from iframes
+    SandpackStatic.prototype.eventListener = function (evt) {
+        // skip events originating from different iframes
+        if (evt.source !== this.iframe.contentWindow) {
+            return;
+        }
+        var message = evt.data;
+        if (!message.codesandbox) {
+            return;
+        }
+        this.dispatch(message);
+    };
+    /**
+     * Bundler communication
+     */
+    SandpackStatic.prototype.dispatch = function (message) {
+        var _a;
+        switch (message.type) {
+            case "compile":
+                this.compile(message.modules);
+                break;
+            default:
+                (_a = this.iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(message, "*");
+                this.emitter.dispatch(message);
+        }
+    };
+    SandpackStatic.prototype.listen = function (listener) {
+        return this.emitter.listener(listener);
+    };
+    SandpackStatic.prototype.destroy = function () {
+        this.emitter.cleanup();
+        if (typeof window !== "undefined") {
+            window.removeEventListener("message", this.eventListener);
+        }
+    };
+    return SandpackStatic;
+}(SandpackClient));
+
+export { SandpackStatic };
