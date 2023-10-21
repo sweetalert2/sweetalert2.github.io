@@ -16,6 +16,7 @@ export default defineConfig({
         recipeBootstrapCustomLoader: 'recipe-gallery/bootstrap-custom-loader.html',
         recipeReact: 'recipe-gallery/sweetalert2-react.html',
         recipeReactRouter: 'recipe-gallery/sweetalert2-react-router.html',
+        recipeFormik: 'recipe-gallery/sweetalert2-formik.html',
       },
     },
   },

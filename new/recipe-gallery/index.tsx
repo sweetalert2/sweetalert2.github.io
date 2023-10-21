@@ -22,6 +22,9 @@ export function RecipeGallery() {
         <li>
           <a href="./sweetalert2-react-router.html">React Router example</a>
         </li>
+        <li>
+          <a href="./sweetalert2-formik.html">Formik example</a>
+        </li>
       </ul>
     </>
   )
