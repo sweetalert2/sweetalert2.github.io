@@ -2,8 +2,8 @@ import { c as client, j as jsxRuntimeExports, N as Nav } from './index-60c2e8b4.
 import { _ as __vitePreload, S as Sandpack } from './index-0aac3d58.js';
 
 const src = (await __vitePreload(() => import('./sweetalert2-formik-src-347a1f61.js'),true?[]:void 0)).default;
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeReactRouter, {}));
-function RecipeReactRouter() {
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeFormik, {}));
+function RecipeFormik() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + Formik example" }),

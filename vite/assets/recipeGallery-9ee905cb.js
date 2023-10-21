@@ -7,7 +7,7 @@ function RecipeGallery() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: "A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less." }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "recipes-list", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./queue-with-progress-steps.html", children: "Queue with Progress Steps" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./bootstrap-custom-loader.html", children: "Bootstrap 4 + custom loader" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./bootstrap-custom-loader.html", children: "Bootstrap 5 + custom loader" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-react.html", children: "React example" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-react-router.html", children: "React Router example" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-formik.html", children: "Formik example" }) })

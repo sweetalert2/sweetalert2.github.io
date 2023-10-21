@@ -14,7 +14,7 @@ export function RecipeGallery() {
           <a href="./queue-with-progress-steps.html">Queue with Progress Steps</a>
         </li>
         <li>
-          <a href="./bootstrap-custom-loader.html">Bootstrap 4 + custom loader</a>
+          <a href="./bootstrap-custom-loader.html">Bootstrap 5 + custom loader</a>
         </li>
         <li>
           <a href="./sweetalert2-react.html">React example</a>

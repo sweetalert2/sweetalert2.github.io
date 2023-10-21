@@ -3,9 +3,9 @@ import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
 const src = (await import(`./sweetalert2-formik-src?raw`)).default
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeReactRouter />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeFormik />)
 
-function RecipeReactRouter() {
+function RecipeFormik() {
   return (
     <>
       <Nav recipeGallery />
