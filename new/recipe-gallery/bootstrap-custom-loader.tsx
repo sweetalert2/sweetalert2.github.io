@@ -8,11 +8,11 @@ export function BootstrapCustomLoaderRecipe() {
       <Nav recipeGallery />
       <h1>Bootstrap 4 + custom loader</h1>
 
-      <p>
-        Read
+      <p className="center">
+        Read{' '}
         <a href="https://github.com/sweetalert2/sweetalert2/issues/374">
           https://github.com/sweetalert2/sweetalert2/issues/374
-        </a>
+        </a>{' '}
         for more details.
       </p>
 
