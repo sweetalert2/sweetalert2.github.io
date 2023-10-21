@@ -25,6 +25,9 @@ export function RecipeGallery() {
         <li>
           <a href="./sweetalert2-formik.html">Formik example</a>
         </li>
+        <li>
+          <a href="./three-buttons-dialog.html">Yes/No/Cancel Dialog</a>
+        </li>
       </ul>
     </>
   )
