@@ -4,9 +4,11 @@ function BootstrapCustomLoaderRecipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Bootstrap 4 + custom loader" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "center", children: [
       "Read",
+      " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2/issues/374", children: "https://github.com/sweetalert2/sweetalert2/issues/374" }),
+      " ",
       "for more details."
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(

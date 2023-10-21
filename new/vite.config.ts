@@ -14,6 +14,7 @@ export default defineConfig({
         recipeQueueWithProgressSteps: 'recipe-gallery/queue-with-progress-steps.html',
         recipeBootstrapCustomLoader: 'recipe-gallery/bootstrap-custom-loader.html',
         recipeReact: 'recipe-gallery/sweetalert2-react.html',
+        recipeReactRouter: 'recipe-gallery/sweetalert2-react-router.html',
       },
     },
   },
