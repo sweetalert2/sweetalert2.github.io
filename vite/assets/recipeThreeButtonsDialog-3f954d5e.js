@@ -3,7 +3,7 @@ import { _ as __vitePreload, S as Sandpack } from './index-86d6113f.js';
 
 const css = (await __vitePreload(() => import('./three-buttons-dialog-styles-a31aae59.js'),true?[]:void 0)).default;
 const src = (await __vitePreload(() => import('./three-buttons-dialog-src-fff3a218.js'),true?[]:void 0)).default;
-function RecipeReact() {
+function RecipeThreeButtonsDialog() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Yes/No/Cancel Dialog" }),
@@ -36,11 +36,11 @@ function RecipeReact() {
           recompileDelay: 3e3,
           classes: {
             "sp-editor": "sp-h550",
-            "sp-preview": "sp-h250"
+            "sp-preview": "sp-h350"
           }
         }
       }
     )
   ] });
 }
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeReact, {}));
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeThreeButtonsDialog, {}));

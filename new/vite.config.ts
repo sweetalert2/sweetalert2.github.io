@@ -18,6 +18,7 @@ export default defineConfig({
         recipeReactRouter: 'recipe-gallery/sweetalert2-react-router.html',
         recipeFormik: 'recipe-gallery/sweetalert2-formik.html',
         recipeThreeButtonsDialog: 'recipe-gallery/three-buttons-dialog.html',
+        recipeDrawAttention: 'recipe-gallery/draw-attention.html',
       },
     },
   },
