@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react(), injectHTML()],
   build: {
     minify: false,
+    target: 'esnext',
     rollupOptions: {
       input: {
         main: 'index.html',
@@ -14,6 +15,7 @@ export default defineConfig({
         recipeQueueWithProgressSteps: 'recipe-gallery/queue-with-progress-steps.html',
         recipeBootstrapCustomLoader: 'recipe-gallery/bootstrap-custom-loader.html',
         recipeReact: 'recipe-gallery/sweetalert2-react.html',
+        recipeReactRouter: 'recipe-gallery/sweetalert2-react-router.html',
       },
     },
   },
