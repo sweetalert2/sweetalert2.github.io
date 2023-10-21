@@ -28,6 +28,9 @@ export function RecipeGallery() {
         <li>
           <a href="./three-buttons-dialog.html">Yes/No/Cancel Dialog</a>
         </li>
+        <li>
+          <a href="./draw-attention.html">Draw Attention / Persistent Dialog</a>
+        </li>
       </ul>
     </>
   )

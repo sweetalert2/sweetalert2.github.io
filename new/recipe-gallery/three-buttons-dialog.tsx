@@ -4,7 +4,7 @@ import { Nav } from '../src/components'
 const css = (await import(`./three-buttons-dialog-styles.css?raw`)).default
 const src = (await import('./three-buttons-dialog-src?raw')).default
 
-export function RecipeReact() {
+export function RecipeThreeButtonsDialog() {
   return (
     <>
       <Nav recipeGallery />
@@ -35,7 +35,7 @@ export function RecipeReact() {
           recompileDelay: 3000,
           classes: {
             'sp-editor': 'sp-h550',
-            'sp-preview': 'sp-h250',
+            'sp-preview': 'sp-h350',
           },
         }}
       />
@@ -43,4 +43,4 @@ export function RecipeReact() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeReact />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeThreeButtonsDialog />)
