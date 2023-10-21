@@ -26,10 +26,10 @@ function RecipeReactRouter() {
             'sweetalert2-react-content': 'latest',
             'react-router-dom': '^6.0.0',
           },
-          entry: '/App.js',
+          entry: '/App.tsx',
         }}
         files={{
-          '/App.js': src.replace(/ *\/\/ @ts-ignore\n/g, ''),
+          '/App.tsx': src,
         }}
         options={{
           showLineNumbers: true,

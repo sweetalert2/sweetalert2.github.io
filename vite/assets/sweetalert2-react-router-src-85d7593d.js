@@ -32,8 +32,7 @@ const Home = () => {
   )
 }
 
-// @ts-ignore
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Link to="/">Home</Link> {' | '}
     <Link to="/about">About</Link>
