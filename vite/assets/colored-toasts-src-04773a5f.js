@@ -1,0 +1,3 @@
+const coloredToastsSrc = "import Swal from 'sweetalert2'\nimport './styles.css'\n\nconst Toast = Swal.mixin({\n  toast: true,\n  position: 'center',\n  iconColor: 'white',\n  customClass: {\n    popup: 'colored-toast',\n  },\n  showConfirmButton: false,\n  timer: 1500,\n  timerProgressBar: true,\n})\n\n;(async () => {\n  await Toast.fire({\n    icon: 'success',\n    title: 'Success',\n  })\n  await Toast.fire({\n    icon: 'error',\n    title: 'Error',\n  })\n  await Toast.fire({\n    icon: 'warning',\n    title: 'Warning',\n  })\n  await Toast.fire({\n    icon: 'info',\n    title: 'Info',\n  })\n  await Toast.fire({\n    icon: 'question',\n    title: 'Question',\n  })\n})()\n";
+
+export { coloredToastsSrc as default };

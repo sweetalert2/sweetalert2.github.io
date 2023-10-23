@@ -1,8 +1,8 @@
-import $ from 'jquery'
+const bootstrapCustomLoaderSrc = `import $ from 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import Swal from 'sweetalert2'
-import './style.css'
+import './styles.css'
 
 $('#myModal').modal()
 
@@ -28,3 +28,6 @@ $('.trigger-swal').on('click', function () {
     },
   })
 })
+`;
+
+export { bootstrapCustomLoaderSrc as default };

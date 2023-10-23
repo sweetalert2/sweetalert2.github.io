@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import './style.css'
+import './styles.css'
 
 Swal.fire({
   title: 'Do you want to save the changes?',

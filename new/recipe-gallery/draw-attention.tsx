@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client'
-import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
+import { Sandpack } from './components/Sandpack'
+
+const src = (await import('./draw-attention-src?raw')).default
 
 export function RecipeDrawAttention() {
   return (
@@ -15,44 +17,15 @@ export function RecipeDrawAttention() {
       </p>
 
       <Sandpack
-        theme="dark"
-        customSetup={{
-          dependencies: {
-            'react': 'latest',
-            'react-dom': 'latest',
-            'sweetalert2': 'latest',
-            'animate.css': 'latest',
-          },
-          entry: '/App.js',
+        dependencies={{
+          'animate.css': 'latest',
         }}
+        entry="/App.ts"
         files={{
-          '/App.js': `import Swal from 'sweetalert2'
-import 'animate.css'
-
-Swal.fire({
-  title: 'I will shake when you click outside!',
-  allowOutsideClick: () => {
-    const popup = Swal.getPopup()
-    popup.classList.remove('swal2-show')
-    setTimeout(() => {
-      popup.classList.add('animate__animated', 'animate__headShake')
-    })
-    setTimeout(() => {
-      popup.classList.remove('animate__animated', 'animate__headShake')
-    }, 500)
-    return false
-  }
-})`,
+          '/App.ts': src,
         }}
-        options={{
-          showLineNumbers: true,
-          recompileMode: 'delayed',
-          recompileDelay: 3000,
-          classes: {
-            'sp-editor': 'sp-h400',
-            'sp-preview': 'sp-h250',
-          },
-        }}
+        editorHeight={400}
+        previewHeight={250}
       />
     </>
   )

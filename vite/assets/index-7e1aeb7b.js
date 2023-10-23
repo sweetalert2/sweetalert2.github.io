@@ -1,5 +1,5 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './index-86d6113f.js';
-import { S as SandpackClient } from './base-80a1f760-4fcc0133.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-d91fd17f.js';
+import { S as SandpackClient } from './base-80a1f760-d4c14c76.js';
 import './index-afd1224a.js';
 
 /**

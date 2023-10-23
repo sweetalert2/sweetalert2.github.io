@@ -1,6 +1,7 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-afd1224a.js';
-import { S as Sandpack } from './index-86d6113f.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-d91fd17f.js';
 
+const src = (await __vitePreload(() => import('./draw-attention-src-6eef1842.js'),true?[]:void 0)).default;
 function RecipeDrawAttention() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
@@ -16,44 +17,15 @@ function RecipeDrawAttention() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
       {
-        theme: "dark",
-        customSetup: {
-          dependencies: {
-            "react": "latest",
-            "react-dom": "latest",
-            "sweetalert2": "latest",
-            "animate.css": "latest"
-          },
-          entry: "/App.js"
+        dependencies: {
+          "animate.css": "latest"
         },
+        entry: "/App.ts",
         files: {
-          "/App.js": `import Swal from 'sweetalert2'
-import 'animate.css'
-
-Swal.fire({
-  title: 'I will shake when you click outside!',
-  allowOutsideClick: () => {
-    const popup = Swal.getPopup()
-    popup.classList.remove('swal2-show')
-    setTimeout(() => {
-      popup.classList.add('animate__animated', 'animate__headShake')
-    })
-    setTimeout(() => {
-      popup.classList.remove('animate__animated', 'animate__headShake')
-    }, 500)
-    return false
-  }
-})`
+          "/App.ts": src
         },
-        options: {
-          showLineNumbers: true,
-          recompileMode: "delayed",
-          recompileDelay: 3e3,
-          classes: {
-            "sp-editor": "sp-h400",
-            "sp-preview": "sp-h250"
-          }
-        }
+        editorHeight: 400,
+        previewHeight: 250
       }
     )
   ] });

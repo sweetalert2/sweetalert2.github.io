@@ -1,5 +1,63 @@
 import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-afd1224a.js';
 
+const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/vite/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
+    // @ts-expect-error true will be replaced with boolean later
+    if (!true || !deps || deps.length === 0) {
+        return baseModule();
+    }
+    const links = document.getElementsByTagName('link');
+    return Promise.all(deps.map((dep) => {
+        // @ts-expect-error assetsURL is declared before preload.toString()
+        dep = assetsURL(dep);
+        if (dep in seen)
+            return;
+        seen[dep] = true;
+        const isCss = dep.endsWith('.css');
+        const cssSelector = isCss ? '[rel="stylesheet"]' : '';
+        const isBaseRelative = !!importerUrl;
+        // check if the file is already preloaded by SSR markup
+        if (isBaseRelative) {
+            // When isBaseRelative is true then we have `importerUrl` and `dep` is
+            // already converted to an absolute URL by the `assetsURL` function
+            for (let i = links.length - 1; i >= 0; i--) {
+                const link = links[i];
+                // The `links[i].href` is an absolute URL thanks to browser doing the work
+                // for us. See https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#reflecting-content-attributes-in-idl-attributes:idl-domstring-5
+                if (link.href === dep && (!isCss || link.rel === 'stylesheet')) {
+                    return;
+                }
+            }
+        }
+        else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
+            return;
+        }
+        const link = document.createElement('link');
+        link.rel = isCss ? 'stylesheet' : scriptRel;
+        if (!isCss) {
+            link.as = 'script';
+            link.crossOrigin = '';
+        }
+        link.href = dep;
+        document.head.appendChild(link);
+        if (isCss) {
+            return new Promise((res, rej) => {
+                link.addEventListener('load', res);
+                link.addEventListener('error', () => rej(new Error(`Unable to preload CSS for ${dep}`)));
+            });
+        }
+    }))
+        .then(() => baseModule())
+        .catch((err) => {
+        const e = new Event('vite:preloadError', { cancelable: true });
+        // @ts-expect-error custom payload
+        e.payload = err;
+        window.dispatchEvent(e);
+        if (!e.defaultPrevented) {
+            throw err;
+        }
+    });
+};
+
 var t$1="colors",n="sizes",r$1="space",i$1={gap:r$1,gridGap:r$1,columnGap:r$1,gridColumnGap:r$1,rowGap:r$1,gridRowGap:r$1,inset:r$1,insetBlock:r$1,insetBlockEnd:r$1,insetBlockStart:r$1,insetInline:r$1,insetInlineEnd:r$1,insetInlineStart:r$1,margin:r$1,marginTop:r$1,marginRight:r$1,marginBottom:r$1,marginLeft:r$1,marginBlock:r$1,marginBlockEnd:r$1,marginBlockStart:r$1,marginInline:r$1,marginInlineEnd:r$1,marginInlineStart:r$1,padding:r$1,paddingTop:r$1,paddingRight:r$1,paddingBottom:r$1,paddingLeft:r$1,paddingBlock:r$1,paddingBlockEnd:r$1,paddingBlockStart:r$1,paddingInline:r$1,paddingInlineEnd:r$1,paddingInlineStart:r$1,top:r$1,right:r$1,bottom:r$1,left:r$1,scrollMargin:r$1,scrollMarginTop:r$1,scrollMarginRight:r$1,scrollMarginBottom:r$1,scrollMarginLeft:r$1,scrollMarginX:r$1,scrollMarginY:r$1,scrollMarginBlock:r$1,scrollMarginBlockEnd:r$1,scrollMarginBlockStart:r$1,scrollMarginInline:r$1,scrollMarginInlineEnd:r$1,scrollMarginInlineStart:r$1,scrollPadding:r$1,scrollPaddingTop:r$1,scrollPaddingRight:r$1,scrollPaddingBottom:r$1,scrollPaddingLeft:r$1,scrollPaddingX:r$1,scrollPaddingY:r$1,scrollPaddingBlock:r$1,scrollPaddingBlockEnd:r$1,scrollPaddingBlockStart:r$1,scrollPaddingInline:r$1,scrollPaddingInlineEnd:r$1,scrollPaddingInlineStart:r$1,fontSize:"fontSizes",background:t$1,backgroundColor:t$1,backgroundImage:t$1,borderImage:t$1,border:t$1,borderBlock:t$1,borderBlockEnd:t$1,borderBlockStart:t$1,borderBottom:t$1,borderBottomColor:t$1,borderColor:t$1,borderInline:t$1,borderInlineEnd:t$1,borderInlineStart:t$1,borderLeft:t$1,borderLeftColor:t$1,borderRight:t$1,borderRightColor:t$1,borderTop:t$1,borderTopColor:t$1,caretColor:t$1,color:t$1,columnRuleColor:t$1,fill:t$1,outline:t$1,outlineColor:t$1,stroke:t$1,textDecorationColor:t$1,fontFamily:"fonts",fontWeight:"fontWeights",lineHeight:"lineHeights",letterSpacing:"letterSpacings",blockSize:n,minBlockSize:n,maxBlockSize:n,inlineSize:n,minInlineSize:n,maxInlineSize:n,width:n,minWidth:n,maxWidth:n,height:n,minHeight:n,maxHeight:n,flexBasis:n,gridTemplateColumns:n,gridTemplateRows:n,borderWidth:"borderWidths",borderTopWidth:"borderWidths",borderRightWidth:"borderWidths",borderBottomWidth:"borderWidths",borderLeftWidth:"borderWidths",borderStyle:"borderStyles",borderTopStyle:"borderStyles",borderRightStyle:"borderStyles",borderBottomStyle:"borderStyles",borderLeftStyle:"borderStyles",borderRadius:"radii",borderTopLeftRadius:"radii",borderTopRightRadius:"radii",borderBottomRightRadius:"radii",borderBottomLeftRadius:"radii",boxShadow:"shadows",textShadow:"shadows",transition:"transitions",zIndex:"zIndices"},o=(e,t)=>"function"==typeof t?{"()":Function.prototype.toString.call(t)}:t,l=()=>{const e=Object.create(null);return (t,n,...r)=>{const i=(e=>JSON.stringify(e,o))(t);return i in e?e[i]:e[i]=n(t,...r)}},s=Symbol.for("sxs.internal"),a=(e,t)=>Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)),c=e=>{for(const t in e)return !0;return !1},{hasOwnProperty:d}=Object.prototype,g=e=>e.includes("-")?e:e.replace(/[A-Z]/g,(e=>"-"+e.toLowerCase())),p=/\s+(?![^()]*\))/,u=e=>t=>e(..."string"==typeof t?String(t).split(p):[t]),h={appearance:e=>({WebkitAppearance:e,appearance:e}),backfaceVisibility:e=>({WebkitBackfaceVisibility:e,backfaceVisibility:e}),backdropFilter:e=>({WebkitBackdropFilter:e,backdropFilter:e}),backgroundClip:e=>({WebkitBackgroundClip:e,backgroundClip:e}),boxDecorationBreak:e=>({WebkitBoxDecorationBreak:e,boxDecorationBreak:e}),clipPath:e=>({WebkitClipPath:e,clipPath:e}),content:e=>({content:e.includes('"')||e.includes("'")||/^([A-Za-z]+\([^]*|[^]*-quote|inherit|initial|none|normal|revert|unset)$/.test(e)?e:`"${e}"`}),hyphens:e=>({WebkitHyphens:e,hyphens:e}),maskImage:e=>({WebkitMaskImage:e,maskImage:e}),maskSize:e=>({WebkitMaskSize:e,maskSize:e}),tabSize:e=>({MozTabSize:e,tabSize:e}),textSizeAdjust:e=>({WebkitTextSizeAdjust:e,textSizeAdjust:e}),userSelect:e=>({WebkitUserSelect:e,userSelect:e}),marginBlock:u(((e,t)=>({marginBlockStart:e,marginBlockEnd:t||e}))),marginInline:u(((e,t)=>({marginInlineStart:e,marginInlineEnd:t||e}))),maxSize:u(((e,t)=>({maxBlockSize:e,maxInlineSize:t||e}))),minSize:u(((e,t)=>({minBlockSize:e,minInlineSize:t||e}))),paddingBlock:u(((e,t)=>({paddingBlockStart:e,paddingBlockEnd:t||e}))),paddingInline:u(((e,t)=>({paddingInlineStart:e,paddingInlineEnd:t||e})))},f=/([\d.]+)([^]*)/,m=(e,t)=>e.length?e.reduce(((e,n)=>(e.push(...t.map((e=>e.includes("&")?e.replace(/&/g,/[ +>|~]/.test(n)&&/&.*&/.test(e)?`:is(${n})`:n):n+" "+e))),e)),[]):t,b=(e,t)=>e in S$1&&"string"==typeof t?t.replace(/^((?:[^]*[^\w-])?)(fit-content|stretch)((?:[^\w-][^]*)?)$/,((t,n,r,i)=>n+("stretch"===r?`-moz-available${i};${g(e)}:${n}-webkit-fill-available`:`-moz-fit-content${i};${g(e)}:${n}fit-content`)+i)):String(t),S$1={blockSize:1,height:1,inlineSize:1,maxBlockSize:1,maxHeight:1,maxInlineSize:1,maxWidth:1,minBlockSize:1,minHeight:1,minInlineSize:1,minWidth:1,width:1},k=e=>e?e+"-":"",y=(e,t,n)=>e.replace(/([+-])?((?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][+-]?\d+)?)?(\$|--)([$\w-]+)/g,((e,r,i,o,l)=>"$"==o==!!i?e:(r||"--"==o?"calc(":"")+"var(--"+("$"===o?k(t)+(l.includes("$")?"":k(n))+l.replace(/\$/g,"-"):l)+")"+(r||"--"==o?"*"+(r||"")+(i||"1")+")":""))),B=/\s*,\s*(?![^()]*\))/,$=Object.prototype.toString,x=(e,t,n,r,i)=>{let o,l,s;const a=(e,t,n)=>{let c,d;const p=e=>{for(c in e){const x=64===c.charCodeAt(0),z=x&&Array.isArray(e[c])?e[c]:[e[c]];for(d of z){const e=/[A-Z]/.test(S=c)?S:S.replace(/-[^]/g,(e=>e[1].toUpperCase())),z="object"==typeof d&&d&&d.toString===$&&(!r.utils[e]||!t.length);if(e in r.utils&&!z){const t=r.utils[e];if(t!==l){l=t,p(t(d)),l=null;continue}}else if(e in h){const t=h[e];if(t!==s){s=t,p(t(d)),s=null;continue}}if(x&&(u=c.slice(1)in r.media?"@media "+r.media[c.slice(1)]:c,c=u.replace(/\(\s*([\w-]+)\s*(=|<|<=|>|>=)\s*([\w-]+)\s*(?:(<|<=|>|>=)\s*([\w-]+)\s*)?\)/g,((e,t,n,r,i,o)=>{const l=f.test(t),s=.0625*(l?-1:1),[a,c]=l?[r,t]:[t,r];return "("+("="===n[0]?"":">"===n[0]===l?"max-":"min-")+a+":"+("="!==n[0]&&1===n.length?c.replace(f,((e,t,r)=>Number(t)+s*(">"===n?1:-1)+r)):c)+(i?") and ("+(">"===i[0]?"min-":"max-")+a+":"+(1===i.length?o.replace(f,((e,t,n)=>Number(t)+s*(">"===i?-1:1)+n)):o):"")+")"}))),z){const e=x?n.concat(c):[...n],r=x?[...t]:m(t,c.split(B));void 0!==o&&i(I(...o)),o=void 0,a(d,r,e);}else void 0===o&&(o=[[],t,n]),c=x||36!==c.charCodeAt(0)?c:`--${k(r.prefix)}${c.slice(1).replace(/\$/g,"-")}`,d=z?d:"number"==typeof d?d&&e in R?String(d)+"px":String(d):y(b(e,null==d?"":d),r.prefix,r.themeMap[e]),o[0].push(`${x?`${c} `:`${g(c)}:`}${d}`);}}var u,S;};p(e),void 0!==o&&i(I(...o)),o=void 0;};a(e,t,n);},I=(e,t,n)=>`${n.map((e=>`${e}{`)).join("")}${t.length?`${t.join(",")}{`:""}${e.join(";")}${t.length?"}":""}${Array(n.length?n.length+1:0).join("}")}`,R={animationDelay:1,animationDuration:1,backgroundSize:1,blockSize:1,border:1,borderBlock:1,borderBlockEnd:1,borderBlockEndWidth:1,borderBlockStart:1,borderBlockStartWidth:1,borderBlockWidth:1,borderBottom:1,borderBottomLeftRadius:1,borderBottomRightRadius:1,borderBottomWidth:1,borderEndEndRadius:1,borderEndStartRadius:1,borderInlineEnd:1,borderInlineEndWidth:1,borderInlineStart:1,borderInlineStartWidth:1,borderInlineWidth:1,borderLeft:1,borderLeftWidth:1,borderRadius:1,borderRight:1,borderRightWidth:1,borderSpacing:1,borderStartEndRadius:1,borderStartStartRadius:1,borderTop:1,borderTopLeftRadius:1,borderTopRightRadius:1,borderTopWidth:1,borderWidth:1,bottom:1,columnGap:1,columnRule:1,columnRuleWidth:1,columnWidth:1,containIntrinsicSize:1,flexBasis:1,fontSize:1,gap:1,gridAutoColumns:1,gridAutoRows:1,gridTemplateColumns:1,gridTemplateRows:1,height:1,inlineSize:1,inset:1,insetBlock:1,insetBlockEnd:1,insetBlockStart:1,insetInline:1,insetInlineEnd:1,insetInlineStart:1,left:1,letterSpacing:1,margin:1,marginBlock:1,marginBlockEnd:1,marginBlockStart:1,marginBottom:1,marginInline:1,marginInlineEnd:1,marginInlineStart:1,marginLeft:1,marginRight:1,marginTop:1,maxBlockSize:1,maxHeight:1,maxInlineSize:1,maxWidth:1,minBlockSize:1,minHeight:1,minInlineSize:1,minWidth:1,offsetDistance:1,offsetRotate:1,outline:1,outlineOffset:1,outlineWidth:1,overflowClipMargin:1,padding:1,paddingBlock:1,paddingBlockEnd:1,paddingBlockStart:1,paddingBottom:1,paddingInline:1,paddingInlineEnd:1,paddingInlineStart:1,paddingLeft:1,paddingRight:1,paddingTop:1,perspective:1,right:1,rowGap:1,scrollMargin:1,scrollMarginBlock:1,scrollMarginBlockEnd:1,scrollMarginBlockStart:1,scrollMarginBottom:1,scrollMarginInline:1,scrollMarginInlineEnd:1,scrollMarginInlineStart:1,scrollMarginLeft:1,scrollMarginRight:1,scrollMarginTop:1,scrollPadding:1,scrollPaddingBlock:1,scrollPaddingBlockEnd:1,scrollPaddingBlockStart:1,scrollPaddingBottom:1,scrollPaddingInline:1,scrollPaddingInlineEnd:1,scrollPaddingInlineStart:1,scrollPaddingLeft:1,scrollPaddingRight:1,scrollPaddingTop:1,shapeMargin:1,textDecoration:1,textDecorationThickness:1,textIndent:1,textUnderlineOffset:1,top:1,transitionDelay:1,transitionDuration:1,verticalAlign:1,width:1,wordSpacing:1},z=e=>String.fromCharCode(e+(e>25?39:97)),W=e=>(e=>{let t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=z(t%52)+n;return z(t%52)+n})(((e,t)=>{let n=t.length;for(;n;)e=33*e^t.charCodeAt(--n);return e})(5381,JSON.stringify(e))>>>0),j=["themed","global","styled","onevar","resonevar","allvar","inline"],E=e=>{if(e.href&&!e.href.startsWith(location.origin))return !1;try{return !!e.cssRules}catch(e){return !1}},T=e=>{let t;const n=()=>{const{cssRules:e}=t.sheet;return [].map.call(e,((n,r)=>{const{cssText:i}=n;let o="";if(i.startsWith("--sxs"))return "";if(e[r-1]&&(o=e[r-1].cssText).startsWith("--sxs")){if(!n.cssRules.length)return "";for(const e in t.rules)if(t.rules[e].group===n)return `--sxs{--sxs:${[...t.rules[e].cache].join(" ")}}${i}`;return n.cssRules.length?`${o}${i}`:""}return i})).join("")},r=()=>{if(t){const{rules:e,sheet:n}=t;if(!n.deleteRule){for(;3===Object(Object(n.cssRules)[0]).type;)n.cssRules.splice(0,1);n.cssRules=[];}for(const t in e)delete e[t];}const i=Object(e).styleSheets||[];for(const e of i)if(E(e)){for(let i=0,o=e.cssRules;o[i];++i){const l=Object(o[i]);if(1!==l.type)continue;const s=Object(o[i+1]);if(4!==s.type)continue;++i;const{cssText:a}=l;if(!a.startsWith("--sxs"))continue;const c=a.slice(14,-3).trim().split(/\s+/),d=j[c[0]];d&&(t||(t={sheet:e,reset:r,rules:{},toString:n}),t.rules[d]={group:s,index:i,cache:new Set(c)});}if(t)break}if(!t){const i=(e,t)=>({type:t,cssRules:[],insertRule(e,t){this.cssRules.splice(t,0,i(e,{import:3,undefined:1}[(e.toLowerCase().match(/^@([a-z]+)/)||[])[1]]||4));},get cssText(){return "@media{}"===e?`@media{${[].map.call(this.cssRules,(e=>e.cssText)).join("")}}`:e}});t={sheet:e?(e.head||e).appendChild(document.createElement("style")).sheet:i("","text/css"),rules:{},reset:r,toString:n};}const{sheet:o,rules:l}=t;for(let e=j.length-1;e>=0;--e){const t=j[e];if(!l[t]){const n=j[e+1],r=l[n]?l[n].index:o.cssRules.length;o.insertRule("@media{}",r),o.insertRule(`--sxs{--sxs:${e}}`,r),l[t]={group:o.cssRules[r+1],index:r,cache:new Set([e])};}v(l[t]);}};return r(),t},v=e=>{const t=e.group;let n=t.cssRules.length;e.apply=e=>{try{t.insertRule(e,n),++n;}catch(e){}};},M=Symbol(),w=l(),C$1=(e,t)=>w(e,(()=>(...n)=>{let r={type:null,composers:new Set};for(const t of n)if(null!=t)if(t[s]){null==r.type&&(r.type=t[s].type);for(const e of t[s].composers)r.composers.add(e);}else t.constructor!==Object||t.$$typeof?null==r.type&&(r.type=t):r.composers.add(P(t,e));return null==r.type&&(r.type="span"),r.composers.size||r.composers.add(["PJLV",{},[],[],{},[]]),L(e,r,t)})),P=({variants:e,compoundVariants:t,defaultVariants:n,...r},i)=>{const o=`${k(i.prefix)}c-${W(r)}`,l=[],s=[],a=Object.create(null),g=[];for(const e in n)a[e]=String(n[e]);if("object"==typeof e&&e)for(const t in e){p=a,u=t,d.call(p,u)||(a[t]="undefined");const n=e[t];for(const e in n){const r={[t]:String(e)};"undefined"===String(e)&&g.push(t);const i=n[e],o=[r,i,!c(i)];l.push(o);}}var p,u;if("object"==typeof t&&t)for(const e of t){let{css:t,...n}=e;t="object"==typeof t&&t||{};for(const e in n)n[e]=String(n[e]);const r=[n,t,!c(t)];s.push(r);}return [o,r,l,s,a,g]},L=(e,t,n)=>{const[r,i,o,l]=O(t.composers),c="function"==typeof t.type||t.type.$$typeof?(e=>{function t(){for(let n=0;n<t[M].length;n++){const[r,i]=t[M][n];e.rules[r].apply(i);}return t[M]=[],null}return t[M]=[],t.rules={},j.forEach((e=>t.rules[e]={apply:n=>t[M].push([e,n])})),t})(n):null,d=(c||n).rules,g=`.${r}${i.length>1?`:where(.${i.slice(1).join(".")})`:""}`,p=s=>{s="object"==typeof s&&s||D;const{css:a,...p}=s,u={};for(const e in o)if(delete p[e],e in s){let t=s[e];"object"==typeof t&&t?u[e]={"@initial":o[e],...t}:(t=String(t),u[e]="undefined"!==t||l.has(e)?t:o[e]);}else u[e]=o[e];const h=new Set([...i]);for(const[r,i,o,l]of t.composers){n.rules.styled.cache.has(r)||(n.rules.styled.cache.add(r),x(i,[`.${r}`],[],e,(e=>{d.styled.apply(e);})));const t=A(o,u,e.media),s=A(l,u,e.media,!0);for(const i of t)if(void 0!==i)for(const[t,o,l]of i){const i=`${r}-${W(o)}-${t}`;h.add(i);const s=(l?n.rules.resonevar:n.rules.onevar).cache,a=l?d.resonevar:d.onevar;s.has(i)||(s.add(i),x(o,[`.${i}`],[],e,(e=>{a.apply(e);})));}for(const t of s)if(void 0!==t)for(const[i,o]of t){const t=`${r}-${W(o)}-${i}`;h.add(t),n.rules.allvar.cache.has(t)||(n.rules.allvar.cache.add(t),x(o,[`.${t}`],[],e,(e=>{d.allvar.apply(e);})));}}if("object"==typeof a&&a){const t=`${r}-i${W(a)}-css`;h.add(t),n.rules.inline.cache.has(t)||(n.rules.inline.cache.add(t),x(a,[`.${t}`],[],e,(e=>{d.inline.apply(e);})));}for(const e of String(s.className||"").trim().split(/\s+/))e&&h.add(e);const f=p.className=[...h].join(" ");return {type:t.type,className:f,selector:g,props:p,toString:()=>f,deferredInjector:c}};return a(p,{className:r,selector:g,[s]:t,toString:()=>(n.rules.styled.cache.has(r)||p(),r)})},O=e=>{let t="";const n=[],r={},i=[];for(const[o,,,,l,s]of e){""===t&&(t=o),n.push(o),i.push(...s);for(const e in l){const t=l[e];(void 0===r[e]||"undefined"!==t||s.includes(t))&&(r[e]=t);}}return [t,n,r,new Set(i)]},A=(e,t,n,r)=>{const i=[];e:for(let[o,l,s]of e){if(s)continue;let e,a=0,c=!1;for(e in o){const r=o[e];let i=t[e];if(i!==r){if("object"!=typeof i||!i)continue e;{let e,t,o=0;for(const l in i){if(r===String(i[l])){if("@initial"!==l){const e=l.slice(1);(t=t||[]).push(e in n?n[e]:l.replace(/^@media ?/,"")),c=!0;}a+=o,e=!0;}++o;}if(t&&t.length&&(l={["@media "+t.join(", ")]:l}),!e)continue e}}}(i[a]=i[a]||[]).push([r?"cv":`${e}-${o[e]}`,l,c]);}return i},D={},H=l(),N=(e,t)=>H(e,(()=>(...n)=>{const r=()=>{for(let r of n){r="object"==typeof r&&r||{};let n=W(r);if(!t.rules.global.cache.has(n)){if(t.rules.global.cache.add(n),"@import"in r){let e=[].indexOf.call(t.sheet.cssRules,t.rules.themed.group)-1;for(let n of [].concat(r["@import"]))n=n.includes('"')||n.includes("'")?n:`"${n}"`,t.sheet.insertRule(`@import ${n};`,e++);delete r["@import"];}x(r,[],[],e,(e=>{t.rules.global.apply(e);}));}}return ""};return a(r,{toString:r})})),V=l(),G=(e,t)=>V(e,(()=>n=>{const r=`${k(e.prefix)}k-${W(n)}`,i=()=>{if(!t.rules.global.cache.has(r)){t.rules.global.cache.add(r);const i=[];x(n,[],[],e,(e=>i.push(e)));const o=`@keyframes ${r}{${i.join("")}}`;t.rules.global.apply(o);}return r};return a(i,{get name(){return i()},toString:i})})),F=class{constructor(e,t,n,r){this.token=null==e?"":String(e),this.value=null==t?"":String(t),this.scale=null==n?"":String(n),this.prefix=null==r?"":String(r);}get computedValue(){return "var("+this.variable+")"}get variable(){return "--"+k(this.prefix)+k(this.scale)+this.token}toString(){return this.computedValue}},J=l(),U=(e,t)=>J(e,(()=>(n,r)=>{r="object"==typeof n&&n||Object(r);const i=`.${n=(n="string"==typeof n?n:"")||`${k(e.prefix)}t-${W(r)}`}`,o={},l=[];for(const t in r){o[t]={};for(const n in r[t]){const i=`--${k(e.prefix)}${t}-${n}`,s=y(String(r[t][n]),e.prefix,t);o[t][n]=new F(n,s,t,e.prefix),l.push(`${i}:${s}`);}}const s=()=>{if(l.length&&!t.rules.themed.cache.has(n)){t.rules.themed.cache.add(n);const i=`${r===e.theme?":root,":""}.${n}{${l.join(";")}}`;t.rules.themed.apply(i);}return n};return {...o,get className(){return s()},selector:i,toString:s}})),Z=l(),X=e=>{let t=!1;const n=Z(e,(e=>{t=!0;const n="prefix"in(e="object"==typeof e&&e||{})?String(e.prefix):"",r="object"==typeof e.media&&e.media||{},o="object"==typeof e.root?e.root||null:globalThis.document||null,l="object"==typeof e.theme&&e.theme||{},s={prefix:n,media:r,theme:l,themeMap:"object"==typeof e.themeMap&&e.themeMap||{...i$1},utils:"object"==typeof e.utils&&e.utils||{}},a=T(o),c={css:C$1(s,a),globalCss:N(s,a),keyframes:G(s,a),createTheme:U(s,a),reset(){a.reset(),c.theme.toString();},theme:{},sheet:a,config:s,prefix:n,getCssText:a.toString,toString:a.toString};return String(c.theme=c.createTheme(l)),c}));return t||n.reset(),n};//# sourceMappingUrl=index.map
 
 var has = Object.prototype.hasOwnProperty;
@@ -86,64 +144,6 @@ function dequal(foo, bar) {
 
 	return foo !== foo && bar !== bar;
 }
-
-const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/vite/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
-    // @ts-expect-error true will be replaced with boolean later
-    if (!true || !deps || deps.length === 0) {
-        return baseModule();
-    }
-    const links = document.getElementsByTagName('link');
-    return Promise.all(deps.map((dep) => {
-        // @ts-expect-error assetsURL is declared before preload.toString()
-        dep = assetsURL(dep);
-        if (dep in seen)
-            return;
-        seen[dep] = true;
-        const isCss = dep.endsWith('.css');
-        const cssSelector = isCss ? '[rel="stylesheet"]' : '';
-        const isBaseRelative = !!importerUrl;
-        // check if the file is already preloaded by SSR markup
-        if (isBaseRelative) {
-            // When isBaseRelative is true then we have `importerUrl` and `dep` is
-            // already converted to an absolute URL by the `assetsURL` function
-            for (let i = links.length - 1; i >= 0; i--) {
-                const link = links[i];
-                // The `links[i].href` is an absolute URL thanks to browser doing the work
-                // for us. See https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#reflecting-content-attributes-in-idl-attributes:idl-domstring-5
-                if (link.href === dep && (!isCss || link.rel === 'stylesheet')) {
-                    return;
-                }
-            }
-        }
-        else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
-            return;
-        }
-        const link = document.createElement('link');
-        link.rel = isCss ? 'stylesheet' : scriptRel;
-        if (!isCss) {
-            link.as = 'script';
-            link.crossOrigin = '';
-        }
-        link.href = dep;
-        document.head.appendChild(link);
-        if (isCss) {
-            return new Promise((res, rej) => {
-                link.addEventListener('load', res);
-                link.addEventListener('error', () => rej(new Error(`Unable to preload CSS for ${dep}`)));
-            });
-        }
-    }))
-        .then(() => baseModule())
-        .catch((err) => {
-        const e = new Event('vite:preloadError', { cancelable: true });
-        // @ts-expect-error custom payload
-        e.payload = err;
-        window.dispatchEvent(e);
-        if (!e.defaultPrevented) {
-            throw err;
-        }
-    });
-};
 
 // src/format.ts
 var POSITIONALS_EXP = /(%?)(%([sdjo]))/g;
@@ -477,15 +477,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-f2f55e99.js'),true?["assets/index-f2f55e99.js","assets/base-80a1f760-4fcc0133.js","assets/consoleHook-7a68abbd-82955de6.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-7af775a0.js'),true?["assets/index-7af775a0.js","assets/base-80a1f760-d4c14c76.js","assets/consoleHook-7a68abbd-9a7615fc.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-fb2ec869.js'),true?["assets/index-fc68d414-fb2ec869.js","assets/consoleHook-7a68abbd-82955de6.js","assets/base-80a1f760-4fcc0133.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-94850a17.js'),true?["assets/index-fc68d414-94850a17.js","assets/consoleHook-7a68abbd-9a7615fc.js","assets/base-80a1f760-d4c14c76.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-298dd7f2.js'),true?["assets/index-298dd7f2.js","assets/base-80a1f760-4fcc0133.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-7e1aeb7b.js'),true?["assets/index-7e1aeb7b.js","assets/base-80a1f760-d4c14c76.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -31002,7 +31002,7 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
                         } }, { children: jsxRuntimeExports.jsx(CleanIcon, {}, void 0) }), void 0)] }), void 0), standalone && (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(DependenciesProgress, { clientId: clientId }, void 0), jsxRuntimeExports.jsx("iframe", { ref: iframe }, void 0)] }, void 0))] }), void 0));
 });
 
-var Sandpack = function (_a) {
+var Sandpack$2 = function (_a) {
     var _b, _c, _d, _e, _f, _g, _h, _j;
     var options = _a.options, template = _a.template, customSetup = _a.customSetup, files = _a.files, theme = _a.theme, props = __rest(_a, ["options", "template", "customSetup", "files", "theme"]);
     options !== null && options !== void 0 ? options : (options = {});
@@ -31209,5 +31209,78 @@ var rtlLayoutClassName = css({
         flexDirection: "initial"
     }
 });
+
+var cobalt2 = {
+    colors: {
+        surface1: "#193549",
+        surface2: "#0d3a58",
+        surface3: "#1f4662",
+        clickable: "#aaaaaa",
+        base: "#ffffff",
+        disabled: "#C5C5C5",
+        hover: "#ffffff",
+        accent: "#ffc600",
+        error: "#a22929",
+        errorSurface: "#0d3a58"
+    },
+    syntax: {
+        plain: "#ffffff",
+        comment: {
+            color: "#0088ff",
+            fontStyle: "italic"
+        },
+        keyword: "#ff9d00",
+        tag: "#9effff",
+        punctuation: "#e1efff",
+        definition: "#ffc600",
+        property: "#ffc600",
+        static: "#ffee80",
+        string: "#a5ff90"
+    },
+    font: {
+        body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+        mono: '"Operator Mono", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+        size: "13px",
+        lineHeight: "20px"
+    }
+};
+
+function Sandpack({
+  dependencies = {},
+  entry = "App.ts",
+  editorHeight = 600,
+  previewHeight = 350,
+  files
+}) {
+  if (!files["/index.html"]) {
+    files["/index.html"] = {
+      code: `<style>body { font-family: sans-serif; }</style>`,
+      hidden: true
+    };
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Sandpack$2,
+    {
+      theme: cobalt2,
+      customSetup: {
+        dependencies: {
+          sweetalert2: "latest",
+          ...dependencies
+        },
+        entry
+      },
+      files,
+      options: {
+        showLineNumbers: true,
+        recompileMode: "delayed",
+        recompileDelay: 3e3,
+        classes: {
+          "sp-editor": `sp-h${editorHeight}`,
+          "sp-preview": `sp-h${previewHeight}`
+        }
+      }
+    }
+  );
+}
 
 export { Sandpack as S, __vitePreload as _, __extends as a, __awaiter$1 as b, __generator$1 as c, __assign$1 as d, createError as e, dequal as f, createPackageJSON as g, SandpackLogLevel as h, invariant as i, addPackageJSONIfNeeded as j, __spreadArray$1 as k, extractErrorDetails as l, nullthrows as n };

@@ -1,6 +1,7 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-afd1224a.js';
-import { S as Sandpack } from './index-86d6113f.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-d91fd17f.js';
 
+const src = (await __vitePreload(() => import('./sweetalert2-react-src-1ac9c3af.js'),true?[]:void 0)).default;
 function RecipeReact() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
@@ -13,37 +14,17 @@ function RecipeReact() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
       {
-        theme: "dark",
-        customSetup: {
-          dependencies: {
-            "react": "latest",
-            "react-dom": "latest",
-            "sweetalert2": "latest",
-            "sweetalert2-react-content": "latest"
-          },
-          entry: "/App.js"
+        dependencies: {
+          "react": "latest",
+          "react-dom": "latest",
+          "sweetalert2-react-content": "latest"
         },
+        entry: "/App.tsx",
         files: {
-          "/App.js": `import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
-const MySwal = withReactContent(Swal)
-
-MySwal.fire({
-  title: <strong>Good job!</strong>,
-  html: <i>You clicked the button!</i>,
-  icon: 'success'
-})`
+          "/App.tsx": src
         },
-        options: {
-          showLineNumbers: true,
-          recompileMode: "delayed",
-          recompileDelay: 3e3,
-          classes: {
-            "sp-editor": "sp-h250",
-            "sp-preview": "sp-h400"
-          }
-        }
+        editorHeight: 250,
+        previewHeight: 400
       }
     )
   ] });

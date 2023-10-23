@@ -1,9 +1,9 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-afd1224a.js';
-import { _ as __vitePreload, S as Sandpack } from './index-86d6113f.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-d91fd17f.js';
 
 const html = (await __vitePreload(() => import('./bootstrap-custom-loader-html-d13f0cdb.js'),true?[]:void 0)).default;
-const css = (await __vitePreload(() => import('./bootstrap-custom-loader-styles-0c03fb19.js'),true?[]:void 0)).default;
-const src = (await __vitePreload(() => import('./bootstrap-custom-loader-src-f8ac396d.js'),true?[]:void 0)).default;
+const styles = (await __vitePreload(() => import('./bootstrap-custom-loader-styles-0c03fb19.js'),true?[]:void 0)).default;
+const src = (await __vitePreload(() => import('./bootstrap-custom-loader-src-dedd1aa5.js'),true?[]:void 0)).default;
 function BootstrapCustomLoaderRecipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
@@ -18,32 +18,17 @@ function BootstrapCustomLoaderRecipe() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
       {
-        theme: "dark",
-        customSetup: {
-          dependencies: {
-            "react": "latest",
-            "react-dom": "latest",
-            "sweetalert2": "latest",
-            "bootstrap": "^4.0.0",
-            "jquery": "^3.2.1",
-            "popper.js": "^1.12.9"
-          },
-          entry: "/App.js"
+        dependencies: {
+          "bootstrap": "^4.0.0",
+          "jquery": "^3.2.1",
+          "popper.js": "^1.12.9"
         },
         files: {
-          "/App.js": src,
+          "/App.ts": src,
           "/index.html": html,
-          "/style.css": css
+          "/styles.css": styles
         },
-        options: {
-          showLineNumbers: true,
-          recompileMode: "delayed",
-          recompileDelay: 3e3,
-          classes: {
-            "sp-editor": "sp-h600",
-            "sp-preview": "sp-h300"
-          }
-        }
+        previewHeight: 300
       }
     )
   ] });

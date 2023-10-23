@@ -1,9 +1,9 @@
 import Swal from 'sweetalert2'
-import './style.css'
+import './styles.css'
 
 const Toast = Swal.mixin({
   toast: true,
-  position: 'top',
+  position: 'center',
   iconColor: 'white',
   customClass: {
     popup: 'colored-toast',
