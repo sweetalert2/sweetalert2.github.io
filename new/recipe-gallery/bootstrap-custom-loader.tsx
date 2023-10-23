@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom/client'
-import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
+import { Sandpack } from './components/Sandpack'
+
 const html = (await import(`./bootstrap-custom-loader-html.html?raw`)).default
-const css = (await import(`./bootstrap-custom-loader-styles.css?raw`)).default
+const styles = (await import(`./bootstrap-custom-loader-styles.css?raw`)).default
 const src = (await import('./bootstrap-custom-loader-src?raw')).default
 
 export function BootstrapCustomLoaderRecipe() {
@@ -20,32 +21,17 @@ export function BootstrapCustomLoaderRecipe() {
       </p>
 
       <Sandpack
-        theme="dark"
-        customSetup={{
-          dependencies: {
-            'react': 'latest',
-            'react-dom': 'latest',
-            'sweetalert2': 'latest',
-            'bootstrap': '^4.0.0',
-            'jquery': '^3.2.1',
-            'popper.js': '^1.12.9',
-          },
-          entry: '/App.js',
+        dependencies={{
+          'bootstrap': '^4.0.0',
+          'jquery': '^3.2.1',
+          'popper.js': '^1.12.9',
         }}
         files={{
-          '/App.js': src,
+          '/App.ts': src,
           '/index.html': html,
-          '/style.css': css,
+          '/styles.css': styles,
         }}
-        options={{
-          showLineNumbers: true,
-          recompileMode: 'delayed',
-          recompileDelay: 3000,
-          classes: {
-            'sp-editor': 'sp-h600',
-            'sp-preview': 'sp-h300',
-          },
-        }}
+        previewHeight={300}
       />
     </>
   )

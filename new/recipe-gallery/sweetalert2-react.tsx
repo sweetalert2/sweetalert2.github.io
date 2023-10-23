@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client'
-import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
+import { Sandpack } from './components/Sandpack'
+
+const src = (await import('./sweetalert2-react-src?raw')).default
 
 export function RecipeReact() {
   return (
@@ -15,37 +17,17 @@ export function RecipeReact() {
       </p>
 
       <Sandpack
-        theme="dark"
-        customSetup={{
-          dependencies: {
-            'react': 'latest',
-            'react-dom': 'latest',
-            'sweetalert2': 'latest',
-            'sweetalert2-react-content': 'latest',
-          },
-          entry: '/App.js',
+        dependencies={{
+          'react': 'latest',
+          'react-dom': 'latest',
+          'sweetalert2-react-content': 'latest',
         }}
+        entry="/App.tsx"
         files={{
-          '/App.js': `import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
-const MySwal = withReactContent(Swal)
-
-MySwal.fire({
-  title: <strong>Good job!</strong>,
-  html: <i>You clicked the button!</i>,
-  icon: 'success'
-})`,
+          '/App.tsx': src,
         }}
-        options={{
-          showLineNumbers: true,
-          recompileMode: 'delayed',
-          recompileDelay: 3000,
-          classes: {
-            'sp-editor': 'sp-h250',
-            'sp-preview': 'sp-h400',
-          },
-        }}
+        editorHeight={250}
+        previewHeight={400}
       />
     </>
   )

@@ -2,7 +2,7 @@ import $ from 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import Swal from 'sweetalert2'
-import './style.css'
+import './styles.css'
 
 $('#myModal').modal()
 

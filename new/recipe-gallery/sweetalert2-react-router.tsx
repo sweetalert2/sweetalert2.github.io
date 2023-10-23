@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
-import { Sandpack } from '@codesandbox/sandpack-react'
 import { Nav } from '../src/components'
+import { Sandpack } from './components/Sandpack'
+
 const src = (await import(`./sweetalert2-react-router-src?raw`)).default
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeReactRouter />)
@@ -17,29 +18,22 @@ function RecipeReactRouter() {
       </p>
 
       <Sandpack
-        theme="dark"
-        customSetup={{
-          dependencies: {
-            'react': 'latest',
-            'react-dom': 'latest',
-            'sweetalert2': 'latest',
-            'sweetalert2-react-content': 'latest',
-            'react-router-dom': '^6.0.0',
-          },
-          entry: '/App.tsx',
+        dependencies={{
+          'react': 'latest',
+          'react-dom': 'latest',
+          'sweetalert2-react-content': 'latest',
+          'react-router-dom': '^6.0.0',
         }}
+        entry="/App.tsx"
         files={{
           '/App.tsx': src,
-        }}
-        options={{
-          showLineNumbers: true,
-          recompileMode: 'delayed',
-          recompileDelay: 3000,
-          classes: {
-            'sp-editor': 'sp-h650',
-            'sp-preview': 'sp-h250',
+          '/index.html': {
+            code: `<style>body { font-family: sans-serif; }</style><div id="root"></div>`,
+            hidden: true,
           },
         }}
+        editorHeight={650}
+        previewHeight={250}
       />
     </>
   )

@@ -13,6 +13,7 @@
   "dependencies": {
     "@algolia/client-search": "^4.20.0",
     "@codesandbox/sandpack-react": "^2.9.0",
+    "@codesandbox/sandpack-themes": "^2.0.21",
     "@docsearch/css": "^3.5.2",
     "@docsearch/js": "^3.5.2",
     "@lezer/common": "^1.1.0",
