@@ -31,6 +31,9 @@ export function RecipeGallery() {
         <li>
           <a href="./draw-attention.html">Draw Attention / Persistent Dialog</a>
         </li>
+        <li>
+          <a href="./colored-toasts.html">Colored Toasts</a>
+        </li>
       </ul>
     </>
   )
