@@ -37,6 +37,9 @@ export function RecipeGallery() {
         <li>
           <a href="./crop-image.html">Crop User Image with Cropper.js</a>
         </li>
+        <li>
+          <a href="./login-form.html">Login Form</a>
+        </li>
       </ul>
     </>
   )
