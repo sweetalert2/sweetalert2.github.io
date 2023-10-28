@@ -21,6 +21,7 @@ export default defineConfig({
         recipeDrawAttention: 'recipe-gallery/draw-attention.html',
         recipeColoredToasts: 'recipe-gallery/colored-toasts.html',
         recipeCropImage: 'recipe-gallery/crop-image.html',
+        recipeLoginForm: 'recipe-gallery/login-form.html',
       },
     },
   },
