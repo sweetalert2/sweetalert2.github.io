@@ -34,6 +34,9 @@ export function RecipeGallery() {
         <li>
           <a href="./colored-toasts.html">Colored Toasts</a>
         </li>
+        <li>
+          <a href="./crop-image.html">Crop User Image with Cropper.js</a>
+        </li>
       </ul>
     </>
   )
