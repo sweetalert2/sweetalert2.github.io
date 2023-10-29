@@ -1,4 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-afd1224a.js';
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-9ee08717.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/vite/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     // @ts-expect-error true will be replaced with boolean later
@@ -477,15 +477,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-7af775a0.js'),true?["assets/index-7af775a0.js","assets/base-80a1f760-d4c14c76.js","assets/consoleHook-7a68abbd-9a7615fc.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-57ca8495.js'),true?["assets/index-57ca8495.js","assets/base-80a1f760-0eebceaf.js","assets/consoleHook-7a68abbd-1f3ccffc.js","assets/index-9ee08717.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-94850a17.js'),true?["assets/index-fc68d414-94850a17.js","assets/consoleHook-7a68abbd-9a7615fc.js","assets/base-80a1f760-d4c14c76.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-369c0e62.js'),true?["assets/index-fc68d414-369c0e62.js","assets/consoleHook-7a68abbd-1f3ccffc.js","assets/base-80a1f760-0eebceaf.js","assets/index-9ee08717.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-7e1aeb7b.js'),true?["assets/index-7e1aeb7b.js","assets/base-80a1f760-d4c14c76.js","assets/index-afd1224a.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-06f33491.js'),true?["assets/index-06f33491.js","assets/base-80a1f760-0eebceaf.js","assets/index-9ee08717.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -11045,7 +11045,6 @@ class DOMObserver {
         this.scrollTargets = [];
         this.intersection = null;
         this.resizeScroll = null;
-        this.resizeContent = null;
         this.intersecting = false;
         this.gapIntersection = null;
         this.gaps = [];
@@ -11089,8 +11088,6 @@ class DOMObserver {
                     this.onResize();
             });
             this.resizeScroll.observe(view.scrollDOM);
-            this.resizeContent = new ResizeObserver(() => this.view.requestMeasure());
-            this.resizeContent.observe(view.contentDOM);
         }
         this.addWindowListeners(this.win = view.win);
         this.start();
@@ -11419,12 +11416,11 @@ class DOMObserver {
         win.document.removeEventListener("selectionchange", this.onSelectionChange);
     }
     destroy() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c;
         this.stop();
         (_a = this.intersection) === null || _a === void 0 ? void 0 : _a.disconnect();
         (_b = this.gapIntersection) === null || _b === void 0 ? void 0 : _b.disconnect();
         (_c = this.resizeScroll) === null || _c === void 0 ? void 0 : _c.disconnect();
-        (_d = this.resizeContent) === null || _d === void 0 ? void 0 : _d.disconnect();
         for (let dom of this.scrollTargets)
             dom.removeEventListener("scroll", this.onScroll);
         this.removeWindowListeners(this.win);
@@ -17735,31 +17731,36 @@ function warnForPart(part, msg) {
     console.warn(msg);
 }
 function createTokenType(extra, tagStr) {
-    let tag = null;
-    for (let part of tagStr.split(".")) {
-        let value = (extra[part] || tags$1[part]);
-        if (!value) {
-            warnForPart(part, `Unknown highlighting tag ${part}`);
+    let tags$1$1 = [];
+    for (let name of tagStr.split(" ")) {
+        let found = [];
+        for (let part of name.split(".")) {
+            let value = (extra[part] || tags$1[part]);
+            if (!value) {
+                warnForPart(part, `Unknown highlighting tag ${part}`);
+            }
+            else if (typeof value == "function") {
+                if (!found.length)
+                    warnForPart(part, `Modifier ${part} used at start of tag`);
+                else
+                    found = found.map(value);
+            }
+            else {
+                if (found.length)
+                    warnForPart(part, `Tag ${part} used as modifier`);
+                else
+                    found = Array.isArray(value) ? value : [value];
+            }
         }
-        else if (typeof value == "function") {
-            if (!tag)
-                warnForPart(part, `Modifier ${part} used at start of tag`);
-            else
-                tag = value(tag);
-        }
-        else {
-            if (tag)
-                warnForPart(part, `Tag ${part} used as modifier`);
-            else
-                tag = value;
-        }
+        for (let tag of found)
+            tags$1$1.push(tag);
     }
-    if (!tag)
+    if (!tags$1$1.length)
         return 0;
     let name = tagStr.replace(/ /g, "_"), type = NodeType.define({
         id: typeArray.length,
         name,
-        props: [styleTags({ [name]: tag })]
+        props: [styleTags({ [name]: tags$1$1 })]
     });
     typeArray.push(type);
     return type.id;

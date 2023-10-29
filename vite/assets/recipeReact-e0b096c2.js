@@ -1,5 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-afd1224a.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-d91fd17f.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-9ee08717.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-6259f228.js';
 
 const src = (await __vitePreload(() => import('./sweetalert2-react-src-1ac9c3af.js'),true?[]:void 0)).default;
 function RecipeReact() {

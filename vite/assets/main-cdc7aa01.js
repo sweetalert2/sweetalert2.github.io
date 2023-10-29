@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-afd1224a.js';
+import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-9ee08717.js';
 
 function Header() {
   const st4 = {
@@ -4632,16 +4632,28 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "textarea" }),
               ",",
               " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "search" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "url" }),
+              ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "select" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "radio" }),
-              ", ",
+              ",",
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "checkbox" }),
               ", ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "file" }),
-              " and",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "url" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "date" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "datetime-local" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "time" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "week" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "month" }),
               "."
             ] })
           ] }),
@@ -6251,6 +6263,19 @@ function InputTypes() {
             className: "show-example-btn",
             "aria-label": "Try me! Example: input type checkbox",
             onClick: examples.checkboxInput.fn,
+            children: "Try me!"
+          }
+        ) })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "input-date", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "date" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.dateInput.fnString }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            className: "show-example-btn",
+            "aria-label": "Try me! Example: input type date",
+            onClick: examples.dateInput.fn,
             children: "Try me!"
           }
         ) })

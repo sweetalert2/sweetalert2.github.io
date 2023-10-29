@@ -507,7 +507,7 @@ var m$1 = reactDomExports;
 var sweetalert2_all = {exports: {}};
 
 /*!
-* sweetalert2 v11.7.32
+* sweetalert2 v11.8.0
 * Released under the MIT License.
 */
 
@@ -1649,7 +1649,7 @@ var sweetalert2_all = {exports: {}};
 	      return;
 	    }
 	    if (!renderInputType[params.input]) {
-	      error("Unexpected type of input! Expected \"text\", \"email\", \"password\", \"number\", \"tel\", \"select\", \"radio\", \"checkbox\", \"textarea\", \"file\" or \"url\", got \"".concat(params.input, "\""));
+	      error("Unexpected type of input! Expected ".concat(Object.keys(renderInputType).join(' | '), ", got \"").concat(params.input, "\""));
 	      return;
 	    }
 	    const inputContainer = getInputContainer(params.input);
@@ -1758,7 +1758,7 @@ var sweetalert2_all = {exports: {}};
 	   * @param {SweetAlertOptions} params
 	   * @returns {HTMLInputElement}
 	   */
-	  renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = (input, params) => {
+	  renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = renderInputType.search = renderInputType.date = renderInputType['datetime-local'] = renderInputType.time = renderInputType.week = renderInputType.month = (input, params) => {
 	    checkAndSetInputValue(input, params.inputValue);
 	    setInputLabel(input, input, params);
 	    setInputPlaceholder(input, params);
@@ -4777,7 +4777,7 @@ var sweetalert2_all = {exports: {}};
 	    };
 	  });
 	  SweetAlert.DismissReason = DismissReason;
-	  SweetAlert.version = '11.7.32';
+	  SweetAlert.version = '11.8.0';
 
 	  const Swal = SweetAlert;
 	  // @ts-ignore
@@ -5467,6 +5467,19 @@ const functions = {
       Swal.fire("You agreed with T&C :)");
     }
   },
+  async dateInput() {
+    const { value: date } = await Swal.fire({
+      title: "select departure date",
+      input: "date",
+      didOpen: () => {
+        const today = (/* @__PURE__ */ new Date()).toISOString();
+        Swal.getInput().min = today.split("T")[0];
+      }
+    });
+    if (date) {
+      Swal.fire("Departure date", date);
+    }
+  },
   async fileInput() {
     const { value: file } = await Swal.fire({
       title: "Select image",
@@ -5525,7 +5538,7 @@ const functions = {
 
 const functionStrings = {};
 Object.entries(functions).forEach(([id, fn]) => {
-  functionStrings[id] = String(fn).replace(/import_sweetalert\d+.default/g, "Swal").replace(/^.*\n/, "").replace(/}$/, "").replace(/(^|\n) {4}/g, "$1").replace(/.*rtl-container.*\n/, "").replace(/(\d)e3/g, "$1000").replace(/\/\*!/g, "/*").replace(/\\u([\d\w]{4})/gi, function(_, grp) {
+  functionStrings[id] = String(fn).replace(/import_sweetalert\d+.default/g, "Swal").replace(/^.*\n/, "").replace(/}$/, "").replace(/(^|\n) {4}/g, "$1").replace(/.*rtl-container.*\n/, "").replace(/(\d)e3/g, "$1000").replace(/\/\*!/g, "/*").replace(/\/\* @__PURE__ \*\/ /g, "").replace(/\\u([\d\w]{4})/gi, function(_, grp) {
     return String.fromCharCode(parseInt(grp, 16));
   }).trim();
 });

@@ -191,8 +191,9 @@ export function ConfigurationParams() {
               <td>
                 Input field type, can be <strong>text</strong>, <strong>email</strong>, <strong>password</strong>,{' '}
                 <strong>number</strong>, <strong>tel</strong>, <strong>range</strong>, <strong>textarea</strong>,{' '}
-                <strong>select</strong>, <strong>radio</strong>, <strong>checkbox</strong>, <strong>file</strong> and{' '}
-                <strong>url</strong>.
+                <strong>search</strong>, <strong>url</strong>, <strong>select</strong>, <strong>radio</strong>,{' '}
+                <strong>checkbox</strong>, <strong>file</strong>, <strong>date</strong>, <strong>datetime-local</strong>
+                , <strong>time</strong>, <strong>week</strong>, <strong>month</strong>.
               </td>
             </tr>
             <tr id="width">
