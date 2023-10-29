@@ -10,6 +10,7 @@ Object.entries(functions).forEach(([id, fn]) => {
     .replace(/.*rtl-container.*\n/, '')
     .replace(/(\d)e3/g, '$1000')
     .replace(/\/\*!/g, '/*')
+    .replace(/\/\* @__PURE__ \*\/ /g, '')
     // RTL example
     .replace(/\\u([\d\w]{4})/gi, function (_, grp) {
       return String.fromCharCode(parseInt(grp, 16))

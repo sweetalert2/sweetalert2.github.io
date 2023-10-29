@@ -151,6 +151,24 @@ export function InputTypes() {
             </td>
           </tr>
 
+          <tr id="input-date">
+            <td>
+              <h4>date</h4>
+            </td>
+            <td>
+              <CodeExample code={examples.dateInput.fnString} />
+            </td>
+            <td>
+              <button
+                className="show-example-btn"
+                aria-label="Try me! Example: input type date"
+                onClick={examples.dateInput.fn}
+              >
+                Try me!
+              </button>
+            </td>
+          </tr>
+
           <tr id="input-file">
             <td>
               <h4>file</h4>
