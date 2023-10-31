@@ -10,10 +10,12 @@ export function RecipeReact() {
       <Nav recipeGallery />
       <h1>SweetAlert2 + React example</h1>
       <p>
-        Use our official React integration:{' '}
+        Here's our official React integration:{' '}
         <a href="https://github.com/sweetalert2/sweetalert2-react-content">
           https://github.com/sweetalert2/sweetalert2-react-content
         </a>
+        <br />
+        It allow you to pass JSX/TSX as <strong>Swal.fire</strong> params.
       </p>
 
       <Sandpack
@@ -25,8 +27,12 @@ export function RecipeReact() {
         entry="/App.tsx"
         files={{
           '/App.tsx': src,
+          '/index.html': {
+            code: `<style>body { font-family: sans-serif; }</style><div id="root"></div>`,
+            hidden: true,
+          },
         }}
-        editorHeight={250}
+        editorHeight={600}
         previewHeight={400}
       />
     </>

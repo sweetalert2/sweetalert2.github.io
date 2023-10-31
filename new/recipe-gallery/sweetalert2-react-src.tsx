@@ -1,10 +1,28 @@
+import { useState } from 'react'
+import ReactDOM from 'react-dom/client'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-const MySwal = withReactContent(Swal)
+function App() {
+  const [inputValue, setInputValue] = useState('')
 
-MySwal.fire({
-  title: <strong>Good job!</strong>,
-  html: <i>You clicked the button!</i>,
-  icon: 'success',
-})
+  const showSwal = () => {
+    withReactContent(Swal).fire({
+      title: <i>Input something</i>,
+      input: 'text',
+      inputValue,
+      preConfirm: () => {
+        setInputValue(Swal.getInput()?.value || '')
+      },
+    })
+  }
+
+  return (
+    <>
+      <button onClick={showSwal}>Show SweetAlert2 modal</button>
+      <div>Your input: {inputValue}</div>
+    </>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<App />)

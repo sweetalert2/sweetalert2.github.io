@@ -22,6 +22,7 @@ export default defineConfig({
         recipeColoredToasts: 'recipe-gallery/colored-toasts.html',
         recipeCropImage: 'recipe-gallery/crop-image.html',
         recipeLoginForm: 'recipe-gallery/login-form.html',
+        recipeInputDatepicker: 'recipe-gallery/input-datepicker.html',
       },
     },
   },

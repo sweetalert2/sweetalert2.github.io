@@ -18,15 +18,21 @@ const Home = () => {
     <>
       <h1>Home</h1>
       <button onClick={showSwal}>Show SweetAlert2 modal</button>
-      {swalShown &&
-        createPortal(
-          <Link to="/about" onClick={() => Swal.close()}>
-            Go to About
-          </Link>,
-          Swal.getHtmlContainer()!
-        )}
+      <SwalWithRouterLink shown={swalShown} />
     </>
   )
+}
+
+const SwalWithRouterLink = ({ shown }: { shown: boolean }) => {
+  // Use createPortal to use the same state between your app and SweetAlert2
+  return shown
+    ? createPortal(
+        <Link to="/about" onClick={() => Swal.close()}>
+          Go to About
+        </Link>,
+        Swal.getHtmlContainer()!
+      )
+    : null
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
