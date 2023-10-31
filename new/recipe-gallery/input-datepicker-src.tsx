@@ -1,11 +1,11 @@
 import ReactDOM from 'react-dom/client'
+import { createPortal } from 'react-dom'
 import { useState } from 'react'
 import { format } from 'date-fns'
 import Swal from 'sweetalert2'
-import type { DateRange } from 'react-day-picker'
 import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
-import { createPortal } from 'react-dom'
+import type { DateRange } from 'react-day-picker'
 
 export function App() {
   const [swalShown, setSwalShown] = useState(false)
