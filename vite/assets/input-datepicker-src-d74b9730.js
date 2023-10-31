@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client'
+const inputDatepickerSrc = `import ReactDOM from 'react-dom/client'
 import { useState } from 'react'
 import { format } from 'date-fns'
 import Swal from 'sweetalert2'
@@ -49,3 +49,6 @@ function SwalWithReactDayPicker({
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<App />)
+`;
+
+export { inputDatepickerSrc as default };

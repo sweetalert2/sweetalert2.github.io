@@ -1,15 +1,19 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.js';
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 
-const src = (await __vitePreload(() => import('./sweetalert2-react-src-1ac9c3af.js'),true?[]:void 0)).default;
+const src = (await __vitePreload(() => import('./sweetalert2-react-src-23309b87.js'),true?[]:void 0)).default;
 function RecipeReact() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + React example" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "Use our official React integration:",
+      "Here's our official React integration:",
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-react-content", children: "https://github.com/sweetalert2/sweetalert2-react-content" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-react-content", children: "https://github.com/sweetalert2/sweetalert2-react-content" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+      "It allow you to pass JSX/TSX as ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire" }),
+      " params."
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
@@ -21,9 +25,13 @@ function RecipeReact() {
         },
         entry: "/App.tsx",
         files: {
-          "/App.tsx": src
+          "/App.tsx": src,
+          "/index.html": {
+            code: `<style>body { font-family: sans-serif; }</style><div id="root"></div>`,
+            hidden: true
+          }
         },
-        editorHeight: 250,
+        editorHeight: 600,
         previewHeight: 400
       }
     )

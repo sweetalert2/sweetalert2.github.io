@@ -1,0 +1,3 @@
+const sweetalert2ReactSrc = "import { useState } from 'react'\nimport ReactDOM from 'react-dom/client'\nimport Swal from 'sweetalert2'\nimport withReactContent from 'sweetalert2-react-content'\n\nfunction App() {\n  const [inputValue, setInputValue] = useState('')\n\n  const showSwal = () => {\n    withReactContent(Swal).fire({\n      title: <i>Input something</i>,\n      input: 'text',\n      inputValue,\n      preConfirm: () => {\n        setInputValue(Swal.getInput()?.value || '')\n      },\n    })\n  }\n\n  return (\n    <>\n      <button onClick={showSwal}>Show SweetAlert2 modal</button>\n      <div>Your input: {inputValue}</div>\n    </>\n  )\n}\n\nReactDOM.createRoot(document.getElementById('root')!).render(<App />)\n";
+
+export { sweetalert2ReactSrc as default };

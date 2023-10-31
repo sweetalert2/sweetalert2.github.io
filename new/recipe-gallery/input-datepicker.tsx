@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
+import { CreatePortalDocs } from './components/CreatePortalDocs'
 
 const src = (await import('./input-datepicker-src?raw')).default
 
@@ -17,8 +18,10 @@ export function RecipeReact() {
 
       <p>
         In this example we'll use React and <a href="https://react-day-picker.js.org/">react-day-picker</a> to create a
-        date range picker:
+        date range picker.
       </p>
+
+      <CreatePortalDocs />
 
       <Sandpack
         dependencies={{
