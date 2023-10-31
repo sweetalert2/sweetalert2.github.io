@@ -1,26 +1,16 @@
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom'
-
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
 const Home = () => {
-  const navigate = useNavigate()
+  const [swalShown, setSwalShown] = useState(false)
 
   const showSwal = () => {
-    withReactContent(Swal).fire({
-      html: (
-        <a
-          href="/about"
-          onClick={(event) => {
-            event.preventDefault()
-            Swal.close()
-            navigate('/about')
-          }}
-        >
-          Navigate to /about
-        </a>
-      ),
+    Swal.fire({
+      didOpen: () => setSwalShown(true),
+      didClose: () => setSwalShown(false),
     })
   }
 
@@ -28,6 +18,13 @@ const Home = () => {
     <>
       <h1>Home</h1>
       <button onClick={showSwal}>Show SweetAlert2 modal</button>
+      {swalShown &&
+        createPortal(
+          <Link to="/about" onClick={() => Swal.close()}>
+            Go to About
+          </Link>,
+          Swal.getHtmlContainer()!
+        )}
     </>
   )
 }

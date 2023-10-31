@@ -13,15 +13,34 @@ function RecipeReactRouter() {
       <h1>SweetAlert2 + React Router example</h1>
 
       <p>
-        SweetAlert2 renders its content outside of the <strong>ReactTree</strong>, therefore <strong>Link</strong>{' '}
-        component won't work. Use `useNavigate` hook instead:
+        Use{' '}
+        <a href="https://react.dev/reference/react-dom/createPortal" target="_blank">
+          <strong>createPortal</strong>
+        </a>{' '}
+        to use the same shared React tree in your app and in SweetAlert2.
+      </p>
+
+      <p>
+        <strong>createPortal</strong> accepts two arguments: a React component that you'd like to render and a target
+        DOM element. Use <strong>Swal.getTitle()</strong>, <strong>Swal.getHtmlContainer()</strong> or{' '}
+        <strong>Swal.getFooter()</strong> as the target element:
+      </p>
+
+      <p>
+        <strong>createPortal(&lt;Title /&gt;, Swal.getTitle())</strong> <br />
+        <strong>createPortal(&lt;Content /&gt;, Swal.getHtmlContainer())</strong> <br />
+        <strong>createPortal(&lt;Footer /&gt;, Swal.getFooter())</strong>
+      </p>
+
+      <p>
+        When using the same context between your app and SweetAlert2, React Router will be able to render components
+        like <strong>&lt;Link /&gt;</strong> inside of SweetAlert2:
       </p>
 
       <Sandpack
         dependencies={{
           'react': 'latest',
           'react-dom': 'latest',
-          'sweetalert2-react-content': 'latest',
           'react-router-dom': '^6.0.0',
         }}
         entry="/App.tsx"
