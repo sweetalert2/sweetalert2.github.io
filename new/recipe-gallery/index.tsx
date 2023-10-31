@@ -40,6 +40,9 @@ export function RecipeGallery() {
         <li>
           <a href="./login-form.html">Login Form</a>
         </li>
+        <li>
+          <a href="./input-datepicker.html">Date input powered by react-day-picker</a>
+        </li>
       </ul>
     </>
   )

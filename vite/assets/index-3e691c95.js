@@ -507,7 +507,7 @@ var m$1 = reactDomExports;
 var sweetalert2_all = {exports: {}};
 
 /*!
-* sweetalert2 v11.8.0
+* sweetalert2 v11.9.0
 * Released under the MIT License.
 */
 
@@ -1140,6 +1140,23 @@ var sweetalert2_all = {exports: {}};
 	   */
 	  const hide = elem => {
 	    elem && (elem.style.display = 'none');
+	  };
+
+	  /**
+	   * @param {HTMLElement | null} elem
+	   * @param {string} display
+	   */
+	  const showWhenInnerHtmlPresent = function (elem) {
+	    let display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'block';
+	    if (!elem) {
+	      return;
+	    }
+	    new MutationObserver(() => {
+	      toggle(elem, elem.innerHTML, display);
+	    }).observe(elem, {
+	      childList: true,
+	      subtree: true
+	    });
 	  };
 
 	  /**
@@ -1885,6 +1902,7 @@ var sweetalert2_all = {exports: {}};
 	    if (!htmlContainer) {
 	      return;
 	    }
+	    showWhenInnerHtmlPresent(htmlContainer);
 	    applyCustomClass(htmlContainer, params, 'htmlContainer');
 
 	    // Content as HTML
@@ -1915,6 +1933,7 @@ var sweetalert2_all = {exports: {}};
 	    if (!footer) {
 	      return;
 	    }
+	    showWhenInnerHtmlPresent(footer);
 	    toggle(footer, params.footer, 'block');
 	    if (params.footer) {
 	      parseHtmlToContainer(params.footer, footer);
@@ -2214,6 +2233,7 @@ var sweetalert2_all = {exports: {}};
 	    if (!title) {
 	      return;
 	    }
+	    showWhenInnerHtmlPresent(title);
 	    toggle(title, params.title || params.titleText, 'block');
 	    if (params.title) {
 	      parseHtmlToContainer(params.title, title);
@@ -4777,7 +4797,7 @@ var sweetalert2_all = {exports: {}};
 	    };
 	  });
 	  SweetAlert.DismissReason = DismissReason;
-	  SweetAlert.version = '11.8.0';
+	  SweetAlert.version = '11.9.0';
 
 	  const Swal = SweetAlert;
 	  // @ts-ignore
