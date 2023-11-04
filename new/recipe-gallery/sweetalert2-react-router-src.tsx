@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { createPortal } from 'react-dom'
 import ReactDOM from 'react-dom/client'
+import { createPortal } from 'react-dom'
+import { useState } from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Swal from 'sweetalert2'
 

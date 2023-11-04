@@ -35,5 +35,8 @@
     "quoteProps": "consistent",
     "trailingComma": "es5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/i18next": "^13.0.0"
+  }
 }

@@ -16,7 +16,8 @@ function RecipeGallery() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./colored-toasts.html", children: "Colored Toasts" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./crop-image.html", children: "Crop User Image with Cropper.js" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./login-form.html", children: "Login Form" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./input-datepicker.html", children: "Date input powered by react-day-picker" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./input-datepicker.html", children: "Date input powered by react-day-picker" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./i18n-l10n.html", children: "Internationalization (i18n) and localization (l10n)" }) })
     ] })
   ] });
 }
