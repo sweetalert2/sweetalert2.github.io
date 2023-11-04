@@ -43,6 +43,9 @@ export function RecipeGallery() {
         <li>
           <a href="./input-datepicker.html">Date input powered by react-day-picker</a>
         </li>
+        <li>
+          <a href="./i18n-l10n.html">Internationalization (i18n) and localization (l10n)</a>
+        </li>
       </ul>
     </>
   )

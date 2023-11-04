@@ -23,6 +23,7 @@ export default defineConfig({
         recipeCropImage: 'recipe-gallery/crop-image.html',
         recipeLoginForm: 'recipe-gallery/login-form.html',
         recipeInputDatepicker: 'recipe-gallery/input-datepicker.html',
+        recipeI18nL10n: 'recipe-gallery/i18n-l10n.html',
       },
     },
   },
