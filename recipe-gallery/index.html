@@ -1,94 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83618163-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
+  <title>SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks</title>
+  <meta name="description" content="SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks" />
 
-      gtag('config', 'UA-83618163-1')
-    </script>
-    <!-- Google Analytics end -->
-    <title>SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/images/favicon.png" />
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="SweetAlert2" />
+  <meta property="og:description" content="SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks" />
+  <meta property="og:image" content="http://sweetalert2.github.io/images/sweetalert2-social.png" />
+  <meta property="og:url" content="https://sweetalert2.github.io/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="SweetAlert2" />
+  <meta name="twitter:description" content="SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks" />
+  <meta name="twitter:image" content="https://sweetalert2.github.io/images/sweetalert2-social.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/images/favicon.png" />
+
+  <!-- https://goo.gl/qRE0vM -->
+  <meta name="theme-color" content="#f2f4f6" />
+
+  
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css" />
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6JLWRHB89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-N6JLWRHB89')
+  </script>
+  <!-- Google tag end -->
+  <script type="module" crossorigin src="/assets/recipe-gallery-27f1195d.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/index-87ec7024.js">
+  <link rel="stylesheet" href="/assets/index-6d130da7.css">
+</head>
 
   <body>
-    <nav class="mobile-hidden">
-      <a href="/#examples"><span>Examples</span></a>
-      <a href="/recipe-gallery" class="recipe-gallery"><span>Recipe Gallery</span></a>
-      <a href="/#download"><span>Installation</span></a>
-      <a href="/#usage"><span>Usage</span></a>
-      <a href="/#frameworks-integrations"><span>Integrations</span></a>
-      <a href="/#configuration" class="mobile-hidden"><span>Configuration</span></a>
-      <a href="/#declarative-templates" class="mobile-hidden"><span>Declarative templates</span></a>
-      <a href="/#handling-buttons"><span>Handling Buttons</span></a>
-      <a href="/#handling-dismissals"><span>Dismissals</span></a>
-      <a href="/#icons"><span>Icons</span></a>
-      <a href="/#input-types"><span>Input Types</span></a>
-      <a href="/#methods" class="mobile-hidden"><span>Methods</span></a>
-      <a href="/#themes"><span>Themes</span></a>
-      <a href="/#sponsors"><span>Sponsors</span></a>
-      <a href="/#nsfw-sponsors"><span>NSFW Sponsors</span></a>
-    </nav>
-
-    <div id="show-sidebar">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-
-    <p>
-      <a href="/"><i class="fa fa-arrow-left"></i> Back to Docs & Examples</a>
-    </p>
-
-    <h1>Recipe Gallery</h1>
-
-    <p class="center">
-      A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less.
-    </p>
-
-    <ul class="recipes-list">
-      <li><a href="/recipe-gallery/queue-with-progress-steps.html">Queue with Progress Steps</a></li>
-      <li><a href="/recipe-gallery/bootstrap-custom-loader.html">Bootstrap 4 + custom loader</a></li>
-      <li><a href="/recipe-gallery/sweetalert2-react.html">React example</a></li>
-      <li><a href="/recipe-gallery/sweetalert2-react-router.html">React Router example</a></li>
-      <li><a href="/recipe-gallery/sweetalert2-formik.html">Formik example</a></li>
-      <li><a href="/recipe-gallery/three-buttons-dialog.html">Yes/No/Cancel Dialog</a></li>
-      <li><a href="/recipe-gallery/draw-attention.html">Draw Attention / Persistent Dialog</a></li>
-      <li><a href="/recipe-gallery/colored-toasts.html">Colored Toasts</a></li>
-      <li><a href="/recipe-gallery/crop-image.html">Crop User Image with cropperjs</a></li>
-      <li><a href="/recipe-gallery/login-form.html">Login Form</a></li>
-      <li><a href="/recipe-gallery/input-datepicker.html">Date input powered by Pikaday</a></li>
-      <li><a href="/recipe-gallery/i18n-l10n.html">Internationalization (i18n) and localization (l10n)</a></li>
-      <li><a href="/recipe-gallery/recaptcha.html">reCAPTCHA</a></li>
-      <li><a href="/recipe-gallery/input-number-input-range.html">input[number] + input[range]</a></li>
-      <li><a href="/recipe-gallery/input-number-plus-minus-buttons.html">Number input with plus/minus buttons</a></li>
-      <li><a href="/recipe-gallery/timer-methods.html">Timer methods</a></li>
-      <li><a href="/recipe-gallery/validation-message-custom-icon.html">Validation Message with a Custom Icon</a></li>
-      <li><a href="/recipe-gallery/blurred-backdrop.html">Blurred Backdrop</a></li>
-      <li><a href="/recipe-gallery/sidebars-drawers.html">Sidebars and Drawers (Left, Right, Top, Bottom)</a></li>
-      <li><a href="/recipe-gallery/toast-with-custom-target.html">Toast with a Custom Target</a></li>
-      <li><a href="/recipe-gallery/queue-with-back-button.html">Queue with a "Back" Button</a></li>
-    </ul>
-
-    <script src="/dist/bundle.js" defer></script>
-
-    <div id="docsearch"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-    <script>
-      docsearch({
-        appId: '38BPOKYOZ2',
-        apiKey: 'aa152d345260f94e9c0b177ed5437c9e',
-        indexName: 'sweetalert2',
-        container: '#docsearch',
-      })
-    </script>
+    <div id="root"></div>
+    
   </body>
 </html>
