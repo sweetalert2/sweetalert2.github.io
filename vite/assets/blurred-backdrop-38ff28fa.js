@@ -19,6 +19,13 @@ function Recipe() {
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2/pull/1189", children: "https://github.com/sweetalert2/sweetalert2/pull/1189" })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+      "To make things smoother and nicer there's the ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "transition" }),
+      " to animate ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "filter" }),
+      "."
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
       {

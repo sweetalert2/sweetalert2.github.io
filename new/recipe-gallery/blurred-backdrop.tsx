@@ -20,6 +20,10 @@ function Recipe() {
         </a>
       </p>
 
+      <p>
+        To make things smoother and nicer there's the <strong>transition</strong> to animate <strong>filter</strong>.
+      </p>
+
       <Sandpack
         files={{
           '/App.ts': src,
