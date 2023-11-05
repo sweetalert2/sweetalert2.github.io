@@ -46,6 +46,9 @@ export function RecipeGallery() {
         <li>
           <a href="./i18n-l10n.html">Internationalization (i18n) and localization (l10n)</a>
         </li>
+        <li>
+          <a href="./input-number-input-range.html">input[number] + input[range]</a>
+        </li>
       </ul>
     </>
   )
