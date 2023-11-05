@@ -4,7 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./i18n-l10n-src?raw')).default
 
-export function RecipeI18nL10n() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -29,4 +29,4 @@ export function RecipeI18nL10n() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeI18nL10n />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

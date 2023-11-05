@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { Nav } from '../src/components'
 
-export function RecipeGallery() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery showBackToRecipeGalleryLink={false} />
@@ -49,9 +49,12 @@ export function RecipeGallery() {
         <li>
           <a href="./input-number-input-range.html">input[number] + input[range]</a>
         </li>
+        <li>
+          <a href="./validation-message-custom-icon.html">Validation Message with a Custom Icon</a>
+        </li>
       </ul>
     </>
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeGallery />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

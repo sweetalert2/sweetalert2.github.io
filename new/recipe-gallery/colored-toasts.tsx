@@ -5,7 +5,7 @@ import { Sandpack } from './components/Sandpack'
 const styles = (await import(`./colored-toasts-styles.css?raw`)).default
 const src = (await import('./colored-toasts-src?raw')).default
 
-export function RecipeColoredToasts() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -22,4 +22,4 @@ export function RecipeColoredToasts() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeColoredToasts />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

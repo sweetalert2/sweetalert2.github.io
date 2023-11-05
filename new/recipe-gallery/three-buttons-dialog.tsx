@@ -5,7 +5,7 @@ import { Sandpack } from './components/Sandpack'
 const styles = (await import(`./three-buttons-dialog-styles.css?raw`)).default
 const src = (await import('./three-buttons-dialog-src?raw')).default
 
-export function RecipeThreeButtonsDialog() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -27,4 +27,4 @@ export function RecipeThreeButtonsDialog() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeThreeButtonsDialog />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

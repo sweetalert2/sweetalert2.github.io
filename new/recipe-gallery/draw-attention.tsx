@@ -4,7 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./draw-attention-src?raw')).default
 
-export function RecipeDrawAttention() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -31,4 +31,4 @@ export function RecipeDrawAttention() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeDrawAttention />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

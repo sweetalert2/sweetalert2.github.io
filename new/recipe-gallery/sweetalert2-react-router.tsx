@@ -5,9 +5,7 @@ import { CreatePortalDocs } from './components/CreatePortalDocs'
 
 const src = (await import(`./sweetalert2-react-router-src?raw`)).default
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeReactRouter />)
-
-function RecipeReactRouter() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -40,3 +38,5 @@ function RecipeReactRouter() {
     </>
   )
 }
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

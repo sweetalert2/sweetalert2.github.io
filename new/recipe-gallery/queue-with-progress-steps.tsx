@@ -4,7 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./queue-with-progress-steps-src?raw')).default
 
-export function RecipeQueueWithProgressSteps() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -20,4 +20,4 @@ export function RecipeQueueWithProgressSteps() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeQueueWithProgressSteps />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

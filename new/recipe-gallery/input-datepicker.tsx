@@ -5,7 +5,7 @@ import { CreatePortalDocs } from './components/CreatePortalDocs'
 
 const src = (await import('./input-datepicker-src?raw')).default
 
-export function RecipeReact() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -45,4 +45,4 @@ export function RecipeReact() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeReact />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

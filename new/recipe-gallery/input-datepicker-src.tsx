@@ -7,7 +7,7 @@ import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
 import type { DateRange } from 'react-day-picker'
 
-export function App() {
+function App() {
   const [swalShown, setSwalShown] = useState(false)
   const [range, setRange] = useState<DateRange | undefined>()
 

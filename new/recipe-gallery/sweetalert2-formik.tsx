@@ -4,9 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import(`./sweetalert2-formik-src?raw`)).default
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeFormik />)
-
-function RecipeFormik() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -43,3 +41,5 @@ function RecipeFormik() {
     </>
   )
 }
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)
