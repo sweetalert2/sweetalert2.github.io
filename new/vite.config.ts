@@ -26,6 +26,7 @@ export default defineConfig({
         'i18n-l10n': 'recipe-gallery/i18n-l10n.html',
         'input-number-input-range': 'recipe-gallery/input-number-input-range.html',
         'validation-message-custom-icon': 'recipe-gallery/validation-message-custom-icon.html',
+        'blurred-backdrop': 'recipe-gallery/blurred-backdrop.html',
       },
     },
   },

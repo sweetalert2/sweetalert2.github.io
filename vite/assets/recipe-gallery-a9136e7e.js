@@ -19,7 +19,8 @@ function Recipe() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./input-datepicker.html", children: "Date input powered by react-day-picker" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./i18n-l10n.html", children: "Internationalization (i18n) and localization (l10n)" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./input-number-input-range.html", children: "input[number] + input[range]" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./validation-message-custom-icon.html", children: "Validation Message with a Custom Icon" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./validation-message-custom-icon.html", children: "Validation Message with a Custom Icon" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./blurred-backdrop.html", children: "Blurred Backdrop" }) })
     ] })
   ] });
 }

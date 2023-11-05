@@ -52,6 +52,9 @@ function Recipe() {
         <li>
           <a href="./validation-message-custom-icon.html">Validation Message with a Custom Icon</a>
         </li>
+        <li>
+          <a href="./blurred-backdrop.html">Blurred Backdrop</a>
+        </li>
       </ul>
     </>
   )
