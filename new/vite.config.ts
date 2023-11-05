@@ -24,6 +24,7 @@ export default defineConfig({
         recipeLoginForm: 'recipe-gallery/login-form.html',
         recipeInputDatepicker: 'recipe-gallery/input-datepicker.html',
         recipeI18nL10n: 'recipe-gallery/i18n-l10n.html',
+        recipeInputNumberInputRange: 'recipe-gallery/input-number-input-range.html',
       },
     },
   },
