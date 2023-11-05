@@ -1,69 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83618163-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-
-      gtag('config', 'UA-83618163-1')
-    </script>
-    <!-- Google Analytics end -->
-    <title>Queue with Progress Steps - SweetAlert2 example</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/images/favicon.png" />
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-
+  <load
+    ="partials/head.html"
+    title="Queue with Progress Steps
+  "
+  />
   <body>
-    <nav class="mobile-hidden">
-      <a href="/#examples"><span>Examples</span></a>
-      <a href="/recipe-gallery" class="recipe-gallery"><span>Recipe Gallery</span></a>
-      <a href="/#download"><span>Installation</span></a>
-      <a href="/#usage"><span>Usage</span></a>
-      <a href="/#frameworks-integrations"><span>Integrations</span></a>
-      <a href="/#configuration" class="mobile-hidden"><span>Configuration</span></a>
-      <a href="/#handling-buttons"><span>Handling Buttons</span></a>
-      <a href="/#handling-dismissals"><span>Dismissals</span></a>
-      <a href="/#icons"><span>Icons</span></a>
-      <a href="/#input-types"><span>Input Types</span></a>
-      <a href="/#methods" class="mobile-hidden"><span>Methods</span></a>
-      <a href="/#themes"><span>Themes</span></a>
-      <a href="/#sponsors"><span>Sponsors</span></a>
-      <a href="/#nsfw-sponsors"><span>NSFW Sponsors</span></a>
-    </nav>
-
-    <div id="show-sidebar">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-
-    <p>
-      <a href="/recipe-gallery"><i class="fa fa-arrow-left"></i> Back to Recipe Gallery</a>
-    </p>
-    <h1>Queue with Progress Steps</h1>
-
-    <button class="show-example-btn" onclick="showExample()">Try me!</button>
-
-    <script src="https://emgithub.com/embed.js?target=https://github.com/sweetalert2/sweetalert2.github.io/blob/main/recipe-gallery/queue-with-progress-steps.js%23L2-L27&style=vs2015&showCopy=on"></script>
-
-    <script src="./queue-with-progress-steps.js"></script>
-    <script src="/dist/bundle.js" defer></script>
-
-    <div id="docsearch"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-    <script>
-      docsearch({
-        appId: '38BPOKYOZ2',
-        apiKey: 'aa152d345260f94e9c0b177ed5437c9e',
-        indexName: 'sweetalert2',
-        container: '#docsearch',
-      })
-    </script>
+    <div id="root"></div>
+    <script type="module" src="./queue-with-progress-steps.tsx"></script>
   </body>
 </html>

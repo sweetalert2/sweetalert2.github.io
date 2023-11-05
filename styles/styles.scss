@@ -1,11 +1,34 @@
 @use 'sass:math';
+@use '/node_modules/@docsearch/css/dist/style.css';
+@use '/node_modules/highlight.js/styles/atom-one-dark.css';
+@use './bootstrap4-buttons.css';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
-@import 'colors';
+
+$black: #000;
+$white: #fff;
+$transparent: rgba($black, 0);
+$body-background: #f2f4f6;
+$salmon: #f77;
+$dovegray: #666;
+$gallery: #eee;
+$regentgray: #8d98a5;
+$chateaugray: #a7adb2;
+$porcelain: #e2e5e8;
+$white-button: rgba($white, 0.8);
+$pastel-green: #87d25f;
+$fruit-salad: #4caf50;
+$shark: #282c34;
+$facebook: #425f9c;
+$twitter: #1da1f3;
+$bitcoin: #f2660f;
+$ethereum: #2f3fd9;
+$bitcoincash: #5ca930;
+$stellar: #192786;
 
 @mixin retina-background($url, $type: png) {
-  background-image: image-set(url('../images/#{$url}.#{$type}') 1x, url('../images/#{$url}@2x.#{$type}') 2x);
+  background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -340,7 +363,7 @@ pre {
       padding-left: 0.8em;
       transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
       opacity: 0;
-      background: $black url('../images/codepen.svg') 11.6em 0.2em no-repeat;
+      background: $black url('/images/codepen.svg') 11.6em 0.2em no-repeat;
       background-size: 1.6em;
       font-size: 0.8em;
       cursor: pointer;
@@ -361,7 +384,7 @@ kbd {
 .showcase {
   display: inline-block;
   position: relative;
-  width: 21.5em;
+  width: 360px;
   max-width: 94%;
   margin-top: 1.5em;
   padding: 1em;
@@ -369,8 +392,12 @@ kbd {
   vertical-align: top;
 
   &.normal {
+    margin-right: 4px;
+
     button {
-      margin: 38px;
+      margin: 27px;
+      padding: 8px 16px;
+      font-size: 1.1em;
     }
   }
 
@@ -716,7 +743,9 @@ tr:hover {
 }
 
 .stats {
-  opacity: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   font-size: 0.8125em;
 }
 
@@ -867,6 +896,20 @@ $bouncing-logo-min-height: 35%;
   }
 }
 
+.recipe-gallery-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    margin-right: 20em;
+  }
+
+  #docsearch {
+    margin: 1em 0 !important;
+  }
+}
+
 .emgithub-container {
   width: 800px;
   max-width: 90%;
@@ -935,4 +978,50 @@ $bouncing-logo-min-height: 35%;
   .DocSearch-Container {
     position: fixed !important;
   }
+}
+
+.sp-wrapper {
+  width: 760px !important;
+  max-width: 95%;
+  margin: 0 auto !important;
+}
+
+.sp-layout {
+  flex-direction: column;
+}
+
+.sp-preview {
+  width: 100% !important;
+}
+
+.sp-resize-handler {
+  display: none !important;
+}
+
+.sp-h250 {
+  flex-basis: 250px !important;
+}
+
+.sp-h300 {
+  flex-basis: 300px !important;
+}
+
+.sp-h350 {
+  flex-basis: 350px !important;
+}
+
+.sp-h400 {
+  flex-basis: 400px !important;
+}
+
+.sp-h550 {
+  flex-basis: 550px !important;
+}
+
+.sp-h600 {
+  flex-basis: 600px !important;
+}
+
+.sp-h650 {
+  flex-basis: 650px !important;
 }

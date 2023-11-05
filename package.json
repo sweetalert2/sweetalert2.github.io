@@ -4,29 +4,54 @@
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
   "scripts": {
-    "build": "gulp build",
-    "dev": "gulp watch",
-    "lint": "stylelint styles/*.scss && eslint *.js src/app.js src/**/*.js"
+    "dev": "vite",
+    "build:dev": "tsc && vite build",
+    "build": "tsc && vite build --emptyOutDir",
+    "lint": "stylelint styles/*.scss && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@algolia/client-search": "^4.20.0",
+    "@codesandbox/sandpack-react": "^2.9.0",
+    "@codesandbox/sandpack-themes": "^2.0.21",
+    "@docsearch/css": "^3.5.2",
+    "@docsearch/js": "^3.5.2",
+    "@github/mini-throttle": "^2.1.1",
+    "@lezer/common": "^1.1.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "cropperjs": "^1.6.1",
+    "date-fns": "^2.30.0",
+    "formik": "^2.4.5",
+    "highlight.js": "^11.9.0",
+    "jquery": "^3.7.1",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.9.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "search-insights": "^2.9.0",
+    "sweetalert2": "^11.7.32",
+    "sweetalert2-react-content": "^5.0.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.1",
-    "@sweetalert2/eslint-config": "^1.0.0",
-    "@sweetalert2/stylelint-config": "^2.0.0",
-    "babel-loader": "^9.0.0",
-    "babel-plugin-preval": "^5.0.0",
-    "browser-sync": "^2.27.5",
-    "css-loader": "^6.4.0",
-    "eslint": "^8.23.1",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-dart-sass": "^1.0.2",
-    "highlight.js": "^11.5.1",
-    "style-loader": "^3.3.0",
-    "stylelint": "^15.0.0",
-    "sweetalert2": "^11.5.2",
-    "typescript": "^5.0.0",
-    "webpack": "^5.74.0",
-    "webpack-stream": "^7.0.0"
+    "@sweetalert2/eslint-config": "^1.1.8",
+    "@sweetalert2/stylelint-config": "^2.1.13",
+    "@types/bootstrap": "^5.2.8",
+    "@types/i18next": "^13.0.0",
+    "@types/jquery": "^3.5.24",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "sass": "^1.69.3",
+    "stylelint": "^15.11.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-html-inject": "^1.0.4"
   },
   "prettier": {
     "printWidth": 120,
@@ -35,8 +60,5 @@
     "quoteProps": "consistent",
     "trailingComma": "es5"
   },
-  "license": "MIT",
-  "dependencies": {
-    "@types/i18next": "^13.0.0"
-  }
+  "license": "MIT"
 }
