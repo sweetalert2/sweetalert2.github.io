@@ -27,6 +27,7 @@ export default defineConfig({
         'input-number-input-range': 'recipe-gallery/input-number-input-range.html',
         'validation-message-custom-icon': 'recipe-gallery/validation-message-custom-icon.html',
         'blurred-backdrop': 'recipe-gallery/blurred-backdrop.html',
+        'sidebars-drawers': 'recipe-gallery/sidebars-drawers.html',
       },
     },
   },

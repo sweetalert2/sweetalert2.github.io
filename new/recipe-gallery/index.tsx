@@ -55,6 +55,9 @@ function Recipe() {
         <li>
           <a href="./blurred-backdrop.html">Blurred Backdrop</a>
         </li>
+        <li>
+          <a href="./sidebars-drawers.html">Sidebars and Drawers (Left, Right, Top, Bottom)</a>
+        </li>
       </ul>
     </>
   )

@@ -1,5 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-48230f6e.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-7afa1326.js';
 
 const src = (await __vitePreload(() => import('./input-number-input-range-src-f0804860.js'),true?[]:void 0)).default;
 function Recipe() {

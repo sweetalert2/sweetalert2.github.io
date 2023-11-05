@@ -26,7 +26,7 @@ export function Showcase() {
       <div className="center-container">
         <p className="center">
           <a href="https://m.do.co/c/12907f2ba0bf" target="_blank" rel="noreferrer noopener" tabIndex={-1}>
-            Get $100 in free credits with DigitalOcean!
+            Get $200 in free credits with DigitalOcean!
           </a>
         </p>
       </div>

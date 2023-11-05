@@ -1,4 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-3e691c95.js';
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-48230f6e.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/vite/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     // @ts-expect-error true will be replaced with boolean later
@@ -477,15 +477,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-87c96935.js'),true?["assets/index-87c96935.js","assets/base-80a1f760-f87c4a91.js","assets/consoleHook-7a68abbd-d09043f5.js","assets/index-3e691c95.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-211d2f04.js'),true?["assets/index-211d2f04.js","assets/base-80a1f760-4629ca27.js","assets/consoleHook-7a68abbd-d88b091a.js","assets/index-48230f6e.js","assets/index-6bddbf51.css"]:void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-9fde5e13.js'),true?["assets/index-fc68d414-9fde5e13.js","assets/consoleHook-7a68abbd-d09043f5.js","assets/base-80a1f760-f87c4a91.js","assets/index-3e691c95.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-80877e56.js'),true?["assets/index-fc68d414-80877e56.js","assets/consoleHook-7a68abbd-d88b091a.js","assets/base-80a1f760-4629ca27.js","assets/index-48230f6e.js","assets/index-6bddbf51.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-6e01c03d.js'),true?["assets/index-6e01c03d.js","assets/base-80a1f760-f87c4a91.js","assets/index-3e691c95.js","assets/index-64fbb9f8.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-ab37295f.js'),true?["assets/index-ab37295f.js","assets/base-80a1f760-4629ca27.js","assets/index-48230f6e.js","assets/index-6bddbf51.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -6464,15 +6464,28 @@ const nativeSelectionHidden = /*@__PURE__*/Facet.define({
     combine: values => values.some(x => x)
 });
 class ScrollTarget {
-    constructor(range, y = "nearest", x = "nearest", yMargin = 5, xMargin = 5) {
+    constructor(range, y = "nearest", x = "nearest", yMargin = 5, xMargin = 5, 
+    // This data structure is abused to also store precise scroll
+    // snapshots, instead of a `scrollIntoView` request. When this
+    // flag is `true`, `range` points at a position in the reference
+    // line, `yMargin` holds the difference between the top of that
+    // line and the top of the editor, and `xMargin` holds the
+    // editor's `scrollLeft`.
+    isSnapshot = false) {
         this.range = range;
         this.y = y;
         this.x = x;
         this.yMargin = yMargin;
         this.xMargin = xMargin;
+        this.isSnapshot = isSnapshot;
     }
     map(changes) {
-        return changes.empty ? this : new ScrollTarget(this.range.map(changes), this.y, this.x, this.yMargin, this.xMargin);
+        return changes.empty ? this :
+            new ScrollTarget(this.range.map(changes), this.y, this.x, this.yMargin, this.xMargin, this.isSnapshot);
+    }
+    clip(state) {
+        return this.range.to <= state.doc.length ? this :
+            new ScrollTarget(EditorSelection.cursor(state.doc.length), this.y, this.x, this.yMargin, this.xMargin, this.isSnapshot);
     }
 }
 const scrollIntoView = /*@__PURE__*/StateEffect.define({ map: (t, ch) => t.map(ch) });
@@ -7765,6 +7778,12 @@ class DocView extends ContentView {
         ];
     }
     scrollIntoView(target) {
+        if (target.isSnapshot) {
+            let ref = this.view.viewState.lineBlockAt(target.range.head);
+            this.view.scrollDOM.scrollTop = ref.top - target.yMargin;
+            this.view.scrollDOM.scrollLeft = target.xMargin;
+            return;
+        }
         let { range } = target;
         let rect = this.coordsAt(range.head, range.empty ? range.assoc : range.head > range.anchor ? -1 : 1), other;
         if (!rect)
@@ -7777,7 +7796,8 @@ class DocView extends ContentView {
             left: rect.left - margins.left, top: rect.top - margins.top,
             right: rect.right + margins.right, bottom: rect.bottom + margins.bottom
         };
-        scrollRectIntoView(this.view.scrollDOM, targetRect, range.head < range.anchor ? -1 : 1, target.x, target.y, target.xMargin, target.yMargin, this.view.textDirection == Direction.LTR);
+        let { offsetWidth, offsetHeight } = this.view.scrollDOM;
+        scrollRectIntoView(this.view.scrollDOM, targetRect, range.head < range.anchor ? -1 : 1, target.x, target.y, Math.max(Math.min(target.xMargin, offsetWidth), -offsetWidth), Math.max(Math.min(target.yMargin, offsetHeight), -offsetHeight), this.view.textDirection == Direction.LTR);
     }
 }
 function betweenUneditable(pos) {
@@ -8314,6 +8334,9 @@ class InputState {
         // the mutation events fire shortly after the compositionend event
         this.compositionPendingChange = false;
         this.mouseSelection = null;
+        // When a drag from the editor is active, this points at the range
+        // being dragged.
+        this.draggedContent = null;
         this.handleEvent = this.handleEvent.bind(this);
         this.notifiedFocused = view.hasFocus;
         // On Safari adding an input event handler somehow prevents an
@@ -8430,6 +8453,8 @@ class InputState {
     update(update) {
         if (this.mouseSelection)
             this.mouseSelection.update(update);
+        if (this.draggedContent && update.docChanged)
+            this.draggedContent = this.draggedContent.map(update.changes);
         if (update.transactions.length)
             this.lastKeyCode = this.lastSelectionTime = 0;
     }
@@ -8547,7 +8572,7 @@ class MouseSelection {
         let doc = this.view.contentDOM.ownerDocument;
         doc.removeEventListener("mousemove", this.move);
         doc.removeEventListener("mouseup", this.up);
-        this.view.inputState.mouseSelection = null;
+        this.view.inputState.mouseSelection = this.view.inputState.draggedContent = null;
     }
     setScrollSpeed(sx, sy) {
         this.scrollSpeed = { x: sx, y: sy };
@@ -8605,8 +8630,6 @@ class MouseSelection {
         this.mustSelect = false;
     }
     update(update) {
-        if (update.docChanged && this.dragging)
-            this.dragging = this.dragging.map(update.changes);
         if (this.style.update(update))
             setTimeout(() => this.select(this.lastEvent), 20);
     }
@@ -8834,23 +8857,36 @@ function removeRangeAround(sel, pos) {
     return null;
 }
 handlers.dragstart = (view, event) => {
-    let { selection: { main } } = view.state;
-    let { mouseSelection } = view.inputState;
-    if (mouseSelection)
-        mouseSelection.dragging = main;
+    let { selection: { main: range } } = view.state;
+    if (event.target.draggable) {
+        let cView = view.docView.nearest(event.target);
+        if (cView && cView.isWidget) {
+            let from = cView.posAtStart, to = from + cView.length;
+            if (from >= range.to || to <= range.from)
+                range = EditorSelection.range(from, to);
+        }
+    }
+    let { inputState } = view;
+    if (inputState.mouseSelection)
+        inputState.mouseSelection.dragging = true;
+    inputState.draggedContent = range;
     if (event.dataTransfer) {
-        event.dataTransfer.setData("Text", view.state.sliceDoc(main.from, main.to));
+        event.dataTransfer.setData("Text", view.state.sliceDoc(range.from, range.to));
         event.dataTransfer.effectAllowed = "copyMove";
     }
+    return false;
+};
+handlers.dragend = view => {
+    view.inputState.draggedContent = null;
     return false;
 };
 function dropText(view, event, text, direct) {
     if (!text)
         return;
     let dropPos = view.posAtCoords({ x: event.clientX, y: event.clientY }, false);
-    let { mouseSelection } = view.inputState;
-    let del = direct && mouseSelection && mouseSelection.dragging && dragMovesSelection(view, event) ?
-        { from: mouseSelection.dragging.from, to: mouseSelection.dragging.to } : null;
+    let { draggedContent } = view.inputState;
+    let del = direct && draggedContent && dragMovesSelection(view, event)
+        ? { from: draggedContent.from, to: draggedContent.to } : null;
     let ins = { from: dropPos, insert: text };
     let changes = view.state.changes(del ? [del, ins] : ins);
     view.focus();
@@ -8859,6 +8895,7 @@ function dropText(view, event, text, direct) {
         selection: { anchor: changes.mapPos(dropPos, -1), head: changes.mapPos(dropPos, 1) },
         userEvent: del ? "move.drop" : "input.drop"
     });
+    view.inputState.draggedContent = null;
 }
 handlers.drop = (view, event) => {
     if (!event.dataTransfer)
@@ -11578,6 +11615,8 @@ class EditorView {
         this.dispatch = this.dispatch.bind(this);
         this._root = (config.root || getRoot(config.parent) || document);
         this.viewState = new ViewState(config.state || EditorState.create(config));
+        if (config.scrollTo && config.scrollTo.is(scrollIntoView))
+            this.viewState.scrollTarget = config.scrollTo.value.clip(this.viewState.state);
         this.plugins = this.state.facet(viewPlugin).map(spec => new PluginInstance(spec));
         for (let plugin of this.plugins)
             plugin.update(this);
@@ -11665,7 +11704,7 @@ class EditorView {
                 }
                 for (let e of tr.effects)
                     if (e.is(scrollIntoView))
-                        scrollTarget = e.value;
+                        scrollTarget = e.value.clip(this.state);
             }
             this.viewState.update(update, scrollTarget);
             this.bidiCache = CachedOrder.update(this.bidiCache, update.changes);
@@ -11688,8 +11727,14 @@ class EditorView {
         if (redrawn || attrsChanged || scrollTarget || this.viewState.mustEnforceCursorAssoc || this.viewState.mustMeasureContent)
             this.requestMeasure();
         if (!update.empty)
-            for (let listener of this.state.facet(updateListener))
-                listener(update);
+            for (let listener of this.state.facet(updateListener)) {
+                try {
+                    listener(update);
+                }
+                catch (e) {
+                    logException(this.state, e, "update listener");
+                }
+            }
         if (dispatchFocus || domChange)
             Promise.resolve().then(() => {
                 if (dispatchFocus && this.state == dispatchFocus.startState)
@@ -12269,6 +12314,23 @@ class EditorView {
     */
     static scrollIntoView(pos, options = {}) {
         return scrollIntoView.of(new ScrollTarget(typeof pos == "number" ? EditorSelection.cursor(pos) : pos, options.y, options.x, options.yMargin, options.xMargin));
+    }
+    /**
+    Return an effect that resets the editor to its current (at the
+    time this method was called) scroll position. Note that this
+    only affects the editor's own scrollable element, not parents.
+    See also
+    [`EditorViewConfig.scrollTo`](https://codemirror.net/6/docs/ref/#view.EditorViewConfig.scrollTo).
+    
+    The effect should be used with a document identical to the one
+    it was created for. Failing to do so is not an error, but may
+    not scroll to the expected position. You can
+    [map](https://codemirror.net/6/docs/ref/#state.StateEffect.map) the effect to account for changes.
+    */
+    scrollSnapshot() {
+        let { scrollTop, scrollLeft } = this.scrollDOM;
+        let ref = this.viewState.scrollAnchorAt(scrollTop);
+        return scrollIntoView.of(new ScrollTarget(EditorSelection.cursor(ref.from), "start", "start", ref.top - scrollTop, scrollLeft, true));
     }
     /**
     Returns an extension that can be used to add DOM event handlers.
@@ -21927,7 +21989,7 @@ function readToken(data, input, stack, group, precTable, precOffset) {
             }
         let next = input.next, low = 0, high = data[state + 2];
         // Special case for EOF
-        if (input.next < 0 && high > low && data[accEnd + high * 3 - 3] == 65535 /* Seq.End */ && data[accEnd + high * 3 - 3] == 65535 /* Seq.End */) {
+        if (input.next < 0 && high > low && data[accEnd + high * 3 - 3] == 65535 /* Seq.End */) {
             state = data[accEnd + high * 3 - 1];
             continue scan;
         }
@@ -22353,7 +22415,7 @@ class Parse {
                 console.log(base + this.stackID(stack) + ` (via always-reduce ${parser.getName(defaultReduce & 65535 /* Action.ValueMask */)})`);
             return true;
         }
-        if (stack.stack.length >= 9000 /* Rec.CutDepth */) {
+        if (stack.stack.length >= 8400 /* Rec.CutDepth */) {
             while (stack.stack.length > 6000 /* Rec.CutTo */ && stack.forceReduce()) { }
         }
         let actions = this.tokens.getActions(stack);

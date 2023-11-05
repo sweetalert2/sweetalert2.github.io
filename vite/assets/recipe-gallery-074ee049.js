@@ -1,4 +1,4 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-48230f6e.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -20,7 +20,8 @@ function Recipe() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./i18n-l10n.html", children: "Internationalization (i18n) and localization (l10n)" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./input-number-input-range.html", children: "input[number] + input[range]" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./validation-message-custom-icon.html", children: "Validation Message with a Custom Icon" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./blurred-backdrop.html", children: "Blurred Backdrop" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./blurred-backdrop.html", children: "Blurred Backdrop" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sidebars-drawers.html", children: "Sidebars and Drawers (Left, Right, Top, Bottom)" }) })
     ] })
   ] });
 }

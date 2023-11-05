@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-3e691c95.js';
+import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-48230f6e.js';
 
 function Header() {
   const st4 = {
@@ -3964,7 +3964,7 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://m.do.co/c/12907f2ba0bf", target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: "Get $100 in free credits with DigitalOcean!" }) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://m.do.co/c/12907f2ba0bf", target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: "Get $200 in free credits with DigitalOcean!" }) }) })
   ] });
 }
 
