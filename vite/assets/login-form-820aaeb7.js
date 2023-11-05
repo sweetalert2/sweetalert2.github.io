@@ -2,7 +2,7 @@ import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 
 const src = (await __vitePreload(() => import('./login-form-src-6f522d54.js'),true?[]:void 0)).default;
-function RecipeCropImage() {
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Login Form" }),
@@ -36,4 +36,4 @@ function RecipeCropImage() {
     )
   ] });
 }
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeCropImage, {}));
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

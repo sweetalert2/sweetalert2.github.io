@@ -3,8 +3,7 @@ import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 import { C as CreatePortalDocs } from './CreatePortalDocs-0cd4df4e.js';
 
 const src = (await __vitePreload(() => import('./sweetalert2-react-router-src-4ba97650.js'),true?[]:void 0)).default;
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeReactRouter, {}));
-function RecipeReactRouter() {
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + React Router example" }),
@@ -36,3 +35,4 @@ function RecipeReactRouter() {
     )
   ] });
 }
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

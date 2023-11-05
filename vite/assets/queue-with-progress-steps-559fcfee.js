@@ -2,7 +2,7 @@ import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 
 const src = (await __vitePreload(() => import('./queue-with-progress-steps-src-4577bf2f.js'),true?[]:void 0)).default;
-function RecipeQueueWithProgressSteps() {
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Queue with Progress Steps" }),
@@ -17,4 +17,4 @@ function RecipeQueueWithProgressSteps() {
     )
   ] });
 }
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeQueueWithProgressSteps, {}));
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

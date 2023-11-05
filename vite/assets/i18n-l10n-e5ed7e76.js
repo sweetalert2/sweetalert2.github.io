@@ -2,7 +2,7 @@ import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 
 const src = (await __vitePreload(() => import('./i18n-l10n-src-8d013ed2.js'),true?[]:void 0)).default;
-function RecipeI18nL10n() {
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Internationalization (i18n) and localization (l10n)" }),
@@ -27,4 +27,4 @@ function RecipeI18nL10n() {
     )
   ] });
 }
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeI18nL10n, {}));
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

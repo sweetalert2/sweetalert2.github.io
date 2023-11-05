@@ -4,7 +4,7 @@ import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 const html = (await __vitePreload(() => import('./bootstrap-custom-loader-html-d13f0cdb.js'),true?[]:void 0)).default;
 const styles = (await __vitePreload(() => import('./bootstrap-custom-loader-styles-0c03fb19.js'),true?[]:void 0)).default;
 const src = (await __vitePreload(() => import('./bootstrap-custom-loader-src-dedd1aa5.js'),true?[]:void 0)).default;
-function BootstrapCustomLoaderRecipe() {
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Bootstrap 5 + custom loader" }),
@@ -33,4 +33,4 @@ function BootstrapCustomLoaderRecipe() {
     )
   ] });
 }
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(BootstrapCustomLoaderRecipe, {}));
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

@@ -4,7 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./sweetalert2-react-src?raw')).default
 
-export function RecipeReact() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -39,4 +39,4 @@ export function RecipeReact() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeReact />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

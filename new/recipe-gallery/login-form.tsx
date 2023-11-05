@@ -4,7 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./login-form-src?raw')).default
 
-export function RecipeCropImage() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -36,4 +36,4 @@ export function RecipeCropImage() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeCropImage />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

@@ -2,8 +2,8 @@ import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 import { C as CreatePortalDocs } from './CreatePortalDocs-0cd4df4e.js';
 
-const src = (await __vitePreload(() => import('./input-datepicker-src-44986536.js'),true?[]:void 0)).default;
-function RecipeReact() {
+const src = (await __vitePreload(() => import('./input-datepicker-src-f6d430d0.js'),true?[]:void 0)).default;
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Date input powered by react-day-picker" }),
@@ -43,4 +43,4 @@ function RecipeReact() {
     )
   ] });
 }
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeReact, {}));
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

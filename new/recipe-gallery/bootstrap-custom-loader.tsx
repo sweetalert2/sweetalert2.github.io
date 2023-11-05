@@ -6,7 +6,7 @@ const html = (await import(`./bootstrap-custom-loader-html.html?raw`)).default
 const styles = (await import(`./bootstrap-custom-loader-styles.css?raw`)).default
 const src = (await import('./bootstrap-custom-loader-src?raw')).default
 
-export function BootstrapCustomLoaderRecipe() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -37,4 +37,4 @@ export function BootstrapCustomLoaderRecipe() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<BootstrapCustomLoaderRecipe />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)

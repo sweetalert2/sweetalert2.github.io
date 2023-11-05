@@ -2,8 +2,7 @@ import { c as client, j as jsxRuntimeExports, N as Nav } from './index-3e691c95.
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-55ea7978.js';
 
 const src = (await __vitePreload(() => import('./sweetalert2-formik-src-347a1f61.js'),true?[]:void 0)).default;
-client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(RecipeFormik, {}));
-function RecipeFormik() {
+function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + Formik example" }),
@@ -40,3 +39,4 @@ function RecipeFormik() {
     )
   ] });
 }
+client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

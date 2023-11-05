@@ -4,7 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./input-number-input-range-src?raw')).default
 
-export function RecipeInputNumberInputRange() {
+function Recipe() {
   return (
     <>
       <Nav recipeGallery />
@@ -30,4 +30,4 @@ export function RecipeInputNumberInputRange() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RecipeInputNumberInputRange />)
+ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)
