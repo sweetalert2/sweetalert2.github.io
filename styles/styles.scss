@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use '/node_modules/@docsearch/css/dist/style.css';
 @use '/node_modules/highlight.js/styles/atom-one-dark.css';
-@use './bootstrap4-buttons.css';
+@use '../public/bootstrap4-buttons.css';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
