@@ -1,4 +1,25 @@
-import { j as jsxRuntimeExports, D as DocSearch, r as reactExports, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-1fbb6989.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-94ff39db.js';
+
+const useHash = () => {
+  const [hash, setHash] = reactExports.useState(() => window.location.hash);
+  const hashChangeHandler = reactExports.useCallback(() => {
+    setHash(window.location.hash);
+  }, []);
+  reactExports.useEffect(() => {
+    window.addEventListener("hashchange", hashChangeHandler);
+    return () => {
+      window.removeEventListener("hashchange", hashChangeHandler);
+    };
+  }, []);
+  const updateHash = reactExports.useCallback(
+    (newHash) => {
+      if (newHash !== hash)
+        window.location.hash = newHash;
+    },
+    [hash]
+  );
+  return [hash, updateHash];
+};
 
 function Header() {
   const st4 = {
@@ -16,6 +37,16 @@ function Header() {
   const st7 = {
     fill: "#8a3d9b"
   };
+  const [hash] = useHash();
+  reactExports.useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        console.log("scroll to", element);
+      }
+    }
+  }, [hash]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "iframe",
