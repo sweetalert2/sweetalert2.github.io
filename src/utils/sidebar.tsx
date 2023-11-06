@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { Sidebar } from '../components/Nav'
+import { Sidebar, sidebarUrl } from '../components/Nav'
 
 export const showSidebar = () => {
   withReactContent(Swal).fire({
@@ -18,6 +18,6 @@ export const showSidebar = () => {
       popup: 'animate__animated animate__fadeOutLeft animate__faster',
     },
     footer: `This sidebar is powered by SweetAlert2,
-      <a href="https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/sidebar.js" class="nowrap" target="_blank">source code ↗</a>`,
+      <a href="${sidebarUrl}" class="nowrap" target="_blank">source code ↗</a>`,
   })
 }
