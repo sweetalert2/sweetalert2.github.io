@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import { ScrollToAnchor, showSidebar } from '../utils'
+import { showSidebar } from '../utils'
 import { DocSearch } from './DocSearch'
 
 export const sidebarUrl = 'https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx'
@@ -27,8 +27,6 @@ export function Nav({
           <DocSearch />
         </div>
       ) : null}
-
-      <ScrollToAnchor />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { DocSearch } from './DocSearch'
+import { useHash } from '../utils'
 
 export function Header() {
   const st4 = {
@@ -17,6 +18,19 @@ export function Header() {
   const st7 = {
     fill: '#8a3d9b',
   }
+
+  // This is needed for DocSearch to scroll to the search result if it's on the same page (anchor link)
+  const [hash] = useHash()
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById((hash as string).slice(1))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        console.log('scroll to', element) // eslint-disable-line no-console
+      }
+    }
+  }, [hash])
 
   return (
     <>
