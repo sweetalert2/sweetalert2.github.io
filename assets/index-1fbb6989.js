@@ -4946,7 +4946,7 @@ const showSidebar = () => {
       popup: "animate__animated animate__fadeOutLeft animate__faster"
     },
     footer: `This sidebar is powered by SweetAlert2,
-      <a href="https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/sidebar.js" class="nowrap" target="_blank">source code ↗</a>`
+      <a href="${sidebarUrl}" class="nowrap" target="_blank">source code ↗</a>`
   });
 };
 
@@ -4982,6 +4982,7 @@ function DocSearch() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "docsearch" });
 }
 
+const sidebarUrl = "https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx";
 function Nav({
   recipeGallery = false,
   showBackToRecipeGalleryLink = true

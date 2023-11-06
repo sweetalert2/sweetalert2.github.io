@@ -1458,6 +1458,7 @@ nav .version-selector {
   padding: 0 !important;
 }
 .sidebar .swal2-modal {
+  width: 320px;
   background: #f2f4f6;
 }
 .sidebar .swal2-html-container {

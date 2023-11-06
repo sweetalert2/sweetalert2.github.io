@@ -1,5 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-87ec7024.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-78203970.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-1fbb6989.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-15ffe1d2.js';
 
 const src = (await __vitePreload(() => import('./queue-with-progress-steps-src-4577bf2f.js'),true?[]:void 0)).default;
 function Recipe() {
