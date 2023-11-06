@@ -4182,7 +4182,7 @@ function Examples() {
           CodeExample,
           {
             code: examples.handleDismiss.fnString,
-            codepenCssExternal: "https://sweetalert2.github.io/dist/bootstrap4-buttons.css"
+            codepenCssExternal: "https://sweetalert2.github.io/bootstrap4-buttons.css"
           }
         )
       ] }),
