@@ -27,7 +27,6 @@ export function Header() {
       const element = document.getElementById((hash as string).slice(1))
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        console.log('scroll to', element) // eslint-disable-line no-console
       }
     }
   }, [hash])
