@@ -22,30 +22,17 @@ function App() {
   return (
     <>
       <button onClick={showSwalWithReactDayPicker}>Show SweetAlert2</button>
-      <SwalWithReactDayPicker shown={swalShown} range={range} setRange={setRange} />
+      {/* Use createPortal to use the same state between your app and SweetAlert2 */}
+      {swalShown &&
+        createPortal(
+          <DayPicker mode="range" selected={range} onSelect={setRange} style={{ display: 'inline-block' }} />,
+          Swal.getHtmlContainer()!
+        )}
       <div>
         Your selection: {range?.from && format(range.from, 'PPP')} - {range?.to && format(range.to, 'PPP')}
       </div>
     </>
   )
-}
-
-function SwalWithReactDayPicker({
-  shown,
-  range,
-  setRange,
-}: {
-  shown: boolean
-  range: DateRange | undefined
-  setRange: (range: DateRange | undefined) => void
-}) {
-  // Use createPortal to use the same state between your app and SweetAlert2
-  return shown
-    ? createPortal(
-        <DayPicker mode="range" selected={range} onSelect={setRange} style={{ display: 'inline-block' }} />,
-        Swal.getHtmlContainer()!
-      )
-    : null
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<App />)

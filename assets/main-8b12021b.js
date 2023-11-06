@@ -43,7 +43,6 @@ function Header() {
       const element = document.getElementById(hash.slice(1));
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
-        console.log("scroll to", element);
       }
     }
   }, [hash]);
