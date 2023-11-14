@@ -4548,6 +4548,19 @@ function ConfigurationParams() {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "The custom HTML content for an icon." })
           ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "animation", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#animation", children: "#" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "animation" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "true" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "If set to ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
+              ", the popup animation will be disabled"
+            ] })
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "showClass", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#showClass", children: "#" }),
