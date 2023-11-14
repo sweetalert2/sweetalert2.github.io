@@ -101,6 +101,17 @@ export function ConfigurationParams() {
               </td>
               <td>The custom HTML content for an icon.</td>
             </tr>
+            <tr id="animation">
+              <td>
+                <a className="hover-anchor" href="#animation" children="#" />
+                <h4>animation</h4>
+                <br />
+                <i>true</i>
+              </td>
+              <td>
+                If set to <strong>false</strong>, the popup animation will be disabled
+              </td>
+            </tr>
             <tr id="showClass">
               <td>
                 <a className="hover-anchor" href="#showClass" children="#" />
