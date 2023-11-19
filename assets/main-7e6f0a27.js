@@ -6094,7 +6094,7 @@ function HandlingDismissals() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "center", children: [
       "If a popup is dismissed by ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: "Swal.close()" }),
-      ", the Promise will be resolved with an object",
+      " or another popup, the Promise will be resolved with an object",
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsxs("strong", { className: "nowrap", children: [
         "{",
@@ -6104,7 +6104,7 @@ function HandlingDismissals() {
       " ",
       "(",
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "dismiss" }),
-      " will be",
+      " will be ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "undefined" }),
       ")."
     ] })
