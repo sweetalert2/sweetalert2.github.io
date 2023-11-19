@@ -72,13 +72,12 @@ export function HandlingDismissals() {
       </table>
 
       <p className="center">
-        If a popup is dismissed by <strong className="nowrap">Swal.close()</strong>, the Promise will be resolved with
-        an object{' '}
+        If a popup is dismissed by <strong className="nowrap">Swal.close()</strong> or another popup, the Promise will
+        be resolved with an object{' '}
         <strong className="nowrap">
           {'{'} isDismissed: true {'}'}
         </strong>{' '}
-        (<strong>dismiss</strong> will be
-        <strong>undefined</strong>).
+        (<strong>dismiss</strong> will be <strong>undefined</strong>).
       </p>
     </div>
   )
