@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-19a8bcad.js';
-import { S as SandpackClient } from './base-80a1f760-1d76d265.js';
-import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from './consoleHook-7a68abbd-1b087bb9.js';
-import './index-94ff39db.js';
+import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-YALZoZxe.js';
+import { S as SandpackClient } from './base-80a1f760-HMqdSJNZ.js';
+import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from './consoleHook-cdbe54ab-ovPnN6B-.js';
+import './index-4dgXhobZ.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -1037,7 +1037,7 @@ function setupHistoryListeners(_a) {
             url: url,
             back: historyPosition > 0,
             forward: historyPosition < historyList.length - 1,
-            channelId: scope.channelId
+            channelId: scope.channelId,
         }, "*");
     };
     function pushHistory(url, state) {
@@ -1073,7 +1073,7 @@ function setupHistoryListeners(_a) {
             origHistoryProto.replaceState.call(window.history, state, title, url);
             historyList[historyPosition] = { state: state, url: url };
             dispatchMessage(document.location.href);
-        }
+        },
     });
     function handleMessage(_a) {
         var data = _a.data;
@@ -1090,13 +1090,59 @@ function setupHistoryListeners(_a) {
     window.addEventListener("message", handleMessage);
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function watchResize(_a) {
+    var scope = _a.scope;
+    var lastHeight = 0;
+    function getDocumentHeight() {
+        if (typeof window === "undefined")
+            return 0;
+        var body = document.body;
+        var html = document.documentElement;
+        return Math.max(body.scrollHeight, body.offsetHeight, html.offsetHeight);
+    }
+    function sendResizeEvent() {
+        var height = getDocumentHeight();
+        if (lastHeight !== height) {
+            window.parent.postMessage({
+                type: "resize",
+                height: height,
+                codesandbox: true,
+                channelId: scope.channelId,
+            }, "*");
+        }
+        lastHeight = height;
+    }
+    sendResizeEvent();
+    var throttle;
+    var observer = new MutationObserver(function () {
+        if (throttle === undefined) {
+            sendResizeEvent();
+            throttle = setTimeout(function () {
+                throttle = undefined;
+            }, 300);
+        }
+    });
+    observer.observe(document, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+    });
+    /**
+     * Ideally we should only use a `MutationObserver` to trigger a resize event,
+     * however, we noted that it's not 100% reliable, so we went for polling strategy as well
+     */
+    setInterval(sendResizeEvent, 300);
+}
+
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 var scripts = [
     { code: setupHistoryListeners.toString(), id: "historyListener" },
     {
         code: "function consoleHook({ scope }) {" + consoleHook + "\n};",
-        id: "consoleHook"
+        id: "consoleHook",
     },
+    { code: watchResize.toString(), id: "watchResize" },
 ];
 var injectScriptToIframe = function (iframe, channelId) {
     scripts.forEach(function (_a) {
@@ -1105,8 +1151,8 @@ var injectScriptToIframe = function (iframe, channelId) {
         var message = {
             uid: id,
             type: INJECT_MESSAGE_TYPE,
-            code: "exports.activate = " + code,
-            scope: { channelId: channelId }
+            code: "exports.activate = ".concat(code),
+            scope: { channelId: channelId },
         };
         (_b = iframe.contentWindow) === null || _b === void 0 ? void 0 : _b.postMessage(message, "*");
     });
@@ -1127,7 +1173,7 @@ var SandpackNode = /** @class */ (function (_super) {
         // Init emulator
         _this.emulator = new Nodebox({
             iframe: _this.emulatorIframe,
-            runtimeUrl: _this.options.bundlerURL
+            runtimeUrl: _this.options.bundlerURL,
         });
         // Trigger initial compile
         _this.updateSandbox(sandboxInfo);
@@ -1196,7 +1242,7 @@ var SandpackNode = /** @class */ (function (_super) {
                             type: "action",
                             action: "notification",
                             notificationType: "error",
-                            title: getMessageFromError(err_1)
+                            title: getMessageFromError(err_1),
                         });
                         this.dispatch({ type: "done", compilatonError: true });
                         return [3 /*break*/, 6];
@@ -1225,7 +1271,7 @@ var SandpackNode = /** @class */ (function (_super) {
                                     type: "action",
                                     action: "notification",
                                     notificationType: "error",
-                                    title: createError("Error: process.exit(" + exitCode + ") called.")
+                                    title: createError("Error: process.exit(".concat(exitCode, ") called.")),
                                 });
                             })];
                     case 1:
@@ -1240,7 +1286,7 @@ var SandpackNode = /** @class */ (function (_super) {
                                         data: __assign(__assign({}, data), { command: [
                                                 (_a = _this.emulatorCommand) === null || _a === void 0 ? void 0 : _a[0],
                                                 (_b = _this.emulatorCommand) === null || _b === void 0 ? void 0 : _b[1].join(" "),
-                                            ].join(" ") })
+                                            ].join(" ") }),
                                     });
                                     _this.status = "installing-dependencies";
                                     return;
@@ -1272,7 +1318,7 @@ var SandpackNode = /** @class */ (function (_super) {
                         return [4 /*yield*/, this.emulator.preview.getByShellId(id)];
                     case 1:
                         url = (_b.sent()).url;
-                        this.iframePreviewUrl = (_a = url + this.options.startRoute) !== null && _a !== void 0 ? _a : "";
+                        this.iframePreviewUrl = url + ((_a = this.options.startRoute) !== null && _a !== void 0 ? _a : "");
                         return [2 /*return*/];
                 }
             });
@@ -1292,7 +1338,7 @@ var SandpackNode = /** @class */ (function (_super) {
          */
         if (typeof selector === "string") {
             var element = document.querySelector(selector);
-            nullthrows(element, "The element '" + selector + "' was not found");
+            nullthrows(element, "The element '".concat(selector, "' was not found"));
             this.iframe = document.createElement("iframe");
         }
         else {
@@ -1336,7 +1382,7 @@ var SandpackNode = /** @class */ (function (_super) {
                 type: "urlchange",
                 url: this.iframePreviewUrl,
                 back: false,
-                forward: false
+                forward: false,
             });
         }
     };
@@ -1356,7 +1402,7 @@ var SandpackNode = /** @class */ (function (_super) {
                                     type: "urlchange",
                                     url: event.data.url,
                                     back: event.data.back,
-                                    forward: event.data.forward
+                                    forward: event.data.forward,
                                 });
                             }
                             else if (event.data.channelId === _this.messageChannelId) {
@@ -1407,30 +1453,30 @@ var SandpackNode = /** @class */ (function (_super) {
                                             this.dispatch({
                                                 type: "fs/change",
                                                 path: event.path,
-                                                content: content
+                                                content: content,
                                             });
                                             this._modulesCache.set(event.path, writeBuffer(content));
                                             return [3 /*break*/, 9];
                                         case 5:
                                             this.dispatch({
                                                 type: "fs/remove",
-                                                path: event.path
+                                                path: event.path,
                                             });
-                                            this._modulesCache["delete"](event.path);
+                                            this._modulesCache.delete(event.path);
                                             return [3 /*break*/, 9];
                                         case 6:
                                             this.dispatch({
                                                 type: "fs/remove",
-                                                path: event.oldPath
+                                                path: event.oldPath,
                                             });
-                                            this._modulesCache["delete"](event.oldPath);
+                                            this._modulesCache.delete(event.oldPath);
                                             return [4 /*yield*/, this.emulator.fs.readFile(event.newPath, "utf8")];
                                         case 7:
                                             newContent = _b.sent();
                                             this.dispatch({
                                                 type: "fs/change",
                                                 path: event.newPath,
-                                                content: newContent
+                                                content: newContent,
                                             });
                                             this._modulesCache.set(event.newPath, writeBuffer(newContent));
                                             return [3 /*break*/, 9];
@@ -1442,7 +1488,7 @@ var SandpackNode = /** @class */ (function (_super) {
                                                 type: "action",
                                                 action: "notification",
                                                 notificationType: "error",
-                                                title: getMessageFromError(err_2)
+                                                title: getMessageFromError(err_2),
                                             });
                                             return [3 /*break*/, 11];
                                         case 11: return [2 /*return*/];
@@ -1477,7 +1523,7 @@ var SandpackNode = /** @class */ (function (_super) {
                         (_a = this.iframe) === null || _a === void 0 ? void 0 : _a.removeAttribute("attr");
                         this.emulator.fs.rm("/node_modules/.vite", {
                             recursive: true,
-                            force: true
+                            force: true,
                         });
                         // 3 Run command again
                         return [4 /*yield*/, this.compile(Object.fromEntries(this._modulesCache))];
@@ -1514,7 +1560,7 @@ var SandpackNode = /** @class */ (function (_super) {
             codesandbox: true,
             modules: modules,
             template: setup.template,
-            type: "compile"
+            type: "compile",
         });
         /**
          * Add modules to cache, this will ensure uniqueness changes

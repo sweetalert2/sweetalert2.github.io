@@ -1,4 +1,4 @@
-import { e as createError, i as invariant } from './Sandpack-19a8bcad.js';
+import { e as createError, i as invariant } from './Sandpack-YALZoZxe.js';
 
 var EventEmitter = /** @class */ (function () {
     function EventEmitter() {
@@ -156,7 +156,7 @@ function tokenize(input) {
                 tokens.push(parseString());
                 break;
             default:
-                throw new Error("Unknown character: " + currentChar);
+                throw new Error("Unknown character: ".concat(currentChar));
         }
     }
     return tokens;
@@ -167,7 +167,7 @@ function generateRandomId() {
     var now = Date.now();
     var randomNumber = Math.round(Math.random() * 10000);
     var count = (counter += 1);
-    return (+("" + now + randomNumber + count)).toString(16);
+    return (+"".concat(now).concat(randomNumber).concat(count)).toString(16);
 }
 var writeBuffer = function (content) {
     if (typeof content === "string") {

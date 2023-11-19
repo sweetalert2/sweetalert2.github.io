@@ -1,4 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-94ff39db.js';
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-4dgXhobZ.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     // @ts-expect-error true will be replaced with boolean later
@@ -315,7 +315,7 @@ function __spreadArray$1(to, from, pack) {
 }
 
 var createError = function (message) {
-    return "[sandpack-client]: " + message;
+    return "[sandpack-client]: ".concat(message);
 };
 function nullthrows(value, err) {
     if (err === void 0) { err = "Value is nullish"; }
@@ -332,7 +332,7 @@ function createPackageJSON(dependencies, devDependencies, entry) {
         name: "sandpack-project",
         main: entry,
         dependencies: dependencies,
-        devDependencies: devDependencies
+        devDependencies: devDependencies,
     }, null, 2);
 }
 function addPackageJSONIfNeeded(files, dependencies, devDependencies, entry) {
@@ -346,7 +346,7 @@ function addPackageJSONIfNeeded(files, dependencies, devDependencies, entry) {
         nullthrows(dependencies, DEPENDENCY_ERROR_MESSAGE);
         nullthrows(entry, ENTRY_ERROR_MESSAGE);
         normalizedFilesPath["/package.json"] = {
-            code: createPackageJSON(dependencies, devDependencies, entry)
+            code: createPackageJSON(dependencies, devDependencies, entry),
         };
         return normalizedFilesPath;
     }
@@ -366,7 +366,7 @@ function addPackageJSONIfNeeded(files, dependencies, devDependencies, entry) {
             packageJsonContent.main = entry;
         }
         normalizedFilesPath["/package.json"] = {
-            code: JSON.stringify(packageJsonContent, null, 2)
+            code: JSON.stringify(packageJsonContent, null, 2),
         };
     }
     return normalizedFilesPath;
@@ -389,7 +389,7 @@ function extractErrorDetails(msg) {
         title: msg.title,
         path: relevantStackFrame._originalFileName,
         line: relevantStackFrame._originalLineNumber,
-        column: relevantStackFrame._originalColumnNumber
+        column: relevantStackFrame._originalColumnNumber,
     };
 }
 function getRelevantStackFrame(frames) {
@@ -400,7 +400,7 @@ function getRelevantStackFrame(frames) {
 }
 function getErrorLocation(errorFrame) {
     return errorFrame
-        ? " (" + errorFrame._originalLineNumber + ":" + errorFrame._originalColumnNumber + ")"
+        ? " (".concat(errorFrame._originalLineNumber, ":").concat(errorFrame._originalColumnNumber, ")")
         : "";
 }
 function getErrorInOriginalCode(errorFrame) {
@@ -415,8 +415,8 @@ function getErrorInOriginalCode(errorFrame) {
     return errorFrame._originalScriptCode.reduce(function (result, scriptLine) {
         var leadingChar = scriptLine.highlight ? ">" : " ";
         var lineNumber = scriptLine.lineNumber.toString().length === numberOfLineNumberCharacters
-            ? "" + scriptLine.lineNumber
-            : " " + scriptLine.lineNumber;
+            ? "".concat(scriptLine.lineNumber)
+            : " ".concat(scriptLine.lineNumber);
         var extraLine = scriptLine.highlight
             ? "\n" + " ".repeat(extraLineLeadingSpaces) + "^"
             : "";
@@ -432,20 +432,20 @@ function getErrorInOriginalCode(errorFrame) {
     }, "");
 }
 function formatErrorMessage(filePath, message, location, errorInCode) {
-    return filePath + ": " + message + location + "\n" + errorInCode;
+    return "".concat(filePath, ": ").concat(message).concat(location, "\n").concat(errorInCode);
 }
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var normalizePath = function (path) {
     if (typeof path === "string") {
-        return (path.startsWith("/") ? path : "/" + path);
+        return (path.startsWith("/") ? path : "/".concat(path));
     }
     if (Array.isArray(path)) {
-        return path.map(function (p) { return (p.startsWith("/") ? p : "/" + p); });
+        return path.map(function (p) { return (p.startsWith("/") ? p : "/".concat(p)); });
     }
     if (typeof path === "object" && path !== null) {
         return Object.entries(path).reduce(function (acc, _a) {
             var key = _a[0], content = _a[1];
-            var fileName = key.startsWith("/") ? key : "/" + key;
+            var fileName = key.startsWith("/") ? key : "/".concat(key);
             acc[fileName] = content;
             return acc;
         }, {});
@@ -477,15 +477,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-e4043535.js'),true?["assets/index-e4043535.js","assets/base-80a1f760-1d76d265.js","assets/consoleHook-7a68abbd-1b087bb9.js","assets/index-94ff39db.js","assets/index-6712022a.css"]:void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-vYY7u_VO.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-fc68d414-8bb73cc1.js'),true?["assets/index-fc68d414-8bb73cc1.js","assets/consoleHook-7a68abbd-1b087bb9.js","assets/base-80a1f760-1d76d265.js","assets/index-94ff39db.js","assets/index-6712022a.css"]:void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-ec7d9378-egQXODfr.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-f0d622cd.js'),true?["assets/index-f0d622cd.js","assets/base-80a1f760-1d76d265.js","assets/index-94ff39db.js","assets/index-6712022a.css"]:void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-4xg5CMc4.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -14420,8 +14420,6 @@ class BufferNode extends BaseNode {
 function iterStack(heads) {
     if (!heads.length)
         return null;
-    if (heads.length == 1)
-        return heads[0];
     let pick = 0, picked = heads[0];
     for (let i = 1; i < heads.length; i++) {
         let node = heads[i];
@@ -14457,7 +14455,7 @@ function stackIterator(tree, pos, side) {
             let mount = MountedTree.get(scan.tree);
             // Relevant overlay branching off
             if (mount && mount.overlay && mount.overlay[0].from <= pos && mount.overlay[mount.overlay.length - 1].to >= pos) {
-                let root = new TreeNode(mount.tree, mount.overlay[0].from + scan.from, 0, null);
+                let root = new TreeNode(mount.tree, mount.overlay[0].from + scan.from, -1, scan);
                 (layers || (layers = [inner])).push(resolveNode(root, pos, side, false));
             }
         }
@@ -14521,6 +14519,9 @@ class TreeCursor {
         this.to = start + buffer.buffer[index + 2];
         return true;
     }
+    /**
+    @internal
+    */
     yield(node) {
         if (!node)
             return false;
@@ -14786,7 +14787,7 @@ function buildTree(data) {
     let cursor = Array.isArray(buffer) ? new FlatBufferCursor(buffer, buffer.length) : buffer;
     let types = nodeSet.types;
     let contextHash = 0, lookAhead = 0;
-    function takeNode(parentStart, minPos, children, positions, inRepeat) {
+    function takeNode(parentStart, minPos, children, positions, inRepeat, depth) {
         let { id, start, end, size } = cursor;
         let lookAheadAtStart = lookAhead;
         while (size < 0) {
@@ -14835,8 +14836,11 @@ function buildTree(data) {
                     }
                     cursor.next();
                 }
+                else if (depth > 2500 /* CutOff.Depth */) {
+                    takeFlatNode(start, endPos, localChildren, localPositions);
+                }
                 else {
-                    takeNode(start, endPos, localChildren, localPositions, localInRepeat);
+                    takeNode(start, endPos, localChildren, localPositions, localInRepeat, depth + 1);
                 }
             }
             if (localInRepeat >= 0 && lastGroup > 0 && lastGroup < localChildren.length)
@@ -14853,6 +14857,38 @@ function buildTree(data) {
         }
         children.push(node);
         positions.push(startPos);
+    }
+    function takeFlatNode(parentStart, minPos, children, positions) {
+        let nodes = []; // Temporary, inverted array of leaf nodes found, with absolute positions
+        let nodeCount = 0, stopAt = -1;
+        while (cursor.pos > minPos) {
+            let { id, start, end, size } = cursor;
+            if (size > 4) { // Not a leaf
+                cursor.next();
+            }
+            else if (stopAt > -1 && start < stopAt) {
+                break;
+            }
+            else {
+                if (stopAt < 0)
+                    stopAt = end - maxBufferLength;
+                nodes.push(id, start, end);
+                nodeCount++;
+                cursor.next();
+            }
+        }
+        if (nodeCount) {
+            let buffer = new Uint16Array(nodeCount * 4);
+            let start = nodes[nodes.length - 2];
+            for (let i = nodes.length - 3, j = 0; i >= 0; i -= 3) {
+                buffer[j++] = nodes[i];
+                buffer[j++] = nodes[i + 1] - start;
+                buffer[j++] = nodes[i + 2] - start;
+                buffer[j++] = j;
+            }
+            children.push(new TreeBuffer(buffer, nodes[2] - start, nodeSet));
+            positions.push(start - parentStart);
+        }
     }
     function makeBalanced(type) {
         return (children, positions, length) => {
@@ -14964,7 +15000,7 @@ function buildTree(data) {
     }
     let children = [], positions = [];
     while (cursor.pos > 0)
-        takeNode(data.start || 0, data.bufferStart || 0, children, positions, -1);
+        takeNode(data.start || 0, data.bufferStart || 0, children, positions, -1, 0);
     let length = (_a = data.length) !== null && _a !== void 0 ? _a : (children.length ? positions[0] + children[0].length : 0);
     return new Tree(types[data.topID], children.reverse(), positions.reverse(), length);
 }
@@ -15245,15 +15281,17 @@ function parseMixed(nest) {
     return (parse, input, fragments, ranges) => new MixedParse(parse, nest, input, fragments, ranges);
 }
 class InnerParse {
-    constructor(parser, parse, overlay, target, ranges) {
+    constructor(parser, parse, overlay, target, from) {
         this.parser = parser;
         this.parse = parse;
         this.overlay = overlay;
         this.target = target;
-        this.ranges = ranges;
-        if (!ranges.length || ranges.some(r => r.from >= r.to))
-            throw new RangeError("Invalid inner parse ranges given: " + JSON.stringify(ranges));
+        this.from = from;
     }
+}
+function checkRanges(ranges) {
+    if (!ranges.length || ranges.some(r => r.from >= r.to))
+        throw new RangeError("Invalid inner parse ranges given: " + JSON.stringify(ranges));
 }
 class ActiveOverlay {
     constructor(parser, predicate, mounts, index, start, target, prev) {
@@ -15317,7 +15355,7 @@ class MixedParse {
             return 0;
         let pos = this.input.length;
         for (let i = this.innerDone; i < this.inner.length; i++) {
-            if (this.inner[i].ranges[0].from < pos)
+            if (this.inner[i].from < pos)
                 pos = Math.min(pos, this.inner[i].parse.parsedPos);
         }
         return pos;
@@ -15335,9 +15373,12 @@ class MixedParse {
         let overlay = null;
         let covered = null;
         let cursor = new TreeCursor(new TreeNode(this.baseTree, this.ranges[0].from, 0, null), IterMode.IncludeAnonymous | IterMode.IgnoreMounts);
-        scan: for (let nest, isCovered; this.stoppedAt == null || cursor.from < this.stoppedAt;) {
+        scan: for (let nest, isCovered;;) {
             let enter = true, range;
-            if (fragmentCursor.hasNode(cursor)) {
+            if (this.stoppedAt != null && cursor.from >= this.stoppedAt) {
+                enter = false;
+            }
+            else if (fragmentCursor.hasNode(cursor)) {
                 if (overlay) {
                     let match = overlay.mounts.find(m => m.frag.from <= cursor.from && m.frag.to >= cursor.to && m.mount.overlay);
                     if (match)
@@ -15352,7 +15393,8 @@ class MixedParse {
             else if (covered && (isCovered = checkCover(covered.ranges, cursor.from, cursor.to))) {
                 enter = isCovered != 2 /* Cover.Full */;
             }
-            else if (!cursor.type.isAnonymous && cursor.from < cursor.to && (nest = this.nest(cursor, this.input))) {
+            else if (!cursor.type.isAnonymous && (nest = this.nest(cursor, this.input)) &&
+                (cursor.from < cursor.to || !nest.overlay)) {
                 if (!cursor.tree)
                     materialize(cursor);
                 let oldMounts = fragmentCursor.findMounts(cursor.from, nest.parser);
@@ -15360,9 +15402,13 @@ class MixedParse {
                     overlay = new ActiveOverlay(nest.parser, nest.overlay, oldMounts, this.inner.length, cursor.from, cursor.tree, overlay);
                 }
                 else {
-                    let ranges = punchRanges(this.ranges, nest.overlay || [new Range(cursor.from, cursor.to)]);
+                    let ranges = punchRanges(this.ranges, nest.overlay ||
+                        (cursor.from < cursor.to ? [new Range(cursor.from, cursor.to)] : []));
                     if (ranges.length)
-                        this.inner.push(new InnerParse(nest.parser, nest.parser.startParse(this.input, enterFragments(oldMounts, ranges), ranges), nest.overlay ? nest.overlay.map(r => new Range(r.from - cursor.from, r.to - cursor.from)) : null, cursor.tree, ranges));
+                        checkRanges(ranges);
+                    if (ranges.length || !nest.overlay)
+                        this.inner.push(new InnerParse(nest.parser, ranges.length ? nest.parser.startParse(this.input, enterFragments(oldMounts, ranges), ranges)
+                            : nest.parser.startParse(""), nest.overlay ? nest.overlay.map(r => new Range(r.from - cursor.from, r.to - cursor.from)) : null, cursor.tree, ranges.length ? ranges[0].from : cursor.from));
                     if (!nest.overlay)
                         enter = false;
                     else if (ranges.length)
@@ -15389,8 +15435,10 @@ class MixedParse {
                         break scan;
                     if (overlay && !--overlay.depth) {
                         let ranges = punchRanges(this.ranges, overlay.ranges);
-                        if (ranges.length)
-                            this.inner.splice(overlay.index, 0, new InnerParse(overlay.parser, overlay.parser.startParse(this.input, enterFragments(overlay.mounts, ranges), ranges), overlay.ranges.map(r => new Range(r.from - overlay.start, r.to - overlay.start)), overlay.target, ranges));
+                        if (ranges.length) {
+                            checkRanges(ranges);
+                            this.inner.splice(overlay.index, 0, new InnerParse(overlay.parser, overlay.parser.startParse(this.input, enterFragments(overlay.mounts, ranges), ranges), overlay.ranges.map(r => new Range(r.from - overlay.start, r.to - overlay.start)), overlay.target, ranges[0].from));
+                        }
                         overlay = overlay.prev;
                     }
                     if (covered && !--covered.depth)
@@ -15424,11 +15472,11 @@ function sliceBuf(buf, startI, endI, nodes, positions, off) {
 // parse that was ran via the mix parser, and thus aren't shared with
 // any other code, making violations of the immutability safe.
 function materialize(cursor) {
-    let { node } = cursor, depth = 0;
+    let { node } = cursor, stack = [];
     // Scan up to the nearest tree
     do {
+        stack.push(cursor.index);
         cursor.parent();
-        depth++;
     } while (!cursor.tree);
     // Find the index of the buffer in that tree
     let i = 0, base = cursor.tree, off = 0;
@@ -15437,26 +15485,29 @@ function materialize(cursor) {
         if (off <= node.from && off + base.children[i].length >= node.to)
             break;
     }
-    let buf = base.children[i], b = buf.buffer;
+    let buf = base.children[i], b = buf.buffer, newStack = [i];
     // Split a level in the buffer, putting the nodes before and after
     // the child that contains `node` into new buffers.
-    function split(startI, endI, type, innerOffset, length) {
-        let i = startI;
-        while (b[i + 2] + off <= node.from)
-            i = b[i + 3];
+    function split(startI, endI, type, innerOffset, length, stackPos) {
+        let targetI = stack[stackPos];
         let children = [], positions = [];
-        sliceBuf(buf, startI, i, children, positions, innerOffset);
-        let from = b[i + 1], to = b[i + 2];
-        let isTarget = from + off == node.from && to + off == node.to && b[i] == node.type.id;
-        children.push(isTarget ? node.toTree() : split(i + 4, b[i + 3], buf.set.types[b[i]], from, to - from));
+        sliceBuf(buf, startI, targetI, children, positions, innerOffset);
+        let from = b[targetI + 1], to = b[targetI + 2];
+        newStack.push(children.length);
+        let child = stackPos
+            ? split(targetI + 4, b[targetI + 3], buf.set.types[b[targetI]], from, to - from, stackPos - 1)
+            : node.toTree();
+        children.push(child);
         positions.push(from - innerOffset);
-        sliceBuf(buf, b[i + 3], endI, children, positions, innerOffset);
+        sliceBuf(buf, b[targetI + 3], endI, children, positions, innerOffset);
         return new Tree(type, children, positions, length);
     }
-    base.children[i] = split(0, b.length, NodeType.none, 0, buf.length);
+    base.children[i] = split(0, b.length, NodeType.none, 0, buf.length, stack.length - 1);
     // Move the cursor back to the target node
-    for (let d = 0; d <= depth; d++)
-        cursor.childAfter(node.from);
+    for (let index of newStack) {
+        let tree = cursor.tree.children[index], pos = cursor.tree.positions[index];
+        cursor.yield(new TreeNode(tree, pos + cursor.from, index, cursor._tree));
+    }
 }
 class StructureCursor {
     constructor(root, offset) {
@@ -15811,10 +15862,10 @@ function styleTags(spec) {
             tags = [tags];
         for (let part of prop.split(" "))
             if (part) {
-                let pieces = [], mode = 2 /* Normal */, rest = part;
+                let pieces = [], mode = 2 /* Mode.Normal */, rest = part;
                 for (let pos = 0;;) {
                     if (rest == "..." && pos > 0 && pos + 3 == part.length) {
-                        mode = 1 /* Inherit */;
+                        mode = 1 /* Mode.Inherit */;
                         break;
                     }
                     let m = /^"(?:[^"\\]|\\.)*?"|[^\/!]+/.exec(rest);
@@ -15826,7 +15877,7 @@ function styleTags(spec) {
                         break;
                     let next = part[pos++];
                     if (pos == part.length && next == "!") {
-                        mode = 0 /* Opaque */;
+                        mode = 0 /* Mode.Opaque */;
                         break;
                     }
                     if (next != "/")
@@ -15850,8 +15901,8 @@ class Rule {
         this.context = context;
         this.next = next;
     }
-    get opaque() { return this.mode == 0 /* Opaque */; }
-    get inherit() { return this.mode == 1 /* Inherit */; }
+    get opaque() { return this.mode == 0 /* Mode.Opaque */; }
+    get inherit() { return this.mode == 1 /* Mode.Inherit */; }
     sort(other) {
         if (!other || other.depth < this.depth) {
             this.next = other;
@@ -15862,7 +15913,7 @@ class Rule {
     }
     get depth() { return this.context ? this.context.length : 0; }
 }
-Rule.empty = new Rule([], 2 /* Normal */, null);
+Rule.empty = new Rule([], 2 /* Mode.Normal */, null);
 /**
 Define a [highlighter](#highlight.Highlighter) from an array of
 tag/class pairs. Classes associated with more specific tags will
@@ -15906,7 +15957,9 @@ function highlightTags(highlighters, tags) {
 }
 /**
 Highlight the given [tree](#common.Tree) with the given
-[highlighter](#highlight.Highlighter).
+[highlighter](#highlight.Highlighter). Often, the higher-level
+[`highlightCode`](#highlight.highlightCode) function is easier to
+use.
 */
 function highlightTree(tree, highlighter, 
 /**
@@ -15959,7 +16012,7 @@ class HighlightBuilder {
             if (cls)
                 cls += " ";
             cls += tagCls;
-            if (rule.mode == 1 /* Inherit */)
+            if (rule.mode == 1 /* Mode.Inherit */)
                 inheritedClass += (inheritedClass ? " " : "") + tagCls;
         }
         this.startSpan(Math.max(from, start), cls);
@@ -18274,10 +18327,8 @@ const bracketState = /*@__PURE__*/StateField.define({
     create() { return RangeSet.empty; },
     update(value, tr) {
         if (tr.selection) {
-            let lineStart = tr.state.doc.lineAt(tr.selection.main.head).from;
-            let prevLineStart = tr.startState.doc.lineAt(tr.startState.selection.main.head).from;
-            if (lineStart != tr.changes.mapPos(prevLineStart, -1))
-                value = RangeSet.empty;
+            let line = tr.state.doc.lineAt(tr.selection.main.head);
+            value = value.update({ filter: from => from >= line.from && from <= line.to });
         }
         value = value.map(tr.changes);
         for (let effect of tr.effects)
@@ -21006,1865 +21057,1747 @@ function getIntersectionObserver(options) {
   return !base[key] ? base[key] = createIntersectionObserver(options) : base[key];
 }
 
-/**
-A parse stack. These are used internally by the parser to track
-parsing progress. They also provide some properties and methods
-that external code such as a tokenizer can use to get information
-about the parse state.
-*/
+var define_process_env_default = {};
 class Stack {
-    /**
-    @internal
-    */
-    constructor(
-    /**
-    The parse that this stack is part of @internal
-    */
-    p, 
-    /**
-    Holds state, input pos, buffer index triplets for all but the
-    top state @internal
-    */
-    stack, 
-    /**
-    The current parse state @internal
-    */
-    state, 
-    // The position at which the next reduce should take place. This
-    // can be less than `this.pos` when skipped expressions have been
-    // added to the stack (which should be moved outside of the next
-    // reduction)
-    /**
-    @internal
-    */
-    reducePos, 
-    /**
-    The input position up to which this stack has parsed.
-    */
-    pos, 
-    /**
-    The dynamic score of the stack, including dynamic precedence
-    and error-recovery penalties
-    @internal
-    */
-    score, 
-    // The output buffer. Holds (type, start, end, size) quads
-    // representing nodes created by the parser, where `size` is
-    // amount of buffer array entries covered by this node.
-    /**
-    @internal
-    */
-    buffer, 
-    // The base offset of the buffer. When stacks are split, the split
-    // instance shared the buffer history with its parent up to
-    // `bufferBase`, which is the absolute offset (including the
-    // offset of previous splits) into the buffer at which this stack
-    // starts writing.
-    /**
-    @internal
-    */
-    bufferBase, 
-    /**
-    @internal
-    */
-    curContext, 
-    /**
-    @internal
-    */
-    lookAhead = 0, 
-    // A parent stack from which this was split off, if any. This is
-    // set up so that it always points to a stack that has some
-    // additional buffer content, never to a stack with an equal
-    // `bufferBase`.
-    /**
-    @internal
-    */
-    parent) {
-        this.p = p;
-        this.stack = stack;
-        this.state = state;
-        this.reducePos = reducePos;
-        this.pos = pos;
-        this.score = score;
-        this.buffer = buffer;
-        this.bufferBase = bufferBase;
-        this.curContext = curContext;
-        this.lookAhead = lookAhead;
-        this.parent = parent;
+  /**
+  @internal
+  */
+  constructor(p, stack, state, reducePos, pos, score, buffer, bufferBase, curContext, lookAhead = 0, parent) {
+    this.p = p;
+    this.stack = stack;
+    this.state = state;
+    this.reducePos = reducePos;
+    this.pos = pos;
+    this.score = score;
+    this.buffer = buffer;
+    this.bufferBase = bufferBase;
+    this.curContext = curContext;
+    this.lookAhead = lookAhead;
+    this.parent = parent;
+  }
+  /**
+  @internal
+  */
+  toString() {
+    return `[${this.stack.filter((_, i) => i % 3 == 0).concat(this.state)}]@${this.pos}${this.score ? "!" + this.score : ""}`;
+  }
+  // Start an empty stack
+  /**
+  @internal
+  */
+  static start(p, state, pos = 0) {
+    let cx = p.parser.context;
+    return new Stack(p, [], state, pos, pos, 0, [], 0, cx ? new StackContext(cx, cx.start) : null, 0, null);
+  }
+  /**
+  The stack's current [context](#lr.ContextTracker) value, if
+  any. Its type will depend on the context tracker's type
+  parameter, or it will be `null` if there is no context
+  tracker.
+  */
+  get context() {
+    return this.curContext ? this.curContext.context : null;
+  }
+  // Push a state onto the stack, tracking its start position as well
+  // as the buffer base at that point.
+  /**
+  @internal
+  */
+  pushState(state, start) {
+    this.stack.push(this.state, start, this.bufferBase + this.buffer.length);
+    this.state = state;
+  }
+  // Apply a reduce action
+  /**
+  @internal
+  */
+  reduce(action) {
+    var _a;
+    let depth = action >> 19, type = action & 65535;
+    let { parser } = this.p;
+    let dPrec = parser.dynamicPrecedence(type);
+    if (dPrec)
+      this.score += dPrec;
+    if (depth == 0) {
+      this.pushState(parser.getGoto(this.state, type, true), this.reducePos);
+      if (type < parser.minRepeatTerm)
+        this.storeNode(type, this.reducePos, this.reducePos, 4, true);
+      this.reduceContext(type, this.reducePos);
+      return;
     }
-    /**
-    @internal
-    */
-    toString() {
-        return `[${this.stack.filter((_, i) => i % 3 == 0).concat(this.state)}]@${this.pos}${this.score ? "!" + this.score : ""}`;
+    let base = this.stack.length - (depth - 1) * 3 - (action & 262144 ? 6 : 0);
+    let start = base ? this.stack[base - 2] : this.p.ranges[0].from, size = this.reducePos - start;
+    if (size >= 2e3 && !((_a = this.p.parser.nodeSet.types[type]) === null || _a === void 0 ? void 0 : _a.isAnonymous)) {
+      if (start == this.p.lastBigReductionStart) {
+        this.p.bigReductionCount++;
+        this.p.lastBigReductionSize = size;
+      } else if (this.p.lastBigReductionSize < size) {
+        this.p.bigReductionCount = 1;
+        this.p.lastBigReductionStart = start;
+        this.p.lastBigReductionSize = size;
+      }
     }
-    // Start an empty stack
-    /**
-    @internal
-    */
-    static start(p, state, pos = 0) {
-        let cx = p.parser.context;
-        return new Stack(p, [], state, pos, pos, 0, [], 0, cx ? new StackContext(cx, cx.start) : null, 0, null);
+    let bufferBase = base ? this.stack[base - 1] : 0, count = this.bufferBase + this.buffer.length - bufferBase;
+    if (type < parser.minRepeatTerm || action & 131072) {
+      let pos = parser.stateFlag(
+        this.state,
+        1
+        /* StateFlag.Skipped */
+      ) ? this.pos : this.reducePos;
+      this.storeNode(type, start, pos, count + 4, true);
     }
-    /**
-    The stack's current [context](#lr.ContextTracker) value, if
-    any. Its type will depend on the context tracker's type
-    parameter, or it will be `null` if there is no context
-    tracker.
-    */
-    get context() { return this.curContext ? this.curContext.context : null; }
-    // Push a state onto the stack, tracking its start position as well
-    // as the buffer base at that point.
-    /**
-    @internal
-    */
-    pushState(state, start) {
-        this.stack.push(this.state, start, this.bufferBase + this.buffer.length);
-        this.state = state;
+    if (action & 262144) {
+      this.state = this.stack[base];
+    } else {
+      let baseStateID = this.stack[base - 3];
+      this.state = parser.getGoto(baseStateID, type, true);
     }
-    // Apply a reduce action
-    /**
-    @internal
-    */
-    reduce(action) {
-        var _a;
-        let depth = action >> 19 /* Action.ReduceDepthShift */, type = action & 65535 /* Action.ValueMask */;
-        let { parser } = this.p;
-        let dPrec = parser.dynamicPrecedence(type);
-        if (dPrec)
-            this.score += dPrec;
-        if (depth == 0) {
-            this.pushState(parser.getGoto(this.state, type, true), this.reducePos);
-            // Zero-depth reductions are a special case—they add stuff to
-            // the stack without popping anything off.
-            if (type < parser.minRepeatTerm)
-                this.storeNode(type, this.reducePos, this.reducePos, 4, true);
-            this.reduceContext(type, this.reducePos);
-            return;
+    while (this.stack.length > base)
+      this.stack.pop();
+    this.reduceContext(type, start);
+  }
+  // Shift a value into the buffer
+  /**
+  @internal
+  */
+  storeNode(term, start, end, size = 4, isReduce = false) {
+    if (term == 0 && (!this.stack.length || this.stack[this.stack.length - 1] < this.buffer.length + this.bufferBase)) {
+      let cur = this, top = this.buffer.length;
+      if (top == 0 && cur.parent) {
+        top = cur.bufferBase - cur.parent.bufferBase;
+        cur = cur.parent;
+      }
+      if (top > 0 && cur.buffer[top - 4] == 0 && cur.buffer[top - 1] > -1) {
+        if (start == end)
+          return;
+        if (cur.buffer[top - 2] >= start) {
+          cur.buffer[top - 2] = end;
+          return;
         }
-        // Find the base index into `this.stack`, content after which will
-        // be dropped. Note that with `StayFlag` reductions we need to
-        // consume two extra frames (the dummy parent node for the skipped
-        // expression and the state that we'll be staying in, which should
-        // be moved to `this.state`).
-        let base = this.stack.length - ((depth - 1) * 3) - (action & 262144 /* Action.StayFlag */ ? 6 : 0);
-        let start = base ? this.stack[base - 2] : this.p.ranges[0].from, size = this.reducePos - start;
-        // This is a kludge to try and detect overly deep left-associative
-        // trees, which will not increase the parse stack depth and thus
-        // won't be caught by the regular stack-depth limit check.
-        if (size >= 2000 /* Recover.MinBigReduction */ && !((_a = this.p.parser.nodeSet.types[type]) === null || _a === void 0 ? void 0 : _a.isAnonymous)) {
-            if (start == this.p.lastBigReductionStart) {
-                this.p.bigReductionCount++;
-                this.p.lastBigReductionSize = size;
-            }
-            else if (this.p.lastBigReductionSize < size) {
-                this.p.bigReductionCount = 1;
-                this.p.lastBigReductionStart = start;
-                this.p.lastBigReductionSize = size;
-            }
-        }
-        let bufferBase = base ? this.stack[base - 1] : 0, count = this.bufferBase + this.buffer.length - bufferBase;
-        // Store normal terms or `R -> R R` repeat reductions
-        if (type < parser.minRepeatTerm || (action & 131072 /* Action.RepeatFlag */)) {
-            let pos = parser.stateFlag(this.state, 1 /* StateFlag.Skipped */) ? this.pos : this.reducePos;
-            this.storeNode(type, start, pos, count + 4, true);
-        }
-        if (action & 262144 /* Action.StayFlag */) {
-            this.state = this.stack[base];
-        }
-        else {
-            let baseStateID = this.stack[base - 3];
-            this.state = parser.getGoto(baseStateID, type, true);
-        }
-        while (this.stack.length > base)
-            this.stack.pop();
-        this.reduceContext(type, start);
+      }
     }
-    // Shift a value into the buffer
-    /**
-    @internal
-    */
-    storeNode(term, start, end, size = 4, isReduce = false) {
-        if (term == 0 /* Term.Err */ &&
-            (!this.stack.length || this.stack[this.stack.length - 1] < this.buffer.length + this.bufferBase)) {
-            // Try to omit/merge adjacent error nodes
-            let cur = this, top = this.buffer.length;
-            if (top == 0 && cur.parent) {
-                top = cur.bufferBase - cur.parent.bufferBase;
-                cur = cur.parent;
-            }
-            if (top > 0 && cur.buffer[top - 4] == 0 /* Term.Err */ && cur.buffer[top - 1] > -1) {
-                if (start == end)
-                    return;
-                if (cur.buffer[top - 2] >= start) {
-                    cur.buffer[top - 2] = end;
-                    return;
-                }
-            }
+    if (!isReduce || this.pos == end) {
+      this.buffer.push(term, start, end, size);
+    } else {
+      let index = this.buffer.length;
+      if (index > 0 && this.buffer[index - 4] != 0)
+        while (index > 0 && this.buffer[index - 2] > end) {
+          this.buffer[index] = this.buffer[index - 4];
+          this.buffer[index + 1] = this.buffer[index - 3];
+          this.buffer[index + 2] = this.buffer[index - 2];
+          this.buffer[index + 3] = this.buffer[index - 1];
+          index -= 4;
+          if (size > 4)
+            size -= 4;
         }
-        if (!isReduce || this.pos == end) { // Simple case, just append
-            this.buffer.push(term, start, end, size);
-        }
-        else { // There may be skipped nodes that have to be moved forward
-            let index = this.buffer.length;
-            if (index > 0 && this.buffer[index - 4] != 0 /* Term.Err */)
-                while (index > 0 && this.buffer[index - 2] > end) {
-                    // Move this record forward
-                    this.buffer[index] = this.buffer[index - 4];
-                    this.buffer[index + 1] = this.buffer[index - 3];
-                    this.buffer[index + 2] = this.buffer[index - 2];
-                    this.buffer[index + 3] = this.buffer[index - 1];
-                    index -= 4;
-                    if (size > 4)
-                        size -= 4;
-                }
-            this.buffer[index] = term;
-            this.buffer[index + 1] = start;
-            this.buffer[index + 2] = end;
-            this.buffer[index + 3] = size;
-        }
+      this.buffer[index] = term;
+      this.buffer[index + 1] = start;
+      this.buffer[index + 2] = end;
+      this.buffer[index + 3] = size;
     }
-    // Apply a shift action
-    /**
-    @internal
-    */
-    shift(action, type, start, end) {
-        if (action & 131072 /* Action.GotoFlag */) {
-            this.pushState(action & 65535 /* Action.ValueMask */, this.pos);
-        }
-        else if ((action & 262144 /* Action.StayFlag */) == 0) { // Regular shift
-            let nextState = action, { parser } = this.p;
-            if (end > this.pos || type <= parser.maxNode) {
-                this.pos = end;
-                if (!parser.stateFlag(nextState, 1 /* StateFlag.Skipped */))
-                    this.reducePos = end;
-            }
-            this.pushState(nextState, start);
-            this.shiftContext(type, start);
-            if (type <= parser.maxNode)
-                this.buffer.push(type, start, end, 4);
-        }
-        else { // Shift-and-stay, which means this is a skipped token
-            this.pos = end;
-            this.shiftContext(type, start);
-            if (type <= this.p.parser.maxNode)
-                this.buffer.push(type, start, end, 4);
-        }
+  }
+  // Apply a shift action
+  /**
+  @internal
+  */
+  shift(action, type, start, end) {
+    if (action & 131072) {
+      this.pushState(action & 65535, this.pos);
+    } else if ((action & 262144) == 0) {
+      let nextState = action, { parser } = this.p;
+      if (end > this.pos || type <= parser.maxNode) {
+        this.pos = end;
+        if (!parser.stateFlag(
+          nextState,
+          1
+          /* StateFlag.Skipped */
+        ))
+          this.reducePos = end;
+      }
+      this.pushState(nextState, start);
+      this.shiftContext(type, start);
+      if (type <= parser.maxNode)
+        this.buffer.push(type, start, end, 4);
+    } else {
+      this.pos = end;
+      this.shiftContext(type, start);
+      if (type <= this.p.parser.maxNode)
+        this.buffer.push(type, start, end, 4);
     }
-    // Apply an action
-    /**
-    @internal
-    */
-    apply(action, next, nextStart, nextEnd) {
-        if (action & 65536 /* Action.ReduceFlag */)
-            this.reduce(action);
-        else
-            this.shift(action, next, nextStart, nextEnd);
+  }
+  // Apply an action
+  /**
+  @internal
+  */
+  apply(action, next, nextStart, nextEnd) {
+    if (action & 65536)
+      this.reduce(action);
+    else
+      this.shift(action, next, nextStart, nextEnd);
+  }
+  // Add a prebuilt (reused) node into the buffer.
+  /**
+  @internal
+  */
+  useNode(value, next) {
+    let index = this.p.reused.length - 1;
+    if (index < 0 || this.p.reused[index] != value) {
+      this.p.reused.push(value);
+      index++;
     }
-    // Add a prebuilt (reused) node into the buffer.
-    /**
-    @internal
-    */
-    useNode(value, next) {
-        let index = this.p.reused.length - 1;
-        if (index < 0 || this.p.reused[index] != value) {
-            this.p.reused.push(value);
-            index++;
-        }
-        let start = this.pos;
-        this.reducePos = this.pos = start + value.length;
-        this.pushState(next, start);
-        this.buffer.push(index, start, this.reducePos, -1 /* size == -1 means this is a reused value */);
-        if (this.curContext)
-            this.updateContext(this.curContext.tracker.reuse(this.curContext.context, value, this, this.p.stream.reset(this.pos - value.length)));
-    }
-    // Split the stack. Due to the buffer sharing and the fact
-    // that `this.stack` tends to stay quite shallow, this isn't very
-    // expensive.
-    /**
-    @internal
-    */
-    split() {
-        let parent = this;
-        let off = parent.buffer.length;
-        // Because the top of the buffer (after this.pos) may be mutated
-        // to reorder reductions and skipped tokens, and shared buffers
-        // should be immutable, this copies any outstanding skipped tokens
-        // to the new buffer, and puts the base pointer before them.
-        while (off > 0 && parent.buffer[off - 2] > parent.reducePos)
-            off -= 4;
-        let buffer = parent.buffer.slice(off), base = parent.bufferBase + off;
-        // Make sure parent points to an actual parent with content, if there is such a parent.
-        while (parent && base == parent.bufferBase)
-            parent = parent.parent;
-        return new Stack(this.p, this.stack.slice(), this.state, this.reducePos, this.pos, this.score, buffer, base, this.curContext, this.lookAhead, parent);
-    }
-    // Try to recover from an error by 'deleting' (ignoring) one token.
-    /**
-    @internal
-    */
-    recoverByDelete(next, nextEnd) {
-        let isNode = next <= this.p.parser.maxNode;
-        if (isNode)
-            this.storeNode(next, this.pos, nextEnd, 4);
-        this.storeNode(0 /* Term.Err */, this.pos, nextEnd, isNode ? 8 : 4);
-        this.pos = this.reducePos = nextEnd;
-        this.score -= 190 /* Recover.Delete */;
-    }
-    /**
-    Check if the given term would be able to be shifted (optionally
-    after some reductions) on this stack. This can be useful for
-    external tokenizers that want to make sure they only provide a
-    given token when it applies.
-    */
-    canShift(term) {
-        for (let sim = new SimulatedStack(this);;) {
-            let action = this.p.parser.stateSlot(sim.state, 4 /* ParseState.DefaultReduce */) || this.p.parser.hasAction(sim.state, term);
-            if (action == 0)
-                return false;
-            if ((action & 65536 /* Action.ReduceFlag */) == 0)
-                return true;
-            sim.reduce(action);
-        }
-    }
-    // Apply up to Recover.MaxNext recovery actions that conceptually
-    // inserts some missing token or rule.
-    /**
-    @internal
-    */
-    recoverByInsert(next) {
-        if (this.stack.length >= 300 /* Recover.MaxInsertStackDepth */)
-            return [];
-        let nextStates = this.p.parser.nextStates(this.state);
-        if (nextStates.length > 4 /* Recover.MaxNext */ << 1 || this.stack.length >= 120 /* Recover.DampenInsertStackDepth */) {
-            let best = [];
-            for (let i = 0, s; i < nextStates.length; i += 2) {
-                if ((s = nextStates[i + 1]) != this.state && this.p.parser.hasAction(s, next))
-                    best.push(nextStates[i], s);
-            }
-            if (this.stack.length < 120 /* Recover.DampenInsertStackDepth */)
-                for (let i = 0; best.length < 4 /* Recover.MaxNext */ << 1 && i < nextStates.length; i += 2) {
-                    let s = nextStates[i + 1];
-                    if (!best.some((v, i) => (i & 1) && v == s))
-                        best.push(nextStates[i], s);
-                }
-            nextStates = best;
-        }
-        let result = [];
-        for (let i = 0; i < nextStates.length && result.length < 4 /* Recover.MaxNext */; i += 2) {
-            let s = nextStates[i + 1];
-            if (s == this.state)
-                continue;
-            let stack = this.split();
-            stack.pushState(s, this.pos);
-            stack.storeNode(0 /* Term.Err */, stack.pos, stack.pos, 4, true);
-            stack.shiftContext(nextStates[i], this.pos);
-            stack.reducePos = this.pos;
-            stack.score -= 200 /* Recover.Insert */;
-            result.push(stack);
-        }
-        return result;
-    }
-    // Force a reduce, if possible. Return false if that can't
-    // be done.
-    /**
-    @internal
-    */
-    forceReduce() {
-        let { parser } = this.p;
-        let reduce = parser.stateSlot(this.state, 5 /* ParseState.ForcedReduce */);
-        if ((reduce & 65536 /* Action.ReduceFlag */) == 0)
-            return false;
-        if (!parser.validAction(this.state, reduce)) {
-            let depth = reduce >> 19 /* Action.ReduceDepthShift */, term = reduce & 65535 /* Action.ValueMask */;
-            let target = this.stack.length - depth * 3;
-            if (target < 0 || parser.getGoto(this.stack[target], term, false) < 0) {
-                let backup = this.findForcedReduction();
-                if (backup == null)
-                    return false;
-                reduce = backup;
-            }
-            this.storeNode(0 /* Term.Err */, this.pos, this.pos, 4, true);
-            this.score -= 100 /* Recover.Reduce */;
-        }
-        this.reducePos = this.pos;
-        this.reduce(reduce);
+    let start = this.pos;
+    this.reducePos = this.pos = start + value.length;
+    this.pushState(next, start);
+    this.buffer.push(
+      index,
+      start,
+      this.reducePos,
+      -1
+      /* size == -1 means this is a reused value */
+    );
+    if (this.curContext)
+      this.updateContext(this.curContext.tracker.reuse(this.curContext.context, value, this, this.p.stream.reset(this.pos - value.length)));
+  }
+  // Split the stack. Due to the buffer sharing and the fact
+  // that `this.stack` tends to stay quite shallow, this isn't very
+  // expensive.
+  /**
+  @internal
+  */
+  split() {
+    let parent = this;
+    let off = parent.buffer.length;
+    while (off > 0 && parent.buffer[off - 2] > parent.reducePos)
+      off -= 4;
+    let buffer = parent.buffer.slice(off), base = parent.bufferBase + off;
+    while (parent && base == parent.bufferBase)
+      parent = parent.parent;
+    return new Stack(this.p, this.stack.slice(), this.state, this.reducePos, this.pos, this.score, buffer, base, this.curContext, this.lookAhead, parent);
+  }
+  // Try to recover from an error by 'deleting' (ignoring) one token.
+  /**
+  @internal
+  */
+  recoverByDelete(next, nextEnd) {
+    let isNode = next <= this.p.parser.maxNode;
+    if (isNode)
+      this.storeNode(next, this.pos, nextEnd, 4);
+    this.storeNode(0, this.pos, nextEnd, isNode ? 8 : 4);
+    this.pos = this.reducePos = nextEnd;
+    this.score -= 190;
+  }
+  /**
+  Check if the given term would be able to be shifted (optionally
+  after some reductions) on this stack. This can be useful for
+  external tokenizers that want to make sure they only provide a
+  given token when it applies.
+  */
+  canShift(term) {
+    for (let sim = new SimulatedStack(this); ; ) {
+      let action = this.p.parser.stateSlot(
+        sim.state,
+        4
+        /* ParseState.DefaultReduce */
+      ) || this.p.parser.hasAction(sim.state, term);
+      if (action == 0)
+        return false;
+      if ((action & 65536) == 0)
         return true;
+      sim.reduce(action);
     }
-    /**
-    Try to scan through the automaton to find some kind of reduction
-    that can be applied. Used when the regular ForcedReduce field
-    isn't a valid action. @internal
-    */
-    findForcedReduction() {
-        let { parser } = this.p, seen = [];
-        let explore = (state, depth) => {
-            if (seen.includes(state))
-                return;
-            seen.push(state);
-            return parser.allActions(state, (action) => {
-                if (action & (262144 /* Action.StayFlag */ | 131072 /* Action.GotoFlag */)) ;
-                else if (action & 65536 /* Action.ReduceFlag */) {
-                    let rDepth = (action >> 19 /* Action.ReduceDepthShift */) - depth;
-                    if (rDepth > 1) {
-                        let term = action & 65535 /* Action.ValueMask */, target = this.stack.length - rDepth * 3;
-                        if (target >= 0 && parser.getGoto(this.stack[target], term, false) >= 0)
-                            return (rDepth << 19 /* Action.ReduceDepthShift */) | 65536 /* Action.ReduceFlag */ | term;
-                    }
-                }
-                else {
-                    let found = explore(action, depth + 1);
-                    if (found != null)
-                        return found;
-                }
-            });
-        };
-        return explore(this.state, 0);
-    }
-    /**
-    @internal
-    */
-    forceAll() {
-        while (!this.p.parser.stateFlag(this.state, 2 /* StateFlag.Accepting */)) {
-            if (!this.forceReduce()) {
-                this.storeNode(0 /* Term.Err */, this.pos, this.pos, 4, true);
-                break;
-            }
+  }
+  // Apply up to Recover.MaxNext recovery actions that conceptually
+  // inserts some missing token or rule.
+  /**
+  @internal
+  */
+  recoverByInsert(next) {
+    if (this.stack.length >= 300)
+      return [];
+    let nextStates = this.p.parser.nextStates(this.state);
+    if (nextStates.length > 4 << 1 || this.stack.length >= 120) {
+      let best = [];
+      for (let i = 0, s; i < nextStates.length; i += 2) {
+        if ((s = nextStates[i + 1]) != this.state && this.p.parser.hasAction(s, next))
+          best.push(nextStates[i], s);
+      }
+      if (this.stack.length < 120)
+        for (let i = 0; best.length < 4 << 1 && i < nextStates.length; i += 2) {
+          let s = nextStates[i + 1];
+          if (!best.some((v, i2) => i2 & 1 && v == s))
+            best.push(nextStates[i], s);
         }
-        return this;
+      nextStates = best;
     }
-    /**
-    Check whether this state has no further actions (assumed to be a direct descendant of the
-    top state, since any other states must be able to continue
-    somehow). @internal
-    */
-    get deadEnd() {
-        if (this.stack.length != 3)
-            return false;
-        let { parser } = this.p;
-        return parser.data[parser.stateSlot(this.state, 1 /* ParseState.Actions */)] == 65535 /* Seq.End */ &&
-            !parser.stateSlot(this.state, 4 /* ParseState.DefaultReduce */);
+    let result = [];
+    for (let i = 0; i < nextStates.length && result.length < 4; i += 2) {
+      let s = nextStates[i + 1];
+      if (s == this.state)
+        continue;
+      let stack = this.split();
+      stack.pushState(s, this.pos);
+      stack.storeNode(0, stack.pos, stack.pos, 4, true);
+      stack.shiftContext(nextStates[i], this.pos);
+      stack.reducePos = this.pos;
+      stack.score -= 200;
+      result.push(stack);
     }
-    /**
-    Restart the stack (put it back in its start state). Only safe
-    when this.stack.length == 3 (state is directly below the top
-    state). @internal
-    */
-    restart() {
-        this.storeNode(0 /* Term.Err */, this.pos, this.pos, 4, true);
-        this.state = this.stack[0];
-        this.stack.length = 0;
+    return result;
+  }
+  // Force a reduce, if possible. Return false if that can't
+  // be done.
+  /**
+  @internal
+  */
+  forceReduce() {
+    let { parser } = this.p;
+    let reduce = parser.stateSlot(
+      this.state,
+      5
+      /* ParseState.ForcedReduce */
+    );
+    if ((reduce & 65536) == 0)
+      return false;
+    if (!parser.validAction(this.state, reduce)) {
+      let depth = reduce >> 19, term = reduce & 65535;
+      let target = this.stack.length - depth * 3;
+      if (target < 0 || parser.getGoto(this.stack[target], term, false) < 0) {
+        let backup = this.findForcedReduction();
+        if (backup == null)
+          return false;
+        reduce = backup;
+      }
+      this.storeNode(0, this.pos, this.pos, 4, true);
+      this.score -= 100;
     }
-    /**
-    @internal
-    */
-    sameState(other) {
-        if (this.state != other.state || this.stack.length != other.stack.length)
-            return false;
-        for (let i = 0; i < this.stack.length; i += 3)
-            if (this.stack[i] != other.stack[i])
-                return false;
-        return true;
-    }
-    /**
-    Get the parser used by this stack.
-    */
-    get parser() { return this.p.parser; }
-    /**
-    Test whether a given dialect (by numeric ID, as exported from
-    the terms file) is enabled.
-    */
-    dialectEnabled(dialectID) { return this.p.parser.dialect.flags[dialectID]; }
-    shiftContext(term, start) {
-        if (this.curContext)
-            this.updateContext(this.curContext.tracker.shift(this.curContext.context, term, this, this.p.stream.reset(start)));
-    }
-    reduceContext(term, start) {
-        if (this.curContext)
-            this.updateContext(this.curContext.tracker.reduce(this.curContext.context, term, this, this.p.stream.reset(start)));
-    }
-    /**
-    @internal
-    */
-    emitContext() {
-        let last = this.buffer.length - 1;
-        if (last < 0 || this.buffer[last] != -3)
-            this.buffer.push(this.curContext.hash, this.pos, this.pos, -3);
-    }
-    /**
-    @internal
-    */
-    emitLookAhead() {
-        let last = this.buffer.length - 1;
-        if (last < 0 || this.buffer[last] != -4)
-            this.buffer.push(this.lookAhead, this.pos, this.pos, -4);
-    }
-    updateContext(context) {
-        if (context != this.curContext.context) {
-            let newCx = new StackContext(this.curContext.tracker, context);
-            if (newCx.hash != this.curContext.hash)
-                this.emitContext();
-            this.curContext = newCx;
+    this.reducePos = this.pos;
+    this.reduce(reduce);
+    return true;
+  }
+  /**
+  Try to scan through the automaton to find some kind of reduction
+  that can be applied. Used when the regular ForcedReduce field
+  isn't a valid action. @internal
+  */
+  findForcedReduction() {
+    let { parser } = this.p, seen = [];
+    let explore = (state, depth) => {
+      if (seen.includes(state))
+        return;
+      seen.push(state);
+      return parser.allActions(state, (action) => {
+        if (action & (262144 | 131072))
+          ;
+        else if (action & 65536) {
+          let rDepth = (action >> 19) - depth;
+          if (rDepth > 1) {
+            let term = action & 65535, target = this.stack.length - rDepth * 3;
+            if (target >= 0 && parser.getGoto(this.stack[target], term, false) >= 0)
+              return rDepth << 19 | 65536 | term;
+          }
+        } else {
+          let found = explore(action, depth + 1);
+          if (found != null)
+            return found;
         }
+      });
+    };
+    return explore(this.state, 0);
+  }
+  /**
+  @internal
+  */
+  forceAll() {
+    while (!this.p.parser.stateFlag(
+      this.state,
+      2
+      /* StateFlag.Accepting */
+    )) {
+      if (!this.forceReduce()) {
+        this.storeNode(0, this.pos, this.pos, 4, true);
+        break;
+      }
     }
-    /**
-    @internal
-    */
-    setLookAhead(lookAhead) {
-        if (lookAhead > this.lookAhead) {
-            this.emitLookAhead();
-            this.lookAhead = lookAhead;
-        }
+    return this;
+  }
+  /**
+  Check whether this state has no further actions (assumed to be a direct descendant of the
+  top state, since any other states must be able to continue
+  somehow). @internal
+  */
+  get deadEnd() {
+    if (this.stack.length != 3)
+      return false;
+    let { parser } = this.p;
+    return parser.data[parser.stateSlot(
+      this.state,
+      1
+      /* ParseState.Actions */
+    )] == 65535 && !parser.stateSlot(
+      this.state,
+      4
+      /* ParseState.DefaultReduce */
+    );
+  }
+  /**
+  Restart the stack (put it back in its start state). Only safe
+  when this.stack.length == 3 (state is directly below the top
+  state). @internal
+  */
+  restart() {
+    this.storeNode(0, this.pos, this.pos, 4, true);
+    this.state = this.stack[0];
+    this.stack.length = 0;
+  }
+  /**
+  @internal
+  */
+  sameState(other) {
+    if (this.state != other.state || this.stack.length != other.stack.length)
+      return false;
+    for (let i = 0; i < this.stack.length; i += 3)
+      if (this.stack[i] != other.stack[i])
+        return false;
+    return true;
+  }
+  /**
+  Get the parser used by this stack.
+  */
+  get parser() {
+    return this.p.parser;
+  }
+  /**
+  Test whether a given dialect (by numeric ID, as exported from
+  the terms file) is enabled.
+  */
+  dialectEnabled(dialectID) {
+    return this.p.parser.dialect.flags[dialectID];
+  }
+  shiftContext(term, start) {
+    if (this.curContext)
+      this.updateContext(this.curContext.tracker.shift(this.curContext.context, term, this, this.p.stream.reset(start)));
+  }
+  reduceContext(term, start) {
+    if (this.curContext)
+      this.updateContext(this.curContext.tracker.reduce(this.curContext.context, term, this, this.p.stream.reset(start)));
+  }
+  /**
+  @internal
+  */
+  emitContext() {
+    let last = this.buffer.length - 1;
+    if (last < 0 || this.buffer[last] != -3)
+      this.buffer.push(this.curContext.hash, this.pos, this.pos, -3);
+  }
+  /**
+  @internal
+  */
+  emitLookAhead() {
+    let last = this.buffer.length - 1;
+    if (last < 0 || this.buffer[last] != -4)
+      this.buffer.push(this.lookAhead, this.pos, this.pos, -4);
+  }
+  updateContext(context) {
+    if (context != this.curContext.context) {
+      let newCx = new StackContext(this.curContext.tracker, context);
+      if (newCx.hash != this.curContext.hash)
+        this.emitContext();
+      this.curContext = newCx;
     }
-    /**
-    @internal
-    */
-    close() {
-        if (this.curContext && this.curContext.tracker.strict)
-            this.emitContext();
-        if (this.lookAhead > 0)
-            this.emitLookAhead();
+  }
+  /**
+  @internal
+  */
+  setLookAhead(lookAhead) {
+    if (lookAhead > this.lookAhead) {
+      this.emitLookAhead();
+      this.lookAhead = lookAhead;
     }
+  }
+  /**
+  @internal
+  */
+  close() {
+    if (this.curContext && this.curContext.tracker.strict)
+      this.emitContext();
+    if (this.lookAhead > 0)
+      this.emitLookAhead();
+  }
 }
 class StackContext {
-    constructor(tracker, context) {
-        this.tracker = tracker;
-        this.context = context;
-        this.hash = tracker.strict ? tracker.hash(context) : 0;
-    }
+  constructor(tracker, context) {
+    this.tracker = tracker;
+    this.context = context;
+    this.hash = tracker.strict ? tracker.hash(context) : 0;
+  }
 }
-// Used to cheaply run some reductions to scan ahead without mutating
-// an entire stack
 class SimulatedStack {
-    constructor(start) {
-        this.start = start;
-        this.state = start.state;
-        this.stack = start.stack;
-        this.base = this.stack.length;
+  constructor(start) {
+    this.start = start;
+    this.state = start.state;
+    this.stack = start.stack;
+    this.base = this.stack.length;
+  }
+  reduce(action) {
+    let term = action & 65535, depth = action >> 19;
+    if (depth == 0) {
+      if (this.stack == this.start.stack)
+        this.stack = this.stack.slice();
+      this.stack.push(this.state, 0, 0);
+      this.base += 3;
+    } else {
+      this.base -= (depth - 1) * 3;
     }
-    reduce(action) {
-        let term = action & 65535 /* Action.ValueMask */, depth = action >> 19 /* Action.ReduceDepthShift */;
-        if (depth == 0) {
-            if (this.stack == this.start.stack)
-                this.stack = this.stack.slice();
-            this.stack.push(this.state, 0, 0);
-            this.base += 3;
-        }
-        else {
-            this.base -= (depth - 1) * 3;
-        }
-        let goto = this.start.p.parser.getGoto(this.stack[this.base - 3], term, true);
-        this.state = goto;
-    }
+    let goto = this.start.p.parser.getGoto(this.stack[this.base - 3], term, true);
+    this.state = goto;
+  }
 }
-// This is given to `Tree.build` to build a buffer, and encapsulates
-// the parent-stack-walking necessary to read the nodes.
 class StackBufferCursor {
-    constructor(stack, pos, index) {
-        this.stack = stack;
-        this.pos = pos;
-        this.index = index;
-        this.buffer = stack.buffer;
-        if (this.index == 0)
-            this.maybeNext();
+  constructor(stack, pos, index) {
+    this.stack = stack;
+    this.pos = pos;
+    this.index = index;
+    this.buffer = stack.buffer;
+    if (this.index == 0)
+      this.maybeNext();
+  }
+  static create(stack, pos = stack.bufferBase + stack.buffer.length) {
+    return new StackBufferCursor(stack, pos, pos - stack.bufferBase);
+  }
+  maybeNext() {
+    let next = this.stack.parent;
+    if (next != null) {
+      this.index = this.stack.bufferBase - next.bufferBase;
+      this.stack = next;
+      this.buffer = next.buffer;
     }
-    static create(stack, pos = stack.bufferBase + stack.buffer.length) {
-        return new StackBufferCursor(stack, pos, pos - stack.bufferBase);
-    }
-    maybeNext() {
-        let next = this.stack.parent;
-        if (next != null) {
-            this.index = this.stack.bufferBase - next.bufferBase;
-            this.stack = next;
-            this.buffer = next.buffer;
-        }
-    }
-    get id() { return this.buffer[this.index - 4]; }
-    get start() { return this.buffer[this.index - 3]; }
-    get end() { return this.buffer[this.index - 2]; }
-    get size() { return this.buffer[this.index - 1]; }
-    next() {
-        this.index -= 4;
-        this.pos -= 4;
-        if (this.index == 0)
-            this.maybeNext();
-    }
-    fork() {
-        return new StackBufferCursor(this.stack, this.pos, this.index);
-    }
+  }
+  get id() {
+    return this.buffer[this.index - 4];
+  }
+  get start() {
+    return this.buffer[this.index - 3];
+  }
+  get end() {
+    return this.buffer[this.index - 2];
+  }
+  get size() {
+    return this.buffer[this.index - 1];
+  }
+  next() {
+    this.index -= 4;
+    this.pos -= 4;
+    if (this.index == 0)
+      this.maybeNext();
+  }
+  fork() {
+    return new StackBufferCursor(this.stack, this.pos, this.index);
+  }
 }
-
-// See lezer-generator/src/encode.ts for comments about the encoding
-// used here
 function decodeArray(input, Type = Uint16Array) {
-    if (typeof input != "string")
-        return input;
-    let array = null;
-    for (let pos = 0, out = 0; pos < input.length;) {
-        let value = 0;
-        for (;;) {
-            let next = input.charCodeAt(pos++), stop = false;
-            if (next == 126 /* Encode.BigValCode */) {
-                value = 65535 /* Encode.BigVal */;
-                break;
-            }
-            if (next >= 92 /* Encode.Gap2 */)
-                next--;
-            if (next >= 34 /* Encode.Gap1 */)
-                next--;
-            let digit = next - 32 /* Encode.Start */;
-            if (digit >= 46 /* Encode.Base */) {
-                digit -= 46 /* Encode.Base */;
-                stop = true;
-            }
-            value += digit;
-            if (stop)
-                break;
-            value *= 46 /* Encode.Base */;
-        }
-        if (array)
-            array[out++] = value;
-        else
-            array = new Type(value);
+  if (typeof input != "string")
+    return input;
+  let array = null;
+  for (let pos = 0, out = 0; pos < input.length; ) {
+    let value = 0;
+    for (; ; ) {
+      let next = input.charCodeAt(pos++), stop = false;
+      if (next == 126) {
+        value = 65535;
+        break;
+      }
+      if (next >= 92)
+        next--;
+      if (next >= 34)
+        next--;
+      let digit = next - 32;
+      if (digit >= 46) {
+        digit -= 46;
+        stop = true;
+      }
+      value += digit;
+      if (stop)
+        break;
+      value *= 46;
     }
-    return array;
+    if (array)
+      array[out++] = value;
+    else
+      array = new Type(value);
+  }
+  return array;
 }
-
 class CachedToken {
-    constructor() {
-        this.start = -1;
-        this.value = -1;
-        this.end = -1;
-        this.extended = -1;
-        this.lookAhead = 0;
-        this.mask = 0;
-        this.context = 0;
-    }
+  constructor() {
+    this.start = -1;
+    this.value = -1;
+    this.end = -1;
+    this.extended = -1;
+    this.lookAhead = 0;
+    this.mask = 0;
+    this.context = 0;
+  }
 }
-const nullToken = new CachedToken;
-/**
-[Tokenizers](#lr.ExternalTokenizer) interact with the input
-through this interface. It presents the input as a stream of
-characters, tracking lookahead and hiding the complexity of
-[ranges](#common.Parser.parse^ranges) from tokenizer code.
-*/
+const nullToken = new CachedToken();
 class InputStream {
-    /**
-    @internal
-    */
-    constructor(
-    /**
-    @internal
-    */
-    input, 
-    /**
-    @internal
-    */
-    ranges) {
-        this.input = input;
-        this.ranges = ranges;
-        /**
-        @internal
-        */
-        this.chunk = "";
-        /**
-        @internal
-        */
-        this.chunkOff = 0;
-        /**
-        Backup chunk
-        */
-        this.chunk2 = "";
-        this.chunk2Pos = 0;
-        /**
-        The character code of the next code unit in the input, or -1
-        when the stream is at the end of the input.
-        */
-        this.next = -1;
-        /**
-        @internal
-        */
-        this.token = nullToken;
-        this.rangeIndex = 0;
-        this.pos = this.chunkPos = ranges[0].from;
-        this.range = ranges[0];
-        this.end = ranges[ranges.length - 1].to;
-        this.readNext();
+  /**
+  @internal
+  */
+  constructor(input, ranges) {
+    this.input = input;
+    this.ranges = ranges;
+    this.chunk = "";
+    this.chunkOff = 0;
+    this.chunk2 = "";
+    this.chunk2Pos = 0;
+    this.next = -1;
+    this.token = nullToken;
+    this.rangeIndex = 0;
+    this.pos = this.chunkPos = ranges[0].from;
+    this.range = ranges[0];
+    this.end = ranges[ranges.length - 1].to;
+    this.readNext();
+  }
+  /**
+  @internal
+  */
+  resolveOffset(offset, assoc) {
+    let range = this.range, index = this.rangeIndex;
+    let pos = this.pos + offset;
+    while (pos < range.from) {
+      if (!index)
+        return null;
+      let next = this.ranges[--index];
+      pos -= range.from - next.to;
+      range = next;
     }
-    /**
-    @internal
-    */
-    resolveOffset(offset, assoc) {
-        let range = this.range, index = this.rangeIndex;
-        let pos = this.pos + offset;
-        while (pos < range.from) {
-            if (!index)
-                return null;
-            let next = this.ranges[--index];
-            pos -= range.from - next.to;
-            range = next;
-        }
-        while (assoc < 0 ? pos > range.to : pos >= range.to) {
-            if (index == this.ranges.length - 1)
-                return null;
-            let next = this.ranges[++index];
-            pos += next.from - range.to;
-            range = next;
-        }
-        return pos;
+    while (assoc < 0 ? pos > range.to : pos >= range.to) {
+      if (index == this.ranges.length - 1)
+        return null;
+      let next = this.ranges[++index];
+      pos += next.from - range.to;
+      range = next;
     }
-    /**
-    @internal
-    */
-    clipPos(pos) {
-        if (pos >= this.range.from && pos < this.range.to)
-            return pos;
-        for (let range of this.ranges)
-            if (range.to > pos)
-                return Math.max(pos, range.from);
-        return this.end;
+    return pos;
+  }
+  /**
+  @internal
+  */
+  clipPos(pos) {
+    if (pos >= this.range.from && pos < this.range.to)
+      return pos;
+    for (let range of this.ranges)
+      if (range.to > pos)
+        return Math.max(pos, range.from);
+    return this.end;
+  }
+  /**
+  Look at a code unit near the stream position. `.peek(0)` equals
+  `.next`, `.peek(-1)` gives you the previous character, and so
+  on.
+  
+  Note that looking around during tokenizing creates dependencies
+  on potentially far-away content, which may reduce the
+  effectiveness incremental parsing—when looking forward—or even
+  cause invalid reparses when looking backward more than 25 code
+  units, since the library does not track lookbehind.
+  */
+  peek(offset) {
+    let idx = this.chunkOff + offset, pos, result;
+    if (idx >= 0 && idx < this.chunk.length) {
+      pos = this.pos + offset;
+      result = this.chunk.charCodeAt(idx);
+    } else {
+      let resolved = this.resolveOffset(offset, 1);
+      if (resolved == null)
+        return -1;
+      pos = resolved;
+      if (pos >= this.chunk2Pos && pos < this.chunk2Pos + this.chunk2.length) {
+        result = this.chunk2.charCodeAt(pos - this.chunk2Pos);
+      } else {
+        let i = this.rangeIndex, range = this.range;
+        while (range.to <= pos)
+          range = this.ranges[++i];
+        this.chunk2 = this.input.chunk(this.chunk2Pos = pos);
+        if (pos + this.chunk2.length > range.to)
+          this.chunk2 = this.chunk2.slice(0, range.to - pos);
+        result = this.chunk2.charCodeAt(0);
+      }
     }
-    /**
-    Look at a code unit near the stream position. `.peek(0)` equals
-    `.next`, `.peek(-1)` gives you the previous character, and so
-    on.
-    
-    Note that looking around during tokenizing creates dependencies
-    on potentially far-away content, which may reduce the
-    effectiveness incremental parsing—when looking forward—or even
-    cause invalid reparses when looking backward more than 25 code
-    units, since the library does not track lookbehind.
-    */
-    peek(offset) {
-        let idx = this.chunkOff + offset, pos, result;
-        if (idx >= 0 && idx < this.chunk.length) {
-            pos = this.pos + offset;
-            result = this.chunk.charCodeAt(idx);
-        }
-        else {
-            let resolved = this.resolveOffset(offset, 1);
-            if (resolved == null)
-                return -1;
-            pos = resolved;
-            if (pos >= this.chunk2Pos && pos < this.chunk2Pos + this.chunk2.length) {
-                result = this.chunk2.charCodeAt(pos - this.chunk2Pos);
-            }
-            else {
-                let i = this.rangeIndex, range = this.range;
-                while (range.to <= pos)
-                    range = this.ranges[++i];
-                this.chunk2 = this.input.chunk(this.chunk2Pos = pos);
-                if (pos + this.chunk2.length > range.to)
-                    this.chunk2 = this.chunk2.slice(0, range.to - pos);
-                result = this.chunk2.charCodeAt(0);
-            }
-        }
-        if (pos >= this.token.lookAhead)
-            this.token.lookAhead = pos + 1;
-        return result;
+    if (pos >= this.token.lookAhead)
+      this.token.lookAhead = pos + 1;
+    return result;
+  }
+  /**
+  Accept a token. By default, the end of the token is set to the
+  current stream position, but you can pass an offset (relative to
+  the stream position) to change that.
+  */
+  acceptToken(token, endOffset = 0) {
+    let end = endOffset ? this.resolveOffset(endOffset, -1) : this.pos;
+    if (end == null || end < this.token.start)
+      throw new RangeError("Token end out of bounds");
+    this.token.value = token;
+    this.token.end = end;
+  }
+  getChunk() {
+    if (this.pos >= this.chunk2Pos && this.pos < this.chunk2Pos + this.chunk2.length) {
+      let { chunk, chunkPos } = this;
+      this.chunk = this.chunk2;
+      this.chunkPos = this.chunk2Pos;
+      this.chunk2 = chunk;
+      this.chunk2Pos = chunkPos;
+      this.chunkOff = this.pos - this.chunkPos;
+    } else {
+      this.chunk2 = this.chunk;
+      this.chunk2Pos = this.chunkPos;
+      let nextChunk = this.input.chunk(this.pos);
+      let end = this.pos + nextChunk.length;
+      this.chunk = end > this.range.to ? nextChunk.slice(0, this.range.to - this.pos) : nextChunk;
+      this.chunkPos = this.pos;
+      this.chunkOff = 0;
     }
-    /**
-    Accept a token. By default, the end of the token is set to the
-    current stream position, but you can pass an offset (relative to
-    the stream position) to change that.
-    */
-    acceptToken(token, endOffset = 0) {
-        let end = endOffset ? this.resolveOffset(endOffset, -1) : this.pos;
-        if (end == null || end < this.token.start)
-            throw new RangeError("Token end out of bounds");
-        this.token.value = token;
-        this.token.end = end;
-    }
-    getChunk() {
-        if (this.pos >= this.chunk2Pos && this.pos < this.chunk2Pos + this.chunk2.length) {
-            let { chunk, chunkPos } = this;
-            this.chunk = this.chunk2;
-            this.chunkPos = this.chunk2Pos;
-            this.chunk2 = chunk;
-            this.chunk2Pos = chunkPos;
-            this.chunkOff = this.pos - this.chunkPos;
-        }
-        else {
-            this.chunk2 = this.chunk;
-            this.chunk2Pos = this.chunkPos;
-            let nextChunk = this.input.chunk(this.pos);
-            let end = this.pos + nextChunk.length;
-            this.chunk = end > this.range.to ? nextChunk.slice(0, this.range.to - this.pos) : nextChunk;
-            this.chunkPos = this.pos;
-            this.chunkOff = 0;
-        }
-    }
-    readNext() {
-        if (this.chunkOff >= this.chunk.length) {
-            this.getChunk();
-            if (this.chunkOff == this.chunk.length)
-                return this.next = -1;
-        }
-        return this.next = this.chunk.charCodeAt(this.chunkOff);
-    }
-    /**
-    Move the stream forward N (defaults to 1) code units. Returns
-    the new value of [`next`](#lr.InputStream.next).
-    */
-    advance(n = 1) {
-        this.chunkOff += n;
-        while (this.pos + n >= this.range.to) {
-            if (this.rangeIndex == this.ranges.length - 1)
-                return this.setDone();
-            n -= this.range.to - this.pos;
-            this.range = this.ranges[++this.rangeIndex];
-            this.pos = this.range.from;
-        }
-        this.pos += n;
-        if (this.pos >= this.token.lookAhead)
-            this.token.lookAhead = this.pos + 1;
-        return this.readNext();
-    }
-    setDone() {
-        this.pos = this.chunkPos = this.end;
-        this.range = this.ranges[this.rangeIndex = this.ranges.length - 1];
-        this.chunk = "";
+  }
+  readNext() {
+    if (this.chunkOff >= this.chunk.length) {
+      this.getChunk();
+      if (this.chunkOff == this.chunk.length)
         return this.next = -1;
     }
-    /**
-    @internal
-    */
-    reset(pos, token) {
-        if (token) {
-            this.token = token;
-            token.start = pos;
-            token.lookAhead = pos + 1;
-            token.value = token.extended = -1;
-        }
-        else {
-            this.token = nullToken;
-        }
-        if (this.pos != pos) {
-            this.pos = pos;
-            if (pos == this.end) {
-                this.setDone();
-                return this;
-            }
-            while (pos < this.range.from)
-                this.range = this.ranges[--this.rangeIndex];
-            while (pos >= this.range.to)
-                this.range = this.ranges[++this.rangeIndex];
-            if (pos >= this.chunkPos && pos < this.chunkPos + this.chunk.length) {
-                this.chunkOff = pos - this.chunkPos;
-            }
-            else {
-                this.chunk = "";
-                this.chunkOff = 0;
-            }
-            this.readNext();
-        }
+    return this.next = this.chunk.charCodeAt(this.chunkOff);
+  }
+  /**
+  Move the stream forward N (defaults to 1) code units. Returns
+  the new value of [`next`](#lr.InputStream.next).
+  */
+  advance(n = 1) {
+    this.chunkOff += n;
+    while (this.pos + n >= this.range.to) {
+      if (this.rangeIndex == this.ranges.length - 1)
+        return this.setDone();
+      n -= this.range.to - this.pos;
+      this.range = this.ranges[++this.rangeIndex];
+      this.pos = this.range.from;
+    }
+    this.pos += n;
+    if (this.pos >= this.token.lookAhead)
+      this.token.lookAhead = this.pos + 1;
+    return this.readNext();
+  }
+  setDone() {
+    this.pos = this.chunkPos = this.end;
+    this.range = this.ranges[this.rangeIndex = this.ranges.length - 1];
+    this.chunk = "";
+    return this.next = -1;
+  }
+  /**
+  @internal
+  */
+  reset(pos, token) {
+    if (token) {
+      this.token = token;
+      token.start = pos;
+      token.lookAhead = pos + 1;
+      token.value = token.extended = -1;
+    } else {
+      this.token = nullToken;
+    }
+    if (this.pos != pos) {
+      this.pos = pos;
+      if (pos == this.end) {
+        this.setDone();
         return this;
+      }
+      while (pos < this.range.from)
+        this.range = this.ranges[--this.rangeIndex];
+      while (pos >= this.range.to)
+        this.range = this.ranges[++this.rangeIndex];
+      if (pos >= this.chunkPos && pos < this.chunkPos + this.chunk.length) {
+        this.chunkOff = pos - this.chunkPos;
+      } else {
+        this.chunk = "";
+        this.chunkOff = 0;
+      }
+      this.readNext();
     }
-    /**
-    @internal
-    */
-    read(from, to) {
-        if (from >= this.chunkPos && to <= this.chunkPos + this.chunk.length)
-            return this.chunk.slice(from - this.chunkPos, to - this.chunkPos);
-        if (from >= this.chunk2Pos && to <= this.chunk2Pos + this.chunk2.length)
-            return this.chunk2.slice(from - this.chunk2Pos, to - this.chunk2Pos);
-        if (from >= this.range.from && to <= this.range.to)
-            return this.input.read(from, to);
-        let result = "";
-        for (let r of this.ranges) {
-            if (r.from >= to)
-                break;
-            if (r.to > from)
-                result += this.input.read(Math.max(r.from, from), Math.min(r.to, to));
-        }
-        return result;
+    return this;
+  }
+  /**
+  @internal
+  */
+  read(from, to) {
+    if (from >= this.chunkPos && to <= this.chunkPos + this.chunk.length)
+      return this.chunk.slice(from - this.chunkPos, to - this.chunkPos);
+    if (from >= this.chunk2Pos && to <= this.chunk2Pos + this.chunk2.length)
+      return this.chunk2.slice(from - this.chunk2Pos, to - this.chunk2Pos);
+    if (from >= this.range.from && to <= this.range.to)
+      return this.input.read(from, to);
+    let result = "";
+    for (let r of this.ranges) {
+      if (r.from >= to)
+        break;
+      if (r.to > from)
+        result += this.input.read(Math.max(r.from, from), Math.min(r.to, to));
     }
+    return result;
+  }
 }
-/**
-@internal
-*/
 class TokenGroup {
-    constructor(data, id) {
-        this.data = data;
-        this.id = id;
-    }
-    token(input, stack) {
-        let { parser } = stack.p;
-        readToken(this.data, input, stack, this.id, parser.data, parser.tokenPrecTable);
-    }
+  constructor(data, id2) {
+    this.data = data;
+    this.id = id2;
+  }
+  token(input, stack) {
+    let { parser } = stack.p;
+    readToken(this.data, input, stack, this.id, parser.data, parser.tokenPrecTable);
+  }
 }
 TokenGroup.prototype.contextual = TokenGroup.prototype.fallback = TokenGroup.prototype.extend = false;
-/**
-@hide
-*/
 class LocalTokenGroup {
-    constructor(data, precTable, elseToken) {
-        this.precTable = precTable;
-        this.elseToken = elseToken;
-        this.data = typeof data == "string" ? decodeArray(data) : data;
+  constructor(data, precTable, elseToken) {
+    this.precTable = precTable;
+    this.elseToken = elseToken;
+    this.data = typeof data == "string" ? decodeArray(data) : data;
+  }
+  token(input, stack) {
+    let start = input.pos, skipped = 0;
+    for (; ; ) {
+      let atEof = input.next < 0, nextPos = input.resolveOffset(1, 1);
+      readToken(this.data, input, stack, 0, this.data, this.precTable);
+      if (input.token.value > -1)
+        break;
+      if (this.elseToken == null)
+        return;
+      if (!atEof)
+        skipped++;
+      if (nextPos == null)
+        break;
+      input.reset(nextPos, input.token);
     }
-    token(input, stack) {
-        let start = input.pos, skipped = 0;
-        for (;;) {
-            let atEof = input.next < 0, nextPos = input.resolveOffset(1, 1);
-            readToken(this.data, input, stack, 0, this.data, this.precTable);
-            if (input.token.value > -1)
-                break;
-            if (this.elseToken == null)
-                return;
-            if (!atEof)
-                skipped++;
-            if (nextPos == null)
-                break;
-            input.reset(nextPos, input.token);
-        }
-        if (skipped) {
-            input.reset(start, input.token);
-            input.acceptToken(this.elseToken, skipped);
-        }
+    if (skipped) {
+      input.reset(start, input.token);
+      input.acceptToken(this.elseToken, skipped);
     }
+  }
 }
 LocalTokenGroup.prototype.contextual = TokenGroup.prototype.fallback = TokenGroup.prototype.extend = false;
-/**
-`@external tokens` declarations in the grammar should resolve to
-an instance of this class.
-*/
 class ExternalTokenizer {
-    /**
-    Create a tokenizer. The first argument is the function that,
-    given an input stream, scans for the types of tokens it
-    recognizes at the stream's position, and calls
-    [`acceptToken`](#lr.InputStream.acceptToken) when it finds
-    one.
-    */
-    constructor(
-    /**
-    @internal
-    */
-    token, options = {}) {
-        this.token = token;
-        this.contextual = !!options.contextual;
-        this.fallback = !!options.fallback;
-        this.extend = !!options.extend;
-    }
+  /**
+  Create a tokenizer. The first argument is the function that,
+  given an input stream, scans for the types of tokens it
+  recognizes at the stream's position, and calls
+  [`acceptToken`](#lr.InputStream.acceptToken) when it finds
+  one.
+  */
+  constructor(token, options = {}) {
+    this.token = token;
+    this.contextual = !!options.contextual;
+    this.fallback = !!options.fallback;
+    this.extend = !!options.extend;
+  }
 }
-// Tokenizer data is stored a big uint16 array containing, for each
-// state:
-//
-//  - A group bitmask, indicating what token groups are reachable from
-//    this state, so that paths that can only lead to tokens not in
-//    any of the current groups can be cut off early.
-//
-//  - The position of the end of the state's sequence of accepting
-//    tokens
-//
-//  - The number of outgoing edges for the state
-//
-//  - The accepting tokens, as (token id, group mask) pairs
-//
-//  - The outgoing edges, as (start character, end character, state
-//    index) triples, with end character being exclusive
-//
-// This function interprets that data, running through a stream as
-// long as new states with the a matching group mask can be reached,
-// and updating `input.token` when it matches a token.
 function readToken(data, input, stack, group, precTable, precOffset) {
-    let state = 0, groupMask = 1 << group, { dialect } = stack.p.parser;
-    scan: for (;;) {
-        if ((groupMask & data[state]) == 0)
-            break;
-        let accEnd = data[state + 1];
-        // Check whether this state can lead to a token in the current group
-        // Accept tokens in this state, possibly overwriting
-        // lower-precedence / shorter tokens
-        for (let i = state + 3; i < accEnd; i += 2)
-            if ((data[i + 1] & groupMask) > 0) {
-                let term = data[i];
-                if (dialect.allows(term) &&
-                    (input.token.value == -1 || input.token.value == term ||
-                        overrides(term, input.token.value, precTable, precOffset))) {
-                    input.acceptToken(term);
-                    break;
-                }
-            }
-        let next = input.next, low = 0, high = data[state + 2];
-        // Special case for EOF
-        if (input.next < 0 && high > low && data[accEnd + high * 3 - 3] == 65535 /* Seq.End */) {
-            state = data[accEnd + high * 3 - 1];
-            continue scan;
-        }
-        // Do a binary search on the state's edges
-        for (; low < high;) {
-            let mid = (low + high) >> 1;
-            let index = accEnd + mid + (mid << 1);
-            let from = data[index], to = data[index + 1] || 0x10000;
-            if (next < from)
-                high = mid;
-            else if (next >= to)
-                low = mid + 1;
-            else {
-                state = data[index + 2];
-                input.advance();
-                continue scan;
-            }
-        }
+  let state = 0, groupMask = 1 << group, { dialect } = stack.p.parser;
+  scan:
+    for (; ; ) {
+      if ((groupMask & data[state]) == 0)
         break;
+      let accEnd = data[state + 1];
+      for (let i = state + 3; i < accEnd; i += 2)
+        if ((data[i + 1] & groupMask) > 0) {
+          let term = data[i];
+          if (dialect.allows(term) && (input.token.value == -1 || input.token.value == term || overrides(term, input.token.value, precTable, precOffset))) {
+            input.acceptToken(term);
+            break;
+          }
+        }
+      let next = input.next, low = 0, high = data[state + 2];
+      if (input.next < 0 && high > low && data[accEnd + high * 3 - 3] == 65535) {
+        state = data[accEnd + high * 3 - 1];
+        continue scan;
+      }
+      for (; low < high; ) {
+        let mid = low + high >> 1;
+        let index = accEnd + mid + (mid << 1);
+        let from = data[index], to = data[index + 1] || 65536;
+        if (next < from)
+          high = mid;
+        else if (next >= to)
+          low = mid + 1;
+        else {
+          state = data[index + 2];
+          input.advance();
+          continue scan;
+        }
+      }
+      break;
     }
 }
 function findOffset(data, start, term) {
-    for (let i = start, next; (next = data[i]) != 65535 /* Seq.End */; i++)
-        if (next == term)
-            return i - start;
-    return -1;
+  for (let i = start, next; (next = data[i]) != 65535; i++)
+    if (next == term)
+      return i - start;
+  return -1;
 }
 function overrides(token, prev, tableData, tableOffset) {
-    let iPrev = findOffset(tableData, tableOffset, prev);
-    return iPrev < 0 || findOffset(tableData, tableOffset, token) < iPrev;
+  let iPrev = findOffset(tableData, tableOffset, prev);
+  return iPrev < 0 || findOffset(tableData, tableOffset, token) < iPrev;
 }
-
-// Environment variable used to control console output
-const verbose = typeof process != "undefined" && process.env && /\bparse\b/.test(({}).LOG);
+const verbose = typeof process != "undefined" && define_process_env_default && /\bparse\b/.test(define_process_env_default.LOG);
 let stackIDs = null;
 function cutAt(tree, pos, side) {
-    let cursor = tree.cursor(IterMode.IncludeAnonymous);
-    cursor.moveTo(pos);
-    for (;;) {
-        if (!(side < 0 ? cursor.childBefore(pos) : cursor.childAfter(pos)))
-            for (;;) {
-                if ((side < 0 ? cursor.to < pos : cursor.from > pos) && !cursor.type.isError)
-                    return side < 0 ? Math.max(0, Math.min(cursor.to - 1, pos - 25 /* Safety.Margin */))
-                        : Math.min(tree.length, Math.max(cursor.from + 1, pos + 25 /* Safety.Margin */));
-                if (side < 0 ? cursor.prevSibling() : cursor.nextSibling())
-                    break;
-                if (!cursor.parent())
-                    return side < 0 ? 0 : tree.length;
-            }
-    }
+  let cursor = tree.cursor(IterMode.IncludeAnonymous);
+  cursor.moveTo(pos);
+  for (; ; ) {
+    if (!(side < 0 ? cursor.childBefore(pos) : cursor.childAfter(pos)))
+      for (; ; ) {
+        if ((side < 0 ? cursor.to < pos : cursor.from > pos) && !cursor.type.isError)
+          return side < 0 ? Math.max(0, Math.min(
+            cursor.to - 1,
+            pos - 25
+            /* Safety.Margin */
+          )) : Math.min(tree.length, Math.max(
+            cursor.from + 1,
+            pos + 25
+            /* Safety.Margin */
+          ));
+        if (side < 0 ? cursor.prevSibling() : cursor.nextSibling())
+          break;
+        if (!cursor.parent())
+          return side < 0 ? 0 : tree.length;
+      }
+  }
 }
 class FragmentCursor {
-    constructor(fragments, nodeSet) {
-        this.fragments = fragments;
-        this.nodeSet = nodeSet;
-        this.i = 0;
-        this.fragment = null;
-        this.safeFrom = -1;
-        this.safeTo = -1;
-        this.trees = [];
-        this.start = [];
-        this.index = [];
+  constructor(fragments, nodeSet) {
+    this.fragments = fragments;
+    this.nodeSet = nodeSet;
+    this.i = 0;
+    this.fragment = null;
+    this.safeFrom = -1;
+    this.safeTo = -1;
+    this.trees = [];
+    this.start = [];
+    this.index = [];
+    this.nextFragment();
+  }
+  nextFragment() {
+    let fr = this.fragment = this.i == this.fragments.length ? null : this.fragments[this.i++];
+    if (fr) {
+      this.safeFrom = fr.openStart ? cutAt(fr.tree, fr.from + fr.offset, 1) - fr.offset : fr.from;
+      this.safeTo = fr.openEnd ? cutAt(fr.tree, fr.to + fr.offset, -1) - fr.offset : fr.to;
+      while (this.trees.length) {
+        this.trees.pop();
+        this.start.pop();
+        this.index.pop();
+      }
+      this.trees.push(fr.tree);
+      this.start.push(-fr.offset);
+      this.index.push(0);
+      this.nextStart = this.safeFrom;
+    } else {
+      this.nextStart = 1e9;
+    }
+  }
+  // `pos` must be >= any previously given `pos` for this cursor
+  nodeAt(pos) {
+    if (pos < this.nextStart)
+      return null;
+    while (this.fragment && this.safeTo <= pos)
+      this.nextFragment();
+    if (!this.fragment)
+      return null;
+    for (; ; ) {
+      let last = this.trees.length - 1;
+      if (last < 0) {
         this.nextFragment();
-    }
-    nextFragment() {
-        let fr = this.fragment = this.i == this.fragments.length ? null : this.fragments[this.i++];
-        if (fr) {
-            this.safeFrom = fr.openStart ? cutAt(fr.tree, fr.from + fr.offset, 1) - fr.offset : fr.from;
-            this.safeTo = fr.openEnd ? cutAt(fr.tree, fr.to + fr.offset, -1) - fr.offset : fr.to;
-            while (this.trees.length) {
-                this.trees.pop();
-                this.start.pop();
-                this.index.pop();
-            }
-            this.trees.push(fr.tree);
-            this.start.push(-fr.offset);
-            this.index.push(0);
-            this.nextStart = this.safeFrom;
-        }
-        else {
-            this.nextStart = 1e9;
-        }
-    }
-    // `pos` must be >= any previously given `pos` for this cursor
-    nodeAt(pos) {
-        if (pos < this.nextStart)
+        return null;
+      }
+      let top = this.trees[last], index = this.index[last];
+      if (index == top.children.length) {
+        this.trees.pop();
+        this.start.pop();
+        this.index.pop();
+        continue;
+      }
+      let next = top.children[index];
+      let start = this.start[last] + top.positions[index];
+      if (start > pos) {
+        this.nextStart = start;
+        return null;
+      }
+      if (next instanceof Tree) {
+        if (start == pos) {
+          if (start < this.safeFrom)
             return null;
-        while (this.fragment && this.safeTo <= pos)
-            this.nextFragment();
-        if (!this.fragment)
-            return null;
-        for (;;) {
-            let last = this.trees.length - 1;
-            if (last < 0) { // End of tree
-                this.nextFragment();
-                return null;
-            }
-            let top = this.trees[last], index = this.index[last];
-            if (index == top.children.length) {
-                this.trees.pop();
-                this.start.pop();
-                this.index.pop();
-                continue;
-            }
-            let next = top.children[index];
-            let start = this.start[last] + top.positions[index];
-            if (start > pos) {
-                this.nextStart = start;
-                return null;
-            }
-            if (next instanceof Tree) {
-                if (start == pos) {
-                    if (start < this.safeFrom)
-                        return null;
-                    let end = start + next.length;
-                    if (end <= this.safeTo) {
-                        let lookAhead = next.prop(NodeProp.lookAhead);
-                        if (!lookAhead || end + lookAhead < this.fragment.to)
-                            return next;
-                    }
-                }
-                this.index[last]++;
-                if (start + next.length >= Math.max(this.safeFrom, pos)) { // Enter this node
-                    this.trees.push(next);
-                    this.start.push(start);
-                    this.index.push(0);
-                }
-            }
-            else {
-                this.index[last]++;
-                this.nextStart = start + next.length;
-            }
+          let end = start + next.length;
+          if (end <= this.safeTo) {
+            let lookAhead = next.prop(NodeProp.lookAhead);
+            if (!lookAhead || end + lookAhead < this.fragment.to)
+              return next;
+          }
         }
+        this.index[last]++;
+        if (start + next.length >= Math.max(this.safeFrom, pos)) {
+          this.trees.push(next);
+          this.start.push(start);
+          this.index.push(0);
+        }
+      } else {
+        this.index[last]++;
+        this.nextStart = start + next.length;
+      }
     }
+  }
 }
 class TokenCache {
-    constructor(parser, stream) {
-        this.stream = stream;
-        this.tokens = [];
-        this.mainToken = null;
-        this.actions = [];
-        this.tokens = parser.tokenizers.map(_ => new CachedToken);
-    }
-    getActions(stack) {
-        let actionIndex = 0;
-        let main = null;
-        let { parser } = stack.p, { tokenizers } = parser;
-        let mask = parser.stateSlot(stack.state, 3 /* ParseState.TokenizerMask */);
-        let context = stack.curContext ? stack.curContext.hash : 0;
-        let lookAhead = 0;
-        for (let i = 0; i < tokenizers.length; i++) {
-            if (((1 << i) & mask) == 0)
-                continue;
-            let tokenizer = tokenizers[i], token = this.tokens[i];
-            if (main && !tokenizer.fallback)
-                continue;
-            if (tokenizer.contextual || token.start != stack.pos || token.mask != mask || token.context != context) {
-                this.updateCachedToken(token, tokenizer, stack);
-                token.mask = mask;
-                token.context = context;
-            }
-            if (token.lookAhead > token.end + 25 /* Safety.Margin */)
-                lookAhead = Math.max(token.lookAhead, lookAhead);
-            if (token.value != 0 /* Term.Err */) {
-                let startIndex = actionIndex;
-                if (token.extended > -1)
-                    actionIndex = this.addActions(stack, token.extended, token.end, actionIndex);
-                actionIndex = this.addActions(stack, token.value, token.end, actionIndex);
-                if (!tokenizer.extend) {
-                    main = token;
-                    if (actionIndex > startIndex)
-                        break;
-                }
-            }
+  constructor(parser, stream) {
+    this.stream = stream;
+    this.tokens = [];
+    this.mainToken = null;
+    this.actions = [];
+    this.tokens = parser.tokenizers.map((_) => new CachedToken());
+  }
+  getActions(stack) {
+    let actionIndex = 0;
+    let main = null;
+    let { parser } = stack.p, { tokenizers } = parser;
+    let mask = parser.stateSlot(
+      stack.state,
+      3
+      /* ParseState.TokenizerMask */
+    );
+    let context = stack.curContext ? stack.curContext.hash : 0;
+    let lookAhead = 0;
+    for (let i = 0; i < tokenizers.length; i++) {
+      if ((1 << i & mask) == 0)
+        continue;
+      let tokenizer = tokenizers[i], token = this.tokens[i];
+      if (main && !tokenizer.fallback)
+        continue;
+      if (tokenizer.contextual || token.start != stack.pos || token.mask != mask || token.context != context) {
+        this.updateCachedToken(token, tokenizer, stack);
+        token.mask = mask;
+        token.context = context;
+      }
+      if (token.lookAhead > token.end + 25)
+        lookAhead = Math.max(token.lookAhead, lookAhead);
+      if (token.value != 0) {
+        let startIndex = actionIndex;
+        if (token.extended > -1)
+          actionIndex = this.addActions(stack, token.extended, token.end, actionIndex);
+        actionIndex = this.addActions(stack, token.value, token.end, actionIndex);
+        if (!tokenizer.extend) {
+          main = token;
+          if (actionIndex > startIndex)
+            break;
         }
-        while (this.actions.length > actionIndex)
-            this.actions.pop();
-        if (lookAhead)
-            stack.setLookAhead(lookAhead);
-        if (!main && stack.pos == this.stream.end) {
-            main = new CachedToken;
-            main.value = stack.p.parser.eofTerm;
-            main.start = main.end = stack.pos;
-            actionIndex = this.addActions(stack, main.value, main.end, actionIndex);
-        }
-        this.mainToken = main;
-        return this.actions;
+      }
     }
-    getMainToken(stack) {
-        if (this.mainToken)
-            return this.mainToken;
-        let main = new CachedToken, { pos, p } = stack;
-        main.start = pos;
-        main.end = Math.min(pos + 1, p.stream.end);
-        main.value = pos == p.stream.end ? p.parser.eofTerm : 0 /* Term.Err */;
-        return main;
+    while (this.actions.length > actionIndex)
+      this.actions.pop();
+    if (lookAhead)
+      stack.setLookAhead(lookAhead);
+    if (!main && stack.pos == this.stream.end) {
+      main = new CachedToken();
+      main.value = stack.p.parser.eofTerm;
+      main.start = main.end = stack.pos;
+      actionIndex = this.addActions(stack, main.value, main.end, actionIndex);
     }
-    updateCachedToken(token, tokenizer, stack) {
-        let start = this.stream.clipPos(stack.pos);
-        tokenizer.token(this.stream.reset(start, token), stack);
-        if (token.value > -1) {
-            let { parser } = stack.p;
-            for (let i = 0; i < parser.specialized.length; i++)
-                if (parser.specialized[i] == token.value) {
-                    let result = parser.specializers[i](this.stream.read(token.start, token.end), stack);
-                    if (result >= 0 && stack.p.parser.dialect.allows(result >> 1)) {
-                        if ((result & 1) == 0 /* Specialize.Specialize */)
-                            token.value = result >> 1;
-                        else
-                            token.extended = result >> 1;
-                        break;
-                    }
-                }
+    this.mainToken = main;
+    return this.actions;
+  }
+  getMainToken(stack) {
+    if (this.mainToken)
+      return this.mainToken;
+    let main = new CachedToken(), { pos, p } = stack;
+    main.start = pos;
+    main.end = Math.min(pos + 1, p.stream.end);
+    main.value = pos == p.stream.end ? p.parser.eofTerm : 0;
+    return main;
+  }
+  updateCachedToken(token, tokenizer, stack) {
+    let start = this.stream.clipPos(stack.pos);
+    tokenizer.token(this.stream.reset(start, token), stack);
+    if (token.value > -1) {
+      let { parser } = stack.p;
+      for (let i = 0; i < parser.specialized.length; i++)
+        if (parser.specialized[i] == token.value) {
+          let result = parser.specializers[i](this.stream.read(token.start, token.end), stack);
+          if (result >= 0 && stack.p.parser.dialect.allows(result >> 1)) {
+            if ((result & 1) == 0)
+              token.value = result >> 1;
+            else
+              token.extended = result >> 1;
+            break;
+          }
         }
-        else {
-            token.value = 0 /* Term.Err */;
-            token.end = this.stream.clipPos(start + 1);
-        }
+    } else {
+      token.value = 0;
+      token.end = this.stream.clipPos(start + 1);
     }
-    putAction(action, token, end, index) {
-        // Don't add duplicate actions
-        for (let i = 0; i < index; i += 3)
-            if (this.actions[i] == action)
-                return index;
-        this.actions[index++] = action;
-        this.actions[index++] = token;
-        this.actions[index++] = end;
+  }
+  putAction(action, token, end, index) {
+    for (let i = 0; i < index; i += 3)
+      if (this.actions[i] == action)
         return index;
-    }
-    addActions(stack, token, end, index) {
-        let { state } = stack, { parser } = stack.p, { data } = parser;
-        for (let set = 0; set < 2; set++) {
-            for (let i = parser.stateSlot(state, set ? 2 /* ParseState.Skip */ : 1 /* ParseState.Actions */);; i += 3) {
-                if (data[i] == 65535 /* Seq.End */) {
-                    if (data[i + 1] == 1 /* Seq.Next */) {
-                        i = pair(data, i + 2);
-                    }
-                    else {
-                        if (index == 0 && data[i + 1] == 2 /* Seq.Other */)
-                            index = this.putAction(pair(data, i + 2), token, end, index);
-                        break;
-                    }
-                }
-                if (data[i] == token)
-                    index = this.putAction(pair(data, i + 1), token, end, index);
-            }
+    this.actions[index++] = action;
+    this.actions[index++] = token;
+    this.actions[index++] = end;
+    return index;
+  }
+  addActions(stack, token, end, index) {
+    let { state } = stack, { parser } = stack.p, { data } = parser;
+    for (let set = 0; set < 2; set++) {
+      for (let i = parser.stateSlot(
+        state,
+        set ? 2 : 1
+        /* ParseState.Actions */
+      ); ; i += 3) {
+        if (data[i] == 65535) {
+          if (data[i + 1] == 1) {
+            i = pair(data, i + 2);
+          } else {
+            if (index == 0 && data[i + 1] == 2)
+              index = this.putAction(pair(data, i + 2), token, end, index);
+            break;
+          }
         }
-        return index;
+        if (data[i] == token)
+          index = this.putAction(pair(data, i + 1), token, end, index);
+      }
     }
+    return index;
+  }
 }
 class Parse {
-    constructor(parser, input, fragments, ranges) {
-        this.parser = parser;
-        this.input = input;
-        this.ranges = ranges;
-        this.recovering = 0;
-        this.nextStackID = 0x2654; // ♔, ♕, ♖, ♗, ♘, ♙, ♠, ♡, ♢, ♣, ♤, ♥, ♦, ♧
-        this.minStackPos = 0;
-        this.reused = [];
-        this.stoppedAt = null;
-        this.lastBigReductionStart = -1;
-        this.lastBigReductionSize = 0;
-        this.bigReductionCount = 0;
-        this.stream = new InputStream(input, ranges);
-        this.tokens = new TokenCache(parser, this.stream);
-        this.topTerm = parser.top[1];
-        let { from } = ranges[0];
-        this.stacks = [Stack.start(this, parser.top[0], from)];
-        this.fragments = fragments.length && this.stream.end - from > parser.bufferLength * 4
-            ? new FragmentCursor(fragments, parser.nodeSet) : null;
+  constructor(parser, input, fragments, ranges) {
+    this.parser = parser;
+    this.input = input;
+    this.ranges = ranges;
+    this.recovering = 0;
+    this.nextStackID = 9812;
+    this.minStackPos = 0;
+    this.reused = [];
+    this.stoppedAt = null;
+    this.lastBigReductionStart = -1;
+    this.lastBigReductionSize = 0;
+    this.bigReductionCount = 0;
+    this.stream = new InputStream(input, ranges);
+    this.tokens = new TokenCache(parser, this.stream);
+    this.topTerm = parser.top[1];
+    let { from } = ranges[0];
+    this.stacks = [Stack.start(this, parser.top[0], from)];
+    this.fragments = fragments.length && this.stream.end - from > parser.bufferLength * 4 ? new FragmentCursor(fragments, parser.nodeSet) : null;
+  }
+  get parsedPos() {
+    return this.minStackPos;
+  }
+  // Move the parser forward. This will process all parse stacks at
+  // `this.pos` and try to advance them to a further position. If no
+  // stack for such a position is found, it'll start error-recovery.
+  //
+  // When the parse is finished, this will return a syntax tree. When
+  // not, it returns `null`.
+  advance() {
+    let stacks = this.stacks, pos = this.minStackPos;
+    let newStacks = this.stacks = [];
+    let stopped, stoppedTokens;
+    if (this.bigReductionCount > 300 && stacks.length == 1) {
+      let [s] = stacks;
+      while (s.forceReduce() && s.stack.length && s.stack[s.stack.length - 2] >= this.lastBigReductionStart) {
+      }
+      this.bigReductionCount = this.lastBigReductionSize = 0;
     }
-    get parsedPos() {
-        return this.minStackPos;
+    for (let i = 0; i < stacks.length; i++) {
+      let stack = stacks[i];
+      for (; ; ) {
+        this.tokens.mainToken = null;
+        if (stack.pos > pos) {
+          newStacks.push(stack);
+        } else if (this.advanceStack(stack, newStacks, stacks)) {
+          continue;
+        } else {
+          if (!stopped) {
+            stopped = [];
+            stoppedTokens = [];
+          }
+          stopped.push(stack);
+          let tok = this.tokens.getMainToken(stack);
+          stoppedTokens.push(tok.value, tok.end);
+        }
+        break;
+      }
     }
-    // Move the parser forward. This will process all parse stacks at
-    // `this.pos` and try to advance them to a further position. If no
-    // stack for such a position is found, it'll start error-recovery.
-    //
-    // When the parse is finished, this will return a syntax tree. When
-    // not, it returns `null`.
-    advance() {
-        let stacks = this.stacks, pos = this.minStackPos;
-        // This will hold stacks beyond `pos`.
-        let newStacks = this.stacks = [];
-        let stopped, stoppedTokens;
-        // If a large amount of reductions happened with the same start
-        // position, force the stack out of that production in order to
-        // avoid creating a tree too deep to recurse through.
-        // (This is an ugly kludge, because unfortunately there is no
-        // straightforward, cheap way to check for this happening, due to
-        // the history of reductions only being available in an
-        // expensive-to-access format in the stack buffers.)
-        if (this.bigReductionCount > 300 /* Rec.MaxLeftAssociativeReductionCount */ && stacks.length == 1) {
-            let [s] = stacks;
-            while (s.forceReduce() && s.stack.length && s.stack[s.stack.length - 2] >= this.lastBigReductionStart) { }
-            this.bigReductionCount = this.lastBigReductionSize = 0;
-        }
-        // Keep advancing any stacks at `pos` until they either move
-        // forward or can't be advanced. Gather stacks that can't be
-        // advanced further in `stopped`.
-        for (let i = 0; i < stacks.length; i++) {
-            let stack = stacks[i];
-            for (;;) {
-                this.tokens.mainToken = null;
-                if (stack.pos > pos) {
-                    newStacks.push(stack);
-                }
-                else if (this.advanceStack(stack, newStacks, stacks)) {
-                    continue;
-                }
-                else {
-                    if (!stopped) {
-                        stopped = [];
-                        stoppedTokens = [];
-                    }
-                    stopped.push(stack);
-                    let tok = this.tokens.getMainToken(stack);
-                    stoppedTokens.push(tok.value, tok.end);
-                }
-                break;
-            }
-        }
-        if (!newStacks.length) {
-            let finished = stopped && findFinished(stopped);
-            if (finished) {
-                if (verbose)
-                    console.log("Finish with " + this.stackID(finished));
-                return this.stackToTree(finished);
-            }
-            if (this.parser.strict) {
-                if (verbose && stopped)
-                    console.log("Stuck with token " + (this.tokens.mainToken ? this.parser.getName(this.tokens.mainToken.value) : "none"));
-                throw new SyntaxError("No parse at " + pos);
-            }
-            if (!this.recovering)
-                this.recovering = 5 /* Rec.Distance */;
-        }
-        if (this.recovering && stopped) {
-            let finished = this.stoppedAt != null && stopped[0].pos > this.stoppedAt ? stopped[0]
-                : this.runRecovery(stopped, stoppedTokens, newStacks);
-            if (finished) {
-                if (verbose)
-                    console.log("Force-finish " + this.stackID(finished));
-                return this.stackToTree(finished.forceAll());
-            }
-        }
-        if (this.recovering) {
-            let maxRemaining = this.recovering == 1 ? 1 : this.recovering * 3 /* Rec.MaxRemainingPerStep */;
-            if (newStacks.length > maxRemaining) {
-                newStacks.sort((a, b) => b.score - a.score);
-                while (newStacks.length > maxRemaining)
-                    newStacks.pop();
-            }
-            if (newStacks.some(s => s.reducePos > pos))
-                this.recovering--;
-        }
-        else if (newStacks.length > 1) {
-            // Prune stacks that are in the same state, or that have been
-            // running without splitting for a while, to avoid getting stuck
-            // with multiple successful stacks running endlessly on.
-            outer: for (let i = 0; i < newStacks.length - 1; i++) {
-                let stack = newStacks[i];
-                for (let j = i + 1; j < newStacks.length; j++) {
-                    let other = newStacks[j];
-                    if (stack.sameState(other) ||
-                        stack.buffer.length > 500 /* Rec.MinBufferLengthPrune */ && other.buffer.length > 500 /* Rec.MinBufferLengthPrune */) {
-                        if (((stack.score - other.score) || (stack.buffer.length - other.buffer.length)) > 0) {
-                            newStacks.splice(j--, 1);
-                        }
-                        else {
-                            newStacks.splice(i--, 1);
-                            continue outer;
-                        }
-                    }
-                }
-            }
-            if (newStacks.length > 12 /* Rec.MaxStackCount */)
-                newStacks.splice(12 /* Rec.MaxStackCount */, newStacks.length - 12 /* Rec.MaxStackCount */);
-        }
-        this.minStackPos = newStacks[0].pos;
-        for (let i = 1; i < newStacks.length; i++)
-            if (newStacks[i].pos < this.minStackPos)
-                this.minStackPos = newStacks[i].pos;
-        return null;
+    if (!newStacks.length) {
+      let finished = stopped && findFinished(stopped);
+      if (finished) {
+        if (verbose)
+          console.log("Finish with " + this.stackID(finished));
+        return this.stackToTree(finished);
+      }
+      if (this.parser.strict) {
+        if (verbose && stopped)
+          console.log("Stuck with token " + (this.tokens.mainToken ? this.parser.getName(this.tokens.mainToken.value) : "none"));
+        throw new SyntaxError("No parse at " + pos);
+      }
+      if (!this.recovering)
+        this.recovering = 5;
     }
-    stopAt(pos) {
-        if (this.stoppedAt != null && this.stoppedAt < pos)
-            throw new RangeError("Can't move stoppedAt forward");
-        this.stoppedAt = pos;
+    if (this.recovering && stopped) {
+      let finished = this.stoppedAt != null && stopped[0].pos > this.stoppedAt ? stopped[0] : this.runRecovery(stopped, stoppedTokens, newStacks);
+      if (finished) {
+        if (verbose)
+          console.log("Force-finish " + this.stackID(finished));
+        return this.stackToTree(finished.forceAll());
+      }
     }
-    // Returns an updated version of the given stack, or null if the
-    // stack can't advance normally. When `split` and `stacks` are
-    // given, stacks split off by ambiguous operations will be pushed to
-    // `split`, or added to `stacks` if they move `pos` forward.
-    advanceStack(stack, stacks, split) {
-        let start = stack.pos, { parser } = this;
-        let base = verbose ? this.stackID(stack) + " -> " : "";
-        if (this.stoppedAt != null && start > this.stoppedAt)
-            return stack.forceReduce() ? stack : null;
-        if (this.fragments) {
-            let strictCx = stack.curContext && stack.curContext.tracker.strict, cxHash = strictCx ? stack.curContext.hash : 0;
-            for (let cached = this.fragments.nodeAt(start); cached;) {
-                let match = this.parser.nodeSet.types[cached.type.id] == cached.type ? parser.getGoto(stack.state, cached.type.id) : -1;
-                if (match > -1 && cached.length && (!strictCx || (cached.prop(NodeProp.contextHash) || 0) == cxHash)) {
-                    stack.useNode(cached, match);
-                    if (verbose)
-                        console.log(base + this.stackID(stack) + ` (via reuse of ${parser.getName(cached.type.id)})`);
-                    return true;
-                }
-                if (!(cached instanceof Tree) || cached.children.length == 0 || cached.positions[0] > 0)
-                    break;
-                let inner = cached.children[0];
-                if (inner instanceof Tree && cached.positions[0] == 0)
-                    cached = inner;
-                else
-                    break;
+    if (this.recovering) {
+      let maxRemaining = this.recovering == 1 ? 1 : this.recovering * 3;
+      if (newStacks.length > maxRemaining) {
+        newStacks.sort((a, b) => b.score - a.score);
+        while (newStacks.length > maxRemaining)
+          newStacks.pop();
+      }
+      if (newStacks.some((s) => s.reducePos > pos))
+        this.recovering--;
+    } else if (newStacks.length > 1) {
+      outer:
+        for (let i = 0; i < newStacks.length - 1; i++) {
+          let stack = newStacks[i];
+          for (let j = i + 1; j < newStacks.length; j++) {
+            let other = newStacks[j];
+            if (stack.sameState(other) || stack.buffer.length > 500 && other.buffer.length > 500) {
+              if ((stack.score - other.score || stack.buffer.length - other.buffer.length) > 0) {
+                newStacks.splice(j--, 1);
+              } else {
+                newStacks.splice(i--, 1);
+                continue outer;
+              }
             }
+          }
         }
-        let defaultReduce = parser.stateSlot(stack.state, 4 /* ParseState.DefaultReduce */);
-        if (defaultReduce > 0) {
-            stack.reduce(defaultReduce);
-            if (verbose)
-                console.log(base + this.stackID(stack) + ` (via always-reduce ${parser.getName(defaultReduce & 65535 /* Action.ValueMask */)})`);
-            return true;
+      if (newStacks.length > 12)
+        newStacks.splice(
+          12,
+          newStacks.length - 12
+          /* Rec.MaxStackCount */
+        );
+    }
+    this.minStackPos = newStacks[0].pos;
+    for (let i = 1; i < newStacks.length; i++)
+      if (newStacks[i].pos < this.minStackPos)
+        this.minStackPos = newStacks[i].pos;
+    return null;
+  }
+  stopAt(pos) {
+    if (this.stoppedAt != null && this.stoppedAt < pos)
+      throw new RangeError("Can't move stoppedAt forward");
+    this.stoppedAt = pos;
+  }
+  // Returns an updated version of the given stack, or null if the
+  // stack can't advance normally. When `split` and `stacks` are
+  // given, stacks split off by ambiguous operations will be pushed to
+  // `split`, or added to `stacks` if they move `pos` forward.
+  advanceStack(stack, stacks, split) {
+    let start = stack.pos, { parser } = this;
+    let base = verbose ? this.stackID(stack) + " -> " : "";
+    if (this.stoppedAt != null && start > this.stoppedAt)
+      return stack.forceReduce() ? stack : null;
+    if (this.fragments) {
+      let strictCx = stack.curContext && stack.curContext.tracker.strict, cxHash = strictCx ? stack.curContext.hash : 0;
+      for (let cached = this.fragments.nodeAt(start); cached; ) {
+        let match = this.parser.nodeSet.types[cached.type.id] == cached.type ? parser.getGoto(stack.state, cached.type.id) : -1;
+        if (match > -1 && cached.length && (!strictCx || (cached.prop(NodeProp.contextHash) || 0) == cxHash)) {
+          stack.useNode(cached, match);
+          if (verbose)
+            console.log(base + this.stackID(stack) + ` (via reuse of ${parser.getName(cached.type.id)})`);
+          return true;
         }
-        if (stack.stack.length >= 8400 /* Rec.CutDepth */) {
-            while (stack.stack.length > 6000 /* Rec.CutTo */ && stack.forceReduce()) { }
-        }
-        let actions = this.tokens.getActions(stack);
-        for (let i = 0; i < actions.length;) {
-            let action = actions[i++], term = actions[i++], end = actions[i++];
-            let last = i == actions.length || !split;
-            let localStack = last ? stack : stack.split();
-            let main = this.tokens.mainToken;
-            localStack.apply(action, term, main ? main.start : localStack.pos, end);
-            if (verbose)
-                console.log(base + this.stackID(localStack) + ` (via ${(action & 65536 /* Action.ReduceFlag */) == 0 ? "shift"
-                    : `reduce of ${parser.getName(action & 65535 /* Action.ValueMask */)}`} for ${parser.getName(term)} @ ${start}${localStack == stack ? "" : ", split"})`);
-            if (last)
-                return true;
-            else if (localStack.pos > start)
-                stacks.push(localStack);
-            else
-                split.push(localStack);
-        }
+        if (!(cached instanceof Tree) || cached.children.length == 0 || cached.positions[0] > 0)
+          break;
+        let inner = cached.children[0];
+        if (inner instanceof Tree && cached.positions[0] == 0)
+          cached = inner;
+        else
+          break;
+      }
+    }
+    let defaultReduce = parser.stateSlot(
+      stack.state,
+      4
+      /* ParseState.DefaultReduce */
+    );
+    if (defaultReduce > 0) {
+      stack.reduce(defaultReduce);
+      if (verbose)
+        console.log(base + this.stackID(stack) + ` (via always-reduce ${parser.getName(
+          defaultReduce & 65535
+          /* Action.ValueMask */
+        )})`);
+      return true;
+    }
+    if (stack.stack.length >= 8400) {
+      while (stack.stack.length > 6e3 && stack.forceReduce()) {
+      }
+    }
+    let actions = this.tokens.getActions(stack);
+    for (let i = 0; i < actions.length; ) {
+      let action = actions[i++], term = actions[i++], end = actions[i++];
+      let last = i == actions.length || !split;
+      let localStack = last ? stack : stack.split();
+      let main = this.tokens.mainToken;
+      localStack.apply(action, term, main ? main.start : localStack.pos, end);
+      if (verbose)
+        console.log(base + this.stackID(localStack) + ` (via ${(action & 65536) == 0 ? "shift" : `reduce of ${parser.getName(
+          action & 65535
+          /* Action.ValueMask */
+        )}`} for ${parser.getName(term)} @ ${start}${localStack == stack ? "" : ", split"})`);
+      if (last)
+        return true;
+      else if (localStack.pos > start)
+        stacks.push(localStack);
+      else
+        split.push(localStack);
+    }
+    return false;
+  }
+  // Advance a given stack forward as far as it will go. Returns the
+  // (possibly updated) stack if it got stuck, or null if it moved
+  // forward and was given to `pushStackDedup`.
+  advanceFully(stack, newStacks) {
+    let pos = stack.pos;
+    for (; ; ) {
+      if (!this.advanceStack(stack, null, null))
         return false;
+      if (stack.pos > pos) {
+        pushStackDedup(stack, newStacks);
+        return true;
+      }
     }
-    // Advance a given stack forward as far as it will go. Returns the
-    // (possibly updated) stack if it got stuck, or null if it moved
-    // forward and was given to `pushStackDedup`.
-    advanceFully(stack, newStacks) {
-        let pos = stack.pos;
-        for (;;) {
-            if (!this.advanceStack(stack, null, null))
-                return false;
-            if (stack.pos > pos) {
-                pushStackDedup(stack, newStacks);
-                return true;
-            }
+  }
+  runRecovery(stacks, tokens, newStacks) {
+    let finished = null, restarted = false;
+    for (let i = 0; i < stacks.length; i++) {
+      let stack = stacks[i], token = tokens[i << 1], tokenEnd = tokens[(i << 1) + 1];
+      let base = verbose ? this.stackID(stack) + " -> " : "";
+      if (stack.deadEnd) {
+        if (restarted)
+          continue;
+        restarted = true;
+        stack.restart();
+        if (verbose)
+          console.log(base + this.stackID(stack) + " (restarted)");
+        let done = this.advanceFully(stack, newStacks);
+        if (done)
+          continue;
+      }
+      let force = stack.split(), forceBase = base;
+      for (let j = 0; force.forceReduce() && j < 10; j++) {
+        if (verbose)
+          console.log(forceBase + this.stackID(force) + " (via force-reduce)");
+        let done = this.advanceFully(force, newStacks);
+        if (done)
+          break;
+        if (verbose)
+          forceBase = this.stackID(force) + " -> ";
+      }
+      for (let insert of stack.recoverByInsert(token)) {
+        if (verbose)
+          console.log(base + this.stackID(insert) + " (via recover-insert)");
+        this.advanceFully(insert, newStacks);
+      }
+      if (this.stream.end > stack.pos) {
+        if (tokenEnd == stack.pos) {
+          tokenEnd++;
+          token = 0;
         }
+        stack.recoverByDelete(token, tokenEnd);
+        if (verbose)
+          console.log(base + this.stackID(stack) + ` (via recover-delete ${this.parser.getName(token)})`);
+        pushStackDedup(stack, newStacks);
+      } else if (!finished || finished.score < stack.score) {
+        finished = stack;
+      }
     }
-    runRecovery(stacks, tokens, newStacks) {
-        let finished = null, restarted = false;
-        for (let i = 0; i < stacks.length; i++) {
-            let stack = stacks[i], token = tokens[i << 1], tokenEnd = tokens[(i << 1) + 1];
-            let base = verbose ? this.stackID(stack) + " -> " : "";
-            if (stack.deadEnd) {
-                if (restarted)
-                    continue;
-                restarted = true;
-                stack.restart();
-                if (verbose)
-                    console.log(base + this.stackID(stack) + " (restarted)");
-                let done = this.advanceFully(stack, newStacks);
-                if (done)
-                    continue;
-            }
-            let force = stack.split(), forceBase = base;
-            for (let j = 0; force.forceReduce() && j < 10 /* Rec.ForceReduceLimit */; j++) {
-                if (verbose)
-                    console.log(forceBase + this.stackID(force) + " (via force-reduce)");
-                let done = this.advanceFully(force, newStacks);
-                if (done)
-                    break;
-                if (verbose)
-                    forceBase = this.stackID(force) + " -> ";
-            }
-            for (let insert of stack.recoverByInsert(token)) {
-                if (verbose)
-                    console.log(base + this.stackID(insert) + " (via recover-insert)");
-                this.advanceFully(insert, newStacks);
-            }
-            if (this.stream.end > stack.pos) {
-                if (tokenEnd == stack.pos) {
-                    tokenEnd++;
-                    token = 0 /* Term.Err */;
-                }
-                stack.recoverByDelete(token, tokenEnd);
-                if (verbose)
-                    console.log(base + this.stackID(stack) + ` (via recover-delete ${this.parser.getName(token)})`);
-                pushStackDedup(stack, newStacks);
-            }
-            else if (!finished || finished.score < stack.score) {
-                finished = stack;
-            }
-        }
-        return finished;
-    }
-    // Convert the stack's buffer to a syntax tree.
-    stackToTree(stack) {
-        stack.close();
-        return Tree.build({ buffer: StackBufferCursor.create(stack),
-            nodeSet: this.parser.nodeSet,
-            topID: this.topTerm,
-            maxBufferLength: this.parser.bufferLength,
-            reused: this.reused,
-            start: this.ranges[0].from,
-            length: stack.pos - this.ranges[0].from,
-            minRepeatType: this.parser.minRepeatTerm });
-    }
-    stackID(stack) {
-        let id = (stackIDs || (stackIDs = new WeakMap)).get(stack);
-        if (!id)
-            stackIDs.set(stack, id = String.fromCodePoint(this.nextStackID++));
-        return id + stack;
-    }
+    return finished;
+  }
+  // Convert the stack's buffer to a syntax tree.
+  stackToTree(stack) {
+    stack.close();
+    return Tree.build({
+      buffer: StackBufferCursor.create(stack),
+      nodeSet: this.parser.nodeSet,
+      topID: this.topTerm,
+      maxBufferLength: this.parser.bufferLength,
+      reused: this.reused,
+      start: this.ranges[0].from,
+      length: stack.pos - this.ranges[0].from,
+      minRepeatType: this.parser.minRepeatTerm
+    });
+  }
+  stackID(stack) {
+    let id2 = (stackIDs || (stackIDs = /* @__PURE__ */ new WeakMap())).get(stack);
+    if (!id2)
+      stackIDs.set(stack, id2 = String.fromCodePoint(this.nextStackID++));
+    return id2 + stack;
+  }
 }
 function pushStackDedup(stack, newStacks) {
-    for (let i = 0; i < newStacks.length; i++) {
-        let other = newStacks[i];
-        if (other.pos == stack.pos && other.sameState(stack)) {
-            if (newStacks[i].score < stack.score)
-                newStacks[i] = stack;
-            return;
-        }
+  for (let i = 0; i < newStacks.length; i++) {
+    let other = newStacks[i];
+    if (other.pos == stack.pos && other.sameState(stack)) {
+      if (newStacks[i].score < stack.score)
+        newStacks[i] = stack;
+      return;
     }
-    newStacks.push(stack);
+  }
+  newStacks.push(stack);
 }
 class Dialect {
-    constructor(source, flags, disabled) {
-        this.source = source;
-        this.flags = flags;
-        this.disabled = disabled;
-    }
-    allows(term) { return !this.disabled || this.disabled[term] == 0; }
+  constructor(source, flags, disabled) {
+    this.source = source;
+    this.flags = flags;
+    this.disabled = disabled;
+  }
+  allows(term) {
+    return !this.disabled || this.disabled[term] == 0;
+  }
 }
-const id = x => x;
-/**
-Context trackers are used to track stateful context (such as
-indentation in the Python grammar, or parent elements in the XML
-grammar) needed by external tokenizers. You declare them in a
-grammar file as `@context exportName from "module"`.
-
-Context values should be immutable, and can be updated (replaced)
-on shift or reduce actions.
-
-The export used in a `@context` declaration should be of this
-type.
-*/
+const id = (x) => x;
 class ContextTracker {
-    /**
-    Define a context tracker.
-    */
-    constructor(spec) {
-        this.start = spec.start;
-        this.shift = spec.shift || id;
-        this.reduce = spec.reduce || id;
-        this.reuse = spec.reuse || id;
-        this.hash = spec.hash || (() => 0);
-        this.strict = spec.strict !== false;
-    }
+  /**
+  Define a context tracker.
+  */
+  constructor(spec) {
+    this.start = spec.start;
+    this.shift = spec.shift || id;
+    this.reduce = spec.reduce || id;
+    this.reuse = spec.reuse || id;
+    this.hash = spec.hash || (() => 0);
+    this.strict = spec.strict !== false;
+  }
 }
-/**
-Holds the parse tables for a given grammar, as generated by
-`lezer-generator`, and provides [methods](#common.Parser) to parse
-content with.
-*/
 class LRParser extends Parser {
-    /**
-    @internal
-    */
-    constructor(spec) {
-        super();
-        /**
-        @internal
-        */
-        this.wrappers = [];
-        if (spec.version != 14 /* File.Version */)
-            throw new RangeError(`Parser version (${spec.version}) doesn't match runtime version (${14 /* File.Version */})`);
-        let nodeNames = spec.nodeNames.split(" ");
-        this.minRepeatTerm = nodeNames.length;
-        for (let i = 0; i < spec.repeatNodeCount; i++)
-            nodeNames.push("");
-        let topTerms = Object.keys(spec.topRules).map(r => spec.topRules[r][1]);
-        let nodeProps = [];
-        for (let i = 0; i < nodeNames.length; i++)
-            nodeProps.push([]);
-        function setProp(nodeID, prop, value) {
-            nodeProps[nodeID].push([prop, prop.deserialize(String(value))]);
+  /**
+  @internal
+  */
+  constructor(spec) {
+    super();
+    this.wrappers = [];
+    if (spec.version != 14)
+      throw new RangeError(`Parser version (${spec.version}) doesn't match runtime version (${14})`);
+    let nodeNames = spec.nodeNames.split(" ");
+    this.minRepeatTerm = nodeNames.length;
+    for (let i = 0; i < spec.repeatNodeCount; i++)
+      nodeNames.push("");
+    let topTerms = Object.keys(spec.topRules).map((r) => spec.topRules[r][1]);
+    let nodeProps = [];
+    for (let i = 0; i < nodeNames.length; i++)
+      nodeProps.push([]);
+    function setProp(nodeID, prop, value) {
+      nodeProps[nodeID].push([prop, prop.deserialize(String(value))]);
+    }
+    if (spec.nodeProps)
+      for (let propSpec of spec.nodeProps) {
+        let prop = propSpec[0];
+        if (typeof prop == "string")
+          prop = NodeProp[prop];
+        for (let i = 1; i < propSpec.length; ) {
+          let next = propSpec[i++];
+          if (next >= 0) {
+            setProp(next, prop, propSpec[i++]);
+          } else {
+            let value = propSpec[i + -next];
+            for (let j = -next; j > 0; j--)
+              setProp(propSpec[i++], prop, value);
+            i++;
+          }
         }
-        if (spec.nodeProps)
-            for (let propSpec of spec.nodeProps) {
-                let prop = propSpec[0];
-                if (typeof prop == "string")
-                    prop = NodeProp[prop];
-                for (let i = 1; i < propSpec.length;) {
-                    let next = propSpec[i++];
-                    if (next >= 0) {
-                        setProp(next, prop, propSpec[i++]);
-                    }
-                    else {
-                        let value = propSpec[i + -next];
-                        for (let j = -next; j > 0; j--)
-                            setProp(propSpec[i++], prop, value);
-                        i++;
-                    }
-                }
-            }
-        this.nodeSet = new NodeSet(nodeNames.map((name, i) => NodeType.define({
-            name: i >= this.minRepeatTerm ? undefined : name,
-            id: i,
-            props: nodeProps[i],
-            top: topTerms.indexOf(i) > -1,
-            error: i == 0,
-            skipped: spec.skippedNodes && spec.skippedNodes.indexOf(i) > -1
-        })));
-        if (spec.propSources)
-            this.nodeSet = this.nodeSet.extend(...spec.propSources);
-        this.strict = false;
-        this.bufferLength = DefaultBufferLength;
-        let tokenArray = decodeArray(spec.tokenData);
-        this.context = spec.context;
-        this.specializerSpecs = spec.specialized || [];
-        this.specialized = new Uint16Array(this.specializerSpecs.length);
-        for (let i = 0; i < this.specializerSpecs.length; i++)
-            this.specialized[i] = this.specializerSpecs[i].term;
-        this.specializers = this.specializerSpecs.map(getSpecializer);
-        this.states = decodeArray(spec.states, Uint32Array);
-        this.data = decodeArray(spec.stateData);
-        this.goto = decodeArray(spec.goto);
-        this.maxTerm = spec.maxTerm;
-        this.tokenizers = spec.tokenizers.map(value => typeof value == "number" ? new TokenGroup(tokenArray, value) : value);
-        this.topRules = spec.topRules;
-        this.dialects = spec.dialects || {};
-        this.dynamicPrecedences = spec.dynamicPrecedences || null;
-        this.tokenPrecTable = spec.tokenPrec;
-        this.termNames = spec.termNames || null;
-        this.maxNode = this.nodeSet.types.length - 1;
-        this.dialect = this.parseDialect();
-        this.top = this.topRules[Object.keys(this.topRules)[0]];
+      }
+    this.nodeSet = new NodeSet(nodeNames.map((name, i) => NodeType.define({
+      name: i >= this.minRepeatTerm ? void 0 : name,
+      id: i,
+      props: nodeProps[i],
+      top: topTerms.indexOf(i) > -1,
+      error: i == 0,
+      skipped: spec.skippedNodes && spec.skippedNodes.indexOf(i) > -1
+    })));
+    if (spec.propSources)
+      this.nodeSet = this.nodeSet.extend(...spec.propSources);
+    this.strict = false;
+    this.bufferLength = DefaultBufferLength;
+    let tokenArray = decodeArray(spec.tokenData);
+    this.context = spec.context;
+    this.specializerSpecs = spec.specialized || [];
+    this.specialized = new Uint16Array(this.specializerSpecs.length);
+    for (let i = 0; i < this.specializerSpecs.length; i++)
+      this.specialized[i] = this.specializerSpecs[i].term;
+    this.specializers = this.specializerSpecs.map(getSpecializer);
+    this.states = decodeArray(spec.states, Uint32Array);
+    this.data = decodeArray(spec.stateData);
+    this.goto = decodeArray(spec.goto);
+    this.maxTerm = spec.maxTerm;
+    this.tokenizers = spec.tokenizers.map((value) => typeof value == "number" ? new TokenGroup(tokenArray, value) : value);
+    this.topRules = spec.topRules;
+    this.dialects = spec.dialects || {};
+    this.dynamicPrecedences = spec.dynamicPrecedences || null;
+    this.tokenPrecTable = spec.tokenPrec;
+    this.termNames = spec.termNames || null;
+    this.maxNode = this.nodeSet.types.length - 1;
+    this.dialect = this.parseDialect();
+    this.top = this.topRules[Object.keys(this.topRules)[0]];
+  }
+  createParse(input, fragments, ranges) {
+    let parse = new Parse(this, input, fragments, ranges);
+    for (let w of this.wrappers)
+      parse = w(parse, input, fragments, ranges);
+    return parse;
+  }
+  /**
+  Get a goto table entry @internal
+  */
+  getGoto(state, term, loose = false) {
+    let table = this.goto;
+    if (term >= table[0])
+      return -1;
+    for (let pos = table[term + 1]; ; ) {
+      let groupTag = table[pos++], last = groupTag & 1;
+      let target = table[pos++];
+      if (last && loose)
+        return target;
+      for (let end = pos + (groupTag >> 1); pos < end; pos++)
+        if (table[pos] == state)
+          return target;
+      if (last)
+        return -1;
     }
-    createParse(input, fragments, ranges) {
-        let parse = new Parse(this, input, fragments, ranges);
-        for (let w of this.wrappers)
-            parse = w(parse, input, fragments, ranges);
-        return parse;
-    }
-    /**
-    Get a goto table entry @internal
-    */
-    getGoto(state, term, loose = false) {
-        let table = this.goto;
-        if (term >= table[0])
-            return -1;
-        for (let pos = table[term + 1];;) {
-            let groupTag = table[pos++], last = groupTag & 1;
-            let target = table[pos++];
-            if (last && loose)
-                return target;
-            for (let end = pos + (groupTag >> 1); pos < end; pos++)
-                if (table[pos] == state)
-                    return target;
-            if (last)
-                return -1;
+  }
+  /**
+  Check if this state has an action for a given terminal @internal
+  */
+  hasAction(state, terminal) {
+    let data = this.data;
+    for (let set = 0; set < 2; set++) {
+      for (let i = this.stateSlot(
+        state,
+        set ? 2 : 1
+        /* ParseState.Actions */
+      ), next; ; i += 3) {
+        if ((next = data[i]) == 65535) {
+          if (data[i + 1] == 1)
+            next = data[i = pair(data, i + 2)];
+          else if (data[i + 1] == 2)
+            return pair(data, i + 2);
+          else
+            break;
         }
+        if (next == terminal || next == 0)
+          return pair(data, i + 1);
+      }
     }
-    /**
-    Check if this state has an action for a given terminal @internal
-    */
-    hasAction(state, terminal) {
-        let data = this.data;
-        for (let set = 0; set < 2; set++) {
-            for (let i = this.stateSlot(state, set ? 2 /* ParseState.Skip */ : 1 /* ParseState.Actions */), next;; i += 3) {
-                if ((next = data[i]) == 65535 /* Seq.End */) {
-                    if (data[i + 1] == 1 /* Seq.Next */)
-                        next = data[i = pair(data, i + 2)];
-                    else if (data[i + 1] == 2 /* Seq.Other */)
-                        return pair(data, i + 2);
-                    else
-                        break;
-                }
-                if (next == terminal || next == 0 /* Term.Err */)
-                    return pair(data, i + 1);
-            }
-        }
-        return 0;
+    return 0;
+  }
+  /**
+  @internal
+  */
+  stateSlot(state, slot) {
+    return this.states[state * 6 + slot];
+  }
+  /**
+  @internal
+  */
+  stateFlag(state, flag) {
+    return (this.stateSlot(
+      state,
+      0
+      /* ParseState.Flags */
+    ) & flag) > 0;
+  }
+  /**
+  @internal
+  */
+  validAction(state, action) {
+    return !!this.allActions(state, (a) => a == action ? true : null);
+  }
+  /**
+  @internal
+  */
+  allActions(state, action) {
+    let deflt = this.stateSlot(
+      state,
+      4
+      /* ParseState.DefaultReduce */
+    );
+    let result = deflt ? action(deflt) : void 0;
+    for (let i = this.stateSlot(
+      state,
+      1
+      /* ParseState.Actions */
+    ); result == null; i += 3) {
+      if (this.data[i] == 65535) {
+        if (this.data[i + 1] == 1)
+          i = pair(this.data, i + 2);
+        else
+          break;
+      }
+      result = action(pair(this.data, i + 1));
     }
-    /**
-    @internal
-    */
-    stateSlot(state, slot) {
-        return this.states[(state * 6 /* ParseState.Size */) + slot];
+    return result;
+  }
+  /**
+  Get the states that can follow this one through shift actions or
+  goto jumps. @internal
+  */
+  nextStates(state) {
+    let result = [];
+    for (let i = this.stateSlot(
+      state,
+      1
+      /* ParseState.Actions */
+    ); ; i += 3) {
+      if (this.data[i] == 65535) {
+        if (this.data[i + 1] == 1)
+          i = pair(this.data, i + 2);
+        else
+          break;
+      }
+      if ((this.data[i + 2] & 65536 >> 16) == 0) {
+        let value = this.data[i + 1];
+        if (!result.some((v, i2) => i2 & 1 && v == value))
+          result.push(this.data[i], value);
+      }
     }
-    /**
-    @internal
-    */
-    stateFlag(state, flag) {
-        return (this.stateSlot(state, 0 /* ParseState.Flags */) & flag) > 0;
+    return result;
+  }
+  /**
+  Configure the parser. Returns a new parser instance that has the
+  given settings modified. Settings not provided in `config` are
+  kept from the original parser.
+  */
+  configure(config) {
+    let copy = Object.assign(Object.create(LRParser.prototype), this);
+    if (config.props)
+      copy.nodeSet = this.nodeSet.extend(...config.props);
+    if (config.top) {
+      let info = this.topRules[config.top];
+      if (!info)
+        throw new RangeError(`Invalid top rule name ${config.top}`);
+      copy.top = info;
     }
-    /**
-    @internal
-    */
-    validAction(state, action) {
-        return !!this.allActions(state, a => a == action ? true : null);
+    if (config.tokenizers)
+      copy.tokenizers = this.tokenizers.map((t) => {
+        let found = config.tokenizers.find((r) => r.from == t);
+        return found ? found.to : t;
+      });
+    if (config.specializers) {
+      copy.specializers = this.specializers.slice();
+      copy.specializerSpecs = this.specializerSpecs.map((s, i) => {
+        let found = config.specializers.find((r) => r.from == s.external);
+        if (!found)
+          return s;
+        let spec = Object.assign(Object.assign({}, s), { external: found.to });
+        copy.specializers[i] = getSpecializer(spec);
+        return spec;
+      });
     }
-    /**
-    @internal
-    */
-    allActions(state, action) {
-        let deflt = this.stateSlot(state, 4 /* ParseState.DefaultReduce */);
-        let result = deflt ? action(deflt) : undefined;
-        for (let i = this.stateSlot(state, 1 /* ParseState.Actions */); result == null; i += 3) {
-            if (this.data[i] == 65535 /* Seq.End */) {
-                if (this.data[i + 1] == 1 /* Seq.Next */)
-                    i = pair(this.data, i + 2);
-                else
-                    break;
-            }
-            result = action(pair(this.data, i + 1));
-        }
-        return result;
-    }
-    /**
-    Get the states that can follow this one through shift actions or
-    goto jumps. @internal
-    */
-    nextStates(state) {
-        let result = [];
-        for (let i = this.stateSlot(state, 1 /* ParseState.Actions */);; i += 3) {
-            if (this.data[i] == 65535 /* Seq.End */) {
-                if (this.data[i + 1] == 1 /* Seq.Next */)
-                    i = pair(this.data, i + 2);
-                else
-                    break;
-            }
-            if ((this.data[i + 2] & (65536 /* Action.ReduceFlag */ >> 16)) == 0) {
-                let value = this.data[i + 1];
-                if (!result.some((v, i) => (i & 1) && v == value))
-                    result.push(this.data[i], value);
-            }
-        }
-        return result;
-    }
-    /**
-    Configure the parser. Returns a new parser instance that has the
-    given settings modified. Settings not provided in `config` are
-    kept from the original parser.
-    */
-    configure(config) {
-        // Hideous reflection-based kludge to make it easy to create a
-        // slightly modified copy of a parser.
-        let copy = Object.assign(Object.create(LRParser.prototype), this);
-        if (config.props)
-            copy.nodeSet = this.nodeSet.extend(...config.props);
-        if (config.top) {
-            let info = this.topRules[config.top];
-            if (!info)
-                throw new RangeError(`Invalid top rule name ${config.top}`);
-            copy.top = info;
-        }
-        if (config.tokenizers)
-            copy.tokenizers = this.tokenizers.map(t => {
-                let found = config.tokenizers.find(r => r.from == t);
-                return found ? found.to : t;
-            });
-        if (config.specializers) {
-            copy.specializers = this.specializers.slice();
-            copy.specializerSpecs = this.specializerSpecs.map((s, i) => {
-                let found = config.specializers.find(r => r.from == s.external);
-                if (!found)
-                    return s;
-                let spec = Object.assign(Object.assign({}, s), { external: found.to });
-                copy.specializers[i] = getSpecializer(spec);
-                return spec;
-            });
-        }
-        if (config.contextTracker)
-            copy.context = config.contextTracker;
-        if (config.dialect)
-            copy.dialect = this.parseDialect(config.dialect);
-        if (config.strict != null)
-            copy.strict = config.strict;
-        if (config.wrap)
-            copy.wrappers = copy.wrappers.concat(config.wrap);
-        if (config.bufferLength != null)
-            copy.bufferLength = config.bufferLength;
-        return copy;
-    }
-    /**
-    Tells you whether any [parse wrappers](#lr.ParserConfig.wrap)
-    are registered for this parser.
-    */
-    hasWrappers() {
-        return this.wrappers.length > 0;
-    }
-    /**
-    Returns the name associated with a given term. This will only
-    work for all terms when the parser was generated with the
-    `--names` option. By default, only the names of tagged terms are
-    stored.
-    */
-    getName(term) {
-        return this.termNames ? this.termNames[term] : String(term <= this.maxNode && this.nodeSet.types[term].name || term);
-    }
-    /**
-    The eof term id is always allocated directly after the node
-    types. @internal
-    */
-    get eofTerm() { return this.maxNode + 1; }
-    /**
-    The type of top node produced by the parser.
-    */
-    get topNode() { return this.nodeSet.types[this.top[1]]; }
-    /**
-    @internal
-    */
-    dynamicPrecedence(term) {
-        let prec = this.dynamicPrecedences;
-        return prec == null ? 0 : prec[term] || 0;
-    }
-    /**
-    @internal
-    */
-    parseDialect(dialect) {
-        let values = Object.keys(this.dialects), flags = values.map(() => false);
-        if (dialect)
-            for (let part of dialect.split(" ")) {
-                let id = values.indexOf(part);
-                if (id >= 0)
-                    flags[id] = true;
-            }
-        let disabled = null;
-        for (let i = 0; i < values.length; i++)
-            if (!flags[i]) {
-                for (let j = this.dialects[values[i]], id; (id = this.data[j++]) != 65535 /* Seq.End */;)
-                    (disabled || (disabled = new Uint8Array(this.maxTerm + 1)))[id] = 1;
-            }
-        return new Dialect(dialect, flags, disabled);
-    }
-    /**
-    Used by the output of the parser generator. Not available to
-    user code. @hide
-    */
-    static deserialize(spec) {
-        return new LRParser(spec);
-    }
+    if (config.contextTracker)
+      copy.context = config.contextTracker;
+    if (config.dialect)
+      copy.dialect = this.parseDialect(config.dialect);
+    if (config.strict != null)
+      copy.strict = config.strict;
+    if (config.wrap)
+      copy.wrappers = copy.wrappers.concat(config.wrap);
+    if (config.bufferLength != null)
+      copy.bufferLength = config.bufferLength;
+    return copy;
+  }
+  /**
+  Tells you whether any [parse wrappers](#lr.ParserConfig.wrap)
+  are registered for this parser.
+  */
+  hasWrappers() {
+    return this.wrappers.length > 0;
+  }
+  /**
+  Returns the name associated with a given term. This will only
+  work for all terms when the parser was generated with the
+  `--names` option. By default, only the names of tagged terms are
+  stored.
+  */
+  getName(term) {
+    return this.termNames ? this.termNames[term] : String(term <= this.maxNode && this.nodeSet.types[term].name || term);
+  }
+  /**
+  The eof term id is always allocated directly after the node
+  types. @internal
+  */
+  get eofTerm() {
+    return this.maxNode + 1;
+  }
+  /**
+  The type of top node produced by the parser.
+  */
+  get topNode() {
+    return this.nodeSet.types[this.top[1]];
+  }
+  /**
+  @internal
+  */
+  dynamicPrecedence(term) {
+    let prec = this.dynamicPrecedences;
+    return prec == null ? 0 : prec[term] || 0;
+  }
+  /**
+  @internal
+  */
+  parseDialect(dialect) {
+    let values = Object.keys(this.dialects), flags = values.map(() => false);
+    if (dialect)
+      for (let part of dialect.split(" ")) {
+        let id2 = values.indexOf(part);
+        if (id2 >= 0)
+          flags[id2] = true;
+      }
+    let disabled = null;
+    for (let i = 0; i < values.length; i++)
+      if (!flags[i]) {
+        for (let j = this.dialects[values[i]], id2; (id2 = this.data[j++]) != 65535; )
+          (disabled || (disabled = new Uint8Array(this.maxTerm + 1)))[id2] = 1;
+      }
+    return new Dialect(dialect, flags, disabled);
+  }
+  /**
+  Used by the output of the parser generator. Not available to
+  user code. @hide
+  */
+  static deserialize(spec) {
+    return new LRParser(spec);
+  }
 }
-function pair(data, off) { return data[off] | (data[off + 1] << 16); }
+function pair(data, off) {
+  return data[off] | data[off + 1] << 16;
+}
 function findFinished(stacks) {
-    let best = null;
-    for (let stack of stacks) {
-        let stopped = stack.p.stoppedAt;
-        if ((stack.pos == stack.p.stream.end || stopped != null && stack.pos > stopped) &&
-            stack.p.parser.stateFlag(stack.state, 2 /* StateFlag.Accepting */) &&
-            (!best || best.score < stack.score))
-            best = stack;
-    }
-    return best;
+  let best = null;
+  for (let stack of stacks) {
+    let stopped = stack.p.stoppedAt;
+    if ((stack.pos == stack.p.stream.end || stopped != null && stack.pos > stopped) && stack.p.parser.stateFlag(
+      stack.state,
+      2
+      /* StateFlag.Accepting */
+    ) && (!best || best.score < stack.score))
+      best = stack;
+  }
+  return best;
 }
 function getSpecializer(spec) {
-    if (spec.external) {
-        let mask = spec.extend ? 1 /* Specialize.Extend */ : 0 /* Specialize.Specialize */;
-        return (value, stack) => (spec.external(value, stack) << 1) | mask;
-    }
-    return spec.get;
+  if (spec.external) {
+    let mask = spec.extend ? 1 : 0;
+    return (value, stack) => spec.external(value, stack) << 1 | mask;
+  }
+  return spec.get;
 }
 
 // This file was generated by lezer-generator. You probably shouldn't edit it.
@@ -22880,7 +22813,7 @@ const descendantOp = 96,
 const space$1 = [9, 10, 11, 12, 13, 32, 133, 160, 5760, 8192, 8193, 8194, 8195, 8196, 8197,
                8198, 8199, 8200, 8201, 8202, 8232, 8233, 8239, 8287, 12288];
 const colon = 58, parenL = 40, underscore = 95, bracketL = 91, dash$1 = 45, period = 46,
-      hash = 35, percent = 37;
+      hash = 35, percent = 37, ampersand = 38, backslash = 92, newline$1 = 10;
 
 function isAlpha(ch) { return ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122 || ch >= 161 }
 
@@ -22893,6 +22826,10 @@ const identifiers = new ExternalTokenizer((input, stack) => {
       if (!inside && (next != dash$1 || i > 0)) inside = true;
       if (dashes === i && next == dash$1) dashes++;
       input.advance();
+    } else if (next == backslash && input.peek(1) != newline$1) {
+      input.advance();
+      if (input.next > -1) input.advance();
+      inside = true;
     } else {
       if (inside)
         input.acceptToken(next == parenL ? callee : dashes == 2 && stack.canShift(VariableName) ? VariableName : identifier$2);
@@ -22905,7 +22842,7 @@ const descendant = new ExternalTokenizer(input => {
   if (space$1.includes(input.peek(-1))) {
     let {next} = input;
     if (isAlpha(next) || next == underscore || next == hash || next == period ||
-        next == bracketL || next == colon || next == dash$1)
+        next == bracketL || next == colon || next == dash$1 || next == ampersand)
       input.acceptToken(descendantOp);
   }
 });
@@ -22977,7 +22914,7 @@ const parser$2 = LRParser.deserialize({
   tokenData: "J^~R!^OX$}X^%u^p$}pq%uqr)Xrs.Rst/utu6duv$}vw7^wx7oxy9^yz9oz{9t{|:_|}?Q}!O?c!O!P@Q!P!Q@i!Q![Ab![!]B]!]!^CX!^!_$}!_!`Cj!`!aC{!a!b$}!b!cDw!c!}$}!}#OFa#O#P$}#P#QFr#Q#R6d#R#T$}#T#UGT#U#c$}#c#dHf#d#o$}#o#pH{#p#q6d#q#rI^#r#sIo#s#y$}#y#z%u#z$f$}$f$g%u$g#BY$}#BY#BZ%u#BZ$IS$}$IS$I_%u$I_$I|$}$I|$JO%u$JO$JT$}$JT$JU%u$JU$KV$}$KV$KW%u$KW&FU$}&FU&FV%u&FV;'S$};'S;=`JW<%lO$}`%QSOy%^z;'S%^;'S;=`%o<%lO%^`%cSo`Oy%^z;'S%^;'S;=`%o<%lO%^`%rP;=`<%l%^~%zh#W~OX%^X^'f^p%^pq'fqy%^z#y%^#y#z'f#z$f%^$f$g'f$g#BY%^#BY#BZ'f#BZ$IS%^$IS$I_'f$I_$I|%^$I|$JO'f$JO$JT%^$JT$JU'f$JU$KV%^$KV$KW'f$KW&FU%^&FU&FV'f&FV;'S%^;'S;=`%o<%lO%^~'mh#W~o`OX%^X^'f^p%^pq'fqy%^z#y%^#y#z'f#z$f%^$f$g'f$g#BY%^#BY#BZ'f#BZ$IS%^$IS$I_'f$I_$I|%^$I|$JO'f$JO$JT%^$JT$JU'f$JU$KV%^$KV$KW'f$KW&FU%^&FU&FV'f&FV;'S%^;'S;=`%o<%lO%^l)[UOy%^z#]%^#]#^)n#^;'S%^;'S;=`%o<%lO%^l)sUo`Oy%^z#a%^#a#b*V#b;'S%^;'S;=`%o<%lO%^l*[Uo`Oy%^z#d%^#d#e*n#e;'S%^;'S;=`%o<%lO%^l*sUo`Oy%^z#c%^#c#d+V#d;'S%^;'S;=`%o<%lO%^l+[Uo`Oy%^z#f%^#f#g+n#g;'S%^;'S;=`%o<%lO%^l+sUo`Oy%^z#h%^#h#i,V#i;'S%^;'S;=`%o<%lO%^l,[Uo`Oy%^z#T%^#T#U,n#U;'S%^;'S;=`%o<%lO%^l,sUo`Oy%^z#b%^#b#c-V#c;'S%^;'S;=`%o<%lO%^l-[Uo`Oy%^z#h%^#h#i-n#i;'S%^;'S;=`%o<%lO%^l-uS!V[o`Oy%^z;'S%^;'S;=`%o<%lO%^~.UWOY.RZr.Rrs.ns#O.R#O#P.s#P;'S.R;'S;=`/o<%lO.R~.sOh~~.vRO;'S.R;'S;=`/P;=`O.R~/SXOY.RZr.Rrs.ns#O.R#O#P.s#P;'S.R;'S;=`/o;=`<%l.R<%lO.R~/rP;=`<%l.Rn/zYtQOy%^z!Q%^!Q![0j![!c%^!c!i0j!i#T%^#T#Z0j#Z;'S%^;'S;=`%o<%lO%^l0oYo`Oy%^z!Q%^!Q![1_![!c%^!c!i1_!i#T%^#T#Z1_#Z;'S%^;'S;=`%o<%lO%^l1dYo`Oy%^z!Q%^!Q![2S![!c%^!c!i2S!i#T%^#T#Z2S#Z;'S%^;'S;=`%o<%lO%^l2ZYf[o`Oy%^z!Q%^!Q![2y![!c%^!c!i2y!i#T%^#T#Z2y#Z;'S%^;'S;=`%o<%lO%^l3QYf[o`Oy%^z!Q%^!Q![3p![!c%^!c!i3p!i#T%^#T#Z3p#Z;'S%^;'S;=`%o<%lO%^l3uYo`Oy%^z!Q%^!Q![4e![!c%^!c!i4e!i#T%^#T#Z4e#Z;'S%^;'S;=`%o<%lO%^l4lYf[o`Oy%^z!Q%^!Q![5[![!c%^!c!i5[!i#T%^#T#Z5[#Z;'S%^;'S;=`%o<%lO%^l5aYo`Oy%^z!Q%^!Q![6P![!c%^!c!i6P!i#T%^#T#Z6P#Z;'S%^;'S;=`%o<%lO%^l6WSf[o`Oy%^z;'S%^;'S;=`%o<%lO%^d6gUOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^d7QSzSo`Oy%^z;'S%^;'S;=`%o<%lO%^b7cSXQOy%^z;'S%^;'S;=`%o<%lO%^~7rWOY7oZw7owx.nx#O7o#O#P8[#P;'S7o;'S;=`9W<%lO7o~8_RO;'S7o;'S;=`8h;=`O7o~8kXOY7oZw7owx.nx#O7o#O#P8[#P;'S7o;'S;=`9W;=`<%l7o<%lO7o~9ZP;=`<%l7on9cSb^Oy%^z;'S%^;'S;=`%o<%lO%^~9tOa~n9{UUQjWOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^n:fWjW!PQOy%^z!O%^!O!P;O!P!Q%^!Q![>T![;'S%^;'S;=`%o<%lO%^l;TUo`Oy%^z!Q%^!Q![;g![;'S%^;'S;=`%o<%lO%^l;nYo`#b[Oy%^z!Q%^!Q![;g![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^l<cYo`Oy%^z{%^{|=R|}%^}!O=R!O!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l=WUo`Oy%^z!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l=qUo`#b[Oy%^z!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l>[[o`#b[Oy%^z!O%^!O!P;g!P!Q%^!Q![>T![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^n?VSp^Oy%^z;'S%^;'S;=`%o<%lO%^l?hWjWOy%^z!O%^!O!P;O!P!Q%^!Q![>T![;'S%^;'S;=`%o<%lO%^n@VU#_QOy%^z!Q%^!Q![;g![;'S%^;'S;=`%o<%lO%^~@nTjWOy%^z{@}{;'S%^;'S;=`%o<%lO%^~AUSo`#X~Oy%^z;'S%^;'S;=`%o<%lO%^lAg[#b[Oy%^z!O%^!O!P;g!P!Q%^!Q![>T![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^bBbU]QOy%^z![%^![!]Bt!];'S%^;'S;=`%o<%lO%^bB{S^Qo`Oy%^z;'S%^;'S;=`%o<%lO%^nC^S!W^Oy%^z;'S%^;'S;=`%o<%lO%^dCoSzSOy%^z;'S%^;'S;=`%o<%lO%^bDQU|QOy%^z!`%^!`!aDd!a;'S%^;'S;=`%o<%lO%^bDkS|Qo`Oy%^z;'S%^;'S;=`%o<%lO%^bDzWOy%^z!c%^!c!}Ed!}#T%^#T#oEd#o;'S%^;'S;=`%o<%lO%^bEk[!YQo`Oy%^z}%^}!OEd!O!Q%^!Q![Ed![!c%^!c!}Ed!}#T%^#T#oEd#o;'S%^;'S;=`%o<%lO%^bFfSxQOy%^z;'S%^;'S;=`%o<%lO%^lFwSv[Oy%^z;'S%^;'S;=`%o<%lO%^bGWUOy%^z#b%^#b#cGj#c;'S%^;'S;=`%o<%lO%^bGoUo`Oy%^z#W%^#W#XHR#X;'S%^;'S;=`%o<%lO%^bHYS!`Qo`Oy%^z;'S%^;'S;=`%o<%lO%^bHiUOy%^z#f%^#f#gHR#g;'S%^;'S;=`%o<%lO%^fIQS!RUOy%^z;'S%^;'S;=`%o<%lO%^nIcS!Q^Oy%^z;'S%^;'S;=`%o<%lO%^fItU!PQOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^`JZP;=`<%l$}",
   tokenizers: [descendant, unitToken, identifiers, 1, 2, 3, 4, new LocalTokenGroup("m~RRYZ[z{a~~g~aO#Z~~dP!P!Qg~lO#[~~", 28, 102)],
   topRules: {"StyleSheet":[0,4],"Styles":[1,84]},
-  specialized: [{term: 97, get: value => spec_callee[value] || -1},{term: 56, get: value => spec_AtKeyword[value] || -1},{term: 98, get: value => spec_identifier$1[value] || -1}],
+  specialized: [{term: 97, get: (value) => spec_callee[value] || -1},{term: 56, get: (value) => spec_AtKeyword[value] || -1},{term: 98, get: (value) => spec_identifier$1[value] || -1}],
   tokenPrec: 1169
 });
 
@@ -26053,18 +25990,18 @@ function __spreadArray(to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 }
 
-var SVG = function (props) { return (jsxRuntimeExports.jsx("svg", __assign({ fill: "currentColor", height: "16", viewBox: "0 0 16 16", width: "16", xmlns: "http://www.w3.org/2000/svg" }, props), void 0)); };
-var SignInIcon = function () { return (jsxRuntimeExports.jsxs(SVG, __assign({ viewBox: "0 0 48 48" }, { children: [jsxRuntimeExports.jsx("title", { children: "Sign in" }, void 0), jsxRuntimeExports.jsx("path", { d: "M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" }, void 0)] }), void 0)); };
-var SignOutIcon = function () { return (jsxRuntimeExports.jsxs(SVG, __assign({ viewBox: "0 0 48 48" }, { children: [jsxRuntimeExports.jsx("title", { children: "Sign out" }, void 0), jsxRuntimeExports.jsx("path", { d: "M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" }, void 0)] }), void 0)); };
-var RestartIcon = function () { return (jsxRuntimeExports.jsxs(SVG, __assign({ fill: "none", stroke: "currentColor" }, { children: [jsxRuntimeExports.jsx("title", { children: "Restart script" }, void 0), jsxRuntimeExports.jsx("path", { d: "M8 2C4.68629 2 2 4.68629 2 8C2 10.0946 3.07333 11.9385 4.7 13.0118", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M14.0005 7.9998C14.0005 5.82095 12.8391 3.91335 11.1016 2.8623", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M14.0003 2.3335H11.167C10.8908 2.3335 10.667 2.55735 10.667 2.8335V5.66683", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M1.99967 13.6665L4.83301 13.6665C5.10915 13.6665 5.33301 13.4426 5.33301 13.1665L5.33301 10.3332", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M10 10L12 12L10 14", strokeLinecap: "round", strokeLinejoin: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M14.667 14L12.667 14", strokeLinecap: "round", strokeLinejoin: "round" }, void 0)] }), void 0)); };
-var RunIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Run sandbox" }, void 0), jsxRuntimeExports.jsx("path", { d: "M11.0792 8.1078C11.2793 8.25007 11.27 8.55012 11.0616 8.67981L6.02535 11.8135C5.79638 11.956 5.5 11.7913 5.5 11.5216L5.5 8.40703L5.5 4.80661C5.5 4.52735 5.81537 4.36463 6.04296 4.52647L11.0792 8.1078Z" }, void 0)] }, void 0)); };
-var BackwardIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Click to go back" }, void 0), jsxRuntimeExports.jsx("path", { d: "M9.64645 12.3536C9.84171 12.5488 10.1583 12.5488 10.3536 12.3536C10.5488 12.1583 10.5488 11.8417 10.3536 11.6464L9.64645 12.3536ZM10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64644C10.1583 3.45118 9.84171 3.45118 9.64645 3.64644L10.3536 4.35355ZM6.07072 7.92929L5.71716 7.57573L6.07072 7.92929ZM10.3536 11.6464L6.42427 7.71716L5.71716 8.42426L9.64645 12.3536L10.3536 11.6464ZM6.42427 8.28284L10.3536 4.35355L9.64645 3.64644L5.71716 7.57573L6.42427 8.28284ZM6.42427 7.71716C6.58048 7.87337 6.58048 8.12663 6.42427 8.28284L5.71716 7.57573C5.48285 7.81005 5.48285 8.18995 5.71716 8.42426L6.42427 7.71716Z" }, void 0)] }, void 0)); };
-var ForwardIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Click to go forward" }, void 0), jsxRuntimeExports.jsx("path", { d: "M6.35355 3.64645C6.15829 3.45118 5.84171 3.45118 5.64645 3.64645C5.45118 3.84171 5.45118 4.15829 5.64645 4.35355L6.35355 3.64645ZM5.64645 11.6464C5.45118 11.8417 5.45118 12.1583 5.64645 12.3536C5.84171 12.5488 6.15829 12.5488 6.35355 12.3536L5.64645 11.6464ZM9.92929 8.07071L10.2828 8.42426L9.92929 8.07071ZM5.64645 4.35355L9.57574 8.28284L10.2828 7.57574L6.35355 3.64645L5.64645 4.35355ZM9.57574 7.71716L5.64645 11.6464L6.35355 12.3536L10.2828 8.42426L9.57574 7.71716ZM9.57574 8.28284C9.41952 8.12663 9.41953 7.87337 9.57574 7.71716L10.2828 8.42426C10.5172 8.18995 10.5172 7.81005 10.2828 7.57574L9.57574 8.28284Z" }, void 0)] }, void 0)); };
-var RefreshIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Refresh preview" }, void 0), jsxRuntimeExports.jsx("path", { clipRule: "evenodd", d: "M3.83325 7.99992C3.83325 5.69867 5.69853 3.83325 7.99934 3.83325C9.81246 3.83325 11.3563 4.99195 11.9285 6.61097C11.9396 6.6425 11.9536 6.67221 11.97 6.69992H8.80005C8.52391 6.69992 8.30005 6.92378 8.30005 7.19992C8.30005 7.47606 8.52391 7.69992 8.80005 7.69992H12.5667C12.8981 7.69992 13.1667 7.43129 13.1667 7.09992V3.33325C13.1667 3.05711 12.9429 2.83325 12.6667 2.83325C12.3906 2.83325 12.1667 3.05711 12.1667 3.33325V4.94608C11.2268 3.66522 9.7106 2.83325 7.99934 2.83325C5.14613 2.83325 2.83325 5.14651 2.83325 7.99992C2.83325 10.8533 5.14613 13.1666 7.99934 13.1666C9.91218 13.1666 11.5815 12.1266 12.474 10.5836C12.6123 10.3446 12.5306 10.0387 12.2915 9.90044C12.0525 9.76218 11.7466 9.84387 11.6084 10.0829C10.8873 11.3296 9.54072 12.1666 7.99934 12.1666C5.69853 12.1666 3.83325 10.3012 3.83325 7.99992Z", fillRule: "evenodd" }, void 0)] }, void 0)); };
-var CleanIcon = function () { return (jsxRuntimeExports.jsxs(SVG, __assign({ fill: "none", stroke: "currentColor" }, { children: [jsxRuntimeExports.jsx("title", { children: "Clean" }, void 0), jsxRuntimeExports.jsx("circle", { cx: "7.99998", cy: "8.00004", r: "4.66667", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M4.66669 4.66663L11.3334 11.3333" }, void 0)] }), void 0)); };
-var ExportIcon = function () { return (jsxRuntimeExports.jsxs(SVG, __assign({ fill: "none", stroke: "currentColor" }, { children: [jsxRuntimeExports.jsx("title", { children: "Open on CodeSandbox" }, void 0), jsxRuntimeExports.jsx("path", { d: "M6.66665 3.33337H4.33331C3.78103 3.33337 3.33331 3.78109 3.33331 4.33337V11.6667C3.33331 12.219 3.78103 12.6667 4.33331 12.6667H11.6666C12.2189 12.6667 12.6666 12.219 12.6666 11.6667V9.33337", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M10 3.33337H12.5667C12.6219 3.33337 12.6667 3.37815 12.6667 3.43337V6.00004", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M7.33331 8.66668L12.5333 3.46667", strokeLinecap: "round" }, void 0)] }), void 0)); };
-var CloseIcon = function () { return (jsxRuntimeExports.jsxs(SVG, __assign({ stroke: "currentColor" }, { children: [jsxRuntimeExports.jsx("title", { children: "Close file" }, void 0), jsxRuntimeExports.jsx("path", { d: "M12 4L4 12", strokeLinecap: "round" }, void 0), jsxRuntimeExports.jsx("path", { d: "M4 4L12 12", strokeLinecap: "round" }, void 0)] }), void 0)); };
-var ConsoleIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Open browser console" }, void 0), jsxRuntimeExports.jsx("path", { d: "M5.65871 3.62037C5.44905 3.44066 5.1334 3.46494 4.95368 3.6746C4.77397 3.88427 4.79825 4.19992 5.00792 4.37963L5.65871 3.62037ZM5.00792 11.6204C4.79825 11.8001 4.77397 12.1157 4.95368 12.3254C5.1334 12.5351 5.44905 12.5593 5.65871 12.3796L5.00792 11.6204ZM9.9114 7.92407L10.2368 7.54445L9.9114 7.92407ZM5.00792 4.37963L9.586 8.3037L10.2368 7.54445L5.65871 3.62037L5.00792 4.37963ZM9.586 7.6963L5.00792 11.6204L5.65871 12.3796L10.2368 8.45555L9.586 7.6963ZM9.586 8.3037C9.39976 8.14407 9.39976 7.85594 9.586 7.6963L10.2368 8.45555C10.5162 8.2161 10.5162 7.7839 10.2368 7.54445L9.586 8.3037Z" }, void 0), jsxRuntimeExports.jsx("path", { d: "M10 11.5C9.72386 11.5 9.5 11.7239 9.5 12C9.5 12.2761 9.72386 12.5 10 12.5V11.5ZM14.6667 12.5C14.9428 12.5 15.1667 12.2761 15.1667 12C15.1667 11.7239 14.9428 11.5 14.6667 11.5V12.5ZM10 12.5H14.6667V11.5H10V12.5Z" }, void 0)] }, void 0)); };
+var SVG = function (props) { return (jsxRuntimeExports.jsx("svg", __assign({ fill: "currentColor", height: "16", viewBox: "0 0 16 16", width: "16", xmlns: "http://www.w3.org/2000/svg" }, props))); };
+var SignInIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { viewBox: "0 0 48 48", children: [jsxRuntimeExports.jsx("title", { children: "Sign in" }), jsxRuntimeExports.jsx("path", { d: "M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" })] })); };
+var SignOutIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { viewBox: "0 0 48 48", children: [jsxRuntimeExports.jsx("title", { children: "Sign out" }), jsxRuntimeExports.jsx("path", { d: "M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" })] })); };
+var RestartIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { fill: "none", stroke: "currentColor", children: [jsxRuntimeExports.jsx("title", { children: "Restart script" }), jsxRuntimeExports.jsx("path", { d: "M8 2C4.68629 2 2 4.68629 2 8C2 10.0946 3.07333 11.9385 4.7 13.0118", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M14.0005 7.9998C14.0005 5.82095 12.8391 3.91335 11.1016 2.8623", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M14.0003 2.3335H11.167C10.8908 2.3335 10.667 2.55735 10.667 2.8335V5.66683", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M1.99967 13.6665L4.83301 13.6665C5.10915 13.6665 5.33301 13.4426 5.33301 13.1665L5.33301 10.3332", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M10 10L12 12L10 14", strokeLinecap: "round", strokeLinejoin: "round" }), jsxRuntimeExports.jsx("path", { d: "M14.667 14L12.667 14", strokeLinecap: "round", strokeLinejoin: "round" })] })); };
+var RunIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Run sandbox" }), jsxRuntimeExports.jsx("path", { d: "M11.0792 8.1078C11.2793 8.25007 11.27 8.55012 11.0616 8.67981L6.02535 11.8135C5.79638 11.956 5.5 11.7913 5.5 11.5216L5.5 8.40703L5.5 4.80661C5.5 4.52735 5.81537 4.36463 6.04296 4.52647L11.0792 8.1078Z" })] })); };
+var BackwardIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Click to go back" }), jsxRuntimeExports.jsx("path", { d: "M9.64645 12.3536C9.84171 12.5488 10.1583 12.5488 10.3536 12.3536C10.5488 12.1583 10.5488 11.8417 10.3536 11.6464L9.64645 12.3536ZM10.3536 4.35355C10.5488 4.15829 10.5488 3.84171 10.3536 3.64644C10.1583 3.45118 9.84171 3.45118 9.64645 3.64644L10.3536 4.35355ZM6.07072 7.92929L5.71716 7.57573L6.07072 7.92929ZM10.3536 11.6464L6.42427 7.71716L5.71716 8.42426L9.64645 12.3536L10.3536 11.6464ZM6.42427 8.28284L10.3536 4.35355L9.64645 3.64644L5.71716 7.57573L6.42427 8.28284ZM6.42427 7.71716C6.58048 7.87337 6.58048 8.12663 6.42427 8.28284L5.71716 7.57573C5.48285 7.81005 5.48285 8.18995 5.71716 8.42426L6.42427 7.71716Z" })] })); };
+var ForwardIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Click to go forward" }), jsxRuntimeExports.jsx("path", { d: "M6.35355 3.64645C6.15829 3.45118 5.84171 3.45118 5.64645 3.64645C5.45118 3.84171 5.45118 4.15829 5.64645 4.35355L6.35355 3.64645ZM5.64645 11.6464C5.45118 11.8417 5.45118 12.1583 5.64645 12.3536C5.84171 12.5488 6.15829 12.5488 6.35355 12.3536L5.64645 11.6464ZM9.92929 8.07071L10.2828 8.42426L9.92929 8.07071ZM5.64645 4.35355L9.57574 8.28284L10.2828 7.57574L6.35355 3.64645L5.64645 4.35355ZM9.57574 7.71716L5.64645 11.6464L6.35355 12.3536L10.2828 8.42426L9.57574 7.71716ZM9.57574 8.28284C9.41952 8.12663 9.41953 7.87337 9.57574 7.71716L10.2828 8.42426C10.5172 8.18995 10.5172 7.81005 10.2828 7.57574L9.57574 8.28284Z" })] })); };
+var RefreshIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Refresh preview" }), jsxRuntimeExports.jsx("path", { clipRule: "evenodd", d: "M3.83325 7.99992C3.83325 5.69867 5.69853 3.83325 7.99934 3.83325C9.81246 3.83325 11.3563 4.99195 11.9285 6.61097C11.9396 6.6425 11.9536 6.67221 11.97 6.69992H8.80005C8.52391 6.69992 8.30005 6.92378 8.30005 7.19992C8.30005 7.47606 8.52391 7.69992 8.80005 7.69992H12.5667C12.8981 7.69992 13.1667 7.43129 13.1667 7.09992V3.33325C13.1667 3.05711 12.9429 2.83325 12.6667 2.83325C12.3906 2.83325 12.1667 3.05711 12.1667 3.33325V4.94608C11.2268 3.66522 9.7106 2.83325 7.99934 2.83325C5.14613 2.83325 2.83325 5.14651 2.83325 7.99992C2.83325 10.8533 5.14613 13.1666 7.99934 13.1666C9.91218 13.1666 11.5815 12.1266 12.474 10.5836C12.6123 10.3446 12.5306 10.0387 12.2915 9.90044C12.0525 9.76218 11.7466 9.84387 11.6084 10.0829C10.8873 11.3296 9.54072 12.1666 7.99934 12.1666C5.69853 12.1666 3.83325 10.3012 3.83325 7.99992Z", fillRule: "evenodd" })] })); };
+var CleanIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { fill: "none", stroke: "currentColor", children: [jsxRuntimeExports.jsx("title", { children: "Clean" }), jsxRuntimeExports.jsx("circle", { cx: "7.99998", cy: "8.00004", r: "4.66667", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M4.66669 4.66663L11.3334 11.3333" })] })); };
+var ExportIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { fill: "none", stroke: "currentColor", children: [jsxRuntimeExports.jsx("title", { children: "Open on CodeSandbox" }), jsxRuntimeExports.jsx("path", { d: "M6.66665 3.33337H4.33331C3.78103 3.33337 3.33331 3.78109 3.33331 4.33337V11.6667C3.33331 12.219 3.78103 12.6667 4.33331 12.6667H11.6666C12.2189 12.6667 12.6666 12.219 12.6666 11.6667V9.33337", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M10 3.33337H12.5667C12.6219 3.33337 12.6667 3.37815 12.6667 3.43337V6.00004", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M7.33331 8.66668L12.5333 3.46667", strokeLinecap: "round" })] })); };
+var CloseIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { stroke: "currentColor", children: [jsxRuntimeExports.jsx("title", { children: "Close file" }), jsxRuntimeExports.jsx("path", { d: "M12 4L4 12", strokeLinecap: "round" }), jsxRuntimeExports.jsx("path", { d: "M4 4L12 12", strokeLinecap: "round" })] })); };
+var ConsoleIcon = function () { return (jsxRuntimeExports.jsxs(SVG, { children: [jsxRuntimeExports.jsx("title", { children: "Open browser console" }), jsxRuntimeExports.jsx("path", { d: "M5.65871 3.62037C5.44905 3.44066 5.1334 3.46494 4.95368 3.6746C4.77397 3.88427 4.79825 4.19992 5.00792 4.37963L5.65871 3.62037ZM5.00792 11.6204C4.79825 11.8001 4.77397 12.1157 4.95368 12.3254C5.1334 12.5351 5.44905 12.5593 5.65871 12.3796L5.00792 11.6204ZM9.9114 7.92407L10.2368 7.54445L9.9114 7.92407ZM5.00792 4.37963L9.586 8.3037L10.2368 7.54445L5.65871 3.62037L5.00792 4.37963ZM9.586 7.6963L5.00792 11.6204L5.65871 12.3796L10.2368 8.45555L9.586 7.6963ZM9.586 8.3037C9.39976 8.14407 9.39976 7.85594 9.586 7.6963L10.2368 8.45555C10.5162 8.2161 10.5162 7.7839 10.2368 7.54445L9.586 8.3037Z" }), jsxRuntimeExports.jsx("path", { d: "M10 11.5C9.72386 11.5 9.5 11.7239 9.5 12C9.5 12.2761 9.72386 12.5 10 12.5V11.5ZM14.6667 12.5C14.9428 12.5 15.1667 12.2761 15.1667 12C15.1667 11.7239 14.9428 11.5 14.6667 11.5V12.5ZM10 12.5H14.6667V11.5H10V12.5Z" })] })); };
 
 var _a$a;
 /**
@@ -26083,7 +26020,7 @@ var defaultLight = {
         error: "#EA3323",
         errorSurface: "#FCF1F0",
         warning: "#6A4516",
-        warningSurface: "#FEF2C0"
+        warningSurface: "#FEF2C0",
     },
     syntax: {
         plain: "#151515",
@@ -26094,14 +26031,14 @@ var defaultLight = {
         definition: "#85A600",
         property: "#3B3B3B",
         static: "#3B3B3B",
-        string: "#2E6BD0"
+        string: "#2E6BD0",
     },
     font: {
         body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
         mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
         size: "13px",
-        lineHeight: "20px"
-    }
+        lineHeight: "20px",
+    },
 };
 /**
  * @category Theme
@@ -26119,7 +26056,7 @@ var defaultDark = {
         error: "#FFB4A6",
         errorSurface: "#690000",
         warning: "#E7C400",
-        warningSurface: "#3A3000"
+        warningSurface: "#3A3000",
     },
     syntax: {
         plain: "#FFFFFF",
@@ -26130,14 +26067,14 @@ var defaultDark = {
         definition: "#86D9CA",
         property: "#77B7D7",
         static: "#C64640",
-        string: "#977CDC"
+        string: "#977CDC",
     },
     font: {
         body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
         mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
         size: "13px",
-        lineHeight: "20px"
-    }
+        lineHeight: "20px",
+    },
 };
 /**
  * @category Theme
@@ -26149,7 +26086,7 @@ var SANDPACK_THEMES = {
         ? ((_a$a = window === null || window === void 0 ? void 0 : window.matchMedia) === null || _a$a === void 0 ? void 0 : _a$a.call(window, "(prefers-color-scheme: dark)").matches)
             ? defaultDark
             : defaultLight
-        : defaultLight
+        : defaultLight,
 };
 
 var getFileName = function (filePath) {
@@ -26236,21 +26173,21 @@ var THEME_PREFIX = "sp";
  */
 // prettier-ignore
 var createTheme = (_a$9 = X({
-        prefix: THEME_PREFIX
+        prefix: THEME_PREFIX,
     }), _a$9.createTheme), css = _a$9.css; _a$9.getCssText; var keyframes = _a$9.keyframes;
 var defaultVariables = {
     space: new Array(11).fill(" ").reduce(function (acc, _, index) {
         var _a;
-        return __assign(__assign({}, acc), (_a = {}, _a[index + 1] = (index + 1) * 4 + "px", _a));
+        return __assign(__assign({}, acc), (_a = {}, _a[index + 1] = "".concat((index + 1) * 4, "px"), _a));
     }, {}),
     border: { radius: "4px" },
     layout: { height: "300px", headerHeight: "40px" },
-    transitions: { "default": "150ms ease" },
+    transitions: { default: "150ms ease" },
     zIndices: {
         base: "1",
         overlay: "2",
-        top: "3"
-    }
+        top: "3",
+    },
 };
 /**
  * @category Theme
@@ -26262,13 +26199,13 @@ var standardizeStitchesTheme = function (theme) {
         var _b;
         var tokenName = _a[0], tokenValue = _a[1];
         // Single property
-        var newValues = (_b = {}, _b["color-" + tokenName] = tokenValue, _b);
+        var newValues = (_b = {}, _b["color-".concat(tokenName)] = tokenValue, _b);
         // Multiples properties
         if (typeof tokenValue === "object") {
             newValues = Object.entries(tokenValue).reduce(function (valueAcc, _a) {
                 var _b;
                 var styleProp = _a[0], styleValue = _a[1];
-                return __assign(__assign({}, valueAcc), (_b = {}, _b[styleProp + "-" + tokenName] = styleValue, _b));
+                return __assign(__assign({}, valueAcc), (_b = {}, _b["".concat(styleProp, "-").concat(tokenName)] = styleValue, _b));
             }, {});
         }
         return __assign(__assign({}, tokenAcc), newValues);
@@ -26288,12 +26225,12 @@ var standardizeTheme = function (inputTheme) {
     if (typeof inputTheme === "string") {
         var predefinedTheme = SANDPACK_THEMES[inputTheme];
         if (!predefinedTheme) {
-            throw new Error("[sandpack-react]: invalid theme '" + inputTheme + "' provided.");
+            throw new Error("[sandpack-react]: invalid theme '".concat(inputTheme, "' provided."));
         }
         return {
             theme: predefinedTheme,
             id: inputTheme,
-            mode: isDarkColor(predefinedTheme.colors.surface1) ? "dark" : "light"
+            mode: isDarkColor(predefinedTheme.colors.surface1) ? "dark" : "light",
         };
     }
     /**
@@ -26313,15 +26250,15 @@ var standardizeTheme = function (inputTheme) {
     var theme = {
         colors: colorsByMode,
         syntax: syntaxByMode,
-        font: fontByMode
+        font: fontByMode,
     };
     var id = inputTheme
         ? simpleHashFunction(JSON.stringify(theme))
         : defaultLightThemeKey;
     return {
         theme: theme,
-        id: "sp-" + id,
-        mode: mode
+        id: "sp-".concat(id),
+        mode: mode,
     };
 };
 var simpleHashFunction = function (str) {
@@ -26352,7 +26289,7 @@ fakeCss.toString = fakeCss;
 var ClassNamesContext = reactExports.createContext({});
 var ClassNamesProvider = function (_a) {
     var children = _a.children, classes = _a.classes;
-    return (jsxRuntimeExports.jsx(ClassNamesContext.Provider, __assign({ value: classes || {} }, { children: children }), void 0));
+    return (jsxRuntimeExports.jsx(ClassNamesContext.Provider, { value: classes || {}, children: children }));
 };
 var useClassNames = function () {
     var contextClassNames = reactExports.useContext(ClassNamesContext);
@@ -26360,7 +26297,7 @@ var useClassNames = function () {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     allClassNames) {
         if (allClassNames === void 0) { allClassNames = []; }
-        var custom = THEME_PREFIX + "-" + customClassName;
+        var custom = "".concat(THEME_PREFIX, "-").concat(customClassName);
         return joinClassNames.apply(void 0, __spreadArray(__spreadArray([], allClassNames, false), [custom, contextClassNames[custom]], false));
     };
 };
@@ -26385,20 +26322,20 @@ var wrapperClassName$3 = css({
     variants: {
         variant: {
             dark: { colorScheme: "dark" },
-            light: { colorScheme: "light" }
-        }
+            light: { colorScheme: "light" },
+        },
     },
     "@media screen and (min-resolution: 2dppx)": {
         WebkitFontSmoothing: "antialiased",
-        MozOsxFontSmoothing: "grayscale"
+        MozOsxFontSmoothing: "grayscale",
     },
     "*": { boxSizing: "border-box" },
-    ".sp-wrapper:focus": { outline: "0" }
+    ".sp-wrapper:focus": { outline: "0" },
 });
 var SandpackThemeContext = reactExports.createContext({
     theme: defaultLight,
     id: "light",
-    mode: "light"
+    mode: "light",
 });
 /**
  * @category Theme
@@ -26410,18 +26347,18 @@ var SandpackThemeProvider = function (_a) {
     var themeClassName = reactExports.useMemo(function () {
         return createTheme(id, standardizeStitchesTheme(theme));
     }, [theme, id]);
-    return (jsxRuntimeExports.jsx(SandpackThemeContext.Provider, __assign({ value: { theme: theme, id: id, mode: mode } }, { children: jsxRuntimeExports.jsx("div", __assign({ className: classNames("wrapper", [
+    return (jsxRuntimeExports.jsx(SandpackThemeContext.Provider, { value: { theme: theme, id: id, mode: mode }, children: jsxRuntimeExports.jsx("div", __assign({ className: classNames("wrapper", [
                 themeClassName,
                 wrapperClassName$3({ variant: mode }),
                 className,
-            ]) }, props, { children: children }), void 0) }), void 0));
+            ]) }, props, { children: children })) }));
 };
 SandpackThemeContext.Consumer;
 
 var commonFiles = {
     "/styles.css": {
-        code: "body {\n  font-family: sans-serif;\n  -webkit-font-smoothing: auto;\n  -moz-font-smoothing: auto;\n  -moz-osx-font-smoothing: grayscale;\n  font-smoothing: auto;\n  text-rendering: optimizeLegibility;\n  font-smooth: always;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\nh1 {\n  font-size: 1.5rem;\n}"
-    }
+        code: "body {\n  font-family: sans-serif;\n  -webkit-font-smoothing: auto;\n  -moz-font-smoothing: auto;\n  -moz-osx-font-smoothing: grayscale;\n  font-smoothing: auto;\n  text-rendering: optimizeLegibility;\n  font-smooth: always;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\nh1 {\n  font-size: 1.5rem;\n}",
+    },
 };
 
 /**
@@ -26431,38 +26368,38 @@ var ASTRO_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/pages/index.astro": {
-            code: "---\nimport \"../styles.css\";\nconst data = \"world\";\n---\n\n<h1>Hello {data}</h1>\n\n<style>\n  h1 {\n    font-size: 1.5rem;\n  }\n</style>"
+            code: "---\nimport \"../styles.css\";\nconst data = \"world\";\n---\n\n<h1>Hello {data}</h1>\n\n<style>\n  h1 {\n    font-size: 1.5rem;\n  }\n</style>",
         },
         ".env": {
-            code: "ASTRO_TELEMETRY_DISABLED=\"1\""
+            code: "ASTRO_TELEMETRY_DISABLED=\"1\"",
         },
         "/package.json": {
             code: JSON.stringify({
                 dependencies: {
                     astro: "^1.6.12",
-                    "esbuild-wasm": "^0.15.16"
+                    "esbuild-wasm": "^0.15.16",
                 },
                 scripts: {
                     dev: "astro dev",
                     start: "astro dev",
                     build: "astro build",
                     preview: "astro preview",
-                    astro: "astro"
-                }
-            })
-        }
+                    astro: "astro",
+                },
+            }),
+        },
     },
     main: "/src/pages/index.astro",
-    environment: "node"
+    environment: "node",
 };
 
 var NEXTJS_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/pages/_app.js": {
-            code: "import '../styles.css'\n\nexport default function MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />\n}"
+            code: "import '../styles.css'\n\nexport default function MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />\n}",
         }, "/pages/index.js": {
-            code: "export default function Home({ data }) {\n  return (\n    <div>\n      <h1>Hello {data}</h1>\n    </div>\n  );\n}\n  \nexport function getServerSideProps() {\n  return {\n    props: { data: \"world\" },\n  }\n}\n"
+            code: "export default function Home({ data }) {\n  return (\n    <div>\n      <h1>Hello {data}</h1>\n    </div>\n  );\n}\n  \nexport function getServerSideProps() {\n  return {\n    props: { data: \"world\" },\n  }\n}\n",
         }, "/next.config.js": {
-            code: "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  swcMinify: true,\n}\n\nmodule.exports = nextConfig\n"
+            code: "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  swcMinify: true,\n}\n\nmodule.exports = nextConfig\n",
         }, "/package.json": {
             code: JSON.stringify({
                 name: "my-app",
@@ -26472,195 +26409,96 @@ var NEXTJS_TEMPLATE = {
                     dev: "NEXT_TELEMETRY_DISABLED=1 next dev",
                     build: "next build",
                     start: "next start",
-                    lint: "next lint"
+                    lint: "next lint",
                 },
                 dependencies: {
                     next: "12.1.6",
                     react: "18.2.0",
                     "react-dom": "18.2.0",
-                    "@next/swc-wasm-nodejs": "12.1.6"
-                }
-            })
+                    "@next/swc-wasm-nodejs": "12.1.6",
+                },
+            }),
         } }),
     main: "/pages/index.js",
-    environment: "node"
+    environment: "node",
 };
 
 var NODE_TEMPLATE = {
     files: {
         "/index.js": {
-            code: "const http = require('http');\n\nconst hostname = '127.0.0.1';\nconst port = 3000;\n\nconst server = http.createServer((req, res) => {\n  res.statusCode = 200;\n  res.setHeader('Content-Type', 'text/html');\n  res.end('Hello world');\n});\n\nserver.listen(port, hostname, () => {\n  console.log(`Server running at http://${hostname}:${port}/`);\n});"
+            code: "const http = require('http');\n\nconst hostname = '127.0.0.1';\nconst port = 3000;\n\nconst server = http.createServer((req, res) => {\n  res.statusCode = 200;\n  res.setHeader('Content-Type', 'text/html');\n  res.end('Hello world');\n});\n\nserver.listen(port, hostname, () => {\n  console.log(`Server running at http://${hostname}:${port}/`);\n});",
         },
         "/package.json": {
             code: JSON.stringify({
                 dependencies: {},
                 scripts: { start: "node index.js" },
-                main: "index.js"
-            })
-        }
+                main: "index.js",
+            }),
+        },
     },
     main: "/index.js",
-    environment: "node"
+    environment: "node",
 };
 
 var VITE_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/index.js": {
-            code: "import \"./styles.css\";\n\ndocument.getElementById(\"app\").innerHTML = `\n<h1>Hello world</h1>\n`;\n"
+            code: "import \"./styles.css\";\n\ndocument.getElementById(\"app\").innerHTML = `\n<h1>Hello world</h1>\n`;\n",
         }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/index.js\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/index.js\"></script>\n  </body>\n</html>\n",
         }, "/package.json": {
             code: JSON.stringify({
                 scripts: {
                     dev: "vite",
                     build: "vite build",
-                    preview: "vite preview"
+                    preview: "vite preview",
                 },
                 devDependencies: {
                     vite: "4.1.4",
-                    "esbuild-wasm": "0.17.12"
-                }
-            })
+                    "esbuild-wasm": "0.17.12",
+                },
+            }),
         } }),
     main: "/index.js",
-    environment: "node"
-};
-
-var VITE_REACT_TEMPLATE = {
-    files: __assign(__assign({}, commonFiles), { "/App.jsx": {
-            code: "export default function App() {\n  const data = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n"
-        }, "/index.jsx": {
-            code: "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = createRoot(document.getElementById(\"root\"));\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);"
-        }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.jsx\"></script>\n  </body>\n</html>\n"
-        }, "/package.json": {
-            code: JSON.stringify({
-                scripts: {
-                    dev: "vite",
-                    build: "vite build",
-                    preview: "vite preview"
-                },
-                dependencies: {
-                    react: "^18.2.0",
-                    "react-dom": "^18.2.0"
-                },
-                devDependencies: {
-                    "@vitejs/plugin-react": "3.1.0",
-                    vite: "4.1.4",
-                    "esbuild-wasm": "0.17.12"
-                }
-            })
-        }, "/vite.config.js": {
-            code: "import { defineConfig } from \"vite\";\nimport react from \"@vitejs/plugin-react\";\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n});\n"
-        } }),
-    main: "/App.jsx",
-    environment: "node"
-};
-
-var VITE_REACT_TS_TEMPLATE = {
-    files: __assign(__assign({}, commonFiles), { "/App.tsx": {
-            code: "export default function App() {\n  const data: string = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n"
-        }, "/index.tsx": {
-            code: "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\nimport React from \"react\";\n\nconst root = createRoot(document.getElementById(\"root\") as HTMLElement);\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);\n"
-        }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>\n"
-        }, "/tsconfig.json": {
-            code: JSON.stringify({
-                compilerOptions: {
-                    target: "ESNext",
-                    useDefineForClassFields: true,
-                    lib: ["DOM", "DOM.Iterable", "ESNext"],
-                    allowJs: false,
-                    skipLibCheck: true,
-                    esModuleInterop: false,
-                    allowSyntheticDefaultImports: true,
-                    strict: true,
-                    forceConsistentCasingInFileNames: true,
-                    module: "ESNext",
-                    moduleResolution: "Node",
-                    resolveJsonModule: true,
-                    isolatedModules: true,
-                    noEmit: true,
-                    jsx: "react-jsx"
-                },
-                include: ["src"],
-                references: [{ path: "./tsconfig.node.json" }]
-            }, null, 2)
-        }, "/tsconfig.node.json": {
-            code: JSON.stringify({
-                compilerOptions: {
-                    composite: true,
-                    module: "ESNext",
-                    moduleResolution: "Node",
-                    allowSyntheticDefaultImports: true
-                },
-                include: ["vite.config.ts"]
-            }, null, 2)
-        }, "/package.json": {
-            code: JSON.stringify({
-                scripts: {
-                    dev: "vite",
-                    build: "tsc && vite build",
-                    preview: "vite preview"
-                },
-                dependencies: {
-                    react: "^18.2.0",
-                    "react-dom": "^18.2.0"
-                },
-                devDependencies: {
-                    "@types/react": "^18.0.28",
-                    "@types/react-dom": "^18.0.11",
-                    "@vitejs/plugin-react": "^3.1.0",
-                    typescript: "^4.9.5",
-                    vite: "4.1.4",
-                    "esbuild-wasm": "^0.17.12"
-                }
-            }, null, 2)
-        }, "/vite-env.d.ts": {
-            code: '/// <reference types="vite/client" />'
-        }, "/vite.config.ts": {
-            code: "import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n})\n"
-        } }),
-    main: "/App.tsx",
-    environment: "node"
+    environment: "node",
 };
 
 var VITE_PREACT_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/App.jsx": {
-            code: "export default function App() {\n  const data = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n"
+            code: "export default function App() {\n  const data = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n",
         }, "/index.jsx": {
-            code: "import { render } from \"preact\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = document.getElementById(\"root\");\nrender(<App />, root);\n"
+            code: "import { render } from \"preact\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = document.getElementById(\"root\");\nrender(<App />, root);\n",
         }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.jsx\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.jsx\"></script>\n  </body>\n</html>\n",
         }, "/package.json": {
             code: JSON.stringify({
                 scripts: {
                     dev: "vite",
                     build: "vite build",
-                    preview: "vite preview"
+                    preview: "vite preview",
                 },
                 dependencies: {
-                    "preact": "^10.16.0"
+                    preact: "^10.16.0",
                 },
                 devDependencies: {
                     "@preact/preset-vite": "^2.5.0",
                     vite: "4.1.4",
-                    "esbuild-wasm": "0.17.12"
-                }
-            })
+                    "esbuild-wasm": "0.17.12",
+                },
+            }),
         }, "/vite.config.js": {
-            code: "import { defineConfig } from \"vite\";\nimport preact from '@preact/preset-vite'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [preact()],\n});\n"
+            code: "import { defineConfig } from \"vite\";\nimport preact from '@preact/preset-vite'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [preact()],\n});\n",
         } }),
     main: "/App.jsx",
-    environment: "node"
+    environment: "node",
 };
 
 var VITE_PREACT_TS_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/App.tsx": {
-            code: "export default function App() {\n  const data: string = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n"
+            code: "export default function App() {\n  const data: string = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n",
         }, "/index.tsx": {
-            code: "import { render } from \"preact\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = document.getElementById(\"root\") as HTMLElement;\nrender(<App />, root);\n"
+            code: "import { render } from \"preact\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = document.getElementById(\"root\") as HTMLElement;\nrender(<App />, root);\n",
         }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>\n",
         }, "/tsconfig.json": {
             code: JSON.stringify({
                 compilerOptions: {
@@ -26679,105 +26517,204 @@ var VITE_PREACT_TS_TEMPLATE = {
                     isolatedModules: true,
                     noEmit: true,
                     jsx: "react-jsx",
-                    jsxImportSource: "preact"
+                    jsxImportSource: "preact",
                 },
                 include: ["src"],
-                references: [{ path: "./tsconfig.node.json" }]
-            }, null, 2)
+                references: [{ path: "./tsconfig.node.json" }],
+            }, null, 2),
         }, "/tsconfig.node.json": {
             code: JSON.stringify({
                 compilerOptions: {
                     composite: true,
                     module: "ESNext",
                     moduleResolution: "Node",
-                    allowSyntheticDefaultImports: true
+                    allowSyntheticDefaultImports: true,
                 },
-                include: ["vite.config.ts"]
-            }, null, 2)
+                include: ["vite.config.ts"],
+            }, null, 2),
         }, "/package.json": {
             code: JSON.stringify({
                 scripts: {
                     dev: "vite",
                     build: "tsc && vite build",
-                    preview: "vite preview"
+                    preview: "vite preview",
                 },
                 dependencies: {
-                    "preact": "^10.16.0"
+                    preact: "^10.16.0",
                 },
                 devDependencies: {
                     "@preact/preset-vite": "^2.5.0",
                     typescript: "^4.9.5",
                     vite: "4.1.4",
-                    "esbuild-wasm": "^0.17.12"
-                }
-            }, null, 2)
+                    "esbuild-wasm": "^0.17.12",
+                },
+            }, null, 2),
         }, "/vite-env.d.ts": {
-            code: '/// <reference types="vite/client" />'
+            code: '/// <reference types="vite/client" />',
         }, "/vite.config.ts": {
-            code: "import { defineConfig } from 'vite'\nimport preact from '@preact/preset-vite'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [preact()],\n})\n"
+            code: "import { defineConfig } from 'vite'\nimport preact from '@preact/preset-vite'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [preact()],\n})\n",
         } }),
     main: "/App.tsx",
-    environment: "node"
+    environment: "node",
+};
+
+var VITE_REACT_TEMPLATE = {
+    files: __assign(__assign({}, commonFiles), { "/App.jsx": {
+            code: "export default function App() {\n  const data = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n",
+        }, "/index.jsx": {
+            code: "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = createRoot(document.getElementById(\"root\"));\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);",
+        }, "/index.html": {
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.jsx\"></script>\n  </body>\n</html>\n",
+        }, "/package.json": {
+            code: JSON.stringify({
+                scripts: {
+                    dev: "vite",
+                    build: "vite build",
+                    preview: "vite preview",
+                },
+                dependencies: {
+                    react: "^18.2.0",
+                    "react-dom": "^18.2.0",
+                },
+                devDependencies: {
+                    "@vitejs/plugin-react": "3.1.0",
+                    vite: "4.1.4",
+                    "esbuild-wasm": "0.17.12",
+                },
+            }),
+        }, "/vite.config.js": {
+            code: "import { defineConfig } from \"vite\";\nimport react from \"@vitejs/plugin-react\";\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n});\n",
+        } }),
+    main: "/App.jsx",
+    environment: "node",
+};
+
+var VITE_REACT_TS_TEMPLATE = {
+    files: __assign(__assign({}, commonFiles), { "/App.tsx": {
+            code: "export default function App() {\n  const data: string = \"world\"\n\n  return <h1>Hello {data}</h1>\n}\n",
+        }, "/index.tsx": {
+            code: "import { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\nimport React from \"react\";\n\nconst root = createRoot(document.getElementById(\"root\") as HTMLElement);\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);\n",
+        }, "/index.html": {
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>\n",
+        }, "/tsconfig.json": {
+            code: JSON.stringify({
+                compilerOptions: {
+                    target: "ESNext",
+                    useDefineForClassFields: true,
+                    lib: ["DOM", "DOM.Iterable", "ESNext"],
+                    allowJs: false,
+                    skipLibCheck: true,
+                    esModuleInterop: false,
+                    allowSyntheticDefaultImports: true,
+                    strict: true,
+                    forceConsistentCasingInFileNames: true,
+                    module: "ESNext",
+                    moduleResolution: "Node",
+                    resolveJsonModule: true,
+                    isolatedModules: true,
+                    noEmit: true,
+                    jsx: "react-jsx",
+                },
+                include: ["src"],
+                references: [{ path: "./tsconfig.node.json" }],
+            }, null, 2),
+        }, "/tsconfig.node.json": {
+            code: JSON.stringify({
+                compilerOptions: {
+                    composite: true,
+                    module: "ESNext",
+                    moduleResolution: "Node",
+                    allowSyntheticDefaultImports: true,
+                },
+                include: ["vite.config.ts"],
+            }, null, 2),
+        }, "/package.json": {
+            code: JSON.stringify({
+                scripts: {
+                    dev: "vite",
+                    build: "tsc && vite build",
+                    preview: "vite preview",
+                },
+                dependencies: {
+                    react: "^18.2.0",
+                    "react-dom": "^18.2.0",
+                },
+                devDependencies: {
+                    "@types/react": "^18.0.28",
+                    "@types/react-dom": "^18.0.11",
+                    "@vitejs/plugin-react": "^3.1.0",
+                    typescript: "^4.9.5",
+                    vite: "4.1.4",
+                    "esbuild-wasm": "^0.17.12",
+                },
+            }, null, 2),
+        }, "/vite-env.d.ts": {
+            code: '/// <reference types="vite/client" />',
+        }, "/vite.config.ts": {
+            code: "import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n})\n",
+        } }),
+    main: "/App.tsx",
+    environment: "node",
 };
 
 var VITE_SVELTE_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/App.svelte": {
-            code: "<script>\nconst data = \"world\";\n</script>\n\n<h1>Hello {data}</h1>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>"
+            code: "<script>\nconst data = \"world\";\n</script>\n\n<h1>Hello {data}</h1>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>",
         },
         "/src/main.js": {
-            code: "import App from './App.svelte'\nimport \"./styles.css\"\n\nconst app = new App({\n  target: document.getElementById('app'),\n})\n\nexport default app"
+            code: "import App from './App.svelte'\nimport \"./styles.css\"\n\nconst app = new App({\n  target: document.getElementById('app'),\n})\n\nexport default app",
         },
         "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.js\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.js\"></script>\n  </body>\n</html>\n",
         },
         "/vite.config.js": {
-            code: "import { defineConfig } from 'vite'\nimport { svelte } from '@sveltejs/vite-plugin-svelte'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [svelte()],\n})"
+            code: "import { defineConfig } from 'vite'\nimport { svelte } from '@sveltejs/vite-plugin-svelte'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [svelte()],\n})",
         },
         "/package.json": {
             code: JSON.stringify({
                 type: "module",
                 scripts: {
-                    dev: "vite"
+                    dev: "vite",
                 },
                 devDependencies: {
                     "@sveltejs/vite-plugin-svelte": "^2.0.2",
                     svelte: "^3.55.1",
                     vite: "4.0.4",
-                    "esbuild-wasm": "^0.17.12"
-                }
-            })
-        }
+                    "esbuild-wasm": "^0.17.12",
+                },
+            }),
+        },
     },
     main: "/src/App.svelte",
-    environment: "node"
+    environment: "node",
 };
 
 var VITE_SVELTE_TS_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/App.svelte": {
-            code: "<script lang=\"ts\">\nconst data: string = \"world\";\n</script>\n\n<h1>Hello {data}</h1>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>"
+            code: "<script lang=\"ts\">\nconst data: string = \"world\";\n</script>\n\n<h1>Hello {data}</h1>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>",
         },
         "/src/main.ts": {
-            code: "import App from './App.svelte'\nimport \"./styles.css\"\n\nconst app = new App({\n  target: document.getElementById('app'),\n})\n\nexport default app"
+            code: "import App from './App.svelte'\nimport \"./styles.css\"\n\nconst app = new App({\n  target: document.getElementById('app'),\n})\n\nexport default app",
         },
         "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.ts\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.ts\"></script>\n  </body>\n</html>\n",
         },
         "/vite-env.d.ts": {
-            code: "/// <reference types=\"svelte\" />\n/// <reference types=\"vite/client\" />"
+            code: "/// <reference types=\"svelte\" />\n/// <reference types=\"vite/client\" />",
         },
         "svelte.config.js": {
-            code: "import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'\n\nexport default {\n  // Consult https://svelte.dev/docs#compile-time-svelte-preprocess\n  // for more information about preprocessors\n  preprocess: vitePreprocess(),\n}\n"
+            code: "import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'\n\nexport default {\n  // Consult https://svelte.dev/docs#compile-time-svelte-preprocess\n  // for more information about preprocessors\n  preprocess: vitePreprocess(),\n}\n",
         },
         "/vite.config.ts": {
-            code: "import { defineConfig } from 'vite'\nimport { svelte } from '@sveltejs/vite-plugin-svelte'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [svelte()],\n})"
+            code: "import { defineConfig } from 'vite'\nimport { svelte } from '@sveltejs/vite-plugin-svelte'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [svelte()],\n})",
         },
         "tsconfig.json": {
             code: JSON.stringify({
-                "extends": "@tsconfig/svelte/tsconfig.json",
+                extends: "@tsconfig/svelte/tsconfig.json",
                 compilerOptions: {
                     target: "ESNext",
                     useDefineForClassFields: true,
@@ -26785,7 +26722,7 @@ var VITE_SVELTE_TS_TEMPLATE = {
                     resolveJsonModule: true,
                     allowJs: true,
                     checkJs: true,
-                    isolatedModules: true
+                    isolatedModules: true,
                 },
                 include: [
                     "src/**/*.d.ts",
@@ -26793,24 +26730,24 @@ var VITE_SVELTE_TS_TEMPLATE = {
                     "src/**/*.js",
                     "src/**/*.svelte",
                 ],
-                references: [{ path: "./tsconfig.node.json" }]
-            }, null, 2)
+                references: [{ path: "./tsconfig.node.json" }],
+            }, null, 2),
         },
         "tsconfig.node.json": {
             code: JSON.stringify({
                 compilerOptions: {
                     composite: true,
                     module: "ESNext",
-                    moduleResolution: "Node"
+                    moduleResolution: "Node",
                 },
-                include: ["vite.config.ts"]
-            }, null, 2)
+                include: ["vite.config.ts"],
+            }, null, 2),
         },
         "/package.json": {
             code: JSON.stringify({
                 type: "module",
                 scripts: {
-                    dev: "vite"
+                    dev: "vite",
                 },
                 devDependencies: {
                     "@sveltejs/vite-plugin-svelte": "^2.0.2",
@@ -26819,69 +26756,69 @@ var VITE_SVELTE_TS_TEMPLATE = {
                     "svelte-check": "^2.10.3",
                     tslib: "^2.5.0",
                     vite: "4.1.4",
-                    "esbuild-wasm": "^0.17.12"
-                }
-            }, null, 2)
-        }
+                    "esbuild-wasm": "^0.17.12",
+                },
+            }, null, 2),
+        },
     },
     main: "/src/App.svelte",
-    environment: "node"
+    environment: "node",
 };
 
 var VITE_VUE_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/App.vue": {
-            code: "<script setup>\nimport { ref } from \"vue\";\n\nconst data = ref(\"world\");\n</script>\n\n<template>\n  <h1>Hello {{ data }}</h1>\n</template>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>"
+            code: "<script setup>\nimport { ref } from \"vue\";\n\nconst data = ref(\"world\");\n</script>\n\n<template>\n  <h1>Hello {{ data }}</h1>\n</template>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>",
         },
         "/src/main.js": {
-            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\"\n            \ncreateApp(App).mount('#app')            \n"
+            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\"\n            \ncreateApp(App).mount('#app')            \n",
         },
         "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.js\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.js\"></script>\n  </body>\n</html>\n",
         },
         "/vite.config.js": {
-            code: "import { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [vue()]\n})\n"
+            code: "import { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [vue()]\n})\n",
         },
         "/package.json": {
             code: JSON.stringify({
                 scripts: {
                     dev: "vite",
                     build: "vite build",
-                    preview: "vite preview"
+                    preview: "vite preview",
                 },
                 dependencies: {
-                    vue: "^3.2.45"
+                    vue: "^3.2.45",
                 },
                 devDependencies: {
                     "@vitejs/plugin-vue": "3.2.0",
                     vite: "4.1.4",
-                    "esbuild-wasm": "0.17.12"
-                }
-            })
-        }
+                    "esbuild-wasm": "0.17.12",
+                },
+            }),
+        },
     },
     main: "/src/App.vue",
-    environment: "node"
+    environment: "node",
 };
 
 var VITE_VUE_TS_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/App.vue": {
-            code: "<script setup lang=\"ts\">\nimport { ref } from \"vue\";\n\nconst data = ref<string>(\"world\");\n</script>\n\n<template>\n  <h1>Hello {{ data }}</h1>\n</template>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>"
+            code: "<script setup lang=\"ts\">\nimport { ref } from \"vue\";\n\nconst data = ref<string>(\"world\");\n</script>\n\n<template>\n  <h1>Hello {{ data }}</h1>\n</template>\n\n<style>\nh1 {\n  font-size: 1.5rem;\n}\n</style>",
         },
         "/src/main.ts": {
-            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\"\n\ncreateApp(App).mount('#app')\n"
+            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\"\n\ncreateApp(App).mount('#app')\n",
         },
         "/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.ts\"></script>\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Vite App</title>\n  </head>\n  <body>\n    <div id=\"app\"></div>\n    <script type=\"module\" src=\"/src/main.ts\"></script>\n  </body>\n</html>\n",
         },
         "/vite-env.d.ts": {
-            code: '/// <reference types="vite/client" />'
+            code: '/// <reference types="vite/client" />',
         },
         "/vite.config.ts": {
-            code: "import { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [vue()]\n})\n"
+            code: "import { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [vue()]\n})\n",
         },
         "tsconfig.json": {
             code: JSON.stringify({
@@ -26897,7 +26834,7 @@ var VITE_VUE_TS_TEMPLATE = {
                     esModuleInterop: true,
                     lib: ["ESNext", "DOM"],
                     skipLibCheck: true,
-                    noEmit: true
+                    noEmit: true,
                 },
                 include: [
                     "src/**/*.ts",
@@ -26905,8 +26842,8 @@ var VITE_VUE_TS_TEMPLATE = {
                     "src/**/*.tsx",
                     "src/**/*.vue",
                 ],
-                references: [{ path: "./tsconfig.node.json" }]
-            }, null, 2)
+                references: [{ path: "./tsconfig.node.json" }],
+            }, null, 2),
         },
         "tsconfig.node.json": {
             code: JSON.stringify({
@@ -26914,55 +26851,55 @@ var VITE_VUE_TS_TEMPLATE = {
                     composite: true,
                     module: "ESNext",
                     moduleResolution: "Node",
-                    allowSyntheticDefaultImports: true
+                    allowSyntheticDefaultImports: true,
                 },
-                include: ["vite.config.ts"]
-            }, null, 2)
+                include: ["vite.config.ts"],
+            }, null, 2),
         },
         "/package.json": {
             code: JSON.stringify({
                 scripts: {
                     dev: "vite",
                     build: "tsc && vite build",
-                    preview: "vite preview"
+                    preview: "vite preview",
                 },
                 dependencies: {
-                    vue: "^3.2.47"
+                    vue: "^3.2.47",
                 },
                 devDependencies: {
                     "@vitejs/plugin-vue": "^4.0.0",
                     vite: "4.1.4",
                     "vue-tsc": "^1.2.0",
                     typescript: "^4.9.5",
-                    "esbuild-wasm": "^0.17.12"
-                }
-            }, null, 2)
-        }
+                    "esbuild-wasm": "^0.17.12",
+                },
+            }, null, 2),
+        },
     },
     main: "/src/App.vue",
-    environment: "node"
+    environment: "node",
 };
 
 var ANGULAR_TEMPLATE = {
     files: {
         "/src/app/app.component.css": commonFiles["/styles.css"],
         "/src/app/app.component.html": {
-            code: "<div>\n<h1>{{ helloWorld }}</h1>\n</div>     \n"
+            code: "<div>\n<h1>{{ helloWorld }}</h1>\n</div>     \n",
         },
         "/src/app/app.component.ts": {
-            code: "import { Component } from \"@angular/core\";\n\n@Component({\n  selector: \"app-root\",\n  templateUrl: \"./app.component.html\",\n  styleUrls: [\"./app.component.css\"]\n})\nexport class AppComponent {\n  helloWorld = \"Hello world\";\n}           \n"
+            code: "import { Component } from \"@angular/core\";\n\n@Component({\n  selector: \"app-root\",\n  templateUrl: \"./app.component.html\",\n  styleUrls: [\"./app.component.css\"]\n})\nexport class AppComponent {\n  helloWorld = \"Hello world\";\n}           \n",
         },
         "/src/app/app.module.ts": {
-            code: "import { BrowserModule } from \"@angular/platform-browser\";\nimport { NgModule } from \"@angular/core\";\n      \nimport { AppComponent } from \"./app.component\";\n      \n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}       \n"
+            code: "import { BrowserModule } from \"@angular/platform-browser\";\nimport { NgModule } from \"@angular/core\";\n      \nimport { AppComponent } from \"./app.component\";\n      \n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}       \n",
         },
         "/src/index.html": {
-            code: "<!doctype html>\n<html lang=\"en\">\n      \n<head>\n  <meta charset=\"utf-8\">\n  <title>Angular</title>\n  <base href=\"/\">\n      \n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n</head>\n      \n<body>\n   <app-root></app-root>\n</body>\n      \n</html>\n"
+            code: "<!doctype html>\n<html lang=\"en\">\n      \n<head>\n  <meta charset=\"utf-8\">\n  <title>Angular</title>\n  <base href=\"/\">\n      \n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n</head>\n      \n<body>\n   <app-root></app-root>\n</body>\n      \n</html>\n",
         },
         "/src/main.ts": {
-            code: "import { enableProdMode } from \"@angular/core\";\nimport { platformBrowserDynamic } from \"@angular/platform-browser-dynamic\";\n      \nimport { AppModule } from \"./app/app.module\";      \n\nplatformBrowserDynamic()\n  .bootstrapModule(AppModule)\n  .catch(err => console.log(err));\n      \n"
+            code: "import { enableProdMode } from \"@angular/core\";\nimport { platformBrowserDynamic } from \"@angular/platform-browser-dynamic\";\n      \nimport { AppModule } from \"./app/app.module\";      \n\nplatformBrowserDynamic()\n  .bootstrapModule(AppModule)\n  .catch(err => console.log(err));\n      \n",
         },
         "/src/polyfills.ts": {
-            code: "import \"core-js/proposals/reflect-metadata\";   \n      import \"zone.js/dist/zone\";\n"
+            code: "import \"core-js/proposals/reflect-metadata\";   \n      import \"zone.js/dist/zone\";\n",
         },
         "/package.json": {
             code: JSON.stringify({
@@ -26974,173 +26911,173 @@ var ANGULAR_TEMPLATE = {
                     "@angular/compiler": "^11.2.0",
                     "zone.js": "0.11.3",
                     "core-js": "3.8.3",
-                    rxjs: "6.6.3"
+                    rxjs: "6.6.3",
                 },
-                main: "/src/main.ts"
-            })
-        }
+                main: "/src/main.ts",
+            }),
+        },
     },
     main: "/src/app/app.component.ts",
-    environment: "angular-cli"
+    environment: "angular-cli",
 };
 
 var REACT_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/App.js": {
-            code: "export default function App() {\n  return <h1>Hello world</h1>\n}\n"
+            code: "export default function App() {\n  return <h1>Hello world</h1>\n}\n",
         }, "/index.js": {
-            code: "import React, { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = createRoot(document.getElementById(\"root\"));\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);"
+            code: "import React, { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = createRoot(document.getElementById(\"root\"));\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);",
         }, "/public/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {
                     react: "^18.0.0",
                     "react-dom": "^18.0.0",
-                    "react-scripts": "^5.0.0"
+                    "react-scripts": "^5.0.0",
                 },
-                main: "/index.js"
-            })
+                main: "/index.js",
+            }),
         } }),
     main: "/App.js",
-    environment: "create-react-app"
+    environment: "create-react-app",
 };
 
 var REACT_TYPESCRIPT_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "tsconfig.json": {
-            code: "{\n  \"include\": [\n    \"./**/*\"\n  ],\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"lib\": [ \"dom\", \"es2015\" ],\n    \"jsx\": \"react-jsx\"\n  }\n}"
+            code: "{\n  \"include\": [\n    \"./**/*\"\n  ],\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"lib\": [ \"dom\", \"es2015\" ],\n    \"jsx\": \"react-jsx\"\n  }\n}",
         }, "/App.tsx": {
-            code: "export default function App(): JSX.Element {\n  return <h1>Hello world</h1>\n}\n"
+            code: "export default function App(): JSX.Element {\n  return <h1>Hello world</h1>\n}\n",
         }, "/index.tsx": {
-            code: "import React, { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = createRoot(document.getElementById(\"root\"));\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);"
+            code: "import React, { StrictMode } from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst root = createRoot(document.getElementById(\"root\"));\nroot.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);",
         }, "/public/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {
                     react: "^18.0.0",
                     "react-dom": "^18.0.0",
-                    "react-scripts": "^4.0.0"
+                    "react-scripts": "^4.0.0",
                 },
                 devDependencies: {
                     "@types/react": "^18.0.0",
                     "@types/react-dom": "^18.0.0",
-                    typescript: "^4.0.0"
+                    typescript: "^4.0.0",
                 },
-                main: "/index.tsx"
-            })
+                main: "/index.tsx",
+            }),
         } }),
     main: "/App.tsx",
-    environment: "create-react-app"
+    environment: "create-react-app",
 };
 
 var SOLID_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/App.tsx": {
-            code: "import { Component } from \"solid-js\";\n\nconst App: Component = () => {\n  return <h1>Hello world</h1>\n};\n\nexport default App;"
+            code: "import { Component } from \"solid-js\";\n\nconst App: Component = () => {\n  return <h1>Hello world</h1>\n};\n\nexport default App;",
         }, "/index.tsx": {
-            code: "import { render } from \"solid-js/web\";\nimport App from \"./App\";\n\nimport \"./styles.css\";\n\nrender(() => <App />, document.getElementById(\"app\"));"
+            code: "import { render } from \"solid-js/web\";\nimport App from \"./App\";\n\nimport \"./styles.css\";\n\nrender(() => <App />, document.getElementById(\"app\"));",
         }, "/index.html": {
-            code: "<html>\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n</head>\n<body>\n  <div id=\"app\"></div>\n  <script src=\"src/index.tsx\"></script>\n</body>\n</html>"
+            code: "<html>\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n</head>\n<body>\n  <div id=\"app\"></div>\n  <script src=\"src/index.tsx\"></script>\n</body>\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {
-                    "solid-js": "1.3.15"
+                    "solid-js": "1.3.15",
                 },
-                main: "/index.tsx"
-            })
+                main: "/index.tsx",
+            }),
         } }),
     main: "/App.tsx",
-    environment: "solid"
+    environment: "solid",
 };
 
 var SVELTE_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/App.svelte": {
-            code: "<style>\n  h1 {\n    font-size: 1.5rem;\n  }\n</style>\n\n<script>\n  let name = 'world';\n</script>\n\n<main>\n  <h1>Hello {name}</h1>\n</main>"
+            code: "<style>\n  h1 {\n    font-size: 1.5rem;\n  }\n</style>\n\n<script>\n  let name = 'world';\n</script>\n\n<main>\n  <h1>Hello {name}</h1>\n</main>",
         }, "/index.js": {
-            code: "import App from \"./App.svelte\";\nimport \"./styles.css\";\n\nconst app = new App({\n  target: document.body\n});\n\nexport default app;\n      "
+            code: "import App from \"./App.svelte\";\nimport \"./styles.css\";\n\nconst app = new App({\n  target: document.body\n});\n\nexport default app;\n      ",
         }, "/public/index.html": {
-            code: "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf8\" />\n    <meta name=\"viewport\" content=\"width=device-width\" />\n\n    <title>Svelte app</title>\n\n    <link rel=\"stylesheet\" href=\"public/bundle.css\" />\n  </head>\n\n  <body>\n    <script src=\"bundle.js\"></script>\n  </body>\n</html>"
+            code: "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf8\" />\n    <meta name=\"viewport\" content=\"width=device-width\" />\n\n    <title>Svelte app</title>\n\n    <link rel=\"stylesheet\" href=\"public/bundle.css\" />\n  </head>\n\n  <body>\n    <script src=\"bundle.js\"></script>\n  </body>\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {
-                    svelte: "^3.0.0"
+                    svelte: "^3.0.0",
                 },
-                main: "/index.js"
-            })
+                main: "/index.js",
+            }),
         } }),
     main: "/App.svelte",
-    environment: "svelte"
+    environment: "svelte",
 };
 
 var TEST_TYPESCRIPT_TEMPLATE = {
     files: {
         "tsconfig.json": {
-            code: "{\n  \"include\": [\n    \"./**/*\"\n  ],\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"lib\": [ \"dom\", \"es2015\" ],\n    \"jsx\": \"react-jsx\"\n  }\n}"
+            code: "{\n  \"include\": [\n    \"./**/*\"\n  ],\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"lib\": [ \"dom\", \"es2015\" ],\n    \"jsx\": \"react-jsx\"\n  }\n}",
         },
         "/add.ts": {
-            code: "export const add = (a: number, b: number): number => a + b;"
+            code: "export const add = (a: number, b: number): number => a + b;",
         },
         "/add.test.ts": {
-            code: "import { add } from './add';\n\ndescribe('add', () => {\n  test('Commutative Law of Addition', () => {\n    expect(add(1, 2)).toBe(add(2, 1));\n  });\n});"
+            code: "import { add } from './add';\n\ndescribe('add', () => {\n  test('Commutative Law of Addition', () => {\n    expect(add(1, 2)).toBe(add(2, 1));\n  });\n});",
         },
         "package.json": {
             code: JSON.stringify({
                 dependencies: {},
                 devDependencies: { typescript: "^4.0.0" },
-                main: "/add.ts"
-            })
-        }
+                main: "/add.ts",
+            }),
+        },
     },
     main: "/add.test.ts",
     environment: "parcel",
-    mode: "tests"
+    mode: "tests",
 };
 
 var VANILLA_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/index.js": {
-            code: "import \"./styles.css\";\n\ndocument.getElementById(\"app\").innerHTML = `\n<h1>Hello world</h1>\n`;\n"
+            code: "import \"./styles.css\";\n\ndocument.getElementById(\"app\").innerHTML = `\n<h1>Hello world</h1>\n`;\n",
         }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n</head>\n\n<body>\n  <div id=\"app\"></div>\n\n  <script src=\"index.js\">\n  </script>\n</body>\n\n</html>"
+            code: "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n</head>\n\n<body>\n  <div id=\"app\"></div>\n\n  <script src=\"index.js\">\n  </script>\n</body>\n\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {},
-                main: "/index.js"
-            })
+                main: "/index.js",
+            }),
         } }),
     main: "/index.js",
-    environment: "parcel"
+    environment: "parcel",
 };
 
 var VANILLA_TYPESCRIPT_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "tsconfig.json": {
-            code: "{\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"module\": \"commonjs\",\n    \"jsx\": \"preserve\",\n    \"esModuleInterop\": true,\n    \"sourceMap\": true,\n    \"allowJs\": true,\n    \"lib\": [\n      \"es6\",\n      \"dom\"\n    ],\n    \"rootDir\": \"src\",\n    \"moduleResolution\": \"node\"\n  }\n}"
+            code: "{\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"module\": \"commonjs\",\n    \"jsx\": \"preserve\",\n    \"esModuleInterop\": true,\n    \"sourceMap\": true,\n    \"allowJs\": true,\n    \"lib\": [\n      \"es6\",\n      \"dom\"\n    ],\n    \"rootDir\": \"src\",\n    \"moduleResolution\": \"node\"\n  }\n}",
         }, "/index.ts": {
-            code: "import \"./styles.css\";\n\ndocument.getElementById(\"app\").innerHTML = `\n<h1>Hello world</h1>\n`;\n"
+            code: "import \"./styles.css\";\n\ndocument.getElementById(\"app\").innerHTML = `\n<h1>Hello world</h1>\n`;\n",
         }, "/index.html": {
-            code: "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n</head>\n\n<body>\n  <div id=\"app\"></div>\n\n  <script src=\"index.ts\">\n  </script>\n</body>\n\n</html>"
+            code: "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n</head>\n\n<body>\n  <div id=\"app\"></div>\n\n  <script src=\"index.ts\">\n  </script>\n</body>\n\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {},
                 devDependencies: {
-                    typescript: "^4.0.0"
+                    typescript: "^4.0.0",
                 },
-                main: "/index.ts"
-            })
+                main: "/index.ts",
+            }),
         } }),
     main: "/index.ts",
-    environment: "parcel"
+    environment: "parcel",
 };
 
 var VUE_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/App.vue": {
-            code: "<template>\n  <h1>Hello {{ msg }}</h1>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nconst msg = ref('world');\n</script>"
+            code: "<template>\n  <h1>Hello {{ msg }}</h1>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nconst msg = ref('world');\n</script>",
         },
         "/src/main.js": {
-            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\";\n\ncreateApp(App).mount('#app')\n"
+            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\";\n\ncreateApp(App).mount('#app')\n",
         },
         "/public/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" />\n    <title>codesandbox</title>\n  </head>\n  <body>\n    <noscript>\n      <strong\n        >We're sorry but codesandbox doesn't work properly without JavaScript\n        enabled. Please enable it to continue.</strong\n      >\n    </noscript>\n    <div id=\"app\"></div>\n    <!-- built files will be auto injected -->\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" />\n    <title>codesandbox</title>\n  </head>\n  <body>\n    <noscript>\n      <strong\n        >We're sorry but codesandbox doesn't work properly without JavaScript\n        enabled. Please enable it to continue.</strong\n      >\n    </noscript>\n    <div id=\"app\"></div>\n    <!-- built files will be auto injected -->\n  </body>\n</html>\n",
         },
         "/package.json": {
             code: JSON.stringify({
@@ -27150,35 +27087,35 @@ var VUE_TEMPLATE = {
                 main: "/src/main.js",
                 scripts: {
                     serve: "vue-cli-service serve",
-                    build: "vue-cli-service build"
+                    build: "vue-cli-service build",
                 },
                 dependencies: {
                     "core-js": "^3.26.1",
-                    vue: "^3.2.45"
+                    vue: "^3.2.45",
                 },
                 devDependencies: {
                     "@vue/cli-plugin-babel": "^5.0.8",
-                    "@vue/cli-service": "^5.0.8"
-                }
-            })
-        }
+                    "@vue/cli-service": "^5.0.8",
+                },
+            }),
+        },
     },
     main: "/src/App.vue",
-    environment: "vue-cli"
+    environment: "vue-cli",
 };
 
 var VUE_TS_TEMPLATE = {
     files: {
         "/src/styles.css": commonFiles["/styles.css"],
         "/src/App.vue": {
-            code: "<template>\n  <h1>Hello {{ msg }}</h1>\n</template>\n\n<script setup lang=\"ts\">\nimport { ref } from 'vue';\nconst msg = ref<string>('world');\n</script>"
+            code: "<template>\n  <h1>Hello {{ msg }}</h1>\n</template>\n\n<script setup lang=\"ts\">\nimport { ref } from 'vue';\nconst msg = ref<string>('world');\n</script>",
         },
         "/src/main.ts": {
-            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\";\n\ncreateApp(App).mount('#app')\n"
+            code: "import { createApp } from 'vue'\nimport App from './App.vue'\nimport \"./styles.css\";\n\ncreateApp(App).mount('#app')\n",
         },
         "/src/shims-vue.d.ts": "/* eslint-disable */\ndeclare module \"*.vue\" {\n  import type { DefineComponent } from \"vue\";\n  const component: DefineComponent<{}, {}, any>;\n  export default component;\n}",
         "/public/index.html": {
-            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" />\n    <title>codesandbox</title>\n  </head>\n  <body>\n    <noscript>\n      <strong\n        >We're sorry but codesandbox doesn't work properly without JavaScript\n        enabled. Please enable it to continue.</strong\n      >\n    </noscript>\n    <div id=\"app\"></div>\n    <!-- built files will be auto injected -->\n  </body>\n</html>\n"
+            code: "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" />\n    <title>codesandbox</title>\n  </head>\n  <body>\n    <noscript>\n      <strong\n        >We're sorry but codesandbox doesn't work properly without JavaScript\n        enabled. Please enable it to continue.</strong\n      >\n    </noscript>\n    <div id=\"app\"></div>\n    <!-- built files will be auto injected -->\n  </body>\n</html>\n",
         },
         "/package.json": {
             code: JSON.stringify({
@@ -27188,19 +27125,19 @@ var VUE_TS_TEMPLATE = {
                 main: "/src/main.ts",
                 scripts: {
                     serve: "vue-cli-service serve",
-                    build: "vue-cli-service build"
+                    build: "vue-cli-service build",
                 },
                 dependencies: {
                     "core-js": "^3.26.1",
-                    vue: "^3.2.45"
+                    vue: "^3.2.45",
                 },
                 devDependencies: {
                     "@vue/cli-plugin-babel": "^5.0.8",
                     "@vue/cli-plugin-typescript": "^5.0.8",
                     "@vue/cli-service": "^5.0.8",
-                    typescript: "^4.9.3"
-                }
-            })
+                    typescript: "^4.9.3",
+                },
+            }),
         },
         "/tsconfig.json": {
             code: JSON.stringify({
@@ -27220,9 +27157,9 @@ var VUE_TS_TEMPLATE = {
                     baseUrl: ".",
                     types: ["webpack-env"],
                     paths: {
-                        "@/*": ["src/*"]
+                        "@/*": ["src/*"],
                     },
-                    lib: ["esnext", "dom", "dom.iterable", "scripthost"]
+                    lib: ["esnext", "dom", "dom.iterable", "scripthost"],
                 },
                 include: [
                     "src/**/*.ts",
@@ -27231,25 +27168,25 @@ var VUE_TS_TEMPLATE = {
                     "tests/**/*.ts",
                     "tests/**/*.tsx",
                 ],
-                exclude: ["node_modules"]
-            })
-        }
+                exclude: ["node_modules"],
+            }),
+        },
     },
     main: "/src/App.vue",
-    environment: "vue-cli"
+    environment: "vue-cli",
 };
 
 var STATIC_TEMPLATE = {
     files: __assign(__assign({}, commonFiles), { "/index.html": {
-            code: "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n  <link rel=\"stylesheet\" href=\"/styles.css\" />\n</head>\n\n<body>\n  <h1>Hello world</h1>\n</body>\n\n</html>"
+            code: "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Parcel Sandbox</title>\n  <meta charset=\"UTF-8\" />\n  <link rel=\"stylesheet\" href=\"/styles.css\" />\n</head>\n\n<body>\n  <h1>Hello world</h1>\n</body>\n\n</html>",
         }, "/package.json": {
             code: JSON.stringify({
                 dependencies: {},
-                main: "/index.html"
-            })
+                main: "/index.html",
+            }),
         } }),
     main: "/index.html",
-    environment: "static"
+    environment: "static",
 };
 
 var SANDBOX_TEMPLATES = {
@@ -27275,7 +27212,7 @@ var SANDBOX_TEMPLATES = {
     "vite-vue-ts": VITE_VUE_TS_TEMPLATE,
     "vite-svelte": VITE_SVELTE_TEMPLATE,
     "vite-svelte-ts": VITE_SVELTE_TS_TEMPLATE,
-    astro: ASTRO_TEMPLATE
+    astro: ASTRO_TEMPLATE,
 };
 
 /**
@@ -27291,7 +27228,7 @@ var getSandpackStateFromProps = function (props) {
     var projectSetup = combineTemplateFilesToSetup({
         template: props.template,
         customSetup: props.customSetup,
-        files: normalizedFilesPath
+        files: normalizedFilesPath,
     });
     // visibleFiles and activeFile override the setup flags
     var visibleFiles = normalizePath((_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.visibleFiles) !== null && _b !== void 0 ? _b : []);
@@ -27348,7 +27285,7 @@ var getSandpackStateFromProps = function (props) {
         activeFile: activeFile,
         files: files,
         environment: projectSetup.environment,
-        shouldUpdatePreview: true
+        shouldUpdatePreview: true,
     };
 };
 /**
@@ -27373,7 +27310,7 @@ var resolveFile = function (path, files) {
     var strategies = [".js", ".jsx", ".ts", ".tsx"];
     while (!resolvedPath && index < strategies.length) {
         var removeExtension = normalizedPath.split(".")[0];
-        var attemptPath = "" + removeExtension + strategies[index];
+        var attemptPath = "".concat(removeExtension).concat(strategies[index]);
         if (normalizedFilesPath[attemptPath] !== undefined) {
             resolvedPath = attemptPath;
         }
@@ -27402,7 +27339,7 @@ var combineTemplateFilesToSetup = function (_a) {
     }
     var baseTemplate = SANDBOX_TEMPLATES[template];
     if (!baseTemplate) {
-        throw new Error("[sandpack-react]: invalid template \"" + template + "\" provided");
+        throw new Error("[sandpack-react]: invalid template \"".concat(template, "\" provided"));
     }
     // If no setup and not files, the template is used entirely
     if (!customSetup && !files) {
@@ -27423,7 +27360,7 @@ var combineTemplateFilesToSetup = function (_a) {
         devDependencies: __assign(__assign({}, baseTemplate.devDependencies), customSetup === null || customSetup === void 0 ? void 0 : customSetup.devDependencies),
         entry: normalizePath(customSetup === null || customSetup === void 0 ? void 0 : customSetup.entry),
         main: baseTemplate.main,
-        environment: (customSetup === null || customSetup === void 0 ? void 0 : customSetup.environment) || baseTemplate.environment
+        environment: (customSetup === null || customSetup === void 0 ? void 0 : customSetup.environment) || baseTemplate.environment,
     };
 };
 /**
@@ -27450,7 +27387,7 @@ var convertedFilesToBundlerFiles = function (files) {
 var useAppState = function (props, files) {
     var _a = reactExports.useState({
         editorState: "pristine",
-        teamId: props.teamId
+        teamId: props.teamId,
     }), state = _a[0], setState = _a[1];
     var originalStateFromProps = getSandpackStateFromProps(props);
     var editorState = dequal(originalStateFromProps.files, files)
@@ -27475,7 +27412,7 @@ var useClient = function (_a, filesState) {
         error: null,
         initMode: initModeFromProps,
         reactDevTools: undefined,
-        status: ((_b = options === null || options === void 0 ? void 0 : options.autorun) !== null && _b !== void 0 ? _b : true) ? "initial" : "idle"
+        status: ((_b = options === null || options === void 0 ? void 0 : options.autorun) !== null && _b !== void 0 ? _b : true) ? "initial" : "idle",
     }), state = _e[0], setState = _e[1];
     /**
      * Refs
@@ -27519,7 +27456,7 @@ var useClient = function (_a, filesState) {
                     }
                     return [4 /*yield*/, loadSandpackClient(iframe, {
                             files: filesState.files,
-                            template: filesState.environment
+                            template: filesState.environment,
                         }, {
                             externalResources: options.externalResources,
                             bundlerURL: options.bundlerURL,
@@ -27533,7 +27470,7 @@ var useClient = function (_a, filesState) {
                             reactDevTools: state.reactDevTools,
                             customNpmRegistries: customSetup === null || customSetup === void 0 ? void 0 : customSetup.npmRegistries,
                             teamId: teamId,
-                            sandboxId: sandboxId
+                            sandboxId: sandboxId,
                         })];
                 case 1:
                     client = _d.sent();
@@ -27608,7 +27545,7 @@ var useClient = function (_a, filesState) {
             return;
         }
         var observerOptions = (_b = options === null || options === void 0 ? void 0 : options.initModeObserverOptions) !== null && _b !== void 0 ? _b : {
-            rootMargin: "1000px 0px"
+            rootMargin: "1000px 0px",
         };
         if (intersectionObserver.current && lazyAnchorRef.current) {
             (_c = intersectionObserver.current) === null || _c === void 0 ? void 0 : _c.unobserve(lazyAnchorRef.current);
@@ -27656,7 +27593,7 @@ var useClient = function (_a, filesState) {
                     // used later to manually run sandpack
                     registeredIframes.current[clientId] = {
                         iframe: iframe,
-                        clientPropsOverride: clientPropsOverride
+                        clientPropsOverride: clientPropsOverride,
                     };
                     if (!(state.status === "running")) return [3 /*break*/, 2];
                     return [4 /*yield*/, createClient(iframe, clientId, clientPropsOverride)];
@@ -27820,7 +27757,7 @@ var useClient = function (_a, filesState) {
                 if (client.status === "done") {
                     client.updateSandbox({
                         files: filesState.files,
-                        template: filesState.environment
+                        template: filesState.environment,
                     });
                 }
             });
@@ -27837,7 +27774,7 @@ var useClient = function (_a, filesState) {
                     if (client.status === "done") {
                         client.updateSandbox({
                             files: filesState.files,
-                            template: filesState.environment
+                            template: filesState.environment,
                         });
                     }
                 });
@@ -27890,7 +27827,7 @@ var useClient = function (_a, filesState) {
             dispatchMessage: dispatchMessage,
             lazyAnchorRef: lazyAnchorRef,
             unsubscribeClientListenersRef: unsubscribeClientListeners,
-            queuedListenersRef: queuedListeners
+            queuedListenersRef: queuedListeners,
         },
     ];
 };
@@ -27982,7 +27919,7 @@ var useFiles = function (props) {
                         ? remainingVisibleFiles[remainingVisibleFiles.length - 1]
                         : activeFile, files: newFiles, shouldUpdatePreview: shouldUpdatePreview });
             });
-        }
+        },
     };
     return [
         __assign(__assign({}, state), { visibleFilesFromProps: originalStateFromProps.visibleFiles }),
@@ -28000,7 +27937,7 @@ var SandpackProvider = function (props) {
     reactExports.useEffect(function () {
         clientOperations.initializeSandpackIframe();
     }, []);
-    return (jsxRuntimeExports.jsx(Sandpack$1.Provider, __assign({ value: __assign(__assign(__assign(__assign(__assign(__assign({}, fileState), clientState), appState), fileOperations), clientOperations), { autoReload: (_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.autoReload) !== null && _b !== void 0 ? _b : true, listen: addListener, dispatch: dispatchMessage }) }, { children: jsxRuntimeExports.jsx(ClassNamesProvider, __assign({ classes: options === null || options === void 0 ? void 0 : options.classes }, { children: jsxRuntimeExports.jsx(SandpackThemeProvider, __assign({ className: className, style: style, theme: theme }, { children: children }), void 0) }), void 0) }), void 0));
+    return (jsxRuntimeExports.jsx(Sandpack$1.Provider, { value: __assign(__assign(__assign(__assign(__assign(__assign({}, fileState), clientState), appState), fileOperations), clientOperations), { autoReload: (_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.autoReload) !== null && _b !== void 0 ? _b : true, listen: addListener, dispatch: dispatchMessage }), children: jsxRuntimeExports.jsx(ClassNamesProvider, { classes: options === null || options === void 0 ? void 0 : options.classes, children: jsxRuntimeExports.jsx(SandpackThemeProvider, { className: className, style: style, theme: theme, children: children }) }) }));
 };
 /**
  * @category Provider
@@ -28019,7 +27956,7 @@ function useSandpack() {
     return {
         sandpack: __assign({}, rest),
         dispatch: dispatch,
-        listen: listen
+        listen: listen,
     };
 }
 
@@ -28035,13 +27972,13 @@ var useActiveCode = function () {
     return {
         code: (_a = sandpack.files[sandpack.activeFile]) === null || _a === void 0 ? void 0 : _a.code,
         readOnly: (_c = (_b = sandpack.files[sandpack.activeFile]) === null || _b === void 0 ? void 0 : _b.readOnly) !== null && _c !== void 0 ? _c : false,
-        updateCode: sandpack.updateCurrentFile
+        updateCode: sandpack.updateCurrentFile,
     };
 };
 
 var _a$8, _b$2, _c;
 var iconStandaloneClassName = css({
-    svg: { margin: "auto" }
+    svg: { margin: "auto" },
 });
 var buttonClassName = css((_a$8 = {
         appearance: "none",
@@ -28062,22 +27999,22 @@ var buttonClassName = css((_a$8 = {
         svg: {
             minWidth: "$space$4",
             width: "$space$4",
-            height: "$space$4"
+            height: "$space$4",
         }
     },
-    _a$8["&." + iconStandaloneClassName] = {
+    _a$8["&.".concat(iconStandaloneClassName)] = {
         padding: "$space$1",
         height: "$space$7",
-        display: "flex"
+        display: "flex",
     },
     // If there's a children besides the icon
-    _a$8["&." + iconStandaloneClassName + "&:not(:has(span))"] = {
-        width: "$space$7"
+    _a$8["&.".concat(iconStandaloneClassName, "&:not(:has(span))")] = {
+        width: "$space$7",
     },
-    _a$8["&." + iconStandaloneClassName + "&:has(svg + span)"] = {
+    _a$8["&.".concat(iconStandaloneClassName, "&:has(svg + span)")] = {
         paddingRight: "$space$3",
         paddingLeft: "$space$2",
-        gap: "$space$1"
+        gap: "$space$1",
     },
     _a$8));
 var roundedButtonClassName = css({
@@ -28086,20 +28023,20 @@ var roundedButtonClassName = css({
     border: "1px solid $colors$surface3",
     '&[data-active="true"]': {
         color: "$colors$surface1",
-        background: "$colors$accent"
+        background: "$colors$accent",
     },
     "&:hover:not(:disabled,[data-active='true'])": {
-        backgroundColor: "$colors$surface3"
-    }
+        backgroundColor: "$colors$surface3",
+    },
 });
 var iconClassName = css({ padding: 0 });
 var fadeIn = keyframes({
     "0%": {
-        opacity: 0
+        opacity: 0,
     },
     "100%": {
-        opacity: 1
-    }
+        opacity: 1,
+    },
 });
 var absoluteClassName = css({
     position: "absolute",
@@ -28110,7 +28047,7 @@ var absoluteClassName = css({
     margin: "0",
     overflow: "auto",
     height: "100%",
-    zIndex: "$top"
+    zIndex: "$top",
 });
 var errorClassName = css((_b$2 = {
         whiteSpace: "pre-wrap",
@@ -28120,52 +28057,52 @@ var errorClassName = css((_b$2 = {
         gap: "$space$2",
         flexDirection: "column"
     },
-    _b$2["." + buttonClassName] = {
+    _b$2[".".concat(buttonClassName)] = {
         width: "auto",
         gap: "$space$2",
         padding: "0 $space$3 0 $space$2",
-        marginTop: "$space$1"
+        marginTop: "$space$1",
     },
     _b$2.variants = {
         solidBg: {
-            "true": {
-                backgroundColor: "$colors$errorSurface"
-            }
-        }
+            true: {
+                backgroundColor: "$colors$errorSurface",
+            },
+        },
     },
     _b$2));
 var errorBundlerClassName = css((_c = {
         padding: "$space$10",
         backgroundColor: "$colors$surface1"
     },
-    _c["." + buttonClassName] = {
+    _c[".".concat(buttonClassName)] = {
         marginTop: "$space$6",
         width: "auto",
         gap: "$space$2",
-        padding: "0 $space$3 0 $space$2"
+        padding: "0 $space$3 0 $space$2",
     },
     _c));
 var errorMessageClassName = css({
-    animation: fadeIn + " 150ms ease",
+    animation: "".concat(fadeIn, " 150ms ease"),
     color: "$colors$error",
     display: "flex",
     flexDirection: "column",
     gap: "$space$3",
     variants: {
-        errorCode: { "true": { fontFamily: "$font$mono" } }
+        errorCode: { true: { fontFamily: "$font$mono" } },
     },
     a: {
-        color: "inherit"
+        color: "inherit",
     },
     p: {
-        margin: 0
-    }
+        margin: 0,
+    },
 });
 
 var _a$7;
 var tabsClassName = css({
     borderBottom: "1px solid $colors$surface2",
-    background: "$colors$surface1"
+    background: "$colors$surface1",
 });
 var tabsScrollableClassName = css({
     padding: "0 $space$2",
@@ -28174,7 +28111,7 @@ var tabsScrollableClassName = css({
     flexWrap: "nowrap",
     alignItems: "stretch",
     minHeight: "40px",
-    marginBottom: "-1px"
+    marginBottom: "-1px",
 });
 var closeButtonClassName = css({
     padding: "0 $space$1 0 $space$1",
@@ -28187,8 +28124,8 @@ var closeButtonClassName = css({
         height: "$space$3",
         display: "block",
         position: "relative",
-        top: 1
-    }
+        top: 1,
+    },
 });
 var tabButton = css((_a$7 = {
         padding: "0 $space$2",
@@ -28196,7 +28133,7 @@ var tabButton = css((_a$7 = {
         whiteSpace: "nowrap",
         "&:focus": { outline: "none" }
     },
-    _a$7["&:hover > ." + closeButtonClassName] = { visibility: "unset" },
+    _a$7["&:hover > .".concat(closeButtonClassName)] = { visibility: "unset" },
     _a$7));
 /**
  * FileTabs is a list of all open files, the active file, and its state.
@@ -28235,28 +28172,28 @@ var FileTabs = function (_a) {
             return calculateNearestUniquePath(currentPath, pathsWithDuplicateFileNames);
         }
     };
-    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("tabs", [tabsClassName, className]), translate: "no" }, props, { children: jsxRuntimeExports.jsx("div", __assign({ "aria-label": "Select active file", className: classNames("tabs-scrollable-container", [
+    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("tabs", [tabsClassName, className]), translate: "no" }, props, { children: jsxRuntimeExports.jsx("div", { "aria-label": "Select active file", className: classNames("tabs-scrollable-container", [
                 tabsScrollableClassName,
-            ]), role: "tablist" }, { children: visibleFiles.map(function (filePath) { return (jsxRuntimeExports.jsxs("button", __assign({ "aria-selected": filePath === activeFile, className: classNames("tab-button", [buttonClassName, tabButton]), "data-active": filePath === activeFile, onClick: function () { return setActiveFile(filePath); }, role: "tab", title: filePath, type: "button" }, { children: [getTriggerText(filePath), closableTabs && visibleFiles.length > 1 && (jsxRuntimeExports.jsx("span", __assign({ className: classNames("close-button", [closeButtonClassName]), onClick: handleCloseFile }, { children: jsxRuntimeExports.jsx(CloseIcon, {}, void 0) }), void 0))] }), filePath)); }) }), void 0) }), void 0));
+            ]), role: "tablist", children: visibleFiles.map(function (filePath) { return (jsxRuntimeExports.jsxs("button", { "aria-selected": filePath === activeFile, className: classNames("tab-button", [buttonClassName, tabButton]), "data-active": filePath === activeFile, onClick: function () { return setActiveFile(filePath); }, role: "tab", title: filePath, type: "button", children: [getTriggerText(filePath), closableTabs && visibleFiles.length > 1 && (jsxRuntimeExports.jsx("span", { className: classNames("close-button", [closeButtonClassName]), onClick: handleCloseFile, children: jsxRuntimeExports.jsx(CloseIcon, {}) }))] }, filePath)); }) }) })));
 };
 
 var RoundedButton = function (_a) {
     var onClick = _a.onClick, className = _a.className, children = _a.children;
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsx("button", __assign({ className: classNames("button", [
+    return (jsxRuntimeExports.jsx("button", { className: classNames("button", [
             classNames("icon-standalone"),
             buttonClassName,
             iconStandaloneClassName,
             roundedButtonClassName,
             className,
-        ]), onClick: onClick, type: "button" }, { children: children }), void 0));
+        ]), onClick: onClick, type: "button", children: children }));
 };
 
 var runButtonClassName = css({
     position: "absolute",
     bottom: "$space$2",
     right: "$space$2",
-    paddingRight: "$space$3"
+    paddingRight: "$space$3",
 });
 var RunButton$1 = function (_a) {
     _a.className; var onClick = _a.onClick, props = __rest(_a, ["className", "onClick"]);
@@ -28264,7 +28201,7 @@ var RunButton$1 = function (_a) {
     return (jsxRuntimeExports.jsxs(RoundedButton, __assign({ className: runButtonClassName.toString(), onClick: function (event) {
             sandpack.runSandpack();
             onClick === null || onClick === void 0 ? void 0 : onClick(event);
-        } }, props, { children: [jsxRuntimeExports.jsx(RunIcon, {}, void 0), jsxRuntimeExports.jsx("span", { children: "Run" }, void 0)] }), void 0));
+        } }, props, { children: [jsxRuntimeExports.jsx(RunIcon, {}), jsxRuntimeExports.jsx("span", { children: "Run" })] })));
 };
 
 var _a$6;
@@ -28276,14 +28213,14 @@ var stackClassName = css((_a$6 = {
         backgroundColor: "$colors$surface1",
         gap: 1
     },
-    _a$6["&:has(." + THEME_PREFIX + "-stack)"] = {
-        backgroundColor: "$colors$surface2"
+    _a$6["&:has(.".concat(THEME_PREFIX, "-stack)")] = {
+        backgroundColor: "$colors$surface2",
     },
     _a$6));
 var SandpackStack = function (_a) {
     var className = _a.className, props = __rest(_a, ["className"]);
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("stack", [stackClassName, className]) }, props), void 0));
+    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("stack", [stackClassName, className]) }, props)));
 };
 
 /**
@@ -28315,53 +28252,53 @@ var getCodeMirrorPosition = function (doc, _a) {
 var getEditorTheme = function () {
     return EditorView.theme({
         "&": {
-            backgroundColor: "var(--" + THEME_PREFIX + "-colors-surface1)",
-            color: "var(--" + THEME_PREFIX + "-syntax-color-plain)",
-            height: "100%"
+            backgroundColor: "var(--".concat(THEME_PREFIX, "-colors-surface1)"),
+            color: "var(--".concat(THEME_PREFIX, "-syntax-color-plain)"),
+            height: "100%",
         },
         ".cm-matchingBracket, .cm-nonmatchingBracket, &.cm-focused .cm-matchingBracket, &.cm-focused .cm-nonmatchingBracket": {
             color: "inherit",
             backgroundColor: "rgba(128,128,128,.25)",
-            backgroundBlendMode: "difference"
+            backgroundBlendMode: "difference",
         },
         "&.cm-editor.cm-focused": {
-            outline: "none"
+            outline: "none",
         },
         ".cm-activeLine": {
-            backgroundColor: "var(--" + THEME_PREFIX + "-colors-surface3)",
-            borderRadius: "var(--" + THEME_PREFIX + "-border-radius)"
+            backgroundColor: "var(--".concat(THEME_PREFIX, "-colors-surface3)"),
+            borderRadius: "var(--".concat(THEME_PREFIX, "-border-radius)"),
         },
         ".cm-errorLine": {
-            backgroundColor: "var(--" + THEME_PREFIX + "-colors-errorSurface)",
-            borderRadius: "var(--" + THEME_PREFIX + "-border-radius)"
+            backgroundColor: "var(--".concat(THEME_PREFIX, "-colors-errorSurface)"),
+            borderRadius: "var(--".concat(THEME_PREFIX, "-border-radius)"),
         },
         ".cm-content": {
-            caretColor: "var(--" + THEME_PREFIX + "-colors-accent)",
-            padding: "0 var(--" + THEME_PREFIX + "-space-4)"
+            caretColor: "var(--".concat(THEME_PREFIX, "-colors-accent)"),
+            padding: "0 var(--".concat(THEME_PREFIX, "-space-4)"),
         },
         ".cm-scroller": {
-            fontFamily: "var(--" + THEME_PREFIX + "-font-mono)",
-            lineHeight: "var(--" + THEME_PREFIX + "-font-lineHeight)"
+            fontFamily: "var(--".concat(THEME_PREFIX, "-font-mono)"),
+            lineHeight: "var(--".concat(THEME_PREFIX, "-font-lineHeight)"),
         },
         ".cm-gutters": {
-            backgroundColor: "var(--" + THEME_PREFIX + "-colors-surface1)",
-            color: "var(--" + THEME_PREFIX + "-colors-disabled)",
+            backgroundColor: "var(--".concat(THEME_PREFIX, "-colors-surface1)"),
+            color: "var(--".concat(THEME_PREFIX, "-colors-disabled)"),
             border: "none",
-            paddingLeft: "var(--" + THEME_PREFIX + "-space-1)"
+            paddingLeft: "var(--".concat(THEME_PREFIX, "-space-1)"),
         },
         ".cm-gutter.cm-lineNumbers": {
-            fontSize: ".6em"
+            fontSize: ".6em",
         },
         ".cm-lineNumbers .cm-gutterElement": {
-            lineHeight: "var(--" + THEME_PREFIX + "-font-lineHeight)",
-            minWidth: "var(--" + THEME_PREFIX + "-space-5)"
+            lineHeight: "var(--".concat(THEME_PREFIX, "-font-lineHeight)"),
+            minWidth: "var(--".concat(THEME_PREFIX, "-space-5)"),
         },
-        ".cm-content .cm-line": { paddingLeft: "var(--" + THEME_PREFIX + "-space-1)" },
-        ".cm-content.cm-readonly .cm-line": { paddingLeft: 0 }
+        ".cm-content .cm-line": { paddingLeft: "var(--".concat(THEME_PREFIX, "-space-1)") },
+        ".cm-content.cm-readonly .cm-line": { paddingLeft: 0 },
     });
 };
 var classNameToken = function (name) {
-    return THEME_PREFIX + "-syntax-" + name;
+    return "".concat(THEME_PREFIX, "-syntax-").concat(name);
 };
 var styleTokens = function () {
     var syntaxHighLightTokens = [
@@ -28377,9 +28314,9 @@ var styleTokens = function () {
     ];
     return syntaxHighLightTokens.reduce(function (acc, token) {
         var _a;
-        return __assign(__assign({}, acc), (_a = {}, _a["." + classNameToken(token)] = {
-            color: "$syntax$color$" + token,
-            fontStyle: "$syntax$fontStyle$" + token
+        return __assign(__assign({}, acc), (_a = {}, _a[".".concat(classNameToken(token))] = {
+            color: "$syntax$color$".concat(token),
+            fontStyle: "$syntax$fontStyle$".concat(token),
         }, _a));
     }, {});
 };
@@ -28390,47 +28327,47 @@ var getSyntaxHighlight = function (theme) {
         { tag: tags$1.strong, fontWeight: "bold" },
         {
             tag: tags$1.keyword,
-            "class": classNameToken("keyword")
+            class: classNameToken("keyword"),
         },
         {
             tag: [tags$1.atom, tags$1.number, tags$1.bool],
-            "class": classNameToken("static")
+            class: classNameToken("static"),
         },
         {
             tag: tags$1.variableName,
-            "class": classNameToken("plain")
+            class: classNameToken("plain"),
         },
         {
             // Standard tags, e.g <h1 />
             tag: tags$1.standard(tags$1.tagName),
-            "class": classNameToken("tag")
+            class: classNameToken("tag"),
         },
         {
             tag: [
                 // Highlight function call
-                tags$1["function"](tags$1.variableName),
+                tags$1.function(tags$1.variableName),
                 // Highlight function definition differently (eg: functional component def in React)
-                tags$1.definition(tags$1["function"](tags$1.variableName)),
+                tags$1.definition(tags$1.function(tags$1.variableName)),
                 // "Custom tags", meaning React component
                 tags$1.tagName,
             ],
-            "class": classNameToken("definition")
+            class: classNameToken("definition"),
         },
         {
             tag: tags$1.propertyName,
-            "class": classNameToken("property")
+            class: classNameToken("property"),
         },
         {
             tag: [tags$1.literal, tags$1.inserted],
-            "class": classNameToken(theme.syntax.string ? "string" : "static")
+            class: classNameToken(theme.syntax.string ? "string" : "static"),
         },
         {
             tag: tags$1.punctuation,
-            "class": classNameToken("punctuation")
+            class: classNameToken("punctuation"),
         },
         {
             tag: [tags$1.comment, tags$1.quote],
-            "class": classNameToken("comment")
+            class: classNameToken("comment"),
         },
     ]);
 };
@@ -28474,7 +28411,7 @@ var getCodeMirrorLanguage = function (extension, additionalLanguages) {
         javascript: javascript({ jsx: true, typescript: false }),
         typescript: javascript({ jsx: true, typescript: true }),
         html: html(),
-        css: css$1()
+        css: css$1(),
     };
     for (var _i = 0, additionalLanguages_2 = additionalLanguages; _i < additionalLanguages_2.length; _i++) {
         var additionalLanguage = additionalLanguages_2[_i];
@@ -28484,7 +28421,6 @@ var getCodeMirrorLanguage = function (extension, additionalLanguages) {
     }
     return options[extension];
 };
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 var useCombinedRefs = function () {
     var refs = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -28523,20 +28459,20 @@ function highlightDecorators(positions) {
             var rangesDecorators = positions.map(function (item) {
                 var _a, _b, _c;
                 var lineDeco = Decoration.line({
-                    attributes: { "class": (_a = item.className) !== null && _a !== void 0 ? _a : "" }
+                    attributes: { class: (_a = item.className) !== null && _a !== void 0 ? _a : "" },
                 });
                 var markDeco = Decoration.mark({
-                    "class": (_b = item.className) !== null && _b !== void 0 ? _b : "",
-                    attributes: (_c = item.elementAttributes) !== null && _c !== void 0 ? _c : undefined
+                    class: (_b = item.className) !== null && _b !== void 0 ? _b : "",
+                    attributes: (_c = item.elementAttributes) !== null && _c !== void 0 ? _c : undefined,
                 });
                 var positionLineStart = getCodeMirrorPosition(view.state.doc, {
                     line: item.line,
-                    column: item.startColumn
+                    column: item.startColumn,
                 }) + 1;
                 if (item.startColumn && item.endColumn) {
                     var positionLineEnd = getCodeMirrorPosition(view.state.doc, {
                         line: item.line,
-                        column: item.endColumn
+                        column: item.endColumn,
                     }) + 1;
                     return markDeco.range(positionLineStart, positionLineEnd);
                 }
@@ -28546,14 +28482,14 @@ function highlightDecorators(positions) {
         };
         return class_1;
     }()), {
-        decorations: function (v) { return v.decorations; }
+        decorations: function (v) { return v.decorations; },
     });
 }
 
 function highlightInlineError() {
     return activeLineHighlighter;
 }
-var lineDeco = Decoration.line({ attributes: { "class": "cm-errorLine" } });
+var lineDeco = Decoration.line({ attributes: { class: "cm-errorLine" } });
 var activeLineHighlighter = ViewPlugin.fromClass(/** @class */ (function () {
     function class_1() {
         this.decorations = Decoration.none;
@@ -28565,7 +28501,7 @@ var activeLineHighlighter = ViewPlugin.fromClass(/** @class */ (function () {
             var errorValue = trans.annotation("show-error");
             if (errorValue !== undefined) {
                 var position = getCodeMirrorPosition(update.view.state.doc, {
-                    line: errorValue
+                    line: errorValue,
                 }) + 1;
                 _this.decorations = Decoration.set([lineDeco.range(position)]);
                 // @ts-ignore
@@ -28577,7 +28513,7 @@ var activeLineHighlighter = ViewPlugin.fromClass(/** @class */ (function () {
     };
     return class_1;
 }()), {
-    decorations: function (v) { return v.decorations; }
+    decorations: function (v) { return v.decorations; },
 });
 
 var _a$5, _b$1;
@@ -28587,7 +28523,7 @@ var placeholderClassName = css({
     fontFamily: "$font$mono",
     fontSize: "$font$size",
     color: "$syntax$color$plain",
-    lineHeight: "$font$lineHeight"
+    lineHeight: "$font$lineHeight",
 });
 var tokensClassName = css(styleTokens());
 var editorClassName = css((_a$5 = {
@@ -28596,11 +28532,11 @@ var editorClassName = css((_a$5 = {
         overflow: "auto",
         background: "$colors$surface1",
         ".cm-scroller": {
-            padding: "$space$4 0"
+            padding: "$space$4 0",
         }
     },
-    _a$5["." + placeholderClassName] = {
-        padding: "$space$4 0"
+    _a$5[".".concat(placeholderClassName)] = {
+        padding: "$space$4 0",
     },
     /**
      * For iOS: prevent browser zoom when clicking on sandbox.
@@ -28608,14 +28544,14 @@ var editorClassName = css((_a$5 = {
      */
     _a$5["@media screen and (max-width: 768px)"] = {
         "@supports (-webkit-overflow-scrolling: touch)": {
-            ".cm-content": { fontSize: "16px" }
-        }
+            ".cm-content": { fontSize: "16px" },
+        },
     },
     _a$5));
 var cmClassName = css({
     margin: "0",
     outline: "none",
-    height: "100%"
+    height: "100%",
 });
 var readOnlyClassName = css((_b$1 = {
         fontFamily: "$font$mono",
@@ -28629,8 +28565,8 @@ var readOnlyClassName = css((_b$1 = {
         borderRadius: "99999px",
         padding: "calc($space$1 / 2) $space$2"
     },
-    _b$1["& + ." + buttonClassName] = {
-        right: "calc($space$11 * 2)"
+    _b$1["& + .".concat(buttonClassName)] = {
+        right: "calc($space$11 * 2)",
     },
     _b$1));
 
@@ -28646,7 +28582,7 @@ var useSyntaxHighlight = function (_a) {
                 ? reactExports.createElement("span", {
                     children: children,
                     className: className,
-                    key: "" + to + offSet
+                    key: "".concat(to).concat(offSet),
                 })
                 : children);
             offSet = to;
@@ -28683,10 +28619,10 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
     var prevExtensionKeymap = reactExports.useRef([]);
     var isIntersecting = useIntersectionObserver(wrapper, {
         rootMargin: "600px 0px",
-        threshold: 0.2
+        threshold: 0.2,
     }).isIntersecting;
     reactExports.useImperativeHandle(ref, function () { return ({
-        getCodemirror: function () { return cmView.current; }
+        getCodemirror: function () { return cmView.current; },
     }); });
     reactExports.useEffect(function () {
         var mode = initMode === "lazy" || initMode === "user-visible";
@@ -28700,7 +28636,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
     var syntaxHighlightRender = useSyntaxHighlight({
         langSupport: langSupport,
         highlightTheme: highlightTheme,
-        code: code
+        code: code,
     });
     // decorators need to be sorted by `line`, otherwise it will throw error
     // see https://github.com/codesandbox/sandpack/issues/383
@@ -28723,7 +28659,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                         return key === "Tab";
                     });
                     return (_b = (_a = customKey === null || customKey === void 0 ? void 0 : customKey.run) === null || _a === void 0 ? void 0 : _a.call(customKey, view)) !== null && _b !== void 0 ? _b : true;
-                }
+                },
             },
             {
                 key: "Shift-Tab",
@@ -28736,7 +28672,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                         return key === "Shift-Tab";
                     });
                     return (_c = (_b = customKey === null || customKey === void 0 ? void 0 : customKey.run) === null || _b === void 0 ? void 0 : _b.call(customKey, view)) !== null && _c !== void 0 ? _c : true;
-                }
+                },
             },
             {
                 key: "Escape",
@@ -28747,11 +28683,11 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                         wrapper.current.focus();
                     }
                     return true;
-                }
+                },
             },
             {
                 key: "mod-Backspace",
-                run: deleteGroupBackward
+                run: deleteGroupBackward,
             },
         ];
         var extensionList = __spreadArray(__spreadArray([
@@ -28800,11 +28736,11 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                     setInternalCode(newCode);
                     onCodeUpdate === null || onCodeUpdate === void 0 ? void 0 : onCodeUpdate(newCode);
                 }
-            }
+            },
         });
         view.contentDOM.setAttribute("data-gramm", "false");
         view.contentDOM.setAttribute("data-lt-active", "false");
-        view.contentDOM.setAttribute("aria-label", filePath ? "Code Editor for " + getFileName(filePath) : "Code Editor");
+        view.contentDOM.setAttribute("aria-label", filePath ? "Code Editor for ".concat(getFileName(filePath)) : "Code Editor");
         if (readOnly) {
             view.contentDOM.classList.add("cm-readonly");
         }
@@ -28831,10 +28767,10 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
             !shallowEqual(extensionsKeymap, prevExtensionKeymap.current);
         if (view && dependenciesAreDiff) {
             view.dispatch({
-                effects: StateEffect.appendConfig.of(extensions)
+                effects: StateEffect.appendConfig.of(extensions),
             });
             view.dispatch({
-                effects: StateEffect.appendConfig.of(keymap.of(__spreadArray([], extensionsKeymap, true)))
+                effects: StateEffect.appendConfig.of(keymap.of(__spreadArray([], extensionsKeymap, true))),
             });
             prevExtension.current = extensions;
             prevExtensionKeymap.current = extensionsKeymap;
@@ -28873,7 +28809,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
             if (message.type === "success") {
                 view === null || view === void 0 ? void 0 : view.dispatch({
                     // @ts-ignore
-                    annotations: [new Annotation("remove-errors", true)]
+                    annotations: [new Annotation("remove-errors", true)],
                 });
             }
             else if (message.type === "action" &&
@@ -28882,7 +28818,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                 message.line) {
                 view === null || view === void 0 ? void 0 : view.dispatch({
                     // @ts-ignore
-                    annotations: [new Annotation("show-error", message.line)]
+                    annotations: [new Annotation("show-error", message.line)],
                 });
             }
         });
@@ -28905,22 +28841,22 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
         if (!readOnly) {
             offset += 1;
         }
-        return "var(--" + THEME_PREFIX + "-space-" + offset + ")";
+        return "var(--".concat(THEME_PREFIX, "-space-").concat(offset, ")");
     };
     if (readOnly) {
-        return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("pre", __assign({ ref: combinedRef, className: classNames("cm", [
+        return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("pre", { ref: combinedRef, className: classNames("cm", [
                         classNames(editorState),
                         classNames(languageExtension),
                         cmClassName,
                         tokensClassName,
-                    ]), translate: "no" }, { children: jsxRuntimeExports.jsx("code", __assign({ className: classNames("pre-placeholder", [placeholderClassName]), style: { marginLeft: gutterLineOffset() } }, { children: syntaxHighlightRender }), void 0) }), void 0), readOnly && showReadOnly && (jsxRuntimeExports.jsx("span", __assign({ className: classNames("read-only", [readOnlyClassName]) }, ({}), { children: "Read-only" }), void 0))] }, void 0));
+                    ]), translate: "no", children: jsxRuntimeExports.jsx("code", { className: classNames("pre-placeholder", [placeholderClassName]), style: { marginLeft: gutterLineOffset() }, children: syntaxHighlightRender }) }), readOnly && showReadOnly && (jsxRuntimeExports.jsx("span", __assign({ className: classNames("read-only", [readOnlyClassName]) }, ({}), { children: "Read-only" })))] }));
     }
-    return (jsxRuntimeExports.jsx("div", __assign({ ref: combinedRef, "aria-autocomplete": "list", "aria-label": filePath ? "Code Editor for " + getFileName(filePath) : "Code Editor", "aria-multiline": "true", className: classNames("cm", [
+    return (jsxRuntimeExports.jsx("div", { ref: combinedRef, "aria-autocomplete": "list", "aria-label": filePath ? "Code Editor for ".concat(getFileName(filePath)) : "Code Editor", "aria-multiline": "true", className: classNames("cm", [
             classNames(editorState),
             classNames(languageExtension),
             cmClassName,
             tokensClassName,
-        ]), onKeyDown: handleContainerKeyDown, role: "textbox", tabIndex: 0, translate: "no", suppressHydrationWarning: true }, { children: jsxRuntimeExports.jsx("pre", __assign({ className: classNames("pre-placeholder", [placeholderClassName]), style: { marginLeft: gutterLineOffset() } }, { children: syntaxHighlightRender }), void 0) }), void 0));
+        ]), onKeyDown: handleContainerKeyDown, role: "textbox", tabIndex: 0, translate: "no", suppressHydrationWarning: true, children: jsxRuntimeExports.jsx("pre", { className: classNames("pre-placeholder", [placeholderClassName]), style: { marginLeft: gutterLineOffset() }, children: syntaxHighlightRender }) }));
 });
 
 var SandpackCodeEditor = reactExports.forwardRef(function (_a, ref) {
@@ -28934,7 +28870,7 @@ var SandpackCodeEditor = reactExports.forwardRef(function (_a, ref) {
         if (shouldUpdatePreview === void 0) { shouldUpdatePreview = true; }
         updateCode(newCode, shouldUpdatePreview);
     };
-    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor", [className]) }, props, { children: [shouldShowTabs && jsxRuntimeExports.jsx(FileTabs, { closableTabs: closableTabs }, void 0), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("code-editor", [editorClassName]) }, { children: [jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: code, editorState: editorState, extensions: extensions, extensionsKeymap: extensionsKeymap, filePath: activeFile, initMode: initMode || sandpack.initMode, onCodeUpdate: function (newCode) { var _a; return handleCodeUpdate(newCode, (_a = sandpack.autoReload) !== null && _a !== void 0 ? _a : true); }, readOnly: readOnly || readOnlyFile, showInlineErrors: showInlineErrors, showLineNumbers: showLineNumbers, showReadOnly: showReadOnly, wrapContent: wrapContent }, activeFile), showRunButton && (!sandpack.autoReload || status === "idle") ? (jsxRuntimeExports.jsx(RunButton$1, {}, void 0)) : null] }), void 0)] }), void 0));
+    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor", [className]) }, props, { children: [shouldShowTabs && jsxRuntimeExports.jsx(FileTabs, { closableTabs: closableTabs }), jsxRuntimeExports.jsxs("div", { className: classNames("code-editor", [editorClassName]), children: [jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: code, editorState: editorState, extensions: extensions, extensionsKeymap: extensionsKeymap, filePath: activeFile, initMode: initMode || sandpack.initMode, onCodeUpdate: function (newCode) { var _a; return handleCodeUpdate(newCode, (_a = sandpack.autoReload) !== null && _a !== void 0 ? _a : true); }, readOnly: readOnly || readOnlyFile, showInlineErrors: showInlineErrors, showLineNumbers: showLineNumbers, showReadOnly: showReadOnly, wrapContent: wrapContent }, activeFile), showRunButton && (!sandpack.autoReload || status === "idle") ? (jsxRuntimeExports.jsx(RunButton$1, {})) : null] })] })));
 });
 
 reactExports.forwardRef(function (_a, ref) {
@@ -28943,7 +28879,7 @@ reactExports.forwardRef(function (_a, ref) {
     var code = useActiveCode().code;
     var classNames = useClassNames();
     var shouldShowTabs = showTabs !== null && showTabs !== void 0 ? showTabs : sandpack.visibleFiles.length > 1;
-    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor-viewer") }, props, { children: [shouldShowTabs ? jsxRuntimeExports.jsx(FileTabs, {}, void 0) : null, jsxRuntimeExports.jsx("div", __assign({ className: classNames("code-editor", [editorClassName]) }, { children: jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: propCode !== null && propCode !== void 0 ? propCode : code, decorators: decorators, filePath: sandpack.activeFile, initMode: initMode || sandpack.initMode, showLineNumbers: showLineNumbers, showReadOnly: false, wrapContent: wrapContent, readOnly: true }, void 0) }), void 0), sandpack.status === "idle" ? jsxRuntimeExports.jsx(RunButton$1, {}, void 0) : null] }), void 0));
+    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor-viewer") }, props, { children: [shouldShowTabs ? jsxRuntimeExports.jsx(FileTabs, {}) : null, jsxRuntimeExports.jsx("div", { className: classNames("code-editor", [editorClassName]), children: jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: propCode !== null && propCode !== void 0 ? propCode : code, decorators: decorators, filePath: sandpack.activeFile, initMode: initMode || sandpack.initMode, showLineNumbers: showLineNumbers, showReadOnly: false, wrapContent: wrapContent, readOnly: true }) }), sandpack.status === "idle" ? jsxRuntimeExports.jsx(RunButton$1, {}) : null] })));
 });
 
 var _a$4, _b;
@@ -28958,7 +28894,7 @@ var layoutClassName = css((_a$4 = {
         backgroundColor: "$colors$surface2",
         gap: 1
     },
-    _a$4["> ." + stackClassName] = {
+    _a$4["> .".concat(stackClassName)] = {
         flexGrow: 1,
         flexShrink: 1,
         flexBasis: "0",
@@ -28966,22 +28902,22 @@ var layoutClassName = css((_a$4 = {
         overflow: "hidden",
         "@media print": {
             height: "auto",
-            display: "block"
+            display: "block",
         },
         "@media screen and (max-width: 768px)": (_b = {},
-            _b["&:not(." + THEME_PREFIX + "-preview, ." + THEME_PREFIX + "-editor, ." + THEME_PREFIX + "-preset-column)"] = {
-                height: "calc($layout$height / 2)"
+            _b["&:not(.".concat(THEME_PREFIX, "-preview, .").concat(THEME_PREFIX, "-editor, .").concat(THEME_PREFIX, "-preset-column)")] = {
+                height: "calc($layout$height / 2)",
             },
             /* triggers the layout break at the 768px breakpoint, not when the component is less then 700px */
             _b.minWidth = "100%;",
-            _b)
+            _b),
     },
-    _a$4["> ." + THEME_PREFIX + "-file-explorer"] = {
+    _a$4["> .".concat(THEME_PREFIX, "-file-explorer")] = {
         flex: 0.2,
         minWidth: 200,
         "@media screen and (max-width: 768px)": {
-            flex: 1
-        }
+            flex: 1,
+        },
     },
     _a$4));
 var SandpackLayout = reactExports.forwardRef(function (_a, ref) {
@@ -28989,7 +28925,7 @@ var SandpackLayout = reactExports.forwardRef(function (_a, ref) {
     var sandpack = useSandpack().sandpack;
     var classNames = useClassNames();
     var combinedRef = useCombinedRefs(sandpack.lazyAnchorRef, ref);
-    return (jsxRuntimeExports.jsx("div", __assign({ ref: combinedRef, className: classNames("layout", [layoutClassName, className]) }, props, { children: children }), void 0));
+    return (jsxRuntimeExports.jsx("div", __assign({ ref: combinedRef, className: classNames("layout", [layoutClassName, className]) }, props, { children: children })));
 });
 
 /**
@@ -29060,7 +28996,7 @@ var useSandpackNavigation = function (clientId) {
     return {
         refresh: function () { return dispatch({ type: "refresh" }, clientId); },
         back: function () { return dispatch({ type: "urlback" }, clientId); },
-        forward: function () { return dispatch({ type: "urlforward" }, clientId); }
+        forward: function () { return dispatch({ type: "urlforward" }, clientId); },
     };
 };
 
@@ -29095,7 +29031,7 @@ var useSandpackClient = function (clientPropsOverride) {
         listen: function (listener) {
             return listen(listener, clientId.current);
         },
-        dispatch: function (message) { return dispatch(message, clientId.current); }
+        dispatch: function (message) { return dispatch(message, clientId.current); },
     };
 };
 
@@ -29106,7 +29042,7 @@ var useSandpackShell = function (clientId) {
     var dispatch = useSandpack().dispatch;
     return {
         restart: function () { return dispatch({ type: "shell/restart" }, clientId); },
-        openPreview: function () { return dispatch({ type: "shell/openPreview" }, clientId); }
+        openPreview: function () { return dispatch({ type: "shell/openPreview" }, clientId); },
     };
 };
 
@@ -29116,11 +29052,11 @@ var mapProgressMessage = function (originalMessage, firstTotalPending) {
         case "downloading_manifest":
             return "[1/3] Downloading manifest";
         case "downloaded_module":
-            return "[2/3] Downloaded " + originalMessage.name + " (" + (firstTotalPending - originalMessage.totalPending) + "/" + firstTotalPending + ")";
+            return "[2/3] Downloaded ".concat(originalMessage.name, " (").concat(firstTotalPending - originalMessage.totalPending, "/").concat(firstTotalPending, ")");
         case "starting_command":
             return "[3/3] Starting command";
         case "command_running":
-            return "[3/3] Running \"" + ((_a = originalMessage.command) === null || _a === void 0 ? void 0 : _a.trim()) + "\"";
+            return "[3/3] Running \"".concat((_a = originalMessage.command) === null || _a === void 0 ? void 0 : _a.trim(), "\"");
     }
 };
 var useSandpackPreviewProgress = function (props) {
@@ -29204,7 +29140,7 @@ var mapBundlerErrors = function (originalMessage) {
         if (Number(exitCode[1]) === 0) {
             return "Server is not running, would you like to start it again?";
         }
-        return "Server has crashed with status code " + exitCode[1] + ", would you like to restart the server?";
+        return "Server has crashed with status code ".concat(exitCode[1], ", would you like to restart the server?");
     }
     return errorMessage;
 };
@@ -29231,11 +29167,11 @@ var ErrorOverlay = function (props) {
                 absoluteClassName,
                 errorBundlerClassName,
                 className,
-            ]) }, props, { children: [jsxRuntimeExports.jsx("p", __assign({ className: classNames("error-message", [errorMessageClassName]) }, { children: jsxRuntimeExports.jsx("strong", { children: "Unable to fetch required dependency." }, void 0) }), void 0), jsxRuntimeExports.jsx("div", __assign({ className: classNames("error-message", [errorMessageClassName]) }, { children: jsxRuntimeExports.jsxs("p", { children: ["Authentication required. Please sign in to your account (make sure to allow pop-ups to this page) and try again. If the issue persists, contact", " ", jsxRuntimeExports.jsx("a", __assign({ href: "mailto:hello@codesandbox.io?subject=Sandpack Timeout Error" }, { children: "support" }), void 0), " ", "for further assistance."] }, void 0) }), void 0), jsxRuntimeExports.jsx("div", { children: jsxRuntimeExports.jsxs("button", __assign({ className: classNames("button", [
+            ]) }, props, { children: [jsxRuntimeExports.jsx("p", { className: classNames("error-message", [errorMessageClassName]), children: jsxRuntimeExports.jsx("strong", { children: "Unable to fetch required dependency." }) }), jsxRuntimeExports.jsx("div", { className: classNames("error-message", [errorMessageClassName]), children: jsxRuntimeExports.jsxs("p", { children: ["Authentication required. Please sign in to your account (make sure to allow pop-ups to this page) and try again. If the issue persists, contact", " ", jsxRuntimeExports.jsx("a", { href: "mailto:hello@codesandbox.io?subject=Sandpack Timeout Error", children: "support" }), " ", "for further assistance."] }) }), jsxRuntimeExports.jsx("div", { children: jsxRuntimeExports.jsxs("button", { className: classNames("button", [
                             buttonClassName,
                             iconStandaloneClassName,
                             roundedButtonClassName,
-                        ]), onClick: onSignIn }, { children: [jsxRuntimeExports.jsx(SignInIcon, {}, void 0), jsxRuntimeExports.jsx("span", { children: "Sign in" }, void 0)] }), void 0) }, void 0)] }), void 0));
+                        ]), onClick: onSignIn, children: [jsxRuntimeExports.jsx(SignInIcon, {}), jsxRuntimeExports.jsx("span", { children: "Sign in" })] }) })] })));
     }
     if (isSandpackBundlerError && errorMessage) {
         return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("overlay", [
@@ -29243,7 +29179,7 @@ var ErrorOverlay = function (props) {
                 absoluteClassName,
                 errorBundlerClassName,
                 className,
-            ]) }, otherProps, { children: jsxRuntimeExports.jsxs("div", __assign({ className: classNames("error-message", [errorMessageClassName]) }, { children: [jsxRuntimeExports.jsx("p", __assign({ className: classNames("error-title", [css({ fontWeight: "bold" })]) }, { children: "Couldn't connect to server" }), void 0), jsxRuntimeExports.jsx("p", { children: mapBundlerErrors(errorMessage) }, void 0), jsxRuntimeExports.jsx("div", { children: jsxRuntimeExports.jsxs("button", __assign({ className: classNames("button", [
+            ]) }, otherProps, { children: jsxRuntimeExports.jsxs("div", { className: classNames("error-message", [errorMessageClassName]), children: [jsxRuntimeExports.jsx("p", { className: classNames("error-title", [css({ fontWeight: "bold" })]), children: "Couldn't connect to server" }), jsxRuntimeExports.jsx("p", { children: mapBundlerErrors(errorMessage) }), jsxRuntimeExports.jsx("div", { children: jsxRuntimeExports.jsxs("button", { className: classNames("button", [
                                 classNames("icon-standalone"),
                                 buttonClassName,
                                 iconStandaloneClassName,
@@ -29251,16 +29187,16 @@ var ErrorOverlay = function (props) {
                             ]), onClick: function () {
                                 restart();
                                 runSandpack();
-                            }, title: "Restart script", type: "button" }, { children: [jsxRuntimeExports.jsx(RestartIcon, {}, void 0), " ", jsxRuntimeExports.jsx("span", { children: "Restart" }, void 0)] }), void 0) }, void 0)] }), void 0) }), void 0));
+                            }, title: "Restart script", type: "button", children: [jsxRuntimeExports.jsx(RestartIcon, {}), " ", jsxRuntimeExports.jsx("span", { children: "Restart" })] }) })] }) })));
     }
     return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("overlay", [
             classNames("error"),
             absoluteClassName,
             errorClassName({ solidBg: true }),
             className,
-        ]), translate: "no" }, otherProps, { children: [jsxRuntimeExports.jsx("p", __assign({ className: classNames("error-message", [errorMessageClassName]) }, { children: jsxRuntimeExports.jsx("strong", { children: "Something went wrong" }, void 0) }), void 0), jsxRuntimeExports.jsx("p", __assign({ className: classNames("error-message", [
+        ]), translate: "no" }, otherProps, { children: [jsxRuntimeExports.jsx("p", { className: classNames("error-message", [errorMessageClassName]), children: jsxRuntimeExports.jsx("strong", { children: "Something went wrong" }) }), jsxRuntimeExports.jsx("p", { className: classNames("error-message", [
                     errorMessageClassName({ errorCode: true }),
-                ]) }, { children: errorMessage || children }), void 0)] }), void 0));
+                ]), children: errorMessage || children })] })));
 };
 
 /**
@@ -29281,7 +29217,7 @@ function ansiToJSON(input, use_classes) {
     return Anser$1.ansiToJson(input, {
         json: true,
         remove_empty: true,
-        use_classes: use_classes
+        use_classes: use_classes,
     });
 }
 /**
@@ -29294,13 +29230,13 @@ function ansiToJSON(input, use_classes) {
 function createClass(bundle) {
     var classNames = "";
     if (bundle.bg) {
-        classNames += bundle.bg + "-bg ";
+        classNames += "".concat(bundle.bg, "-bg ");
     }
     if (bundle.fg) {
-        classNames += bundle.fg + "-fg ";
+        classNames += "".concat(bundle.fg, "-fg ");
     }
     if (bundle.decoration) {
-        classNames += "ansi-" + bundle.decoration + " ";
+        classNames += "ansi-".concat(bundle.decoration, " ");
     }
     if (classNames === "") {
         return null;
@@ -29318,10 +29254,10 @@ function createClass(bundle) {
 function createStyle(bundle) {
     var style = {};
     if (bundle.bg) {
-        style.backgroundColor = "rgb(" + bundle.bg + ")";
+        style.backgroundColor = "rgb(".concat(bundle.bg, ")");
     }
     if (bundle.fg) {
-        style.color = "rgb(" + bundle.fg + ")";
+        style.color = "rgb(".concat(bundle.fg, ")");
     }
     switch (bundle.decoration) {
         case "bold":
@@ -29373,12 +29309,12 @@ function convertBundleIntoReact(linkify, useClasses, bundle, key) {
         }
         // Make sure the href we generate from the link is fully qualified. We assume http
         // if it starts with a www because many sites don't support https
-        var href = url.startsWith("www.") ? "http://" + url : url;
+        var href = url.startsWith("www.") ? "http://".concat(url) : url;
         content.push(reactExports.createElement("a", {
             key: index,
             href: href,
-            target: "_blank"
-        }, "" + url));
+            target: "_blank",
+        }, "".concat(url)));
         index = linkRegex.lastIndex;
     }
     if (index < bundle.content.length) {
@@ -29411,8 +29347,8 @@ var StdoutList = function (_a) {
     var classNames = useClassNames();
     return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: data.map(function (_a) {
             var data = _a.data, id = _a.id;
-            return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("console-item", [consoleItemClassName$1]) }, { children: jsxRuntimeExports.jsx(Ansi, { children: data }, void 0) }), id));
-        }) }, void 0));
+            return (jsxRuntimeExports.jsx("div", { className: classNames("console-item", [consoleItemClassName$1]), children: jsxRuntimeExports.jsx(Ansi, { children: data }) }, id));
+        }) }));
 };
 var consoleItemClassName$1 = css({
     width: "100%",
@@ -29427,8 +29363,8 @@ var consoleItemClassName$1 = css({
         left: 0,
         right: 0,
         height: 1,
-        background: "$colors$surface3"
-    }
+        background: "$colors$surface3",
+    },
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29445,7 +29381,7 @@ var getFileParameters = function (files, environment) {
         var fileName = next.replace("/", "");
         var value = {
             content: files[next].code,
-            isBinary: false
+            isBinary: false,
         };
         return __assign(__assign({}, prev), (_a = {}, _a[fileName] = value, _a));
     }, {});
@@ -29464,8 +29400,8 @@ var UnstyledOpenInCodeSandboxButton = function (_a) {
                 parameters: params,
                 query: new URLSearchParams({
                     file: sandpack.activeFile,
-                    utm_medium: "sandpack"
-                }).toString()
+                    utm_medium: "sandpack",
+                }).toString(),
             });
             setParamsValues(searchParams);
         }, 600);
@@ -29478,28 +29414,28 @@ var UnstyledOpenInCodeSandboxButton = function (_a) {
      * as all parameters are attached in the URL
      */
     if (((_d = (_c = (_b = paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.get) === null || _b === void 0 ? void 0 : _b.call(paramsValues, "parameters")) === null || _c === void 0 ? void 0 : _c.length) !== null && _d !== void 0 ? _d : 0) > 1500) {
-        return (jsxRuntimeExports.jsxs("button", __assign({ onClick: function () { var _a; return (_a = formRef.current) === null || _a === void 0 ? void 0 : _a.submit(); }, title: "Open in CodeSandbox", type: "button" }, props, { children: [jsxRuntimeExports.jsxs("form", __assign({ ref: formRef, action: CSB_URL, method: "POST", style: { visibility: "hidden" }, target: "_blank" }, { children: [jsxRuntimeExports.jsx("input", { name: "environment", type: "hidden", value: sandpack.environment === "node" ? "server" : sandpack.environment }, void 0), Array.from(paramsValues, function (_a) {
+        return (jsxRuntimeExports.jsxs("button", __assign({ onClick: function () { var _a; return (_a = formRef.current) === null || _a === void 0 ? void 0 : _a.submit(); }, title: "Open in CodeSandbox", type: "button" }, props, { children: [jsxRuntimeExports.jsxs("form", { ref: formRef, action: CSB_URL, method: "POST", style: { visibility: "hidden" }, target: "_blank", children: [jsxRuntimeExports.jsx("input", { name: "environment", type: "hidden", value: sandpack.environment === "node" ? "server" : sandpack.environment }), Array.from(paramsValues, function (_a) {
                             var key = _a[0], value = _a[1];
                             return (jsxRuntimeExports.jsx("input", { name: key, type: "hidden", value: value }, key));
-                        })] }), void 0), children] }), void 0));
+                        })] }), children] })));
     }
-    return (jsxRuntimeExports.jsx("a", __assign({ href: CSB_URL + "?" + (paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.toString()) + "&environment=" + (sandpack.environment === "node" ? "server" : sandpack.environment), rel: "noreferrer noopener", target: "_blank", title: "Open in CodeSandbox" }, props, { children: children }), void 0));
+    return (jsxRuntimeExports.jsx("a", __assign({ href: "".concat(CSB_URL, "?").concat(paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.toString(), "&environment=").concat(sandpack.environment === "node" ? "server" : sandpack.environment), rel: "noreferrer noopener", target: "_blank", title: "Open in CodeSandbox" }, props, { children: children })));
 };
 
 var OpenInCodeSandboxButton = function () {
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsxs(UnstyledOpenInCodeSandboxButton, __assign({ className: classNames("button", [
+    return (jsxRuntimeExports.jsxs(UnstyledOpenInCodeSandboxButton, { className: classNames("button", [
             classNames("icon-standalone"),
             buttonClassName,
             iconStandaloneClassName,
             roundedButtonClassName,
-        ]) }, { children: [jsxRuntimeExports.jsx(ExportIcon, {}, void 0), jsxRuntimeExports.jsx("span", { children: "Open Sandbox" }, void 0)] }), void 0));
+        ]), children: [jsxRuntimeExports.jsx(ExportIcon, {}), jsxRuntimeExports.jsx("span", { children: "Open Sandbox" })] }));
 };
 
 var _a$3;
 var cubeClassName = css({
     transform: "translate(-4px, 9px) scale(0.13, 0.13)",
-    "*": { position: "absolute", width: "96px", height: "96px" }
+    "*": { position: "absolute", width: "96px", height: "96px" },
 });
 var wrapperClassName$2 = css((_a$3 = {
         position: "absolute",
@@ -29510,63 +29446,63 @@ var wrapperClassName$2 = css((_a$3 = {
         height: "32px",
         borderRadius: "$border$radius"
     },
-    _a$3["." + cubeClassName] = { display: "flex" },
-    _a$3[".sp-button." + buttonClassName] = { display: "none" },
-    _a$3["&:hover .sp-button." + buttonClassName] = { display: "flex" },
-    _a$3["&:hover .sp-button." + buttonClassName + " > span"] = { display: "none" },
-    _a$3["&:hover ." + cubeClassName] = { display: "none" },
+    _a$3[".".concat(cubeClassName)] = { display: "flex" },
+    _a$3[".sp-button.".concat(buttonClassName)] = { display: "none" },
+    _a$3["&:hover .sp-button.".concat(buttonClassName)] = { display: "flex" },
+    _a$3["&:hover .sp-button.".concat(buttonClassName, " > span")] = { display: "none" },
+    _a$3["&:hover .".concat(cubeClassName)] = { display: "none" },
     _a$3));
 var cubeRotate = keyframes({
     "0%": {
-        transform: "rotateX(-25.5deg) rotateY(45deg)"
+        transform: "rotateX(-25.5deg) rotateY(45deg)",
     },
     "100%": {
-        transform: "rotateX(-25.5deg) rotateY(405deg)"
-    }
+        transform: "rotateX(-25.5deg) rotateY(405deg)",
+    },
 });
 var sidesClassNames = css({
-    animation: cubeRotate + " 1s linear infinite",
+    animation: "".concat(cubeRotate, " 1s linear infinite"),
     animationFillMode: "forwards",
     transformStyle: "preserve-3d",
     transform: "rotateX(-25.5deg) rotateY(45deg)",
     "*": {
         border: "10px solid $colors$clickable",
         borderRadius: "8px",
-        background: "$colors$surface1"
+        background: "$colors$surface1",
     },
     ".top": {
         transform: "rotateX(90deg) translateZ(44px)",
-        transformOrigin: "50% 50%"
+        transformOrigin: "50% 50%",
     },
     ".bottom": {
         transform: "rotateX(-90deg) translateZ(44px)",
-        transformOrigin: "50% 50%"
+        transformOrigin: "50% 50%",
     },
     ".front": {
         transform: "rotateY(0deg) translateZ(44px)",
-        transformOrigin: "50% 50%"
+        transformOrigin: "50% 50%",
     },
     ".back": {
         transform: "rotateY(-180deg) translateZ(44px)",
-        transformOrigin: "50% 50%"
+        transformOrigin: "50% 50%",
     },
     ".left": {
         transform: "rotateY(-90deg) translateZ(44px)",
-        transformOrigin: "50% 50%"
+        transformOrigin: "50% 50%",
     },
     ".right": {
         transform: "rotateY(90deg) translateZ(44px)",
-        transformOrigin: "50% 50%"
-    }
+        transformOrigin: "50% 50%",
+    },
 });
 var Loading = function (_a) {
     var className = _a.className, showOpenInCodeSandbox = _a.showOpenInCodeSandbox, props = __rest(_a, ["className", "showOpenInCodeSandbox"]);
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("cube-wrapper", [wrapperClassName$2, className]), title: "Open in CodeSandbox" }, props, { children: [showOpenInCodeSandbox && jsxRuntimeExports.jsx(OpenInCodeSandboxButton, {}, void 0), jsxRuntimeExports.jsx("div", __assign({ className: classNames("cube", [cubeClassName]) }, { children: jsxRuntimeExports.jsxs("div", __assign({ className: classNames("sides", [sidesClassNames]) }, { children: [jsxRuntimeExports.jsx("div", { className: "top" }, void 0), jsxRuntimeExports.jsx("div", { className: "right" }, void 0), jsxRuntimeExports.jsx("div", { className: "bottom" }, void 0), jsxRuntimeExports.jsx("div", { className: "left" }, void 0), jsxRuntimeExports.jsx("div", { className: "front" }, void 0), jsxRuntimeExports.jsx("div", { className: "back" }, void 0)] }), void 0) }), void 0)] }), void 0));
+    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("cube-wrapper", [wrapperClassName$2, className]), title: "Open in CodeSandbox" }, props, { children: [showOpenInCodeSandbox && jsxRuntimeExports.jsx(OpenInCodeSandboxButton, {}), jsxRuntimeExports.jsx("div", { className: classNames("cube", [cubeClassName]), children: jsxRuntimeExports.jsxs("div", { className: classNames("sides", [sidesClassNames]), children: [jsxRuntimeExports.jsx("div", { className: "top" }), jsxRuntimeExports.jsx("div", { className: "right" }), jsxRuntimeExports.jsx("div", { className: "bottom" }), jsxRuntimeExports.jsx("div", { className: "left" }), jsxRuntimeExports.jsx("div", { className: "front" }), jsxRuntimeExports.jsx("div", { className: "back" })] }) })] })));
 };
 
 var loadingClassName = css({
-    backgroundColor: "$colors$surface1"
+    backgroundColor: "$colors$surface1",
 });
 var LoadingOverlay = function (_a) {
     var clientId = _a.clientId, loading = _a.loading, className = _a.className, style = _a.style, showOpenInCodeSandbox = _a.showOpenInCodeSandbox, props = __rest(_a, ["clientId", "loading", "className", "style", "showOpenInCodeSandbox"]);
@@ -29599,14 +29535,14 @@ var LoadingOverlay = function (_a) {
                 errorClassName,
                 errorBundlerClassName,
                 className,
-            ]) }, props, { children: jsxRuntimeExports.jsxs("div", __assign({ className: classNames("error-message", [errorMessageClassName]) }, { children: [jsxRuntimeExports.jsx("p", __assign({ className: classNames("error-title", [css({ fontWeight: "bold" })]) }, { children: "Couldn't connect to server" }), void 0), jsxRuntimeExports.jsx("div", __assign({ className: classNames("error-message", [errorMessageClassName]) }, { children: jsxRuntimeExports.jsxs("p", { children: ["This means sandpack cannot connect to the runtime or your network is having some issues. Please check the network tab in your browser and try again. If the problem persists, report it via", " ", jsxRuntimeExports.jsx("a", __assign({ href: "mailto:hello@codesandbox.io?subject=Sandpack Timeout Error" }, { children: "email" }), void 0), " ", "or submit an issue on", " ", jsxRuntimeExports.jsx("a", __assign({ href: "https://github.com/codesandbox/sandpack/issues", rel: "noreferrer noopener", target: "_blank" }, { children: "GitHub." }), void 0)] }, void 0) }), void 0), jsxRuntimeExports.jsxs("p", __assign({ className: classNames("error-message", [
+            ]) }, props, { children: jsxRuntimeExports.jsxs("div", { className: classNames("error-message", [errorMessageClassName]), children: [jsxRuntimeExports.jsx("p", { className: classNames("error-title", [css({ fontWeight: "bold" })]), children: "Couldn't connect to server" }), jsxRuntimeExports.jsx("div", { className: classNames("error-message", [errorMessageClassName]), children: jsxRuntimeExports.jsxs("p", { children: ["This means sandpack cannot connect to the runtime or your network is having some issues. Please check the network tab in your browser and try again. If the problem persists, report it via", " ", jsxRuntimeExports.jsx("a", { href: "mailto:hello@codesandbox.io?subject=Sandpack Timeout Error", children: "email" }), " ", "or submit an issue on", " ", jsxRuntimeExports.jsx("a", { href: "https://github.com/codesandbox/sandpack/issues", rel: "noreferrer noopener", target: "_blank", children: "GitHub." })] }) }), jsxRuntimeExports.jsxs("p", { className: classNames("error-message", [
                             errorMessageClassName({ errorCode: true }),
-                        ]) }, { children: ["ENV: ", environment, jsxRuntimeExports.jsx("br", {}, void 0), "ERROR: TIME_OUT"] }), void 0), jsxRuntimeExports.jsx("div", { children: jsxRuntimeExports.jsxs("button", __assign({ className: classNames("button", [
+                        ]), children: ["ENV: ", environment, jsxRuntimeExports.jsx("br", {}), "ERROR: TIME_OUT"] }), jsxRuntimeExports.jsx("div", { children: jsxRuntimeExports.jsxs("button", { className: classNames("button", [
                                 classNames("icon-standalone"),
                                 buttonClassName,
                                 iconStandaloneClassName,
                                 roundedButtonClassName,
-                            ]), onClick: runSandpack, title: "Restart script", type: "button" }, { children: [jsxRuntimeExports.jsx(RestartIcon, {}, void 0), " ", jsxRuntimeExports.jsx("span", { children: "Try again" }, void 0)] }), void 0) }, void 0)] }), void 0) }), void 0));
+                            ]), onClick: runSandpack, title: "Restart script", type: "button", children: [jsxRuntimeExports.jsx(RestartIcon, {}), " ", jsxRuntimeExports.jsx("span", { children: "Try again" })] }) })] }) })));
     }
     var stillLoading = loadingOverlayState === "LOADING" || loadingOverlayState === "PRE_FADING";
     return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("div", __assign({ className: classNames("overlay", [
@@ -29614,7 +29550,7 @@ var LoadingOverlay = function (_a) {
                     absoluteClassName,
                     loadingClassName,
                     className,
-                ]), style: __assign(__assign({}, style), { opacity: stillLoading ? 1 : 0, transition: "opacity " + FADE_ANIMATION_DURATION + "ms ease-out" }) }, props, { children: [shouldShowStdout && (jsxRuntimeExports.jsx("div", __assign({ className: stdoutPreview.toString() }, { children: jsxRuntimeExports.jsx(StdoutList, { data: stdoutData }, void 0) }), void 0)), jsxRuntimeExports.jsx(Loading, { showOpenInCodeSandbox: showOpenInCodeSandbox }, void 0)] }), void 0), progressMessage && (jsxRuntimeExports.jsx("div", __assign({ className: progressClassName$1.toString() }, { children: jsxRuntimeExports.jsx("p", { children: progressMessage }, void 0) }), void 0))] }, void 0));
+                ]), style: __assign(__assign({}, style), { opacity: stillLoading ? 1 : 0, transition: "opacity ".concat(FADE_ANIMATION_DURATION, "ms ease-out") }) }, props, { children: [shouldShowStdout && (jsxRuntimeExports.jsx("div", { className: stdoutPreview.toString(), children: jsxRuntimeExports.jsx(StdoutList, { data: stdoutData }) })), jsxRuntimeExports.jsx(Loading, { showOpenInCodeSandbox: showOpenInCodeSandbox })] })), progressMessage && (jsxRuntimeExports.jsx("div", { className: progressClassName$1.toString(), children: jsxRuntimeExports.jsx("p", { children: progressMessage }) }))] }));
 };
 var stdoutPreview = css({
     position: "absolute",
@@ -29623,7 +29559,7 @@ var stdoutPreview = css({
     bottom: "$space$8",
     overflow: "auto",
     opacity: 0.5,
-    overflowX: "hidden"
+    overflowX: "hidden",
 });
 var progressClassName$1 = css({
     position: "absolute",
@@ -29631,7 +29567,7 @@ var progressClassName$1 = css({
     bottom: "$space$4",
     zIndex: "$top",
     color: "$colors$clickable",
-    animation: fadeIn + " 150ms ease",
+    animation: "".concat(fadeIn, " 150ms ease"),
     fontFamily: "$font$mono",
     fontSize: ".8em",
     width: "75%",
@@ -29639,20 +29575,20 @@ var progressClassName$1 = css({
         whiteSpace: "nowrap",
         margin: 0,
         textOverflow: "ellipsis",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    },
 });
 
 var DependenciesProgress = function (_a) {
     var clientId = _a.clientId;
     var progressMessage = useSandpackPreviewProgress({
         timeout: 3000,
-        clientId: clientId
+        clientId: clientId,
     });
     if (!progressMessage) {
         return null;
     }
-    return (jsxRuntimeExports.jsx("div", __assign({ className: progressClassName.toString() }, { children: jsxRuntimeExports.jsx("p", { children: progressMessage }, void 0) }), void 0));
+    return (jsxRuntimeExports.jsx("div", { className: progressClassName.toString(), children: jsxRuntimeExports.jsx("p", { children: progressMessage }) }));
 };
 var progressClassName = css({
     position: "absolute",
@@ -29660,7 +29596,7 @@ var progressClassName = css({
     bottom: "$space$4",
     zIndex: "$top",
     color: "$colors$clickable",
-    animation: fadeIn + " 150ms ease",
+    animation: "".concat(fadeIn, " 150ms ease"),
     fontFamily: "$font$mono",
     fontSize: ".8em",
     width: "75%",
@@ -29668,8 +29604,8 @@ var progressClassName = css({
         whiteSpace: "nowrap",
         margin: 0,
         textOverflow: "ellipsis",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    },
 });
 
 css({
@@ -29680,17 +29616,17 @@ css({
     span: {
         textOverflow: "ellipsis",
         whiteSpace: "nowrap",
-        overflow: "hidden"
+        overflow: "hidden",
     },
     svg: {
-        marginRight: "$space$1"
-    }
+        marginRight: "$space$1",
+    },
 });
 
 css({
     padding: "$space$3",
     overflow: "auto",
-    height: "100%"
+    height: "100%",
 });
 
 var splitUrl = function (url) {
@@ -29707,7 +29643,7 @@ var navigatorClassName = css({
     height: "$layout$headerHeight",
     borderBottom: "1px solid $colors$surface2",
     padding: "$space$3 $space$2",
-    background: "$colors$surface1"
+    background: "$colors$surface1",
 });
 var inputClassName = css({
     backgroundColor: "$colors$surface2",
@@ -29724,13 +29660,13 @@ var inputClassName = css({
     width: "0",
     transition: "background $transitions$default",
     "&:hover": {
-        backgroundColor: "$colors$surface3"
+        backgroundColor: "$colors$surface3",
     },
     "&:focus": {
         backgroundColor: "$surface1",
         border: "1px solid $colors$accent",
-        color: "$colors$base"
-    }
+        color: "$colors$base",
+    },
 });
 var Navigator = function (_a) {
     var _b;
@@ -29758,7 +29694,7 @@ var Navigator = function (_a) {
     var handleInputChange = function (e) {
         var path = e.target.value.startsWith("/")
             ? e.target.value
-            : "/" + e.target.value;
+            : "/".concat(e.target.value);
         setRelativeUrl(path);
     };
     var handleKeyDown = function (e) {
@@ -29786,10 +29722,10 @@ var Navigator = function (_a) {
         iconClassName,
         css({
             minWidth: "$space$6",
-            justifyContent: "center"
+            justifyContent: "center",
         }),
     ]);
-    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("navigator", [navigatorClassName, className]) }, props, { children: [jsxRuntimeExports.jsx("button", __assign({ "aria-label": "Go back one page", className: buttonsClassNames, disabled: !backEnabled, onClick: handleBack, type: "button" }, { children: jsxRuntimeExports.jsx(BackwardIcon, {}, void 0) }), void 0), jsxRuntimeExports.jsx("button", __assign({ "aria-label": "Go forward one page", className: buttonsClassNames, disabled: !forwardEnabled, onClick: handleForward, type: "button" }, { children: jsxRuntimeExports.jsx(ForwardIcon, {}, void 0) }), void 0), jsxRuntimeExports.jsx("button", __assign({ "aria-label": "Refresh page", className: buttonsClassNames, onClick: handleRefresh, type: "button" }, { children: jsxRuntimeExports.jsx(RefreshIcon, {}, void 0) }), void 0), jsxRuntimeExports.jsx("input", { "aria-label": "Current Sandpack URL", className: classNames("input", [inputClassName]), name: "Current Sandpack URL", onChange: handleInputChange, onKeyDown: handleKeyDown, type: "text", value: relativeUrl }, void 0)] }), void 0));
+    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("navigator", [navigatorClassName, className]) }, props, { children: [jsxRuntimeExports.jsx("button", { "aria-label": "Go back one page", className: buttonsClassNames, disabled: !backEnabled, onClick: handleBack, type: "button", children: jsxRuntimeExports.jsx(BackwardIcon, {}) }), jsxRuntimeExports.jsx("button", { "aria-label": "Go forward one page", className: buttonsClassNames, disabled: !forwardEnabled, onClick: handleForward, type: "button", children: jsxRuntimeExports.jsx(ForwardIcon, {}) }), jsxRuntimeExports.jsx("button", { "aria-label": "Refresh page", className: buttonsClassNames, onClick: handleRefresh, type: "button", children: jsxRuntimeExports.jsx(RefreshIcon, {}) }), jsxRuntimeExports.jsx("input", { "aria-label": "Current Sandpack URL", className: classNames("input", [inputClassName]), name: "Current Sandpack URL", onChange: handleInputChange, onKeyDown: handleKeyDown, type: "text", value: relativeUrl })] })));
 };
 
 var _a$2;
@@ -29801,7 +29737,7 @@ var previewClassName = css((_a$2 = {
         overflow: "auto",
         position: "relative"
     },
-    _a$2["." + THEME_PREFIX + "-bridge-frame"] = {
+    _a$2[".".concat(THEME_PREFIX, "-bridge-frame")] = {
         border: 0,
         position: "absolute",
         left: "$space$2",
@@ -29810,7 +29746,7 @@ var previewClassName = css((_a$2 = {
         height: 12,
         width: "30%",
         mixBlendMode: "multiply",
-        pointerEvents: "none"
+        pointerEvents: "none",
     },
     _a$2));
 var previewIframe = css({
@@ -29820,7 +29756,7 @@ var previewIframe = css({
     height: "100%",
     minHeight: "160px",
     maxHeight: "2000px",
-    flex: 1
+    flex: 1,
 });
 var previewActionsClassName$1 = css({
     display: "flex",
@@ -29828,10 +29764,10 @@ var previewActionsClassName$1 = css({
     bottom: "$space$2",
     right: "$space$2",
     zIndex: "$overlay",
-    gap: "$space$2"
+    gap: "$space$2",
 });
 var SandpackPreview = reactExports.forwardRef(function (_a, ref) {
-    var _b = _a.showNavigator, showNavigator = _b === void 0 ? false : _b, _c = _a.showRefreshButton, showRefreshButton = _c === void 0 ? true : _c, _d = _a.showOpenInCodeSandbox, showOpenInCodeSandbox = _d === void 0 ? true : _d, _e = _a.showSandpackErrorOverlay, showSandpackErrorOverlay = _e === void 0 ? true : _e; _a.showOpenNewtab; var _g = _a.showRestartButton, showRestartButton = _g === void 0 ? true : _g, _h = _a.actionsChildren, actionsChildren = _h === void 0 ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}, void 0) : _h, children = _a.children, className = _a.className, _j = _a.startRoute, startRoute = _j === void 0 ? "/" : _j, props = __rest(_a, ["showNavigator", "showRefreshButton", "showOpenInCodeSandbox", "showSandpackErrorOverlay", "showOpenNewtab", "showRestartButton", "actionsChildren", "children", "className", "startRoute"]);
+    var _b = _a.showNavigator, showNavigator = _b === void 0 ? false : _b, _c = _a.showRefreshButton, showRefreshButton = _c === void 0 ? true : _c, _d = _a.showOpenInCodeSandbox, showOpenInCodeSandbox = _d === void 0 ? true : _d, _e = _a.showSandpackErrorOverlay, showSandpackErrorOverlay = _e === void 0 ? true : _e; _a.showOpenNewtab; var _g = _a.showRestartButton, showRestartButton = _g === void 0 ? true : _g, _h = _a.actionsChildren, actionsChildren = _h === void 0 ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}) : _h, children = _a.children, className = _a.className, _j = _a.startRoute, startRoute = _j === void 0 ? "/" : _j, props = __rest(_a, ["showNavigator", "showRefreshButton", "showOpenInCodeSandbox", "showSandpackErrorOverlay", "showOpenNewtab", "showRestartButton", "actionsChildren", "children", "className", "startRoute"]);
     var _k = useSandpackClient({ startRoute: startRoute }), sandpack = _k.sandpack, listen = _k.listen, iframe = _k.iframe, getClient = _k.getClient, clientId = _k.clientId, dispatch = _k.dispatch;
     var _l = reactExports.useState(null), iframeComputedHeight = _l[0], setComputedAutoHeight = _l[1];
     var status = sandpack.status;
@@ -29849,7 +29785,7 @@ var SandpackPreview = reactExports.forwardRef(function (_a, ref) {
     }, []);
     reactExports.useImperativeHandle(ref, function () { return ({
         clientId: clientId,
-        getClient: getClient
+        getClient: getClient,
     }); }, [getClient, clientId]);
     var handleNewURL = function (newUrl) {
         if (!iframe.current) {
@@ -29858,16 +29794,16 @@ var SandpackPreview = reactExports.forwardRef(function (_a, ref) {
         iframe.current.src = newUrl;
         // eslint-disable-next-line react-hooks/exhaustive-deps
     };
-    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("preview", [className]) }, props, { children: [showNavigator && (jsxRuntimeExports.jsx(Navigator, { clientId: clientId, onURLChange: handleNewURL, startRoute: startRoute }, void 0)), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("preview-container", [previewClassName]) }, { children: [jsxRuntimeExports.jsx("iframe", { ref: iframe, className: classNames("preview-iframe", [previewIframe]), style: {
+    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("preview", [className]) }, props, { children: [showNavigator && (jsxRuntimeExports.jsx(Navigator, { clientId: clientId, onURLChange: handleNewURL, startRoute: startRoute })), jsxRuntimeExports.jsxs("div", { className: classNames("preview-container", [previewClassName]), children: [jsxRuntimeExports.jsx("iframe", { ref: iframe, className: classNames("preview-iframe", [previewIframe]), style: {
                             // set height based on the content only in auto mode
                             // and when the computed height was returned by the bundler
-                            height: iframeComputedHeight ? iframeComputedHeight : undefined
-                        }, title: "Sandpack Preview" }, void 0), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("preview-actions", [previewActionsClassName$1]) }, { children: [actionsChildren, showRestartButton && sandpack.environment === "node" && (jsxRuntimeExports.jsx(RoundedButton, __assign({ onClick: restart }, { children: jsxRuntimeExports.jsx(RestartIcon, {}, void 0) }), void 0)), !showNavigator && showRefreshButton && status === "running" && (jsxRuntimeExports.jsx(RoundedButton, __assign({ onClick: refresh }, { children: jsxRuntimeExports.jsx(RefreshIcon, {}, void 0) }), void 0)), sandpack.teamId && (jsxRuntimeExports.jsx("button", __assign({ className: classNames("button", [
+                            height: iframeComputedHeight ? iframeComputedHeight : undefined,
+                        }, title: "Sandpack Preview" }), jsxRuntimeExports.jsxs("div", { className: classNames("preview-actions", [previewActionsClassName$1]), children: [actionsChildren, showRestartButton && sandpack.environment === "node" && (jsxRuntimeExports.jsx(RoundedButton, { onClick: restart, children: jsxRuntimeExports.jsx(RestartIcon, {}) })), !showNavigator && showRefreshButton && status === "running" && (jsxRuntimeExports.jsx(RoundedButton, { onClick: refresh, children: jsxRuntimeExports.jsx(RefreshIcon, {}) })), sandpack.teamId && (jsxRuntimeExports.jsx("button", { className: classNames("button", [
                                     classNames("icon-standalone"),
                                     buttonClassName,
                                     iconStandaloneClassName,
                                     roundedButtonClassName,
-                                ]), onClick: function () { return dispatch({ type: "sign-out" }); }, title: "Sign out", type: "button" }, { children: jsxRuntimeExports.jsx(SignOutIcon, {}, void 0) }), void 0)), showOpenInCodeSandbox && jsxRuntimeExports.jsx(OpenInCodeSandboxButton, {}, void 0)] }), void 0), jsxRuntimeExports.jsx(LoadingOverlay, { clientId: clientId, showOpenInCodeSandbox: showOpenInCodeSandbox }, void 0), showSandpackErrorOverlay && jsxRuntimeExports.jsx(ErrorOverlay, {}, void 0), children] }), void 0)] }), void 0));
+                                ]), onClick: function () { return dispatch({ type: "sign-out" }); }, title: "Sign out", type: "button", children: jsxRuntimeExports.jsx(SignOutIcon, {}) })), showOpenInCodeSandbox && jsxRuntimeExports.jsx(OpenInCodeSandboxButton, {})] }), jsxRuntimeExports.jsx(LoadingOverlay, { clientId: clientId, showOpenInCodeSandbox: showOpenInCodeSandbox }), showSandpackErrorOverlay && jsxRuntimeExports.jsx(ErrorOverlay, {}), children] })] })));
 });
 
 var _a$1;
@@ -29880,8 +29816,8 @@ css((_a$1 = {
         minHeight: "160px",
         flex: 1
     },
-    _a$1["." + THEME_PREFIX + "-stack"] = {
-        height: "100%"
+    _a$1[".".concat(THEME_PREFIX, "-stack")] = {
+        height: "100%",
     },
     _a$1));
 
@@ -29893,13 +29829,13 @@ var wrapperClassName$1 = css({
     height: "$layout$headerHeight",
     minHeight: "$layout$headerHeight",
     overflowX: "auto",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
 });
 var flexClassName$1 = css({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: "$space$2"
+    gap: "$space$2",
 });
 var Header$1 = function (_a) {
     var status = _a.status, suiteOnly = _a.suiteOnly, setSuiteOnly = _a.setSuiteOnly, setVerbose = _a.setVerbose, verbose = _a.verbose, watchMode = _a.watchMode, setWatchMode = _a.setWatchMode, showSuitesOnly = _a.showSuitesOnly, showWatchButton = _a.showWatchButton, showVerboseButton = _a.showVerboseButton, hideTestsAndSupressLogs = _a.hideTestsAndSupressLogs;
@@ -29909,7 +29845,7 @@ var Header$1 = function (_a) {
         roundedButtonClassName,
         css({ padding: "$space$1 $space$3" }),
     ]);
-    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-header", [wrapperClassName$1, flexClassName$1]) }, { children: [jsxRuntimeExports.jsx("div", __assign({ className: classNames("test-header-wrapper", [flexClassName$1]) }, { children: jsxRuntimeExports.jsxs("p", __assign({ className: classNames("test-header-title", [
+    return (jsxRuntimeExports.jsxs("div", { className: classNames("test-header", [wrapperClassName$1, flexClassName$1]), children: [jsxRuntimeExports.jsx("div", { className: classNames("test-header-wrapper", [flexClassName$1]), children: jsxRuntimeExports.jsxs("p", { className: classNames("test-header-title", [
                         css({
                             lineHeight: 1,
                             margin: 0,
@@ -29917,14 +29853,14 @@ var Header$1 = function (_a) {
                             fontSize: "$font$size",
                             display: "flex",
                             alignItems: "center",
-                            gap: "$space$2"
+                            gap: "$space$2",
                         }),
-                    ]) }, { children: [jsxRuntimeExports.jsx(ConsoleIcon, {}, void 0), "Tests"] }), void 0) }), void 0), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-header-actions", [flexClassName$1]) }, { children: [showSuitesOnly && (jsxRuntimeExports.jsx("button", __assign({ className: buttonsClassName, "data-active": suiteOnly, disabled: status === "initialising", onClick: setSuiteOnly, type: "button" }, { children: "Suite only" }), void 0)), showVerboseButton && (jsxRuntimeExports.jsx("button", __assign({ className: buttonsClassName, "data-active": verbose, disabled: status === "initialising" || hideTestsAndSupressLogs, onClick: setVerbose, type: "button" }, { children: "Verbose" }), void 0)), showWatchButton && (jsxRuntimeExports.jsx("button", __assign({ className: buttonsClassName, "data-active": watchMode, disabled: status === "initialising", onClick: setWatchMode, type: "button" }, { children: "Watch" }), void 0))] }), void 0)] }), void 0));
+                    ]), children: [jsxRuntimeExports.jsx(ConsoleIcon, {}), "Tests"] }) }), jsxRuntimeExports.jsxs("div", { className: classNames("test-header-actions", [flexClassName$1]), children: [showSuitesOnly && (jsxRuntimeExports.jsx("button", { className: buttonsClassName, "data-active": suiteOnly, disabled: status === "initialising", onClick: setSuiteOnly, type: "button", children: "Suite only" })), showVerboseButton && (jsxRuntimeExports.jsx("button", { className: buttonsClassName, "data-active": verbose, disabled: status === "initialising" || hideTestsAndSupressLogs, onClick: setVerbose, type: "button", children: "Verbose" })), showWatchButton && (jsxRuntimeExports.jsx("button", { className: buttonsClassName, "data-active": watchMode, disabled: status === "initialising", onClick: setWatchMode, type: "button", children: "Watch" }))] })] }));
 };
 
 var RunButton = function (_a) {
     var onClick = _a.onClick;
-    return (jsxRuntimeExports.jsx(RoundedButton, __assign({ onClick: onClick, title: "Run tests" }, { children: jsxRuntimeExports.jsx(RunIcon, {}, void 0) }), void 0));
+    return (jsxRuntimeExports.jsx(RoundedButton, { onClick: onClick, title: "Run tests", children: jsxRuntimeExports.jsx(RunIcon, {}) }));
 };
 
 var setTestTheme = function (isDark) { return ({
@@ -29932,7 +29868,7 @@ var setTestTheme = function (isDark) { return ({
     "--test-fail": isDark ? "#df162b" : "#c21325",
     "--test-skip": isDark ? "#eace2b" : "#c2a813",
     "--test-run": isDark ? "#eace2b" : "#c2a813",
-    "--test-title": isDark ? "#3fbabe" : "#256c6f"
+    "--test-title": isDark ? "#3fbabe" : "#256c6f",
 }); };
 var color = css({
     variants: {
@@ -29940,9 +29876,9 @@ var color = css({
             pass: { color: "var(--test-pass)" },
             fail: { color: "var(--test-fail)" },
             skip: { color: "var(--test-skip)" },
-            title: { color: "var(--test-title)" }
-        }
-    }
+            title: { color: "var(--test-title)" },
+        },
+    },
 });
 var passTextClassName = color({ status: "pass" });
 var failTextClassName = color({ status: "fail" });
@@ -29953,44 +29889,44 @@ var background = css({
         status: {
             pass: { background: "var(--test-pass)", color: "$colors$surface1" },
             fail: { background: "var(--test-fail)", color: "$colors$surface1" },
-            run: { background: "var(--test-run)", color: "$colors$surface1" }
-        }
-    }
+            run: { background: "var(--test-run)", color: "$colors$surface1" },
+        },
+    },
 });
 var runBackgroundClassName = background({ status: "run" });
 var passBackgroundClassName = background({ status: "pass" });
 var failBackgroundClassName = background({ status: "fail" });
 
 var testContainerClassName = css({
-    marginLeft: "$space$4"
+    marginLeft: "$space$4",
 });
 var containerClassName$4 = css({
     marginBottom: "$space$2",
-    color: "$colors$clickable"
+    color: "$colors$clickable",
 });
 var testClassName = css({
     marginBottom: "$space$2",
-    color: "$colors$hover"
+    color: "$colors$hover",
 });
 var durationClassName = css({
-    marginLeft: "$space$2"
+    marginLeft: "$space$2",
 });
 var gapRightClassName = css({
-    marginRight: "$space$2"
+    marginRight: "$space$2",
 });
 var Tests = function (_a) {
     var tests = _a.tests; _a.style;
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("test", [testContainerClassName]) }, { children: tests.map(function (test) { return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-result", [containerClassName$4]) }, { children: [test.status === "pass" && (jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-pass-text", [
+    return (jsxRuntimeExports.jsx("div", { className: classNames("test", [testContainerClassName]), children: tests.map(function (test) { return (jsxRuntimeExports.jsxs("div", { className: classNames("test-result", [containerClassName$4]), children: [test.status === "pass" && (jsxRuntimeExports.jsx("span", { className: classNames("test-pass-text", [
                         passTextClassName,
                         gapRightClassName,
-                    ]) }, { children: "\u2713" }), void 0)), test.status === "fail" && (jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-fail-text", [
+                    ]), children: "\u2713" })), test.status === "fail" && (jsxRuntimeExports.jsx("span", { className: classNames("test-fail-text", [
                         failTextClassName,
                         gapRightClassName,
-                    ]) }, { children: "\u2715" }), void 0)), test.status === "idle" && (jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-idle-text", [
+                    ]), children: "\u2715" })), test.status === "idle" && (jsxRuntimeExports.jsx("span", { className: classNames("test-idle-text", [
                         skipTextClassName,
                         gapRightClassName,
-                    ]) }, { children: "\u25CB" }), void 0)), jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-name-text", [testClassName]) }, { children: test.name }), void 0), test.duration !== undefined && (jsxRuntimeExports.jsxs("span", __assign({ className: classNames("test-duration-text", [durationClassName]) }, { children: ["(", test.duration, " ms)"] }), void 0))] }), test.name)); }) }), void 0));
+                    ]), children: "\u25CB" })), jsxRuntimeExports.jsx("span", { className: classNames("test-name-text", [testClassName]), children: test.name }), test.duration !== undefined && (jsxRuntimeExports.jsxs("span", { className: classNames("test-duration-text", [durationClassName]), children: ["(", test.duration, " ms)"] }))] }, test.name)); }) }));
 };
 
 var getTests = function (block) {
@@ -30007,7 +29943,7 @@ var getAllTestResults = function (specs) {
             pass: acc.pass + stats.pass,
             fail: acc.fail + stats.fail,
             skip: acc.skip + stats.skip,
-            total: acc.total + stats.total
+            total: acc.total + stats.total,
         };
     }, { pass: 0, skip: 0, fail: 0, total: 0 });
 };
@@ -30019,7 +29955,7 @@ var getSpecTestResults = function (spec) {
             skip: test.status === "idle" || test.status === "running"
                 ? acc.skip + 1
                 : acc.skip,
-            total: acc.total + 1
+            total: acc.total + 1,
         };
     }, { pass: 0, fail: 0, skip: 0, total: 0 });
 };
@@ -30035,7 +29971,7 @@ var getAllSuiteResults = function (specs) {
         return {
             pass: acc.pass + (stats.fail === 0 ? 1 : 0),
             fail: acc.fail + (stats.fail > 0 ? 1 : 0),
-            total: acc.total + 1
+            total: acc.total + 1,
         };
     }, { pass: 0, fail: 0, total: 0 });
 };
@@ -30065,10 +30001,10 @@ var set = function (path, value) {
 
 var nameClassName = css({
     color: "$colors$hover",
-    marginBottom: "$space$2"
+    marginBottom: "$space$2",
 });
 var containerClassName$3 = css({
-    marginLeft: "$space$4"
+    marginLeft: "$space$4",
 });
 var Describes = function (_a) {
     var describes = _a.describes;
@@ -30080,20 +30016,20 @@ var Describes = function (_a) {
             }
             var tests = Object.values((_a = describe.tests) !== null && _a !== void 0 ? _a : {});
             var describes = Object.values((_b = describe.describes) !== null && _b !== void 0 ? _b : {});
-            return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-describe", [containerClassName$3]) }, { children: [jsxRuntimeExports.jsx("div", __assign({ className: classNames("test-name", [nameClassName]) }, { children: describe.name }), void 0), jsxRuntimeExports.jsx(Tests, { tests: tests }, void 0), jsxRuntimeExports.jsx(Describes, { describes: describes }, void 0)] }), describe.name));
-        }) }, void 0));
+            return (jsxRuntimeExports.jsxs("div", { className: classNames("test-describe", [containerClassName$3]), children: [jsxRuntimeExports.jsx("div", { className: classNames("test-name", [nameClassName]), children: describe.name }), jsxRuntimeExports.jsx(Tests, { tests: tests }), jsxRuntimeExports.jsx(Describes, { describes: describes })] }, describe.name));
+        }) }));
 };
 
 var containerClassName$2 = css({
     color: "$colors$hover",
     fontSize: "$font$size",
     padding: "$space$2",
-    whiteSpace: "pre-wrap"
+    whiteSpace: "pre-wrap",
 });
 var FormattedError = function (_a) {
     var error = _a.error, path = _a.path;
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsx("div", { className: classNames("test-error", [containerClassName$2]), dangerouslySetInnerHTML: { __html: formatDiffMessage(error, path) } }, void 0));
+    return (jsxRuntimeExports.jsx("div", { className: classNames("test-error", [containerClassName$2]), dangerouslySetInnerHTML: { __html: formatDiffMessage(error, path) } }));
 };
 var escapeHtml = function (unsafe) {
     return unsafe
@@ -30106,14 +30042,14 @@ var escapeHtml = function (unsafe) {
 var formatDiffMessage = function (error, path) {
     var finalMessage = "";
     if (error.matcherResult) {
-        finalMessage = "<span>" + escapeHtml(error.message)
-            .replace(/(expected)/m, "<span class=\"" + passTextClassName + "\">$1</span>")
-            .replace(/(received)/m, "<span class=\"" + failTextClassName + "\">$1</span>")
+        finalMessage = "<span>".concat(escapeHtml(error.message)
+            .replace(/(expected)/m, "<span class=\"".concat(passTextClassName, "\">$1</span>"))
+            .replace(/(received)/m, "<span class=\"".concat(failTextClassName, "\">$1</span>"))
             .replace(/(Difference:)/m, "<span>$1</span>")
-            .replace(/(Expected:)(.*)/m, "<span>$1</span><span class=\"" + passTextClassName + "\">$2</span>")
-            .replace(/(Received:)(.*)/m, "<span>$1</span><span class=\"" + failTextClassName + "\">$2</span>")
-            .replace(/^(-.*)/gm, "<span class=\"" + failTextClassName + "\">$1</span>")
-            .replace(/^(\+.*)/gm, "<span class=\"" + passTextClassName + "\">$1</span>") + "</span>";
+            .replace(/(Expected:)(.*)/m, "<span>$1</span><span class=\"".concat(passTextClassName, "\">$2</span>"))
+            .replace(/(Received:)(.*)/m, "<span>$1</span><span class=\"".concat(failTextClassName, "\">$2</span>"))
+            .replace(/^(-.*)/gm, "<span class=\"".concat(failTextClassName, "\">$1</span>"))
+            .replace(/^(\+.*)/gm, "<span class=\"".concat(passTextClassName, "\">$1</span>")), "</span>");
     }
     else {
         finalMessage = escapeHtml(error.message);
@@ -30141,12 +30077,12 @@ var formatDiffMessage = function (error, path) {
             var toBeIndex = code.content.indexOf(".to");
             var toBeMargin = Array.from({ length: margin_1.length + toBeIndex - (widestNumber_1 - 1) }, function () { return " "; });
             var content = escapeHtml(code.content)
-                .replace(/(describe|test|it)(\()(&#039;|&quot;|`)(.*)(&#039;|&quot;|`)/m, "<span>$1$2$3</span><span class=\"" + titleTextClassName + "\">$4</span><span>$5</span>")
-                .replace(/(expect\()(.*)(\)\..*)(to[\w\d]*)(\()(.*)(\))/m, "<span>$1</span><span class=\"" + failTextClassName + "\">$2</span><span>$3</span><span style=\"text-decoration: underline; font-weight: 900\">$4</span><span>$5</span><span class=\"" + passTextClassName + "\">$6</span><span>$7</span>");
+                .replace(/(describe|test|it)(\()(&#039;|&quot;|`)(.*)(&#039;|&quot;|`)/m, "<span>$1$2$3</span><span class=\"".concat(titleTextClassName, "\">$4</span><span>$5</span>"))
+                .replace(/(expect\()(.*)(\)\..*)(to[\w\d]*)(\()(.*)(\))/m, "<span>$1</span><span class=\"".concat(failTextClassName, "\">$2</span><span>$3</span><span style=\"text-decoration: underline; font-weight: 900\">$4</span><span>$5</span><span class=\"").concat(passTextClassName, "\">$6</span><span>$7</span>"));
             finalMessage +=
-                "<div " + (code.highlight ? "style=\"font-weight:200;\"" : "") + ">" +
+                "<div ".concat(code.highlight ? "style=\"font-weight:200;\"" : "", ">") +
                     (code.highlight
-                        ? "<span class=\"" + failTextClassName + "\">></span> "
+                        ? "<span class=\"".concat(failTextClassName, "\">></span> ")
                         : "") +
                     newMargin.join("") +
                     escapeHtml("" + code.lineNumber) +
@@ -30158,7 +30094,7 @@ var formatDiffMessage = function (error, path) {
                             margin_1.join("") +
                             " | " +
                             toBeMargin.join("") +
-                            ("<span class=\"" + failTextClassName + "\">^</span>") +
+                            "<span class=\"".concat(failTextClassName, "\">^</span>") +
                             "</div>"
                         : "");
         });
@@ -30171,48 +30107,48 @@ var fileContainer = css({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: "$space$2"
+    marginBottom: "$space$2",
 });
 var gapBottomClassName$1 = css({
-    marginBottom: "$space$2"
+    marginBottom: "$space$2",
 });
 var failTestClassName = css({
-    fontWeight: "bold"
+    fontWeight: "bold",
 });
 var labelClassName$1 = css({
-    borderRadius: "calc($border$radius / 2)"
+    borderRadius: "calc($border$radius / 2)",
 });
 var specLabelClassName = css({
     padding: "$space$1 $space$2",
     fontFamily: "$font$mono",
     textTransform: "uppercase",
-    marginRight: "$space$2"
+    marginRight: "$space$2",
 });
 var filePathButtonClassName = css({
     fontFamily: "$font$mono",
     cursor: "pointer",
-    display: "inline-block"
+    display: "inline-block",
 });
 var filePathClassName = css({
     color: "$colors$clickable",
     textDecorationStyle: "dotted",
-    textDecorationLine: "underline"
+    textDecorationLine: "underline",
 });
 var fileNameClassName = css({
     color: "$colors$hover",
     fontWeight: "bold",
     textDecorationStyle: "dotted",
-    textDecorationLine: "underline"
+    textDecorationLine: "underline",
 });
 var Specs = function (_a) {
     var specs = _a.specs, openSpec = _a.openSpec, status = _a.status, verbose = _a.verbose, hideTestsAndSupressLogs = _a.hideTestsAndSupressLogs;
     var classNames = useClassNames();
     return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: specs.map(function (spec) {
             if (spec.error) {
-                return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-spec", [gapBottomClassName$1]) }, { children: [jsxRuntimeExports.jsx(SpecLabel, __assign({ className: classNames("test-spec-error", [
+                return (jsxRuntimeExports.jsxs("div", { className: classNames("test-spec", [gapBottomClassName$1]), children: [jsxRuntimeExports.jsx(SpecLabel, { className: classNames("test-spec-error", [
                                 labelClassName$1,
                                 failBackgroundClassName,
-                            ]) }, { children: "Error" }), void 0), jsxRuntimeExports.jsx(FilePath, { onClick: function () { return openSpec(spec.name); }, path: spec.name }, void 0), jsxRuntimeExports.jsx(FormattedError, { error: spec.error, path: spec.name }, void 0)] }), spec.name));
+                            ]), children: "Error" }), jsxRuntimeExports.jsx(FilePath, { onClick: function () { return openSpec(spec.name); }, path: spec.name }), jsxRuntimeExports.jsx(FormattedError, { error: spec.error, path: spec.name })] }, spec.name));
             }
             if (isEmpty(spec)) {
                 return null;
@@ -30220,36 +30156,36 @@ var Specs = function (_a) {
             var tests = Object.values(spec.tests);
             var describes = Object.values(spec.describes);
             var stats = getSpecTestResults(spec);
-            return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-spec-name", [gapBottomClassName$1]) }, { children: [jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-spec-name-container", [
+            return (jsxRuntimeExports.jsxs("div", { className: classNames("test-spec-name", [gapBottomClassName$1]), children: [jsxRuntimeExports.jsxs("div", { className: classNames("test-spec-name-container", [
                             fileContainer,
-                        ]) }, { children: [status === "complete" ? (stats.fail > 0 ? (jsxRuntimeExports.jsx(SpecLabel, __assign({ className: classNames("test-spec-complete", [
+                        ]), children: [status === "complete" ? (stats.fail > 0 ? (jsxRuntimeExports.jsx(SpecLabel, { className: classNames("test-spec-complete", [
                                     labelClassName$1,
                                     failBackgroundClassName,
-                                ]) }, { children: "Fail" }), void 0)) : (jsxRuntimeExports.jsx(SpecLabel, __assign({ className: classNames("test-spec-pass", [
+                                ]), children: "Fail" })) : (jsxRuntimeExports.jsx(SpecLabel, { className: classNames("test-spec-pass", [
                                     labelClassName$1,
                                     passBackgroundClassName,
-                                ]) }, { children: "Pass" }), void 0))) : (jsxRuntimeExports.jsx(SpecLabel, __assign({ className: classNames("test-spec-run", [
+                                ]), children: "Pass" }))) : (jsxRuntimeExports.jsx(SpecLabel, { className: classNames("test-spec-run", [
                                     labelClassName$1,
                                     runBackgroundClassName,
-                                ]) }, { children: "Run" }), void 0)), jsxRuntimeExports.jsx(FilePath, { onClick: function () {
+                                ]), children: "Run" })), jsxRuntimeExports.jsx(FilePath, { onClick: function () {
                                     if (!hideTestsAndSupressLogs) {
                                         openSpec(spec.name);
                                     }
-                                }, path: spec.name }, void 0)] }), void 0), verbose && !hideTestsAndSupressLogs && jsxRuntimeExports.jsx(Tests, { tests: tests }, void 0), verbose && !hideTestsAndSupressLogs && (jsxRuntimeExports.jsx(Describes, { describes: describes }, void 0)), !hideTestsAndSupressLogs &&
+                                }, path: spec.name })] }), verbose && !hideTestsAndSupressLogs && jsxRuntimeExports.jsx(Tests, { tests: tests }), verbose && !hideTestsAndSupressLogs && (jsxRuntimeExports.jsx(Describes, { describes: describes })), !hideTestsAndSupressLogs &&
                         getFailingTests(spec).map(function (test) {
-                            return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-spec-error", [
+                            return (jsxRuntimeExports.jsxs("div", { className: classNames("test-spec-error", [
                                     gapBottomClassName$1,
-                                ]) }, { children: [jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-spec-error-text", [
+                                ]), children: [jsxRuntimeExports.jsxs("div", { className: classNames("test-spec-error-text", [
                                             failTestClassName,
                                             failTextClassName,
-                                        ]) }, { children: ["\u25CF ", test.blocks.join(" › "), " \u203A ", test.name] }), void 0), test.errors.map(function (e) { return (jsxRuntimeExports.jsx(FormattedError, { error: e, path: test.path }, "failing-" + test.name + "-error")); })] }), "failing-" + test.name));
-                        })] }), spec.name));
-        }) }, void 0));
+                                        ]), children: ["\u25CF ", test.blocks.join(" › "), " \u203A ", test.name] }), test.errors.map(function (e) { return (jsxRuntimeExports.jsx(FormattedError, { error: e, path: test.path }, "failing-".concat(test.name, "-error"))); })] }, "failing-".concat(test.name)));
+                        })] }, spec.name));
+        }) }));
 };
 var SpecLabel = function (_a) {
     var children = _a.children, className = _a.className;
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-spec-label", [specLabelClassName, className]) }, { children: children }), void 0));
+    return (jsxRuntimeExports.jsx("span", { className: classNames("test-spec-label", [specLabelClassName, className]), children: children }));
 };
 var FilePath = function (_a) {
     var onClick = _a.onClick, path = _a.path;
@@ -30257,23 +30193,23 @@ var FilePath = function (_a) {
     var basePath = parts.slice(0, parts.length - 1).join("/") + "/";
     var fileName = parts[parts.length - 1];
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsxs("button", __assign({ className: classNames("test-filename", [
+    return (jsxRuntimeExports.jsxs("button", { className: classNames("test-filename", [
             buttonClassName,
             filePathButtonClassName,
-        ]), onClick: onClick, type: "button" }, { children: [jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-filename-base", [filePathClassName]) }, { children: basePath }), void 0), jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-filename-file", [fileNameClassName]) }, { children: fileName }), void 0)] }), void 0));
+        ]), onClick: onClick, type: "button", children: [jsxRuntimeExports.jsx("span", { className: classNames("test-filename-base", [filePathClassName]), children: basePath }), jsxRuntimeExports.jsx("span", { className: classNames("test-filename-file", [fileNameClassName]), children: fileName })] }));
 };
 
 var gapBottomClassName = css({
-    marginBottom: "$space$2"
+    marginBottom: "$space$2",
 });
 var labelClassName = css({
     fontWeight: "bold",
     color: "$colors$hover",
-    whiteSpace: "pre-wrap"
+    whiteSpace: "pre-wrap",
 });
 var containerClassName$1 = css({
     fontWeight: "bold",
-    color: "$colors$clickable"
+    color: "$colors$clickable",
 });
 var Summary = function (_a) {
     var suites = _a.suites, tests = _a.tests, duration = _a.duration;
@@ -30284,11 +30220,11 @@ var Summary = function (_a) {
         return label + margin;
     };
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-summary", [containerClassName$1]) }, { children: [jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-summary", [gapBottomClassName]) }, { children: [jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-summary-suites-label", [labelClassName]) }, { children: widestLabel }), void 0), suites.fail > 0 && (jsxRuntimeExports.jsxs("span", __assign({ className: classNames("test-summary-suites-fail", [
+    return (jsxRuntimeExports.jsxs("div", { className: classNames("test-summary", [containerClassName$1]), children: [jsxRuntimeExports.jsxs("div", { className: classNames("test-summary", [gapBottomClassName]), children: [jsxRuntimeExports.jsx("span", { className: classNames("test-summary-suites-label", [labelClassName]), children: widestLabel }), suites.fail > 0 && (jsxRuntimeExports.jsxs("span", { className: classNames("test-summary-suites-fail", [
                             failTextClassName,
-                        ]) }, { children: [suites.fail, " failed,", " "] }), void 0)), suites.pass > 0 && (jsxRuntimeExports.jsxs("span", __assign({ className: classNames("test-summary-suites-pass", [
+                        ]), children: [suites.fail, " failed,", " "] })), suites.pass > 0 && (jsxRuntimeExports.jsxs("span", { className: classNames("test-summary-suites-pass", [
                             passTextClassName,
-                        ]) }, { children: [suites.pass, " passed,", " "] }), void 0)), jsxRuntimeExports.jsxs("span", { children: [suites.total, " total"] }, void 0)] }), void 0), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-summary", [gapBottomClassName]) }, { children: [jsxRuntimeExports.jsx("span", __assign({ className: classNames("test-summary-label", [labelClassName]) }, { children: withMargin("Tests:") }), void 0), tests.fail > 0 && (jsxRuntimeExports.jsxs("span", __assign({ className: classNames("test-summary-fail", [failTextClassName]) }, { children: [tests.fail, " failed,", " "] }), void 0)), tests.skip > 0 && (jsxRuntimeExports.jsxs("span", __assign({ className: classNames("test-summary-skip", [skipTextClassName]) }, { children: [tests.skip, " skipped,", " "] }), void 0)), tests.pass > 0 && (jsxRuntimeExports.jsxs("span", __assign({ className: classNames("test-summary-pass", [passTextClassName]) }, { children: [tests.pass, " passed,", " "] }), void 0)), jsxRuntimeExports.jsxs("span", { children: [tests.total, " total"] }, void 0)] }), void 0), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("test-summary-curation", [labelClassName]) }, { children: [withMargin("Time:"), duration / 1000, "s"] }), void 0)] }), void 0));
+                        ]), children: [suites.pass, " passed,", " "] })), jsxRuntimeExports.jsxs("span", { children: [suites.total, " total"] })] }), jsxRuntimeExports.jsxs("div", { className: classNames("test-summary", [gapBottomClassName]), children: [jsxRuntimeExports.jsx("span", { className: classNames("test-summary-label", [labelClassName]), children: withMargin("Tests:") }), tests.fail > 0 && (jsxRuntimeExports.jsxs("span", { className: classNames("test-summary-fail", [failTextClassName]), children: [tests.fail, " failed,", " "] })), tests.skip > 0 && (jsxRuntimeExports.jsxs("span", { className: classNames("test-summary-skip", [skipTextClassName]), children: [tests.skip, " skipped,", " "] })), tests.pass > 0 && (jsxRuntimeExports.jsxs("span", { className: classNames("test-summary-pass", [passTextClassName]), children: [tests.pass, " passed,", " "] })), jsxRuntimeExports.jsxs("span", { children: [tests.total, " total"] })] }), jsxRuntimeExports.jsxs("div", { className: classNames("test-summary-curation", [labelClassName]), children: [withMargin("Time:"), duration / 1000, "s"] })] }));
 };
 
 var previewActionsClassName = css({
@@ -30297,7 +30233,7 @@ var previewActionsClassName = css({
     bottom: "$space$2",
     right: "$space$2",
     zIndex: "$overlay",
-    "> *": { marginLeft: "$space$2" }
+    "> *": { marginLeft: "$space$2" },
 });
 var INITIAL_STATE = {
     specs: {},
@@ -30305,7 +30241,7 @@ var INITIAL_STATE = {
     verbose: false,
     watchMode: true,
     suiteOnly: false,
-    specsCount: 0
+    specsCount: 0,
 };
 var SandpackTests = function (_a) {
     var _b = _a.verbose, verbose = _b === void 0 ? false : _b, _c = _a.watchMode, watchMode = _c === void 0 ? true : _c, style = _a.style, className = _a.className, onComplete = _a.onComplete, actionsChildren = _a.actionsChildren, _d = _a.showVerboseButton, showVerboseButton = _d === void 0 ? true : _d, _e = _a.showWatchButton, showWatchButton = _e === void 0 ? true : _e, _f = _a.hideTestsAndSupressLogs, hideTestsAndSupressLogs = _f === void 0 ? false : _f, props = __rest(_a, ["verbose", "watchMode", "style", "className", "onComplete", "actionsChildren", "showVerboseButton", "showWatchButton", "hideTestsAndSupressLogs"]);
@@ -30376,7 +30312,7 @@ var SandpackTests = function (_a) {
                     return setState(set(["specs", data.path], {
                         describes: {},
                         tests: {},
-                        name: data.path
+                        name: data.path,
                     }));
                 }
                 if (data.event === "remove_file") {
@@ -30413,7 +30349,7 @@ var SandpackTests = function (_a) {
                     ], false), {
                         name: data.blockName,
                         tests: {},
-                        describes: {}
+                        describes: {},
                     }));
                 }
                 if (data.event === "describe_end") {
@@ -30427,7 +30363,7 @@ var SandpackTests = function (_a) {
                         errors: [],
                         name: data.testName,
                         blocks: __spreadArray([], currentDescribeBlocks, true),
-                        path: data.path
+                        path: data.path,
                     };
                     if (currentDescribe === undefined) {
                         return setState(set(["specs", data.path, "tests", data.testName], test_1));
@@ -30452,7 +30388,7 @@ var SandpackTests = function (_a) {
                         name: test_2.name,
                         blocks: test_2.blocks,
                         path: test_2.path,
-                        errors: []
+                        errors: [],
                     };
                     if (currentDescribe === undefined) {
                         return setState(set(["specs", test_2.path, "tests", test_2.name], startedTest));
@@ -30478,7 +30414,7 @@ var SandpackTests = function (_a) {
                         duration: test_3.duration,
                         name: test_3.name,
                         blocks: test_3.blocks,
-                        path: test_3.path
+                        path: test_3.path,
                     };
                     if (currentDescribe === undefined) {
                         return setState(set(["specs", test_3.path, "tests", test_3.name], endedTest));
@@ -30521,13 +30457,13 @@ var SandpackTests = function (_a) {
     var testResults = getAllTestResults(specs);
     var suiteResults = getAllSuiteResults(specs);
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("tests", [className]), style: __assign(__assign({}, setTestTheme(theme.themeMode === "dark")), style) }, props, { children: [jsxRuntimeExports.jsx("iframe", { ref: iframe, style: { display: "none" }, title: "Sandpack Tests" }, void 0), jsxRuntimeExports.jsx(Header$1, { hideTestsAndSupressLogs: hideTestsAndSupressLogs, setSuiteOnly: function () {
+    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("tests", [className]), style: __assign(__assign({}, setTestTheme(theme.themeMode === "dark")), style) }, props, { children: [jsxRuntimeExports.jsx("iframe", { ref: iframe, style: { display: "none" }, title: "Sandpack Tests" }), jsxRuntimeExports.jsx(Header$1, { hideTestsAndSupressLogs: hideTestsAndSupressLogs, setSuiteOnly: function () {
                     return setState(function (s) { return (__assign(__assign({}, s), { suiteOnly: !s.suiteOnly })); });
                 }, setVerbose: function () {
                     return setState(function (s) { return (__assign(__assign({}, s), { verbose: !s.verbose })); });
                 }, setWatchMode: function () {
                     setState(function (s) { return (__assign(__assign({}, s), { watchMode: !s.watchMode })); });
-                }, showSuitesOnly: state.specsCount > 1, showVerboseButton: showVerboseButton, showWatchButton: showWatchButton, status: state.status, suiteOnly: state.suiteOnly, verbose: state.verbose, watchMode: state.watchMode }, void 0), state.status === "running" || state.status === "initialising" ? (jsxRuntimeExports.jsx(Loading, { showOpenInCodeSandbox: false }, void 0)) : (jsxRuntimeExports.jsxs("div", __assign({ className: previewActionsClassName.toString() }, { children: [actionsChildren, jsxRuntimeExports.jsx(RunButton, { onClick: state.suiteOnly ? runSpec : runAllTests }, void 0)] }), void 0)), jsxRuntimeExports.jsx("div", __assign({ className: containerClassName.toString() }, { children: specs.length === 0 && state.status === "complete" ? (jsxRuntimeExports.jsxs("div", __assign({ className: fileErrorContainerClassName.toString() }, { children: [jsxRuntimeExports.jsx("p", { children: "No test files found." }, void 0), jsxRuntimeExports.jsxs("p", { children: ["Test match:", " ", jsxRuntimeExports.jsx("span", __assign({ className: failTextClassName.toString() }, { children: testFileRegex.toString() }), void 0)] }, void 0)] }), void 0)) : (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(Specs, { hideTestsAndSupressLogs: hideTestsAndSupressLogs, openSpec: openSpec, specs: specs, status: state.status, verbose: state.verbose }, void 0), state.status === "complete" && testResults.total > 0 && (jsxRuntimeExports.jsx(Summary, { duration: duration, suites: suiteResults, tests: testResults }, void 0))] }, void 0)) }), void 0)] }), void 0));
+                }, showSuitesOnly: state.specsCount > 1, showVerboseButton: showVerboseButton, showWatchButton: showWatchButton, status: state.status, suiteOnly: state.suiteOnly, verbose: state.verbose, watchMode: state.watchMode }), state.status === "running" || state.status === "initialising" ? (jsxRuntimeExports.jsx(Loading, { showOpenInCodeSandbox: false })) : (jsxRuntimeExports.jsxs("div", { className: previewActionsClassName.toString(), children: [actionsChildren, jsxRuntimeExports.jsx(RunButton, { onClick: state.suiteOnly ? runSpec : runAllTests })] })), jsxRuntimeExports.jsx("div", { className: containerClassName.toString(), children: specs.length === 0 && state.status === "complete" ? (jsxRuntimeExports.jsxs("div", { className: fileErrorContainerClassName.toString(), children: [jsxRuntimeExports.jsx("p", { children: "No test files found." }), jsxRuntimeExports.jsxs("p", { children: ["Test match:", " ", jsxRuntimeExports.jsx("span", { className: failTextClassName.toString(), children: testFileRegex.toString() })] })] })) : (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(Specs, { hideTestsAndSupressLogs: hideTestsAndSupressLogs, openSpec: openSpec, specs: specs, status: state.status, verbose: state.verbose }), state.status === "complete" && testResults.total > 0 && (jsxRuntimeExports.jsx(Summary, { duration: duration, suites: suiteResults, tests: testResults }))] })) })] })));
 };
 var containerClassName = css({
     padding: "$space$4",
@@ -30536,18 +30472,18 @@ var containerClassName = css({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    fontFamily: "$font$mono"
+    fontFamily: "$font$mono",
 });
 var fileErrorContainerClassName = css({
     fontWeight: "bold",
-    color: "$colors$base"
+    color: "$colors$base",
 });
 
 var SYNTAX_ERROR_PATTERN = ["SyntaxError: ", "Error in sandbox:"];
 var CLEAR_LOG = {
     id: "random",
     method: "clear",
-    data: ["Console was cleared"]
+    data: ["Console was cleared"],
 };
 var TRANSFORMED_TYPE_KEY = "@t";
 var TRANSFORMED_TYPE_KEY_ALTERNATE = "#@t";
@@ -30609,7 +30545,7 @@ var transformers = {
     Function: function (data) {
         var tempFun = function () { };
         Object.defineProperty(tempFun, "toString", {
-            value: function () { return "function " + data.name + "() {" + data.body + "}"; }
+            value: function () { return "function ".concat(data.name, "() {").concat(data.body, "}"); },
         });
         return tempFun;
     },
@@ -30670,7 +30606,7 @@ var transformers = {
             return set;
         }
         return val;
-    }
+    },
 };
 
 /* eslint-disable @typescript-eslint/array-type */
@@ -30709,12 +30645,12 @@ var formatSymbols = function (message) {
 };
 var arrayToString = function (output, references, level) {
     var mergeArray = output.reduce(function (acc, curr, index) {
-        return "" + acc + (index ? ", " : "") + fromConsoleToString(curr, references, level);
+        return "".concat(acc).concat(index ? ", " : "").concat(fromConsoleToString(curr, references, level));
     }, "");
-    return "[" + mergeArray + "]";
+    return "[".concat(mergeArray, "]");
 };
 var objectToString = function (output, references, level) {
-    var constructorName = output.constructor.name !== "Object" ? output.constructor.name + " " : "";
+    var constructorName = output.constructor.name !== "Object" ? "".concat(output.constructor.name, " ") : "";
     if (level > MAX_NEST_LEVEL) {
         return constructorName;
     }
@@ -30730,9 +30666,9 @@ var objectToString = function (output, references, level) {
         else if (index > MAX_KEYS) {
             return acc;
         }
-        return acc + ("" + comma + breakLine + key + ": ") + formatted;
+        return acc + "".concat(comma).concat(breakLine).concat(key, ": ") + formatted;
     }, "");
-    return constructorName + "{ " + formattedObject + (entries.length > 10 ? "\n" : " ") + "}";
+    return "".concat(constructorName, "{ ").concat(formattedObject).concat(entries.length > 10 ? "\n" : " ", "}");
 };
 var fromConsoleToString = function (message, references, level) {
     var _a;
@@ -30744,7 +30680,7 @@ var fromConsoleToString = function (message, references, level) {
         }
         switch (typeof output_1) {
             case "string":
-                return ("\"" + output_1 + "\"").slice(0, MAX_LENGTH_STRING);
+                return "\"".concat(output_1, "\"").slice(0, MAX_LENGTH_STRING);
             case "number":
             case "function":
             case "symbol":
@@ -30781,7 +30717,7 @@ var fromConsoleToString = function (message, references, level) {
                     var nodes = new Array(length_1).fill(null).map(function (_, index) {
                         return fromConsoleToString(output_1[index], references);
                     });
-                    return "NodeList(" + output_1.length + ")[" + nodes + "]";
+                    return "NodeList(".concat(output_1.length, ")[").concat(nodes, "]");
                 }
                 return objectToString(output_1, references, level + 1);
         }
@@ -30817,15 +30753,15 @@ var ConsoleList = function (_a) {
             if (Array.isArray(data)) {
                 return (jsxRuntimeExports.jsx(reactExports.Fragment, { children: data.map(function (msg, msgIndex) {
                         var fixReferences = references.slice(logIndex, references.length);
-                        return (jsxRuntimeExports.jsx("div", __assign({ className: classNames("console-item", [
+                        return (jsxRuntimeExports.jsx("div", { className: classNames("console-item", [
                                 consoleItemClassName({ variant: getType(method) }),
-                            ]) }, { children: jsxRuntimeExports.jsx(CodeMirror, { code: method === "clear"
+                            ]), children: jsxRuntimeExports.jsx(CodeMirror, { code: method === "clear"
                                     ? msg
-                                    : fromConsoleToString(msg, fixReferences), fileType: "js", initMode: "user-visible", showReadOnly: false, readOnly: true, wrapContent: true }, void 0) }), id + "-" + msgIndex));
+                                    : fromConsoleToString(msg, fixReferences), fileType: "js", initMode: "user-visible", showReadOnly: false, readOnly: true, wrapContent: true }) }, "".concat(id, "-").concat(msgIndex)));
                     }) }, id));
             }
             return null;
-        }) }, void 0));
+        }) }));
 };
 var consoleItemClassName = css((_a = {
         width: "100%",
@@ -30839,24 +30775,24 @@ var consoleItemClassName = css((_a = {
             left: 0,
             right: 0,
             height: 1,
-            background: "$colors$surface3"
+            background: "$colors$surface3",
         },
         /**
          * Editor reset
          */
         ".sp-cm": {
-            padding: 0
+            padding: 0,
         },
         ".cm-editor": {
-            background: "none"
+            background: "none",
         },
         ".cm-content": {
-            padding: 0
+            padding: 0,
         }
     },
-    _a["." + THEME_PREFIX + "-pre-placeholder"] = {
+    _a[".".concat(THEME_PREFIX, "-pre-placeholder")] = {
         margin: "0 !important",
-        fontSize: "1em"
+        fontSize: "1em",
     },
     _a.variants = {
         variant: {
@@ -30865,22 +30801,22 @@ var consoleItemClassName = css((_a = {
                 background: "$colors$errorSurface",
                 "&:not(:first-child):after": {
                     background: "$colors$error",
-                    opacity: 0.07
-                }
+                    opacity: 0.07,
+                },
             },
             warning: {
                 color: "$colors$warning",
                 background: "$colors$warningSurface",
                 "&:not(:first-child):after": {
                     background: "$colors$warning",
-                    opacity: 0.07
-                }
+                    opacity: 0.07,
+                },
             },
             clear: {
-                fontStyle: "italic"
+                fontStyle: "italic",
             },
-            info: {}
-        }
+            info: {},
+        },
     },
     _a));
 
@@ -30892,13 +30828,13 @@ var wrapperClassName = css({
     height: "$layout$headerHeight",
     minHeight: "$layout$headerHeight",
     overflowX: "auto",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
 });
 var flexClassName = css({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: "$space$2"
+    gap: "$space$2",
 });
 var Header = function (_a) {
     var currentTab = _a.currentTab, setCurrentTab = _a.setCurrentTab, node = _a.node;
@@ -30908,10 +30844,10 @@ var Header = function (_a) {
         roundedButtonClassName,
         css({ padding: "$space$1 $space$3" }),
     ]);
-    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("console-header", [
+    return (jsxRuntimeExports.jsxs("div", { className: classNames("console-header", [
             wrapperClassName,
             flexClassName,
-        ]) }, { children: [jsxRuntimeExports.jsxs("p", __assign({ className: classNames("console-header-title", [
+        ]), children: [jsxRuntimeExports.jsxs("p", { className: classNames("console-header-title", [
                     css({
                         lineHeight: 1,
                         margin: 0,
@@ -30919,9 +30855,9 @@ var Header = function (_a) {
                         fontSize: "$font$size",
                         display: "flex",
                         alignItems: "center",
-                        gap: "$space$2"
+                        gap: "$space$2",
                     }),
-                ]) }, { children: [jsxRuntimeExports.jsx(ConsoleIcon, {}, void 0), jsxRuntimeExports.jsx("span", { children: "Terminal" }, void 0)] }), void 0), node && (jsxRuntimeExports.jsxs("div", __assign({ className: classNames("console-header-actions", [flexClassName]) }, { children: [jsxRuntimeExports.jsx("button", __assign({ className: buttonsClassName, "data-active": currentTab === "server", onClick: function () { return setCurrentTab("server"); }, type: "button" }, { children: "Server" }), void 0), jsxRuntimeExports.jsx("button", __assign({ className: buttonsClassName, "data-active": currentTab === "client", onClick: function () { return setCurrentTab("client"); }, type: "button" }, { children: "Client" }), void 0)] }), void 0))] }), void 0));
+                ]), children: [jsxRuntimeExports.jsx(ConsoleIcon, {}), jsxRuntimeExports.jsx("span", { children: "Terminal" })] }), node && (jsxRuntimeExports.jsxs("div", { className: classNames("console-header-actions", [flexClassName]), children: [jsxRuntimeExports.jsx("button", { className: buttonsClassName, "data-active": currentTab === "server", onClick: function () { return setCurrentTab("server"); }, type: "button", children: "Server" }), jsxRuntimeExports.jsx("button", { className: buttonsClassName, "data-active": currentTab === "client", onClick: function () { return setCurrentTab("client"); }, type: "button", children: "Client" })] }))] }));
 };
 
 /**
@@ -30988,7 +30924,7 @@ var useSandpackConsole = function (_a) {
  */
 var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
     var _b;
-    var _c = _a.showHeader, showHeader = _c === void 0 ? true : _c, _d = _a.showSyntaxError, showSyntaxError = _d === void 0 ? false : _d, maxMessageCount = _a.maxMessageCount, onLogsChange = _a.onLogsChange, className = _a.className; _a.showSetupProgress; var _f = _a.resetOnPreviewRestart, resetOnPreviewRestart = _f === void 0 ? false : _f, _g = _a.actionsChildren, actionsChildren = _g === void 0 ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}, void 0) : _g, _h = _a.standalone, standalone = _h === void 0 ? false : _h, props = __rest(_a, ["showHeader", "showSyntaxError", "maxMessageCount", "onLogsChange", "className", "showSetupProgress", "resetOnPreviewRestart", "actionsChildren", "standalone"]);
+    var _c = _a.showHeader, showHeader = _c === void 0 ? true : _c, _d = _a.showSyntaxError, showSyntaxError = _d === void 0 ? false : _d, maxMessageCount = _a.maxMessageCount, onLogsChange = _a.onLogsChange, className = _a.className; _a.showSetupProgress; var _f = _a.resetOnPreviewRestart, resetOnPreviewRestart = _f === void 0 ? false : _f, _g = _a.actionsChildren, actionsChildren = _g === void 0 ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}) : _g, _h = _a.standalone, standalone = _h === void 0 ? false : _h, props = __rest(_a, ["showHeader", "showSyntaxError", "maxMessageCount", "onLogsChange", "className", "showSetupProgress", "resetOnPreviewRestart", "actionsChildren", "standalone"]);
     var environment = useSandpack().sandpack.environment;
     var _j = useSandpackClient(), iframe = _j.iframe, internalClientId = _j.clientId;
     var restart = useSandpackShell().restart;
@@ -30998,12 +30934,12 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
         maxMessageCount: maxMessageCount,
         showSyntaxError: showSyntaxError,
         resetOnPreviewRestart: resetOnPreviewRestart,
-        clientId: clientId
+        clientId: clientId,
     }), consoleData = _l.logs, resetConsole = _l.reset;
     var _m = useSandpackShellStdout({
         maxMessageCount: maxMessageCount,
         resetOnPreviewRestart: resetOnPreviewRestart,
-        clientId: clientId
+        clientId: clientId,
     }), stdoutData = _m.logs, resetStdout = _m.reset;
     var wrapperRef = reactExports.useRef(null);
     reactExports.useEffect(function () {
@@ -31018,7 +30954,7 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
         reset: function () {
             resetConsole();
             resetStdout();
-        }
+        },
     }); });
     var classNames = useClassNames();
     return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("console", [
@@ -31027,7 +30963,7 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
                     background: "$surface1",
                     iframe: { display: "none" }
                 },
-                _b["." + THEME_PREFIX + "-bridge-frame"] = {
+                _b[".".concat(THEME_PREFIX, "-bridge-frame")] = {
                     display: "block",
                     border: 0,
                     position: "absolute",
@@ -31037,32 +30973,32 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
                     height: 12,
                     width: "30%",
                     mixBlendMode: "multiply",
-                    pointerEvents: "none"
+                    pointerEvents: "none",
                 },
                 _b)),
             className,
-        ]) }, props, { children: [showHeader && isNodeEnvironment && (jsxRuntimeExports.jsx(Header, { currentTab: currentTab, node: isNodeEnvironment, setCurrentTab: setCurrentTab }, void 0)), jsxRuntimeExports.jsx("div", __assign({ ref: wrapperRef, className: classNames("console-list", [
+        ]) }, props, { children: [showHeader && isNodeEnvironment && (jsxRuntimeExports.jsx(Header, { currentTab: currentTab, node: isNodeEnvironment, setCurrentTab: setCurrentTab })), jsxRuntimeExports.jsx("div", { ref: wrapperRef, className: classNames("console-list", [
                     css({ overflow: "auto", scrollBehavior: "smooth" }),
-                ]) }, { children: isServerTab ? (jsxRuntimeExports.jsx(StdoutList, { data: stdoutData }, void 0)) : (jsxRuntimeExports.jsx(ConsoleList, { data: consoleData }, void 0)) }), void 0), jsxRuntimeExports.jsxs("div", __assign({ className: classNames("console-actions", [
+                ]), children: isServerTab ? (jsxRuntimeExports.jsx(StdoutList, { data: stdoutData })) : (jsxRuntimeExports.jsx(ConsoleList, { data: consoleData })) }), jsxRuntimeExports.jsxs("div", { className: classNames("console-actions", [
                     css({
                         position: "absolute",
                         bottom: "$space$2",
                         right: "$space$2",
                         display: "flex",
-                        gap: "$space$2"
+                        gap: "$space$2",
                     }),
-                ]) }, { children: [actionsChildren, isServerTab && (jsxRuntimeExports.jsx(RoundedButton, __assign({ onClick: function () {
+                ]), children: [actionsChildren, isServerTab && (jsxRuntimeExports.jsx(RoundedButton, { onClick: function () {
                             restart();
                             resetConsole();
                             resetStdout();
-                        } }, { children: jsxRuntimeExports.jsx(RestartIcon, {}, void 0) }), void 0)), jsxRuntimeExports.jsx(RoundedButton, __assign({ onClick: function () {
+                        }, children: jsxRuntimeExports.jsx(RestartIcon, {}) })), jsxRuntimeExports.jsx(RoundedButton, { onClick: function () {
                             if (currentTab === "client") {
                                 resetConsole();
                             }
                             else {
                                 resetStdout();
                             }
-                        } }, { children: jsxRuntimeExports.jsx(CleanIcon, {}, void 0) }), void 0)] }), void 0), standalone && (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(DependenciesProgress, { clientId: clientId }, void 0), jsxRuntimeExports.jsx("iframe", { ref: iframe }, void 0)] }, void 0))] }), void 0));
+                        }, children: jsxRuntimeExports.jsx(CleanIcon, {}) })] }), standalone && (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(DependenciesProgress, { clientId: clientId }), jsxRuntimeExports.jsx("iframe", { ref: iframe })] }))] })));
 });
 
 var Sandpack$2 = function (_a) {
@@ -31084,7 +31020,7 @@ var Sandpack$2 = function (_a) {
         extensionsKeymap: (_g = options.codeEditor) === null || _g === void 0 ? void 0 : _g.extensionsKeymap,
         readOnly: options.readOnly,
         showReadOnly: options.showReadOnly,
-        additionalLanguages: (_h = options.codeEditor) === null || _h === void 0 ? void 0 : _h.additionalLanguages
+        additionalLanguages: (_h = options.codeEditor) === null || _h === void 0 ? void 0 : _h.additionalLanguages,
     };
     var providerOptions = {
         /**
@@ -31104,7 +31040,7 @@ var Sandpack$2 = function (_a) {
         initModeObserverOptions: options.initModeObserverOptions,
         externalResources: options.externalResources,
         logLevel: options.logLevel,
-        classes: options.classes
+        classes: options.classes,
     };
     /**
      * Console
@@ -31119,7 +31055,7 @@ var Sandpack$2 = function (_a) {
         : "mode" in templateFiles
             ? templateFiles.mode
             : "preview");
-    var actionsChildren = options.showConsoleButton ? (jsxRuntimeExports.jsx(ConsoleCounterButton, { counter: counter, onClick: function () { return setConsoleVisibility(function (prev) { return !prev; }); } }, void 0)) : undefined;
+    var actionsChildren = options.showConsoleButton ? (jsxRuntimeExports.jsx(ConsoleCounterButton, { counter: counter, onClick: function () { return setConsoleVisibility(function (prev) { return !prev; }); } })) : undefined;
     /**
      * Resizable
      */
@@ -31134,14 +31070,14 @@ var Sandpack$2 = function (_a) {
         flexBasis: 0,
         width: 100 - horizontalSize + "%",
         gap: consoleVisibility ? 1 : 0,
-        height: options.editorHeight
+        height: options.editorHeight, // use the original editor height
     };
     var topRowStyle = hasRightColumn
         ? {
             flexGrow: verticalSize,
             flexShrink: verticalSize,
             flexBasis: 0,
-            overflow: "hidden"
+            overflow: "hidden",
         }
         : rightColumnStyle;
     var onDragMove = function (event) {
@@ -31163,7 +31099,7 @@ var Sandpack$2 = function (_a) {
         else {
             setVerticalSize(boundaries);
         }
-        container.querySelectorAll("." + THEME_PREFIX + "-stack").forEach(function (item) {
+        container.querySelectorAll(".".concat(THEME_PREFIX, "-stack")).forEach(function (item) {
             item.style.pointerEvents = "none";
         });
     };
@@ -31172,7 +31108,7 @@ var Sandpack$2 = function (_a) {
         var container = (_a = dragEventTargetRef.current) === null || _a === void 0 ? void 0 : _a.parentElement;
         if (!container)
             return;
-        container.querySelectorAll("." + THEME_PREFIX + "-stack").forEach(function (item) {
+        container.querySelectorAll(".".concat(THEME_PREFIX, "-stack")).forEach(function (item) {
             item.style.pointerEvents = "";
         });
         dragEventTargetRef.current = null;
@@ -31195,27 +31131,27 @@ var Sandpack$2 = function (_a) {
         ? { className: THEME_PREFIX + "-preset-column", style: rightColumnStyle }
         : {};
     var classNames = useClassNames();
-    return (jsxRuntimeExports.jsx(SandpackProvider, __assign({ customSetup: customSetup, files: files, options: providerOptions, template: template, theme: theme }, props, { children: jsxRuntimeExports.jsxs(SandpackLayout, __assign({ className: rtlLayout ? classNames("rtl-layout", [rtlLayoutClassName]) : "" }, { children: [jsxRuntimeExports.jsx(SandpackCodeEditor, __assign({}, codeEditorOptions, { style: {
+    return (jsxRuntimeExports.jsx(SandpackProvider, __assign({ customSetup: customSetup, files: files, options: providerOptions, template: template, theme: theme }, props, { children: jsxRuntimeExports.jsxs(SandpackLayout, { className: rtlLayout ? classNames("rtl-layout", [rtlLayoutClassName]) : "", children: [jsxRuntimeExports.jsx(SandpackCodeEditor, __assign({}, codeEditorOptions, { style: {
                         height: options.editorHeight,
                         flexGrow: horizontalSize,
                         flexShrink: horizontalSize,
                         flexBasis: 0,
-                        overflow: "hidden"
-                    } }), void 0), options.resizablePanels && (jsxRuntimeExports.jsx("div", { className: classNames("resize-handler", [
+                        overflow: "hidden",
+                    } })), options.resizablePanels && (jsxRuntimeExports.jsx("div", { className: classNames("resize-handler", [
                         dragHandler({ direction: "horizontal" }),
                     ]), "data-direction": "horizontal", onMouseDown: function (event) {
                         dragEventTargetRef.current = event.target;
                     }, style: {
-                        left: "calc(" + (rtlLayout ? 100 - horizontalSize : horizontalSize) + "% - 5px)"
-                    } }, void 0)), jsxRuntimeExports.jsxs(RightColumn, __assign({}, rightColumnProps, { children: [mode === "preview" && (jsxRuntimeExports.jsx(SandpackPreview, { actionsChildren: actionsChildren, showNavigator: options.showNavigator, showRefreshButton: options.showRefreshButton, style: topRowStyle }, void 0)), mode === "tests" && (jsxRuntimeExports.jsx(SandpackTests, { actionsChildren: actionsChildren, style: topRowStyle }, void 0)), mode === "console" && (jsxRuntimeExports.jsx(SandpackConsole, { actionsChildren: actionsChildren, style: topRowStyle, standalone: true }, void 0)), (options.showConsoleButton || consoleVisibility) && (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [options.resizablePanels && consoleVisibility && (jsxRuntimeExports.jsx("div", { className: classNames("resize-handler", [
+                        left: "calc(".concat(rtlLayout ? 100 - horizontalSize : horizontalSize, "% - 5px)"),
+                    } })), jsxRuntimeExports.jsxs(RightColumn, __assign({}, rightColumnProps, { children: [mode === "preview" && (jsxRuntimeExports.jsx(SandpackPreview, { actionsChildren: actionsChildren, showNavigator: options.showNavigator, showRefreshButton: options.showRefreshButton, style: topRowStyle })), mode === "tests" && (jsxRuntimeExports.jsx(SandpackTests, { actionsChildren: actionsChildren, style: topRowStyle })), mode === "console" && (jsxRuntimeExports.jsx(SandpackConsole, { actionsChildren: actionsChildren, style: topRowStyle, standalone: true })), (options.showConsoleButton || consoleVisibility) && (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [options.resizablePanels && consoleVisibility && (jsxRuntimeExports.jsx("div", { className: classNames("resize-handler", [
                                         dragHandler({ direction: "vertical" }),
                                     ]), "data-direction": "vertical", onMouseDown: function (event) {
                                         dragEventTargetRef.current = event.target;
-                                    }, style: { top: "calc(" + verticalSize + "% - 5px)" } }, void 0)), jsxRuntimeExports.jsx("div", __assign({ className: classNames("console-wrapper", [consoleWrapper]), style: {
+                                    }, style: { top: "calc(".concat(verticalSize, "% - 5px)") } })), jsxRuntimeExports.jsx("div", { className: classNames("console-wrapper", [consoleWrapper]), style: {
                                         flexGrow: consoleVisibility ? 100 - verticalSize : 0,
                                         flexShrink: consoleVisibility ? 100 - verticalSize : 0,
-                                        flexBasis: 0
-                                    } }, { children: jsxRuntimeExports.jsx(SandpackConsole, { onLogsChange: function (logs) { return setCounter(logs.length); }, showHeader: false }, void 0) }), void 0)] }, void 0))] }), void 0)] }), void 0) }), template));
+                                        flexBasis: 0,
+                                    }, children: jsxRuntimeExports.jsx(SandpackConsole, { onLogsChange: function (logs) { return setCounter(logs.length); }, showHeader: false }) })] }))] }))] }) }), template));
 };
 var dragHandler = css({
     position: "absolute",
@@ -31226,23 +31162,23 @@ var dragHandler = css({
                 right: 0,
                 left: 0,
                 height: 10,
-                cursor: "ns-resize"
+                cursor: "ns-resize",
             },
             horizontal: {
                 top: 0,
                 bottom: 0,
                 width: 10,
-                cursor: "ew-resize"
-            }
-        }
+                cursor: "ew-resize",
+            },
+        },
     },
     "@media screen and (max-width: 768px)": {
-        display: "none"
-    }
+        display: "none",
+    },
 });
 var ConsoleCounterButton = function (_a) {
     var onClick = _a.onClick, counter = _a.counter;
-    return (jsxRuntimeExports.jsxs(RoundedButton, __assign({ className: buttonCounter.toString(), onClick: onClick }, { children: [jsxRuntimeExports.jsx(ConsoleIcon, {}, void 0), counter > 0 && jsxRuntimeExports.jsx("strong", { children: counter }, void 0)] }), void 0));
+    return (jsxRuntimeExports.jsxs(RoundedButton, { className: buttonCounter.toString(), onClick: onClick, children: [jsxRuntimeExports.jsx(ConsoleIcon, {}), counter > 0 && jsxRuntimeExports.jsx("strong", { children: counter })] }));
 };
 var buttonCounter = css({
     position: "relative",
@@ -31258,19 +31194,19 @@ var buttonCounter = css({
         position: "absolute",
         top: 0,
         right: 0,
-        fontWeight: "normal"
-    }
+        fontWeight: "normal",
+    },
 });
 var consoleWrapper = css({
     width: "100%",
-    overflow: "hidden"
+    overflow: "hidden",
 });
 var rtlLayoutClassName = css({
     flexDirection: "row-reverse",
     "@media screen and (max-width: 768px)": {
         flexFlow: "wrap-reverse !important",
-        flexDirection: "initial"
-    }
+        flexDirection: "initial",
+    },
 });
 
 var cobalt2 = {
@@ -31347,3 +31283,9 @@ function Sandpack({
 }
 
 export { Sandpack as S, __vitePreload as _, __extends as a, __awaiter$1 as b, __generator$1 as c, __assign$1 as d, createError as e, dequal as f, createPackageJSON as g, SandpackLogLevel as h, invariant as i, addPackageJSONIfNeeded as j, __spreadArray$1 as k, extractErrorDetails as l, nullthrows as n };
+function __vite__mapDeps(indexes) {
+  if (!__vite__mapDeps.viteFileDeps) {
+    __vite__mapDeps.viteFileDeps = ["assets/index-vYY7u_VO.js","assets/base-80a1f760-HMqdSJNZ.js","assets/consoleHook-cdbe54ab-ovPnN6B-.js","assets/index-4dgXhobZ.js","assets/index-bcMWt4Py.css","assets/index-ec7d9378-egQXODfr.js","assets/index-4xg5CMc4.js"]
+  }
+  return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
+}

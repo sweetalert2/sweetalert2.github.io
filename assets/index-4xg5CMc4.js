@@ -1,6 +1,6 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-19a8bcad.js';
-import { S as SandpackClient } from './base-80a1f760-1d76d265.js';
-import './index-94ff39db.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-YALZoZxe.js';
+import { S as SandpackClient } from './base-80a1f760-HMqdSJNZ.js';
+import './index-4dgXhobZ.js';
 
 /**
  * This file is a copy of the resolver from the `codesandbox-api` package.
@@ -30,7 +30,7 @@ var Protocol = /** @class */ (function () {
                         response = {
                             type: this.getTypeId(),
                             msgId: message.msgId,
-                            result: result
+                            result: result,
                         };
                         this.protocol.dispatch(response);
                         return [3 /*break*/, 4];
@@ -40,8 +40,8 @@ var Protocol = /** @class */ (function () {
                             type: this.getTypeId(),
                             msgId: message.msgId,
                             error: {
-                                message: err_1.message
-                            }
+                                message: err_1.message,
+                            },
                         };
                         this.protocol.dispatch(response);
                         return [3 /*break*/, 4];
@@ -51,7 +51,7 @@ var Protocol = /** @class */ (function () {
         }); });
     }
     Protocol.prototype.getTypeId = function () {
-        return "protocol-" + this.type;
+        return "protocol-".concat(this.type);
     };
     Protocol.prototype.dispose = function () {
         this._disposeMessageListener();
@@ -94,7 +94,7 @@ var IFrameProtocol = /** @class */ (function () {
         this.frameWindow.postMessage({
             type: "register-frame",
             origin: document.location.origin,
-            id: this.channelId
+            id: this.channelId,
         }, this.origin);
     };
     // Messages are dispatched from the client directly to the instance iframe
@@ -291,7 +291,7 @@ modules) {
 }
 
 var _a;
-var BUNDLER_URL = "https://" + ((_a = "2.9.0") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")) + "-sandpack.codesandbox.io/";
+var BUNDLER_URL = "https://".concat((_a = "2.10.0") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
@@ -312,7 +312,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         if (options.teamId) {
             _this.bundlerURL =
                 _this.bundlerURL.replace("https://", "https://" + options.teamId + "-") +
-                    ("?cache=" + Date.now());
+                    "?cache=".concat(Date.now());
         }
         _this.bundlerState = undefined;
         _this.errors = [];
@@ -320,7 +320,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         if (typeof selector === "string") {
             _this.selector = selector;
             var element = document.querySelector(selector);
-            nullthrows(element, "The element '" + selector + "' was not found");
+            nullthrows(element, "The element '".concat(selector, "' was not found"));
             _this.element = element;
             _this.iframe = document.createElement("iframe");
             _this.initializeElement();
@@ -415,7 +415,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
             var _a;
             return (__assign(__assign({}, prev), (_a = {}, _a[next] = {
                 code: files[next].code,
-                path: next
+                path: next,
             }, _a)));
         }, {});
         var packageJSON = JSON.parse(createPackageJSON(this.sandboxSetup.dependencies, this.sandboxSetup.devDependencies, this.sandboxSetup.entry));
@@ -430,7 +430,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
             var _a;
             return (__assign(__assign({}, prev), (_a = {}, _a[next] = {
                 content: files[next].code,
-                path: next
+                path: next,
             }, _a)));
         }, {});
         this.dispatch({
@@ -453,7 +453,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
             logLevel: (_d = this.options.logLevel) !== null && _d !== void 0 ? _d : SandpackLogLevel.Info,
             customNpmRegistries: this.options.customNpmRegistries,
             teamId: this.options.teamId,
-            sandboxId: this.options.sandboxId
+            sandboxId: this.options.sandboxId,
         });
     };
     SandpackRuntime.prototype.dispatch = function (message) {
@@ -480,7 +480,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
             var _a;
             return (__assign(__assign({}, prev), (_a = {}, _a[next.replace("/", "")] = {
                 content: files[next].code,
-                isBinary: false
+                isBinary: false,
             }, _a)));
         }, {});
         return fetch("https://codesandbox.io/api/v1/sandboxes/define?json=1", {
@@ -488,14 +488,14 @@ var SandpackRuntime = /** @class */ (function (_super) {
             body: JSON.stringify({ files: paramFiles }),
             headers: {
                 Accept: "application/json",
-                "Content-Type": "application/json"
-            }
+                "Content-Type": "application/json",
+            },
         })
             .then(function (x) { return x.json(); })
             .then(function (res) { return ({
             sandboxId: res.sandbox_id,
-            editorUrl: "https://codesandbox.io/s/" + res.sandbox_id,
-            embedUrl: "https://codesandbox.io/embed/" + res.sandbox_id
+            editorUrl: "https://codesandbox.io/s/".concat(res.sandbox_id),
+            embedUrl: "https://codesandbox.io/embed/".concat(res.sandbox_id),
         }); });
     };
     SandpackRuntime.prototype.getFiles = function () {

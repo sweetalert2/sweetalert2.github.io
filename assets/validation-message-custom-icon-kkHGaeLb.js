@@ -1,9 +1,9 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-94ff39db.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-19a8bcad.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-4dgXhobZ.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-YALZoZxe.js';
 
-const html = (await __vitePreload(() => import('./validation-message-custom-icon-html-65dc0411.js'),true?[]:void 0)).default;
-const styles = (await __vitePreload(() => import('./validation-message-custom-icon-styles-a3c6cb6f.js'),true?[]:void 0)).default;
-const src = (await __vitePreload(() => import('./validation-message-custom-icon-src-d54552cd.js'),true?[]:void 0)).default;
+const html = (await __vitePreload(() => import('./validation-message-custom-icon-html-bJVIvp61.js'),true?__vite__mapDeps([]):void 0)).default;
+const styles = (await __vitePreload(() => import('./validation-message-custom-icon-styles-hUMlAhMF.js'),true?__vite__mapDeps([]):void 0)).default;
+const src = (await __vitePreload(() => import('./validation-message-custom-icon-src-uZK75JZs.js'),true?__vite__mapDeps([]):void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
@@ -23,3 +23,9 @@ function Recipe() {
   ] });
 }
 client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));
+function __vite__mapDeps(indexes) {
+  if (!__vite__mapDeps.viteFileDeps) {
+    __vite__mapDeps.viteFileDeps = []
+  }
+  return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
+}

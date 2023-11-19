@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-19a8bcad.js';
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-7a68abbd-1b087bb9.js';
-import { S as SandpackClient } from './base-80a1f760-1d76d265.js';
-import './index-94ff39db.js';
+import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-YALZoZxe.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-cdbe54ab-ovPnN6B-.js';
+import { S as SandpackClient } from './base-80a1f760-HMqdSJNZ.js';
+import './index-4dgXhobZ.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -8783,7 +8783,7 @@ var validateHtml = function (content) {
         doc.documentElement.setAttribute("lang", "en");
     }
     var html = doc.documentElement.outerHTML;
-    return "<!DOCTYPE html>\n" + html;
+    return "<!DOCTYPE html>\n".concat(html);
 };
 
 var SandpackStatic = /** @class */ (function (_super) {
@@ -8810,7 +8810,7 @@ var SandpackStatic = /** @class */ (function (_super) {
                         content = _this.injectExternalResources(content, options.externalResources);
                         content = _this.injectScriptIntoHead(content, {
                             script: consoleHook,
-                            scope: { channelId: generateRandomId$1() }
+                            scope: { channelId: generateRandomId$1() },
                         });
                     }
                     catch (err) {
@@ -8818,7 +8818,7 @@ var SandpackStatic = /** @class */ (function (_super) {
                     }
                 }
                 return content;
-            }
+            },
         });
         if (typeof selector === "string") {
             _this.selector = selector;
@@ -8862,19 +8862,19 @@ var SandpackStatic = /** @class */ (function (_super) {
             var match = resource.match(/\.([^.]*)$/);
             var fileType = match === null || match === void 0 ? void 0 : match[1];
             if (fileType === "css" || resource.includes("fonts.googleapis")) {
-                return "<link rel=\"stylesheet\" href=\"" + resource + "\">";
+                return "<link rel=\"stylesheet\" href=\"".concat(resource, "\">");
             }
             if (fileType === "js") {
-                return "<script src=\"" + resource + "\"></script>";
+                return "<script src=\"".concat(resource, "\"></script>");
             }
-            throw new Error("Unable to determine file type for external resource: " + resource);
+            throw new Error("Unable to determine file type for external resource: ".concat(resource));
         })
             .join("\n");
         return this.injectContentIntoHead(content, tagsToInsert);
     };
     SandpackStatic.prototype.injectScriptIntoHead = function (content, opts) {
         var script = opts.script, _a = opts.scope, scope = _a === void 0 ? {} : _a;
-        var scriptToInsert = ("\n    <script>\n      const scope = " + JSON.stringify(scope) + ";\n      " + script + "\n    </script>\n    ").trim();
+        var scriptToInsert = "\n    <script>\n      const scope = ".concat(JSON.stringify(scope), ";\n      ").concat(script, "\n    </script>\n    ").trim();
         return this.injectContentIntoHead(content, scriptToInsert);
     };
     SandpackStatic.prototype.updateSandbox = function (setup, _isInitializationCompile) {
@@ -8887,7 +8887,7 @@ var SandpackStatic = /** @class */ (function (_super) {
             codesandbox: true,
             modules: modules,
             template: setup.template,
-            type: "compile"
+            type: "compile",
         });
     };
     SandpackStatic.prototype.compile = function (files) {
@@ -8907,7 +8907,7 @@ var SandpackStatic = /** @class */ (function (_super) {
                             type: "urlchange",
                             url: previewUrl,
                             back: false,
-                            forward: false
+                            forward: false,
                         });
                         return [2 /*return*/];
                 }
