@@ -7051,21 +7051,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "penis pump"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sexvibrators.in/", target: "_blank", rel: "noopener", "aria-label": "Sex Vibrators", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexvibrator.png", alt: "Sex Vibrators" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Sex Vibrators"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.viva-awa.com/", target: "_blank", rel: "noopener", "aria-label": "Viva Awa", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/viva-awa.png", alt: "Viva Awa" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Viva Awa"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sensualdolls.com", target: "_blank", rel: "noopener", "aria-label": "Sensual Dolls", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sensualdolls.png", alt: "Sensual Dolls" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Sensual Dolls"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
