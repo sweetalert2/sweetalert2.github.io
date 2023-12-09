@@ -359,27 +359,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.sexvibrators.in/" target="_blank" rel="noopener" aria-label="Sex Vibrators">
-            <img src="/images/sponsors/sexvibrator.png" alt="Sex Vibrators" />
-            <br />
-            Sex Vibrators
-          </a>
-        </div>
-        <div>
-          <a href="https://www.viva-awa.com/" target="_blank" rel="noopener" aria-label="Viva Awa">
-            <img src="/images/sponsors/viva-awa.png" alt="Viva Awa" />
-            <br />
-            Viva Awa
-          </a>
-        </div>
-        <div>
-          <a href="https://www.sensualdolls.com" target="_blank" rel="noopener" aria-label="Sensual Dolls">
-            <img src="/images/sponsors/sensualdolls.png" alt="Sensual Dolls" />
-            <br />
-            Sensual Dolls
-          </a>
-        </div>
-        <div>
           <a
             href="https://www.bestrealdoll.com/collections/us-warehouse"
             target="_blank"
