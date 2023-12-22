@@ -1,19 +1,21 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-4dgXhobZ.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-9ZWZ9OK7.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-wZ9ImAsS.js';
 
-const src = (await __vitePreload(() => import('./sweetalert2-react-src-9KYFytv6.js'),true?__vite__mapDeps([]):void 0)).default;
+const src = (await __vitePreload(() => import('./sweetalert2-formik-src-pwXh2rVg.js'),true?__vite__mapDeps([]):void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + React example" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "SweetAlert2 + Formik example" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Formik is one of the most popular libraries for building forms with React. Here's how you integrate it with SweetAlert2." }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "Here's our official React integration:",
+      "First, get the Formik reference (",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "formikRef" }),
+      ") for accessing the form. Then, use",
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-react-content", children: "https://github.com/sweetalert2/sweetalert2-react-content" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "It allow you to pass JSX/TSX as ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire" }),
-      " params."
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "formikRef" }),
+      " inside of ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "preConfirm" }),
+      " parameter to validate the form and return its values."
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
@@ -21,7 +23,8 @@ function Recipe() {
         dependencies: {
           "react": "latest",
           "react-dom": "latest",
-          "sweetalert2-react-content": "latest"
+          "sweetalert2-react-content": "latest",
+          "formik": "^2.0.0"
         },
         entry: "/App.tsx",
         files: {
@@ -31,8 +34,7 @@ function Recipe() {
             hidden: true
           }
         },
-        editorHeight: 600,
-        previewHeight: 400
+        editorHeight: 650
       }
     )
   ] });

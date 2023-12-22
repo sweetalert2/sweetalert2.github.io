@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-4dgXhobZ.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-9ZWZ9OK7.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-wZ9ImAsS.js';
 
 const src = (await __vitePreload(() => import('./draw-attention-src-YaYOhqvI.js'),true?__vite__mapDeps([]):void 0)).default;
 function Recipe() {

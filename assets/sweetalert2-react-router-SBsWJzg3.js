@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-4dgXhobZ.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-9ZWZ9OK7.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-wZ9ImAsS.js';
 import { C as CreatePortalDocs } from './CreatePortalDocs-W0Zu_yal.js';
 
 const src = (await __vitePreload(() => import('./sweetalert2-react-router-src-9u7ZXrFO.js'),true?__vite__mapDeps([]):void 0)).default;
