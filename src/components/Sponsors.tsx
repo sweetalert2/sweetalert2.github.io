@@ -127,6 +127,18 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a
+            href="https://nexromance.com/playstore/index.php?sweetalert"
+            target="_blank"
+            rel="noopener"
+            aria-label="Try Nex Romance Ai Girlfriend For Free"
+          >
+            <img src="/images/sponsors/chatforsex.jpg" alt="Try Nex Romance Ai Girlfriend For Free" />
+            <br />
+            ChatGPT for Sex
+          </a>
+        </div>
+        <div>
           <a href="https://pinktoys.co.uk/pocket-pussy/" target="_blank" rel="noopener" aria-label="Pocket pussy">
             <img src="/images/sponsors/pinktoys.png" alt="Pocket pussy" />
             <br />
