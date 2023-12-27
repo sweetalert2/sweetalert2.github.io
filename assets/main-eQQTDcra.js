@@ -6949,8 +6949,8 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sextoystop.com/", target: "_blank", rel: "noopener", "aria-label": "Sex Doll Torso", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sextoystop.png", alt: "Sex Doll Torso" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sexdollsmarket.com/", target: "_blank", rel: "noopener", "aria-label": "Sex Doll Torso", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexdollsmarket.png", alt: "Sex Doll Torso" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Sex Doll Torso"
       ] }) }),
