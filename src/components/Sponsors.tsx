@@ -239,8 +239,8 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://sextoystop.com/" target="_blank" rel="noopener" aria-label="Sex Doll Torso">
-            <img src="/images/sponsors/sextoystop.png" alt="Sex Doll Torso" />
+          <a href="https://sexdollsmarket.com/" target="_blank" rel="noopener" aria-label="Sex Doll Torso">
+            <img src="/images/sponsors/sexdollsmarket.png" alt="Sex Doll Torso" />
             <br />
             Sex Doll Torso
           </a>
