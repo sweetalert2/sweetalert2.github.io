@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-wZ9ImAsS.js';
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-cdbe54ab-OXNG757B.js';
-import { S as SandpackClient } from './base-80a1f760-rt3cC2f9.js';
-import './index-4dgXhobZ.js';
+import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-CrpNtgRN.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-cdbe54ab-Vw2cxk7w.js';
+import { S as SandpackClient } from './base-80a1f760-kF58_zud.js';
+import './index-bsjuV0IS.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -8831,7 +8831,7 @@ var SandpackStatic = /** @class */ (function (_super) {
             _this.iframe = selector;
         }
         if (!_this.iframe.getAttribute("sandbox")) {
-            _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts");
+            _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-downloads allow-pointer-lock");
             _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-write;");
         }
         _this.eventListener = _this.eventListener.bind(_this);
