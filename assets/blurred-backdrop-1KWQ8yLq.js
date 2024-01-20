@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-bsjuV0IS.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-CrpNtgRN.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-KG4YxDnT.js';
 
 const styles = (await __vitePreload(() => import('./blurred-backdrop-styles-u-G3rC1g.js'),true?__vite__mapDeps([]):void 0)).default;
 const src = (await __vitePreload(() => import('./blurred-backdrop-src-VnZ0mlDk.js'),true?__vite__mapDeps([]):void 0)).default;

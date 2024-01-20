@@ -1,28 +1,24 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-bsjuV0IS.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-CrpNtgRN.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-KG4YxDnT.js';
 
-const src = (await __vitePreload(() => import('./i18n-l10n-src-oslob9Qc.js'),true?__vite__mapDeps([]):void 0)).default;
+const styles = (await __vitePreload(() => import('./crop-image-styles-jvdpzhRy.js'),true?__vite__mapDeps([]):void 0)).default;
+const src = (await __vitePreload(() => import('./crop-image-src-bAxl8fwB.js'),true?__vite__mapDeps([]):void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Internationalization (i18n) and localization (l10n)" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "In this example ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.i18next.com/", children: "i18next" }),
-      " is used, but you can use any i18n library."
-    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Crop User Image with Cropper.js" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
       {
         dependencies: {
-          i18next: "latest"
+          "cropperjs": "latest",
+          "@github/mini-throttle": "latest"
         },
-        entry: "/App.ts",
         files: {
-          "/App.ts": src
+          "/App.ts": src,
+          "/styles.css": styles
         },
-        editorHeight: 600,
-        previewHeight: 250
+        previewHeight: 650
       }
     )
   ] });
