@@ -1,4 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-bsjuV0IS.js';
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-5tzMI-Ml.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     let promise = Promise.resolve();
@@ -478,15 +478,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-wnrzQG--.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-neTsO-MJ.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-292de3b8-O5MXpjH5.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-292de3b8-sW4Wxw-r.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-WDwM6bo8.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-h1YrICPa.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -21881,6 +21881,13 @@ class InputStream {
     this.token.value = token;
     this.token.end = end;
   }
+  /**
+  Accept a token ending at a specific given position.
+  */
+  acceptTokenTo(token, endPos) {
+    this.token.value = token;
+    this.token.end = endPos;
+  }
   getChunk() {
     if (this.pos >= this.chunk2Pos && this.pos < this.chunk2Pos + this.chunk2.length) {
       let { chunk, chunkPos } = this;
@@ -24629,7 +24636,7 @@ function htmlCompletionFor(schema, context) {
     else if (tree.name == "StartCloseTag" || tree.name == "IncompleteCloseTag") {
         return completeCloseTag(state, tree, pos, pos);
     }
-    else if (context.explicit && (tree.name == "OpenTag" || tree.name == "SelfClosingTag") || tree.name == "AttributeName") {
+    else if (tree.name == "OpenTag" || tree.name == "SelfClosingTag" || tree.name == "AttributeName") {
         return completeAttrName(state, schema, tree, tree.name == "AttributeName" ? tree.from : pos, pos);
     }
     else if (tree.name == "Is" || tree.name == "AttributeValue" || tree.name == "UnquotedAttributeValue") {
@@ -31486,7 +31493,7 @@ function Sandpack({
 export { Sandpack as S, __vitePreload as _, __extends as a, __awaiter$1 as b, __generator$1 as c, __assign$1 as d, createError as e, dequal as f, createPackageJSON as g, SandpackLogLevel as h, invariant as i, addPackageJSONIfNeeded as j, __spreadArray$1 as k, extractErrorDetails as l, nullthrows as n };
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/index-wnrzQG--.js","assets/base-80a1f760-6fzc6WHk.js","assets/consoleHook-cdbe54ab-Qeav_25t.js","assets/index-bsjuV0IS.js","assets/index-bcMWt4Py.css","assets/index-292de3b8-O5MXpjH5.js","assets/index-WDwM6bo8.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/index-neTsO-MJ.js","assets/base-80a1f760-9ePRNEhy.js","assets/consoleHook-cdbe54ab-gzFkOQvN.js","assets/index-5tzMI-Ml.js","assets/index-bcMWt4Py.css","assets/index-292de3b8-sW4Wxw-r.js","assets/index-h1YrICPa.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }

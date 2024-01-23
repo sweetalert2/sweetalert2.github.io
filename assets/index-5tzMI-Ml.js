@@ -494,7 +494,7 @@ var m$1 = reactDomExports;
 var sweetalert2_all = {exports: {}};
 
 /*!
-* sweetalert2 v11.10.3
+* sweetalert2 v11.10.4
 * Released under the MIT License.
 */
 
@@ -502,6 +502,24 @@ var sweetalert2_all = {exports: {}};
 	(function (global, factory) {
 	  module.exports = factory() ;
 	})(commonjsGlobal, (function () {
+	  function _callSuper(t, o, e) {
+	    return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
+	  }
+	  function _construct(t, e, r) {
+	    if (_isNativeReflectConstruct()) return Reflect.construct.apply(null, arguments);
+	    var o = [null];
+	    o.push.apply(o, e);
+	    var p = new (t.bind.apply(t, o))();
+	    return r && _setPrototypeOf(p, r.prototype), p;
+	  }
+	  function _isNativeReflectConstruct() {
+	    try {
+	      var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+	    } catch (t) {}
+	    return (_isNativeReflectConstruct = function () {
+	      return !!t;
+	    })();
+	  }
 	  function _iterableToArrayLimit(r, l) {
 	    var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
 	    if (null != t) {
@@ -603,32 +621,6 @@ var sweetalert2_all = {exports: {}};
 	    };
 	    return _setPrototypeOf(o, p);
 	  }
-	  function _isNativeReflectConstruct() {
-	    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-	    if (Reflect.construct.sham) return false;
-	    if (typeof Proxy === "function") return true;
-	    try {
-	      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-	      return true;
-	    } catch (e) {
-	      return false;
-	    }
-	  }
-	  function _construct(Parent, args, Class) {
-	    if (_isNativeReflectConstruct()) {
-	      _construct = Reflect.construct.bind();
-	    } else {
-	      _construct = function _construct(Parent, args, Class) {
-	        var a = [null];
-	        a.push.apply(a, args);
-	        var Constructor = Function.bind.apply(Parent, a);
-	        var instance = new Constructor();
-	        if (Class) _setPrototypeOf(instance, Class.prototype);
-	        return instance;
-	      };
-	    }
-	    return _construct.apply(null, arguments);
-	  }
 	  function _assertThisInitialized(self) {
 	    if (self === void 0) {
 	      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -642,20 +634,6 @@ var sweetalert2_all = {exports: {}};
 	      throw new TypeError("Derived constructors may only return object or undefined");
 	    }
 	    return _assertThisInitialized(self);
-	  }
-	  function _createSuper(Derived) {
-	    var hasNativeReflectConstruct = _isNativeReflectConstruct();
-	    return function _createSuperInternal() {
-	      var Super = _getPrototypeOf(Derived),
-	        result;
-	      if (hasNativeReflectConstruct) {
-	        var NewTarget = _getPrototypeOf(this).constructor;
-	        result = Reflect.construct(Super, arguments, NewTarget);
-	      } else {
-	        result = Super.apply(this, arguments);
-	      }
-	      return _possibleConstructorReturn(this, result);
-	    };
 	  }
 	  function _superPropBase(object, property) {
 	    while (!Object.prototype.hasOwnProperty.call(object, property)) {
@@ -2321,9 +2299,9 @@ var sweetalert2_all = {exports: {}};
 	    icon.style.borderColor = params.iconColor;
 	    for (var _i2 = 0, _arr = ['.swal2-success-line-tip', '.swal2-success-line-long', '.swal2-x-mark-line-left', '.swal2-x-mark-line-right']; _i2 < _arr.length; _i2++) {
 	      var sel = _arr[_i2];
-	      setStyle(icon, sel, 'backgroundColor', params.iconColor);
+	      setStyle(icon, sel, 'background-color', params.iconColor);
 	    }
-	    setStyle(icon, '.swal2-success-ring', 'borderColor', params.iconColor);
+	    setStyle(icon, '.swal2-success-ring', 'border-color', params.iconColor);
 	  };
 
 	  /**
@@ -4208,10 +4186,9 @@ var sweetalert2_all = {exports: {}};
 	  function mixin(mixinParams) {
 	    var MixinSwal = /*#__PURE__*/function (_this) {
 	      _inherits(MixinSwal, _this);
-	      var _super = _createSuper(MixinSwal);
 	      function MixinSwal() {
 	        _classCallCheck(this, MixinSwal);
-	        return _super.apply(this, arguments);
+	        return _callSuper(this, MixinSwal, arguments);
 	      }
 	      _createClass(MixinSwal, [{
 	        key: "_main",
@@ -5138,7 +5115,7 @@ var sweetalert2_all = {exports: {}};
 	    };
 	  });
 	  SweetAlert.DismissReason = DismissReason;
-	  SweetAlert.version = '11.10.3';
+	  SweetAlert.version = '11.10.4';
 
 	  var Swal = SweetAlert;
 	  // @ts-ignore
