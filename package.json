@@ -3,6 +3,7 @@
   "repository": "sweetalert2/sweetalert2.github.io",
   "homepage": "https://sweetalert2.github.io/",
   "description": "Documentation for SweetAlert2",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build:dev": "tsc && vite build",
