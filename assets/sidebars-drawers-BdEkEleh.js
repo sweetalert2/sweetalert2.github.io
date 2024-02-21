@@ -1,8 +1,8 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-5tzMI-Ml.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-eQxYAVSi.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-SfqBbM1W.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-DtzraQry.js';
 
-const html = (await __vitePreload(() => import('./sidebars-drawers-html-YW5_5UQ5.js'),true?__vite__mapDeps([]):void 0)).default;
-const src = (await __vitePreload(() => import('./sidebars-drawers-src-BwGdtZPr.js'),true?__vite__mapDeps([]):void 0)).default;
+const html = (await __vitePreload(() => import('./sidebars-drawers-html-Df5NjPCv.js'),true?__vite__mapDeps([]):void 0)).default;
+const src = (await __vitePreload(() => import('./sidebars-drawers-src-Bebhrty7.js'),true?__vite__mapDeps([]):void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),

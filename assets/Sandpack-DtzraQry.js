@@ -1,4 +1,4 @@
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-5tzMI-Ml.js';
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-SfqBbM1W.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     let promise = Promise.resolve();
@@ -478,15 +478,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-neTsO-MJ.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DPEGXG6F.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-292de3b8-sW4Wxw-r.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-292de3b8-DTdG_bRE.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-h1YrICPa.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CByT6A_q.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -3890,7 +3890,9 @@ class RangeSet {
             let curTo = Math.min(cursor.to, to);
             if (cursor.point) {
                 let active = cursor.activeForPoint(cursor.to);
-                let openCount = cursor.pointFrom < from ? active.length + 1 : Math.min(active.length, openRanges);
+                let openCount = cursor.pointFrom < from ? active.length + 1
+                    : cursor.point.startSide < 0 ? active.length
+                        : Math.min(active.length, openRanges);
                 iterator.point(pos, curTo, cursor.point, active, openCount, cursor.pointRank);
                 openRanges = Math.min(cursor.openEnd(curTo), active.length);
             }
@@ -7902,6 +7904,7 @@ class BlockGapWidget extends WidgetType {
     }
     get editable() { return true; }
     get estimatedHeight() { return this.height; }
+    ignoreEvent() { return false; }
 }
 function findCompositionNode(view, headPos) {
     let sel = view.observer.selectionRange;
@@ -10916,12 +10919,16 @@ class DOMChange {
                 !contains(view.contentDOM, domSel.anchorNode)
                 ? view.state.selection.main.anchor
                 : view.docView.posFromDOM(domSel.anchorNode, domSel.anchorOffset);
-            // iOS will refuse to select the block gaps when doing select-all
+            // iOS will refuse to select the block gaps when doing
+            // select-all.
+            // Chrome will put the selection *inside* them, confusing
+            // posFromDOM
             let vp = view.viewport;
-            if (browser.ios && view.state.selection.main.empty && head != anchor &&
+            if ((browser.ios || browser.chrome) && view.state.selection.main.empty && head != anchor &&
                 (vp.from > 0 || vp.to < view.state.doc.length)) {
-                let offFrom = vp.from - Math.min(head, anchor), offTo = vp.to - Math.max(head, anchor);
-                if ((offFrom == 0 || offFrom == 1) && (offTo == 0 || offTo == -1)) {
+                let from = Math.min(head, anchor), to = Math.max(head, anchor);
+                let offFrom = vp.from - from, offTo = vp.to - to;
+                if ((offFrom == 0 || offFrom == 1 || from == 0) && (offTo == 0 || offTo == -1 || to == view.state.doc.length)) {
                     head = 0;
                     anchor = view.state.doc.length;
                 }
@@ -17766,16 +17773,20 @@ class TreeHighlighter {
         this.markCache = Object.create(null);
         this.tree = syntaxTree(view.state);
         this.decorations = this.buildDeco(view, getHighlighters(view.state));
+        this.decoratedTo = view.viewport.to;
     }
     update(update) {
         let tree = syntaxTree(update.state), highlighters = getHighlighters(update.state);
         let styleChange = highlighters != getHighlighters(update.startState);
-        if (tree.length < update.view.viewport.to && !styleChange && tree.type == this.tree.type) {
+        let { viewport } = update.view, decoratedToMapped = update.changes.mapPos(this.decoratedTo, 1);
+        if (tree.length < viewport.to && !styleChange && tree.type == this.tree.type && decoratedToMapped >= viewport.to) {
             this.decorations = this.decorations.map(update.changes);
+            this.decoratedTo = decoratedToMapped;
         }
         else if (tree != this.tree || update.viewportChanged || styleChange) {
             this.tree = tree;
             this.decorations = this.buildDeco(update.view, highlighters);
+            this.decoratedTo = viewport.to;
         }
     }
     buildDeco(view, highlighters) {
@@ -23001,7 +23012,7 @@ const unitToken = new ExternalTokenizer(input => {
     let {next} = input;
     if (next == percent) { input.advance(); input.acceptToken(Unit); }
     if (isAlpha(next)) {
-      do { input.advance(); } while (isAlpha(input.next))
+      do { input.advance(); } while (isAlpha(input.next) || isDigit(input.next))
       input.acceptToken(Unit);
     }
   }
@@ -24094,7 +24105,7 @@ const keywords = /*@__PURE__*/"break case const continue default delete export e
 const typescriptKeywords = /*@__PURE__*/keywords.concat(/*@__PURE__*/["declare", "implements", "private", "protected", "public"].map(kwCompletion));
 /**
 JavaScript support. Includes [snippet](https://codemirror.net/6/docs/ref/#lang-javascript.snippets)
-completion.
+and local variable completion.
 */
 function javascript(config = {}) {
     let lang = config.jsx ? (config.typescript ? tsxLanguage : jsxLanguage)
@@ -24157,7 +24168,7 @@ const autoCloseTags$1 = /*@__PURE__*/EditorView.inputHandler.of((view, from, to,
         }
         else if (text == ">") {
             let openTag = findOpenTag(around);
-            if (openTag &&
+            if (openTag && openTag.name == "JSXOpenTag" &&
                 !/^\/?>|^<\//.test(state.doc.sliceString(head, head + 2)) &&
                 (name = elementName$1(state.doc, openTag, head)))
                 return { range, changes: { from: head, insert: `</${name}>` } };
@@ -26539,8 +26550,10 @@ var SandpackThemeProvider = function (_a) {
         return createTheme(id, standardizeStitchesTheme(theme));
     }, [theme, id]);
     reactExports.useEffect(function () {
-        if (themeFromProps !== "auto")
+        if (themeFromProps !== "auto") {
+            setPreferredTheme(themeFromProps);
             return;
+        }
         var colorSchemeChange = function (_a) {
             var matches = _a.matches;
             setPreferredTheme(matches ? "dark" : "light");
@@ -31493,7 +31506,7 @@ function Sandpack({
 export { Sandpack as S, __vitePreload as _, __extends as a, __awaiter$1 as b, __generator$1 as c, __assign$1 as d, createError as e, dequal as f, createPackageJSON as g, SandpackLogLevel as h, invariant as i, addPackageJSONIfNeeded as j, __spreadArray$1 as k, extractErrorDetails as l, nullthrows as n };
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/index-neTsO-MJ.js","assets/base-80a1f760-9ePRNEhy.js","assets/consoleHook-cdbe54ab-gzFkOQvN.js","assets/index-5tzMI-Ml.js","assets/index-bcMWt4Py.css","assets/index-292de3b8-sW4Wxw-r.js","assets/index-h1YrICPa.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/index-DPEGXG6F.js","assets/base-80a1f760-DajMXSB9.js","assets/consoleHook-cdbe54ab-DkZVGbWM.js","assets/index-SfqBbM1W.js","assets/index-Btwxa3g_.css","assets/index-292de3b8-DTdG_bRE.js","assets/index-CByT6A_q.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }

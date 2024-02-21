@@ -494,7 +494,7 @@ var m$1 = reactDomExports;
 var sweetalert2_all = {exports: {}};
 
 /*!
-* sweetalert2 v11.10.4
+* sweetalert2 v11.10.5
 * Released under the MIT License.
 */
 
@@ -3451,7 +3451,7 @@ var sweetalert2_all = {exports: {}};
 	      handleInputValidator(instance, inputValue, type);
 	    } else if (input && !input.checkValidity()) {
 	      instance.enableButtons();
-	      instance.showValidationMessage(innerParams.validationMessage);
+	      instance.showValidationMessage(innerParams.validationMessage || input.validationMessage);
 	    } else if (type === 'deny') {
 	      deny(instance, inputValue);
 	    } else {
@@ -5115,7 +5115,7 @@ var sweetalert2_all = {exports: {}};
 	    };
 	  });
 	  SweetAlert.DismissReason = DismissReason;
-	  SweetAlert.version = '11.10.4';
+	  SweetAlert.version = '11.10.5';
 
 	  var Swal = SweetAlert;
 	  // @ts-ignore

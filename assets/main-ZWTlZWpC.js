@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-5tzMI-Ml.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-SfqBbM1W.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -7117,11 +7117,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/annies-dollhouse.png", alt: "Annie's Dollhouse" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Annie's Dollhouse"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.mysextoyguide.com/", target: "_blank", rel: "noopener", "aria-label": "My Sex Toy Guide", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/my-sex-toy-guide.jpg", alt: "My Sex Toy Guide" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "My Sex Toy Guide"
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sextoycollective.com/", target: "_blank", rel: "noopener", "aria-label": "STC", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sextoycollective.jpg", alt: "STC" }),
