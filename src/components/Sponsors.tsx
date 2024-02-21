@@ -430,13 +430,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.mysextoyguide.com/" target="_blank" rel="noopener" aria-label="My Sex Toy Guide">
-            <img src="/images/sponsors/my-sex-toy-guide.jpg" alt="My Sex Toy Guide" />
-            <br />
-            My Sex Toy Guide
-          </a>
-        </div>
-        <div>
           <a href="https://sextoycollective.com/" target="_blank" rel="noopener" aria-label="STC">
             <img src="/images/sponsors/sextoycollective.jpg" alt="STC" />
             <br />
