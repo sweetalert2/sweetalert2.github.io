@@ -6851,6 +6851,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sexdollpartner.com/", target: "_blank", rel: "noopener", "aria-label": "SexDollPartner", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexdollpartner.jpg", alt: "SexDollPartner" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "SexDollPartner"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
