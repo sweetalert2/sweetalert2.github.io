@@ -134,6 +134,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.sexdollpartner.com/" target="_blank" rel="noopener" aria-label="SexDollPartner">
+            <img src="/images/sponsors/sexdollpartner.jpg" alt="SexDollPartner" />
+            <br />
+            SexDollPartner
+          </a>
+        </div>
+        <div>
           <a
             href="https://nexromance.com/playstore/index.php?sweetalert"
             target="_blank"
