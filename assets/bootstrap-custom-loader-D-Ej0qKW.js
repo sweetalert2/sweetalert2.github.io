@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-SfqBbM1W.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DtzraQry.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-DvrIAugk.js';
 
 const html = (await __vitePreload(() => import('./bootstrap-custom-loader-html-BdjybvJ4.js'),true?__vite__mapDeps([]):void 0)).default;
 const styles = (await __vitePreload(() => import('./bootstrap-custom-loader-styles-C4x6hTUU.js'),true?__vite__mapDeps([]):void 0)).default;

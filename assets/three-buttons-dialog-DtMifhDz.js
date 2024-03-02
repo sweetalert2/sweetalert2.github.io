@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-SfqBbM1W.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DtzraQry.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-DvrIAugk.js';
 
 const styles = (await __vitePreload(() => import('./three-buttons-dialog-styles-peX_1O_j.js'),true?__vite__mapDeps([]):void 0)).default;
 const src = (await __vitePreload(() => import('./three-buttons-dialog-src-BA2--ZoP.js'),true?__vite__mapDeps([]):void 0)).default;

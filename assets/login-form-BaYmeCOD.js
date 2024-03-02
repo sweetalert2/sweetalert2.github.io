@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-SfqBbM1W.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DtzraQry.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-DvrIAugk.js';
 
 const src = (await __vitePreload(() => import('./login-form-src-BA9U7aZe.js'),true?__vite__mapDeps([]):void 0)).default;
 function Recipe() {

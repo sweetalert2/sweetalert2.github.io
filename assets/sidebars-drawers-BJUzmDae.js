@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-SfqBbM1W.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DtzraQry.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-DvrIAugk.js';
 
 const html = (await __vitePreload(() => import('./sidebars-drawers-html-Df5NjPCv.js'),true?__vite__mapDeps([]):void 0)).default;
 const src = (await __vitePreload(() => import('./sidebars-drawers-src-Bebhrty7.js'),true?__vite__mapDeps([]):void 0)).default;

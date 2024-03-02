@@ -1,5 +1,5 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-DtzraQry.js';
-import { S as SandpackClient } from './base-80a1f760-DajMXSB9.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-DvrIAugk.js';
+import { S as SandpackClient } from './base-80a1f760-CiegsPXx.js';
 import './index-SfqBbM1W.js';
 
 /**
@@ -291,7 +291,7 @@ modules) {
 }
 
 var _a;
-var BUNDLER_URL = "https://".concat((_a = "2.12.0") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.13.2") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
@@ -433,28 +433,8 @@ var SandpackRuntime = /** @class */ (function (_super) {
                 path: next,
             }, _a)));
         }, {});
-        this.dispatch({
-            type: "compile",
-            codesandbox: true,
-            version: 3,
-            isInitializationCompile: isInitializationCompile,
-            modules: modules,
-            reactDevTools: this.options.reactDevTools,
-            externalResources: this.options.externalResources || [],
-            hasFileResolver: Boolean(this.options.fileResolver),
-            disableDependencyPreprocessing: this.sandboxSetup.disableDependencyPreprocessing,
-            template: this.sandboxSetup.template ||
-                getTemplate(packageJSON, normalizedModules),
-            showOpenInCodeSandbox: (_a = this.options.showOpenInCodeSandbox) !== null && _a !== void 0 ? _a : true,
-            showErrorScreen: (_b = this.options.showErrorScreen) !== null && _b !== void 0 ? _b : true,
-            showLoadingScreen: (_c = this.options.showLoadingScreen) !== null && _c !== void 0 ? _c : false,
-            skipEval: this.options.skipEval || false,
-            clearConsoleDisabled: !this.options.clearConsoleOnFirstCompile,
-            logLevel: (_d = this.options.logLevel) !== null && _d !== void 0 ? _d : SandpackLogLevel.Info,
-            customNpmRegistries: this.options.customNpmRegistries,
-            teamId: this.options.teamId,
-            sandboxId: this.options.sandboxId,
-        });
+        this.dispatch(__assign(__assign({}, this.options), { type: "compile", codesandbox: true, version: 3, isInitializationCompile: isInitializationCompile, modules: modules, reactDevTools: this.options.reactDevTools, externalResources: this.options.externalResources || [], hasFileResolver: Boolean(this.options.fileResolver), disableDependencyPreprocessing: this.sandboxSetup.disableDependencyPreprocessing, template: this.sandboxSetup.template ||
+                getTemplate(packageJSON, normalizedModules), showOpenInCodeSandbox: (_a = this.options.showOpenInCodeSandbox) !== null && _a !== void 0 ? _a : true, showErrorScreen: (_b = this.options.showErrorScreen) !== null && _b !== void 0 ? _b : true, showLoadingScreen: (_c = this.options.showLoadingScreen) !== null && _c !== void 0 ? _c : false, skipEval: this.options.skipEval || false, clearConsoleDisabled: !this.options.clearConsoleOnFirstCompile, logLevel: (_d = this.options.logLevel) !== null && _d !== void 0 ? _d : SandpackLogLevel.Info, customNpmRegistries: this.options.customNpmRegistries, teamId: this.options.teamId, sandboxId: this.options.sandboxId }));
     };
     SandpackRuntime.prototype.dispatch = function (message) {
         /**
