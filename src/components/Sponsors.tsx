@@ -179,13 +179,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://taboodude.com/" target="_blank" rel="noopener" aria-label="TabooDude">
-            <img src="/images/sponsors/taboodude.png" alt="TabooDude" />
-            <br />
-            TabooDude
-          </a>
-        </div>
-        <div>
           <a href="https://sexsitoys.com/lovense-games/" target="_blank" rel="noopener" aria-label="Sexsi Toys">
             <img src="/images/sponsors/sexsitoys.jpg" alt="Sexsi Toys" />
             <br />
@@ -210,13 +203,6 @@ export function Sponsors() {
             <br />
             Best Blowjob <br />
             Machines
-          </a>
-        </div>
-        <div>
-          <a href="https://escortsear.ch/" target="_blank" rel="noopener" aria-label="EscortSearch">
-            <img src="/images/sponsors/escortsearch.jpg" alt="EscortSearch" />
-            <br />
-            EscortSearch
           </a>
         </div>
         <div>
