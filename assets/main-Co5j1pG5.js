@@ -6870,11 +6870,6 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://pinktoys.co.uk/pocket-pussy/", target: "_blank", rel: "noopener", "aria-label": "Pocket pussy", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/pinktoys.png", alt: "Pocket pussy" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Pocket pussy"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
