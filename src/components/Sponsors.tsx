@@ -153,13 +153,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://pinktoys.co.uk/pocket-pussy/" target="_blank" rel="noopener" aria-label="Pocket pussy">
-            <img src="/images/sponsors/pinktoys.png" alt="Pocket pussy" />
-            <br />
-            Pocket pussy
-          </a>
-        </div>
-        <div>
           <a
             href="https://www.xspacecup.com/"
             target="_blank"
