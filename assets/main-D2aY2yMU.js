@@ -6894,11 +6894,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Vlixa"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://taboodude.com/", target: "_blank", rel: "noopener", "aria-label": "TabooDude", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/taboodude.png", alt: "TabooDude" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "TabooDude"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sexsitoys.com/lovense-games/", target: "_blank", rel: "noopener", "aria-label": "Sexsi Toys", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexsitoys.jpg", alt: "Sexsi Toys" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
@@ -6925,11 +6920,6 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://escortsear.ch/", target: "_blank", rel: "noopener", "aria-label": "EscortSearch", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/escortsearch.jpg", alt: "EscortSearch" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "EscortSearch"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.nakedoll.com/", target: "_blank", rel: "noopener", "aria-label": "NakeDoll", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/nakedoll.png", alt: "NakeDoll" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
