@@ -6920,11 +6920,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "NakeDoll"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://readysetcam.com/", target: "_blank", rel: "noopener", "aria-label": "Ready Set Cam", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/readysetcam.png", alt: "Ready Set Cam" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Ready Set Cam"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.onahole.com/", target: "_blank", rel: "noopener", "aria-label": "hentai sex toys", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/onahole.png", alt: "hentai sex toys" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
