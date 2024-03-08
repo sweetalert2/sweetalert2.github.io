@@ -206,13 +206,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://readysetcam.com/" target="_blank" rel="noopener" aria-label="Ready Set Cam">
-            <img src="/images/sponsors/readysetcam.png" alt="Ready Set Cam" />
-            <br />
-            Ready Set Cam
-          </a>
-        </div>
-        <div>
           <a href="https://www.onahole.com/" target="_blank" rel="noopener" aria-label="hentai sex toys">
             <img src="/images/sponsors/onahole.png" alt="hentai sex toys" />
             <br />
