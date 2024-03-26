@@ -6851,6 +6851,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://dreamlovedoll.com/", target: "_blank", rel: "noopener", "aria-label": "DreamLoveDoll", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/dreamlovedoll.jpg", alt: "DreamLoveDoll" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "DreamLoveDoll"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://thepinkrabbits.com/", target: "_blank", rel: "noopener", "aria-label": "The Pink Rabbits", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/thepinkrabbits.png", alt: "The Pink Rabbits" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
