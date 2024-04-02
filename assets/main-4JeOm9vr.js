@@ -6823,11 +6823,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/celltrackingapps.png", alt: "Phone Tracking Apps" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Phone Tracking Apps"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.mybitcoinslots.com/", target: "_blank", rel: "noopener", "aria-label": "My Bitcoin slots", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/mybitcoinslots.png", alt: "My Bitcoin slots" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "My Bitcoin slots"
       ] }) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "nsfw-sponsors", children: "NSFW Sponsors" }),
