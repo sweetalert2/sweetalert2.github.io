@@ -101,13 +101,6 @@ export function Sponsors() {
             Phone Tracking Apps
           </a>
         </div>
-        <div>
-          <a href="https://www.mybitcoinslots.com/" target="_blank" rel="noopener" aria-label="My Bitcoin slots">
-            <img src="/images/sponsors/mybitcoinslots.png" alt="My Bitcoin slots" />
-            <br />
-            My Bitcoin slots
-          </a>
-        </div>
       </div>
 
       <h3 id="nsfw-sponsors">NSFW Sponsors</h3>
