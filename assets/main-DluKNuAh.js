@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-SfqBbM1W.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-DcWLTZFK.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);

@@ -1,8 +1,8 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-SfqBbM1W.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DvrIAugk.js';
-import { C as CreatePortalDocs } from './CreatePortalDocs-DJHDD_yd.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-DcWLTZFK.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-CP9vwbmV.js';
+import { C as CreatePortalDocs } from './CreatePortalDocs-BW2hv_vo.js';
 
-const src = (await __vitePreload(() => import('./input-datepicker-src-BgEjI0Hh.js'),true?__vite__mapDeps([]):void 0)).default;
+const src = (await __vitePreload(() => import('./input-datepicker-src-BgEjI0Hh.js'),true?[]:void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
@@ -44,9 +44,3 @@ function Recipe() {
   ] });
 }
 client.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));
-function __vite__mapDeps(indexes) {
-  if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = []
-  }
-  return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
-}

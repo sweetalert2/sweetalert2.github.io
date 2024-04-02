@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-DvrIAugk.js';
-import { S as SandpackClient } from './base-80a1f760-CiegsPXx.js';
-import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from './consoleHook-cdbe54ab-BEsjnHCY.js';
-import './index-SfqBbM1W.js';
+import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-CP9vwbmV.js';
+import { S as SandpackClient } from './base-80a1f760-BUHFRayT.js';
+import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from './consoleHook-cdbe54ab-BL0HZWMk.js';
+import './index-DcWLTZFK.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -1340,6 +1340,7 @@ var SandpackNode = /** @class */ (function (_super) {
             var element = document.querySelector(selector);
             nullthrows(element, "The element '".concat(selector, "' was not found"));
             this.iframe = document.createElement("iframe");
+            element === null || element === void 0 ? void 0 : element.appendChild(this.iframe);
         }
         else {
             this.iframe = selector;
