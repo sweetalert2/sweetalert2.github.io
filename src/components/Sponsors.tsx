@@ -25,13 +25,6 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
-          <a href="https://insadown.com/" target="_blank" rel="noopener" aria-label="InsaDown">
-            <img src="/images/sponsors/insadown.png" alt="InsaDown" />
-            <br />
-            InsaDown
-          </a>
-        </div>
-        <div>
           <a href="https://dlxplugins.com/" target="_blank" rel="noopener" aria-label="DLX Plugins">
             <img src="https://avatars.githubusercontent.com/u/106675919?s=200&v=4" alt="DLX Plugins" />
             <br />
