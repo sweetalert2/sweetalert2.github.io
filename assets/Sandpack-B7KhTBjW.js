@@ -1,6 +1,6 @@
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/index-bQ0rFUWj.js","assets/base-80a1f760-BUHFRayT.js","assets/consoleHook-cdbe54ab-BL0HZWMk.js","assets/index-DcWLTZFK.js","assets/index-CIMPvQrM.css","assets/index-292de3b8-CWqZAk8t.js","assets/index-DhRFkMqw.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/index-qe8F44ok.js","assets/base-80a1f760-CYXiZl-w.js","assets/consoleHook-cdbe54ab-HbUN-0ZP.js","assets/index-DcWLTZFK.js","assets/index-CIMPvQrM.css","assets/index-292de3b8-CMCqIiKm.js","assets/index-DfNVAqFr.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
@@ -492,15 +492,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-bQ0rFUWj.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-qe8F44ok.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-292de3b8-CWqZAk8t.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-292de3b8-CMCqIiKm.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DhRFkMqw.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DfNVAqFr.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -7429,11 +7429,10 @@ class DocView extends ContentView {
         super();
         this.view = view;
         this.decorations = [];
-        this.dynamicDecorationMap = [false];
+        this.dynamicDecorationMap = [];
         this.domChanged = null;
         this.hasComposition = null;
         this.markedForComposition = new Set;
-        this.compositionBarrier = Decoration.none;
         this.lastCompositionAfterCursor = false;
         // Track a minimum width for the editor. When measuring sizes in
         // measureVisibleLineHeights, this is updated to point at the width
@@ -7698,7 +7697,7 @@ class DocView extends ContentView {
     // composition, avoid moving it across it and disrupting the
     // composition.
     suppressWidgetCursorChange(sel, cursor) {
-        return this.hasComposition && cursor.empty && !this.compositionBarrier.size &&
+        return this.hasComposition && cursor.empty &&
             isEquivalentPosition(sel.focusNode, sel.focusOffset, sel.anchorNode, sel.anchorOffset) &&
             this.posFromDOM(sel.focusNode, sel.focusOffset) == cursor.head;
     }
@@ -7906,7 +7905,7 @@ class DocView extends ContentView {
         return Decoration.set(deco);
     }
     updateDeco() {
-        let i = 1;
+        let i = 0;
         let allDeco = this.view.state.facet(decorations).map(d => {
             let dynamic = this.dynamicDecorationMap[i++] = typeof d == "function";
             return dynamic ? d(this.view) : d;
@@ -7922,7 +7921,6 @@ class DocView extends ContentView {
             allDeco.push(RangeSet.join(outerDeco));
         }
         this.decorations = [
-            this.compositionBarrier,
             ...allDeco,
             this.computeBlockGapDeco(),
             this.view.viewState.lineGapDeco
@@ -7930,34 +7928,6 @@ class DocView extends ContentView {
         while (i < this.decorations.length)
             this.dynamicDecorationMap[i++] = false;
         return this.decorations;
-    }
-    // Starting a composition will style the inserted text with the
-    // style of the text before it, and this is only cleared when the
-    // composition ends, because touching it before that will abort it.
-    // This (called from compositionstart handler) tries to notice when
-    // the cursor is after a non-inclusive mark, where the styling could
-    // be jarring, and insert an ad-hoc widget before the cursor to
-    // isolate it from the style before it.
-    maybeCreateCompositionBarrier() {
-        let { main: { head, empty } } = this.view.state.selection;
-        if (!empty)
-            return false;
-        let found = null;
-        for (let set of this.decorations) {
-            set.between(head, head, (from, to, value) => {
-                if (value.point)
-                    found = false;
-                else if (value.endSide < 0 && from < head && to == head)
-                    found = true;
-            });
-            if (found === false)
-                break;
-        }
-        this.compositionBarrier = found ? Decoration.set(compositionBarrierWidget.range(head)) : Decoration.none;
-        return !!found;
-    }
-    clearCompositionBarrier() {
-        this.compositionBarrier = Decoration.none;
     }
     scrollIntoView(target) {
         if (target.isSnapshot) {
@@ -7991,7 +7961,6 @@ class DocView extends ContentView {
         scrollRectIntoView(this.view.scrollDOM, targetRect, range.head < range.anchor ? -1 : 1, target.x, target.y, Math.max(Math.min(target.xMargin, offsetWidth), -offsetWidth), Math.max(Math.min(target.yMargin, offsetHeight), -offsetHeight), this.view.textDirection == Direction.LTR);
     }
 }
-const compositionBarrierWidget = /*@__PURE__*/Decoration.widget({ side: -1, widget: NullWidget.inline });
 function betweenUneditable(pos) {
     return pos.node.nodeType == 1 && pos.node.firstChild &&
         (pos.offset == 0 || pos.node.childNodes[pos.offset - 1].contentEditable == "false") &&
@@ -9233,10 +9202,6 @@ observers.compositionstart = observers.compositionupdate = view => {
     if (view.inputState.composing < 0) {
         // FIXME possibly set a timeout to clear it again on Android
         view.inputState.composing = 0;
-        if (view.docView.maybeCreateCompositionBarrier()) {
-            view.update([]);
-            view.docView.clearCompositionBarrier();
-        }
     }
 };
 observers.compositionend = view => {
@@ -11435,9 +11400,12 @@ class DOMObserver {
         let { view } = this;
         // The Selection object is broken in shadow roots in Safari. See
         // https://github.com/codemirror/dev/issues/414
+        let selection = getSelection(view.root);
+        if (!selection)
+            return false;
         let range = browser.safari && view.root.nodeType == 11 &&
             deepActiveElement(this.dom.ownerDocument) == this.dom &&
-            safariSelectionRangeHack(this.view) || getSelection(view.root);
+            safariSelectionRangeHack(this.view, selection) || selection;
         if (!range || this.selectionRange.eq(range))
             return false;
         let local = hasSelection(this.dom, range);
@@ -11709,8 +11677,24 @@ function findChild(cView, dom, dir) {
     }
     return null;
 }
+function buildSelectionRangeFromRange(view, range) {
+    let anchorNode = range.startContainer, anchorOffset = range.startOffset;
+    let focusNode = range.endContainer, focusOffset = range.endOffset;
+    let curAnchor = view.docView.domAtPos(view.state.selection.main.anchor);
+    // Since such a range doesn't distinguish between anchor and head,
+    // use a heuristic that flips it around if its end matches the
+    // current anchor.
+    if (isEquivalentPosition(curAnchor.node, curAnchor.offset, focusNode, focusOffset))
+        [anchorNode, anchorOffset, focusNode, focusOffset] = [focusNode, focusOffset, anchorNode, anchorOffset];
+    return { anchorNode, anchorOffset, focusNode, focusOffset };
+}
 // Used to work around a Safari Selection/shadow DOM bug (#414)
-function safariSelectionRangeHack(view) {
+function safariSelectionRangeHack(view, selection) {
+    if (selection.getComposedRanges) {
+        let range = selection.getComposedRanges(view.root)[0];
+        if (range)
+            return buildSelectionRangeFromRange(view, range);
+    }
     let found = null;
     // Because Safari (at least in 2018-2021) doesn't provide regular
     // access to the selection inside a shadowroot, we have to perform a
@@ -11725,17 +11709,7 @@ function safariSelectionRangeHack(view) {
     view.contentDOM.addEventListener("beforeinput", read, true);
     view.dom.ownerDocument.execCommand("indent");
     view.contentDOM.removeEventListener("beforeinput", read, true);
-    if (!found)
-        return null;
-    let anchorNode = found.startContainer, anchorOffset = found.startOffset;
-    let focusNode = found.endContainer, focusOffset = found.endOffset;
-    let curAnchor = view.docView.domAtPos(view.state.selection.main.anchor);
-    // Since such a range doesn't distinguish between anchor and head,
-    // use a heuristic that flips it around if its end matches the
-    // current anchor.
-    if (isEquivalentPosition(curAnchor.node, curAnchor.offset, focusNode, focusOffset))
-        [anchorNode, anchorOffset, focusNode, focusOffset] = [focusNode, focusOffset, anchorNode, anchorOffset];
-    return { anchorNode, anchorOffset, focusNode, focusOffset };
+    return found ? buildSelectionRangeFromRange(view, found) : null;
 }
 
 // The editor's update state machine looks something like this:

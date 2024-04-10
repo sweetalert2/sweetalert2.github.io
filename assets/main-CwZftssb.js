@@ -6769,6 +6769,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.vancouvercoir.com/", target: "_blank", rel: "noopener", "aria-label": "Vancouver Coir", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/vancouvercoir.png", alt: "Vancouver Coir" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Vancouver Coir"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://dlxplugins.com/", target: "_blank", rel: "noopener", "aria-label": "DLX Plugins", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://avatars.githubusercontent.com/u/106675919?s=200&v=4", alt: "DLX Plugins" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),

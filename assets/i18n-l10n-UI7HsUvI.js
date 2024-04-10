@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-DcWLTZFK.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-CP9vwbmV.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-B7KhTBjW.js';
 
 const src = (await __vitePreload(() => import('./i18n-l10n-src-DiKUhmni.js'),true?[]:void 0)).default;
 function Recipe() {

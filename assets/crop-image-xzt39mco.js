@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-DcWLTZFK.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-CP9vwbmV.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-B7KhTBjW.js';
 
 const styles = (await __vitePreload(() => import('./crop-image-styles-CMR7yiwP.js'),true?[]:void 0)).default;
 const src = (await __vitePreload(() => import('./crop-image-src-wjtf5nDo.js'),true?[]:void 0)).default;

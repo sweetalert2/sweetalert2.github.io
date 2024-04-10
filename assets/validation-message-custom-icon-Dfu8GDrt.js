@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-DcWLTZFK.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-CP9vwbmV.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-B7KhTBjW.js';
 
 const html = (await __vitePreload(() => import('./validation-message-custom-icon-html-CLE7f6In.js'),true?[]:void 0)).default;
 const styles = (await __vitePreload(() => import('./validation-message-custom-icon-styles-DFS6maJi.js'),true?[]:void 0)).default;
