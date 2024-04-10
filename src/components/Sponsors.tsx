@@ -25,6 +25,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.vancouvercoir.com/" target="_blank" rel="noopener" aria-label="Vancouver Coir">
+            <img src="/images/sponsors/vancouvercoir.png" alt="Vancouver Coir" />
+            <br />
+            Vancouver Coir
+          </a>
+        </div>
+        <div>
           <a href="https://dlxplugins.com/" target="_blank" rel="noopener" aria-label="DLX Plugins">
             <img src="https://avatars.githubusercontent.com/u/106675919?s=200&v=4" alt="DLX Plugins" />
             <br />
