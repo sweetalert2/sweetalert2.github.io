@@ -90,7 +90,7 @@ export function ConfigurationParams() {
                 <br />
                 <i>undefined</i>
               </td>
-              <td>Use this to change the color of the icon.</td>
+              <td>Use this to change the color of the icon, the value will be used in the <CodeExample code={`icon.style.color`} withoutCodepen/> and <CodeExample code={`icon.style.borderColor`} withoutCodepen/></td>
             </tr>
             <tr id="iconHtml">
               <td>
