@@ -6769,6 +6769,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.coinbit.fi/", target: "_blank", rel: "noopener", "aria-label": "Kryptovaluutat", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/coinbit.png", alt: "Kryptovaluutat" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Kryptovaluutat"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.vancouvercoir.com/", target: "_blank", rel: "noopener", "aria-label": "Vancouver Coir", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/vancouvercoir.png", alt: "Vancouver Coir" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
