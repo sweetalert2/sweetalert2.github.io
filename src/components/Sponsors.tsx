@@ -25,6 +25,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.coinbit.fi/" target="_blank" rel="noopener" aria-label="Kryptovaluutat">
+            <img src="/images/sponsors/coinbit.png" alt="Kryptovaluutat" />
+            <br />
+            Kryptovaluutat
+          </a>
+        </div>
+        <div>
           <a href="https://www.vancouvercoir.com/" target="_blank" rel="noopener" aria-label="Vancouver Coir">
             <img src="/images/sponsors/vancouvercoir.png" alt="Vancouver Coir" />
             <br />
