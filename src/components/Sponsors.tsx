@@ -134,6 +134,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://dollauthority.com/" target="_blank" rel="noopener" aria-label="Doll Authority">
+            <img src="/images/sponsors/dollauthority.png" alt="Doll Authority" />
+            <br />
+            Doll Authority
+          </a>
+        </div>
+        <div>
           <a href="https://dreamlovedoll.com/" target="_blank" rel="noopener" aria-label="DreamLoveDoll">
             <img src="/images/sponsors/dreamlovedoll.jpg" alt="DreamLoveDoll" />
             <br />
