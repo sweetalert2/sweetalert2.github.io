@@ -1,6 +1,6 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-B7KhTBjW.js';
-import { S as SandpackClient } from './base-80a1f760-CYXiZl-w.js';
-import './index-DcWLTZFK.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-DHN3wPqj.js';
+import { S as SandpackClient } from './base-80a1f760-CPIcpqXN.js';
+import './index-2aUyiz0m.js';
 
 /**
  * This file is a copy of the resolver from the `codesandbox-api` package.
@@ -291,7 +291,7 @@ modules) {
 }
 
 var _a;
-var BUNDLER_URL = "https://".concat((_a = "2.13.7") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.13.8") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {

@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-B7KhTBjW.js';
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-cdbe54ab-HbUN-0ZP.js';
-import { S as SandpackClient } from './base-80a1f760-CYXiZl-w.js';
-import './index-DcWLTZFK.js';
+import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-DHN3wPqj.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-59e792cb-FYAPbnlb.js';
+import { S as SandpackClient } from './base-80a1f760-CPIcpqXN.js';
+import './index-2aUyiz0m.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -29,7 +29,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   // file that has been converted to a CommonJS file using a Babel-
   // compatible transform (i.e. "__esModule" has not been set), then set
   // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
