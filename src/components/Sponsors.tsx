@@ -60,13 +60,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://refermate.com/" target="_blank" rel="noopener" aria-label="Refermate">
-            <img src="/images/sponsors/refermate.png" alt="Refermate" />
-            <br />
-            Refermate
-          </a>
-        </div>
-        <div>
           <a href="https://roboflow.com/" target="_blank" rel="noopener" aria-label="Roboflow">
             <img src="/images/sponsors/roboflow.png" alt="Roboflow" />
             <br />
