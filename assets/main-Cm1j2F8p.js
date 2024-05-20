@@ -6794,11 +6794,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "iStarTips"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://refermate.com/", target: "_blank", rel: "noopener", "aria-label": "Refermate", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/refermate.png", alt: "Refermate" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Refermate"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://roboflow.com/", target: "_blank", rel: "noopener", "aria-label": "Roboflow", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/roboflow.png", alt: "Roboflow" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
