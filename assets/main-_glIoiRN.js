@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-2aUyiz0m.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-93M32JYF.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -6860,11 +6860,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/dreamlovedoll.jpg", alt: "DreamLoveDoll" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "DreamLoveDoll"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://thepinkrabbits.com/", target: "_blank", rel: "noopener", "aria-label": "The Pink Rabbits", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/thepinkrabbits.png", alt: "The Pink Rabbits" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "The Pink Rabbits"
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sexdollpartner.com/", target: "_blank", rel: "noopener", "aria-label": "SexDollPartner", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexdollpartner.jpg", alt: "SexDollPartner" }),

@@ -1,5 +1,5 @@
-const __vite__fileDeps=["assets/index-BglLczyL.js","assets/base-80a1f760-CPIcpqXN.js","assets/consoleHook-59e792cb-FYAPbnlb.js","assets/index-2aUyiz0m.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-FMJlbpU8.js","assets/index-B7xEcfbd.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-2aUyiz0m.js';
+const __vite__fileDeps=["assets/index-CL1rogE4.js","assets/base-80a1f760-CE-QMj2R.js","assets/consoleHook-59e792cb-DxZU404p.js","assets/index-93M32JYF.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-CHbZNpi8.js","assets/index-DyLLo8e0.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-93M32JYF.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
     let promise = Promise.resolve();
@@ -474,15 +474,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-BglLczyL.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-CL1rogE4.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-FMJlbpU8.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-CHbZNpi8.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-B7xEcfbd.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DyLLo8e0.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -5454,7 +5454,7 @@ var browser = {
     android: /*@__PURE__*//Android\b/.test(nav.userAgent),
     webkit,
     safari,
-    webkit_version: webkit ? +(/*@__PURE__*//\bAppleWebKit\/(\d+)/.exec(navigator.userAgent) || [0, 0])[1] : 0,
+    webkit_version: webkit ? +(/*@__PURE__*//\bAppleWebKit\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
     tabSize: doc.documentElement.style.tabSize != null ? "tab-size" : "-moz-tab-size"
 };
 
@@ -7767,6 +7767,12 @@ class DocView extends ContentView {
                 best = child;
                 bestPos = start;
             }
+            else if (best && start == pos && end == pos && child instanceof BlockWidgetView && Math.abs(side) < 2) {
+                if (child.deco.startSide < 0)
+                    break;
+                else if (i)
+                    best = null;
+            }
             off = start;
         }
         return best ? best.coordsAt(pos - bestPos, side) : null;
@@ -8443,9 +8449,16 @@ class InputState {
         // (after which we retroactively handle them and reset the DOM) to
         // avoid messing up the virtual keyboard state.
         this.pendingIOSKey = undefined;
+        /**
+        When enabled (>-1), tab presses are not given to key handlers,
+        leaving the browser's default behavior. If >0, the mode expires
+        at that timestamp, and any other keypress clears it.
+        Esc enables temporary tab focus mode for two seconds when not
+        otherwise handled.
+        */
+        this.tabFocusMode = -1;
         this.lastSelectionOrigin = null;
         this.lastSelectionTime = 0;
-        this.lastEscPress = 0;
         this.lastContextMenu = 0;
         this.scrollHandlers = [];
         this.handlers = Object.create(null);
@@ -8525,10 +8538,10 @@ class InputState {
         // Must always run, even if a custom handler handled the event
         this.lastKeyCode = event.keyCode;
         this.lastKeyTime = Date.now();
-        if (event.keyCode == 9 && Date.now() < this.lastEscPress + 2000)
+        if (event.keyCode == 9 && this.tabFocusMode > -1 && (!this.tabFocusMode || Date.now() <= this.tabFocusMode))
             return true;
-        if (event.keyCode != 27 && modifierCodes.indexOf(event.keyCode) < 0)
-            this.view.inputState.lastEscPress = 0;
+        if (this.tabFocusMode > 0 && event.keyCode != 27 && modifierCodes.indexOf(event.keyCode) < 0)
+            this.tabFocusMode = -1;
         // Chrome for Android usually doesn't fire proper key events, but
         // occasionally does, usually surrounded by a bunch of complicated
         // composition changes. When an enter or backspace key event is
@@ -8767,7 +8780,9 @@ class MouseSelection {
         this.mustSelect = false;
     }
     update(update) {
-        if (this.style.update(update))
+        if (update.transactions.some(tr => tr.isUserEvent("input.type")))
+            this.destroy();
+        else if (this.style.update(update))
             setTimeout(() => this.select(this.lastEvent), 20);
     }
 }
@@ -8864,8 +8879,8 @@ observers.scroll = view => {
 };
 handlers.keydown = (view, event) => {
     view.inputState.setSelectionOrigin("select");
-    if (event.keyCode == 27)
-        view.inputState.lastEscPress = Date.now();
+    if (event.keyCode == 27 && view.inputState.tabFocusMode != 0)
+        view.inputState.tabFocusMode = Date.now() + 2000;
     return false;
 };
 observers.touchstart = (view, e) => {
@@ -8891,7 +8906,12 @@ handlers.mousedown = (view, event) => {
         let mustFocus = !view.hasFocus;
         view.inputState.startMouseSelection(new MouseSelection(view, event, style, mustFocus));
         if (mustFocus)
-            view.observer.ignore(() => focusPreventScroll(view.contentDOM));
+            view.observer.ignore(() => {
+                focusPreventScroll(view.contentDOM);
+                let active = view.root.activeElement;
+                if (active && !active.contains(view.contentDOM))
+                    active.blur();
+            });
         let mouseSel = view.inputState.mouseSelection;
         if (mouseSel) {
             mouseSel.start(event);
@@ -10105,9 +10125,12 @@ class ViewState {
         this.heightOracle = new HeightOracle(guessWrapping);
         this.stateDeco = state.facet(decorations).filter(d => typeof d != "function");
         this.heightMap = HeightMap.empty().applyChanges(this.stateDeco, Text.empty, this.heightOracle.setDoc(state.doc), [new ChangedRange(0, 0, 0, state.doc.length)]);
-        this.viewport = this.getViewport(0, null);
+        for (let i = 0; i < 2; i++) {
+            this.viewport = this.getViewport(0, null);
+            if (!this.updateForViewport())
+                break;
+        }
         this.updateViewportLines();
-        this.updateForViewport();
         this.lineGaps = this.ensureLineGaps([]);
         this.lineGapDeco = Decoration.set(this.lineGaps.map(gap => gap.draw(this, false)));
         this.computeVisibleRanges();
@@ -10122,13 +10145,18 @@ class ViewState {
             }
         }
         this.viewports = viewports.sort((a, b) => a.from - b.from);
+        return this.updateScaler();
+    }
+    updateScaler() {
+        let scaler = this.scaler;
         this.scaler = this.heightMap.height <= 7000000 /* VP.MaxDOMHeight */ ? IdScaler :
             new BigScaler(this.heightOracle, this.heightMap, this.viewports);
+        return scaler.eq(this.scaler) ? 0 : 2 /* UpdateFlag.Height */;
     }
     updateViewportLines() {
         this.viewportLines = [];
         this.heightMap.forEachLine(this.viewport.from, this.viewport.to, this.heightOracle.setDoc(this.state.doc), 0, 0, block => {
-            this.viewportLines.push(this.scaler.scale == 1 ? block : scaleBlock(block, this.scaler));
+            this.viewportLines.push(scaleBlock(block, this.scaler));
         });
     }
     update(update, scrollTarget = null) {
@@ -10154,11 +10182,10 @@ class ViewState {
         if (scrollTarget && (scrollTarget.range.head < viewport.from || scrollTarget.range.head > viewport.to) ||
             !this.viewportIsAppropriate(viewport))
             viewport = this.getViewport(0, scrollTarget);
-        let updateLines = !update.changes.empty || (update.flags & 2 /* UpdateFlag.Height */) ||
-            viewport.from != this.viewport.from || viewport.to != this.viewport.to;
+        let viewportChange = viewport.from != this.viewport.from || viewport.to != this.viewport.to;
         this.viewport = viewport;
-        this.updateForViewport();
-        if (updateLines)
+        update.flags |= this.updateForViewport();
+        if (viewportChange || !update.changes.empty || (update.flags & 2 /* UpdateFlag.Height */))
             this.updateViewportLines();
         if (this.lineGaps.length || this.viewport.to - this.viewport.from > (2000 /* LG.Margin */ << 1))
             this.updateLineGaps(this.ensureLineGaps(this.mapLineGaps(this.lineGaps, update.changes)));
@@ -10256,9 +10283,12 @@ class ViewState {
         let viewportChange = !this.viewportIsAppropriate(this.viewport, bias) ||
             this.scrollTarget && (this.scrollTarget.range.head < this.viewport.from ||
                 this.scrollTarget.range.head > this.viewport.to);
-        if (viewportChange)
+        if (viewportChange) {
+            if (result & 2 /* UpdateFlag.Height */)
+                result |= this.updateScaler();
             this.viewport = this.getViewport(bias, this.scrollTarget);
-        this.updateForViewport();
+            result |= this.updateForViewport();
+        }
         if ((result & 2 /* UpdateFlag.Height */) || viewportChange)
             this.updateViewportLines();
         if (this.lineGaps.length || this.viewport.to - this.viewport.from > (2000 /* LG.Margin */ << 1))
@@ -10447,11 +10477,14 @@ class ViewState {
         return changed ? 4 /* UpdateFlag.Viewport */ : 0;
     }
     lineBlockAt(pos) {
-        return (pos >= this.viewport.from && pos <= this.viewport.to && this.viewportLines.find(b => b.from <= pos && b.to >= pos)) ||
+        return (pos >= this.viewport.from && pos <= this.viewport.to &&
+            this.viewportLines.find(b => b.from <= pos && b.to >= pos)) ||
             scaleBlock(this.heightMap.lineAt(pos, QueryType.ByPos, this.heightOracle, 0, 0), this.scaler);
     }
     lineBlockAtHeight(height) {
-        return scaleBlock(this.heightMap.lineAt(this.scaler.fromDOM(height), QueryType.ByHeight, this.heightOracle, 0, 0), this.scaler);
+        return (height >= this.viewportLines[0].top && height <= this.viewportLines[this.viewportLines.length - 1].bottom &&
+            this.viewportLines.find(l => l.top <= height && l.bottom >= height)) ||
+            scaleBlock(this.heightMap.lineAt(this.scaler.fromDOM(height), QueryType.ByHeight, this.heightOracle, 0, 0), this.scaler);
     }
     scrollAnchorAt(scrollTop) {
         let block = this.lineBlockAtHeight(scrollTop + 8);
@@ -10526,7 +10559,8 @@ function find(array, f) {
 const IdScaler = {
     toDOM(n) { return n; },
     fromDOM(n) { return n; },
-    scale: 1
+    scale: 1,
+    eq(other) { return other == this; }
 };
 // When the height is too big (> VP.MaxDOMHeight), scale down the
 // regions outside the viewports so that the total height is
@@ -10568,6 +10602,12 @@ class BigScaler {
             base = vp.bottom;
             domBase = vp.domBottom;
         }
+    }
+    eq(other) {
+        if (!(other instanceof BigScaler))
+            return false;
+        return this.scale == other.scale && this.viewports.length == other.viewports.length &&
+            this.viewports.every((vp, i) => vp.from == other.viewports[i].from && vp.to == other.viewports[i].to);
     }
 }
 function scaleBlock(block, scaler) {
@@ -10960,6 +11000,7 @@ class DOMChange {
         this.typeOver = typeOver;
         this.bounds = null;
         this.text = "";
+        this.domChanged = start > -1;
         let { impreciseHead: iHead, impreciseAnchor: iAnchor } = view.docView;
         if (view.state.readOnly && start > -1) {
             // Ignore changes when the editor is read-only
@@ -11584,8 +11625,9 @@ class DOMObserver {
         }
         let startState = this.view.state;
         let handled = applyDOMChange(this.view, domChange);
-        // The view wasn't updated
-        if (this.view.state == startState)
+        // The view wasn't updated but DOM/selection changes were seen. Reset the view.
+        if (this.view.state == startState &&
+            (domChange.domChanged || domChange.newSel && !domChange.newSel.main.eq(this.view.state.selection.main)))
             this.view.update([]);
         return handled;
     }
@@ -12552,6 +12594,25 @@ class EditorView {
         return scrollIntoView.of(new ScrollTarget(EditorSelection.cursor(ref.from), "start", "start", ref.top - scrollTop, scrollLeft, true));
     }
     /**
+    Enable or disable tab-focus mode, which disables key bindings
+    for Tab and Shift-Tab, letting the browser's default
+    focus-changing behavior go through instead. This is useful to
+    prevent trapping keyboard users in your editor.
+    
+    Without argument, this toggles the mode. With a boolean, it
+    enables (true) or disables it (false). Given a number, it
+    temporarily enables the mode until that number of milliseconds
+    have passed or another non-Tab key is pressed.
+    */
+    setTabFocusMode(to) {
+        if (to == null)
+            this.inputState.tabFocusMode = this.inputState.tabFocusMode < 0 ? 0 : -1;
+        else if (typeof to == "boolean")
+            this.inputState.tabFocusMode = to ? 0 : -1;
+        else if (this.inputState.tabFocusMode != 0)
+            this.inputState.tabFocusMode = Date.now() + to;
+    }
+    /**
     Returns an extension that can be used to add DOM event handlers.
     The value should be an object mapping event names to handler
     functions. For any given event, such functions are ordered by
@@ -12955,8 +13016,9 @@ function buildKeymap(bindings, platform = currentPlatform) {
                 let scopeObj = bound[scope] || (bound[scope] = Object.create(null));
                 if (!scopeObj._any)
                     scopeObj._any = { preventDefault: false, stopPropagation: false, run: [] };
+                let { any } = b;
                 for (let key in scopeObj)
-                    scopeObj[key].run.push(b.any);
+                    scopeObj[key].run.push(view => any(view, currentKeyEvent));
             }
         let name = b[platform] || b.key;
         if (!name)
@@ -12969,7 +13031,9 @@ function buildKeymap(bindings, platform = currentPlatform) {
     }
     return bound;
 }
+let currentKeyEvent = null;
 function runHandlers(map, event, view, scope) {
+    currentKeyEvent = event;
     let name = keyName(event);
     let charCode = codePointAt(name, 0), isChar = codePointSize(charCode) == name.length && name != " ";
     let prefix = "", handled = false, prevented = false, stopPropagation = false;
@@ -12986,7 +13050,7 @@ function runHandlers(map, event, view, scope) {
             for (let cmd of binding.run)
                 if (!ran.has(cmd)) {
                     ran.add(cmd);
-                    if (cmd(view, event)) {
+                    if (cmd(view)) {
                         if (binding.stopPropagation)
                             stopPropagation = true;
                         return true;
@@ -13028,20 +13092,26 @@ function runHandlers(map, event, view, scope) {
         handled = true;
     if (handled && stopPropagation)
         event.stopPropagation();
+    currentKeyEvent = null;
     return handled;
 }
 
 const CanHidePrimary = !browser.ios; // FIXME test IE
 const themeSpec = {
     ".cm-line": {
-        "& ::selection": { backgroundColor: "transparent !important" },
-        "&::selection": { backgroundColor: "transparent !important" }
+        "& ::selection, &::selection": { backgroundColor: "transparent !important" },
+    },
+    ".cm-content": {
+        "& :focus": {
+            caretColor: "initial !important",
+            "&::selection, & ::selection": {
+                backgroundColor: "Highlight !important"
+            }
+        }
     }
 };
-if (CanHidePrimary) {
-    themeSpec[".cm-line"].caretColor = "transparent !important";
-    themeSpec[".cm-content"] = { caretColor: "transparent !important" };
-}
+if (CanHidePrimary)
+    themeSpec[".cm-line"].caretColor = themeSpec[".cm-content"].caretColor = "transparent !important";
 
 function iterMatches(doc, re, from, to, f) {
     re.lastIndex = 0;
@@ -18364,8 +18434,9 @@ class Snippet {
         let fields = [];
         let lines = [], positions = [], m;
         for (let line of template.split(/\r\n?|\n/)) {
-            while (m = /[#$]\{(?:(\d+)(?::([^}]*))?|([^}]*))\}/.exec(line)) {
-                let seq = m[1] ? +m[1] : null, name = m[2] || m[3] || "", found = -1;
+            while (m = /[#$]\{(?:(\d+)(?::([^}]*))?|((?:\\[{}]|[^}])*))\}/.exec(line)) {
+                let seq = m[1] ? +m[1] : null, rawName = m[2] || m[3] || "", found = -1;
+                let name = rawName.replace(/\\[{}]/g, m => m[1]);
                 for (let i = 0; i < fields.length; i++) {
                     if (seq != null ? fields[i].seq == seq : name ? fields[i].name == name : false)
                         found = i;
@@ -18381,16 +18452,16 @@ class Snippet {
                             pos.field++;
                 }
                 positions.push(new FieldPos(found, lines.length, m.index, m.index + name.length));
-                line = line.slice(0, m.index) + name + line.slice(m.index + m[0].length);
+                line = line.slice(0, m.index) + rawName + line.slice(m.index + m[0].length);
             }
-            for (let esc; esc = /\\([{}])/.exec(line);) {
-                line = line.slice(0, esc.index) + esc[1] + line.slice(esc.index + esc[0].length);
+            line = line.replace(/\\([{}])/g, (_, brace, index) => {
                 for (let pos of positions)
-                    if (pos.line == lines.length && pos.from > esc.index) {
+                    if (pos.line == lines.length && pos.from > index) {
                         pos.from--;
                         pos.to--;
                     }
-            }
+                return brace;
+            });
             lines.push(line);
         }
         return new Snippet(lines, positions);
@@ -20090,6 +20161,17 @@ const indentLess = ({ state, dispatch }) => {
     return true;
 };
 /**
+Enables or disables
+[tab-focus mode](https://codemirror.net/6/docs/ref/#view.EditorView.setTabFocusMode). While on, this
+prevents the editor's key bindings from capturing Tab or
+Shift-Tab, making it possible for the user to move focus out of
+the editor with the keyboard.
+*/
+const toggleTabFocusMode = view => {
+    view.setTabFocusMode();
+    return true;
+};
+/**
 Array of key bindings containing the Emacs-style bindings that are
 available on macOS by default.
 
@@ -20205,6 +20287,7 @@ The default keymap. Includes all bindings from
 - Shift-Ctrl-\\ (Shift-Cmd-\\ on macOS): [`cursorMatchingBracket`](https://codemirror.net/6/docs/ref/#commands.cursorMatchingBracket)
 - Ctrl-/ (Cmd-/ on macOS): [`toggleComment`](https://codemirror.net/6/docs/ref/#commands.toggleComment).
 - Shift-Alt-a: [`toggleBlockComment`](https://codemirror.net/6/docs/ref/#commands.toggleBlockComment).
+- Ctrl-m (Alt-Shift-m on macOS): [`toggleTabFocusMode`](https://codemirror.net/6/docs/ref/#commands.toggleTabFocusMode).
 */
 const defaultKeymap = /*@__PURE__*/[
     { key: "Alt-ArrowLeft", mac: "Ctrl-ArrowLeft", run: cursorSyntaxLeft, shift: selectSyntaxLeft },
@@ -20223,7 +20306,8 @@ const defaultKeymap = /*@__PURE__*/[
     { key: "Shift-Mod-k", run: deleteLine },
     { key: "Shift-Mod-\\", run: cursorMatchingBracket },
     { key: "Mod-/", run: toggleComment },
-    { key: "Alt-A", run: toggleBlockComment }
+    { key: "Alt-A", run: toggleBlockComment },
+    { key: "Ctrl-m", mac: "Shift-Alt-m", run: toggleTabFocusMode },
 ].concat(standardKeymap);
 
 /**
@@ -21382,6 +21466,8 @@ class Stack {
     var _a;
     let depth = action >> 19, type = action & 65535;
     let { parser } = this.p;
+    if (this.reducePos < this.pos - 25)
+      this.setLookAhead(this.pos);
     let dPrec = parser.dynamicPrecedence(type);
     if (dPrec)
       this.score += dPrec;
@@ -22229,11 +22315,11 @@ function cutAt(tree, pos, side) {
           return side < 0 ? Math.max(0, Math.min(
             cursor.to - 1,
             pos - 25
-            /* Safety.Margin */
+            /* Lookahead.Margin */
           )) : Math.min(tree.length, Math.max(
             cursor.from + 1,
             pos + 25
-            /* Safety.Margin */
+            /* Lookahead.Margin */
           ));
         if (side < 0 ? cursor.prevSibling() : cursor.nextSibling())
           break;
@@ -23548,8 +23634,6 @@ const lessThan = 60, greaterThan = 62, slash$1 = 47, question$1 = 63, bang = 33,
 function ElementContext(name, parent) {
   this.name = name;
   this.parent = parent;
-  this.hash = parent ? parent.hash : 0;
-  for (let i = 0; i < name.length; i++) this.hash += (this.hash << 4) + name.charCodeAt(i) + (name.charCodeAt(i) << 8);
 }
 
 const startTagTerms = [StartTag, StartSelfClosingTag, StartScriptTag, StartStyleTag, StartTextareaTag];
@@ -23567,7 +23651,6 @@ const elementContext = new ContextTracker({
     return type == StartTag || type == OpenTag
       ? new ElementContext(tagNameAfter(input, 1) || "", context) : context
   },
-  hash(context) { return context ? context.hash : 0 },
   strict: false
 });
 
@@ -23770,7 +23853,7 @@ function configureNesting(tags = [], attributes = []) {
     if (id == Element && other.length) {
       let n = node.node, open = n.firstChild, tagName = open && findTagName(open, input), attrs;
       if (tagName) for (let tag of other) {
-        if (tag.tag == tagName && (!tag.attrs || tag.attrs(attrs || (attrs = getAttrs(n, input))))) {
+        if (tag.tag == tagName && (!tag.attrs || tag.attrs(attrs || (attrs = getAttrs(open, input))))) {
           let close = n.lastChild;
           let to = close.type.id == CloseTag ? close.from : n.to;
           if (to > open.to)
@@ -27727,7 +27810,6 @@ var convertedFilesToBundlerFiles = function (files) {
 var useAppState = function (props, files) {
     var _a = reactExports.useState({
         editorState: "pristine",
-        teamId: props.teamId,
     }), state = _a[0], setState = _a[1];
     var originalStateFromProps = getSandpackStateFromProps(props);
     var editorState = dequal(originalStateFromProps.files, files)
@@ -28277,15 +28359,15 @@ var useFiles = function (props) {
 
 var Sandpack$1 = reactExports.createContext(null);
 var SandpackProvider = function (props) {
-    var _a, _b;
+    var _a, _b, _c;
     var children = props.children, options = props.options, style = props.style, className = props.className, theme = props.theme;
-    var _c = useFiles(props), fileState = _c[0], fileOperations = _c[1];
-    var _d = useClient(props, fileState), clientState = _d[0], _e = _d[1], dispatchMessage = _e.dispatchMessage, addListener = _e.addListener, clientOperations = __rest(_e, ["dispatchMessage", "addListener"]);
+    var _d = useFiles(props), fileState = _d[0], fileOperations = _d[1];
+    var _e = useClient(props, fileState), clientState = _e[0], _f = _e[1], dispatchMessage = _f.dispatchMessage, addListener = _f.addListener, clientOperations = __rest(_f, ["dispatchMessage", "addListener"]);
     var appState = useAppState(props, fileState.files);
     reactExports.useEffect(function () {
         clientOperations.initializeSandpackIframe();
     }, []);
-    return (jsxRuntimeExports.jsx(Sandpack$1.Provider, { value: __assign(__assign(__assign(__assign(__assign(__assign({}, fileState), clientState), appState), fileOperations), clientOperations), { autoReload: (_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.autoReload) !== null && _b !== void 0 ? _b : true, listen: addListener, dispatch: dispatchMessage }), children: jsxRuntimeExports.jsx(ClassNamesProvider, { classes: options === null || options === void 0 ? void 0 : options.classes, children: jsxRuntimeExports.jsx(SandpackThemeProvider, { className: className, style: style, theme: theme, children: children }) }) }));
+    return (jsxRuntimeExports.jsx(Sandpack$1.Provider, { value: __assign(__assign(__assign(__assign(__assign(__assign({}, fileState), clientState), appState), fileOperations), clientOperations), { autoReload: (_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.autoReload) !== null && _b !== void 0 ? _b : true, teamId: props === null || props === void 0 ? void 0 : props.teamId, exportOptions: (_c = props === null || props === void 0 ? void 0 : props.customSetup) === null || _c === void 0 ? void 0 : _c.exportOptions, listen: addListener, dispatch: dispatchMessage }), children: jsxRuntimeExports.jsx(ClassNamesProvider, { classes: options === null || options === void 0 ? void 0 : options.classes, children: jsxRuntimeExports.jsx(SandpackThemeProvider, { className: className, style: style, theme: theme, children: children }) }) }));
 };
 /**
  * @category Provider
@@ -29744,19 +29826,66 @@ var getFileParameters = function (files, environment) {
     }, {});
     return getParameters(__assign({ files: normalizedFiles }, (environment ? { template: environment } : null)));
 };
-var UnstyledOpenInCodeSandboxButton = function (_a) {
-    var _b, _c, _d;
-    var children = _a.children, props = __rest(_a, ["children"]);
+var UnstyledOpenInCodeSandboxButton = function (props) {
     var sandpack = useSandpack().sandpack;
+    if (sandpack.exportOptions) {
+        return jsxRuntimeExports.jsx(ExportToWorkspaceButton, __assign({ state: sandpack }, props));
+    }
+    return jsxRuntimeExports.jsx(RegularExportButton, __assign({ state: sandpack }, props));
+};
+var ExportToWorkspaceButton = function (_a) {
+    var children = _a.children, state = _a.state, props = __rest(_a, ["children", "state"]);
+    var submit = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var normalizedFiles, response, data;
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (!((_a = state.exportOptions) === null || _a === void 0 ? void 0 : _a.apiToken)) {
+                        throw new Error("Missing `apiToken` property");
+                    }
+                    normalizedFiles = Object.keys(state.files).reduce(function (prev, next) {
+                        var _a;
+                        var fileName = next.replace("/", "");
+                        return __assign(__assign({}, prev), (_a = {}, _a[fileName] = state.files[next], _a));
+                    }, {});
+                    return [4 /*yield*/, fetch("https://api.codesandbox.io/sandbox", {
+                            method: "POST",
+                            body: JSON.stringify({
+                                template: state.environment,
+                                files: normalizedFiles,
+                                privacy: state.exportOptions.privacy === "public" ? 0 : 2,
+                            }),
+                            headers: {
+                                Authorization: "Bearer ".concat(state.exportOptions.apiToken),
+                                "Content-Type": "application/json",
+                                "X-CSB-API-Version": "2023-07-01",
+                            },
+                        })];
+                case 1:
+                    response = _b.sent();
+                    return [4 /*yield*/, response.json()];
+                case 2:
+                    data = _b.sent();
+                    window.open("https://codesandbox.io/p/sandbox/".concat(data.data.alias, "?file=/").concat(state.activeFile, "&utm-source=storybook-addon"), "_blank");
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    return (jsxRuntimeExports.jsx("button", __assign({ onClick: submit, title: "Export to workspace in CodeSandbox", type: "button" }, props, { children: children })));
+};
+var RegularExportButton = function (_a) {
+    var _b, _c, _d;
+    var children = _a.children, state = _a.state, props = __rest(_a, ["children", "state"]);
     var formRef = reactExports.useRef(null);
     var _e = reactExports.useState(), paramsValues = _e[0], setParamsValues = _e[1];
     reactExports.useEffect(function debounce() {
         var timer = setTimeout(function () {
-            var params = getFileParameters(sandpack.files, sandpack.environment);
+            var params = getFileParameters(state.files, state.environment);
             var searchParams = new URLSearchParams({
                 parameters: params,
                 query: new URLSearchParams({
-                    file: sandpack.activeFile,
+                    file: state.activeFile,
                     utm_medium: "sandpack",
                 }).toString(),
             });
@@ -29765,18 +29894,18 @@ var UnstyledOpenInCodeSandboxButton = function (_a) {
         return function () {
             clearTimeout(timer);
         };
-    }, [sandpack.activeFile, sandpack.environment, sandpack.files]);
+    }, [state.activeFile, state.environment, state.files]);
     /**
      * This is a safe limit to avoid too long requests (401),
      * as all parameters are attached in the URL
      */
     if (((_d = (_c = (_b = paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.get) === null || _b === void 0 ? void 0 : _b.call(paramsValues, "parameters")) === null || _c === void 0 ? void 0 : _c.length) !== null && _d !== void 0 ? _d : 0) > 1500) {
-        return (jsxRuntimeExports.jsxs("button", __assign({ onClick: function () { var _a; return (_a = formRef.current) === null || _a === void 0 ? void 0 : _a.submit(); }, title: "Open in CodeSandbox", type: "button" }, props, { children: [jsxRuntimeExports.jsxs("form", { ref: formRef, action: CSB_URL, method: "POST", style: { visibility: "hidden" }, target: "_blank", children: [jsxRuntimeExports.jsx("input", { name: "environment", type: "hidden", value: sandpack.environment === "node" ? "server" : sandpack.environment }), Array.from(paramsValues, function (_a) {
+        return (jsxRuntimeExports.jsxs("button", __assign({ onClick: function () { var _a; return (_a = formRef.current) === null || _a === void 0 ? void 0 : _a.submit(); }, title: "Open in CodeSandbox", type: "button" }, props, { children: [jsxRuntimeExports.jsxs("form", { ref: formRef, action: CSB_URL, method: "POST", style: { visibility: "hidden" }, target: "_blank", children: [jsxRuntimeExports.jsx("input", { name: "environment", type: "hidden", value: state.environment === "node" ? "server" : state.environment }), Array.from(paramsValues, function (_a) {
                             var key = _a[0], value = _a[1];
                             return (jsxRuntimeExports.jsx("input", { name: key, type: "hidden", value: value }, key));
                         })] }), children] })));
     }
-    return (jsxRuntimeExports.jsx("a", __assign({ href: "".concat(CSB_URL, "?").concat(paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.toString(), "&environment=").concat(sandpack.environment === "node" ? "server" : sandpack.environment), rel: "noreferrer noopener", target: "_blank", title: "Open in CodeSandbox" }, props, { children: children })));
+    return (jsxRuntimeExports.jsx("a", __assign({ href: "".concat(CSB_URL, "?").concat(paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.toString(), "&environment=").concat(state.environment === "node" ? "server" : state.environment), rel: "noreferrer noopener", target: "_blank", title: "Open in CodeSandbox" }, props, { children: children })));
 };
 
 var OpenInCodeSandboxButton = function () {
