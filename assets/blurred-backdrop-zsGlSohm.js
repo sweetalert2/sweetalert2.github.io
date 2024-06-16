@@ -1,8 +1,8 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-93M32JYF.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-f6rf7RVm.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-D4ZWgQgJ.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-C7RcvmU5.js';
 
-const styles = (await __vitePreload(() => import('./blurred-backdrop-styles-C64CZ6tG.js'),true?[]:void 0)).default;
-const src = (await __vitePreload(() => import('./blurred-backdrop-src-DGri78JS.js'),true?[]:void 0)).default;
+const styles = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./blurred-backdrop-styles-C64CZ6tG.js');return { default: __vite_default__ }},true?[]:void 0)).default;
+const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./blurred-backdrop-src-DGri78JS.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),

@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-93M32JYF.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-D4ZWgQgJ.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -13,8 +13,7 @@ const useHash = () => {
   }, []);
   const updateHash = reactExports.useCallback(
     (newHash) => {
-      if (newHash !== hash)
-        window.location.hash = newHash;
+      if (newHash !== hash) window.location.hash = newHash;
     },
     [hash]
   );
@@ -6773,11 +6772,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/coinbit.png", alt: "Kryptovaluutat" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Kryptovaluutat"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.vancouvercoir.com/", target: "_blank", rel: "noopener", "aria-label": "Vancouver Coir", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/vancouvercoir.png", alt: "Vancouver Coir" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Vancouver Coir"
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://dlxplugins.com/", target: "_blank", rel: "noopener", "aria-label": "DLX Plugins", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://avatars.githubusercontent.com/u/106675919?s=200&v=4", alt: "DLX Plugins" }),

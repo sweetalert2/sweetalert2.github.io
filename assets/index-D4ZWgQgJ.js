@@ -1,45 +1,39 @@
 true&&(function polyfill() {
-    const relList = document.createElement('link').relList;
-    if (relList && relList.supports && relList.supports('modulepreload')) {
-        return;
+  const relList = document.createElement("link").relList;
+  if (relList && relList.supports && relList.supports("modulepreload")) {
+    return;
+  }
+  for (const link of document.querySelectorAll('link[rel="modulepreload"]')) {
+    processPreload(link);
+  }
+  new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      if (mutation.type !== "childList") {
+        continue;
+      }
+      for (const node of mutation.addedNodes) {
+        if (node.tagName === "LINK" && node.rel === "modulepreload")
+          processPreload(node);
+      }
     }
-    for (const link of document.querySelectorAll('link[rel="modulepreload"]')) {
-        processPreload(link);
-    }
-    new MutationObserver((mutations) => {
-        for (const mutation of mutations) {
-            if (mutation.type !== 'childList') {
-                continue;
-            }
-            for (const node of mutation.addedNodes) {
-                if (node.tagName === 'LINK' && node.rel === 'modulepreload')
-                    processPreload(node);
-            }
-        }
-    }).observe(document, { childList: true, subtree: true });
-    function getFetchOpts(link) {
-        const fetchOpts = {};
-        if (link.integrity)
-            fetchOpts.integrity = link.integrity;
-        if (link.referrerPolicy)
-            fetchOpts.referrerPolicy = link.referrerPolicy;
-        if (link.crossOrigin === 'use-credentials')
-            fetchOpts.credentials = 'include';
-        else if (link.crossOrigin === 'anonymous')
-            fetchOpts.credentials = 'omit';
-        else
-            fetchOpts.credentials = 'same-origin';
-        return fetchOpts;
-    }
-    function processPreload(link) {
-        if (link.ep)
-            // ep marker = processed
-            return;
-        link.ep = true;
-        // prepopulate the load record
-        const fetchOpts = getFetchOpts(link);
-        fetch(link.href, fetchOpts);
-    }
+  }).observe(document, { childList: true, subtree: true });
+  function getFetchOpts(link) {
+    const fetchOpts = {};
+    if (link.integrity) fetchOpts.integrity = link.integrity;
+    if (link.referrerPolicy) fetchOpts.referrerPolicy = link.referrerPolicy;
+    if (link.crossOrigin === "use-credentials")
+      fetchOpts.credentials = "include";
+    else if (link.crossOrigin === "anonymous") fetchOpts.credentials = "omit";
+    else fetchOpts.credentials = "same-origin";
+    return fetchOpts;
+  }
+  function processPreload(link) {
+    if (link.ep)
+      return;
+    link.ep = true;
+    const fetchOpts = getFetchOpts(link);
+    fetch(link.href, fetchOpts);
+  }
 }());
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -5244,50 +5238,41 @@ function o() {
   return o = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, o.apply(this, arguments);
 }
 function i(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
 function c(e2, t2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return e3;
+    if (Array.isArray(e3)) return e3;
   }(e2) || function(e3, t3) {
     var n2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
-    if (null == n2)
-      return;
+    if (null == n2) return;
     var r2, o2, i2 = [], c2 = true, a2 = false;
     try {
-      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true)
-        ;
+      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true) ;
     } catch (e4) {
       a2 = true, o2 = e4;
     } finally {
       try {
         c2 || null == n2.return || n2.return();
       } finally {
-        if (a2)
-          throw o2;
+        if (a2) throw o2;
       }
     }
     return i2;
@@ -5297,33 +5282,28 @@ function c(e2, t2) {
 }
 function a(e2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return l(e3);
+    if (Array.isArray(e3)) return l(e3);
   }(e2) || function(e3) {
-    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-      return Array.from(e3);
+    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
   }(e2) || u(e2) || function() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function u(e2, t2) {
   if (e2) {
-    if ("string" == typeof e2)
-      return l(e2, t2);
+    if ("string" == typeof e2) return l(e2, t2);
     var n2 = Object.prototype.toString.call(e2).slice(8, -1);
     return "Object" === n2 && e2.constructor && (n2 = e2.constructor.name), "Map" === n2 || "Set" === n2 ? Array.from(e2) : "Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2) ? l(e2, t2) : void 0;
   }
 }
 function l(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 var s, f, p, m, v, d = {}, y = [], h = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
 function b(e2, t2) {
-  for (var n2 in t2)
-    e2[n2] = t2[n2];
+  for (var n2 in t2) e2[n2] = t2[n2];
   return e2;
 }
 function g(e2) {
@@ -5332,14 +5312,9 @@ function g(e2) {
 }
 function _(e2, t2, n2) {
   var r2, o2, i2, c2 = arguments, a2 = {};
-  for (i2 in t2)
-    "key" == i2 ? r2 = t2[i2] : "ref" == i2 ? o2 = t2[i2] : a2[i2] = t2[i2];
-  if (arguments.length > 3)
-    for (n2 = [n2], i2 = 3; i2 < arguments.length; i2++)
-      n2.push(c2[i2]);
-  if (null != n2 && (a2.children = n2), "function" == typeof e2 && null != e2.defaultProps)
-    for (i2 in e2.defaultProps)
-      void 0 === a2[i2] && (a2[i2] = e2.defaultProps[i2]);
+  for (i2 in t2) "key" == i2 ? r2 = t2[i2] : "ref" == i2 ? o2 = t2[i2] : a2[i2] = t2[i2];
+  if (arguments.length > 3) for (n2 = [n2], i2 = 3; i2 < arguments.length; i2++) n2.push(c2[i2]);
+  if (null != n2 && (a2.children = n2), "function" == typeof e2 && null != e2.defaultProps) for (i2 in e2.defaultProps) void 0 === a2[i2] && (a2[i2] = e2.defaultProps[i2]);
   return O(e2, a2, r2, o2, null);
 }
 function O(e2, t2, n2, r2, o2) {
@@ -5353,21 +5328,17 @@ function w(e2, t2) {
   this.props = e2, this.context = t2;
 }
 function j(e2, t2) {
-  if (null == t2)
-    return e2.__ ? j(e2.__, e2.__.__k.indexOf(e2) + 1) : null;
-  for (var n2; t2 < e2.__k.length; t2++)
-    if (null != (n2 = e2.__k[t2]) && null != n2.__e)
-      return n2.__e;
+  if (null == t2) return e2.__ ? j(e2.__, e2.__.__k.indexOf(e2) + 1) : null;
+  for (var n2; t2 < e2.__k.length; t2++) if (null != (n2 = e2.__k[t2]) && null != n2.__e) return n2.__e;
   return "function" == typeof e2.type ? j(e2) : null;
 }
 function E(e2) {
   var t2, n2;
   if (null != (e2 = e2.__) && null != e2.__c) {
-    for (e2.__e = e2.__c.base = null, t2 = 0; t2 < e2.__k.length; t2++)
-      if (null != (n2 = e2.__k[t2]) && null != n2.__e) {
-        e2.__e = e2.__c.base = n2.__e;
-        break;
-      }
+    for (e2.__e = e2.__c.base = null, t2 = 0; t2 < e2.__k.length; t2++) if (null != (n2 = e2.__k[t2]) && null != n2.__e) {
+      e2.__e = e2.__c.base = n2.__e;
+      break;
+    }
     return E(e2);
   }
 }
@@ -5375,40 +5346,32 @@ function P(e2) {
   (!e2.__d && (e2.__d = true) && f.push(e2) && !I.__r++ || m !== s.debounceRendering) && ((m = s.debounceRendering) || p)(I);
 }
 function I() {
-  for (var e2; I.__r = f.length; )
-    e2 = f.sort(function(e3, t2) {
-      return e3.__v.__b - t2.__v.__b;
-    }), f = [], e2.some(function(e3) {
-      var t2, n2, r2, o2, i2, c2;
-      e3.__d && (i2 = (o2 = (t2 = e3).__v).__e, (c2 = t2.__P) && (n2 = [], (r2 = b({}, o2)).__v = o2.__v + 1, q(c2, o2, r2, t2.__n, void 0 !== c2.ownerSVGElement, null != o2.__h ? [i2] : null, n2, null == i2 ? j(o2) : i2, o2.__h), L(n2, o2), o2.__e != i2 && E(o2)));
-    });
+  for (var e2; I.__r = f.length; ) e2 = f.sort(function(e3, t2) {
+    return e3.__v.__b - t2.__v.__b;
+  }), f = [], e2.some(function(e3) {
+    var t2, n2, r2, o2, i2, c2;
+    e3.__d && (i2 = (o2 = (t2 = e3).__v).__e, (c2 = t2.__P) && (n2 = [], (r2 = b({}, o2)).__v = o2.__v + 1, q(c2, o2, r2, t2.__n, void 0 !== c2.ownerSVGElement, null != o2.__h ? [i2] : null, n2, null == i2 ? j(o2) : i2, o2.__h), L(n2, o2), o2.__e != i2 && E(o2)));
+  });
 }
 function D(e2, t2, n2, r2, o2, i2, c2, a2, u2, l2) {
   var s2, f2, p2, m2, v2, h2, b2, g2 = r2 && r2.__k || y, _2 = g2.length;
-  for (n2.__k = [], s2 = 0; s2 < t2.length; s2++)
-    if (null != (m2 = n2.__k[s2] = null == (m2 = t2[s2]) || "boolean" == typeof m2 ? null : "string" == typeof m2 || "number" == typeof m2 ? O(null, m2, null, null, m2) : Array.isArray(m2) ? O(S, { children: m2 }, null, null, null) : m2.__b > 0 ? O(m2.type, m2.props, m2.key, null, m2.__v) : m2)) {
-      if (m2.__ = n2, m2.__b = n2.__b + 1, null === (p2 = g2[s2]) || p2 && m2.key == p2.key && m2.type === p2.type)
-        g2[s2] = void 0;
-      else
-        for (f2 = 0; f2 < _2; f2++) {
-          if ((p2 = g2[f2]) && m2.key == p2.key && m2.type === p2.type) {
-            g2[f2] = void 0;
-            break;
-          }
-          p2 = null;
-        }
-      q(e2, m2, p2 = p2 || d, o2, i2, c2, a2, u2, l2), v2 = m2.__e, (f2 = m2.ref) && p2.ref != f2 && (b2 || (b2 = []), p2.ref && b2.push(p2.ref, null, m2), b2.push(f2, m2.__c || v2, m2)), null != v2 ? (null == h2 && (h2 = v2), "function" == typeof m2.type && null != m2.__k && m2.__k === p2.__k ? m2.__d = u2 = k(m2, u2, e2) : u2 = C(e2, m2, p2, g2, v2, u2), l2 || "option" !== n2.type ? "function" == typeof n2.type && (n2.__d = u2) : e2.value = "") : u2 && p2.__e == u2 && u2.parentNode != e2 && (u2 = j(p2));
+  for (n2.__k = [], s2 = 0; s2 < t2.length; s2++) if (null != (m2 = n2.__k[s2] = null == (m2 = t2[s2]) || "boolean" == typeof m2 ? null : "string" == typeof m2 || "number" == typeof m2 ? O(null, m2, null, null, m2) : Array.isArray(m2) ? O(S, { children: m2 }, null, null, null) : m2.__b > 0 ? O(m2.type, m2.props, m2.key, null, m2.__v) : m2)) {
+    if (m2.__ = n2, m2.__b = n2.__b + 1, null === (p2 = g2[s2]) || p2 && m2.key == p2.key && m2.type === p2.type) g2[s2] = void 0;
+    else for (f2 = 0; f2 < _2; f2++) {
+      if ((p2 = g2[f2]) && m2.key == p2.key && m2.type === p2.type) {
+        g2[f2] = void 0;
+        break;
+      }
+      p2 = null;
     }
-  for (n2.__e = h2, s2 = _2; s2--; )
-    null != g2[s2] && ("function" == typeof n2.type && null != g2[s2].__e && g2[s2].__e == n2.__d && (n2.__d = j(r2, s2 + 1)), U(g2[s2], g2[s2]));
-  if (b2)
-    for (s2 = 0; s2 < b2.length; s2++)
-      H(b2[s2], b2[++s2], b2[++s2]);
+    q(e2, m2, p2 = p2 || d, o2, i2, c2, a2, u2, l2), v2 = m2.__e, (f2 = m2.ref) && p2.ref != f2 && (b2 || (b2 = []), p2.ref && b2.push(p2.ref, null, m2), b2.push(f2, m2.__c || v2, m2)), null != v2 ? (null == h2 && (h2 = v2), "function" == typeof m2.type && null != m2.__k && m2.__k === p2.__k ? m2.__d = u2 = k(m2, u2, e2) : u2 = C(e2, m2, p2, g2, v2, u2), l2 || "option" !== n2.type ? "function" == typeof n2.type && (n2.__d = u2) : e2.value = "") : u2 && p2.__e == u2 && u2.parentNode != e2 && (u2 = j(p2));
+  }
+  for (n2.__e = h2, s2 = _2; s2--; ) null != g2[s2] && ("function" == typeof n2.type && null != g2[s2].__e && g2[s2].__e == n2.__d && (n2.__d = j(r2, s2 + 1)), U(g2[s2], g2[s2]));
+  if (b2) for (s2 = 0; s2 < b2.length; s2++) H(b2[s2], b2[++s2], b2[++s2]);
 }
 function k(e2, t2, n2) {
   var r2, o2;
-  for (r2 = 0; r2 < e2.__k.length; r2++)
-    (o2 = e2.__k[r2]) && (o2.__ = e2, t2 = "function" == typeof o2.type ? k(o2, t2, n2) : C(n2, o2, o2, e2.__k, o2.__e, t2));
+  for (r2 = 0; r2 < e2.__k.length; r2++) (o2 = e2.__k[r2]) && (o2.__ = e2, t2 = "function" == typeof o2.type ? k(o2, t2, n2) : C(n2, o2, o2, e2.__k, o2.__e, t2));
   return t2;
 }
 function A(e2, t2) {
@@ -5418,18 +5381,12 @@ function A(e2, t2) {
 }
 function C(e2, t2, n2, r2, o2, i2) {
   var c2, a2, u2;
-  if (void 0 !== t2.__d)
-    c2 = t2.__d, t2.__d = void 0;
-  else if (null == n2 || o2 != i2 || null == o2.parentNode)
-    e:
-      if (null == i2 || i2.parentNode !== e2)
-        e2.appendChild(o2), c2 = null;
-      else {
-        for (a2 = i2, u2 = 0; (a2 = a2.nextSibling) && u2 < r2.length; u2 += 2)
-          if (a2 == o2)
-            break e;
-        e2.insertBefore(o2, i2), c2 = i2;
-      }
+  if (void 0 !== t2.__d) c2 = t2.__d, t2.__d = void 0;
+  else if (null == n2 || o2 != i2 || null == o2.parentNode) e: if (null == i2 || i2.parentNode !== e2) e2.appendChild(o2), c2 = null;
+  else {
+    for (a2 = i2, u2 = 0; (a2 = a2.nextSibling) && u2 < r2.length; u2 += 2) if (a2 == o2) break e;
+    e2.insertBefore(o2, i2), c2 = i2;
+  }
   return void 0 !== c2 ? c2 : o2.nextSibling;
 }
 function N(e2, t2, n2) {
@@ -5437,31 +5394,21 @@ function N(e2, t2, n2) {
 }
 function x(e2, t2, n2, r2, o2) {
   var i2;
-  e:
-    if ("style" === t2)
-      if ("string" == typeof n2)
-        e2.style.cssText = n2;
-      else {
-        if ("string" == typeof r2 && (e2.style.cssText = r2 = ""), r2)
-          for (t2 in r2)
-            n2 && t2 in n2 || N(e2.style, t2, "");
-        if (n2)
-          for (t2 in n2)
-            r2 && n2[t2] === r2[t2] || N(e2.style, t2, n2[t2]);
-      }
-    else if ("o" === t2[0] && "n" === t2[1])
-      i2 = t2 !== (t2 = t2.replace(/Capture$/, "")), t2 = t2.toLowerCase() in e2 ? t2.toLowerCase().slice(2) : t2.slice(2), e2.l || (e2.l = {}), e2.l[t2 + i2] = n2, n2 ? r2 || e2.addEventListener(t2, i2 ? R : T, i2) : e2.removeEventListener(t2, i2 ? R : T, i2);
-    else if ("dangerouslySetInnerHTML" !== t2) {
-      if (o2)
-        t2 = t2.replace(/xlink[H:h]/, "h").replace(/sName$/, "s");
-      else if ("href" !== t2 && "list" !== t2 && "form" !== t2 && "download" !== t2 && t2 in e2)
-        try {
-          e2[t2] = null == n2 ? "" : n2;
-          break e;
-        } catch (e3) {
-        }
-      "function" == typeof n2 || (null != n2 && (false !== n2 || "a" === t2[0] && "r" === t2[1]) ? e2.setAttribute(t2, n2) : e2.removeAttribute(t2));
+  e: if ("style" === t2) if ("string" == typeof n2) e2.style.cssText = n2;
+  else {
+    if ("string" == typeof r2 && (e2.style.cssText = r2 = ""), r2) for (t2 in r2) n2 && t2 in n2 || N(e2.style, t2, "");
+    if (n2) for (t2 in n2) r2 && n2[t2] === r2[t2] || N(e2.style, t2, n2[t2]);
+  }
+  else if ("o" === t2[0] && "n" === t2[1]) i2 = t2 !== (t2 = t2.replace(/Capture$/, "")), t2 = t2.toLowerCase() in e2 ? t2.toLowerCase().slice(2) : t2.slice(2), e2.l || (e2.l = {}), e2.l[t2 + i2] = n2, n2 ? r2 || e2.addEventListener(t2, i2 ? R : T, i2) : e2.removeEventListener(t2, i2 ? R : T, i2);
+  else if ("dangerouslySetInnerHTML" !== t2) {
+    if (o2) t2 = t2.replace(/xlink[H:h]/, "h").replace(/sName$/, "s");
+    else if ("href" !== t2 && "list" !== t2 && "form" !== t2 && "download" !== t2 && t2 in e2) try {
+      e2[t2] = null == n2 ? "" : n2;
+      break e;
+    } catch (e3) {
     }
+    "function" == typeof n2 || (null != n2 && (false !== n2 || "a" === t2[0] && "r" === t2[1]) ? e2.setAttribute(t2, n2) : e2.removeAttribute(t2));
+  }
 }
 function T(e2) {
   this.l[e2.type + false](s.event ? s.event(e2) : e2);
@@ -5471,26 +5418,22 @@ function R(e2) {
 }
 function q(e2, t2, n2, r2, o2, i2, c2, a2, u2) {
   var l2, f2, p2, m2, v2, d2, y2, h2, g2, _2, O2, j2 = t2.type;
-  if (void 0 !== t2.constructor)
-    return null;
+  if (void 0 !== t2.constructor) return null;
   null != n2.__h && (u2 = n2.__h, a2 = t2.__e = n2.__e, t2.__h = null, i2 = [a2]), (l2 = s.__b) && l2(t2);
   try {
-    e:
-      if ("function" == typeof j2) {
-        if (h2 = t2.props, g2 = (l2 = j2.contextType) && r2[l2.__c], _2 = l2 ? g2 ? g2.props.value : l2.__ : r2, n2.__c ? y2 = (f2 = t2.__c = n2.__c).__ = f2.__E : ("prototype" in j2 && j2.prototype.render ? t2.__c = f2 = new j2(h2, _2) : (t2.__c = f2 = new w(h2, _2), f2.constructor = j2, f2.render = F), g2 && g2.sub(f2), f2.props = h2, f2.state || (f2.state = {}), f2.context = _2, f2.__n = r2, p2 = f2.__d = true, f2.__h = []), null == f2.__s && (f2.__s = f2.state), null != j2.getDerivedStateFromProps && (f2.__s == f2.state && (f2.__s = b({}, f2.__s)), b(f2.__s, j2.getDerivedStateFromProps(h2, f2.__s))), m2 = f2.props, v2 = f2.state, p2)
-          null == j2.getDerivedStateFromProps && null != f2.componentWillMount && f2.componentWillMount(), null != f2.componentDidMount && f2.__h.push(f2.componentDidMount);
-        else {
-          if (null == j2.getDerivedStateFromProps && h2 !== m2 && null != f2.componentWillReceiveProps && f2.componentWillReceiveProps(h2, _2), !f2.__e && null != f2.shouldComponentUpdate && false === f2.shouldComponentUpdate(h2, f2.__s, _2) || t2.__v === n2.__v) {
-            f2.props = h2, f2.state = f2.__s, t2.__v !== n2.__v && (f2.__d = false), f2.__v = t2, t2.__e = n2.__e, t2.__k = n2.__k, f2.__h.length && c2.push(f2);
-            break e;
-          }
-          null != f2.componentWillUpdate && f2.componentWillUpdate(h2, f2.__s, _2), null != f2.componentDidUpdate && f2.__h.push(function() {
-            f2.componentDidUpdate(m2, v2, d2);
-          });
+    e: if ("function" == typeof j2) {
+      if (h2 = t2.props, g2 = (l2 = j2.contextType) && r2[l2.__c], _2 = l2 ? g2 ? g2.props.value : l2.__ : r2, n2.__c ? y2 = (f2 = t2.__c = n2.__c).__ = f2.__E : ("prototype" in j2 && j2.prototype.render ? t2.__c = f2 = new j2(h2, _2) : (t2.__c = f2 = new w(h2, _2), f2.constructor = j2, f2.render = F), g2 && g2.sub(f2), f2.props = h2, f2.state || (f2.state = {}), f2.context = _2, f2.__n = r2, p2 = f2.__d = true, f2.__h = []), null == f2.__s && (f2.__s = f2.state), null != j2.getDerivedStateFromProps && (f2.__s == f2.state && (f2.__s = b({}, f2.__s)), b(f2.__s, j2.getDerivedStateFromProps(h2, f2.__s))), m2 = f2.props, v2 = f2.state, p2) null == j2.getDerivedStateFromProps && null != f2.componentWillMount && f2.componentWillMount(), null != f2.componentDidMount && f2.__h.push(f2.componentDidMount);
+      else {
+        if (null == j2.getDerivedStateFromProps && h2 !== m2 && null != f2.componentWillReceiveProps && f2.componentWillReceiveProps(h2, _2), !f2.__e && null != f2.shouldComponentUpdate && false === f2.shouldComponentUpdate(h2, f2.__s, _2) || t2.__v === n2.__v) {
+          f2.props = h2, f2.state = f2.__s, t2.__v !== n2.__v && (f2.__d = false), f2.__v = t2, t2.__e = n2.__e, t2.__k = n2.__k, f2.__h.length && c2.push(f2);
+          break e;
         }
-        f2.context = _2, f2.props = h2, f2.state = f2.__s, (l2 = s.__r) && l2(t2), f2.__d = false, f2.__v = t2, f2.__P = e2, l2 = f2.render(f2.props, f2.state, f2.context), f2.state = f2.__s, null != f2.getChildContext && (r2 = b(b({}, r2), f2.getChildContext())), p2 || null == f2.getSnapshotBeforeUpdate || (d2 = f2.getSnapshotBeforeUpdate(m2, v2)), O2 = null != l2 && l2.type === S && null == l2.key ? l2.props.children : l2, D(e2, Array.isArray(O2) ? O2 : [O2], t2, n2, r2, o2, i2, c2, a2, u2), f2.base = t2.__e, t2.__h = null, f2.__h.length && c2.push(f2), y2 && (f2.__E = f2.__ = null), f2.__e = false;
-      } else
-        null == i2 && t2.__v === n2.__v ? (t2.__k = n2.__k, t2.__e = n2.__e) : t2.__e = M(n2.__e, t2, n2, r2, o2, i2, c2, u2);
+        null != f2.componentWillUpdate && f2.componentWillUpdate(h2, f2.__s, _2), null != f2.componentDidUpdate && f2.__h.push(function() {
+          f2.componentDidUpdate(m2, v2, d2);
+        });
+      }
+      f2.context = _2, f2.props = h2, f2.state = f2.__s, (l2 = s.__r) && l2(t2), f2.__d = false, f2.__v = t2, f2.__P = e2, l2 = f2.render(f2.props, f2.state, f2.context), f2.state = f2.__s, null != f2.getChildContext && (r2 = b(b({}, r2), f2.getChildContext())), p2 || null == f2.getSnapshotBeforeUpdate || (d2 = f2.getSnapshotBeforeUpdate(m2, v2)), O2 = null != l2 && l2.type === S && null == l2.key ? l2.props.children : l2, D(e2, Array.isArray(O2) ? O2 : [O2], t2, n2, r2, o2, i2, c2, a2, u2), f2.base = t2.__e, t2.__h = null, f2.__h.length && c2.push(f2), y2 && (f2.__E = f2.__ = null), f2.__e = false;
+    } else null == i2 && t2.__v === n2.__v ? (t2.__k = n2.__k, t2.__e = n2.__e) : t2.__e = M(n2.__e, t2, n2, r2, o2, i2, c2, u2);
     (l2 = s.diffed) && l2(t2);
   } catch (e3) {
     t2.__v = null, (u2 || null != i2) && (t2.__e = a2, t2.__h = !!u2, i2[i2.indexOf(a2)] = null), s.__e(e3, t2, n2);
@@ -5510,37 +5453,27 @@ function L(e2, t2) {
 function M(e2, t2, n2, r2, o2, i2, c2, a2) {
   var u2, l2, s2, f2, p2 = n2.props, m2 = t2.props, v2 = t2.type, h2 = 0;
   if ("svg" === v2 && (o2 = true), null != i2) {
-    for (; h2 < i2.length; h2++)
-      if ((u2 = i2[h2]) && (u2 === e2 || (v2 ? u2.localName == v2 : 3 == u2.nodeType))) {
-        e2 = u2, i2[h2] = null;
-        break;
-      }
+    for (; h2 < i2.length; h2++) if ((u2 = i2[h2]) && (u2 === e2 || (v2 ? u2.localName == v2 : 3 == u2.nodeType))) {
+      e2 = u2, i2[h2] = null;
+      break;
+    }
   }
   if (null == e2) {
-    if (null === v2)
-      return document.createTextNode(m2);
+    if (null === v2) return document.createTextNode(m2);
     e2 = o2 ? document.createElementNS("http://www.w3.org/2000/svg", v2) : document.createElement(v2, m2.is && m2), i2 = null, a2 = false;
   }
-  if (null === v2)
-    p2 === m2 || a2 && e2.data === m2 || (e2.data = m2);
+  if (null === v2) p2 === m2 || a2 && e2.data === m2 || (e2.data = m2);
   else {
     if (i2 = i2 && y.slice.call(e2.childNodes), l2 = (p2 = n2.props || d).dangerouslySetInnerHTML, s2 = m2.dangerouslySetInnerHTML, !a2) {
-      if (null != i2)
-        for (p2 = {}, f2 = 0; f2 < e2.attributes.length; f2++)
-          p2[e2.attributes[f2].name] = e2.attributes[f2].value;
+      if (null != i2) for (p2 = {}, f2 = 0; f2 < e2.attributes.length; f2++) p2[e2.attributes[f2].name] = e2.attributes[f2].value;
       (s2 || l2) && (s2 && (l2 && s2.__html == l2.__html || s2.__html === e2.innerHTML) || (e2.innerHTML = s2 && s2.__html || ""));
     }
     if (function(e3, t3, n3, r3, o3) {
       var i3;
-      for (i3 in n3)
-        "children" === i3 || "key" === i3 || i3 in t3 || x(e3, i3, null, n3[i3], r3);
-      for (i3 in t3)
-        o3 && "function" != typeof t3[i3] || "children" === i3 || "key" === i3 || "value" === i3 || "checked" === i3 || n3[i3] === t3[i3] || x(e3, i3, t3[i3], n3[i3], r3);
-    }(e2, m2, p2, o2, a2), s2)
-      t2.__k = [];
-    else if (h2 = t2.props.children, D(e2, Array.isArray(h2) ? h2 : [h2], t2, n2, r2, o2 && "foreignObject" !== v2, i2, c2, e2.firstChild, a2), null != i2)
-      for (h2 = i2.length; h2--; )
-        null != i2[h2] && g(i2[h2]);
+      for (i3 in n3) "children" === i3 || "key" === i3 || i3 in t3 || x(e3, i3, null, n3[i3], r3);
+      for (i3 in t3) o3 && "function" != typeof t3[i3] || "children" === i3 || "key" === i3 || "value" === i3 || "checked" === i3 || n3[i3] === t3[i3] || x(e3, i3, t3[i3], n3[i3], r3);
+    }(e2, m2, p2, o2, a2), s2) t2.__k = [];
+    else if (h2 = t2.props.children, D(e2, Array.isArray(h2) ? h2 : [h2], t2, n2, r2, o2 && "foreignObject" !== v2, i2, c2, e2.firstChild, a2), null != i2) for (h2 = i2.length; h2--; ) null != i2[h2] && g(i2[h2]);
     a2 || ("value" in m2 && void 0 !== (h2 = m2.value) && (h2 !== e2.value || "progress" === v2 && !h2) && x(e2, "value", h2, p2.value, false), "checked" in m2 && void 0 !== (h2 = m2.checked) && h2 !== e2.checked && x(e2, "checked", h2, p2.checked, false));
   }
   return e2;
@@ -5555,17 +5488,14 @@ function H(e2, t2, n2) {
 function U(e2, t2, n2) {
   var r2, o2, i2;
   if (s.unmount && s.unmount(e2), (r2 = e2.ref) && (r2.current && r2.current !== e2.__e || H(r2, null, t2)), n2 || "function" == typeof e2.type || (n2 = null != (o2 = e2.__e)), e2.__e = e2.__d = void 0, null != (r2 = e2.__c)) {
-    if (r2.componentWillUnmount)
-      try {
-        r2.componentWillUnmount();
-      } catch (e3) {
-        s.__e(e3, t2);
-      }
+    if (r2.componentWillUnmount) try {
+      r2.componentWillUnmount();
+    } catch (e3) {
+      s.__e(e3, t2);
+    }
     r2.base = r2.__P = null;
   }
-  if (r2 = e2.__k)
-    for (i2 = 0; i2 < r2.length; i2++)
-      r2[i2] && U(r2[i2], t2, n2);
+  if (r2 = e2.__k) for (i2 = 0; i2 < r2.length; i2++) r2[i2] && U(r2[i2], t2, n2);
   null != o2 && g(o2);
 }
 function F(e2, t2, n2) {
@@ -5580,22 +5510,16 @@ function V(e2, t2) {
 }
 function K(e2, t2, n2) {
   var r2, o2, i2, c2 = arguments, a2 = b({}, e2.props);
-  for (i2 in t2)
-    "key" == i2 ? r2 = t2[i2] : "ref" == i2 ? o2 = t2[i2] : a2[i2] = t2[i2];
-  if (arguments.length > 3)
-    for (n2 = [n2], i2 = 3; i2 < arguments.length; i2++)
-      n2.push(c2[i2]);
+  for (i2 in t2) "key" == i2 ? r2 = t2[i2] : "ref" == i2 ? o2 = t2[i2] : a2[i2] = t2[i2];
+  if (arguments.length > 3) for (n2 = [n2], i2 = 3; i2 < arguments.length; i2++) n2.push(c2[i2]);
   return null != n2 && (a2.children = n2), O(e2.type, a2, r2 || e2.key, o2 || e2.ref, null);
 }
 s = { __e: function(e2, t2) {
-  for (var n2, r2, o2; t2 = t2.__; )
-    if ((n2 = t2.__c) && !n2.__)
-      try {
-        if ((r2 = n2.constructor) && null != r2.getDerivedStateFromError && (n2.setState(r2.getDerivedStateFromError(e2)), o2 = n2.__d), null != n2.componentDidCatch && (n2.componentDidCatch(e2), o2 = n2.__d), o2)
-          return n2.__E = n2;
-      } catch (t3) {
-        e2 = t3;
-      }
+  for (var n2, r2, o2; t2 = t2.__; ) if ((n2 = t2.__c) && !n2.__) try {
+    if ((r2 = n2.constructor) && null != r2.getDerivedStateFromError && (n2.setState(r2.getDerivedStateFromError(e2)), o2 = n2.__d), null != n2.componentDidCatch && (n2.componentDidCatch(e2), o2 = n2.__d), o2) return n2.__E = n2;
+  } catch (t3) {
+    e2 = t3;
+  }
   throw e2;
 }, __v: 0 }, w.prototype.setState = function(e2, t2) {
   var n2;
@@ -5633,12 +5557,11 @@ function ce(e2, t2) {
 }
 function ae() {
   Q.forEach(function(e2) {
-    if (e2.__P)
-      try {
-        e2.__H.__h.forEach(le), e2.__H.__h.forEach(se), e2.__H.__h = [];
-      } catch (t2) {
-        e2.__H.__h = [], s.__e(t2, e2.__v);
-      }
+    if (e2.__P) try {
+      e2.__H.__h.forEach(le), e2.__H.__h.forEach(se), e2.__H.__h = [];
+    } catch (t2) {
+      e2.__H.__h = [], s.__e(t2, e2.__v);
+    }
   }), Q = [];
 }
 s.__b = function(e2) {
@@ -5671,12 +5594,11 @@ s.__b = function(e2) {
 }, s.unmount = function(e2) {
   ee && ee(e2);
   var t2 = e2.__c;
-  if (t2 && t2.__H)
-    try {
-      t2.__H.__.forEach(le);
-    } catch (e3) {
-      s.__e(e3, t2.__v);
-    }
+  if (t2 && t2.__H) try {
+    t2.__H.__.forEach(le);
+  } catch (e3) {
+    s.__e(e3, t2.__v);
+  }
 };
 var ue = "function" == typeof requestAnimationFrame;
 function le(e2) {
@@ -5696,17 +5618,12 @@ function pe(e2, t2) {
   return "function" == typeof t2 ? t2(e2) : t2;
 }
 function me(e2, t2) {
-  for (var n2 in t2)
-    e2[n2] = t2[n2];
+  for (var n2 in t2) e2[n2] = t2[n2];
   return e2;
 }
 function ve(e2, t2) {
-  for (var n2 in e2)
-    if ("__source" !== n2 && !(n2 in t2))
-      return true;
-  for (var r2 in t2)
-    if ("__source" !== r2 && e2[r2] !== t2[r2])
-      return true;
+  for (var n2 in e2) if ("__source" !== n2 && !(n2 in t2)) return true;
+  for (var r2 in t2) if ("__source" !== r2 && e2[r2] !== t2[r2]) return true;
   return false;
 }
 function de(e2) {
@@ -5726,8 +5643,7 @@ var be = function(e2, t2) {
   return e2 ? A(e2).length : 0;
 }, only: function(e2) {
   var t2 = A(e2);
-  if (1 !== t2.length)
-    throw "Children.only";
+  if (1 !== t2.length) throw "Children.only";
   return t2[0];
 }, toArray: A }, _e = s.__e;
 function Oe() {
@@ -5742,9 +5658,7 @@ function we() {
 }
 s.__e = function(e2, t2, n2) {
   if (e2.then) {
-    for (var r2, o2 = t2; o2 = o2.__; )
-      if ((r2 = o2.__c) && r2.__c)
-        return null == t2.__e && (t2.__e = n2.__e, t2.__k = n2.__k), r2.__c(e2, t2);
+    for (var r2, o2 = t2; o2 = o2.__; ) if ((r2 = o2.__c) && r2.__c) return null == t2.__e && (t2.__e = n2.__e, t2.__k = n2.__k), r2.__c(e2, t2);
   }
   _e(e2, t2, n2);
 }, (Oe.prototype = new w()).__c = function(e2, t2) {
@@ -5767,8 +5681,7 @@ s.__e = function(e2, t2, n2) {
         }(e3, e3.__c.__P, e3.__c.__O);
       }
       var t3;
-      for (r2.setState({ __e: r2.__b = null }); t3 = r2.t.pop(); )
-        t3.forceUpdate();
+      for (r2.setState({ __e: r2.__b = null }); t3 = r2.t.pop(); ) t3.forceUpdate();
     }
   }, u2 = true === t2.__h;
   r2.__u++ || u2 || r2.setState({ __e: r2.__b = r2.__v.__k[0] }), e2.then(c2, c2);
@@ -5792,14 +5705,11 @@ s.__e = function(e2, t2, n2) {
   return o2 && (o2.__h = null), [_(S, null, t2.__e ? null : e2.children), o2];
 };
 var je = function(e2, t2, n2) {
-  if (++n2[1] === n2[0] && e2.o.delete(t2), e2.props.revealOrder && ("t" !== e2.props.revealOrder[0] || !e2.o.size))
-    for (n2 = e2.u; n2; ) {
-      for (; n2.length > 3; )
-        n2.pop()();
-      if (n2[1] < n2[0])
-        break;
-      e2.u = n2 = n2[2];
-    }
+  if (++n2[1] === n2[0] && e2.o.delete(t2), e2.props.revealOrder && ("t" !== e2.props.revealOrder[0] || !e2.o.size)) for (n2 = e2.u; n2; ) {
+    for (; n2.length > 3; ) n2.pop()();
+    if (n2[1] < n2[0]) break;
+    e2.u = n2 = n2[2];
+  }
 };
 function Ee(e2) {
   return this.getChildContext = function() {
@@ -5833,8 +5743,7 @@ function Ie(e2, t2) {
   this.u = null, this.o = /* @__PURE__ */ new Map();
   var t2 = A(e2.children);
   e2.revealOrder && "b" === e2.revealOrder[0] && t2.reverse();
-  for (var n2 = t2.length; n2--; )
-    this.o.set(t2[n2], this.u = [1, 0, this.u]);
+  for (var n2 = t2.length; n2--; ) this.o.set(t2[n2], this.u = [1, 0, this.u]);
   return e2.children;
 }, we.prototype.componentDidUpdate = we.prototype.componentDidMount = function() {
   var e2 = this;
@@ -5967,10 +5876,8 @@ var Be = { useState: ne, useReducer: re, useEffect: oe, useLayoutEffect: ie, use
       n2 = e3.default || e3;
     }, function(e3) {
       r2 = e3;
-    }), r2)
-      throw r2;
-    if (!n2)
-      throw t2;
+    }), r2) throw r2;
+    if (!n2) throw t2;
     return _(n2, o3);
   }
   return o2.displayName = "Lazy", o2.__f = true, o2;
@@ -5986,71 +5893,57 @@ function ze() {
   return ze = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, ze.apply(this, arguments);
 }
 function Je(e2, t2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return e3;
+    if (Array.isArray(e3)) return e3;
   }(e2) || function(e3, t3) {
     var n2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
-    if (null == n2)
-      return;
+    if (null == n2) return;
     var r2, o2, i2 = [], c2 = true, a2 = false;
     try {
-      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true)
-        ;
+      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true) ;
     } catch (e4) {
       a2 = true, o2 = e4;
     } finally {
       try {
         c2 || null == n2.return || n2.return();
       } finally {
-        if (a2)
-          throw o2;
+        if (a2) throw o2;
       }
     }
     return i2;
   }(e2, t2) || function(e3, t3) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return $e(e3, t3);
+    if (!e3) return;
+    if ("string" == typeof e3) return $e(e3, t3);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return $e(e3, t3);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return $e(e3, t3);
   }(e2, t2) || function() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function $e(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function Qe(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -6063,10 +5956,9 @@ var Ze = Be.forwardRef(function(e2, t2) {
 function Ye(e2) {
   var t2 = e2.reactsToKey, n2 = e2.children, r2 = Je(ne(false), 2), o2 = r2[0], i2 = r2[1];
   return oe(function() {
-    if (t2)
-      return window.addEventListener("keydown", e3), window.addEventListener("keyup", n3), function() {
-        window.removeEventListener("keydown", e3), window.removeEventListener("keyup", n3);
-      };
+    if (t2) return window.addEventListener("keydown", e3), window.addEventListener("keyup", n3), function() {
+      window.removeEventListener("keydown", e3), window.removeEventListener("keyup", n3);
+    };
     function e3(e4) {
       e4.key === t2 && i2(true);
     }
@@ -6078,8 +5970,7 @@ function Ye(e2) {
 function Ge(e2, t2) {
   var n2 = void 0;
   return function() {
-    for (var r2 = arguments.length, o2 = new Array(r2), i2 = 0; i2 < r2; i2++)
-      o2[i2] = arguments[i2];
+    for (var r2 = arguments.length, o2 = new Array(r2), i2 = 0; i2 < r2; i2++) o2[i2] = arguments[i2];
     n2 && clearTimeout(n2), n2 = setTimeout(function() {
       return e2.apply(void 0, o2);
     }, t2);
@@ -6102,18 +5993,13 @@ function at(e2) {
   return e2 !== Object(e2);
 }
 function ut(e2, t2) {
-  if (e2 === t2)
-    return true;
-  if (at(e2) || at(t2) || "function" == typeof e2 || "function" == typeof t2)
-    return e2 === t2;
-  if (Object.keys(e2).length !== Object.keys(t2).length)
-    return false;
+  if (e2 === t2) return true;
+  if (at(e2) || at(t2) || "function" == typeof e2 || "function" == typeof t2) return e2 === t2;
+  if (Object.keys(e2).length !== Object.keys(t2).length) return false;
   for (var n2 = 0, r2 = Object.keys(e2); n2 < r2.length; n2++) {
     var o2 = r2[n2];
-    if (!(o2 in t2))
-      return false;
-    if (!ut(e2[o2], t2[o2]))
-      return false;
+    if (!(o2 in t2)) return false;
+    if (!ut(e2[o2], t2[o2])) return false;
   }
   return true;
 }
@@ -6128,48 +6014,38 @@ function pt(e2) {
 }
 function mt(e2, t2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return e3;
+    if (Array.isArray(e3)) return e3;
   }(e2) || function(e3, t3) {
     var n2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
     if (null != n2) {
       var r2, o2, i2, c2, a2 = [], u2 = true, l2 = false;
       try {
-        if (i2 = (n2 = n2.call(e3)).next, 0 === t3) ; else
-          for (; !(u2 = (r2 = i2.call(n2)).done) && (a2.push(r2.value), a2.length !== t3); u2 = true)
-            ;
+        if (i2 = (n2 = n2.call(e3)).next, 0 === t3) ; else for (; !(u2 = (r2 = i2.call(n2)).done) && (a2.push(r2.value), a2.length !== t3); u2 = true) ;
       } catch (e4) {
         l2 = true, o2 = e4;
       } finally {
         try {
-          if (!u2 && null != n2.return && (c2 = n2.return(), Object(c2) !== c2))
-            return;
+          if (!u2 && null != n2.return && (c2 = n2.return(), Object(c2) !== c2)) return;
         } finally {
-          if (l2)
-            throw o2;
+          if (l2) throw o2;
         }
       }
       return a2;
     }
   }(e2, t2) || function(e3, t3) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return vt(e3, t3);
+    if (!e3) return;
+    if ("string" == typeof e3) return vt(e3, t3);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return vt(e3, t3);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return vt(e3, t3);
   }(e2, t2) || function() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function vt(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 var dt = ["items"], yt = ["items"];
@@ -6182,47 +6058,36 @@ function ht(e2) {
 }
 function bt(e2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return gt(e3);
+    if (Array.isArray(e3)) return gt(e3);
   }(e2) || function(e3) {
-    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-      return Array.from(e3);
+    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
   }(e2) || function(e3, t2) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return gt(e3, t2);
+    if (!e3) return;
+    if ("string" == typeof e3) return gt(e3, t2);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return gt(e3, t2);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return gt(e3, t2);
   }(e2) || function() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function gt(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function _t(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -6250,13 +6115,11 @@ function St(e2) {
 function wt(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== ht(e4) || null === e4)
-        return e4;
+      if ("object" !== ht(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== ht(r2))
-          return r2;
+        if ("object" !== ht(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6265,8 +6128,7 @@ function wt(e2, t2, n2) {
   }(t2)) in e2 ? Object.defineProperty(e2, t2, { value: n2, enumerable: true, configurable: true, writable: true }) : e2[t2] = n2, e2;
 }
 function jt(e2) {
-  for (var t2 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 20, n2 = [], r2 = 0; r2 < e2.objectIDs.length; r2 += t2)
-    n2.push(St(St({}, e2), {}, { objectIDs: e2.objectIDs.slice(r2, r2 + t2) }));
+  for (var t2 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 20, n2 = [], r2 = 0; r2 < e2.objectIDs.length; r2 += t2) n2.push(St(St({}, e2), {}, { objectIDs: e2.objectIDs.slice(r2, r2 + t2) }));
   return n2;
 }
 function Et(e2) {
@@ -6283,40 +6145,32 @@ function Pt(e2) {
     if (o2 && void 0 !== r3) {
       var i3 = r3[0].__autocomplete_algoliaCredentials, c2 = { "X-Algolia-Application-Id": i3.appId, "X-Algolia-API-Key": i3.apiKey };
       e2.apply(void 0, [t3].concat(bt(n3), [{ headers: c2 }]));
-    } else
-      e2.apply(void 0, [t3].concat(bt(n3)));
+    } else e2.apply(void 0, [t3].concat(bt(n3)));
   }
   return { init: function(t3, n3) {
     e2("init", { appId: t3, apiKey: n3 });
   }, setUserToken: function(t3) {
     e2("setUserToken", t3);
   }, clickedObjectIDsAfterSearch: function() {
-    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++)
-      t3[n3] = arguments[n3];
+    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++) t3[n3] = arguments[n3];
     t3.length > 0 && i2("clickedObjectIDsAfterSearch", Et(t3), t3[0].items);
   }, clickedObjectIDs: function() {
-    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++)
-      t3[n3] = arguments[n3];
+    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++) t3[n3] = arguments[n3];
     t3.length > 0 && i2("clickedObjectIDs", Et(t3), t3[0].items);
   }, clickedFilters: function() {
-    for (var t3 = arguments.length, n3 = new Array(t3), r3 = 0; r3 < t3; r3++)
-      n3[r3] = arguments[r3];
+    for (var t3 = arguments.length, n3 = new Array(t3), r3 = 0; r3 < t3; r3++) n3[r3] = arguments[r3];
     n3.length > 0 && e2.apply(void 0, ["clickedFilters"].concat(n3));
   }, convertedObjectIDsAfterSearch: function() {
-    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++)
-      t3[n3] = arguments[n3];
+    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++) t3[n3] = arguments[n3];
     t3.length > 0 && i2("convertedObjectIDsAfterSearch", Et(t3), t3[0].items);
   }, convertedObjectIDs: function() {
-    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++)
-      t3[n3] = arguments[n3];
+    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++) t3[n3] = arguments[n3];
     t3.length > 0 && i2("convertedObjectIDs", Et(t3), t3[0].items);
   }, convertedFilters: function() {
-    for (var t3 = arguments.length, n3 = new Array(t3), r3 = 0; r3 < t3; r3++)
-      n3[r3] = arguments[r3];
+    for (var t3 = arguments.length, n3 = new Array(t3), r3 = 0; r3 < t3; r3++) n3[r3] = arguments[r3];
     n3.length > 0 && e2.apply(void 0, ["convertedFilters"].concat(n3));
   }, viewedObjectIDs: function() {
-    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++)
-      t3[n3] = arguments[n3];
+    for (var e3 = arguments.length, t3 = new Array(e3), n3 = 0; n3 < e3; n3++) t3[n3] = arguments[n3];
     t3.length > 0 && t3.reduce(function(e4, t4) {
       var n4 = t4.items, r3 = _t(t4, yt);
       return [].concat(bt(e4), bt(jt(St(St({}, r3), {}, { objectIDs: (null == n4 ? void 0 : n4.map(function(e5) {
@@ -6329,8 +6183,7 @@ function Pt(e2) {
       return i2("viewedObjectIDs", [e4.payload], t4);
     });
   }, viewedFilters: function() {
-    for (var t3 = arguments.length, n3 = new Array(t3), r3 = 0; r3 < t3; r3++)
-      n3[r3] = arguments[r3];
+    for (var t3 = arguments.length, n3 = new Array(t3), r3 = 0; r3 < t3; r3++) n3[r3] = arguments[r3];
     n3.length > 0 && e2.apply(void 0, ["viewedFilters"].concat(n3));
   } };
 }
@@ -6355,30 +6208,23 @@ function kt(e2) {
 }
 function At(e2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return Ct(e3);
+    if (Array.isArray(e3)) return Ct(e3);
   }(e2) || function(e3) {
-    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-      return Array.from(e3);
+    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
   }(e2) || function(e3, t2) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return Ct(e3, t2);
+    if (!e3) return;
+    if ("string" == typeof e3) return Ct(e3, t2);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return Ct(e3, t2);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return Ct(e3, t2);
   }(e2) || function() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function Ct(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function Nt(e2, t2) {
@@ -6405,13 +6251,11 @@ function xt(e2) {
 function Tt(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== kt(e4) || null === e4)
-        return e4;
+      if ("object" !== kt(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== kt(r2))
-          return r2;
+        if ("object" !== kt(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6440,14 +6284,12 @@ function Lt(e2) {
     }, onActive: lt }, e3);
   }(e2), n2 = t2.insightsClient, r2 = t2.onItemsChange, o2 = t2.onSelect, i2 = t2.onActive, c2 = n2;
   n2 || function(e3) {
-    if ("undefined" != typeof window)
-      e3({ window });
+    if ("undefined" != typeof window) e3({ window });
   }(function(e3) {
     var t3 = e3.window, n3 = t3.AlgoliaAnalyticsObject || "aa";
     "string" == typeof n3 && (c2 = t3[n3]), c2 || (t3.AlgoliaAnalyticsObject = n3, t3[n3] || (t3[n3] = function() {
       t3[n3].queue || (t3[n3].queue = []);
-      for (var e4 = arguments.length, r3 = new Array(e4), o3 = 0; o3 < e4; o3++)
-        r3[o3] = arguments[o3];
+      for (var e4 = arguments.length, r3 = new Array(e4), o3 = 0; o3 < e4; o3++) r3[o3] = arguments[o3];
       t3[n3].queue.push(r3);
     }), t3[n3].version = "2.6.0", c2 = t3[n3], function(e4) {
       var t4 = "[Autocomplete]: Could not load search-insights.js. Please load it manually following https://alg.li/insights-autocomplete";
@@ -6517,10 +6359,8 @@ function Ft(e2, t2, n2) {
   } : n2;
 }
 function Bt(e2, t2, n2, r2) {
-  if (!n2)
-    return null;
-  if (e2 < 0 && (null === t2 || null !== r2 && 0 === t2))
-    return n2 + e2;
+  if (!n2) return null;
+  if (e2 < 0 && (null === t2 || null !== r2 && 0 === t2)) return n2 + e2;
   var o2 = (null === t2 ? -1 : t2) + e2;
   return o2 <= -1 || o2 >= n2 ? null === r2 ? null : 0 : o2;
 }
@@ -6548,13 +6388,11 @@ function Kt(e2) {
 function Wt(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== zt(e4) || null === e4)
-        return e4;
+      if ("object" !== zt(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== zt(r2))
-          return r2;
+        if ("object" !== zt(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6581,8 +6419,7 @@ function Jt(e2) {
     }, 0);
     return e3.collections[t3];
   }(e2);
-  if (!t2)
-    return null;
+  if (!t2) return null;
   var n2 = t2.items[function(e3) {
     for (var t3 = e3.state, n3 = e3.collection, r3 = false, o2 = 0, i2 = 0; false === r3; ) {
       var c2 = t3.collections[o2];
@@ -6617,13 +6454,11 @@ function Zt(e2, t2) {
 function Yt(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== Qt(e4) || null === e4)
-        return e4;
+      if ("object" !== Qt(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== Qt(r2))
-          return r2;
+        if ("object" !== Qt(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6693,13 +6528,11 @@ function tn(e2) {
 function nn(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== Xt(e4) || null === e4)
-        return e4;
+      if ("object" !== Xt(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== Xt(r2))
-          return r2;
+        if ("object" !== Xt(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6716,30 +6549,23 @@ function rn(e2) {
 }
 function on(e2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return cn(e3);
+    if (Array.isArray(e3)) return cn(e3);
   }(e2) || function(e3) {
-    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-      return Array.from(e3);
+    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
   }(e2) || function(e3, t2) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return cn(e3, t2);
+    if (!e3) return;
+    if ("string" == typeof e3) return cn(e3, t2);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return cn(e3, t2);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return cn(e3, t2);
   }(e2) || function() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function cn(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function an(e2, t2) {
@@ -6766,13 +6592,11 @@ function un(e2) {
 function ln(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== rn(e4) || null === e4)
-        return e4;
+      if ("object" !== rn(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== rn(r2))
-          return r2;
+        if ("object" !== rn(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6814,8 +6638,7 @@ function sn(e2, t2) {
           return Promise.all(e5.filter(function(e6) {
             return Boolean(e6);
           }).map(function(e6) {
-            if (ct("string" == typeof e6.sourceId), n4.includes(e6.sourceId))
-              throw new Error("[Autocomplete] The `sourceId` ".concat(JSON.stringify(e6.sourceId), " is not unique."));
+            if (ct("string" == typeof e6.sourceId), n4.includes(e6.sourceId)) throw new Error("[Autocomplete] The `sourceId` ".concat(JSON.stringify(e6.sourceId), " is not unique."));
             n4.push(e6.sourceId);
             var t4 = { getItemInputValue: function(e7) {
               return e7.state.query;
@@ -6895,13 +6718,11 @@ function mn(e2) {
 function vn(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== fn(e4) || null === e4)
-        return e4;
+      if ("object" !== fn(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== fn(r2))
-          return r2;
+        if ("object" !== fn(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6940,13 +6761,11 @@ function hn(e2) {
 function bn(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== dn(e4) || null === e4)
-        return e4;
+      if ("object" !== dn(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== dn(r2))
-          return r2;
+        if ("object" !== dn(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -6956,30 +6775,23 @@ function bn(e2, t2, n2) {
 }
 function gn(e2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return _n(e3);
+    if (Array.isArray(e3)) return _n(e3);
   }(e2) || function(e3) {
-    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-      return Array.from(e3);
+    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
   }(e2) || function(e3, t2) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return _n(e3, t2);
+    if (!e3) return;
+    if ("string" == typeof e3) return _n(e3, t2);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return _n(e3, t2);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return _n(e3, t2);
   }(e2) || function() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function _n(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function On(e2) {
@@ -7000,8 +6812,7 @@ function Sn(e2, t2, n2) {
 }
 function wn(e2) {
   var t2 = e2.reduce(function(e3, t3) {
-    if (!On(t3))
-      return e3.push(t3), e3;
+    if (!On(t3)) return e3.push(t3), e3;
     var n2 = t3.searchClient, r2 = t3.execute, o2 = t3.requesterId, i2 = t3.requests, c2 = e3.find(function(e4) {
       return On(t3) && On(e4) && e4.searchClient === n2 && Boolean(o2) && e4.requesterId === o2;
     });
@@ -7014,8 +6825,7 @@ function wn(e2) {
     }
     return e3;
   }, []).map(function(e3) {
-    if (!On(e3))
-      return Promise.resolve(e3);
+    if (!On(e3)) return Promise.resolve(e3);
     var t3 = e3, n2 = t3.execute, r2 = t3.items;
     return n2({ searchClient: t3.searchClient, requests: r2 });
   });
@@ -7072,13 +6882,11 @@ function Dn(e2) {
 function kn(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== En(e4) || null === e4)
-        return e4;
+      if ("object" !== En(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== En(r2))
-          return r2;
+        if ("object" !== En(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -7087,20 +6895,16 @@ function kn(e2, t2, n2) {
   }(t2)) in e2 ? Object.defineProperty(e2, t2, { value: n2, enumerable: true, configurable: true, writable: true }) : e2[t2] = n2, e2;
 }
 function An(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -7195,13 +6999,11 @@ function Un(e2) {
 function Fn(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== Ln(e4) || null === e4)
-        return e4;
+      if ("object" !== Ln(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== Ln(r2))
-          return r2;
+        if ("object" !== Ln(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -7210,20 +7012,16 @@ function Fn(e2, t2, n2) {
   }(t2)) in e2 ? Object.defineProperty(e2, t2, { value: n2, enumerable: true, configurable: true, writable: true }) : e2[t2] = n2, e2;
 }
 function Bn(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -7259,13 +7057,11 @@ function Gn(e2) {
 function Xn(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== Vn(e4) || null === e4)
-        return e4;
+      if ("object" !== Vn(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== Vn(r2))
-          return r2;
+        if ("object" !== Vn(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -7274,20 +7070,16 @@ function Xn(e2, t2, n2) {
   }(t2)) in e2 ? Object.defineProperty(e2, t2, { value: n2, enumerable: true, configurable: true, writable: true }) : e2[t2] = n2, e2;
 }
 function er(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -7347,26 +7139,19 @@ function tr(e2) {
           t3.preventDefault(), false === o3.getState().isOpen && (n3.openOnFocus || Boolean(o3.getState().query)) ? qn(Un({ event: t3, props: n3, query: o3.getState().query, refresh: r3, store: o3 }, i4)).then(function() {
             o3.dispatch(t3.key, { nextActiveItemId: n3.defaultActiveItemId }), a3(), setTimeout(c3, 0);
           }) : (o3.dispatch(t3.key, {}), a3(), c3());
-        } else if ("Escape" === t3.key)
-          t3.preventDefault(), o3.dispatch(t3.key, null), o3.pendingRequests.cancelAll();
-        else if ("Tab" === t3.key)
-          o3.dispatch("blur", null), o3.pendingRequests.cancelAll();
+        } else if ("Escape" === t3.key) t3.preventDefault(), o3.dispatch(t3.key, null), o3.pendingRequests.cancelAll();
+        else if ("Tab" === t3.key) o3.dispatch("blur", null), o3.pendingRequests.cancelAll();
         else if ("Enter" === t3.key) {
           if (null === o3.getState().activeItemId || o3.getState().collections.every(function(e6) {
             return 0 === e6.items.length;
-          }))
-            return void (n3.debug || o3.pendingRequests.cancelAll());
+          })) return void (n3.debug || o3.pendingRequests.cancelAll());
           t3.preventDefault();
           var u3 = Jt(o3.getState()), l3 = u3.item, s3 = u3.itemInputValue, f3 = u3.itemUrl, p3 = u3.source;
-          if (t3.metaKey || t3.ctrlKey)
-            void 0 !== f3 && (p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4)), n3.navigator.navigateNewTab({ itemUrl: f3, item: l3, state: o3.getState() }));
-          else if (t3.shiftKey)
-            void 0 !== f3 && (p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4)), n3.navigator.navigateNewWindow({ itemUrl: f3, item: l3, state: o3.getState() }));
-          else if (t3.altKey)
-            ;
+          if (t3.metaKey || t3.ctrlKey) void 0 !== f3 && (p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4)), n3.navigator.navigateNewTab({ itemUrl: f3, item: l3, state: o3.getState() }));
+          else if (t3.shiftKey) void 0 !== f3 && (p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4)), n3.navigator.navigateNewWindow({ itemUrl: f3, item: l3, state: o3.getState() }));
+          else if (t3.altKey) ;
           else {
-            if (void 0 !== f3)
-              return p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4)), void n3.navigator.navigate({ itemUrl: f3, item: l3, state: o3.getState() });
+            if (void 0 !== f3) return p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4)), void n3.navigator.navigate({ itemUrl: f3, item: l3, state: o3.getState() });
             qn(Un({ event: t3, nextState: { isOpen: false }, props: n3, query: s3, refresh: r3, store: o3 }, i4)).then(function() {
               p3.onSelect(Un({ event: t3, item: l3, itemInputValue: s3, itemUrl: f3, refresh: r3, source: p3, state: o3.getState() }, i4));
             });
@@ -7437,13 +7222,11 @@ function or(e2) {
 function ir(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== nr(e4) || null === e4)
-        return e4;
+      if ("object" !== nr(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== nr(r2))
-          return r2;
+        if ("object" !== nr(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -7492,13 +7275,11 @@ function sr(e2) {
 function fr(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== ur(e4) || null === e4)
-        return e4;
+      if ("object" !== ur(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== ur(r2))
-          return r2;
+        if ("object" !== ur(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -7574,13 +7355,11 @@ function dr(e2) {
 function yr(e2, t2, n2) {
   return (t2 = function(e3) {
     var t3 = function(e4, t4) {
-      if ("object" !== mr(e4) || null === e4)
-        return e4;
+      if ("object" !== mr(e4) || null === e4) return e4;
       var n3 = e4[Symbol.toPrimitive];
       if (void 0 !== n3) {
         var r2 = n3.call(e4, t4 || "default");
-        if ("object" !== mr(r2))
-          return r2;
+        if ("object" !== mr(r2)) return r2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t4 ? String : Number)(e4);
@@ -7703,47 +7482,36 @@ function xr(e2) {
 var Tr = ["translations"];
 function Rr(e2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return qr(e3);
+    if (Array.isArray(e3)) return qr(e3);
   }(e2) || function(e3) {
-    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-      return Array.from(e3);
+    if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
   }(e2) || function(e3, t2) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return qr(e3, t2);
+    if (!e3) return;
+    if ("string" == typeof e3) return qr(e3, t2);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return qr(e3, t2);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return qr(e3, t2);
   }(e2) || function() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function qr(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function Lr(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -7781,20 +7549,16 @@ function Br(e2, t2, n2) {
   return t2 in e2 ? Object.defineProperty(e2, t2, { value: n2, enumerable: true, configurable: true, writable: true }) : e2[t2] = n2, e2;
 }
 function Vr(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -7809,54 +7573,44 @@ function Wr(e2) {
 }
 function zr(e2, t2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return e3;
+    if (Array.isArray(e3)) return e3;
   }(e2) || function(e3, t3) {
     var n2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
-    if (null == n2)
-      return;
+    if (null == n2) return;
     var r2, o2, i2 = [], c2 = true, a2 = false;
     try {
-      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true)
-        ;
+      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true) ;
     } catch (e4) {
       a2 = true, o2 = e4;
     } finally {
       try {
         c2 || null == n2.return || n2.return();
       } finally {
-        if (a2)
-          throw o2;
+        if (a2) throw o2;
       }
     }
     return i2;
   }(e2, t2) || function(e3, t3) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return Jr(e3, t3);
+    if (!e3) return;
+    if ("string" == typeof e3) return Jr(e3, t3);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return Jr(e3, t3);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return Jr(e3, t3);
   }(e2, t2) || function() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function Jr(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function $r() {
   return $r = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, $r.apply(this, arguments);
@@ -7895,8 +7649,7 @@ function eo() {
 var to = /(<mark>|<\/mark>)/g, no = RegExp(to.source);
 function ro(e2) {
   var t2, n2, r2 = e2;
-  if (!r2.__docsearch_parent && !e2._highlightResult)
-    return e2.hierarchy.lvl0;
+  if (!r2.__docsearch_parent && !e2._highlightResult) return e2.hierarchy.lvl0;
   var o2 = ((r2.__docsearch_parent ? null === (t2 = r2.__docsearch_parent) || void 0 === t2 || null === (t2 = t2._highlightResult) || void 0 === t2 || null === (t2 = t2.hierarchy) || void 0 === t2 ? void 0 : t2.lvl0 : null === (n2 = e2._highlightResult) || void 0 === n2 || null === (n2 = n2.hierarchy) || void 0 === n2 ? void 0 : n2.lvl0) || {}).value;
   return o2 && no.test(o2) ? o2.replace(to, "") : o2;
 }
@@ -7904,16 +7657,14 @@ function oo() {
   return oo = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, oo.apply(this, arguments);
 }
 function io(e2) {
   return Be.createElement("div", { className: "DocSearch-Dropdown-Container" }, e2.state.collections.map(function(t2) {
-    if (0 === t2.items.length)
-      return null;
+    if (0 === t2.items.length) return null;
     var n2 = ro(t2.items[0]);
     return Be.createElement(Qr, oo({}, e2, { key: t2.source.sourceId, title: n2, collection: t2, renderIcon: function(e3) {
       var n3, r2 = e3.item, o2 = e3.index;
@@ -7928,27 +7679,22 @@ function ao() {
   return ao = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, ao.apply(this, arguments);
 }
 function uo(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -7983,34 +7729,28 @@ function fo() {
   return fo = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, fo.apply(this, arguments);
 }
 function po(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
 var mo = Be.memo(function(e2) {
   var t2 = e2.translations, n2 = void 0 === t2 ? {} : t2, r2 = po(e2, so);
-  if ("error" === r2.state.status)
-    return Be.createElement(xr, { translations: null == n2 ? void 0 : n2.errorScreen });
+  if ("error" === r2.state.status) return Be.createElement(xr, { translations: null == n2 ? void 0 : n2.errorScreen });
   var o2 = r2.state.collections.some(function(e3) {
     return e3.items.length > 0;
   });
@@ -8022,27 +7762,22 @@ function yo() {
   return yo = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, yo.apply(this, arguments);
 }
 function ho(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -8058,20 +7793,16 @@ function bo(e2) {
 }
 var go = ["_highlightResult", "_snippetResult"];
 function _o(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -8204,8 +7935,7 @@ function Po() {
     var o2 = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : { miss: function() {
       return Promise.resolve();
     } }, i2 = JSON.stringify(n2);
-    if (i2 in t2)
-      return Promise.resolve(e2.serializable ? JSON.parse(t2[i2]) : t2[i2]);
+    if (i2 in t2) return Promise.resolve(e2.serializable ? JSON.parse(t2[i2]) : t2[i2]);
     var c2 = r2(), a2 = o2 && o2.miss || function() {
       return Promise.resolve();
     };
@@ -8235,8 +7965,7 @@ function Do(e2, t2) {
   }), e2) : e2;
 }
 function ko(e2) {
-  for (var t2 = arguments.length, n2 = new Array(t2 > 1 ? t2 - 1 : 0), r2 = 1; r2 < t2; r2++)
-    n2[r2 - 1] = arguments[r2];
+  for (var t2 = arguments.length, n2 = new Array(t2 > 1 ? t2 - 1 : 0), r2 = 1; r2 < t2; r2++) n2[r2 - 1] = arguments[r2];
   var o2 = 0;
   return e2.replace(/%s/g, function() {
     return encodeURIComponent(n2[o2++]);
@@ -8282,8 +8011,7 @@ function Uo(e2, t2) {
 }
 function Fo(e2, n2, r2, o2) {
   var i2 = [], c2 = function(e3, n3) {
-    if (e3.method === Mo || void 0 === e3.data && void 0 === n3.data)
-      return;
+    if (e3.method === Mo || void 0 === e3.data && void 0 === n3.data) return;
     var r3 = Array.isArray(e3.data) ? e3.data : t(t({}, e3.data), n3.data);
     return JSON.stringify(r3);
   }(r2, o2), u2 = function(e3, n3) {
@@ -8294,8 +8022,7 @@ function Fo(e2, n2, r2, o2) {
     }), o3;
   }(e2, o2), l2 = r2.method, s2 = r2.method !== Mo ? {} : t(t({}, r2.data), o2.data), f2 = t(t(t({ "x-algolia-agent": e2.userAgent.value }, e2.queryParameters), s2), o2.queryParameters), p2 = 0, m2 = function t2(n3, a2) {
     var s3 = n3.pop();
-    if (void 0 === s3)
-      throw { name: "RetryError", message: "Unreachable hosts - your application id may be incorrect. If the error persists, contact support@algolia.com.", transporterStackTrace: Wo(i2) };
+    if (void 0 === s3) throw { name: "RetryError", message: "Unreachable hosts - your application id may be incorrect. If the error persists, contact support@algolia.com.", transporterStackTrace: Wo(i2) };
     var m3 = { data: c2, headers: u2, method: l2, url: Vo(s3, r2.path, f2), connectTimeout: a2(p2, e2.timeouts.connect), responseTimeout: a2(p2, o2.timeout) }, v2 = function(e3) {
       var t3 = { request: m3, response: e3, host: s3, triesLeft: n3.length };
       return i2.push(t3), t3;
@@ -8385,8 +8112,7 @@ var Jo = function(e2) {
           return 0 != (e5.accept & No.Read);
         }), e4, n4);
       };
-      if (true !== (void 0 !== n4.cacheable ? n4.cacheable : e4.cacheable))
-        return r4();
+      if (true !== (void 0 !== n4.cacheable ? n4.cacheable : e4.cacheable)) return r4();
       var o4 = { request: e4, mappedRequestOptions: n4, transporter: { queryParameters: f2.queryParameters, headers: f2.headers } };
       return f2.responsesCache.get(o4, function() {
         return f2.requestsCache.get(o4, function() {
@@ -8490,8 +8216,7 @@ function ci() {
   return ci = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, ci.apply(this, arguments);
@@ -8522,63 +8247,50 @@ function li(e2, t2, n2) {
 }
 function si(e2, t2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return e3;
+    if (Array.isArray(e3)) return e3;
   }(e2) || function(e3, t3) {
     var n2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
-    if (null == n2)
-      return;
+    if (null == n2) return;
     var r2, o2, i2 = [], c2 = true, a2 = false;
     try {
-      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true)
-        ;
+      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true) ;
     } catch (e4) {
       a2 = true, o2 = e4;
     } finally {
       try {
         c2 || null == n2.return || n2.return();
       } finally {
-        if (a2)
-          throw o2;
+        if (a2) throw o2;
       }
     }
     return i2;
   }(e2, t2) || function(e3, t3) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return fi(e3, t3);
+    if (!e3) return;
+    if ("string" == typeof e3) return fi(e3, t3);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return fi(e3, t3);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return fi(e3, t3);
   }(e2, t2) || function() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function fi(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function pi(e2, t2) {
-  if (null == e2)
-    return {};
+  if (null == e2) return {};
   var n2, r2, o2 = function(e3, t3) {
-    if (null == e3)
-      return {};
+    if (null == e3) return {};
     var n3, r3, o3 = {}, i3 = Object.keys(e3);
-    for (r3 = 0; r3 < i3.length; r3++)
-      n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
+    for (r3 = 0; r3 < i3.length; r3++) n3 = i3[r3], t3.indexOf(n3) >= 0 || (o3[n3] = e3[n3]);
     return o3;
   }(e2, t2);
   if (Object.getOwnPropertySymbols) {
     var i2 = Object.getOwnPropertySymbols(e2);
-    for (r2 = 0; r2 < i2.length; r2++)
-      n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
+    for (r2 = 0; r2 < i2.length; r2++) n2 = i2[r2], t2.indexOf(n2) >= 0 || Object.prototype.propertyIsEnumerable.call(e2, n2) && (o2[n2] = e2[n2]);
   }
   return o2;
 }
@@ -8607,22 +8319,21 @@ function mi(e2) {
       R2(e3.state);
     }, getSources: function(e3) {
       var o3 = e3.query, i3 = e3.state, u3 = e3.setContext, s3 = e3.setStatus;
-      if (!o3)
-        return S2 ? [] : [{ sourceId: "recentSearches", onSelect: function(e4) {
-          var t3 = e4.item, n3 = e4.event;
-          J2(t3), Xr(n3) || l2();
-        }, getItemUrl: function(e4) {
-          return e4.item.url;
-        }, getItems: function() {
-          return z2.getAll();
-        } }, { sourceId: "favoriteSearches", onSelect: function(e4) {
-          var t3 = e4.item, n3 = e4.event;
-          J2(t3), Xr(n3) || l2();
-        }, getItemUrl: function(e4) {
-          return e4.item.url;
-        }, getItems: function() {
-          return W2.getAll();
-        } }];
+      if (!o3) return S2 ? [] : [{ sourceId: "recentSearches", onSelect: function(e4) {
+        var t3 = e4.item, n3 = e4.event;
+        J2(t3), Xr(n3) || l2();
+      }, getItemUrl: function(e4) {
+        return e4.item.url;
+      }, getItems: function() {
+        return z2.getAll();
+      } }, { sourceId: "favoriteSearches", onSelect: function(e4) {
+        var t3 = e4.item, n3 = e4.event;
+        J2(t3), Xr(n3) || l2();
+      }, getItemUrl: function(e4) {
+        return e4.item.url;
+      }, getItems: function() {
+        return W2.getAll();
+      } }];
       var p3 = Boolean(k2);
       return K2.search([{ query: o3, indexName: r2, params: ui({ attributesToRetrieve: ["hierarchy.lvl0", "hierarchy.lvl1", "hierarchy.lvl2", "hierarchy.lvl3", "hierarchy.lvl4", "hierarchy.lvl5", "hierarchy.lvl6", "content", "type", "url"], attributesToSnippet: ["hierarchy.lvl1:".concat(F2.current), "hierarchy.lvl2:".concat(F2.current), "hierarchy.lvl3:".concat(F2.current), "hierarchy.lvl4:".concat(F2.current), "hierarchy.lvl5:".concat(F2.current), "hierarchy.lvl6:".concat(F2.current), "content:".concat(F2.current)], snippetEllipsisText: "…", highlightPreTag: "<mark>", highlightPostTag: "</mark>", hitsPerPage: 20, clickAnalytics: p3 }, c2) }]).catch(function(e4) {
         throw "RetryError" === e4.name && s3("error"), e4;
@@ -8708,54 +8419,44 @@ function vi() {
   return vi = Object.assign || function(e2) {
     for (var t2 = 1; t2 < arguments.length; t2++) {
       var n2 = arguments[t2];
-      for (var r2 in n2)
-        Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
+      for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
     }
     return e2;
   }, vi.apply(this, arguments);
 }
 function di(e2, t2) {
   return function(e3) {
-    if (Array.isArray(e3))
-      return e3;
+    if (Array.isArray(e3)) return e3;
   }(e2) || function(e3, t3) {
     var n2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
-    if (null == n2)
-      return;
+    if (null == n2) return;
     var r2, o2, i2 = [], c2 = true, a2 = false;
     try {
-      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true)
-        ;
+      for (n2 = n2.call(e3); !(c2 = (r2 = n2.next()).done) && (i2.push(r2.value), !t3 || i2.length !== t3); c2 = true) ;
     } catch (e4) {
       a2 = true, o2 = e4;
     } finally {
       try {
         c2 || null == n2.return || n2.return();
       } finally {
-        if (a2)
-          throw o2;
+        if (a2) throw o2;
       }
     }
     return i2;
   }(e2, t2) || function(e3, t3) {
-    if (!e3)
-      return;
-    if ("string" == typeof e3)
-      return yi(e3, t3);
+    if (!e3) return;
+    if ("string" == typeof e3) return yi(e3, t3);
     var n2 = Object.prototype.toString.call(e3).slice(8, -1);
     "Object" === n2 && e3.constructor && (n2 = e3.constructor.name);
-    if ("Map" === n2 || "Set" === n2)
-      return Array.from(e3);
-    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return yi(e3, t3);
+    if ("Map" === n2 || "Set" === n2) return Array.from(e3);
+    if ("Arguments" === n2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return yi(e3, t3);
   }(e2, t2) || function() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }();
 }
 function yi(e2, t2) {
   (null == t2 || t2 > e2.length) && (t2 = e2.length);
-  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++)
-    r2[n2] = e2[n2];
+  for (var n2 = 0, r2 = new Array(t2); n2 < t2; n2++) r2[n2] = e2[n2];
   return r2;
 }
 function hi(e2) {
