@@ -1,5 +1,5 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-D4ZWgQgJ.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-C7RcvmU5.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-LOYrN9uq.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-B35Xlw7t.js';
 
 const html = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./sidebars-drawers-html-Df5NjPCv.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./sidebars-drawers-src-Bebhrty7.js');return { default: __vite_default__ }},true?[]:void 0)).default;
