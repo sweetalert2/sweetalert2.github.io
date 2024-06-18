@@ -45,7 +45,7 @@ export default {
       icon: 'info',
       html: `
         You can use <b>bold text</b>,
-        <a href="#">links</a>,
+        <a href="#" autofocus>links</a>,
         and other HTML tags
       `,
       showCloseButton: true,
