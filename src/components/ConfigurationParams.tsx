@@ -382,19 +382,6 @@ export function ConfigurationParams() {
                 <kbd>Esc</kbd> key for the loading state of a popup.
               </td>
             </tr>
-            <tr id="allowEnterKey">
-              <td>
-                <a className="hover-anchor" href="#allowEnterKey" children="#" />
-                <h4>allowEnterKey</h4>
-                <br />
-                <i>true</i>
-              </td>
-              <td>
-                If set to <strong>false</strong>, the user can't confirm the popup by pressing the <kbd>Enter</kbd> or{' '}
-                <kbd>Space</kbd> keys, unless they manually focus the confirm button. You can also pass a custom
-                function returning a boolean value.
-              </td>
-            </tr>
             <tr id="stopKeydownPropagation">
               <td>
                 <a className="hover-anchor" href="#stopKeydownPropagation" children="#" />
