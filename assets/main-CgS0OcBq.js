@@ -4943,24 +4943,6 @@ function ConfigurationParams() {
               " key for the loading state of a popup."
             ] })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "allowEnterKey", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#allowEnterKey", children: "#" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "allowEnterKey" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "true" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "If set to ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
-              ", the user can't confirm the popup by pressing the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { children: "Enter" }),
-              " or",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { children: "Space" }),
-              " keys, unless they manually focus the confirm button. You can also pass a custom function returning a boolean value."
-            ] })
-          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "stopKeydownPropagation", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#stopKeydownPropagation", children: "#" }),
