@@ -1,5 +1,5 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-B35Xlw7t.js';
-import { S as SandpackClient } from './base-80a1f760-CrgONT5p.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-CR4ruAqv.js';
+import { S as SandpackClient } from './base-80a1f760-CgpO6twI.js';
 import './index-LOYrN9uq.js';
 
 /**
@@ -291,7 +291,7 @@ modules) {
 }
 
 var _a;
-var BUNDLER_URL = "https://".concat((_a = "2.13.8") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.14.4") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-"), "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
@@ -331,7 +331,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         }
         if (!_this.iframe.getAttribute("sandbox")) {
             _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-downloads allow-pointer-lock");
-            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-write;");
+            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-read; clipboard-write;");
         }
         _this.setLocationURLIntoIFrame();
         _this.iframeProtocol = new IFrameProtocol(_this.iframe, _this.bundlerURL);

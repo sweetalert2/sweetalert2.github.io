@@ -1,4 +1,4 @@
-const __vite__fileDeps=["assets/index-dugKAL8z.js","assets/base-80a1f760-CrgONT5p.js","assets/consoleHook-59e792cb-CpphQyCS.js","assets/index-LOYrN9uq.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-CbU6D2xc.js","assets/index-Cja6QnTG.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+const __vite__fileDeps=["assets/index-S1V9KQdO.js","assets/base-80a1f760-CgpO6twI.js","assets/consoleHook-59e792cb-lna-T3g0.js","assets/index-LOYrN9uq.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-DgzazsPd.js","assets/index-BCoB6wWN.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
 import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-LOYrN9uq.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -471,15 +471,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-dugKAL8z.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-S1V9KQdO.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-CbU6D2xc.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-DgzazsPd.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-Cja6QnTG.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-BCoB6wWN.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -6003,7 +6003,10 @@ class LineView extends ContentView {
         }
         return rect;
     }
-    become(_other) { return false; }
+    become(other) {
+        return other instanceof LineView && this.children.length == 0 && other.children.length == 0 &&
+            attrsEq(this.attrs, other.attrs) && this.breakAfter == other.breakAfter;
+    }
     covers() { return true; }
     static find(docView, pos) {
         for (let i = 0, off = 0; i < docView.children.length; i++) {
@@ -11342,7 +11345,9 @@ class DOMObserver {
             else
                 this.flush();
         });
-        if (window.EditContext && view.constructor.EDIT_CONTEXT === true) {
+        if (window.EditContext && view.constructor.EDIT_CONTEXT !== false &&
+            // Chrome <126 doesn't support inverted selections in edit context (#1392)
+            !(browser.chrome && browser.chrome_version < 126)) {
             this.editContext = new EditContextManager(view);
             if (view.state.facet(editable))
                 view.contentDOM.editContext = this.editContext.editContext;
