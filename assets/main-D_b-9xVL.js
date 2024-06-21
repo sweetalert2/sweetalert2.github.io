@@ -6822,6 +6822,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://aeroescorts.com/", target: "_blank", rel: "noopener", "aria-label": "Aero escorts", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/aeroescorts.png", alt: "Aero escorts" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Aero escorts"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.hismith.co.uk/", target: "_blank", rel: "noopener", "aria-label": "Hismith", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/hismith.png", alt: "Hismith" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
