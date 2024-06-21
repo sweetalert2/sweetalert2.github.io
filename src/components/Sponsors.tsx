@@ -120,8 +120,8 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
-          <a href="https://aeroescorts.com/" target="_blank" rel="noopener" aria-label="Aero Escorts">
-            <img src="/images/sponsors/aeroescorts.png" alt="Aero Escorts" />
+          <a href="https://aeroescorts.com/" target="_blank" rel="noopener" aria-label="AeroEscorts">
+            <img src="/images/sponsors/aeroescorts.png" alt="AeroEscorts" />
             <br />
             AeroEscorts
           </a>
