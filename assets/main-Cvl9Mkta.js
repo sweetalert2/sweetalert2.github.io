@@ -6850,20 +6850,6 @@ function Sponsors() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
-          href: "https://nexromance.com/playstore/index.php?sweetalert",
-          target: "_blank",
-          rel: "noopener",
-          "aria-label": "Try Nex Romance Ai Girlfriend For Free",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/chatforsex.jpg", alt: "Try Nex Romance Ai Girlfriend For Free" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "ChatGPT for Sex"
-          ]
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "a",
-        {
           href: "https://www.xspacecup.com/",
           target: "_blank",
           rel: "noopener",
