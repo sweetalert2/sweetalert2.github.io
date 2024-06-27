@@ -6822,6 +6822,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sosexdoll.com/cheap-sex-doll", target: "_blank", rel: "noopener", "aria-label": "SoSexDoll", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sosexdoll.png", alt: "SoSexDoll" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "SoSexDoll"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://aeroescorts.com/", target: "_blank", rel: "noopener", "aria-label": "AeroEscorts", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/aeroescorts.png", alt: "AeroEscorts" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
