@@ -120,6 +120,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.sosexdoll.com/cheap-sex-doll" target="_blank" rel="noopener" aria-label="SoSexDoll">
+            <img src="/images/sponsors/sosexdoll.png" alt="SoSexDoll" />
+            <br />
+            SoSexDoll
+          </a>
+        </div>
+        <div>
           <a href="https://aeroescorts.com/" target="_blank" rel="noopener" aria-label="AeroEscorts">
             <img src="/images/sponsors/aeroescorts.png" alt="AeroEscorts" />
             <br />
