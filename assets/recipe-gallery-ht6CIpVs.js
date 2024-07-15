@@ -1,4 +1,4 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-LOYrN9uq.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-DuizMxlg.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

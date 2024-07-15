@@ -1,5 +1,5 @@
-const __vite__fileDeps=["assets/index-S1V9KQdO.js","assets/base-80a1f760-CgpO6twI.js","assets/consoleHook-59e792cb-lna-T3g0.js","assets/index-LOYrN9uq.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-DgzazsPd.js","assets/index-BCoB6wWN.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-LOYrN9uq.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DT1NVwV5.js","assets/base-80a1f760-DFLtRnZB.js","assets/consoleHook-59e792cb-LLKEjMgf.js","assets/index-DuizMxlg.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-EnB8Z8f1.js","assets/index-CMSnlQya.js"])))=>i.map(i=>d[i]);
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DuizMxlg.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -471,15 +471,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-S1V9KQdO.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DT1NVwV5.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-DgzazsPd.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-EnB8Z8f1.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-BCoB6wWN.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CMSnlQya.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -11809,7 +11809,7 @@ class EditContextManager {
                 change.from = anchor;
             else if (change.to == this.to && anchor > this.to)
                 change.to = anchor;
-            // Edit context sometimes fire empty changes
+            // Edit contexts sometimes fire empty changes
             if (change.from == change.to && !change.insert.length)
                 return;
             this.pendingContextChange = change;
@@ -11823,7 +11823,7 @@ class EditContextManager {
             let rects = [], prev = null;
             for (let i = this.toEditorPos(e.rangeStart), end = this.toEditorPos(e.rangeEnd); i < end; i++) {
                 let rect = view.coordsForChar(i);
-                prev = (rect && new DOMRect(rect.left, rect.right, rect.right - rect.left, rect.bottom - rect.top))
+                prev = (rect && new DOMRect(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top))
                     || prev || new DOMRect;
                 rects.push(prev);
             }
@@ -11868,6 +11868,7 @@ class EditContextManager {
                 if (pending.from == fromA && pending.to == toA && pending.insert.eq(insert)) {
                     pending = this.pendingContextChange = null; // Match
                     off += dLen;
+                    this.to += dLen;
                     return;
                 }
                 else { // Mismatch, revert
@@ -28088,6 +28089,7 @@ var useClient = function (_a, filesState) {
                             reactDevTools: state.reactDevTools,
                             customNpmRegistries: customSetup === null || customSetup === void 0 ? void 0 : customSetup.npmRegistries,
                             teamId: teamId,
+                            experimental_enableServiceWorker: !!(options === null || options === void 0 ? void 0 : options.experimental_enableServiceWorker),
                             sandboxId: sandboxId,
                         })];
                 case 1:
@@ -29714,7 +29716,20 @@ var useSandpackPreviewProgress = function (props) {
                     setLoadingMessage(null);
                 }, timeout);
             }
-            if (message.type === "shell/progress" && !isReady) {
+            if (message.type === "dependencies") {
+                setLoadingMessage(function () {
+                    switch (message.data.state) {
+                        case "downloading_manifest":
+                            return "[1/3] Downloading manifest";
+                        case "downloaded_module":
+                            return "[2/3] Downloaded ".concat(message.data.name, " (").concat(message.data.progress, "/").concat(message.data.total, ")");
+                        case "starting":
+                            return "[3/3] Starting";
+                    }
+                    return null;
+                });
+            }
+            else if (message.type === "shell/progress" && !isReady) {
                 if (!totalDependencies && message.data.state === "downloaded_module") {
                     setTotalDependencies(message.data.totalPending);
                 }
@@ -31725,6 +31740,7 @@ var Sandpack$2 = function (_a) {
         externalResources: options.externalResources,
         logLevel: options.logLevel,
         classes: options.classes,
+        experimental_enableServiceWorker: options.experimental_enableServiceWorker,
     };
     /**
      * Console

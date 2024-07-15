@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-LOYrN9uq.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-DuizMxlg.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -1866,7 +1866,7 @@ function expandOrCloneMode(mode) {
   return mode;
 }
 
-var version = "11.9.0";
+var version = "11.10.0";
 
 class HTMLInjectionError extends Error {
   constructor(reason, html) {
@@ -3206,7 +3206,7 @@ function javascript(hljs) {
     contains: [] // defined later
   };
   const HTML_TEMPLATE = {
-    begin: 'html`',
+    begin: '\.?html`',
     end: '',
     starts: {
       end: '`',
@@ -3219,7 +3219,7 @@ function javascript(hljs) {
     }
   };
   const CSS_TEMPLATE = {
-    begin: 'css`',
+    begin: '\.?css`',
     end: '',
     starts: {
       end: '`',
@@ -3232,7 +3232,7 @@ function javascript(hljs) {
     }
   };
   const GRAPHQL_TEMPLATE = {
-    begin: 'gql`',
+    begin: '\.?gql`',
     end: '',
     starts: {
       end: '`',
@@ -3329,7 +3329,7 @@ function javascript(hljs) {
   const PARAMS_CONTAINS = SUBST_AND_COMMENTS.concat([
     // eat recursive parens in sub expressions
     {
-      begin: /\(/,
+      begin: /(\s*)\(/,
       end: /\)/,
       keywords: KEYWORDS$1,
       contains: ["self"].concat(SUBST_AND_COMMENTS)
@@ -3337,7 +3337,8 @@ function javascript(hljs) {
   ]);
   const PARAMS = {
     className: 'params',
-    begin: /\(/,
+    // convert this to negative lookbehind in v12
+    begin: /(\s*)\(/, // to match the parms with 
     end: /\)/,
     excludeBegin: true,
     excludeEnd: true,
@@ -3460,8 +3461,8 @@ function javascript(hljs) {
         ...BUILT_IN_GLOBALS,
         "super",
         "import"
-      ]),
-      IDENT_RE$1, regex.lookahead(/\(/)),
+      ].map(x => `${x}\\s*\\(`)),
+      IDENT_RE$1, regex.lookahead(/\s*\(/)),
     className: "title.function",
     relevance: 0
   };
@@ -3582,7 +3583,7 @@ function javascript(hljs) {
                     skip: true
                   },
                   {
-                    begin: /\(/,
+                    begin: /(\s*)\(/,
                     end: /\)/,
                     excludeBegin: true,
                     excludeEnd: true,
