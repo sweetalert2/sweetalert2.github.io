@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DT1NVwV5.js","assets/base-80a1f760-DFLtRnZB.js","assets/consoleHook-59e792cb-LLKEjMgf.js","assets/index-DuizMxlg.js","assets/index-CIMPvQrM.css","assets/index-585bceb7-EnB8Z8f1.js","assets/index-CMSnlQya.js"])))=>i.map(i=>d[i]);
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DuizMxlg.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DajT7KpZ.js","assets/base-80a1f760-Ch7co6vG.js","assets/consoleHook-59e792cb-YTkyJFoW.js","assets/index-Dl6rLBY9.js","assets/index-DpkLTAnF.css","assets/index-585bceb7-Cl_eSIzR.js","assets/index-Dxz5Qr9V.js"])))=>i.map(i=>d[i]);
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-Dl6rLBY9.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -471,15 +471,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DT1NVwV5.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DajT7KpZ.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-EnB8Z8f1.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-Cl_eSIzR.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CMSnlQya.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-Dxz5Qr9V.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -4916,15 +4916,17 @@ function scrollRectIntoView(dom, rect, side, x, y, xMargin, yMargin, ltr) {
         }
     }
 }
-function scrollableParent(dom) {
-    let doc = dom.ownerDocument;
+function scrollableParents(dom) {
+    let doc = dom.ownerDocument, x, y;
     for (let cur = dom.parentNode; cur;) {
-        if (cur == doc.body) {
+        if (cur == doc.body || (x && y)) {
             break;
         }
         else if (cur.nodeType == 1) {
-            if (cur.scrollHeight > cur.clientHeight || cur.scrollWidth > cur.clientWidth)
-                return cur;
+            if (!y && cur.scrollHeight > cur.clientHeight)
+                y = cur;
+            if (!x && cur.scrollWidth > cur.clientWidth)
+                x = cur;
             cur = cur.assignedSlot || cur.parentNode;
         }
         else if (cur.nodeType == 11) {
@@ -4934,7 +4936,7 @@ function scrollableParent(dom) {
             break;
         }
     }
-    return null;
+    return { x, y };
 }
 class DOMSelectionState {
     constructor() {
@@ -8688,7 +8690,7 @@ class MouseSelection {
         this.scrollSpeed = { x: 0, y: 0 };
         this.scrolling = -1;
         this.lastEvent = startEvent;
-        this.scrollParent = scrollableParent(view.contentDOM);
+        this.scrollParents = scrollableParents(view.contentDOM);
         this.atoms = view.state.facet(atomicRanges).map(f => f(view));
         let doc = view.contentDOM.ownerDocument;
         doc.addEventListener("mousemove", this.move = this.move.bind(this));
@@ -8704,24 +8706,26 @@ class MouseSelection {
             this.select(event);
     }
     move(event) {
-        var _a;
         if (event.buttons == 0)
             return this.destroy();
         if (this.dragging || this.dragging == null && dist(this.startEvent, event) < 10)
             return;
         this.select(this.lastEvent = event);
         let sx = 0, sy = 0;
-        let rect = ((_a = this.scrollParent) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect())
-            || { left: 0, top: 0, right: this.view.win.innerWidth, bottom: this.view.win.innerHeight };
+        let left = 0, top = 0, right = this.view.win.innerWidth, bottom = this.view.win.innerHeight;
+        if (this.scrollParents.x)
+            ({ left, right } = this.scrollParents.x.getBoundingClientRect());
+        if (this.scrollParents.y)
+            ({ top, bottom } = this.scrollParents.y.getBoundingClientRect());
         let margins = getScrollMargins(this.view);
-        if (event.clientX - margins.left <= rect.left + dragScrollMargin)
-            sx = -dragScrollSpeed(rect.left - event.clientX);
-        else if (event.clientX + margins.right >= rect.right - dragScrollMargin)
-            sx = dragScrollSpeed(event.clientX - rect.right);
-        if (event.clientY - margins.top <= rect.top + dragScrollMargin)
-            sy = -dragScrollSpeed(rect.top - event.clientY);
-        else if (event.clientY + margins.bottom >= rect.bottom - dragScrollMargin)
-            sy = dragScrollSpeed(event.clientY - rect.bottom);
+        if (event.clientX - margins.left <= left + dragScrollMargin)
+            sx = -dragScrollSpeed(left - event.clientX);
+        else if (event.clientX + margins.right >= right - dragScrollMargin)
+            sx = dragScrollSpeed(event.clientX - right);
+        if (event.clientY - margins.top <= top + dragScrollMargin)
+            sy = -dragScrollSpeed(top - event.clientY);
+        else if (event.clientY + margins.bottom >= bottom - dragScrollMargin)
+            sy = dragScrollSpeed(event.clientY - bottom);
         this.setScrollSpeed(sx, sy);
     }
     up(event) {
@@ -8750,13 +8754,17 @@ class MouseSelection {
         }
     }
     scroll() {
-        if (this.scrollParent) {
-            this.scrollParent.scrollLeft += this.scrollSpeed.x;
-            this.scrollParent.scrollTop += this.scrollSpeed.y;
+        let { x, y } = this.scrollSpeed;
+        if (x && this.scrollParents.x) {
+            this.scrollParents.x.scrollLeft += x;
+            x = 0;
         }
-        else {
-            this.view.win.scrollBy(this.scrollSpeed.x, this.scrollSpeed.y);
+        if (y && this.scrollParents.y) {
+            this.scrollParents.y.scrollTop += y;
+            y = 0;
         }
+        if (x || y)
+            this.view.win.scrollBy(x, y);
         if (this.dragging === false)
             this.select(this.lastEvent);
     }
@@ -11733,6 +11741,10 @@ class DOMObserver {
         clearTimeout(this.resizeTimeout);
         this.win.cancelAnimationFrame(this.delayedFlush);
         this.win.cancelAnimationFrame(this.flushingAndroidKey);
+        if (this.editContext) {
+            this.view.contentDOM.editContext = null;
+            this.editContext.destroy();
+        }
     }
 }
 function findChild(cView, dom, dir) {
@@ -11792,13 +11804,14 @@ class EditContextManager {
         // that sometimes breaks series of multiple edits made for a single
         // user action on some Android keyboards)
         this.pendingContextChange = null;
+        this.handlers = Object.create(null);
         this.resetRange(view.state);
         let context = this.editContext = new window.EditContext({
             text: view.state.doc.sliceString(this.from, this.to),
             selectionStart: this.toContextPos(Math.max(this.from, Math.min(this.to, view.state.selection.main.anchor))),
             selectionEnd: this.toContextPos(view.state.selection.main.head)
         });
-        context.addEventListener("textupdate", e => {
+        this.handlers.textupdate = e => {
             let { anchor } = view.state.selection.main;
             let change = { from: this.toEditorPos(e.updateRangeStart),
                 to: this.toEditorPos(e.updateRangeEnd),
@@ -11818,8 +11831,8 @@ class EditContextManager {
             // that the context is in sync with the editor state again.
             if (this.pendingContextChange)
                 this.revertPending(view.state);
-        });
-        context.addEventListener("characterboundsupdate", e => {
+        };
+        this.handlers.characterboundsupdate = e => {
             let rects = [], prev = null;
             for (let i = this.toEditorPos(e.rangeStart), end = this.toEditorPos(e.rangeEnd); i < end; i++) {
                 let rect = view.coordsForChar(i);
@@ -11828,8 +11841,8 @@ class EditContextManager {
                 rects.push(prev);
             }
             context.updateCharacterBounds(e.rangeStart, rects);
-        });
-        context.addEventListener("textformatupdate", e => {
+        };
+        this.handlers.textformatupdate = e => {
             let deco = [];
             for (let format of e.getTextFormats()) {
                 let lineStyle = format.underlineStyle, thickness = format.underlineThickness;
@@ -11840,17 +11853,19 @@ class EditContextManager {
                 }
             }
             view.dispatch({ effects: setEditContextFormatting.of(Decoration.set(deco)) });
-        });
-        context.addEventListener("compositionstart", () => {
+        };
+        this.handlers.compositionstart = () => {
             if (view.inputState.composing < 0) {
                 view.inputState.composing = 0;
                 view.inputState.compositionFirstChange = true;
             }
-        });
-        context.addEventListener("compositionend", () => {
+        };
+        this.handlers.compositionend = () => {
             view.inputState.composing = -1;
             view.inputState.compositionFirstChange = null;
-        });
+        };
+        for (let event in this.handlers)
+            context.addEventListener(event, this.handlers[event]);
         this.measureReq = { read: view => {
                 this.editContext.updateControlBounds(view.contentDOM.getBoundingClientRect());
                 let sel = getSelection(view.root);
@@ -11934,6 +11949,10 @@ class EditContextManager {
     }
     toEditorPos(contextPos) { return contextPos + this.from; }
     toContextPos(editorPos) { return editorPos - this.from; }
+    destroy() {
+        for (let event in this.handlers)
+            this.editContext.removeEventListener(event, this.handlers[event]);
+    }
 }
 
 // The editor's update state machine looks something like this:
