@@ -67,13 +67,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.serpempire.com/" target="_blank" rel="noopener" aria-label="SERP Empire">
-            <img src="/images/sponsors/serpempire.png" alt="SERP Empire" />
-            <br />
-            SERP Empire
-          </a>
-        </div>
-        <div>
           <a href="https://realspyapps.com/" target="_blank" rel="noopener" aria-label="Real Spy Apps">
             <img src="/images/sponsors/realspyapps.jpeg" alt="Real Spy Apps" />
             <br />
