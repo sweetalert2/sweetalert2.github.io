@@ -6781,11 +6781,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "ZezeLife"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.serpempire.com/", target: "_blank", rel: "noopener", "aria-label": "SERP Empire", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/serpempire.png", alt: "SERP Empire" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "SERP Empire"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://realspyapps.com/", target: "_blank", rel: "noopener", "aria-label": "Real Spy Apps", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/realspyapps.jpeg", alt: "Real Spy Apps" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
