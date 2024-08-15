@@ -487,7 +487,7 @@ var m$1 = reactDomExports;
 var sweetalert2_all = {exports: {}};
 
 /*!
-* sweetalert2 v11.12.2
+* sweetalert2 v11.12.4
 * Released under the MIT License.
 */
 
@@ -553,7 +553,7 @@ var sweetalert2_all = {exports: {}};
 	  function _createForOfIteratorHelper(r, e) {
 	    var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
 	    if (!t) {
-	      if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e  ) {
+	      if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e) {
 	        t && (r = t);
 	        var n = 0,
 	          F = function () {};
@@ -682,6 +682,12 @@ var sweetalert2_all = {exports: {}};
 	    for (; !{}.hasOwnProperty.call(t, o) && null !== (t = _getPrototypeOf(t)););
 	    return t;
 	  }
+	  function _superPropGet(t, e, r, o) {
+	    var p = _get(_getPrototypeOf(t.prototype ), e, r);
+	    return function (t) {
+	      return p.apply(r, t);
+	    } ;
+	  }
 	  function _toConsumableArray(r) {
 	    return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();
 	  }
@@ -689,7 +695,7 @@ var sweetalert2_all = {exports: {}};
 	    if ("object" != typeof t || !t) return t;
 	    var e = t[Symbol.toPrimitive];
 	    if (void 0 !== e) {
-	      var i = e.call(t, r );
+	      var i = e.call(t, r);
 	      if ("object" != typeof i) return i;
 	      throw new TypeError("@@toPrimitive must return a primitive value.");
 	    }
@@ -754,77 +760,6 @@ var sweetalert2_all = {exports: {}};
 	  var swalPrefix = 'swal2-';
 
 	  /**
-	   * @typedef
-	   * { | 'container'
-	   *   | 'shown'
-	   *   | 'height-auto'
-	   *   | 'iosfix'
-	   *   | 'popup'
-	   *   | 'modal'
-	   *   | 'no-backdrop'
-	   *   | 'no-transition'
-	   *   | 'toast'
-	   *   | 'toast-shown'
-	   *   | 'show'
-	   *   | 'hide'
-	   *   | 'close'
-	   *   | 'title'
-	   *   | 'html-container'
-	   *   | 'actions'
-	   *   | 'confirm'
-	   *   | 'deny'
-	   *   | 'cancel'
-	   *   | 'default-outline'
-	   *   | 'footer'
-	   *   | 'icon'
-	   *   | 'icon-content'
-	   *   | 'image'
-	   *   | 'input'
-	   *   | 'file'
-	   *   | 'range'
-	   *   | 'select'
-	   *   | 'radio'
-	   *   | 'checkbox'
-	   *   | 'label'
-	   *   | 'textarea'
-	   *   | 'inputerror'
-	   *   | 'input-label'
-	   *   | 'validation-message'
-	   *   | 'progress-steps'
-	   *   | 'active-progress-step'
-	   *   | 'progress-step'
-	   *   | 'progress-step-line'
-	   *   | 'loader'
-	   *   | 'loading'
-	   *   | 'styled'
-	   *   | 'top'
-	   *   | 'top-start'
-	   *   | 'top-end'
-	   *   | 'top-left'
-	   *   | 'top-right'
-	   *   | 'center'
-	   *   | 'center-start'
-	   *   | 'center-end'
-	   *   | 'center-left'
-	   *   | 'center-right'
-	   *   | 'bottom'
-	   *   | 'bottom-start'
-	   *   | 'bottom-end'
-	   *   | 'bottom-left'
-	   *   | 'bottom-right'
-	   *   | 'grow-row'
-	   *   | 'grow-column'
-	   *   | 'grow-fullscreen'
-	   *   | 'rtl'
-	   *   | 'timer-progress-bar'
-	   *   | 'timer-progress-bar-container'
-	   *   | 'scrollbar-measure'
-	   *   | 'icon-success'
-	   *   | 'icon-warning'
-	   *   | 'icon-info'
-	   *   | 'icon-question'
-	   *   | 'icon-error'
-	   * } SwalClass
 	   * @typedef {Record<SwalClass, string>} SwalClasses
 	   */
 
@@ -1165,17 +1100,21 @@ var sweetalert2_all = {exports: {}};
 	      var parser = new DOMParser();
 	      var parsed = parser.parseFromString(html, "text/html");
 	      var head = parsed.querySelector('head');
-	      head && Array.from(head.childNodes).forEach(function (child) {
-	        elem.appendChild(child);
-	      });
-	      var body = parsed.querySelector('body');
-	      body && Array.from(body.childNodes).forEach(function (child) {
-	        if (child instanceof HTMLVideoElement || child instanceof HTMLAudioElement) {
-	          elem.appendChild(child.cloneNode(true)); // https://github.com/sweetalert2/sweetalert2/issues/2507
-	        } else {
+	      if (head) {
+	        Array.from(head.childNodes).forEach(function (child) {
 	          elem.appendChild(child);
-	        }
-	      });
+	        });
+	      }
+	      var body = parsed.querySelector('body');
+	      if (body) {
+	        Array.from(body.childNodes).forEach(function (child) {
+	          if (child instanceof HTMLVideoElement || child instanceof HTMLAudioElement) {
+	            elem.appendChild(child.cloneNode(true)); // https://github.com/sweetalert2/sweetalert2/issues/2507
+	          } else {
+	            elem.appendChild(child);
+	          }
+	        });
+	      }
 	    }
 	  };
 
@@ -1285,10 +1224,18 @@ var sweetalert2_all = {exports: {}};
 	    classList.forEach(function (className) {
 	      if (Array.isArray(target)) {
 	        target.forEach(function (elem) {
-	          condition ? elem.classList.add(className) : elem.classList.remove(className);
+	          if (condition) {
+	            elem.classList.add(className);
+	          } else {
+	            elem.classList.remove(className);
+	          }
 	        });
 	      } else {
-	        condition ? target.classList.add(className) : target.classList.remove(className);
+	        if (condition) {
+	          target.classList.add(className);
+	        } else {
+	          target.classList.remove(className);
+	        }
 	      }
 	    });
 	  };
@@ -1348,14 +1295,20 @@ var sweetalert2_all = {exports: {}};
 	   */
 	  var show = function show(elem) {
 	    var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'flex';
-	    elem && (elem.style.display = display);
+	    if (!elem) {
+	      return;
+	    }
+	    elem.style.display = display;
 	  };
 
 	  /**
 	   * @param {HTMLElement | null} elem
 	   */
 	  var hide = function hide(elem) {
-	    elem && (elem.style.display = 'none');
+	    if (!elem) {
+	      return;
+	    }
+	    elem.style.display = 'none';
 	  };
 
 	  /**
@@ -1396,7 +1349,11 @@ var sweetalert2_all = {exports: {}};
 	   */
 	  var toggle = function toggle(elem, condition) {
 	    var display = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'flex';
-	    condition ? show(elem, display) : hide(elem);
+	    if (condition) {
+	      show(elem, display);
+	    } else {
+	      hide(elem);
+	    }
 	  };
 
 	  /**
@@ -1622,7 +1579,7 @@ var sweetalert2_all = {exports: {}};
 	  var handleJqueryElem = function handleJqueryElem(target, elem) {
 	    target.textContent = '';
 	    if (0 in elem) {
-	      for (var i = 0; (i in elem); i++) {
+	      for (var i = 0; i in elem; i++) {
 	        target.appendChild(elem[i].cloneNode(true));
 	      }
 	    } else {
@@ -1893,6 +1850,9 @@ var sweetalert2_all = {exports: {}};
 	      return;
 	    }
 	    var inputContainer = getInputContainer(params.input);
+	    if (!inputContainer) {
+	      return;
+	    }
 	    var input = renderInputType[params.input](inputContainer, params);
 	    show(inputContainer);
 
@@ -1921,7 +1881,11 @@ var sweetalert2_all = {exports: {}};
 	   * @param {SweetAlertOptions['inputAttributes']} inputAttributes
 	   */
 	  var setAttributes = function setAttributes(inputClass, inputAttributes) {
-	    var input = getInput$1(getPopup(), inputClass);
+	    var popup = getPopup();
+	    if (!popup) {
+	      return;
+	    }
+	    var input = getInput$1(popup, inputClass);
 	    if (!input) {
 	      return;
 	    }
@@ -1935,9 +1899,12 @@ var sweetalert2_all = {exports: {}};
 	   * @param {SweetAlertOptions} params
 	   */
 	  var setCustomClass = function setCustomClass(params) {
+	    if (!params.input) {
+	      return;
+	    }
 	    var inputContainer = getInputContainer(params.input);
-	    if (_typeof(params.customClass) === 'object') {
-	      addClass(inputContainer, params.customClass.input);
+	    if (inputContainer) {
+	      applyCustomClass(inputContainer, params, 'input');
 	    }
 	  };
 
@@ -1946,7 +1913,7 @@ var sweetalert2_all = {exports: {}};
 	   * @param {SweetAlertOptions} params
 	   */
 	  var setInputPlaceholder = function setInputPlaceholder(input, params) {
-	    if (!input.placeholder || params.inputPlaceholder) {
+	    if (!input.placeholder && params.inputPlaceholder) {
 	      input.placeholder = params.inputPlaceholder;
 	    }
 	  };
@@ -1971,11 +1938,15 @@ var sweetalert2_all = {exports: {}};
 	  };
 
 	  /**
-	   * @param {SweetAlertOptions['input']} inputType
-	   * @returns {HTMLElement}
+	   * @param {SweetAlertInput} inputType
+	   * @returns {HTMLElement | undefined}
 	   */
 	  var getInputContainer = function getInputContainer(inputType) {
-	    return getDirectChildByClass(getPopup(), swalClasses[inputType] || swalClasses.input);
+	    var popup = getPopup();
+	    if (!popup) {
+	      return;
+	    }
+	    return getDirectChildByClass(popup, swalClasses[( /** @type {SwalClass} */inputType)] || swalClasses.input);
 	  };
 
 	  /**
@@ -1998,7 +1969,8 @@ var sweetalert2_all = {exports: {}};
 	   * @param {SweetAlertOptions} params
 	   * @returns {HTMLInputElement}
 	   */
-	  renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = renderInputType.search = renderInputType.date = renderInputType['datetime-local'] = renderInputType.time = renderInputType.week = renderInputType.month = function (input, params) {
+	  renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = renderInputType.search = renderInputType.date = renderInputType['datetime-local'] = renderInputType.time = renderInputType.week = renderInputType.month = /** @type {(input: Input | HTMLElement, params: SweetAlertOptions) => Input} */
+	  function (input, params) {
 	    checkAndSetInputValue(input, params.inputValue);
 	    setInputLabel(input, input, params);
 	    setInputPlaceholder(input, params);
@@ -2346,7 +2318,9 @@ var sweetalert2_all = {exports: {}};
 	      applyNumericalStyle(container, 'width', params.width);
 	      popup.style.width = '100%';
 	      var loader = getLoader();
-	      loader && popup.insertBefore(loader, getIcon());
+	      if (loader) {
+	        popup.insertBefore(loader, getIcon());
+	      }
 	    } else {
 	      applyNumericalStyle(popup, 'width', params.width);
 	    }
@@ -3111,7 +3085,7 @@ var sweetalert2_all = {exports: {}};
 	  var showLoading = function showLoading(buttonToReplace) {
 	    var popup = getPopup();
 	    if (!popup) {
-	      new Swal(); // eslint-disable-line no-new
+	      new Swal();
 	    }
 	    popup = getPopup();
 	    if (!popup) {
@@ -3226,9 +3200,9 @@ var sweetalert2_all = {exports: {}};
 	     */
 	    var processInputOptions = function processInputOptions(inputOptions) {
 	      if (params.input === 'select') {
-	        populateSelectOptions(popup, formatInputOptions(inputOptions), params);
+	        populateSelectOptions(popup, _formatInputOptions(inputOptions), params);
 	      } else if (params.input === 'radio') {
-	        populateRadioOptions(popup, formatInputOptions(inputOptions), params);
+	        populateRadioOptions(popup, _formatInputOptions(inputOptions), params);
 	      }
 	    };
 	    if (hasToPromiseFn(params.inputOptions) || isPromise(params.inputOptions)) {
@@ -3355,7 +3329,7 @@ var sweetalert2_all = {exports: {}};
 	   * @typedef {string[]} InputOptionFlattened
 	   * @returns {InputOptionFlattened[]}
 	   */
-	  var formatInputOptions = function formatInputOptions(inputOptions) {
+	  var _formatInputOptions = function formatInputOptions(inputOptions) {
 	    /** @type {InputOptionFlattened[]} */
 	    var result = [];
 	    if (inputOptions instanceof Map) {
@@ -3363,7 +3337,7 @@ var sweetalert2_all = {exports: {}};
 	        var valueFormatted = value;
 	        if (_typeof(valueFormatted) === 'object') {
 	          // case of <optgroup>
-	          valueFormatted = formatInputOptions(valueFormatted);
+	          valueFormatted = _formatInputOptions(valueFormatted);
 	        }
 	        result.push([key, valueFormatted]);
 	      });
@@ -3372,7 +3346,7 @@ var sweetalert2_all = {exports: {}};
 	        var valueFormatted = inputOptions[key];
 	        if (_typeof(valueFormatted) === 'object') {
 	          // case of <optgroup>
-	          valueFormatted = formatInputOptions(valueFormatted);
+	          valueFormatted = _formatInputOptions(valueFormatted);
 	        }
 	        result.push([key, valueFormatted]);
 	      });
@@ -4154,11 +4128,10 @@ var sweetalert2_all = {exports: {}};
 	   * @returns {Promise<SweetAlertResult>}
 	   */
 	  function fire() {
-	    var Swal = this; // eslint-disable-line @typescript-eslint/no-this-alias
 	    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
-	    return _construct(Swal, args);
+	    return _construct(this, args);
 	  }
 
 	  /**
@@ -4190,7 +4163,7 @@ var sweetalert2_all = {exports: {}};
 	      return _createClass(MixinSwal, [{
 	        key: "_main",
 	        value: function _main(params, priorityMixinParams) {
-	          return _get(_getPrototypeOf(MixinSwal.prototype), "_main", this).call(this, params, Object.assign({}, mixinParams, priorityMixinParams));
+	          return _superPropGet(MixinSwal, "_main", this)([params, Object.assign({}, mixinParams, priorityMixinParams)]);
 	        }
 	      }]);
 	    }(this); // @ts-ignore
@@ -4432,8 +4405,7 @@ var sweetalert2_all = {exports: {}};
 	   * @returns {SweetAlertOptions}
 	   */
 	  var getTemplateParams = function getTemplateParams(params) {
-	    /** @type {HTMLTemplateElement} */
-	    var template = typeof params.template === 'string' ? document.querySelector(params.template) : params.template;
+	    var template = typeof params.template === 'string' ? ( /** @type {HTMLTemplateElement} */document.querySelector(params.template)) : params.template;
 	    if (!template) {
 	      return {};
 	    }
@@ -4446,16 +4418,20 @@ var sweetalert2_all = {exports: {}};
 
 	  /**
 	   * @param {DocumentFragment} templateContent
-	   * @returns {SweetAlertOptions}
+	   * @returns {Record<string, any>}
 	   */
 	  var getSwalParams = function getSwalParams(templateContent) {
+	    /** @type {Record<string, any>} */
 	    var result = {};
 	    /** @type {HTMLElement[]} */
 	    var swalParams = Array.from(templateContent.querySelectorAll('swal-param'));
 	    swalParams.forEach(function (param) {
 	      showWarningsForAttributes(param, ['name', 'value']);
-	      var paramName = param.getAttribute('name');
+	      var paramName = /** @type {keyof SweetAlertOptions} */param.getAttribute('name');
 	      var value = param.getAttribute('value');
+	      if (!paramName || !value) {
+	        return;
+	      }
 	      if (typeof defaultParams[paramName] === 'boolean') {
 	        result[paramName] = value !== 'false';
 	      } else if (_typeof(defaultParams[paramName]) === 'object') {
@@ -4469,15 +4445,19 @@ var sweetalert2_all = {exports: {}};
 
 	  /**
 	   * @param {DocumentFragment} templateContent
-	   * @returns {SweetAlertOptions}
+	   * @returns {Record<string, any>}
 	   */
 	  var getSwalFunctionParams = function getSwalFunctionParams(templateContent) {
+	    /** @type {Record<string, any>} */
 	    var result = {};
 	    /** @type {HTMLElement[]} */
 	    var swalFunctions = Array.from(templateContent.querySelectorAll('swal-function-param'));
 	    swalFunctions.forEach(function (param) {
-	      var paramName = param.getAttribute('name');
+	      var paramName = /** @type {keyof SweetAlertOptions} */param.getAttribute('name');
 	      var value = param.getAttribute('value');
+	      if (!paramName || !value) {
+	        return;
+	      }
 	      result[paramName] = new Function("return ".concat(value))();
 	    });
 	    return result;
@@ -4485,15 +4465,19 @@ var sweetalert2_all = {exports: {}};
 
 	  /**
 	   * @param {DocumentFragment} templateContent
-	   * @returns {SweetAlertOptions}
+	   * @returns {Record<string, any>}
 	   */
 	  var getSwalButtons = function getSwalButtons(templateContent) {
+	    /** @type {Record<string, any>} */
 	    var result = {};
 	    /** @type {HTMLElement[]} */
 	    var swalButtons = Array.from(templateContent.querySelectorAll('swal-button'));
 	    swalButtons.forEach(function (button) {
 	      showWarningsForAttributes(button, ['type', 'color', 'aria-label']);
 	      var type = button.getAttribute('type');
+	      if (!type || !['confirm', 'cancel', 'deny'].includes(type)) {
+	        return;
+	      }
 	      result["".concat(type, "ButtonText")] = button.innerHTML;
 	      result["show".concat(capitalizeFirstLetter(type), "Button")] = true;
 	      if (button.hasAttribute('color')) {
@@ -4534,17 +4518,15 @@ var sweetalert2_all = {exports: {}};
 
 	  /**
 	   * @param {DocumentFragment} templateContent
-	   * @returns {SweetAlertOptions}
+	   * @returns {Record<string, any>}
 	   */
 	  var getSwalIcon = function getSwalIcon(templateContent) {
 	    var result = {};
-	    /** @type {HTMLElement} */
+	    /** @type {HTMLElement | null} */
 	    var icon = templateContent.querySelector('swal-icon');
 	    if (icon) {
 	      showWarningsForAttributes(icon, ['type', 'color']);
 	      if (icon.hasAttribute('type')) {
-	        /** @type {SweetAlertIcon} */
-	        // @ts-ignore
 	        result.icon = icon.getAttribute('type');
 	      }
 	      if (icon.hasAttribute('color')) {
@@ -4557,16 +4539,15 @@ var sweetalert2_all = {exports: {}};
 
 	  /**
 	   * @param {DocumentFragment} templateContent
-	   * @returns {SweetAlertOptions}
+	   * @returns {Record<string, any>}
 	   */
 	  var getSwalInput = function getSwalInput(templateContent) {
+	    /** @type {Record<string, any>} */
 	    var result = {};
-	    /** @type {HTMLElement} */
+	    /** @type {HTMLElement | null} */
 	    var input = templateContent.querySelector('swal-input');
 	    if (input) {
 	      showWarningsForAttributes(input, ['type', 'label', 'placeholder', 'value']);
-	      /** @type {SweetAlertInput} */
-	      // @ts-ignore
 	      result.input = input.getAttribute('type') || 'text';
 	      if (input.hasAttribute('label')) {
 	        result.inputLabel = input.getAttribute('label');
@@ -4585,6 +4566,9 @@ var sweetalert2_all = {exports: {}};
 	      inputOptions.forEach(function (option) {
 	        showWarningsForAttributes(option, ['value']);
 	        var optionValue = option.getAttribute('value');
+	        if (!optionValue) {
+	          return;
+	        }
 	        var optionName = option.innerHTML;
 	        result.inputOptions[optionValue] = optionName;
 	      });
@@ -4595,13 +4579,14 @@ var sweetalert2_all = {exports: {}};
 	  /**
 	   * @param {DocumentFragment} templateContent
 	   * @param {string[]} paramNames
-	   * @returns {SweetAlertOptions}
+	   * @returns {Record<string, any>}
 	   */
 	  var getSwalStringParams = function getSwalStringParams(templateContent, paramNames) {
+	    /** @type {Record<string, any>} */
 	    var result = {};
 	    for (var i in paramNames) {
 	      var paramName = paramNames[i];
-	      /** @type {HTMLElement} */
+	      /** @type {HTMLElement | null} */
 	      var tag = templateContent.querySelector(paramName);
 	      if (tag) {
 	        showWarningsForAttributes(tag, []);
@@ -4675,13 +4660,13 @@ var sweetalert2_all = {exports: {}};
 	  /**
 	   * @param {AnimationEvent} event
 	   */
-	  var swalOpenAnimationFinished = function swalOpenAnimationFinished(event) {
+	  var _swalOpenAnimationFinished = function swalOpenAnimationFinished(event) {
 	    var popup = getPopup();
 	    if (event.target !== popup || !animationEndEvent) {
 	      return;
 	    }
 	    var container = getContainer();
-	    popup.removeEventListener(animationEndEvent, swalOpenAnimationFinished);
+	    popup.removeEventListener(animationEndEvent, _swalOpenAnimationFinished);
 	    container.style.overflowY = 'auto';
 	  };
 
@@ -4692,7 +4677,7 @@ var sweetalert2_all = {exports: {}};
 	  var setScrollingVisibility = function setScrollingVisibility(container, popup) {
 	    if (animationEndEvent && hasCssAnimation(popup)) {
 	      container.style.overflowY = 'hidden';
-	      popup.addEventListener(animationEndEvent, swalOpenAnimationFinished);
+	      popup.addEventListener(animationEndEvent, _swalOpenAnimationFinished);
 	    } else {
 	      container.style.overflowY = 'auto';
 	    }
@@ -5145,7 +5130,7 @@ var sweetalert2_all = {exports: {}};
 	    };
 	  });
 	  SweetAlert.DismissReason = DismissReason;
-	  SweetAlert.version = '11.12.2';
+	  SweetAlert.version = '11.12.4';
 
 	  var Swal = SweetAlert;
 	  // @ts-ignore

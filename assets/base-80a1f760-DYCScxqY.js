@@ -1,4 +1,4 @@
-import { f as dequal } from './Sandpack-D9vqK_pa.js';
+import { f as dequal } from './Sandpack-BYftwTJ5.js';
 
 var SandpackClient = /** @class */ (function () {
     function SandpackClient(iframeSelector, sandboxSetup, options) {

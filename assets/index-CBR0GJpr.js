@@ -1,6 +1,6 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-D9vqK_pa.js';
-import { S as SandpackClient } from './base-80a1f760-Ch7co6vG.js';
-import { g as getDefaultExportFromCjs } from './index-Dl6rLBY9.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-BYftwTJ5.js';
+import { S as SandpackClient } from './base-80a1f760-DYCScxqY.js';
+import { g as getDefaultExportFromCjs } from './index-BjB-w-wT.js';
 
 const require$$0 = {
 	"application/1d-interleaved-parityfec": {
@@ -11693,7 +11693,7 @@ function getExtension(filepath) {
 
 var _a;
 var SUFFIX_PLACEHOLDER = "-{{suffix}}";
-var BUNDLER_URL = "https://".concat((_a = "2.18.0") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.18.2") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
@@ -11710,17 +11710,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
                 _this.dispatch({ type: "get-transpiler-context" });
             });
         };
-        _this.bundlerURL = options.bundlerURL || BUNDLER_URL;
-        if (options.teamId) {
-            _this.bundlerURL =
-                _this.bundlerURL.replace("https://", "https://" + options.teamId + "-") +
-                    "?cache=".concat(Date.now());
-        }
-        var suffixes = [];
-        if (options.experimental_enableServiceWorker) {
-            suffixes.push(Math.random().toString(36).slice(4));
-        }
-        _this.bundlerURL = _this.bundlerURL.replace(SUFFIX_PLACEHOLDER, suffixes.length ? "-".concat(suffixes.join("-")) : "");
+        _this.bundlerURL = _this.createBundlerURL();
         _this.bundlerState = undefined;
         _this.errors = [];
         _this.status = "initializing";
@@ -11797,6 +11787,28 @@ var SandpackRuntime = /** @class */ (function (_super) {
         }
         return _this;
     }
+    SandpackRuntime.prototype.createBundlerURL = function () {
+        var _a;
+        var bundlerURL = this.options.bundlerURL || BUNDLER_URL;
+        // if it's a custom, skip the rest
+        if (this.options.bundlerURL) {
+            return bundlerURL;
+        }
+        if (this.options.teamId) {
+            bundlerURL =
+                bundlerURL.replace("https://", "https://" + this.options.teamId + "-") +
+                    "?cache=".concat(Date.now());
+        }
+        if (this.options.experimental_enableServiceWorker) {
+            var suffixes = [];
+            suffixes.push(Math.random().toString(36).slice(4));
+            bundlerURL = bundlerURL.replace(SUFFIX_PLACEHOLDER, "-".concat((_a = this.options.experimental_stableServiceWorkerId) !== null && _a !== void 0 ? _a : suffixes.join("-")));
+        }
+        else {
+            bundlerURL = bundlerURL.replace(SUFFIX_PLACEHOLDER, "");
+        }
+        return bundlerURL;
+    };
     SandpackRuntime.prototype.serviceWorkerHandshake = function () {
         var _this = this;
         var channel = new MessageChannel();
@@ -11817,13 +11829,15 @@ var SandpackRuntime = /** @class */ (function (_super) {
                 }
             }
         };
-        this.iframe.onload = function () {
+        var sendMessage = function () {
             var initMsg = {
                 $channel: CHANNEL_NAME,
                 $type: "preview/init",
             };
             iframeContentWindow.postMessage(initMsg, "*", [channel.port2]);
+            _this.iframe.removeEventListener("load", sendMessage);
         };
+        this.iframe.addEventListener("load", sendMessage);
     };
     SandpackRuntime.prototype.handleWorkerRequest = function (request, port) {
         try {
@@ -11920,6 +11934,9 @@ var SandpackRuntime = /** @class */ (function (_super) {
          */
         if (message.type === "refresh") {
             this.setLocationURLIntoIFrame();
+            if (this.options.experimental_enableServiceWorker) {
+                this.serviceWorkerHandshake();
+            }
         }
         this.iframeProtocol.dispatch(message);
     };

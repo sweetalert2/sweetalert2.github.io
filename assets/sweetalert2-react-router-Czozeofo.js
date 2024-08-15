@@ -1,6 +1,6 @@
-import { c as client, j as jsxRuntimeExports, N as Nav } from './index-Dl6rLBY9.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-D9vqK_pa.js';
-import { C as CreatePortalDocs } from './CreatePortalDocs-C3vcVxt6.js';
+import { c as client, j as jsxRuntimeExports, N as Nav } from './index-BjB-w-wT.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-BYftwTJ5.js';
+import { C as CreatePortalDocs } from './CreatePortalDocs-BWcCoBMg.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./sweetalert2-react-router-src-B9Lz50FU.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 function Recipe() {
