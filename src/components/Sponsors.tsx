@@ -19,6 +19,8 @@ export function Sponsors() {
             <img src="/images/plus.png" alt="" />
             <br />
             Become a sponsor
+            <br />
+            for $29 per month
           </a>
         </div>
       </div>
@@ -107,6 +109,8 @@ export function Sponsors() {
             <img src="/images/plus.png" alt="" />
             <br />
             Become a sponsor
+            <br />
+            for $29 per month
           </a>
         </div>
       </div>
