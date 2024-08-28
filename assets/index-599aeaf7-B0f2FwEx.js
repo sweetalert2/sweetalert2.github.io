@@ -1,6 +1,6 @@
-import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-BYftwTJ5.js';
-import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-59e792cb-AfAl580M.js';
-import { S as SandpackClient } from './base-80a1f760-DYCScxqY.js';
+import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-D09ysorl.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, c as consoleHook, b as generateRandomId$1 } from './consoleHook-59e792cb-DL9ykIaZ.js';
+import { S as SandpackClient } from './base-80a1f760-BQXl3Atw.js';
 import './index-BjB-w-wT.js';
 
 var __create = Object.create;
@@ -8832,7 +8832,7 @@ var SandpackStatic = /** @class */ (function (_super) {
         }
         if (!_this.iframe.getAttribute("sandbox")) {
             _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-downloads allow-pointer-lock");
-            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-write;");
+            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-read; clipboard-write; xr-spatial-tracking;");
         }
         _this.eventListener = _this.eventListener.bind(_this);
         if (typeof window !== "undefined") {

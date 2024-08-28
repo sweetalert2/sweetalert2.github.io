@@ -6746,7 +6746,9 @@ function Sponsors() {
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/plus.png", alt: "" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "Become a sponsor"
+          "Become a sponsor",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+          "for $29 per month"
         ]
       }
     ) }) }),
@@ -6813,7 +6815,9 @@ function Sponsors() {
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/plus.png", alt: "" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "Become a sponsor"
+          "Become a sponsor",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+          "for $29 per month"
         ]
       }
     ) }) }),

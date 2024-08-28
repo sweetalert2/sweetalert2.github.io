@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-BYrQLARA.js","assets/base-80a1f760-DYCScxqY.js","assets/consoleHook-59e792cb-AfAl580M.js","assets/index-BjB-w-wT.js","assets/index-DpkLTAnF.css","assets/index-585bceb7-C5SgzLFi.js","assets/index-CBR0GJpr.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DOxbdQeU.js","assets/base-80a1f760-BQXl3Atw.js","assets/consoleHook-59e792cb-DL9ykIaZ.js","assets/index-BjB-w-wT.js","assets/index-DpkLTAnF.css","assets/index-599aeaf7-B0f2FwEx.js","assets/index-BYkfdzkj.js"])))=>i.map(i=>d[i]);
 import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-BjB-w-wT.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -473,15 +473,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-BYrQLARA.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DOxbdQeU.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-585bceb7-C5SgzLFi.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-B0f2FwEx.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CBR0GJpr.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-BYkfdzkj.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -7071,6 +7071,8 @@ const exceptionSink = /*@__PURE__*/Facet.define();
 const updateListener = /*@__PURE__*/Facet.define();
 const inputHandler$1 = /*@__PURE__*/Facet.define();
 const focusChangeEffect = /*@__PURE__*/Facet.define();
+const clipboardInputFilter = /*@__PURE__*/Facet.define();
+const clipboardOutputFilter = /*@__PURE__*/Facet.define();
 const perLineTextDirection = /*@__PURE__*/Facet.define({
     combine: values => values.some(x => x)
 });
@@ -9252,7 +9254,13 @@ function capturePaste(view) {
         doPaste(view, target.value);
     }, 50);
 }
+function textFilter(state, facet, text) {
+    for (let filter of state.facet(facet))
+        text = filter(text, state);
+    return text;
+}
 function doPaste(view, input) {
+    input = textFilter(view.state, clipboardInputFilter, input);
     let { state } = view, changes, i = 1, text = state.toText(input);
     let byLine = text.lines == state.selection.ranges.length;
     let linewise = lastLinewiseCopy != null && state.selection.ranges.every(r => r.empty) && lastLinewiseCopy == text.toString();
@@ -9437,7 +9445,7 @@ handlers.dragstart = (view, event) => {
         inputState.mouseSelection.dragging = true;
     inputState.draggedContent = range;
     if (event.dataTransfer) {
-        event.dataTransfer.setData("Text", view.state.sliceDoc(range.from, range.to));
+        event.dataTransfer.setData("Text", textFilter(view.state, clipboardOutputFilter, view.state.sliceDoc(range.from, range.to)));
         event.dataTransfer.effectAllowed = "copyMove";
     }
     return false;
@@ -9447,6 +9455,7 @@ handlers.dragend = view => {
     return false;
 };
 function dropText(view, event, text, direct) {
+    text = textFilter(view.state, clipboardInputFilter, text);
     if (!text)
         return;
     let dropPos = view.posAtCoords({ x: event.clientX, y: event.clientY }, false);
@@ -9547,7 +9556,7 @@ function copiedRange(state) {
         }
         linewise = true;
     }
-    return { text: content.join(state.lineBreak), ranges, linewise };
+    return { text: textFilter(state, clipboardOutputFilter, content.join(state.lineBreak)), ranges, linewise };
 }
 let lastLinewiseCopy = null;
 handlers.copy = handlers.cut = (view, event) => {
@@ -12968,6 +12977,15 @@ that would be applied for this input. This can be useful when
 dispatching the custom behavior as a separate transaction.
 */
 EditorView.inputHandler = inputHandler$1;
+/**
+Functions provided in this facet will be used to transform text
+pasted or dropped into the editor.
+*/
+EditorView.clipboardInputFilter = clipboardInputFilter;
+/**
+Transform text copied or dragged from the editor.
+*/
+EditorView.clipboardOutputFilter = clipboardOutputFilter;
 /**
 Scroll handlers can override how things are scrolled into view.
 If they return `true`, no further handling happens for the
@@ -29498,9 +29516,11 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
             ? decorators.sort(function (d1, d2) { return d1.line - d2.line; })
             : decorators;
     }, [decorators]);
+    var useStaticReadOnly = readOnly && (decorators === null || decorators === void 0 ? void 0 : decorators.length) === 0;
     reactExports.useEffect(function () {
-        if (!wrapper.current || !shouldInitEditor)
+        if (!wrapper.current || !shouldInitEditor || useStaticReadOnly) {
             return;
+        }
         var parentDiv = wrapper.current;
         var existingPlaceholder = parentDiv.querySelector(".sp-pre-placeholder");
         if (existingPlaceholder) {
@@ -29510,32 +29530,22 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
             doc: code,
             extensions: [],
             parent: parentDiv,
-            dispatch: function (tr) {
-                view.update([tr]);
-                if (tr.docChanged) {
-                    var newCode = tr.newDoc.sliceString(0, tr.newDoc.length);
-                    setInternalCode(newCode);
-                    onCodeUpdate === null || onCodeUpdate === void 0 ? void 0 : onCodeUpdate(newCode);
-                }
-            },
         });
         view.contentDOM.setAttribute("data-gramm", "false");
         view.contentDOM.setAttribute("data-lt-active", "false");
         view.contentDOM.setAttribute("aria-label", filePath ? "Code Editor for ".concat(getFileName(filePath)) : "Code Editor");
-        if (readOnly) {
-            view.contentDOM.classList.add("cm-readonly");
-        }
-        else {
-            view.contentDOM.setAttribute("tabIndex", "-1");
-        }
+        view.contentDOM.setAttribute("tabIndex", "-1");
         cmView.current = view;
         return function () {
             var _a;
             (_a = cmView.current) === null || _a === void 0 ? void 0 : _a.destroy();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [shouldInitEditor]);
+    }, [shouldInitEditor, readOnly, useStaticReadOnly]);
     reactExports.useEffect(function () {
+        if (useStaticReadOnly) {
+            return;
+        }
         if (cmView.current) {
             var customCommandsKeymap = [
                 {
@@ -29587,6 +29597,13 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                 langSupport,
                 getEditorTheme(),
                 syntaxHighlighting(highlightTheme),
+                EditorView.updateListener.of(function (update) {
+                    if (update.docChanged) {
+                        var newCode = update.state.doc.toString();
+                        setInternalCode(newCode);
+                        onCodeUpdate === null || onCodeUpdate === void 0 ? void 0 : onCodeUpdate(newCode);
+                    }
+                }),
             ], false);
             if (readOnly) {
                 extensionList.push(EditorState.readOnly.of(true));
@@ -29621,6 +29638,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
         wrapContent,
         themeId,
         readOnly,
+        useStaticReadOnly,
         autoReload,
     ]);
     reactExports.useEffect(function applyExtensions() {
@@ -29705,7 +29723,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
         }
         return "var(--".concat(THEME_PREFIX, "-space-").concat(offset, ")");
     };
-    if (readOnly) {
+    if (useStaticReadOnly) {
         return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("pre", { ref: combinedRef, className: classNames("cm", [
                         classNames(editorState),
                         classNames(languageExtension),

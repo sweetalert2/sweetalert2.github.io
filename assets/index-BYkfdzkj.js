@@ -1,5 +1,5 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-BYftwTJ5.js';
-import { S as SandpackClient } from './base-80a1f760-DYCScxqY.js';
+import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-D09ysorl.js';
+import { S as SandpackClient } from './base-80a1f760-BQXl3Atw.js';
 import { g as getDefaultExportFromCjs } from './index-BjB-w-wT.js';
 
 const require$$0 = {
@@ -11693,7 +11693,7 @@ function getExtension(filepath) {
 
 var _a;
 var SUFFIX_PLACEHOLDER = "-{{suffix}}";
-var BUNDLER_URL = "https://".concat((_a = "2.18.2") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.19.0") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
@@ -11728,7 +11728,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         }
         if (!_this.iframe.getAttribute("sandbox")) {
             _this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-downloads allow-pointer-lock");
-            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-read; clipboard-write;");
+            _this.iframe.setAttribute("allow", "accelerometer; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; clipboard-read; clipboard-write; xr-spatial-tracking;");
         }
         _this.setLocationURLIntoIFrame();
         _this.iframeProtocol = new IFrameProtocol(_this.iframe, _this.bundlerURL);
