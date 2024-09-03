@@ -6891,40 +6891,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "hentai sex toys"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "a",
-        {
-          href: "https://blowupdollshop.com/inflatable-sex-doll/",
-          target: "_blank",
-          rel: "noopener",
-          "aria-label": "Inflatable sex doll",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/blowupdollshop.png", alt: "Inflatable sex doll" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "Inflatable sex doll"
-          ]
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sexdollsmarket.com/", target: "_blank", rel: "noopener", "aria-label": "Sex Doll Torso", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexdollsmarket.png", alt: "Sex Doll Torso" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Sex Doll Torso"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sexydollies.com/", target: "_blank", rel: "noopener", "aria-label": "porn sexdoll", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexydollies.png", alt: "porn sexdoll" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "porn sexdoll"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://bululusexdoll.com/", target: "_blank", rel: "noopener", "aria-label": "cheap sex doll", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/bululusexdoll.png", alt: "cheap sex doll" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "cheap sex doll"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://bululu.shop/", target: "_blank", rel: "noopener", "aria-label": "BULULU", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/bululu.png", alt: "BULULU" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "BULULU"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://vsdoll.net/", target: "_blank", rel: "noopener", "aria-label": "VSDoll", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/vsdoll.png", alt: "VSDoll" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
