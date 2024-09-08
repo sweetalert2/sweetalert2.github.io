@@ -5650,6 +5650,41 @@ function ConfigurationParams() {
               ")."
             ] })
           ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "didRender", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#didRender", children: "#" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "didRender" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "Popup lifecycle hook. Synchronously runs after the popup DOM has been updated (i.e. just before the popup is repainted on the screen). ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "didRender" }),
+              " is called before ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "willOpen" }),
+              ".",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "Provides popup DOM element as the argument.",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "Typically, this will happen after ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire()" }),
+              " or ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.update()" }),
+              ".",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "If you want to perform changes in the popup's DOM, that survive ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.update()" }),
+              ", prefer",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "didRender" }),
+              " over ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "willOpen" }),
+              ".",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "In previous versions, this hook was named ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onRender" }),
+              "."
+            ] })
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "willOpen", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#willOpen", children: "#" }),
@@ -5673,37 +5708,6 @@ function ConfigurationParams() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
               "Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM element as the argument. In previous versions, this hook was named ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onOpen" }),
-              "."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "didRender", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#didRender", children: "#" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "didRender" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "undefined" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Popup lifecycle hook. Synchronously runs after the popup DOM has been updated (ie. just before the popup is repainted on the screen).",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              "Provides popup DOM element as the argument.",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              "Typically, this will happen after ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire()" }),
-              " or ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.update()" }),
-              ".",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              "If you want to perform changes in the popup's DOM, that survive ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.update()" }),
-              ", prefer",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "didRender" }),
-              " over ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "willOpen" }),
-              ".",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              "In previous versions, this hook was named ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "onRender" }),
               "."
             ] })
           ] }),
