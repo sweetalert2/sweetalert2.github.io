@@ -171,13 +171,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://vlixa.com/" target="_blank" rel="noopener" aria-label="Vlixa">
-            <img src="/images/sponsors/vlixa.png" alt="Vlixa" />
-            <br />
-            Vlixa
-          </a>
-        </div>
-        <div>
           <a href="https://sexsitoys.com/lovense-games/" target="_blank" rel="noopener" aria-label="Sexsi Toys">
             <img src="/images/sponsors/sexsitoys.jpg" alt="Sexsi Toys" />
             <br />
