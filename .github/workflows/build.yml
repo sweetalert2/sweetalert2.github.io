@@ -15,19 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install npm dependencies
-        run: yarn install
-
-      - name: Run linters
-        run: yarn lint
-
-      - name: Build
-        run: yarn build
-
-      # - name: Setup ruby
-      #   uses: ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: '3.0'
+      - run: yarn install
+      - run: yarn lint
+      - run: yarn build
 
       - name: Deploy 🚀
         if: github.event_name == 'push'
@@ -36,7 +26,8 @@ jobs:
           branch: gh-pages
           folder: dist
 
-      # - name: Check for broken links
-      #   run: |
-      #     gem install awesome_bot
-      #     awesome_bot index.html --allow-dupe --allow-redirect --skip-save-results --white-list "https://codepen.io/pen/define,https://war.ukraine.ua/support-ukraine/,https://realspyapps.com/,https://doctorclimax.com/,https://blowupdollshop.com/,https://sextoycollective.com/,https://placeholder.pics/svg/300x1500,https://www.serpempire.com/,https://www.myminisexdoll.com/"
+      - name: Check for broken links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: src/**/*.tsx --exclude https://codepen.io/pen/define --exclude https://war.ukraine.ua/support-ukraine/  --exclude https://www.minisexdoll.com/anime-sexdoll/ --exclude https://www.mymasturbators.com/
+          fail: true
