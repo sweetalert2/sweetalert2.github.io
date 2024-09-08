@@ -949,6 +949,27 @@ export function ConfigurationParams() {
                 <strong>%</strong>).
               </td>
             </tr>
+            <tr id="didRender">
+              <td>
+                <a className="hover-anchor" href="#didRender" children="#" />
+                <h4>didRender</h4>
+                <br />
+                <i>undefined</i>
+              </td>
+              <td>
+                Popup lifecycle hook. Synchronously runs after the popup DOM has been updated (i.e. just before the
+                popup is repainted on the screen). <strong>didRender</strong> is called before <strong>willOpen</strong>
+                .
+                <br />
+                Provides popup DOM element as the argument.
+                <br />
+                Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>.<br />
+                If you want to perform changes in the popup's DOM, that survive <strong>Swal.update()</strong>, prefer
+                <strong>didRender</strong> over <strong>willOpen</strong>.
+                <br />
+                In previous versions, this hook was named <strong>onRender</strong>.
+              </td>
+            </tr>
             <tr id="willOpen">
               <td>
                 <a className="hover-anchor" href="#willOpen" children="#" />
@@ -971,26 +992,6 @@ export function ConfigurationParams() {
               <td>
                 Popup lifecycle hook. Asynchronously runs after the popup has been shown on screen. Provides popup DOM
                 element as the argument. In previous versions, this hook was named <strong>onOpen</strong>.
-              </td>
-            </tr>
-            <tr id="didRender">
-              <td>
-                <a className="hover-anchor" href="#didRender" children="#" />
-                <h4>didRender</h4>
-                <br />
-                <i>undefined</i>
-              </td>
-              <td>
-                Popup lifecycle hook. Synchronously runs after the popup DOM has been updated (ie. just before the popup
-                is repainted on the screen).
-                <br />
-                Provides popup DOM element as the argument.
-                <br />
-                Typically, this will happen after <strong>Swal.fire()</strong> or <strong>Swal.update()</strong>.<br />
-                If you want to perform changes in the popup's DOM, that survive <strong>Swal.update()</strong>, prefer
-                <strong>didRender</strong> over <strong>willOpen</strong>.
-                <br />
-                In previous versions, this hook was named <strong>onRender</strong>.
               </td>
             </tr>
             <tr id="willClose">
