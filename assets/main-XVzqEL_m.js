@@ -6919,7 +6919,7 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.myminisexdoll.com/", target: "_blank", rel: "noopener", "aria-label": "cheap sexdoll", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.myminisexdoll.com/under-300/", target: "_blank", rel: "noopener", "aria-label": "cheap sexdoll", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/myminisexdoll.png", alt: "cheap sexdoll" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "cheap sexdoll"
