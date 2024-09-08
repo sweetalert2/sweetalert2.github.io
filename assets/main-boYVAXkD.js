@@ -6866,11 +6866,6 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://vlixa.com/", target: "_blank", rel: "noopener", "aria-label": "Vlixa", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/vlixa.png", alt: "Vlixa" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Vlixa"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sexsitoys.com/lovense-games/", target: "_blank", rel: "noopener", "aria-label": "Sexsi Toys", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexsitoys.jpg", alt: "Sexsi Toys" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
