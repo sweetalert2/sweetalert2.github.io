@@ -6919,20 +6919,11 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "a",
-        {
-          href: "https://www.myminisexdoll.com/cheap-sex-dolls/",
-          target: "_blank",
-          rel: "noopener",
-          "aria-label": "cheap sexdoll",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/myminisexdoll.png", alt: "cheap sexdoll" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "cheap sexdoll"
-          ]
-        }
-      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.myminisexdoll.com/", target: "_blank", rel: "noopener", "aria-label": "cheap sexdoll", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/myminisexdoll.png", alt: "cheap sexdoll" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "cheap sexdoll"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.hugedildo.com/", target: "_blank", rel: "noopener", "aria-label": "huge dildo", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/hugedildo.png", alt: "huge dildo" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
