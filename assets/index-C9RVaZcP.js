@@ -1,6 +1,6 @@
-import { a as __extends, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, b as __awaiter, c as __generator, l as extractErrorDetails } from './Sandpack-BUflt2P9.js';
-import { S as SandpackClient } from './base-80a1f760-DJKP_euX.js';
-import { g as getDefaultExportFromCjs } from './index-BjB-w-wT.js';
+import { a as __extends, b as __awaiter, c as __generator, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, l as extractErrorDetails } from './Sandpack-B0o63Y8a.js';
+import { S as SandpackClient } from './base-80a1f760-BctJzvYr.js';
+import { g as getDefaultExportFromCjs } from './index-DM5WtHNv.js';
 
 const require$$0 = {
 	"application/1d-interleaved-parityfec": {
@@ -11693,7 +11693,7 @@ function getExtension(filepath) {
 
 var _a;
 var SUFFIX_PLACEHOLDER = "-{{suffix}}";
-var BUNDLER_URL = "https://".concat((_a = "2.19.0") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.19.8") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
@@ -11708,6 +11708,17 @@ var SandpackRuntime = /** @class */ (function (_super) {
                     }
                 });
                 _this.dispatch({ type: "get-transpiler-context" });
+            });
+        };
+        _this.getTranspiledFiles = function () {
+            return new Promise(function (resolve) {
+                var unsubscribe = _this.listen(function (message) {
+                    if (message.type === "all-modules") {
+                        resolve(message.data);
+                        unsubscribe();
+                    }
+                });
+                _this.dispatch({ type: "get-modules" });
             });
         };
         _this.bundlerURL = _this.createBundlerURL();
@@ -11840,41 +11851,71 @@ var SandpackRuntime = /** @class */ (function (_super) {
         this.iframe.addEventListener("load", sendMessage);
     };
     SandpackRuntime.prototype.handleWorkerRequest = function (request, port) {
-        try {
-            var filepath = new URL(request.url, this.bundlerURL).pathname;
-            var headers = {};
-            var files = this.getFiles();
-            var body = files[filepath].code;
-            if (!headers["Content-Type"]) {
-                var extension = getExtension(filepath);
-                var foundMimetype = EXTENSIONS_MAP.get(extension);
-                if (foundMimetype) {
-                    headers["Content-Type"] = foundMimetype;
+        return __awaiter(this, void 0, void 0, function () {
+            var notFound, filepath_1, headers, files, file, modulesFromManager, body, extension, foundMimetype, responseMessage, err_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        notFound = function () {
+                            var responseMessage = {
+                                $channel: CHANNEL_NAME,
+                                $type: "preview/response",
+                                id: request.id,
+                                headers: {
+                                    "Content-Type": "text/html; charset=utf-8",
+                                },
+                                status: 404,
+                                body: "File not found",
+                            };
+                            port.postMessage(responseMessage);
+                        };
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 4, , 5]);
+                        filepath_1 = new URL(request.url, this.bundlerURL).pathname;
+                        headers = {};
+                        files = this.getFiles();
+                        file = files[filepath_1];
+                        if (!!file) return [3 /*break*/, 3];
+                        return [4 /*yield*/, this.getTranspiledFiles()];
+                    case 2:
+                        modulesFromManager = _a.sent();
+                        file = modulesFromManager.find(function (item) {
+                            return item.path.endsWith(filepath_1);
+                        });
+                        if (!file) {
+                            notFound();
+                            return [2 /*return*/];
+                        }
+                        _a.label = 3;
+                    case 3:
+                        body = file.code;
+                        if (!headers["Content-Type"]) {
+                            extension = getExtension(filepath_1);
+                            foundMimetype = EXTENSIONS_MAP.get(extension);
+                            if (foundMimetype) {
+                                headers["Content-Type"] = foundMimetype;
+                            }
+                        }
+                        responseMessage = {
+                            $channel: CHANNEL_NAME,
+                            $type: "preview/response",
+                            id: request.id,
+                            headers: headers,
+                            status: 200,
+                            body: body,
+                        };
+                        port.postMessage(responseMessage);
+                        return [3 /*break*/, 5];
+                    case 4:
+                        err_1 = _a.sent();
+                        console.error(err_1);
+                        notFound();
+                        return [3 /*break*/, 5];
+                    case 5: return [2 /*return*/];
                 }
-            }
-            var responseMessage = {
-                $channel: CHANNEL_NAME,
-                $type: "preview/response",
-                id: request.id,
-                headers: headers,
-                status: 200,
-                body: body,
-            };
-            port.postMessage(responseMessage);
-        }
-        catch (err) {
-            var responseMessage = {
-                $channel: CHANNEL_NAME,
-                $type: "preview/response",
-                id: request.id,
-                headers: {
-                    "Content-Type": "text/html; charset=utf-8",
-                },
-                status: 404,
-                body: "File not found",
-            };
-            port.postMessage(responseMessage);
-        }
+            });
+        });
     };
     SandpackRuntime.prototype.setLocationURLIntoIFrame = function () {
         var _a;

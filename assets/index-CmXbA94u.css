@@ -1597,7 +1597,7 @@ strong {
   white-space: nowrap;
 }
 .show-example-btn:hover {
-  background-color: #6459dd;
+  background-color: rgb(100.1092391304, 89.2777173913, 221.4222826087);
 }
 .show-example-btn:focus {
   outline: none;
@@ -1607,7 +1607,7 @@ strong {
   border: 0;
 }
 .show-example-btn:active {
-  background-color: #483cd7;
+  background-color: rgb(72.3641304348, 59.5923913043, 215.4076086957);
 }
 .center-container {
   max-width: 725px;
@@ -1621,7 +1621,7 @@ pre {
   max-width: 95%;
   margin: 0 auto;
   background: #282c34;
-  color: #f7f7f7;
+  color: rgb(247.35, 247.35, 247.35);
   font-size: 1.2em !important;
   line-height: 1.2;
   text-align: left;
