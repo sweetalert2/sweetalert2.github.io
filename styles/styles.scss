@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:color';
 @use '/node_modules/@docsearch/css/dist/style.css';
 @use '/node_modules/highlight.js/styles/atom-one-dark.css';
 @use '../public/bootstrap4-buttons.css';
@@ -291,7 +292,7 @@ strong {
   white-space: nowrap;
 
   &:hover {
-    background-color: darken($btn-blue, 3%);
+    background-color: color.adjust($btn-blue, $lightness: -3%);
   }
 
   &:focus {
@@ -304,7 +305,7 @@ strong {
   }
 
   &:active {
-    background-color: darken($btn-blue, 10%);
+    background-color: color.adjust($btn-blue, $lightness: -10%);
   }
 }
 
@@ -322,7 +323,7 @@ pre {
   max-width: 95%;
   margin: 0 auto;
   background: $shark;
-  color: lighten($black, 97);
+  color: color.adjust($black, $lightness: 97%);
   font-size: 1.2em !important;
   line-height: 1.2;
   text-align: left;
