@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-D6kE7ntC.js","assets/base-80a1f760-IzG2ubWf.js","assets/consoleHook-59e792cb-BHykWH1p.js","assets/index-DjVit3tN.js","assets/index-EWGNGe86.css","assets/index-599aeaf7-4TPL86eG.js","assets/index-83_cZWCY.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DEAQ71qO.js","assets/base-80a1f760-CMEct9YN.js","assets/consoleHook-59e792cb-IbBzgFCZ.js","assets/index-DjVit3tN.js","assets/index-EWGNGe86.css","assets/index-599aeaf7-DnCQ4mjc.js","assets/index-R8mvULiG.js"])))=>i.map(i=>d[i]);
 import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DjVit3tN.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-D6kE7ntC.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DEAQ71qO.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-4TPL86eG.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-DnCQ4mjc.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-83_cZWCY.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-R8mvULiG.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -14854,7 +14854,7 @@ class BaseNode {
         return resolveNode(this, pos, side, true);
     }
     matchContext(context) {
-        return matchNodeContext(this, context);
+        return matchNodeContext(this.parent, context);
     }
     enterUnfinishedNodesBefore(pos) {
         let scan = this.childBefore(pos), node = this;
@@ -14979,7 +14979,7 @@ function getChildren(node, type, before, after) {
     }
 }
 function matchNodeContext(node, context, i = context.length - 1) {
-    for (let p = node.parent; i >= 0; p = p.parent) {
+    for (let p = node; i >= 0; p = p.parent) {
         if (!p)
             return false;
         if (!p.type.isAnonymous) {
@@ -15408,11 +15408,11 @@ class TreeCursor {
     */
     matchContext(context) {
         if (!this.buffer)
-            return matchNodeContext(this.node, context);
+            return matchNodeContext(this.node.parent, context);
         let { buffer } = this.buffer, { types } = buffer.set;
         for (let i = context.length - 1, d = this.stack.length - 1; i >= 0; d--) {
             if (d < 0)
-                return matchNodeContext(this.node, context, i);
+                return matchNodeContext(this._tree, context, i);
             let type = types[buffer.buffer[this.stack[d]]];
             if (!type.isAnonymous) {
                 if (context[i] && context[i] != type.name)
@@ -15434,7 +15434,7 @@ function buildTree(data) {
     let contextHash = 0, lookAhead = 0;
     function takeNode(parentStart, minPos, children, positions, inRepeat, depth) {
         let { id, start, end, size } = cursor;
-        let lookAheadAtStart = lookAhead;
+        let lookAheadAtStart = lookAhead, contextAtStart = contextHash;
         while (size < 0) {
             cursor.next();
             if (size == -1 /* SpecialRecord.Reuse */) {
@@ -15475,7 +15475,7 @@ function buildTree(data) {
             while (cursor.pos > endPos) {
                 if (localInRepeat >= 0 && cursor.id == localInRepeat && cursor.size >= 0) {
                     if (cursor.end <= lastEnd - maxBufferLength) {
-                        makeRepeatLeaf(localChildren, localPositions, start, lastGroup, cursor.end, lastEnd, localInRepeat, lookAheadAtStart);
+                        makeRepeatLeaf(localChildren, localPositions, start, lastGroup, cursor.end, lastEnd, localInRepeat, lookAheadAtStart, contextAtStart);
                         lastGroup = localChildren.length;
                         lastEnd = cursor.end;
                     }
@@ -15489,15 +15489,15 @@ function buildTree(data) {
                 }
             }
             if (localInRepeat >= 0 && lastGroup > 0 && lastGroup < localChildren.length)
-                makeRepeatLeaf(localChildren, localPositions, start, lastGroup, start, lastEnd, localInRepeat, lookAheadAtStart);
+                makeRepeatLeaf(localChildren, localPositions, start, lastGroup, start, lastEnd, localInRepeat, lookAheadAtStart, contextAtStart);
             localChildren.reverse();
             localPositions.reverse();
             if (localInRepeat > -1 && lastGroup > 0) {
-                let make = makeBalanced(type);
+                let make = makeBalanced(type, contextAtStart);
                 node = balanceRange(type, localChildren, localPositions, 0, localChildren.length, 0, end - start, make, make);
             }
             else {
-                node = makeTree(type, localChildren, localPositions, end - start, lookAheadAtStart - end);
+                node = makeTree(type, localChildren, localPositions, end - start, lookAheadAtStart - end, contextAtStart);
             }
         }
         children.push(node);
@@ -15535,7 +15535,7 @@ function buildTree(data) {
             positions.push(start - parentStart);
         }
     }
-    function makeBalanced(type) {
+    function makeBalanced(type, contextHash) {
         return (children, positions, length) => {
             let lookAhead = 0, lastI = children.length - 1, last, lookAheadProp;
             if (lastI >= 0 && (last = children[lastI]) instanceof Tree) {
@@ -15544,19 +15544,19 @@ function buildTree(data) {
                 if (lookAheadProp = last.prop(NodeProp.lookAhead))
                     lookAhead = positions[lastI] + last.length + lookAheadProp;
             }
-            return makeTree(type, children, positions, length, lookAhead);
+            return makeTree(type, children, positions, length, lookAhead, contextHash);
         };
     }
-    function makeRepeatLeaf(children, positions, base, i, from, to, type, lookAhead) {
+    function makeRepeatLeaf(children, positions, base, i, from, to, type, lookAhead, contextHash) {
         let localChildren = [], localPositions = [];
         while (children.length > i) {
             localChildren.push(children.pop());
             localPositions.push(positions.pop() + base - from);
         }
-        children.push(makeTree(nodeSet.types[type], localChildren, localPositions, to - from, lookAhead - to));
+        children.push(makeTree(nodeSet.types[type], localChildren, localPositions, to - from, lookAhead - to, contextHash));
         positions.push(from - base);
     }
-    function makeTree(type, children, positions, length, lookAhead = 0, props) {
+    function makeTree(type, children, positions, length, lookAhead, contextHash, props) {
         if (contextHash) {
             let pair = [NodeProp.contextHash, contextHash];
             props = props ? [pair].concat(props) : [pair];
@@ -16063,8 +16063,13 @@ class MixedParse {
             else if (overlay && (range = overlay.predicate(cursor))) {
                 if (range === true)
                     range = new Range(cursor.from, cursor.to);
-                if (range.from < range.to)
-                    overlay.ranges.push(range);
+                if (range.from < range.to) {
+                    let last = overlay.ranges.length - 1;
+                    if (last >= 0 && overlay.ranges[last].to == range.from)
+                        overlay.ranges[last] = { from: overlay.ranges[last].from, to: range.to };
+                    else
+                        overlay.ranges.push(range);
+                }
             }
             if (enter && cursor.firstChild()) {
                 if (overlay)
@@ -19980,14 +19985,14 @@ Move the selection to the bracket matching the one it is currently
 on, if any.
 */
 const cursorMatchingBracket = ({ state, dispatch }) => toMatchingBracket(state, dispatch);
-function extendSel(view, how) {
-    let selection = updateSel(view.state.selection, range => {
+function extendSel(target, how) {
+    let selection = updateSel(target.state.selection, range => {
         let head = how(range);
         return EditorSelection.range(range.anchor, head.head, head.goalColumn, head.bidiLevel || undefined);
     });
-    if (selection.eq(view.state.selection))
+    if (selection.eq(target.state.selection))
         return false;
-    view.dispatch(setSel(view.state, selection));
+    target.dispatch(setSel(target.state, selection));
     return true;
 }
 function selectByChar(view, forward) {
@@ -20618,7 +20623,7 @@ property changed to `mac`.)
  - End: [`cursorLineBoundaryForward`](https://codemirror.net/6/docs/ref/#commands.cursorLineBoundaryForward) ([`selectLineBoundaryForward`](https://codemirror.net/6/docs/ref/#commands.selectLineBoundaryForward) with Shift)
  - Ctrl-Home (Cmd-Home on macOS): [`cursorDocStart`](https://codemirror.net/6/docs/ref/#commands.cursorDocStart) ([`selectDocStart`](https://codemirror.net/6/docs/ref/#commands.selectDocStart) with Shift)
  - Ctrl-End (Cmd-Home on macOS): [`cursorDocEnd`](https://codemirror.net/6/docs/ref/#commands.cursorDocEnd) ([`selectDocEnd`](https://codemirror.net/6/docs/ref/#commands.selectDocEnd) with Shift)
- - Enter: [`insertNewlineAndIndent`](https://codemirror.net/6/docs/ref/#commands.insertNewlineAndIndent)
+ - Enter and Shift-Enter: [`insertNewlineAndIndent`](https://codemirror.net/6/docs/ref/#commands.insertNewlineAndIndent)
  - Ctrl-a (Cmd-a on macOS): [`selectAll`](https://codemirror.net/6/docs/ref/#commands.selectAll)
  - Backspace: [`deleteCharBackward`](https://codemirror.net/6/docs/ref/#commands.deleteCharBackward)
  - Delete: [`deleteCharForward`](https://codemirror.net/6/docs/ref/#commands.deleteCharForward)
@@ -20646,7 +20651,7 @@ const standardKeymap = /*@__PURE__*/[
     { key: "Mod-Home", run: cursorDocStart, shift: selectDocStart },
     { key: "End", run: cursorLineBoundaryForward, shift: selectLineBoundaryForward, preventDefault: true },
     { key: "Mod-End", run: cursorDocEnd, shift: selectDocEnd },
-    { key: "Enter", run: insertNewlineAndIndent },
+    { key: "Enter", run: insertNewlineAndIndent, shift: insertNewlineAndIndent },
     { key: "Mod-a", run: selectAll },
     { key: "Backspace", run: deleteCharBackward, shift: deleteCharBackward },
     { key: "Delete", run: deleteCharForward },
