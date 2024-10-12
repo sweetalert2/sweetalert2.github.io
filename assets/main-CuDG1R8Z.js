@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-DjVit3tN.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, c as client, N as Nav } from './index-BJ3JVnRI.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -6757,6 +6757,20 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "a",
+        {
+          href: "https://ssmarket.net/buy-youtube-views",
+          target: "_blank",
+          rel: "noopener",
+          "aria-label": "Buy Youtube Views",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/ssmarket.png", alt: "Buy Youtube Views" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            "Buy Youtube Views"
+          ]
+        }
+      ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.coinbit.fi/", target: "_blank", rel: "noopener", "aria-label": "Kryptovaluutat", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/coinbit.png", alt: "Kryptovaluutat" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
