@@ -27,6 +27,18 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a
+            href="https://ssmarket.net/buy-youtube-views"
+            target="_blank"
+            rel="noopener"
+            aria-label="Buy Youtube Views"
+          >
+            <img src="/images/sponsors/ssmarket.png" alt="Buy Youtube Views" />
+            <br />
+            Buy Youtube Views
+          </a>
+        </div>
+        <div>
           <a href="https://www.coinbit.fi/" target="_blank" rel="noopener" aria-label="Kryptovaluutat">
             <img src="/images/sponsors/coinbit.png" alt="Kryptovaluutat" />
             <br />
