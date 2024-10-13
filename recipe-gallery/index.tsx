@@ -17,6 +17,9 @@ function Recipe() {
           <a href="./bootstrap-custom-loader.html">Bootstrap 5 + custom loader</a>
         </li>
         <li>
+          <a href="./custom-icon.html">Custom Icon</a>
+        </li>
+        <li>
           <a href="./sweetalert2-react.html">React example</a>
         </li>
         <li>
