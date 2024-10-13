@@ -483,7 +483,7 @@ var m$1 = reactDomExports;
 }
 
 /*!
-* sweetalert2 v11.14.2
+* sweetalert2 v11.14.3
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -2801,12 +2801,16 @@ const handlePopupAnimation = (instance, popup, innerParams) => {
  */
 const animatePopup = (instance, popup, container, returnFocus, didClose) => {
   globalState.swalCloseEventFinishedCallback = removePopupAndResetState.bind(null, instance, container, returnFocus, didClose);
-  popup.addEventListener('animationend', function (e) {
+  const swalCloseAnimationFinished = function (e) {
     if (e.target === popup) {
       globalState.swalCloseEventFinishedCallback();
       delete globalState.swalCloseEventFinishedCallback;
+      popup.removeEventListener('animationend', swalCloseAnimationFinished);
+      popup.removeEventListener('transitionend', swalCloseAnimationFinished);
     }
-  });
+  };
+  popup.addEventListener('animationend', swalCloseAnimationFinished);
+  popup.addEventListener('transitionend', swalCloseAnimationFinished);
 };
 
 /**
@@ -4511,6 +4515,7 @@ const swalOpenAnimationFinished = event => {
   }
   const container = getContainer();
   popup.removeEventListener('animationend', swalOpenAnimationFinished);
+  popup.removeEventListener('transitionend', swalOpenAnimationFinished);
   container.style.overflowY = 'auto';
 };
 
@@ -4522,6 +4527,7 @@ const setScrollingVisibility = (container, popup) => {
   if (hasCssAnimation(popup)) {
     container.style.overflowY = 'hidden';
     popup.addEventListener('animationend', swalOpenAnimationFinished);
+    popup.addEventListener('transitionend', swalOpenAnimationFinished);
   } else {
     container.style.overflowY = 'auto';
   }
@@ -4958,7 +4964,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.14.2';
+SweetAlert.version = '11.14.3';
 
 const Swal = SweetAlert;
 // @ts-ignore
