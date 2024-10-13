@@ -1,0 +1,9 @@
+.rotate-y {
+  animation: rotateY 1s infinite linear;
+}
+
+@keyframes rotateY {
+  to {
+    transform: rotateY(360deg);
+  }
+}
