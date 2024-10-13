@@ -35,9 +35,8 @@ export function Sandpack({
       }}
       files={files}
       options={{
+        autoReload: false,
         showLineNumbers: true,
-        recompileMode: 'delayed',
-        recompileDelay: 3000,
         classes: {
           'sp-editor': `sp-h${editorHeight}`,
           'sp-preview': `sp-h${previewHeight}`,
