@@ -14,6 +14,7 @@ export default defineConfig({
         'recipe-gallery': 'recipe-gallery/index.html',
         'queue-with-progress-steps': 'recipe-gallery/queue-with-progress-steps.html',
         'bootstrap-custom-loader': 'recipe-gallery/bootstrap-custom-loader.html',
+        'custom-icon': 'recipe-gallery/custom-icon.html',
         'sweetalert2-react': 'recipe-gallery/sweetalert2-react.html',
         'sweetalert2-react-router': 'recipe-gallery/sweetalert2-react-router.html',
         'sweetalert2-formik': 'recipe-gallery/sweetalert2-formik.html',
