@@ -5,6 +5,12 @@
 ## Development
 
 ```sh
-yarn install
-yarn dev
+bun install
+bun dev
 ```
+
+## Search plugin by DocSearch/Algolia
+
+Website is being re-crawled every 1 day at 3:30 pm.
+
+Dashboard: https://crawler.algolia.com/admin/users/login
