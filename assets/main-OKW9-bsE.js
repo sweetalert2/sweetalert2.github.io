@@ -6840,6 +6840,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://huntlocals.com/", target: "_blank", rel: "noopener", "aria-label": "HuntLocals", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/huntlocals.png", alt: "HuntLocals" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "HuntLocals"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://siteshartbandi.co/", target: "_blank", rel: "noopener", "aria-label": "سایت شرط بندی", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/siteshartbandi.png", alt: "سایت شرط بندی" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
