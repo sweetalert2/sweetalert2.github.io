@@ -27,7 +27,7 @@ jobs:
           folder: dist
 
       - name: Check for broken links
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
           args: src/**/*.tsx --exclude https://codepen.io/pen/define --exclude https://war.ukraine.ua/support-ukraine/  --exclude https://www.minisexdoll.com/anime-sexdoll/ --exclude https://www.mymasturbators.com/ --exclude https://github.com/sweetalert2/sweetalert2/commits/main --exclude https://www.cheapestsexdolls.com/ --exclude https://sextoycollective.com/
           fail: true
