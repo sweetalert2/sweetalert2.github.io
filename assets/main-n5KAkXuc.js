@@ -6760,7 +6760,7 @@ function Sponsors() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
-          href: "https://track.tabootwin.com?sweetalert",
+          href: "https://tabootwin.com?utm_source=sweetalert",
           target: "_blank",
           rel: "noopener",
           "aria-label": "TabooTwin AI Girlfriend",
