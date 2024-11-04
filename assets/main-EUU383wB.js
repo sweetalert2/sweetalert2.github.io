@@ -6850,7 +6850,9 @@ function Sponsors() {
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/tabootwin.png", alt: "TabooTwin AI Girlfriend" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "TabooTwin AI Girlfriend"
+            "TabooTwin ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            " AI Girlfriend"
           ]
         }
       ) }),
