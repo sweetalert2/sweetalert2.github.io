@@ -129,6 +129,18 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a
+            href="https://tabootwin.com?utm_source=sweetalert"
+            target="_blank"
+            rel="noopener"
+            aria-label="TabooTwin AI Girlfriend"
+          >
+            <img src="/images/sponsors/tabootwin.png" alt="TabooTwin AI Girlfriend" />
+            <br />
+            TabooTwin <br /> AI Girlfriend
+          </a>
+        </div>
+        <div>
           <a href="https://huntlocals.com/" target="_blank" rel="noopener" aria-label="HuntLocals">
             <img src="/images/sponsors/huntlocals.png" alt="HuntLocals" />
             <br />
