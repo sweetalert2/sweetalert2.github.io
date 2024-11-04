@@ -6760,20 +6760,6 @@ function Sponsors() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
-          href: "https://tabootwin.com?utm_source=sweetalert",
-          target: "_blank",
-          rel: "noopener",
-          "aria-label": "TabooTwin AI Girlfriend",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/tabootwin.png", alt: "TabooTwin AI Girlfriend" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "TabooTwin AI Girlfriend"
-          ]
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "a",
-        {
           href: "https://ssmarket.net/buy-youtube-views",
           target: "_blank",
           rel: "noopener",
@@ -6854,6 +6840,20 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "a",
+        {
+          href: "https://tabootwin.com?utm_source=sweetalert",
+          target: "_blank",
+          rel: "noopener",
+          "aria-label": "TabooTwin AI Girlfriend",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/tabootwin.png", alt: "TabooTwin AI Girlfriend" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            "TabooTwin AI Girlfriend"
+          ]
+        }
+      ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://huntlocals.com/", target: "_blank", rel: "noopener", "aria-label": "HuntLocals", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/huntlocals.png", alt: "HuntLocals" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
