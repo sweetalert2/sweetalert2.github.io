@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DytRTAAO.js","assets/base-80a1f760-DWOAgDqt.js","assets/consoleHook-59e792cb-O_kX3Iw3.js","assets/index-BxrDH0RK.js","assets/index-DRtRCkB6.css","assets/index-599aeaf7-Bn6OMw-H.js","assets/index-iFb2SuCz.js"])))=>i.map(i=>d[i]);
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-BxrDH0RK.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-BzO-yUeg.js","assets/base-80a1f760-SIdkf9sN.js","assets/consoleHook-59e792cb-CirEofZv.js","assets/index-CeggCYS1.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-CJ1THMPw.js","assets/index-CRIsf564.js"])))=>i.map(i=>d[i]);
+import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-CeggCYS1.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DytRTAAO.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-BzO-yUeg.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-Bn6OMw-H.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CJ1THMPw.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-iFb2SuCz.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CRIsf564.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -5457,7 +5457,6 @@ var browser = {
     chrome_version: chrome ? +chrome[1] : 0,
     ios,
     android: /*@__PURE__*//Android\b/.test(nav.userAgent),
-    webkit,
     safari,
     webkit_version: webkit ? +(/*@__PURE__*//\bAppleWebKit\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
     tabSize: doc.documentElement.style.tabSize != null ? "tab-size" : "-moz-tab-size"
@@ -11199,7 +11198,7 @@ const baseTheme$1$1 = /*@__PURE__*/buildTheme("." + baseThemeID, {
         display: "none"
     },
     "&dark .cm-cursor": {
-        borderLeftColor: "#444"
+        borderLeftColor: "#ddd"
     },
     ".cm-dropCursor": {
         position: "absolute"
@@ -11867,6 +11866,9 @@ class EditContextManager {
         // user action on some Android keyboards)
         this.pendingContextChange = null;
         this.handlers = Object.create(null);
+        // Kludge to work around the fact that EditContext does not respond
+        // well to having its content updated during a composition (see #1472)
+        this.composing = null;
         this.resetRange(view.state);
         let context = this.editContext = new window.EditContext({
             text: view.state.doc.sliceString(this.from, this.to),
@@ -11875,9 +11877,10 @@ class EditContextManager {
         });
         this.handlers.textupdate = e => {
             let { anchor } = view.state.selection.main;
-            let change = { from: this.toEditorPos(e.updateRangeStart),
-                to: this.toEditorPos(e.updateRangeEnd),
-                insert: Text.of(e.text.split("\n")) };
+            let from = this.toEditorPos(e.updateRangeStart), to = this.toEditorPos(e.updateRangeEnd);
+            if (view.inputState.composing >= 0 && !this.composing)
+                this.composing = { contextBase: e.updateRangeStart, editorBase: from, drifted: false };
+            let change = { from, to, insert: Text.of(e.text.split("\n")) };
             // If the window doesn't include the anchor, assume changes
             // adjacent to a side go up to the anchor.
             if (change.from == this.from && anchor < this.from)
@@ -11928,6 +11931,12 @@ class EditContextManager {
         this.handlers.compositionend = () => {
             view.inputState.composing = -1;
             view.inputState.compositionFirstChange = null;
+            if (this.composing) {
+                let { drifted } = this.composing;
+                this.composing = null;
+                if (drifted)
+                    this.reset(view.state);
+            }
         };
         for (let event in this.handlers)
             context.addEventListener(event, this.handlers[event]);
@@ -11978,11 +11987,13 @@ class EditContextManager {
     }
     update(update) {
         let reverted = this.pendingContextChange;
-        if (!this.applyEdits(update) || !this.rangeIsValid(update.state)) {
+        if (this.composing && (this.composing.drifted || update.transactions.some(tr => !tr.isUserEvent("input.type") && tr.changes.touchesRange(this.from, this.to)))) {
+            this.composing.drifted = true;
+            this.composing.editorBase = update.changes.mapPos(this.composing.editorBase);
+        }
+        else if (!this.applyEdits(update) || !this.rangeIsValid(update.state)) {
             this.pendingContextChange = null;
-            this.resetRange(update.state);
-            this.editContext.updateText(0, this.editContext.text.length, update.state.doc.sliceString(this.from, this.to));
-            this.setSelection(update.state);
+            this.reset(update.state);
         }
         else if (update.docChanged || update.selectionSet || reverted) {
             this.setSelection(update.state);
@@ -11994,6 +12005,11 @@ class EditContextManager {
         let { head } = state.selection.main;
         this.from = Math.max(0, head - 10000 /* CxVp.Margin */);
         this.to = Math.min(state.doc.length, head + 10000 /* CxVp.Margin */);
+    }
+    reset(state) {
+        this.resetRange(state);
+        this.editContext.updateText(0, this.editContext.text.length, state.doc.sliceString(this.from, this.to));
+        this.setSelection(state);
     }
     revertPending(state) {
         let pending = this.pendingContextChange;
@@ -12013,8 +12029,14 @@ class EditContextManager {
             this.to < state.doc.length && this.to - head < 500 /* CxVp.MinMargin */ ||
             this.to - this.from > 10000 /* CxVp.Margin */ * 3);
     }
-    toEditorPos(contextPos) { return contextPos + this.from; }
-    toContextPos(editorPos) { return editorPos - this.from; }
+    toEditorPos(contextPos) {
+        let c = this.composing;
+        return c && c.drifted ? c.editorBase + (contextPos - c.contextBase) : contextPos + this.from;
+    }
+    toContextPos(editorPos) {
+        let c = this.composing;
+        return c && c.drifted ? c.contextBase + (editorPos - c.editorBase) : editorPos - this.from;
+    }
     destroy() {
         for (let event in this.handlers)
             this.editContext.removeEventListener(event, this.handlers[event]);
@@ -13398,16 +13420,9 @@ function runHandlers(map, event, view, scope) {
 const CanHidePrimary = !browser.ios; // FIXME test IE
 const themeSpec = {
     ".cm-line": {
-        "& ::selection, &::selection": { backgroundColor: "transparent !important" },
-    },
+        },
     ".cm-content": {
-        "& :focus": {
-            caretColor: "initial !important",
-            "&::selection, & ::selection": {
-                backgroundColor: "Highlight !important"
-            }
         }
-    }
 };
 if (CanHidePrimary)
     themeSpec[".cm-line"].caretColor = themeSpec[".cm-content"].caretColor = "transparent !important";
@@ -18598,9 +18613,7 @@ function createTokenType(extra, tagStr) {
 }
 ({
     rtl: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "rtl" }, bidiIsolate: Direction.RTL }),
-    ltr: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "ltr" }, bidiIsolate: Direction.LTR }),
-    auto: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "auto" }, bidiIsolate: null })
-});
+    ltr: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "ltr" }, bidiIsolate: Direction.LTR })});
 
 function toSet(chars) {
     let flat = Object.keys(chars).join("");
@@ -32352,4 +32365,4 @@ function Sandpack({
   );
 }
 
-export { Sandpack as S, __vitePreload as _, __extends as a, __awaiter$1 as b, __generator$1 as c, __assign$1 as d, createError as e, dequal as f, createPackageJSON as g, SandpackLogLevel as h, invariant as i, addPackageJSONIfNeeded as j, __spreadArray$1 as k, extractErrorDetails as l, nullthrows as n };
+export { Sandpack as S, __vitePreload as _, __extends as a, __assign$1 as b, __awaiter$1 as c, __generator$1 as d, createError as e, __spreadArray$1 as f, extractErrorDetails as g, dequal as h, invariant as i, createPackageJSON as j, SandpackLogLevel as k, addPackageJSONIfNeeded as l, nullthrows as n };
