@@ -8,7 +8,7 @@
     "dev": "vite",
     "build:dev": "tsc && vite build",
     "build": "tsc && vite build --emptyOutDir",
-    "lint": "stylelint styles/*.scss && eslint .",
+    "lint": "stylelint styles/*.scss && eslint . --ignore-pattern 'dist/*'",
     "preview": "vite preview"
   },
   "dependencies": {
