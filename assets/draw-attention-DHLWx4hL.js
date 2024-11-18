@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-CeggCYS1.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-BSYzKMe2.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-BzpyT2ax.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./draw-attention-src-xJK_7bGr.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 function Recipe() {

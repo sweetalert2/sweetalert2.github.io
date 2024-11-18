@@ -1,5 +1,5 @@
-import { a as __extends, n as nullthrows, c as __awaiter, d as __generator, f as __spreadArray, g as extractErrorDetails, h as dequal, b as __assign, j as createPackageJSON, e as createError, k as SandpackLogLevel, l as addPackageJSONIfNeeded } from './Sandpack-BSYzKMe2.js';
-import { S as SandpackClient } from './base-80a1f760-SIdkf9sN.js';
+import { a as __extends, b as __awaiter, c as __generator, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, l as extractErrorDetails } from './Sandpack-BzpyT2ax.js';
+import { S as SandpackClient } from './base-80a1f760-D5ANZReh.js';
 import { g as getDefaultExportFromCjs } from './index-CeggCYS1.js';
 
 const require$$0 = {

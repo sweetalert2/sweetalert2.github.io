@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-BzO-yUeg.js","assets/base-80a1f760-SIdkf9sN.js","assets/consoleHook-59e792cb-CirEofZv.js","assets/index-CeggCYS1.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-CJ1THMPw.js","assets/index-CRIsf564.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DHaA24mX.js","assets/base-80a1f760-D5ANZReh.js","assets/consoleHook-59e792cb-C_tOVU7X.js","assets/index-CeggCYS1.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-Dc5QCQ87.js","assets/index-D3lP60pT.js"])))=>i.map(i=>d[i]);
 import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-CeggCYS1.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-BzO-yUeg.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DHaA24mX.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CJ1THMPw.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-Dc5QCQ87.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CRIsf564.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-D3lP60pT.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -5457,6 +5457,7 @@ var browser = {
     chrome_version: chrome ? +chrome[1] : 0,
     ios,
     android: /*@__PURE__*//Android\b/.test(nav.userAgent),
+    webkit,
     safari,
     webkit_version: webkit ? +(/*@__PURE__*//\bAppleWebKit\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
     tabSize: doc.documentElement.style.tabSize != null ? "tab-size" : "-moz-tab-size"
@@ -13420,9 +13421,16 @@ function runHandlers(map, event, view, scope) {
 const CanHidePrimary = !browser.ios; // FIXME test IE
 const themeSpec = {
     ".cm-line": {
-        },
+        "& ::selection, &::selection": { backgroundColor: "transparent !important" },
+    },
     ".cm-content": {
+        "& :focus": {
+            caretColor: "initial !important",
+            "&::selection, & ::selection": {
+                backgroundColor: "Highlight !important"
+            }
         }
+    }
 };
 if (CanHidePrimary)
     themeSpec[".cm-line"].caretColor = themeSpec[".cm-content"].caretColor = "transparent !important";
@@ -18613,7 +18621,9 @@ function createTokenType(extra, tagStr) {
 }
 ({
     rtl: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "rtl" }, bidiIsolate: Direction.RTL }),
-    ltr: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "ltr" }, bidiIsolate: Direction.LTR })});
+    ltr: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "ltr" }, bidiIsolate: Direction.LTR }),
+    auto: /*@__PURE__*/Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "auto" }, bidiIsolate: null })
+});
 
 function toSet(chars) {
     let flat = Object.keys(chars).join("");
@@ -32365,4 +32375,4 @@ function Sandpack({
   );
 }
 
-export { Sandpack as S, __vitePreload as _, __extends as a, __assign$1 as b, __awaiter$1 as c, __generator$1 as d, createError as e, __spreadArray$1 as f, extractErrorDetails as g, dequal as h, invariant as i, createPackageJSON as j, SandpackLogLevel as k, addPackageJSONIfNeeded as l, nullthrows as n };
+export { Sandpack as S, __vitePreload as _, __extends as a, __awaiter$1 as b, __generator$1 as c, __assign$1 as d, createError as e, dequal as f, createPackageJSON as g, SandpackLogLevel as h, invariant as i, addPackageJSONIfNeeded as j, __spreadArray$1 as k, extractErrorDetails as l, nullthrows as n };

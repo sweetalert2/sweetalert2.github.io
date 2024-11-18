@@ -1,6 +1,6 @@
-import { a as __extends, b as __assign, c as __awaiter, d as __generator, e as createError, n as nullthrows } from './Sandpack-BSYzKMe2.js';
-import { S as SandpackClient } from './base-80a1f760-SIdkf9sN.js';
-import { g as generateRandomId, E as EventEmitter, a as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, c as consoleHook, w as writeBuffer, b as fromBundlerFilesToFS } from './consoleHook-59e792cb-CirEofZv.js';
+import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-BzpyT2ax.js';
+import { S as SandpackClient } from './base-80a1f760-D5ANZReh.js';
+import { c as consoleHook, g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter } from './consoleHook-59e792cb-C_tOVU7X.js';
 import './index-CeggCYS1.js';
 
 var __create = Object.create;
@@ -524,9 +524,17 @@ var FLAG = window.localStorage["CSB_EMULATOR_DEBUG"];
 var DEFAULT = "\x1B[0m";
 var GREEN = "\x1B[32;1m";
 var RED = "\x1B[31m";
+var BLUE = "\x1B[34m";
+var YELLOW = "\x1B[33;1m";
 var MAGENTA = "\x1B[35;1m";
+var CYAN = "\x1B[36;1m";
 var COLOR_SCOPE = {
-  emulator: MAGENTA};
+  preview: YELLOW,
+  emulator: MAGENTA,
+  runtime: CYAN,
+  bridge: BLUE,
+  "runtime:worker": CYAN
+};
 function createDebug(scope) {
   return function debug3(message, ...data) {
     if (FLAG === "true") {
