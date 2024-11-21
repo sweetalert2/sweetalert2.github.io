@@ -6767,7 +6767,7 @@ function Sponsors() {
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/boilerplatehub.jpg", alt: "Build your SaaS or App in days, not weeks" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "Build your SaaS or App"
+            "Build your SaaS or App in days"
           ]
         }
       ) }),
