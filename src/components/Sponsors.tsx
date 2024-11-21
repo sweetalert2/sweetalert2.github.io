@@ -35,7 +35,7 @@ export function Sponsors() {
           >
             <img src="/images/sponsors/boilerplatehub.jpg" alt="Build your SaaS or App in days, not weeks" />
             <br />
-            Build your SaaS or App
+            Build your SaaS or App in days
           </a>
         </div>
         <div>
