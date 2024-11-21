@@ -88,13 +88,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.vegega.com/" target="_blank" rel="noopener" aria-label="Metal Raised Garden Bed">
-            <img src="/images/sponsors/vegega.jpeg" alt="Metal Raised Garden Bed" />
-            <br />
-            Metal Raised Garden Bed
-          </a>
-        </div>
-        <div>
           <a href="https://celltrackingapps.com/" target="_blank" rel="noopener" aria-label="Phone Tracking Apps">
             <img src="/images/sponsors/celltrackingapps.png" alt="Phone Tracking Apps" />
             <br />
