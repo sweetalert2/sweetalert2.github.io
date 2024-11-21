@@ -6760,6 +6760,20 @@ function Sponsors() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
+          href: "https://boilerplatehub.com/?utm_source=sweetalert2",
+          target: "_blank",
+          rel: "noopener",
+          "aria-label": "Build your SaaS or App in days, not weeks",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/boilerplatehub.jpg", alt: "Build your SaaS or App in days, not weeks" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            "Build your SaaS or App"
+          ]
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "a",
+        {
           href: "https://ssmarket.net/buy-youtube-views",
           target: "_blank",
           rel: "noopener",
@@ -6805,11 +6819,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/realspyapps.jpeg", alt: "Real Spy Apps" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Real Spy Apps"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.vegega.com/", target: "_blank", rel: "noopener", "aria-label": "Metal Raised Garden Bed", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/vegega.jpeg", alt: "Metal Raised Garden Bed" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Metal Raised Garden Bed"
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://celltrackingapps.com/", target: "_blank", rel: "noopener", "aria-label": "Phone Tracking Apps", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/celltrackingapps.png", alt: "Phone Tracking Apps" }),
