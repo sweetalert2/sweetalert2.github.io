@@ -6944,11 +6944,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "VSDoll"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.xndoll.com/", target: "_blank", rel: "noopener", "aria-label": "XNDOLL", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/xndoll.jpeg", alt: "XNDOLL" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "XNDOLL"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sextorso.com/", target: "_blank", rel: "noopener", "aria-label": "sexdoll torso", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sextorso.png", alt: "sexdoll torso" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
