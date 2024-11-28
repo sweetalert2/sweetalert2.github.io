@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DHaA24mX.js","assets/base-80a1f760-D5ANZReh.js","assets/consoleHook-59e792cb-C_tOVU7X.js","assets/index-CeggCYS1.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-Dc5QCQ87.js","assets/index-D3lP60pT.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-CGz-ioOe.js","assets/base-80a1f760-DDJJD0-0.js","assets/consoleHook-59e792cb-VdZCZ5WC.js","assets/index-CeggCYS1.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-CNm3_4hR.js","assets/index-KStpGF7g.js"])))=>i.map(i=>d[i]);
 import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-CeggCYS1.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DHaA24mX.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-CGz-ioOe.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-Dc5QCQ87.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CNm3_4hR.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-D3lP60pT.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-KStpGF7g.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -23721,7 +23721,7 @@ function properties() {
                     }
                 }
             }
-        _properties = names.sort().map(name => ({ type: "property", label: name }));
+        _properties = names.sort().map(name => ({ type: "property", label: name, apply: name + ": " }));
     }
     return _properties || [];
 }
@@ -26760,6 +26760,8 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
+/* global Reflect, Promise */
+
 
 var __assign = function() {
     __assign = Object.assign || function __assign(t) {
@@ -31591,9 +31593,16 @@ var MAX_MESSAGE_COUNT = MAX_KEYS * 2;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Const
 var GLOBAL = (function getGlobal() {
-    // NOTE: see http://www.ecma-international.org/ecma-262/6.0/index.html#sec-performeval step 10
-    var savedEval = eval;
-    return savedEval("this");
+    if (typeof globalThis !== "undefined")
+        return globalThis; // modern standard
+    if (typeof window !== "undefined")
+        return window; // browser
+    if (typeof global !== "undefined")
+        return global; // Node.js
+    // eslint-disable-next-line no-restricted-globals
+    if (typeof self !== "undefined")
+        return self; // Web Worker
+    throw Error("Unable to locate global object");
 })();
 var ARRAY_BUFFER_SUPPORTED = typeof ArrayBuffer === "function";
 var MAP_SUPPORTED = typeof Map === "function";
@@ -31702,6 +31711,11 @@ var transformers = {
 };
 
 /* eslint-disable @typescript-eslint/array-type */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 var formatSymbols = function (message) {
     var _a;
     if (typeof message === "string" ||

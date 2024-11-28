@@ -1,5 +1,5 @@
 import { c as client, j as jsxRuntimeExports, N as Nav } from './index-CeggCYS1.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-BzpyT2ax.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-D7Im-B-Y.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./sweetalert2-react-src-BKjROP0D.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 function Recipe() {
