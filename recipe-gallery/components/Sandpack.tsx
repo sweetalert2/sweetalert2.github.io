@@ -28,7 +28,7 @@ export function Sandpack({
       theme={cobalt2}
       customSetup={{
         dependencies: {
-          sweetalert2: 'latest',
+          sweetalert2: '^11.0.0',
           ...dependencies,
         },
         entry,

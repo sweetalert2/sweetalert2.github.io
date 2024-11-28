@@ -25,10 +25,10 @@ function Recipe() {
 
       <Sandpack
         dependencies={{
-          'react': 'latest',
-          'react-dom': 'latest',
-          'react-day-picker': 'latest',
-          'date-fns': 'latest',
+          'react': '^18.0.0',
+          'react-dom': '^18.0.0',
+          'react-day-picker': '^9.0.0',
+          'date-fns': '^4.0.0',
         }}
         entry="/App.tsx"
         files={{

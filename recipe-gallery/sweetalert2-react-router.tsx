@@ -20,9 +20,9 @@ function Recipe() {
 
       <Sandpack
         dependencies={{
-          'react': 'latest',
-          'react-dom': 'latest',
-          'react-router-dom': '^6.0.0',
+          'react': '^18.0.0',
+          'react-dom': '^18.0.0',
+          'react-router-dom': '^7.0.0',
         }}
         entry="/App.tsx"
         files={{

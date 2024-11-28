@@ -18,7 +18,7 @@ function Recipe() {
 
       <Sandpack
         dependencies={{
-          'animate.css': 'latest',
+          'animate.css': '^4.0.0',
         }}
         entry="/App.ts"
         files={{

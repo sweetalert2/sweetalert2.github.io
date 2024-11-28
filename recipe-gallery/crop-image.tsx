@@ -13,8 +13,8 @@ function Recipe() {
 
       <Sandpack
         dependencies={{
-          'cropperjs': 'latest',
-          '@github/mini-throttle': 'latest',
+          'cropperjs': '^1.0.0',
+          '@github/mini-throttle': '^2.0.0',
         }}
         files={{
           '/App.ts': src,
