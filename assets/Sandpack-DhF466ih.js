@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-CGz-ioOe.js","assets/base-80a1f760-DDJJD0-0.js","assets/consoleHook-59e792cb-VdZCZ5WC.js","assets/index-CeggCYS1.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-CNm3_4hR.js","assets/index-KStpGF7g.js"])))=>i.map(i=>d[i]);
-import { R as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-CeggCYS1.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DoLQvFDW.js","assets/base-80a1f760-RTQQYk1P.js","assets/consoleHook-59e792cb-BQWKfdu8.js","assets/index-COLPWSRR.js","assets/index-CBDgl1t5.css","assets/index-599aeaf7-VYplmDoX.js","assets/index-D_-WM9kN.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-COLPWSRR.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-CGz-ioOe.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DoLQvFDW.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CNm3_4hR.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-VYplmDoX.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-KStpGF7g.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-D_-WM9kN.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -20729,6 +20729,8 @@ const defaultKeymap = /*@__PURE__*/[
     { key: "Ctrl-m", mac: "Shift-Alt-m", run: toggleTabFocusMode },
 ].concat(standardKeymap);
 
+var intersectionObserver = {};
+
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
@@ -20737,978 +20739,988 @@ const defaultKeymap = /*@__PURE__*/[
  *  https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
  *
  */
-(function() {
 
-// Exit early if we're not running in a browser.
-if (typeof window !== 'object') {
-  return;
+var hasRequiredIntersectionObserver;
+
+function requireIntersectionObserver () {
+	if (hasRequiredIntersectionObserver) return intersectionObserver;
+	hasRequiredIntersectionObserver = 1;
+	(function() {
+
+	// Exit early if we're not running in a browser.
+	if (typeof window !== 'object') {
+	  return;
+	}
+
+	// Exit early if all IntersectionObserver and IntersectionObserverEntry
+	// features are natively supported.
+	if ('IntersectionObserver' in window &&
+	    'IntersectionObserverEntry' in window &&
+	    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+
+	  // Minimal polyfill for Edge 15's lack of `isIntersecting`
+	  // See: https://github.com/w3c/IntersectionObserver/issues/211
+	  if (!('isIntersecting' in window.IntersectionObserverEntry.prototype)) {
+	    Object.defineProperty(window.IntersectionObserverEntry.prototype,
+	      'isIntersecting', {
+	      get: function () {
+	        return this.intersectionRatio > 0;
+	      }
+	    });
+	  }
+	  return;
+	}
+
+
+	/**
+	 * A local reference to the document.
+	 */
+	var document = window.document;
+
+
+	/**
+	 * An IntersectionObserver registry. This registry exists to hold a strong
+	 * reference to IntersectionObserver instances currently observing a target
+	 * element. Without this registry, instances without another reference may be
+	 * garbage collected.
+	 */
+	var registry = [];
+
+	/**
+	 * The signal updater for cross-origin intersection. When not null, it means
+	 * that the polyfill is configured to work in a cross-origin mode.
+	 * @type {function(DOMRect|ClientRect, DOMRect|ClientRect)}
+	 */
+	var crossOriginUpdater = null;
+
+	/**
+	 * The current cross-origin intersection. Only used in the cross-origin mode.
+	 * @type {DOMRect|ClientRect}
+	 */
+	var crossOriginRect = null;
+
+
+	/**
+	 * Creates the global IntersectionObserverEntry constructor.
+	 * https://w3c.github.io/IntersectionObserver/#intersection-observer-entry
+	 * @param {Object} entry A dictionary of instance properties.
+	 * @constructor
+	 */
+	function IntersectionObserverEntry(entry) {
+	  this.time = entry.time;
+	  this.target = entry.target;
+	  this.rootBounds = ensureDOMRect(entry.rootBounds);
+	  this.boundingClientRect = ensureDOMRect(entry.boundingClientRect);
+	  this.intersectionRect = ensureDOMRect(entry.intersectionRect || getEmptyRect());
+	  this.isIntersecting = !!entry.intersectionRect;
+
+	  // Calculates the intersection ratio.
+	  var targetRect = this.boundingClientRect;
+	  var targetArea = targetRect.width * targetRect.height;
+	  var intersectionRect = this.intersectionRect;
+	  var intersectionArea = intersectionRect.width * intersectionRect.height;
+
+	  // Sets intersection ratio.
+	  if (targetArea) {
+	    // Round the intersection ratio to avoid floating point math issues:
+	    // https://github.com/w3c/IntersectionObserver/issues/324
+	    this.intersectionRatio = Number((intersectionArea / targetArea).toFixed(4));
+	  } else {
+	    // If area is zero and is intersecting, sets to 1, otherwise to 0
+	    this.intersectionRatio = this.isIntersecting ? 1 : 0;
+	  }
+	}
+
+
+	/**
+	 * Creates the global IntersectionObserver constructor.
+	 * https://w3c.github.io/IntersectionObserver/#intersection-observer-interface
+	 * @param {Function} callback The function to be invoked after intersection
+	 *     changes have queued. The function is not invoked if the queue has
+	 *     been emptied by calling the `takeRecords` method.
+	 * @param {Object=} opt_options Optional configuration options.
+	 * @constructor
+	 */
+	function IntersectionObserver(callback, opt_options) {
+
+	  var options = opt_options || {};
+
+	  if (typeof callback != 'function') {
+	    throw new Error('callback must be a function');
+	  }
+
+	  if (options.root && options.root.nodeType != 1) {
+	    throw new Error('root must be an Element');
+	  }
+
+	  // Binds and throttles `this._checkForIntersections`.
+	  this._checkForIntersections = throttle(
+	      this._checkForIntersections.bind(this), this.THROTTLE_TIMEOUT);
+
+	  // Private properties.
+	  this._callback = callback;
+	  this._observationTargets = [];
+	  this._queuedEntries = [];
+	  this._rootMarginValues = this._parseRootMargin(options.rootMargin);
+
+	  // Public properties.
+	  this.thresholds = this._initThresholds(options.threshold);
+	  this.root = options.root || null;
+	  this.rootMargin = this._rootMarginValues.map(function(margin) {
+	    return margin.value + margin.unit;
+	  }).join(' ');
+
+	  /** @private @const {!Array<!Document>} */
+	  this._monitoringDocuments = [];
+	  /** @private @const {!Array<function()>} */
+	  this._monitoringUnsubscribes = [];
+	}
+
+
+	/**
+	 * The minimum interval within which the document will be checked for
+	 * intersection changes.
+	 */
+	IntersectionObserver.prototype.THROTTLE_TIMEOUT = 100;
+
+
+	/**
+	 * The frequency in which the polyfill polls for intersection changes.
+	 * this can be updated on a per instance basis and must be set prior to
+	 * calling `observe` on the first target.
+	 */
+	IntersectionObserver.prototype.POLL_INTERVAL = null;
+
+	/**
+	 * Use a mutation observer on the root element
+	 * to detect intersection changes.
+	 */
+	IntersectionObserver.prototype.USE_MUTATION_OBSERVER = true;
+
+
+	/**
+	 * Sets up the polyfill in the cross-origin mode. The result is the
+	 * updater function that accepts two arguments: `boundingClientRect` and
+	 * `intersectionRect` - just as these fields would be available to the
+	 * parent via `IntersectionObserverEntry`. This function should be called
+	 * each time the iframe receives intersection information from the parent
+	 * window, e.g. via messaging.
+	 * @return {function(DOMRect|ClientRect, DOMRect|ClientRect)}
+	 */
+	IntersectionObserver._setupCrossOriginUpdater = function() {
+	  if (!crossOriginUpdater) {
+	    /**
+	     * @param {DOMRect|ClientRect} boundingClientRect
+	     * @param {DOMRect|ClientRect} intersectionRect
+	     */
+	    crossOriginUpdater = function(boundingClientRect, intersectionRect) {
+	      if (!boundingClientRect || !intersectionRect) {
+	        crossOriginRect = getEmptyRect();
+	      } else {
+	        crossOriginRect = convertFromParentRect(boundingClientRect, intersectionRect);
+	      }
+	      registry.forEach(function(observer) {
+	        observer._checkForIntersections();
+	      });
+	    };
+	  }
+	  return crossOriginUpdater;
+	};
+
+
+	/**
+	 * Resets the cross-origin mode.
+	 */
+	IntersectionObserver._resetCrossOriginUpdater = function() {
+	  crossOriginUpdater = null;
+	  crossOriginRect = null;
+	};
+
+
+	/**
+	 * Starts observing a target element for intersection changes based on
+	 * the thresholds values.
+	 * @param {Element} target The DOM element to observe.
+	 */
+	IntersectionObserver.prototype.observe = function(target) {
+	  var isTargetAlreadyObserved = this._observationTargets.some(function(item) {
+	    return item.element == target;
+	  });
+
+	  if (isTargetAlreadyObserved) {
+	    return;
+	  }
+
+	  if (!(target && target.nodeType == 1)) {
+	    throw new Error('target must be an Element');
+	  }
+
+	  this._registerInstance();
+	  this._observationTargets.push({element: target, entry: null});
+	  this._monitorIntersections(target.ownerDocument);
+	  this._checkForIntersections();
+	};
+
+
+	/**
+	 * Stops observing a target element for intersection changes.
+	 * @param {Element} target The DOM element to observe.
+	 */
+	IntersectionObserver.prototype.unobserve = function(target) {
+	  this._observationTargets =
+	      this._observationTargets.filter(function(item) {
+	        return item.element != target;
+	      });
+	  this._unmonitorIntersections(target.ownerDocument);
+	  if (this._observationTargets.length == 0) {
+	    this._unregisterInstance();
+	  }
+	};
+
+
+	/**
+	 * Stops observing all target elements for intersection changes.
+	 */
+	IntersectionObserver.prototype.disconnect = function() {
+	  this._observationTargets = [];
+	  this._unmonitorAllIntersections();
+	  this._unregisterInstance();
+	};
+
+
+	/**
+	 * Returns any queue entries that have not yet been reported to the
+	 * callback and clears the queue. This can be used in conjunction with the
+	 * callback to obtain the absolute most up-to-date intersection information.
+	 * @return {Array} The currently queued entries.
+	 */
+	IntersectionObserver.prototype.takeRecords = function() {
+	  var records = this._queuedEntries.slice();
+	  this._queuedEntries = [];
+	  return records;
+	};
+
+
+	/**
+	 * Accepts the threshold value from the user configuration object and
+	 * returns a sorted array of unique threshold values. If a value is not
+	 * between 0 and 1 and error is thrown.
+	 * @private
+	 * @param {Array|number=} opt_threshold An optional threshold value or
+	 *     a list of threshold values, defaulting to [0].
+	 * @return {Array} A sorted list of unique and valid threshold values.
+	 */
+	IntersectionObserver.prototype._initThresholds = function(opt_threshold) {
+	  var threshold = opt_threshold || [0];
+	  if (!Array.isArray(threshold)) threshold = [threshold];
+
+	  return threshold.sort().filter(function(t, i, a) {
+	    if (typeof t != 'number' || isNaN(t) || t < 0 || t > 1) {
+	      throw new Error('threshold must be a number between 0 and 1 inclusively');
+	    }
+	    return t !== a[i - 1];
+	  });
+	};
+
+
+	/**
+	 * Accepts the rootMargin value from the user configuration object
+	 * and returns an array of the four margin values as an object containing
+	 * the value and unit properties. If any of the values are not properly
+	 * formatted or use a unit other than px or %, and error is thrown.
+	 * @private
+	 * @param {string=} opt_rootMargin An optional rootMargin value,
+	 *     defaulting to '0px'.
+	 * @return {Array<Object>} An array of margin objects with the keys
+	 *     value and unit.
+	 */
+	IntersectionObserver.prototype._parseRootMargin = function(opt_rootMargin) {
+	  var marginString = opt_rootMargin || '0px';
+	  var margins = marginString.split(/\s+/).map(function(margin) {
+	    var parts = /^(-?\d*\.?\d+)(px|%)$/.exec(margin);
+	    if (!parts) {
+	      throw new Error('rootMargin must be specified in pixels or percent');
+	    }
+	    return {value: parseFloat(parts[1]), unit: parts[2]};
+	  });
+
+	  // Handles shorthand.
+	  margins[1] = margins[1] || margins[0];
+	  margins[2] = margins[2] || margins[0];
+	  margins[3] = margins[3] || margins[1];
+
+	  return margins;
+	};
+
+
+	/**
+	 * Starts polling for intersection changes if the polling is not already
+	 * happening, and if the page's visibility state is visible.
+	 * @param {!Document} doc
+	 * @private
+	 */
+	IntersectionObserver.prototype._monitorIntersections = function(doc) {
+	  var win = doc.defaultView;
+	  if (!win) {
+	    // Already destroyed.
+	    return;
+	  }
+	  if (this._monitoringDocuments.indexOf(doc) != -1) {
+	    // Already monitoring.
+	    return;
+	  }
+
+	  // Private state for monitoring.
+	  var callback = this._checkForIntersections;
+	  var monitoringInterval = null;
+	  var domObserver = null;
+
+	  // If a poll interval is set, use polling instead of listening to
+	  // resize and scroll events or DOM mutations.
+	  if (this.POLL_INTERVAL) {
+	    monitoringInterval = win.setInterval(callback, this.POLL_INTERVAL);
+	  } else {
+	    addEvent(win, 'resize', callback, true);
+	    addEvent(doc, 'scroll', callback, true);
+	    if (this.USE_MUTATION_OBSERVER && 'MutationObserver' in win) {
+	      domObserver = new win.MutationObserver(callback);
+	      domObserver.observe(doc, {
+	        attributes: true,
+	        childList: true,
+	        characterData: true,
+	        subtree: true
+	      });
+	    }
+	  }
+
+	  this._monitoringDocuments.push(doc);
+	  this._monitoringUnsubscribes.push(function() {
+	    // Get the window object again. When a friendly iframe is destroyed, it
+	    // will be null.
+	    var win = doc.defaultView;
+
+	    if (win) {
+	      if (monitoringInterval) {
+	        win.clearInterval(monitoringInterval);
+	      }
+	      removeEvent(win, 'resize', callback, true);
+	    }
+
+	    removeEvent(doc, 'scroll', callback, true);
+	    if (domObserver) {
+	      domObserver.disconnect();
+	    }
+	  });
+
+	  // Also monitor the parent.
+	  if (doc != (this.root && this.root.ownerDocument || document)) {
+	    var frame = getFrameElement(doc);
+	    if (frame) {
+	      this._monitorIntersections(frame.ownerDocument);
+	    }
+	  }
+	};
+
+
+	/**
+	 * Stops polling for intersection changes.
+	 * @param {!Document} doc
+	 * @private
+	 */
+	IntersectionObserver.prototype._unmonitorIntersections = function(doc) {
+	  var index = this._monitoringDocuments.indexOf(doc);
+	  if (index == -1) {
+	    return;
+	  }
+
+	  var rootDoc = (this.root && this.root.ownerDocument || document);
+
+	  // Check if any dependent targets are still remaining.
+	  var hasDependentTargets =
+	      this._observationTargets.some(function(item) {
+	        var itemDoc = item.element.ownerDocument;
+	        // Target is in this context.
+	        if (itemDoc == doc) {
+	          return true;
+	        }
+	        // Target is nested in this context.
+	        while (itemDoc && itemDoc != rootDoc) {
+	          var frame = getFrameElement(itemDoc);
+	          itemDoc = frame && frame.ownerDocument;
+	          if (itemDoc == doc) {
+	            return true;
+	          }
+	        }
+	        return false;
+	      });
+	  if (hasDependentTargets) {
+	    return;
+	  }
+
+	  // Unsubscribe.
+	  var unsubscribe = this._monitoringUnsubscribes[index];
+	  this._monitoringDocuments.splice(index, 1);
+	  this._monitoringUnsubscribes.splice(index, 1);
+	  unsubscribe();
+
+	  // Also unmonitor the parent.
+	  if (doc != rootDoc) {
+	    var frame = getFrameElement(doc);
+	    if (frame) {
+	      this._unmonitorIntersections(frame.ownerDocument);
+	    }
+	  }
+	};
+
+
+	/**
+	 * Stops polling for intersection changes.
+	 * @param {!Document} doc
+	 * @private
+	 */
+	IntersectionObserver.prototype._unmonitorAllIntersections = function() {
+	  var unsubscribes = this._monitoringUnsubscribes.slice(0);
+	  this._monitoringDocuments.length = 0;
+	  this._monitoringUnsubscribes.length = 0;
+	  for (var i = 0; i < unsubscribes.length; i++) {
+	    unsubscribes[i]();
+	  }
+	};
+
+
+	/**
+	 * Scans each observation target for intersection changes and adds them
+	 * to the internal entries queue. If new entries are found, it
+	 * schedules the callback to be invoked.
+	 * @private
+	 */
+	IntersectionObserver.prototype._checkForIntersections = function() {
+	  if (!this.root && crossOriginUpdater && !crossOriginRect) {
+	    // Cross origin monitoring, but no initial data available yet.
+	    return;
+	  }
+
+	  var rootIsInDom = this._rootIsInDom();
+	  var rootRect = rootIsInDom ? this._getRootRect() : getEmptyRect();
+
+	  this._observationTargets.forEach(function(item) {
+	    var target = item.element;
+	    var targetRect = getBoundingClientRect(target);
+	    var rootContainsTarget = this._rootContainsTarget(target);
+	    var oldEntry = item.entry;
+	    var intersectionRect = rootIsInDom && rootContainsTarget &&
+	        this._computeTargetAndRootIntersection(target, targetRect, rootRect);
+
+	    var newEntry = item.entry = new IntersectionObserverEntry({
+	      time: now(),
+	      target: target,
+	      boundingClientRect: targetRect,
+	      rootBounds: crossOriginUpdater && !this.root ? null : rootRect,
+	      intersectionRect: intersectionRect
+	    });
+
+	    if (!oldEntry) {
+	      this._queuedEntries.push(newEntry);
+	    } else if (rootIsInDom && rootContainsTarget) {
+	      // If the new entry intersection ratio has crossed any of the
+	      // thresholds, add a new entry.
+	      if (this._hasCrossedThreshold(oldEntry, newEntry)) {
+	        this._queuedEntries.push(newEntry);
+	      }
+	    } else {
+	      // If the root is not in the DOM or target is not contained within
+	      // root but the previous entry for this target had an intersection,
+	      // add a new record indicating removal.
+	      if (oldEntry && oldEntry.isIntersecting) {
+	        this._queuedEntries.push(newEntry);
+	      }
+	    }
+	  }, this);
+
+	  if (this._queuedEntries.length) {
+	    this._callback(this.takeRecords(), this);
+	  }
+	};
+
+
+	/**
+	 * Accepts a target and root rect computes the intersection between then
+	 * following the algorithm in the spec.
+	 * TODO(philipwalton): at this time clip-path is not considered.
+	 * https://w3c.github.io/IntersectionObserver/#calculate-intersection-rect-algo
+	 * @param {Element} target The target DOM element
+	 * @param {Object} targetRect The bounding rect of the target.
+	 * @param {Object} rootRect The bounding rect of the root after being
+	 *     expanded by the rootMargin value.
+	 * @return {?Object} The final intersection rect object or undefined if no
+	 *     intersection is found.
+	 * @private
+	 */
+	IntersectionObserver.prototype._computeTargetAndRootIntersection =
+	    function(target, targetRect, rootRect) {
+	  // If the element isn't displayed, an intersection can't happen.
+	  if (window.getComputedStyle(target).display == 'none') return;
+
+	  var intersectionRect = targetRect;
+	  var parent = getParentNode(target);
+	  var atRoot = false;
+
+	  while (!atRoot && parent) {
+	    var parentRect = null;
+	    var parentComputedStyle = parent.nodeType == 1 ?
+	        window.getComputedStyle(parent) : {};
+
+	    // If the parent isn't displayed, an intersection can't happen.
+	    if (parentComputedStyle.display == 'none') return null;
+
+	    if (parent == this.root || parent.nodeType == /* DOCUMENT */ 9) {
+	      atRoot = true;
+	      if (parent == this.root || parent == document) {
+	        if (crossOriginUpdater && !this.root) {
+	          if (!crossOriginRect ||
+	              crossOriginRect.width == 0 && crossOriginRect.height == 0) {
+	            // A 0-size cross-origin intersection means no-intersection.
+	            parent = null;
+	            parentRect = null;
+	            intersectionRect = null;
+	          } else {
+	            parentRect = crossOriginRect;
+	          }
+	        } else {
+	          parentRect = rootRect;
+	        }
+	      } else {
+	        // Check if there's a frame that can be navigated to.
+	        var frame = getParentNode(parent);
+	        var frameRect = frame && getBoundingClientRect(frame);
+	        var frameIntersect =
+	            frame &&
+	            this._computeTargetAndRootIntersection(frame, frameRect, rootRect);
+	        if (frameRect && frameIntersect) {
+	          parent = frame;
+	          parentRect = convertFromParentRect(frameRect, frameIntersect);
+	        } else {
+	          parent = null;
+	          intersectionRect = null;
+	        }
+	      }
+	    } else {
+	      // If the element has a non-visible overflow, and it's not the <body>
+	      // or <html> element, update the intersection rect.
+	      // Note: <body> and <html> cannot be clipped to a rect that's not also
+	      // the document rect, so no need to compute a new intersection.
+	      var doc = parent.ownerDocument;
+	      if (parent != doc.body &&
+	          parent != doc.documentElement &&
+	          parentComputedStyle.overflow != 'visible') {
+	        parentRect = getBoundingClientRect(parent);
+	      }
+	    }
+
+	    // If either of the above conditionals set a new parentRect,
+	    // calculate new intersection data.
+	    if (parentRect) {
+	      intersectionRect = computeRectIntersection(parentRect, intersectionRect);
+	    }
+	    if (!intersectionRect) break;
+	    parent = parent && getParentNode(parent);
+	  }
+	  return intersectionRect;
+	};
+
+
+	/**
+	 * Returns the root rect after being expanded by the rootMargin value.
+	 * @return {ClientRect} The expanded root rect.
+	 * @private
+	 */
+	IntersectionObserver.prototype._getRootRect = function() {
+	  var rootRect;
+	  if (this.root) {
+	    rootRect = getBoundingClientRect(this.root);
+	  } else {
+	    // Use <html>/<body> instead of window since scroll bars affect size.
+	    var html = document.documentElement;
+	    var body = document.body;
+	    rootRect = {
+	      top: 0,
+	      left: 0,
+	      right: html.clientWidth || body.clientWidth,
+	      width: html.clientWidth || body.clientWidth,
+	      bottom: html.clientHeight || body.clientHeight,
+	      height: html.clientHeight || body.clientHeight
+	    };
+	  }
+	  return this._expandRectByRootMargin(rootRect);
+	};
+
+
+	/**
+	 * Accepts a rect and expands it by the rootMargin value.
+	 * @param {DOMRect|ClientRect} rect The rect object to expand.
+	 * @return {ClientRect} The expanded rect.
+	 * @private
+	 */
+	IntersectionObserver.prototype._expandRectByRootMargin = function(rect) {
+	  var margins = this._rootMarginValues.map(function(margin, i) {
+	    return margin.unit == 'px' ? margin.value :
+	        margin.value * (i % 2 ? rect.width : rect.height) / 100;
+	  });
+	  var newRect = {
+	    top: rect.top - margins[0],
+	    right: rect.right + margins[1],
+	    bottom: rect.bottom + margins[2],
+	    left: rect.left - margins[3]
+	  };
+	  newRect.width = newRect.right - newRect.left;
+	  newRect.height = newRect.bottom - newRect.top;
+
+	  return newRect;
+	};
+
+
+	/**
+	 * Accepts an old and new entry and returns true if at least one of the
+	 * threshold values has been crossed.
+	 * @param {?IntersectionObserverEntry} oldEntry The previous entry for a
+	 *    particular target element or null if no previous entry exists.
+	 * @param {IntersectionObserverEntry} newEntry The current entry for a
+	 *    particular target element.
+	 * @return {boolean} Returns true if a any threshold has been crossed.
+	 * @private
+	 */
+	IntersectionObserver.prototype._hasCrossedThreshold =
+	    function(oldEntry, newEntry) {
+
+	  // To make comparing easier, an entry that has a ratio of 0
+	  // but does not actually intersect is given a value of -1
+	  var oldRatio = oldEntry && oldEntry.isIntersecting ?
+	      oldEntry.intersectionRatio || 0 : -1;
+	  var newRatio = newEntry.isIntersecting ?
+	      newEntry.intersectionRatio || 0 : -1;
+
+	  // Ignore unchanged ratios
+	  if (oldRatio === newRatio) return;
+
+	  for (var i = 0; i < this.thresholds.length; i++) {
+	    var threshold = this.thresholds[i];
+
+	    // Return true if an entry matches a threshold or if the new ratio
+	    // and the old ratio are on the opposite sides of a threshold.
+	    if (threshold == oldRatio || threshold == newRatio ||
+	        threshold < oldRatio !== threshold < newRatio) {
+	      return true;
+	    }
+	  }
+	};
+
+
+	/**
+	 * Returns whether or not the root element is an element and is in the DOM.
+	 * @return {boolean} True if the root element is an element and is in the DOM.
+	 * @private
+	 */
+	IntersectionObserver.prototype._rootIsInDom = function() {
+	  return !this.root || containsDeep(document, this.root);
+	};
+
+
+	/**
+	 * Returns whether or not the target element is a child of root.
+	 * @param {Element} target The target element to check.
+	 * @return {boolean} True if the target element is a child of root.
+	 * @private
+	 */
+	IntersectionObserver.prototype._rootContainsTarget = function(target) {
+	  return containsDeep(this.root || document, target) &&
+	    (!this.root || this.root.ownerDocument == target.ownerDocument);
+	};
+
+
+	/**
+	 * Adds the instance to the global IntersectionObserver registry if it isn't
+	 * already present.
+	 * @private
+	 */
+	IntersectionObserver.prototype._registerInstance = function() {
+	  if (registry.indexOf(this) < 0) {
+	    registry.push(this);
+	  }
+	};
+
+
+	/**
+	 * Removes the instance from the global IntersectionObserver registry.
+	 * @private
+	 */
+	IntersectionObserver.prototype._unregisterInstance = function() {
+	  var index = registry.indexOf(this);
+	  if (index != -1) registry.splice(index, 1);
+	};
+
+
+	/**
+	 * Returns the result of the performance.now() method or null in browsers
+	 * that don't support the API.
+	 * @return {number} The elapsed time since the page was requested.
+	 */
+	function now() {
+	  return window.performance && performance.now && performance.now();
+	}
+
+
+	/**
+	 * Throttles a function and delays its execution, so it's only called at most
+	 * once within a given time period.
+	 * @param {Function} fn The function to throttle.
+	 * @param {number} timeout The amount of time that must pass before the
+	 *     function can be called again.
+	 * @return {Function} The throttled function.
+	 */
+	function throttle(fn, timeout) {
+	  var timer = null;
+	  return function () {
+	    if (!timer) {
+	      timer = setTimeout(function() {
+	        fn();
+	        timer = null;
+	      }, timeout);
+	    }
+	  };
+	}
+
+
+	/**
+	 * Adds an event handler to a DOM node ensuring cross-browser compatibility.
+	 * @param {Node} node The DOM node to add the event handler to.
+	 * @param {string} event The event name.
+	 * @param {Function} fn The event handler to add.
+	 * @param {boolean} opt_useCapture Optionally adds the even to the capture
+	 *     phase. Note: this only works in modern browsers.
+	 */
+	function addEvent(node, event, fn, opt_useCapture) {
+	  if (typeof node.addEventListener == 'function') {
+	    node.addEventListener(event, fn, opt_useCapture);
+	  }
+	  else if (typeof node.attachEvent == 'function') {
+	    node.attachEvent('on' + event, fn);
+	  }
+	}
+
+
+	/**
+	 * Removes a previously added event handler from a DOM node.
+	 * @param {Node} node The DOM node to remove the event handler from.
+	 * @param {string} event The event name.
+	 * @param {Function} fn The event handler to remove.
+	 * @param {boolean} opt_useCapture If the event handler was added with this
+	 *     flag set to true, it should be set to true here in order to remove it.
+	 */
+	function removeEvent(node, event, fn, opt_useCapture) {
+	  if (typeof node.removeEventListener == 'function') {
+	    node.removeEventListener(event, fn, opt_useCapture);
+	  }
+	  else if (typeof node.detatchEvent == 'function') {
+	    node.detatchEvent('on' + event, fn);
+	  }
+	}
+
+
+	/**
+	 * Returns the intersection between two rect objects.
+	 * @param {Object} rect1 The first rect.
+	 * @param {Object} rect2 The second rect.
+	 * @return {?Object|?ClientRect} The intersection rect or undefined if no
+	 *     intersection is found.
+	 */
+	function computeRectIntersection(rect1, rect2) {
+	  var top = Math.max(rect1.top, rect2.top);
+	  var bottom = Math.min(rect1.bottom, rect2.bottom);
+	  var left = Math.max(rect1.left, rect2.left);
+	  var right = Math.min(rect1.right, rect2.right);
+	  var width = right - left;
+	  var height = bottom - top;
+
+	  return (width >= 0 && height >= 0) && {
+	    top: top,
+	    bottom: bottom,
+	    left: left,
+	    right: right,
+	    width: width,
+	    height: height
+	  } || null;
+	}
+
+
+	/**
+	 * Shims the native getBoundingClientRect for compatibility with older IE.
+	 * @param {Element} el The element whose bounding rect to get.
+	 * @return {DOMRect|ClientRect} The (possibly shimmed) rect of the element.
+	 */
+	function getBoundingClientRect(el) {
+	  var rect;
+
+	  try {
+	    rect = el.getBoundingClientRect();
+	  } catch (err) {
+	    // Ignore Windows 7 IE11 "Unspecified error"
+	    // https://github.com/w3c/IntersectionObserver/pull/205
+	  }
+
+	  if (!rect) return getEmptyRect();
+
+	  // Older IE
+	  if (!(rect.width && rect.height)) {
+	    rect = {
+	      top: rect.top,
+	      right: rect.right,
+	      bottom: rect.bottom,
+	      left: rect.left,
+	      width: rect.right - rect.left,
+	      height: rect.bottom - rect.top
+	    };
+	  }
+	  return rect;
+	}
+
+
+	/**
+	 * Returns an empty rect object. An empty rect is returned when an element
+	 * is not in the DOM.
+	 * @return {ClientRect} The empty rect.
+	 */
+	function getEmptyRect() {
+	  return {
+	    top: 0,
+	    bottom: 0,
+	    left: 0,
+	    right: 0,
+	    width: 0,
+	    height: 0
+	  };
+	}
+
+
+	/**
+	 * Ensure that the result has all of the necessary fields of the DOMRect.
+	 * Specifically this ensures that `x` and `y` fields are set.
+	 *
+	 * @param {?DOMRect|?ClientRect} rect
+	 * @return {?DOMRect}
+	 */
+	function ensureDOMRect(rect) {
+	  // A `DOMRect` object has `x` and `y` fields.
+	  if (!rect || 'x' in rect) {
+	    return rect;
+	  }
+	  // A IE's `ClientRect` type does not have `x` and `y`. The same is the case
+	  // for internally calculated Rect objects. For the purposes of
+	  // `IntersectionObserver`, it's sufficient to simply mirror `left` and `top`
+	  // for these fields.
+	  return {
+	    top: rect.top,
+	    y: rect.top,
+	    bottom: rect.bottom,
+	    left: rect.left,
+	    x: rect.left,
+	    right: rect.right,
+	    width: rect.width,
+	    height: rect.height
+	  };
+	}
+
+
+	/**
+	 * Inverts the intersection and bounding rect from the parent (frame) BCR to
+	 * the local BCR space.
+	 * @param {DOMRect|ClientRect} parentBoundingRect The parent's bound client rect.
+	 * @param {DOMRect|ClientRect} parentIntersectionRect The parent's own intersection rect.
+	 * @return {ClientRect} The local root bounding rect for the parent's children.
+	 */
+	function convertFromParentRect(parentBoundingRect, parentIntersectionRect) {
+	  var top = parentIntersectionRect.top - parentBoundingRect.top;
+	  var left = parentIntersectionRect.left - parentBoundingRect.left;
+	  return {
+	    top: top,
+	    left: left,
+	    height: parentIntersectionRect.height,
+	    width: parentIntersectionRect.width,
+	    bottom: top + parentIntersectionRect.height,
+	    right: left + parentIntersectionRect.width
+	  };
+	}
+
+
+	/**
+	 * Checks to see if a parent element contains a child element (including inside
+	 * shadow DOM).
+	 * @param {Node} parent The parent element.
+	 * @param {Node} child The child element.
+	 * @return {boolean} True if the parent node contains the child node.
+	 */
+	function containsDeep(parent, child) {
+	  var node = child;
+	  while (node) {
+	    if (node == parent) return true;
+
+	    node = getParentNode(node);
+	  }
+	  return false;
+	}
+
+
+	/**
+	 * Gets the parent node of an element or its host element if the parent node
+	 * is a shadow root.
+	 * @param {Node} node The node whose parent to get.
+	 * @return {Node|null} The parent node or null if no parent exists.
+	 */
+	function getParentNode(node) {
+	  var parent = node.parentNode;
+
+	  if (node.nodeType == /* DOCUMENT */ 9 && node != document) {
+	    // If this node is a document node, look for the embedding frame.
+	    return getFrameElement(node);
+	  }
+
+	  if (parent && parent.nodeType == 11 && parent.host) {
+	    // If the parent is a shadow root, return the host element.
+	    return parent.host;
+	  }
+
+	  if (parent && parent.assignedSlot) {
+	    // If the parent is distributed in a <slot>, return the parent of a slot.
+	    return parent.assignedSlot.parentNode;
+	  }
+
+	  return parent;
+	}
+
+
+	/**
+	 * Returns the embedding frame element, if any.
+	 * @param {!Document} doc
+	 * @return {!Element}
+	 */
+	function getFrameElement(doc) {
+	  try {
+	    return doc.defaultView && doc.defaultView.frameElement || null;
+	  } catch (e) {
+	    // Ignore the error.
+	    return null;
+	  }
+	}
+
+
+	// Exposes the constructors globally.
+	window.IntersectionObserver = IntersectionObserver;
+	window.IntersectionObserverEntry = IntersectionObserverEntry;
+
+	}());
+	return intersectionObserver;
 }
 
-// Exit early if all IntersectionObserver and IntersectionObserverEntry
-// features are natively supported.
-if ('IntersectionObserver' in window &&
-    'IntersectionObserverEntry' in window &&
-    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-
-  // Minimal polyfill for Edge 15's lack of `isIntersecting`
-  // See: https://github.com/w3c/IntersectionObserver/issues/211
-  if (!('isIntersecting' in window.IntersectionObserverEntry.prototype)) {
-    Object.defineProperty(window.IntersectionObserverEntry.prototype,
-      'isIntersecting', {
-      get: function () {
-        return this.intersectionRatio > 0;
-      }
-    });
-  }
-  return;
-}
-
-
-/**
- * A local reference to the document.
- */
-var document = window.document;
-
-
-/**
- * An IntersectionObserver registry. This registry exists to hold a strong
- * reference to IntersectionObserver instances currently observing a target
- * element. Without this registry, instances without another reference may be
- * garbage collected.
- */
-var registry = [];
-
-/**
- * The signal updater for cross-origin intersection. When not null, it means
- * that the polyfill is configured to work in a cross-origin mode.
- * @type {function(DOMRect|ClientRect, DOMRect|ClientRect)}
- */
-var crossOriginUpdater = null;
-
-/**
- * The current cross-origin intersection. Only used in the cross-origin mode.
- * @type {DOMRect|ClientRect}
- */
-var crossOriginRect = null;
-
-
-/**
- * Creates the global IntersectionObserverEntry constructor.
- * https://w3c.github.io/IntersectionObserver/#intersection-observer-entry
- * @param {Object} entry A dictionary of instance properties.
- * @constructor
- */
-function IntersectionObserverEntry(entry) {
-  this.time = entry.time;
-  this.target = entry.target;
-  this.rootBounds = ensureDOMRect(entry.rootBounds);
-  this.boundingClientRect = ensureDOMRect(entry.boundingClientRect);
-  this.intersectionRect = ensureDOMRect(entry.intersectionRect || getEmptyRect());
-  this.isIntersecting = !!entry.intersectionRect;
-
-  // Calculates the intersection ratio.
-  var targetRect = this.boundingClientRect;
-  var targetArea = targetRect.width * targetRect.height;
-  var intersectionRect = this.intersectionRect;
-  var intersectionArea = intersectionRect.width * intersectionRect.height;
-
-  // Sets intersection ratio.
-  if (targetArea) {
-    // Round the intersection ratio to avoid floating point math issues:
-    // https://github.com/w3c/IntersectionObserver/issues/324
-    this.intersectionRatio = Number((intersectionArea / targetArea).toFixed(4));
-  } else {
-    // If area is zero and is intersecting, sets to 1, otherwise to 0
-    this.intersectionRatio = this.isIntersecting ? 1 : 0;
-  }
-}
-
-
-/**
- * Creates the global IntersectionObserver constructor.
- * https://w3c.github.io/IntersectionObserver/#intersection-observer-interface
- * @param {Function} callback The function to be invoked after intersection
- *     changes have queued. The function is not invoked if the queue has
- *     been emptied by calling the `takeRecords` method.
- * @param {Object=} opt_options Optional configuration options.
- * @constructor
- */
-function IntersectionObserver(callback, opt_options) {
-
-  var options = opt_options || {};
-
-  if (typeof callback != 'function') {
-    throw new Error('callback must be a function');
-  }
-
-  if (options.root && options.root.nodeType != 1) {
-    throw new Error('root must be an Element');
-  }
-
-  // Binds and throttles `this._checkForIntersections`.
-  this._checkForIntersections = throttle(
-      this._checkForIntersections.bind(this), this.THROTTLE_TIMEOUT);
-
-  // Private properties.
-  this._callback = callback;
-  this._observationTargets = [];
-  this._queuedEntries = [];
-  this._rootMarginValues = this._parseRootMargin(options.rootMargin);
-
-  // Public properties.
-  this.thresholds = this._initThresholds(options.threshold);
-  this.root = options.root || null;
-  this.rootMargin = this._rootMarginValues.map(function(margin) {
-    return margin.value + margin.unit;
-  }).join(' ');
-
-  /** @private @const {!Array<!Document>} */
-  this._monitoringDocuments = [];
-  /** @private @const {!Array<function()>} */
-  this._monitoringUnsubscribes = [];
-}
-
-
-/**
- * The minimum interval within which the document will be checked for
- * intersection changes.
- */
-IntersectionObserver.prototype.THROTTLE_TIMEOUT = 100;
-
-
-/**
- * The frequency in which the polyfill polls for intersection changes.
- * this can be updated on a per instance basis and must be set prior to
- * calling `observe` on the first target.
- */
-IntersectionObserver.prototype.POLL_INTERVAL = null;
-
-/**
- * Use a mutation observer on the root element
- * to detect intersection changes.
- */
-IntersectionObserver.prototype.USE_MUTATION_OBSERVER = true;
-
-
-/**
- * Sets up the polyfill in the cross-origin mode. The result is the
- * updater function that accepts two arguments: `boundingClientRect` and
- * `intersectionRect` - just as these fields would be available to the
- * parent via `IntersectionObserverEntry`. This function should be called
- * each time the iframe receives intersection information from the parent
- * window, e.g. via messaging.
- * @return {function(DOMRect|ClientRect, DOMRect|ClientRect)}
- */
-IntersectionObserver._setupCrossOriginUpdater = function() {
-  if (!crossOriginUpdater) {
-    /**
-     * @param {DOMRect|ClientRect} boundingClientRect
-     * @param {DOMRect|ClientRect} intersectionRect
-     */
-    crossOriginUpdater = function(boundingClientRect, intersectionRect) {
-      if (!boundingClientRect || !intersectionRect) {
-        crossOriginRect = getEmptyRect();
-      } else {
-        crossOriginRect = convertFromParentRect(boundingClientRect, intersectionRect);
-      }
-      registry.forEach(function(observer) {
-        observer._checkForIntersections();
-      });
-    };
-  }
-  return crossOriginUpdater;
-};
-
-
-/**
- * Resets the cross-origin mode.
- */
-IntersectionObserver._resetCrossOriginUpdater = function() {
-  crossOriginUpdater = null;
-  crossOriginRect = null;
-};
-
-
-/**
- * Starts observing a target element for intersection changes based on
- * the thresholds values.
- * @param {Element} target The DOM element to observe.
- */
-IntersectionObserver.prototype.observe = function(target) {
-  var isTargetAlreadyObserved = this._observationTargets.some(function(item) {
-    return item.element == target;
-  });
-
-  if (isTargetAlreadyObserved) {
-    return;
-  }
-
-  if (!(target && target.nodeType == 1)) {
-    throw new Error('target must be an Element');
-  }
-
-  this._registerInstance();
-  this._observationTargets.push({element: target, entry: null});
-  this._monitorIntersections(target.ownerDocument);
-  this._checkForIntersections();
-};
-
-
-/**
- * Stops observing a target element for intersection changes.
- * @param {Element} target The DOM element to observe.
- */
-IntersectionObserver.prototype.unobserve = function(target) {
-  this._observationTargets =
-      this._observationTargets.filter(function(item) {
-        return item.element != target;
-      });
-  this._unmonitorIntersections(target.ownerDocument);
-  if (this._observationTargets.length == 0) {
-    this._unregisterInstance();
-  }
-};
-
-
-/**
- * Stops observing all target elements for intersection changes.
- */
-IntersectionObserver.prototype.disconnect = function() {
-  this._observationTargets = [];
-  this._unmonitorAllIntersections();
-  this._unregisterInstance();
-};
-
-
-/**
- * Returns any queue entries that have not yet been reported to the
- * callback and clears the queue. This can be used in conjunction with the
- * callback to obtain the absolute most up-to-date intersection information.
- * @return {Array} The currently queued entries.
- */
-IntersectionObserver.prototype.takeRecords = function() {
-  var records = this._queuedEntries.slice();
-  this._queuedEntries = [];
-  return records;
-};
-
-
-/**
- * Accepts the threshold value from the user configuration object and
- * returns a sorted array of unique threshold values. If a value is not
- * between 0 and 1 and error is thrown.
- * @private
- * @param {Array|number=} opt_threshold An optional threshold value or
- *     a list of threshold values, defaulting to [0].
- * @return {Array} A sorted list of unique and valid threshold values.
- */
-IntersectionObserver.prototype._initThresholds = function(opt_threshold) {
-  var threshold = opt_threshold || [0];
-  if (!Array.isArray(threshold)) threshold = [threshold];
-
-  return threshold.sort().filter(function(t, i, a) {
-    if (typeof t != 'number' || isNaN(t) || t < 0 || t > 1) {
-      throw new Error('threshold must be a number between 0 and 1 inclusively');
-    }
-    return t !== a[i - 1];
-  });
-};
-
-
-/**
- * Accepts the rootMargin value from the user configuration object
- * and returns an array of the four margin values as an object containing
- * the value and unit properties. If any of the values are not properly
- * formatted or use a unit other than px or %, and error is thrown.
- * @private
- * @param {string=} opt_rootMargin An optional rootMargin value,
- *     defaulting to '0px'.
- * @return {Array<Object>} An array of margin objects with the keys
- *     value and unit.
- */
-IntersectionObserver.prototype._parseRootMargin = function(opt_rootMargin) {
-  var marginString = opt_rootMargin || '0px';
-  var margins = marginString.split(/\s+/).map(function(margin) {
-    var parts = /^(-?\d*\.?\d+)(px|%)$/.exec(margin);
-    if (!parts) {
-      throw new Error('rootMargin must be specified in pixels or percent');
-    }
-    return {value: parseFloat(parts[1]), unit: parts[2]};
-  });
-
-  // Handles shorthand.
-  margins[1] = margins[1] || margins[0];
-  margins[2] = margins[2] || margins[0];
-  margins[3] = margins[3] || margins[1];
-
-  return margins;
-};
-
-
-/**
- * Starts polling for intersection changes if the polling is not already
- * happening, and if the page's visibility state is visible.
- * @param {!Document} doc
- * @private
- */
-IntersectionObserver.prototype._monitorIntersections = function(doc) {
-  var win = doc.defaultView;
-  if (!win) {
-    // Already destroyed.
-    return;
-  }
-  if (this._monitoringDocuments.indexOf(doc) != -1) {
-    // Already monitoring.
-    return;
-  }
-
-  // Private state for monitoring.
-  var callback = this._checkForIntersections;
-  var monitoringInterval = null;
-  var domObserver = null;
-
-  // If a poll interval is set, use polling instead of listening to
-  // resize and scroll events or DOM mutations.
-  if (this.POLL_INTERVAL) {
-    monitoringInterval = win.setInterval(callback, this.POLL_INTERVAL);
-  } else {
-    addEvent(win, 'resize', callback, true);
-    addEvent(doc, 'scroll', callback, true);
-    if (this.USE_MUTATION_OBSERVER && 'MutationObserver' in win) {
-      domObserver = new win.MutationObserver(callback);
-      domObserver.observe(doc, {
-        attributes: true,
-        childList: true,
-        characterData: true,
-        subtree: true
-      });
-    }
-  }
-
-  this._monitoringDocuments.push(doc);
-  this._monitoringUnsubscribes.push(function() {
-    // Get the window object again. When a friendly iframe is destroyed, it
-    // will be null.
-    var win = doc.defaultView;
-
-    if (win) {
-      if (monitoringInterval) {
-        win.clearInterval(monitoringInterval);
-      }
-      removeEvent(win, 'resize', callback, true);
-    }
-
-    removeEvent(doc, 'scroll', callback, true);
-    if (domObserver) {
-      domObserver.disconnect();
-    }
-  });
-
-  // Also monitor the parent.
-  if (doc != (this.root && this.root.ownerDocument || document)) {
-    var frame = getFrameElement(doc);
-    if (frame) {
-      this._monitorIntersections(frame.ownerDocument);
-    }
-  }
-};
-
-
-/**
- * Stops polling for intersection changes.
- * @param {!Document} doc
- * @private
- */
-IntersectionObserver.prototype._unmonitorIntersections = function(doc) {
-  var index = this._monitoringDocuments.indexOf(doc);
-  if (index == -1) {
-    return;
-  }
-
-  var rootDoc = (this.root && this.root.ownerDocument || document);
-
-  // Check if any dependent targets are still remaining.
-  var hasDependentTargets =
-      this._observationTargets.some(function(item) {
-        var itemDoc = item.element.ownerDocument;
-        // Target is in this context.
-        if (itemDoc == doc) {
-          return true;
-        }
-        // Target is nested in this context.
-        while (itemDoc && itemDoc != rootDoc) {
-          var frame = getFrameElement(itemDoc);
-          itemDoc = frame && frame.ownerDocument;
-          if (itemDoc == doc) {
-            return true;
-          }
-        }
-        return false;
-      });
-  if (hasDependentTargets) {
-    return;
-  }
-
-  // Unsubscribe.
-  var unsubscribe = this._monitoringUnsubscribes[index];
-  this._monitoringDocuments.splice(index, 1);
-  this._monitoringUnsubscribes.splice(index, 1);
-  unsubscribe();
-
-  // Also unmonitor the parent.
-  if (doc != rootDoc) {
-    var frame = getFrameElement(doc);
-    if (frame) {
-      this._unmonitorIntersections(frame.ownerDocument);
-    }
-  }
-};
-
-
-/**
- * Stops polling for intersection changes.
- * @param {!Document} doc
- * @private
- */
-IntersectionObserver.prototype._unmonitorAllIntersections = function() {
-  var unsubscribes = this._monitoringUnsubscribes.slice(0);
-  this._monitoringDocuments.length = 0;
-  this._monitoringUnsubscribes.length = 0;
-  for (var i = 0; i < unsubscribes.length; i++) {
-    unsubscribes[i]();
-  }
-};
-
-
-/**
- * Scans each observation target for intersection changes and adds them
- * to the internal entries queue. If new entries are found, it
- * schedules the callback to be invoked.
- * @private
- */
-IntersectionObserver.prototype._checkForIntersections = function() {
-  if (!this.root && crossOriginUpdater && !crossOriginRect) {
-    // Cross origin monitoring, but no initial data available yet.
-    return;
-  }
-
-  var rootIsInDom = this._rootIsInDom();
-  var rootRect = rootIsInDom ? this._getRootRect() : getEmptyRect();
-
-  this._observationTargets.forEach(function(item) {
-    var target = item.element;
-    var targetRect = getBoundingClientRect(target);
-    var rootContainsTarget = this._rootContainsTarget(target);
-    var oldEntry = item.entry;
-    var intersectionRect = rootIsInDom && rootContainsTarget &&
-        this._computeTargetAndRootIntersection(target, targetRect, rootRect);
-
-    var newEntry = item.entry = new IntersectionObserverEntry({
-      time: now(),
-      target: target,
-      boundingClientRect: targetRect,
-      rootBounds: crossOriginUpdater && !this.root ? null : rootRect,
-      intersectionRect: intersectionRect
-    });
-
-    if (!oldEntry) {
-      this._queuedEntries.push(newEntry);
-    } else if (rootIsInDom && rootContainsTarget) {
-      // If the new entry intersection ratio has crossed any of the
-      // thresholds, add a new entry.
-      if (this._hasCrossedThreshold(oldEntry, newEntry)) {
-        this._queuedEntries.push(newEntry);
-      }
-    } else {
-      // If the root is not in the DOM or target is not contained within
-      // root but the previous entry for this target had an intersection,
-      // add a new record indicating removal.
-      if (oldEntry && oldEntry.isIntersecting) {
-        this._queuedEntries.push(newEntry);
-      }
-    }
-  }, this);
-
-  if (this._queuedEntries.length) {
-    this._callback(this.takeRecords(), this);
-  }
-};
-
-
-/**
- * Accepts a target and root rect computes the intersection between then
- * following the algorithm in the spec.
- * TODO(philipwalton): at this time clip-path is not considered.
- * https://w3c.github.io/IntersectionObserver/#calculate-intersection-rect-algo
- * @param {Element} target The target DOM element
- * @param {Object} targetRect The bounding rect of the target.
- * @param {Object} rootRect The bounding rect of the root after being
- *     expanded by the rootMargin value.
- * @return {?Object} The final intersection rect object or undefined if no
- *     intersection is found.
- * @private
- */
-IntersectionObserver.prototype._computeTargetAndRootIntersection =
-    function(target, targetRect, rootRect) {
-  // If the element isn't displayed, an intersection can't happen.
-  if (window.getComputedStyle(target).display == 'none') return;
-
-  var intersectionRect = targetRect;
-  var parent = getParentNode(target);
-  var atRoot = false;
-
-  while (!atRoot && parent) {
-    var parentRect = null;
-    var parentComputedStyle = parent.nodeType == 1 ?
-        window.getComputedStyle(parent) : {};
-
-    // If the parent isn't displayed, an intersection can't happen.
-    if (parentComputedStyle.display == 'none') return null;
-
-    if (parent == this.root || parent.nodeType == /* DOCUMENT */ 9) {
-      atRoot = true;
-      if (parent == this.root || parent == document) {
-        if (crossOriginUpdater && !this.root) {
-          if (!crossOriginRect ||
-              crossOriginRect.width == 0 && crossOriginRect.height == 0) {
-            // A 0-size cross-origin intersection means no-intersection.
-            parent = null;
-            parentRect = null;
-            intersectionRect = null;
-          } else {
-            parentRect = crossOriginRect;
-          }
-        } else {
-          parentRect = rootRect;
-        }
-      } else {
-        // Check if there's a frame that can be navigated to.
-        var frame = getParentNode(parent);
-        var frameRect = frame && getBoundingClientRect(frame);
-        var frameIntersect =
-            frame &&
-            this._computeTargetAndRootIntersection(frame, frameRect, rootRect);
-        if (frameRect && frameIntersect) {
-          parent = frame;
-          parentRect = convertFromParentRect(frameRect, frameIntersect);
-        } else {
-          parent = null;
-          intersectionRect = null;
-        }
-      }
-    } else {
-      // If the element has a non-visible overflow, and it's not the <body>
-      // or <html> element, update the intersection rect.
-      // Note: <body> and <html> cannot be clipped to a rect that's not also
-      // the document rect, so no need to compute a new intersection.
-      var doc = parent.ownerDocument;
-      if (parent != doc.body &&
-          parent != doc.documentElement &&
-          parentComputedStyle.overflow != 'visible') {
-        parentRect = getBoundingClientRect(parent);
-      }
-    }
-
-    // If either of the above conditionals set a new parentRect,
-    // calculate new intersection data.
-    if (parentRect) {
-      intersectionRect = computeRectIntersection(parentRect, intersectionRect);
-    }
-    if (!intersectionRect) break;
-    parent = parent && getParentNode(parent);
-  }
-  return intersectionRect;
-};
-
-
-/**
- * Returns the root rect after being expanded by the rootMargin value.
- * @return {ClientRect} The expanded root rect.
- * @private
- */
-IntersectionObserver.prototype._getRootRect = function() {
-  var rootRect;
-  if (this.root) {
-    rootRect = getBoundingClientRect(this.root);
-  } else {
-    // Use <html>/<body> instead of window since scroll bars affect size.
-    var html = document.documentElement;
-    var body = document.body;
-    rootRect = {
-      top: 0,
-      left: 0,
-      right: html.clientWidth || body.clientWidth,
-      width: html.clientWidth || body.clientWidth,
-      bottom: html.clientHeight || body.clientHeight,
-      height: html.clientHeight || body.clientHeight
-    };
-  }
-  return this._expandRectByRootMargin(rootRect);
-};
-
-
-/**
- * Accepts a rect and expands it by the rootMargin value.
- * @param {DOMRect|ClientRect} rect The rect object to expand.
- * @return {ClientRect} The expanded rect.
- * @private
- */
-IntersectionObserver.prototype._expandRectByRootMargin = function(rect) {
-  var margins = this._rootMarginValues.map(function(margin, i) {
-    return margin.unit == 'px' ? margin.value :
-        margin.value * (i % 2 ? rect.width : rect.height) / 100;
-  });
-  var newRect = {
-    top: rect.top - margins[0],
-    right: rect.right + margins[1],
-    bottom: rect.bottom + margins[2],
-    left: rect.left - margins[3]
-  };
-  newRect.width = newRect.right - newRect.left;
-  newRect.height = newRect.bottom - newRect.top;
-
-  return newRect;
-};
-
-
-/**
- * Accepts an old and new entry and returns true if at least one of the
- * threshold values has been crossed.
- * @param {?IntersectionObserverEntry} oldEntry The previous entry for a
- *    particular target element or null if no previous entry exists.
- * @param {IntersectionObserverEntry} newEntry The current entry for a
- *    particular target element.
- * @return {boolean} Returns true if a any threshold has been crossed.
- * @private
- */
-IntersectionObserver.prototype._hasCrossedThreshold =
-    function(oldEntry, newEntry) {
-
-  // To make comparing easier, an entry that has a ratio of 0
-  // but does not actually intersect is given a value of -1
-  var oldRatio = oldEntry && oldEntry.isIntersecting ?
-      oldEntry.intersectionRatio || 0 : -1;
-  var newRatio = newEntry.isIntersecting ?
-      newEntry.intersectionRatio || 0 : -1;
-
-  // Ignore unchanged ratios
-  if (oldRatio === newRatio) return;
-
-  for (var i = 0; i < this.thresholds.length; i++) {
-    var threshold = this.thresholds[i];
-
-    // Return true if an entry matches a threshold or if the new ratio
-    // and the old ratio are on the opposite sides of a threshold.
-    if (threshold == oldRatio || threshold == newRatio ||
-        threshold < oldRatio !== threshold < newRatio) {
-      return true;
-    }
-  }
-};
-
-
-/**
- * Returns whether or not the root element is an element and is in the DOM.
- * @return {boolean} True if the root element is an element and is in the DOM.
- * @private
- */
-IntersectionObserver.prototype._rootIsInDom = function() {
-  return !this.root || containsDeep(document, this.root);
-};
-
-
-/**
- * Returns whether or not the target element is a child of root.
- * @param {Element} target The target element to check.
- * @return {boolean} True if the target element is a child of root.
- * @private
- */
-IntersectionObserver.prototype._rootContainsTarget = function(target) {
-  return containsDeep(this.root || document, target) &&
-    (!this.root || this.root.ownerDocument == target.ownerDocument);
-};
-
-
-/**
- * Adds the instance to the global IntersectionObserver registry if it isn't
- * already present.
- * @private
- */
-IntersectionObserver.prototype._registerInstance = function() {
-  if (registry.indexOf(this) < 0) {
-    registry.push(this);
-  }
-};
-
-
-/**
- * Removes the instance from the global IntersectionObserver registry.
- * @private
- */
-IntersectionObserver.prototype._unregisterInstance = function() {
-  var index = registry.indexOf(this);
-  if (index != -1) registry.splice(index, 1);
-};
-
-
-/**
- * Returns the result of the performance.now() method or null in browsers
- * that don't support the API.
- * @return {number} The elapsed time since the page was requested.
- */
-function now() {
-  return window.performance && performance.now && performance.now();
-}
-
-
-/**
- * Throttles a function and delays its execution, so it's only called at most
- * once within a given time period.
- * @param {Function} fn The function to throttle.
- * @param {number} timeout The amount of time that must pass before the
- *     function can be called again.
- * @return {Function} The throttled function.
- */
-function throttle(fn, timeout) {
-  var timer = null;
-  return function () {
-    if (!timer) {
-      timer = setTimeout(function() {
-        fn();
-        timer = null;
-      }, timeout);
-    }
-  };
-}
-
-
-/**
- * Adds an event handler to a DOM node ensuring cross-browser compatibility.
- * @param {Node} node The DOM node to add the event handler to.
- * @param {string} event The event name.
- * @param {Function} fn The event handler to add.
- * @param {boolean} opt_useCapture Optionally adds the even to the capture
- *     phase. Note: this only works in modern browsers.
- */
-function addEvent(node, event, fn, opt_useCapture) {
-  if (typeof node.addEventListener == 'function') {
-    node.addEventListener(event, fn, opt_useCapture);
-  }
-  else if (typeof node.attachEvent == 'function') {
-    node.attachEvent('on' + event, fn);
-  }
-}
-
-
-/**
- * Removes a previously added event handler from a DOM node.
- * @param {Node} node The DOM node to remove the event handler from.
- * @param {string} event The event name.
- * @param {Function} fn The event handler to remove.
- * @param {boolean} opt_useCapture If the event handler was added with this
- *     flag set to true, it should be set to true here in order to remove it.
- */
-function removeEvent(node, event, fn, opt_useCapture) {
-  if (typeof node.removeEventListener == 'function') {
-    node.removeEventListener(event, fn, opt_useCapture);
-  }
-  else if (typeof node.detatchEvent == 'function') {
-    node.detatchEvent('on' + event, fn);
-  }
-}
-
-
-/**
- * Returns the intersection between two rect objects.
- * @param {Object} rect1 The first rect.
- * @param {Object} rect2 The second rect.
- * @return {?Object|?ClientRect} The intersection rect or undefined if no
- *     intersection is found.
- */
-function computeRectIntersection(rect1, rect2) {
-  var top = Math.max(rect1.top, rect2.top);
-  var bottom = Math.min(rect1.bottom, rect2.bottom);
-  var left = Math.max(rect1.left, rect2.left);
-  var right = Math.min(rect1.right, rect2.right);
-  var width = right - left;
-  var height = bottom - top;
-
-  return (width >= 0 && height >= 0) && {
-    top: top,
-    bottom: bottom,
-    left: left,
-    right: right,
-    width: width,
-    height: height
-  } || null;
-}
-
-
-/**
- * Shims the native getBoundingClientRect for compatibility with older IE.
- * @param {Element} el The element whose bounding rect to get.
- * @return {DOMRect|ClientRect} The (possibly shimmed) rect of the element.
- */
-function getBoundingClientRect(el) {
-  var rect;
-
-  try {
-    rect = el.getBoundingClientRect();
-  } catch (err) {
-    // Ignore Windows 7 IE11 "Unspecified error"
-    // https://github.com/w3c/IntersectionObserver/pull/205
-  }
-
-  if (!rect) return getEmptyRect();
-
-  // Older IE
-  if (!(rect.width && rect.height)) {
-    rect = {
-      top: rect.top,
-      right: rect.right,
-      bottom: rect.bottom,
-      left: rect.left,
-      width: rect.right - rect.left,
-      height: rect.bottom - rect.top
-    };
-  }
-  return rect;
-}
-
-
-/**
- * Returns an empty rect object. An empty rect is returned when an element
- * is not in the DOM.
- * @return {ClientRect} The empty rect.
- */
-function getEmptyRect() {
-  return {
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    width: 0,
-    height: 0
-  };
-}
-
-
-/**
- * Ensure that the result has all of the necessary fields of the DOMRect.
- * Specifically this ensures that `x` and `y` fields are set.
- *
- * @param {?DOMRect|?ClientRect} rect
- * @return {?DOMRect}
- */
-function ensureDOMRect(rect) {
-  // A `DOMRect` object has `x` and `y` fields.
-  if (!rect || 'x' in rect) {
-    return rect;
-  }
-  // A IE's `ClientRect` type does not have `x` and `y`. The same is the case
-  // for internally calculated Rect objects. For the purposes of
-  // `IntersectionObserver`, it's sufficient to simply mirror `left` and `top`
-  // for these fields.
-  return {
-    top: rect.top,
-    y: rect.top,
-    bottom: rect.bottom,
-    left: rect.left,
-    x: rect.left,
-    right: rect.right,
-    width: rect.width,
-    height: rect.height
-  };
-}
-
-
-/**
- * Inverts the intersection and bounding rect from the parent (frame) BCR to
- * the local BCR space.
- * @param {DOMRect|ClientRect} parentBoundingRect The parent's bound client rect.
- * @param {DOMRect|ClientRect} parentIntersectionRect The parent's own intersection rect.
- * @return {ClientRect} The local root bounding rect for the parent's children.
- */
-function convertFromParentRect(parentBoundingRect, parentIntersectionRect) {
-  var top = parentIntersectionRect.top - parentBoundingRect.top;
-  var left = parentIntersectionRect.left - parentBoundingRect.left;
-  return {
-    top: top,
-    left: left,
-    height: parentIntersectionRect.height,
-    width: parentIntersectionRect.width,
-    bottom: top + parentIntersectionRect.height,
-    right: left + parentIntersectionRect.width
-  };
-}
-
-
-/**
- * Checks to see if a parent element contains a child element (including inside
- * shadow DOM).
- * @param {Node} parent The parent element.
- * @param {Node} child The child element.
- * @return {boolean} True if the parent node contains the child node.
- */
-function containsDeep(parent, child) {
-  var node = child;
-  while (node) {
-    if (node == parent) return true;
-
-    node = getParentNode(node);
-  }
-  return false;
-}
-
-
-/**
- * Gets the parent node of an element or its host element if the parent node
- * is a shadow root.
- * @param {Node} node The node whose parent to get.
- * @return {Node|null} The parent node or null if no parent exists.
- */
-function getParentNode(node) {
-  var parent = node.parentNode;
-
-  if (node.nodeType == /* DOCUMENT */ 9 && node != document) {
-    // If this node is a document node, look for the embedding frame.
-    return getFrameElement(node);
-  }
-
-  if (parent && parent.nodeType == 11 && parent.host) {
-    // If the parent is a shadow root, return the host element.
-    return parent.host;
-  }
-
-  if (parent && parent.assignedSlot) {
-    // If the parent is distributed in a <slot>, return the parent of a slot.
-    return parent.assignedSlot.parentNode;
-  }
-
-  return parent;
-}
-
-
-/**
- * Returns the embedding frame element, if any.
- * @param {!Document} doc
- * @return {!Element}
- */
-function getFrameElement(doc) {
-  try {
-    return doc.defaultView && doc.defaultView.frameElement || null;
-  } catch (e) {
-    // Ignore the error.
-    return null;
-  }
-}
-
-
-// Exposes the constructors globally.
-window.IntersectionObserver = IntersectionObserver;
-window.IntersectionObserverEntry = IntersectionObserverEntry;
-
-}());
+requireIntersectionObserver();
 
 const usePassiveLayoutEffect = React[typeof document !== 'undefined' && document.createElement !== void 0 ? 'useLayoutEffect' : 'useEffect'];
 
@@ -25478,688 +25490,698 @@ const autoCloseTags = /*@__PURE__*/EditorView.inputHandler.of((view, from, to, t
     return true;
 });
 
-// This file was originally written by @drudru (https://github.com/drudru/ansi_up), MIT, 2011
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ANSI_COLORS = [[{ color: "0, 0, 0", "class": "ansi-black" }, { color: "187, 0, 0", "class": "ansi-red" }, { color: "0, 187, 0", "class": "ansi-green" }, { color: "187, 187, 0", "class": "ansi-yellow" }, { color: "0, 0, 187", "class": "ansi-blue" }, { color: "187, 0, 187", "class": "ansi-magenta" }, { color: "0, 187, 187", "class": "ansi-cyan" }, { color: "255,255,255", "class": "ansi-white" }], [{ color: "85, 85, 85", "class": "ansi-bright-black" }, { color: "255, 85, 85", "class": "ansi-bright-red" }, { color: "0, 255, 0", "class": "ansi-bright-green" }, { color: "255, 255, 85", "class": "ansi-bright-yellow" }, { color: "85, 85, 255", "class": "ansi-bright-blue" }, { color: "255, 85, 255", "class": "ansi-bright-magenta" }, { color: "85, 255, 255", "class": "ansi-bright-cyan" }, { color: "255, 255, 255", "class": "ansi-bright-white" }]];
-// https://datatracker.ietf.org/doc/html/rfc3986#appendix-A
-var linkRegex = /(https?:\/\/(?:[A-Za-z0-9#;/?:@=+$',_.!~*()[\]-]|&amp;|%[A-Fa-f0-9]{2})+)/gm;
-
-var Anser = function () {
-    _createClass(Anser, null, [{
-        key: "escapeForHtml",
-
-
-        /**
-         * Anser.escapeForHtml
-         * Escape the input HTML.
-         *
-         * This does the minimum escaping of text to make it compliant with HTML.
-         * In particular, the '&','<', and '>' characters are escaped. This should
-         * be run prior to `ansiToHtml`.
-         *
-         * @name Anser.escapeForHtml
-         * @function
-         * @param {String} txt The input text (containing the ANSI snippets).
-         * @returns {String} The escaped html.
-         */
-        value: function escapeForHtml(txt) {
-            return new Anser().escapeForHtml(txt);
-        }
-
-        /**
-         * Anser.linkify
-         * Adds the links in the HTML.
-         *
-         * This replaces any links in the text with anchor tags that display the
-         * link. You should apply this after you have run `ansiToHtml` on the text.
-         *
-         * @name Anser.linkify
-         * @function
-         * @param {String} txt The input text.
-         * @returns {String} The HTML containing the <a> tags (unescaped).
-         */
-
-    }, {
-        key: "linkify",
-        value: function linkify(txt) {
-            return new Anser().linkify(txt);
-        }
-
-        /**
-         * Anser.ansiToHtml
-         * This replaces ANSI terminal escape codes with SPAN tags that wrap the
-         * content.
-         *
-         * This function only interprets ANSI SGR (Select Graphic Rendition) codes
-         * that can be represented in HTML.
-         * For example, cursor movement codes are ignored and hidden from output.
-         * The default style uses colors that are very close to the prescribed
-         * standard. The standard assumes that the text will have a black
-         * background. These colors are set as inline styles on the SPAN tags.
-         *
-         * Another option is to set `use_classes: true` in the options argument.
-         * This will instead set classes on the spans so the colors can be set via
-         * CSS. The class names used are of the format `ansi-*-fg/bg` and
-         * `ansi-bright-*-fg/bg` where `*` is the color name,
-         * i.e black/red/green/yellow/blue/magenta/cyan/white.
-         *
-         * @name Anser.ansiToHtml
-         * @function
-         * @param {String} txt The input text.
-         * @param {Object} options The options passed to the ansiToHTML method.
-         * @returns {String} The HTML output.
-         */
-
-    }, {
-        key: "ansiToHtml",
-        value: function ansiToHtml(txt, options) {
-            return new Anser().ansiToHtml(txt, options);
-        }
-
-        /**
-         * Anser.ansiToJson
-         * Converts ANSI input into JSON output.
-         *
-         * @name Anser.ansiToJson
-         * @function
-         * @param {String} txt The input text.
-         * @param {Object} options The options passed to the ansiToHTML method.
-         * @returns {String} The HTML output.
-         */
-
-    }, {
-        key: "ansiToJson",
-        value: function ansiToJson(txt, options) {
-            return new Anser().ansiToJson(txt, options);
-        }
-
-        /**
-         * Anser.ansiToText
-         * Converts ANSI input into text output.
-         *
-         * @name Anser.ansiToText
-         * @function
-         * @param {String} txt The input text.
-         * @returns {String} The text output.
-         */
-
-    }, {
-        key: "ansiToText",
-        value: function ansiToText(txt) {
-            return new Anser().ansiToText(txt);
-        }
-
-        /**
-         * Anser
-         * The `Anser` class.
-         *
-         * @name Anser
-         * @function
-         * @returns {Anser}
-         */
-
-    }]);
-
-    function Anser() {
-        _classCallCheck(this, Anser);
-
-        this.fg = this.bg = this.fg_truecolor = this.bg_truecolor = null;
-        this.bright = 0;
-        this.decorations = [];
-    }
-
-    /**
-     * setupPalette
-     * Sets up the palette.
-     *
-     * @name setupPalette
-     * @function
-     */
-
-
-    _createClass(Anser, [{
-        key: "setupPalette",
-        value: function setupPalette() {
-            this.PALETTE_COLORS = [];
-
-            // Index 0..15 : System color
-            for (var i = 0; i < 2; ++i) {
-                for (var j = 0; j < 8; ++j) {
-                    this.PALETTE_COLORS.push(ANSI_COLORS[i][j].color);
-                }
-            }
-
-            // Index 16..231 : RGB 6x6x6
-            // https://gist.github.com/jasonm23/2868981#file-xterm-256color-yaml
-            var levels = [0, 95, 135, 175, 215, 255];
-            var format = function format(r, g, b) {
-                return levels[r] + ", " + levels[g] + ", " + levels[b];
-            };
-            for (var _r = 0; _r < 6; ++_r) {
-                for (var _g = 0; _g < 6; ++_g) {
-                    for (var _b = 0; _b < 6; ++_b) {
-                        this.PALETTE_COLORS.push(format(_r, _g, _b));
-                    }
-                }
-            }
-
-            // Index 232..255 : Grayscale
-            var level = 8;
-            for (var _i = 0; _i < 24; ++_i, level += 10) {
-                this.PALETTE_COLORS.push(format(level, level, level));
-            }
-        }
-
-        /**
-         * escapeForHtml
-         * Escapes the input text.
-         *
-         * @name escapeForHtml
-         * @function
-         * @param {String} txt The input text.
-         * @returns {String} The escpaed HTML output.
-         */
-
-    }, {
-        key: "escapeForHtml",
-        value: function escapeForHtml(txt) {
-            return txt.replace(/[&<>\"]/gm, function (str) {
-                return str == "&" ? "&amp;" : str == '"' ? "&quot;" : str == "<" ? "&lt;" : str == ">" ? "&gt;" : "";
-            });
-        }
-
-        /**
-         * linkify
-         * Adds HTML link elements.
-         *
-         * @name linkify
-         * @function
-         * @param {String} txt The input text.
-         * @returns {String} The HTML output containing link elements.
-         */
-
-    }, {
-        key: "linkify",
-        value: function linkify(txt) {
-            return txt.replace(linkRegex, function (str) {
-                return "<a href=\"" + str + "\">" + str + "</a>";
-            });
-        }
-
-        /**
-         * ansiToHtml
-         * Converts ANSI input into HTML output.
-         *
-         * @name ansiToHtml
-         * @function
-         * @param {String} txt The input text.
-         * @param {Object} options The options passed ot the `process` method.
-         * @returns {String} The HTML output.
-         */
-
-    }, {
-        key: "ansiToHtml",
-        value: function ansiToHtml(txt, options) {
-            return this.process(txt, options, true);
-        }
-
-        /**
-         * ansiToJson
-         * Converts ANSI input into HTML output.
-         *
-         * @name ansiToJson
-         * @function
-         * @param {String} txt The input text.
-         * @param {Object} options The options passed ot the `process` method.
-         * @returns {String} The JSON output.
-         */
-
-    }, {
-        key: "ansiToJson",
-        value: function ansiToJson(txt, options) {
-            options = options || {};
-            options.json = true;
-            options.clearLine = false;
-            return this.process(txt, options, true);
-        }
-
-        /**
-         * ansiToText
-         * Converts ANSI input into HTML output.
-         *
-         * @name ansiToText
-         * @function
-         * @param {String} txt The input text.
-         * @returns {String} The text output.
-         */
-
-    }, {
-        key: "ansiToText",
-        value: function ansiToText(txt) {
-            return this.process(txt, {}, false);
-        }
-
-        /**
-         * process
-         * Processes the input.
-         *
-         * @name process
-         * @function
-         * @param {String} txt The input text.
-         * @param {Object} options An object passed to `processChunk` method, extended with:
-         *
-         *  - `json` (Boolean): If `true`, the result will be an object.
-         *  - `use_classes` (Boolean): If `true`, HTML classes will be appended to the HTML output.
-         *
-         * @param {Boolean} markup
-         */
-
-    }, {
-        key: "process",
-        value: function process(txt, options, markup) {
-            var _this = this;
-
-            var self = this;
-            var raw_text_chunks = txt.split(/\033\[/);
-            var first_chunk = raw_text_chunks.shift(); // the first chunk is not the result of the split
-
-            if (options === undefined || options === null) {
-                options = {};
-            }
-            options.clearLine = /\r/.test(txt); // check for Carriage Return
-            var color_chunks = raw_text_chunks.map(function (chunk) {
-                return _this.processChunk(chunk, options, markup);
-            });
-
-            if (options && options.json) {
-                var first = self.processChunkJson("");
-                first.content = first_chunk;
-                first.clearLine = options.clearLine;
-                color_chunks.unshift(first);
-                if (options.remove_empty) {
-                    color_chunks = color_chunks.filter(function (c) {
-                        return !c.isEmpty();
-                    });
-                }
-                return color_chunks;
-            } else {
-                color_chunks.unshift(first_chunk);
-            }
-
-            return color_chunks.join("");
-        }
-
-        /**
-         * processChunkJson
-         * Processes the current chunk into json output.
-         *
-         * @name processChunkJson
-         * @function
-         * @param {String} text The input text.
-         * @param {Object} options An object containing the following fields:
-         *
-         *  - `json` (Boolean): If `true`, the result will be an object.
-         *  - `use_classes` (Boolean): If `true`, HTML classes will be appended to the HTML output.
-         *
-         * @param {Boolean} markup If false, the colors will not be parsed.
-         * @return {Object} The result object:
-         *
-         *  - `content` (String): The text.
-         *  - `fg` (String|null): The foreground color.
-         *  - `bg` (String|null): The background color.
-         *  - `fg_truecolor` (String|null): The foreground true color (if 16m color is enabled).
-         *  - `bg_truecolor` (String|null): The background true color (if 16m color is enabled).
-         *  - `clearLine` (Boolean): `true` if a carriageReturn \r was fount at end of line.
-         *  - `was_processed` (Bolean): `true` if the colors were processed, `false` otherwise.
-         *  - `isEmpty` (Function): A function returning `true` if the content is empty, or `false` otherwise.
-         *
-         */
-
-    }, {
-        key: "processChunkJson",
-        value: function processChunkJson(text, options, markup) {
-
-            // Are we using classes or styles?
-            options = typeof options == "undefined" ? {} : options;
-            var use_classes = options.use_classes = typeof options.use_classes != "undefined" && options.use_classes;
-            var key = options.key = use_classes ? "class" : "color";
-
-            var result = {
-                content: text,
-                fg: null,
-                bg: null,
-                fg_truecolor: null,
-                bg_truecolor: null,
-                isInverted: false,
-                clearLine: options.clearLine,
-                decoration: null,
-                decorations: [],
-                was_processed: false,
-                isEmpty: function isEmpty() {
-                    return !result.content;
-                }
-            };
-
-            // Each "chunk" is the text after the CSI (ESC + "[") and before the next CSI/EOF.
-            //
-            // This regex matches four groups within a chunk.
-            //
-            // The first and third groups match code type.
-            // We supported only SGR command. It has empty first group and "m" in third.
-            //
-            // The second group matches all of the number+semicolon command sequences
-            // before the "m" (or other trailing) character.
-            // These are the graphics or SGR commands.
-            //
-            // The last group is the text (including newlines) that is colored by
-            // the other group"s commands.
-            var matches = text.match(/^([!\x3c-\x3f]*)([\d;]*)([\x20-\x2c]*[\x40-\x7e])([\s\S]*)/m);
-
-            if (!matches) return result;
-
-            result.content = matches[4];
-            var nums = matches[2].split(";");
-
-            // We currently support only "SGR" (Select Graphic Rendition)
-            // Simply ignore if not a SGR command.
-            if (matches[1] !== "" || matches[3] !== "m") {
-                return result;
-            }
-
-            if (!markup) {
-                return result;
-            }
-
-            var self = this;
-
-            while (nums.length > 0) {
-                var num_str = nums.shift();
-                var num = parseInt(num_str);
-
-                if (isNaN(num) || num === 0) {
-                    self.fg = self.bg = null;
-                    self.decorations = [];
-                } else if (num === 1) {
-                    self.decorations.push("bold");
-                } else if (num === 2) {
-                    self.decorations.push("dim");
-                    // Enable code 2 to get string
-                } else if (num === 3) {
-                    self.decorations.push("italic");
-                } else if (num === 4) {
-                    self.decorations.push("underline");
-                } else if (num === 5) {
-                    self.decorations.push("blink");
-                } else if (num === 7) {
-                    self.decorations.push("reverse");
-                } else if (num === 8) {
-                    self.decorations.push("hidden");
-                    // Enable code 9 to get strikethrough
-                } else if (num === 9) {
-                    self.decorations.push("strikethrough");
-                    /**
-                     * Add several widely used style codes
-                     * @see https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters
-                     */
-                } else if (num === 21) {
-                    self.removeDecoration("bold");
-                } else if (num === 22) {
-                    self.removeDecoration("bold");
-                    self.removeDecoration("dim");
-                } else if (num === 23) {
-                    self.removeDecoration("italic");
-                } else if (num === 24) {
-                    self.removeDecoration("underline");
-                } else if (num === 25) {
-                    self.removeDecoration("blink");
-                } else if (num === 27) {
-                    self.removeDecoration("reverse");
-                } else if (num === 28) {
-                    self.removeDecoration("hidden");
-                } else if (num === 29) {
-                    self.removeDecoration("strikethrough");
-                } else if (num === 39) {
-                    self.fg = null;
-                } else if (num === 49) {
-                    self.bg = null;
-                    // Foreground color
-                } else if (num >= 30 && num < 38) {
-                    self.fg = ANSI_COLORS[0][num % 10][key];
-                    // Foreground bright color
-                } else if (num >= 90 && num < 98) {
-                    self.fg = ANSI_COLORS[1][num % 10][key];
-                    // Background color
-                } else if (num >= 40 && num < 48) {
-                    self.bg = ANSI_COLORS[0][num % 10][key];
-                    // Background bright color
-                } else if (num >= 100 && num < 108) {
-                    self.bg = ANSI_COLORS[1][num % 10][key];
-                } else if (num === 38 || num === 48) {
-                    // extend color (38=fg, 48=bg)
-                    var is_foreground = num === 38;
-                    if (nums.length >= 1) {
-                        var mode = nums.shift();
-                        if (mode === "5" && nums.length >= 1) {
-                            // palette color
-                            var palette_index = parseInt(nums.shift());
-                            if (palette_index >= 0 && palette_index <= 255) {
-                                if (!use_classes) {
-                                    if (!this.PALETTE_COLORS) {
-                                        self.setupPalette();
-                                    }
-                                    if (is_foreground) {
-                                        self.fg = this.PALETTE_COLORS[palette_index];
-                                    } else {
-                                        self.bg = this.PALETTE_COLORS[palette_index];
-                                    }
-                                } else {
-                                    var klass = palette_index >= 16 ? "ansi-palette-" + palette_index : ANSI_COLORS[palette_index > 7 ? 1 : 0][palette_index % 8]["class"];
-                                    if (is_foreground) {
-                                        self.fg = klass;
-                                    } else {
-                                        self.bg = klass;
-                                    }
-                                }
-                            }
-                        } else if (mode === "2" && nums.length >= 3) {
-                            // true color
-                            var r = parseInt(nums.shift());
-                            var g = parseInt(nums.shift());
-                            var b = parseInt(nums.shift());
-                            if (r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255) {
-                                var color = r + ", " + g + ", " + b;
-                                if (!use_classes) {
-                                    if (is_foreground) {
-                                        self.fg = color;
-                                    } else {
-                                        self.bg = color;
-                                    }
-                                } else {
-                                    if (is_foreground) {
-                                        self.fg = "ansi-truecolor";
-                                        self.fg_truecolor = color;
-                                    } else {
-                                        self.bg = "ansi-truecolor";
-                                        self.bg_truecolor = color;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (self.fg === null && self.bg === null && self.decorations.length === 0) {
-                return result;
-            } else {
-
-                result.fg = self.fg;
-                result.bg = self.bg;
-                result.fg_truecolor = self.fg_truecolor;
-                result.bg_truecolor = self.bg_truecolor;
-                result.decorations = self.decorations;
-                result.decoration = self.decorations.slice(-1).pop() || null;
-                result.was_processed = true;
-
-                return result;
-            }
-        }
-
-        /**
-         * processChunk
-         * Processes the current chunk of text.
-         *
-         * @name processChunk
-         * @function
-         * @param {String} text The input text.
-         * @param {Object} options An object containing the following fields:
-         *
-         *  - `json` (Boolean): If `true`, the result will be an object.
-         *  - `use_classes` (Boolean): If `true`, HTML classes will be appended to the HTML output.
-         *
-         * @param {Boolean} markup If false, the colors will not be parsed.
-         * @return {Object|String} The result (object if `json` is wanted back or string otherwise).
-         */
-
-    }, {
-        key: "processChunk",
-        value: function processChunk(text, options, markup) {
-            var _this2 = this;
-
-            options = options || {};
-            var jsonChunk = this.processChunkJson(text, options, markup);
-            var use_classes = options.use_classes;
-
-            // "reverse" decoration reverses foreground and background colors
-            jsonChunk.decorations = jsonChunk.decorations.filter(function (decoration) {
-                if (decoration === "reverse") {
-                    // when reversing, missing colors are defaulted to black (bg) and white (fg)
-                    if (!jsonChunk.fg) {
-                        jsonChunk.fg = ANSI_COLORS[0][7][use_classes ? "class" : "color"];
-                    }
-                    if (!jsonChunk.bg) {
-                        jsonChunk.bg = ANSI_COLORS[0][0][use_classes ? "class" : "color"];
-                    }
-                    var tmpFg = jsonChunk.fg;
-                    jsonChunk.fg = jsonChunk.bg;
-                    jsonChunk.bg = tmpFg;
-                    var tmpFgTrue = jsonChunk.fg_truecolor;
-                    jsonChunk.fg_truecolor = jsonChunk.bg_truecolor;
-                    jsonChunk.bg_truecolor = tmpFgTrue;
-                    jsonChunk.isInverted = true;
-                    return false;
-                }
-                return true;
-            });
-
-            if (options.json) {
-                return jsonChunk;
-            }
-            if (jsonChunk.isEmpty()) {
-                return "";
-            }
-            if (!jsonChunk.was_processed) {
-                return jsonChunk.content;
-            }
-
-            var colors = [];
-            var decorations = [];
-            var textDecorations = [];
-            var data = {};
-
-            var render_data = function render_data(data) {
-                var fragments = [];
-                var key = void 0;
-                for (key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        fragments.push("data-" + key + "=\"" + _this2.escapeForHtml(data[key]) + "\"");
-                    }
-                }
-                return fragments.length > 0 ? " " + fragments.join(" ") : "";
-            };
-
-            if (jsonChunk.isInverted) {
-                data["ansi-is-inverted"] = "true";
-            }
-
-            if (jsonChunk.fg) {
-                if (use_classes) {
-                    colors.push(jsonChunk.fg + "-fg");
-                    if (jsonChunk.fg_truecolor !== null) {
-                        data["ansi-truecolor-fg"] = jsonChunk.fg_truecolor;
-                        jsonChunk.fg_truecolor = null;
-                    }
-                } else {
-                    colors.push("color:rgb(" + jsonChunk.fg + ")");
-                }
-            }
-
-            if (jsonChunk.bg) {
-                if (use_classes) {
-                    colors.push(jsonChunk.bg + "-bg");
-                    if (jsonChunk.bg_truecolor !== null) {
-                        data["ansi-truecolor-bg"] = jsonChunk.bg_truecolor;
-                        jsonChunk.bg_truecolor = null;
-                    }
-                } else {
-                    colors.push("background-color:rgb(" + jsonChunk.bg + ")");
-                }
-            }
-
-            jsonChunk.decorations.forEach(function (decoration) {
-                // use classes
-                if (use_classes) {
-                    decorations.push("ansi-" + decoration);
-                    return;
-                }
-                // use styles
-                if (decoration === "bold") {
-                    decorations.push("font-weight:bold");
-                } else if (decoration === "dim") {
-                    decorations.push("opacity:0.5");
-                } else if (decoration === "italic") {
-                    decorations.push("font-style:italic");
-                } else if (decoration === "hidden") {
-                    decorations.push("visibility:hidden");
-                } else if (decoration === "strikethrough") {
-                    textDecorations.push("line-through");
-                } else {
-                    // underline and blink are treated here
-                    textDecorations.push(decoration);
-                }
-            });
-
-            if (textDecorations.length) {
-                decorations.push("text-decoration:" + textDecorations.join(" "));
-            }
-
-            if (use_classes) {
-                return "<span class=\"" + colors.concat(decorations).join(" ") + "\"" + render_data(data) + ">" + jsonChunk.content + "</span>";
-            } else {
-                return "<span style=\"" + colors.concat(decorations).join(";") + "\"" + render_data(data) + ">" + jsonChunk.content + "</span>";
-            }
-        }
-    }, {
-        key: "removeDecoration",
-        value: function removeDecoration(decoration) {
-            var index = this.decorations.indexOf(decoration);
-
-            if (index >= 0) {
-                this.decorations.splice(index, 1);
-            }
-        }
-    }]);
-
-    return Anser;
-}();
-
-var lib = Anser;
-
-const Anser$1 = /*@__PURE__*/getDefaultExportFromCjs(lib);
+var lib;
+var hasRequiredLib;
+
+function requireLib () {
+	if (hasRequiredLib) return lib;
+	hasRequiredLib = 1;
+
+	// This file was originally written by @drudru (https://github.com/drudru/ansi_up), MIT, 2011
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var ANSI_COLORS = [[{ color: "0, 0, 0", "class": "ansi-black" }, { color: "187, 0, 0", "class": "ansi-red" }, { color: "0, 187, 0", "class": "ansi-green" }, { color: "187, 187, 0", "class": "ansi-yellow" }, { color: "0, 0, 187", "class": "ansi-blue" }, { color: "187, 0, 187", "class": "ansi-magenta" }, { color: "0, 187, 187", "class": "ansi-cyan" }, { color: "255,255,255", "class": "ansi-white" }], [{ color: "85, 85, 85", "class": "ansi-bright-black" }, { color: "255, 85, 85", "class": "ansi-bright-red" }, { color: "0, 255, 0", "class": "ansi-bright-green" }, { color: "255, 255, 85", "class": "ansi-bright-yellow" }, { color: "85, 85, 255", "class": "ansi-bright-blue" }, { color: "255, 85, 255", "class": "ansi-bright-magenta" }, { color: "85, 255, 255", "class": "ansi-bright-cyan" }, { color: "255, 255, 255", "class": "ansi-bright-white" }]];
+	// https://datatracker.ietf.org/doc/html/rfc3986#appendix-A
+	var linkRegex = /(https?:\/\/(?:[A-Za-z0-9#;/?:@=+$',_.!~*()[\]-]|&amp;|%[A-Fa-f0-9]{2})+)/gm;
+
+	var Anser = function () {
+	    _createClass(Anser, null, [{
+	        key: "escapeForHtml",
+
+
+	        /**
+	         * Anser.escapeForHtml
+	         * Escape the input HTML.
+	         *
+	         * This does the minimum escaping of text to make it compliant with HTML.
+	         * In particular, the '&','<', and '>' characters are escaped. This should
+	         * be run prior to `ansiToHtml`.
+	         *
+	         * @name Anser.escapeForHtml
+	         * @function
+	         * @param {String} txt The input text (containing the ANSI snippets).
+	         * @returns {String} The escaped html.
+	         */
+	        value: function escapeForHtml(txt) {
+	            return new Anser().escapeForHtml(txt);
+	        }
+
+	        /**
+	         * Anser.linkify
+	         * Adds the links in the HTML.
+	         *
+	         * This replaces any links in the text with anchor tags that display the
+	         * link. You should apply this after you have run `ansiToHtml` on the text.
+	         *
+	         * @name Anser.linkify
+	         * @function
+	         * @param {String} txt The input text.
+	         * @returns {String} The HTML containing the <a> tags (unescaped).
+	         */
+
+	    }, {
+	        key: "linkify",
+	        value: function linkify(txt) {
+	            return new Anser().linkify(txt);
+	        }
+
+	        /**
+	         * Anser.ansiToHtml
+	         * This replaces ANSI terminal escape codes with SPAN tags that wrap the
+	         * content.
+	         *
+	         * This function only interprets ANSI SGR (Select Graphic Rendition) codes
+	         * that can be represented in HTML.
+	         * For example, cursor movement codes are ignored and hidden from output.
+	         * The default style uses colors that are very close to the prescribed
+	         * standard. The standard assumes that the text will have a black
+	         * background. These colors are set as inline styles on the SPAN tags.
+	         *
+	         * Another option is to set `use_classes: true` in the options argument.
+	         * This will instead set classes on the spans so the colors can be set via
+	         * CSS. The class names used are of the format `ansi-*-fg/bg` and
+	         * `ansi-bright-*-fg/bg` where `*` is the color name,
+	         * i.e black/red/green/yellow/blue/magenta/cyan/white.
+	         *
+	         * @name Anser.ansiToHtml
+	         * @function
+	         * @param {String} txt The input text.
+	         * @param {Object} options The options passed to the ansiToHTML method.
+	         * @returns {String} The HTML output.
+	         */
+
+	    }, {
+	        key: "ansiToHtml",
+	        value: function ansiToHtml(txt, options) {
+	            return new Anser().ansiToHtml(txt, options);
+	        }
+
+	        /**
+	         * Anser.ansiToJson
+	         * Converts ANSI input into JSON output.
+	         *
+	         * @name Anser.ansiToJson
+	         * @function
+	         * @param {String} txt The input text.
+	         * @param {Object} options The options passed to the ansiToHTML method.
+	         * @returns {String} The HTML output.
+	         */
+
+	    }, {
+	        key: "ansiToJson",
+	        value: function ansiToJson(txt, options) {
+	            return new Anser().ansiToJson(txt, options);
+	        }
+
+	        /**
+	         * Anser.ansiToText
+	         * Converts ANSI input into text output.
+	         *
+	         * @name Anser.ansiToText
+	         * @function
+	         * @param {String} txt The input text.
+	         * @returns {String} The text output.
+	         */
+
+	    }, {
+	        key: "ansiToText",
+	        value: function ansiToText(txt) {
+	            return new Anser().ansiToText(txt);
+	        }
+
+	        /**
+	         * Anser
+	         * The `Anser` class.
+	         *
+	         * @name Anser
+	         * @function
+	         * @returns {Anser}
+	         */
+
+	    }]);
+
+	    function Anser() {
+	        _classCallCheck(this, Anser);
+
+	        this.fg = this.bg = this.fg_truecolor = this.bg_truecolor = null;
+	        this.bright = 0;
+	        this.decorations = [];
+	    }
+
+	    /**
+	     * setupPalette
+	     * Sets up the palette.
+	     *
+	     * @name setupPalette
+	     * @function
+	     */
+
+
+	    _createClass(Anser, [{
+	        key: "setupPalette",
+	        value: function setupPalette() {
+	            this.PALETTE_COLORS = [];
+
+	            // Index 0..15 : System color
+	            for (var i = 0; i < 2; ++i) {
+	                for (var j = 0; j < 8; ++j) {
+	                    this.PALETTE_COLORS.push(ANSI_COLORS[i][j].color);
+	                }
+	            }
+
+	            // Index 16..231 : RGB 6x6x6
+	            // https://gist.github.com/jasonm23/2868981#file-xterm-256color-yaml
+	            var levels = [0, 95, 135, 175, 215, 255];
+	            var format = function format(r, g, b) {
+	                return levels[r] + ", " + levels[g] + ", " + levels[b];
+	            };
+	            for (var _r = 0; _r < 6; ++_r) {
+	                for (var _g = 0; _g < 6; ++_g) {
+	                    for (var _b = 0; _b < 6; ++_b) {
+	                        this.PALETTE_COLORS.push(format(_r, _g, _b));
+	                    }
+	                }
+	            }
+
+	            // Index 232..255 : Grayscale
+	            var level = 8;
+	            for (var _i = 0; _i < 24; ++_i, level += 10) {
+	                this.PALETTE_COLORS.push(format(level, level, level));
+	            }
+	        }
+
+	        /**
+	         * escapeForHtml
+	         * Escapes the input text.
+	         *
+	         * @name escapeForHtml
+	         * @function
+	         * @param {String} txt The input text.
+	         * @returns {String} The escpaed HTML output.
+	         */
+
+	    }, {
+	        key: "escapeForHtml",
+	        value: function escapeForHtml(txt) {
+	            return txt.replace(/[&<>\"]/gm, function (str) {
+	                return str == "&" ? "&amp;" : str == '"' ? "&quot;" : str == "<" ? "&lt;" : str == ">" ? "&gt;" : "";
+	            });
+	        }
+
+	        /**
+	         * linkify
+	         * Adds HTML link elements.
+	         *
+	         * @name linkify
+	         * @function
+	         * @param {String} txt The input text.
+	         * @returns {String} The HTML output containing link elements.
+	         */
+
+	    }, {
+	        key: "linkify",
+	        value: function linkify(txt) {
+	            return txt.replace(linkRegex, function (str) {
+	                return "<a href=\"" + str + "\">" + str + "</a>";
+	            });
+	        }
+
+	        /**
+	         * ansiToHtml
+	         * Converts ANSI input into HTML output.
+	         *
+	         * @name ansiToHtml
+	         * @function
+	         * @param {String} txt The input text.
+	         * @param {Object} options The options passed ot the `process` method.
+	         * @returns {String} The HTML output.
+	         */
+
+	    }, {
+	        key: "ansiToHtml",
+	        value: function ansiToHtml(txt, options) {
+	            return this.process(txt, options, true);
+	        }
+
+	        /**
+	         * ansiToJson
+	         * Converts ANSI input into HTML output.
+	         *
+	         * @name ansiToJson
+	         * @function
+	         * @param {String} txt The input text.
+	         * @param {Object} options The options passed ot the `process` method.
+	         * @returns {String} The JSON output.
+	         */
+
+	    }, {
+	        key: "ansiToJson",
+	        value: function ansiToJson(txt, options) {
+	            options = options || {};
+	            options.json = true;
+	            options.clearLine = false;
+	            return this.process(txt, options, true);
+	        }
+
+	        /**
+	         * ansiToText
+	         * Converts ANSI input into HTML output.
+	         *
+	         * @name ansiToText
+	         * @function
+	         * @param {String} txt The input text.
+	         * @returns {String} The text output.
+	         */
+
+	    }, {
+	        key: "ansiToText",
+	        value: function ansiToText(txt) {
+	            return this.process(txt, {}, false);
+	        }
+
+	        /**
+	         * process
+	         * Processes the input.
+	         *
+	         * @name process
+	         * @function
+	         * @param {String} txt The input text.
+	         * @param {Object} options An object passed to `processChunk` method, extended with:
+	         *
+	         *  - `json` (Boolean): If `true`, the result will be an object.
+	         *  - `use_classes` (Boolean): If `true`, HTML classes will be appended to the HTML output.
+	         *
+	         * @param {Boolean} markup
+	         */
+
+	    }, {
+	        key: "process",
+	        value: function process(txt, options, markup) {
+	            var _this = this;
+
+	            var self = this;
+	            var raw_text_chunks = txt.split(/\033\[/);
+	            var first_chunk = raw_text_chunks.shift(); // the first chunk is not the result of the split
+
+	            if (options === undefined || options === null) {
+	                options = {};
+	            }
+	            options.clearLine = /\r/.test(txt); // check for Carriage Return
+	            var color_chunks = raw_text_chunks.map(function (chunk) {
+	                return _this.processChunk(chunk, options, markup);
+	            });
+
+	            if (options && options.json) {
+	                var first = self.processChunkJson("");
+	                first.content = first_chunk;
+	                first.clearLine = options.clearLine;
+	                color_chunks.unshift(first);
+	                if (options.remove_empty) {
+	                    color_chunks = color_chunks.filter(function (c) {
+	                        return !c.isEmpty();
+	                    });
+	                }
+	                return color_chunks;
+	            } else {
+	                color_chunks.unshift(first_chunk);
+	            }
+
+	            return color_chunks.join("");
+	        }
+
+	        /**
+	         * processChunkJson
+	         * Processes the current chunk into json output.
+	         *
+	         * @name processChunkJson
+	         * @function
+	         * @param {String} text The input text.
+	         * @param {Object} options An object containing the following fields:
+	         *
+	         *  - `json` (Boolean): If `true`, the result will be an object.
+	         *  - `use_classes` (Boolean): If `true`, HTML classes will be appended to the HTML output.
+	         *
+	         * @param {Boolean} markup If false, the colors will not be parsed.
+	         * @return {Object} The result object:
+	         *
+	         *  - `content` (String): The text.
+	         *  - `fg` (String|null): The foreground color.
+	         *  - `bg` (String|null): The background color.
+	         *  - `fg_truecolor` (String|null): The foreground true color (if 16m color is enabled).
+	         *  - `bg_truecolor` (String|null): The background true color (if 16m color is enabled).
+	         *  - `clearLine` (Boolean): `true` if a carriageReturn \r was fount at end of line.
+	         *  - `was_processed` (Bolean): `true` if the colors were processed, `false` otherwise.
+	         *  - `isEmpty` (Function): A function returning `true` if the content is empty, or `false` otherwise.
+	         *
+	         */
+
+	    }, {
+	        key: "processChunkJson",
+	        value: function processChunkJson(text, options, markup) {
+
+	            // Are we using classes or styles?
+	            options = typeof options == "undefined" ? {} : options;
+	            var use_classes = options.use_classes = typeof options.use_classes != "undefined" && options.use_classes;
+	            var key = options.key = use_classes ? "class" : "color";
+
+	            var result = {
+	                content: text,
+	                fg: null,
+	                bg: null,
+	                fg_truecolor: null,
+	                bg_truecolor: null,
+	                isInverted: false,
+	                clearLine: options.clearLine,
+	                decoration: null,
+	                decorations: [],
+	                was_processed: false,
+	                isEmpty: function isEmpty() {
+	                    return !result.content;
+	                }
+	            };
+
+	            // Each "chunk" is the text after the CSI (ESC + "[") and before the next CSI/EOF.
+	            //
+	            // This regex matches four groups within a chunk.
+	            //
+	            // The first and third groups match code type.
+	            // We supported only SGR command. It has empty first group and "m" in third.
+	            //
+	            // The second group matches all of the number+semicolon command sequences
+	            // before the "m" (or other trailing) character.
+	            // These are the graphics or SGR commands.
+	            //
+	            // The last group is the text (including newlines) that is colored by
+	            // the other group"s commands.
+	            var matches = text.match(/^([!\x3c-\x3f]*)([\d;]*)([\x20-\x2c]*[\x40-\x7e])([\s\S]*)/m);
+
+	            if (!matches) return result;
+
+	            result.content = matches[4];
+	            var nums = matches[2].split(";");
+
+	            // We currently support only "SGR" (Select Graphic Rendition)
+	            // Simply ignore if not a SGR command.
+	            if (matches[1] !== "" || matches[3] !== "m") {
+	                return result;
+	            }
+
+	            if (!markup) {
+	                return result;
+	            }
+
+	            var self = this;
+
+	            while (nums.length > 0) {
+	                var num_str = nums.shift();
+	                var num = parseInt(num_str);
+
+	                if (isNaN(num) || num === 0) {
+	                    self.fg = self.bg = null;
+	                    self.decorations = [];
+	                } else if (num === 1) {
+	                    self.decorations.push("bold");
+	                } else if (num === 2) {
+	                    self.decorations.push("dim");
+	                    // Enable code 2 to get string
+	                } else if (num === 3) {
+	                    self.decorations.push("italic");
+	                } else if (num === 4) {
+	                    self.decorations.push("underline");
+	                } else if (num === 5) {
+	                    self.decorations.push("blink");
+	                } else if (num === 7) {
+	                    self.decorations.push("reverse");
+	                } else if (num === 8) {
+	                    self.decorations.push("hidden");
+	                    // Enable code 9 to get strikethrough
+	                } else if (num === 9) {
+	                    self.decorations.push("strikethrough");
+	                    /**
+	                     * Add several widely used style codes
+	                     * @see https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters
+	                     */
+	                } else if (num === 21) {
+	                    self.removeDecoration("bold");
+	                } else if (num === 22) {
+	                    self.removeDecoration("bold");
+	                    self.removeDecoration("dim");
+	                } else if (num === 23) {
+	                    self.removeDecoration("italic");
+	                } else if (num === 24) {
+	                    self.removeDecoration("underline");
+	                } else if (num === 25) {
+	                    self.removeDecoration("blink");
+	                } else if (num === 27) {
+	                    self.removeDecoration("reverse");
+	                } else if (num === 28) {
+	                    self.removeDecoration("hidden");
+	                } else if (num === 29) {
+	                    self.removeDecoration("strikethrough");
+	                } else if (num === 39) {
+	                    self.fg = null;
+	                } else if (num === 49) {
+	                    self.bg = null;
+	                    // Foreground color
+	                } else if (num >= 30 && num < 38) {
+	                    self.fg = ANSI_COLORS[0][num % 10][key];
+	                    // Foreground bright color
+	                } else if (num >= 90 && num < 98) {
+	                    self.fg = ANSI_COLORS[1][num % 10][key];
+	                    // Background color
+	                } else if (num >= 40 && num < 48) {
+	                    self.bg = ANSI_COLORS[0][num % 10][key];
+	                    // Background bright color
+	                } else if (num >= 100 && num < 108) {
+	                    self.bg = ANSI_COLORS[1][num % 10][key];
+	                } else if (num === 38 || num === 48) {
+	                    // extend color (38=fg, 48=bg)
+	                    var is_foreground = num === 38;
+	                    if (nums.length >= 1) {
+	                        var mode = nums.shift();
+	                        if (mode === "5" && nums.length >= 1) {
+	                            // palette color
+	                            var palette_index = parseInt(nums.shift());
+	                            if (palette_index >= 0 && palette_index <= 255) {
+	                                if (!use_classes) {
+	                                    if (!this.PALETTE_COLORS) {
+	                                        self.setupPalette();
+	                                    }
+	                                    if (is_foreground) {
+	                                        self.fg = this.PALETTE_COLORS[palette_index];
+	                                    } else {
+	                                        self.bg = this.PALETTE_COLORS[palette_index];
+	                                    }
+	                                } else {
+	                                    var klass = palette_index >= 16 ? "ansi-palette-" + palette_index : ANSI_COLORS[palette_index > 7 ? 1 : 0][palette_index % 8]["class"];
+	                                    if (is_foreground) {
+	                                        self.fg = klass;
+	                                    } else {
+	                                        self.bg = klass;
+	                                    }
+	                                }
+	                            }
+	                        } else if (mode === "2" && nums.length >= 3) {
+	                            // true color
+	                            var r = parseInt(nums.shift());
+	                            var g = parseInt(nums.shift());
+	                            var b = parseInt(nums.shift());
+	                            if (r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255) {
+	                                var color = r + ", " + g + ", " + b;
+	                                if (!use_classes) {
+	                                    if (is_foreground) {
+	                                        self.fg = color;
+	                                    } else {
+	                                        self.bg = color;
+	                                    }
+	                                } else {
+	                                    if (is_foreground) {
+	                                        self.fg = "ansi-truecolor";
+	                                        self.fg_truecolor = color;
+	                                    } else {
+	                                        self.bg = "ansi-truecolor";
+	                                        self.bg_truecolor = color;
+	                                    }
+	                                }
+	                            }
+	                        }
+	                    }
+	                }
+	            }
+
+	            if (self.fg === null && self.bg === null && self.decorations.length === 0) {
+	                return result;
+	            } else {
+
+	                result.fg = self.fg;
+	                result.bg = self.bg;
+	                result.fg_truecolor = self.fg_truecolor;
+	                result.bg_truecolor = self.bg_truecolor;
+	                result.decorations = self.decorations;
+	                result.decoration = self.decorations.slice(-1).pop() || null;
+	                result.was_processed = true;
+
+	                return result;
+	            }
+	        }
+
+	        /**
+	         * processChunk
+	         * Processes the current chunk of text.
+	         *
+	         * @name processChunk
+	         * @function
+	         * @param {String} text The input text.
+	         * @param {Object} options An object containing the following fields:
+	         *
+	         *  - `json` (Boolean): If `true`, the result will be an object.
+	         *  - `use_classes` (Boolean): If `true`, HTML classes will be appended to the HTML output.
+	         *
+	         * @param {Boolean} markup If false, the colors will not be parsed.
+	         * @return {Object|String} The result (object if `json` is wanted back or string otherwise).
+	         */
+
+	    }, {
+	        key: "processChunk",
+	        value: function processChunk(text, options, markup) {
+	            var _this2 = this;
+
+	            options = options || {};
+	            var jsonChunk = this.processChunkJson(text, options, markup);
+	            var use_classes = options.use_classes;
+
+	            // "reverse" decoration reverses foreground and background colors
+	            jsonChunk.decorations = jsonChunk.decorations.filter(function (decoration) {
+	                if (decoration === "reverse") {
+	                    // when reversing, missing colors are defaulted to black (bg) and white (fg)
+	                    if (!jsonChunk.fg) {
+	                        jsonChunk.fg = ANSI_COLORS[0][7][use_classes ? "class" : "color"];
+	                    }
+	                    if (!jsonChunk.bg) {
+	                        jsonChunk.bg = ANSI_COLORS[0][0][use_classes ? "class" : "color"];
+	                    }
+	                    var tmpFg = jsonChunk.fg;
+	                    jsonChunk.fg = jsonChunk.bg;
+	                    jsonChunk.bg = tmpFg;
+	                    var tmpFgTrue = jsonChunk.fg_truecolor;
+	                    jsonChunk.fg_truecolor = jsonChunk.bg_truecolor;
+	                    jsonChunk.bg_truecolor = tmpFgTrue;
+	                    jsonChunk.isInverted = true;
+	                    return false;
+	                }
+	                return true;
+	            });
+
+	            if (options.json) {
+	                return jsonChunk;
+	            }
+	            if (jsonChunk.isEmpty()) {
+	                return "";
+	            }
+	            if (!jsonChunk.was_processed) {
+	                return jsonChunk.content;
+	            }
+
+	            var colors = [];
+	            var decorations = [];
+	            var textDecorations = [];
+	            var data = {};
+
+	            var render_data = function render_data(data) {
+	                var fragments = [];
+	                var key = void 0;
+	                for (key in data) {
+	                    if (data.hasOwnProperty(key)) {
+	                        fragments.push("data-" + key + "=\"" + _this2.escapeForHtml(data[key]) + "\"");
+	                    }
+	                }
+	                return fragments.length > 0 ? " " + fragments.join(" ") : "";
+	            };
+
+	            if (jsonChunk.isInverted) {
+	                data["ansi-is-inverted"] = "true";
+	            }
+
+	            if (jsonChunk.fg) {
+	                if (use_classes) {
+	                    colors.push(jsonChunk.fg + "-fg");
+	                    if (jsonChunk.fg_truecolor !== null) {
+	                        data["ansi-truecolor-fg"] = jsonChunk.fg_truecolor;
+	                        jsonChunk.fg_truecolor = null;
+	                    }
+	                } else {
+	                    colors.push("color:rgb(" + jsonChunk.fg + ")");
+	                }
+	            }
+
+	            if (jsonChunk.bg) {
+	                if (use_classes) {
+	                    colors.push(jsonChunk.bg + "-bg");
+	                    if (jsonChunk.bg_truecolor !== null) {
+	                        data["ansi-truecolor-bg"] = jsonChunk.bg_truecolor;
+	                        jsonChunk.bg_truecolor = null;
+	                    }
+	                } else {
+	                    colors.push("background-color:rgb(" + jsonChunk.bg + ")");
+	                }
+	            }
+
+	            jsonChunk.decorations.forEach(function (decoration) {
+	                // use classes
+	                if (use_classes) {
+	                    decorations.push("ansi-" + decoration);
+	                    return;
+	                }
+	                // use styles
+	                if (decoration === "bold") {
+	                    decorations.push("font-weight:bold");
+	                } else if (decoration === "dim") {
+	                    decorations.push("opacity:0.5");
+	                } else if (decoration === "italic") {
+	                    decorations.push("font-style:italic");
+	                } else if (decoration === "hidden") {
+	                    decorations.push("visibility:hidden");
+	                } else if (decoration === "strikethrough") {
+	                    textDecorations.push("line-through");
+	                } else {
+	                    // underline and blink are treated here
+	                    textDecorations.push(decoration);
+	                }
+	            });
+
+	            if (textDecorations.length) {
+	                decorations.push("text-decoration:" + textDecorations.join(" "));
+	            }
+
+	            if (use_classes) {
+	                return "<span class=\"" + colors.concat(decorations).join(" ") + "\"" + render_data(data) + ">" + jsonChunk.content + "</span>";
+	            } else {
+	                return "<span style=\"" + colors.concat(decorations).join(";") + "\"" + render_data(data) + ">" + jsonChunk.content + "</span>";
+	            }
+	        }
+	    }, {
+	        key: "removeDecoration",
+	        value: function removeDecoration(decoration) {
+	            var index = this.decorations.indexOf(decoration);
+
+	            if (index >= 0) {
+	                this.decorations.splice(index, 1);
+	            }
+	        }
+	    }]);
+
+	    return Anser;
+	}();
+
+	lib = Anser;
+	return lib;
+}
+
+var libExports = requireLib();
+const Anser = /*@__PURE__*/getDefaultExportFromCjs(libExports);
 
 var escapeCarriage = {exports: {}};
 
@@ -26169,579 +26191,595 @@ var escapeCarriage = {exports: {}};
  * @return {string}    - Escaped string.
  */
 
-function escapeCarriageReturn(txt) {
-  if (!txt) return "";
-  if (!/\r/.test(txt)) return txt;
-  txt = txt.replace(/\r+\n/gm, "\n"); // \r followed by \n --> newline
-  while (/\r./.test(txt)) {
-    txt = txt.replace(/^([^\r\n]*)\r+([^\r\n]+)/gm, function (_, base, insert) {
-      return insert + base.slice(insert.length);
-    });
-  }
-  return txt;
+var hasRequiredEscapeCarriage;
+
+function requireEscapeCarriage () {
+	if (hasRequiredEscapeCarriage) return escapeCarriage.exports;
+	hasRequiredEscapeCarriage = 1;
+	function escapeCarriageReturn(txt) {
+	  if (!txt) return "";
+	  if (!/\r/.test(txt)) return txt;
+	  txt = txt.replace(/\r+\n/gm, "\n"); // \r followed by \n --> newline
+	  while (/\r./.test(txt)) {
+	    txt = txt.replace(/^([^\r\n]*)\r+([^\r\n]+)/gm, function (_, base, insert) {
+	      return insert + base.slice(insert.length);
+	    });
+	  }
+	  return txt;
+	}
+
+	function findLongestString(arr) {
+	  var longest = 0;
+	  for (var i = 0; i < arr.length; i++) {
+	    if (arr[longest].length <= arr[i].length) {
+	      longest = i;
+	    }
+	  }
+	  return longest;
+	}
+
+	function escapeSingleLineSafe(txt) {
+	  if (!/\r/.test(txt)) return txt;
+	  var arr = txt.split("\r");
+	  var res = [];
+
+	  while (arr.length > 0) {
+	    var longest = findLongestString(arr);
+	    res.push(arr[longest]);
+	    arr = arr.slice(longest + 1);
+	  }
+
+	  return res.join("\r");
+	}
+
+	/**
+	 * Safely escape carrigage returns like a terminal.
+	 * This allows to escape carrigage returns while allowing future output to be appended
+	 * without loosing information.
+	 * Use this as a intermediate escape step if your stream hasn't completed yet.
+	 * @param {string} txt - String to escape.
+	 * @return {string}    - Escaped string.
+	 */
+	function escapeCarriageReturnSafe(txt) {
+	  if (!txt) return "";
+	  if (!/\r/.test(txt)) return txt;
+	  if (!/\n/.test(txt)) return escapeSingleLineSafe(txt);
+	  txt = txt.replace(/\r+\n/gm, "\n"); // \r followed by \n --> newline
+	  var idx = txt.lastIndexOf("\n");
+
+	  return (
+	    escapeCarriageReturn(txt.slice(0, idx)) +
+	    "\n" +
+	    escapeSingleLineSafe(txt.slice(idx + 1))
+	  );
+	}
+
+	escapeCarriage.exports = escapeCarriageReturn;
+	escapeCarriage.exports.escapeCarriageReturn = escapeCarriageReturn;
+	escapeCarriage.exports.escapeCarriageReturnSafe = escapeCarriageReturnSafe;
+	return escapeCarriage.exports;
 }
 
-function findLongestString(arr) {
-  var longest = 0;
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[longest].length <= arr[i].length) {
-      longest = i;
-    }
-  }
-  return longest;
-}
-
-function escapeSingleLineSafe(txt) {
-  if (!/\r/.test(txt)) return txt;
-  var arr = txt.split("\r");
-  var res = [];
-
-  while (arr.length > 0) {
-    var longest = findLongestString(arr);
-    res.push(arr[longest]);
-    arr = arr.slice(longest + 1);
-  }
-
-  return res.join("\r");
-}
-
-/**
- * Safely escape carrigage returns like a terminal.
- * This allows to escape carrigage returns while allowing future output to be appended
- * without loosing information.
- * Use this as a intermediate escape step if your stream hasn't completed yet.
- * @param {string} txt - String to escape.
- * @return {string}    - Escaped string.
- */
-function escapeCarriageReturnSafe(txt) {
-  if (!txt) return "";
-  if (!/\r/.test(txt)) return txt;
-  if (!/\n/.test(txt)) return escapeSingleLineSafe(txt);
-  txt = txt.replace(/\r+\n/gm, "\n"); // \r followed by \n --> newline
-  var idx = txt.lastIndexOf("\n");
-
-  return (
-    escapeCarriageReturn(txt.slice(0, idx)) +
-    "\n" +
-    escapeSingleLineSafe(txt.slice(idx + 1))
-  );
-}
-
-escapeCarriage.exports = escapeCarriageReturn;
-var escapeCarriageReturn_1 = escapeCarriage.exports.escapeCarriageReturn = escapeCarriageReturn;
-escapeCarriage.exports.escapeCarriageReturnSafe = escapeCarriageReturnSafe;
+var escapeCarriageExports = requireEscapeCarriage();
 
 var lzString = {exports: {}};
 
 lzString.exports;
 
-(function (module) {
-	// Copyright (c) 2013 Pieroxy <pieroxy@pieroxy.net>
-	// This work is free. You can redistribute it and/or modify it
-	// under the terms of the WTFPL, Version 2
-	// For more information see LICENSE.txt or http://www.wtfpl.net/
-	//
-	// For more information, the home page:
-	// http://pieroxy.net/blog/pages/lz-string/testing.html
-	//
-	// LZ-based compression algorithm, version 1.4.5
-	var LZString = (function() {
+var hasRequiredLzString;
 
-	// private property
-	var f = String.fromCharCode;
-	var keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-	var keyStrUriSafe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
-	var baseReverseDic = {};
+function requireLzString () {
+	if (hasRequiredLzString) return lzString.exports;
+	hasRequiredLzString = 1;
+	(function (module) {
+		// Copyright (c) 2013 Pieroxy <pieroxy@pieroxy.net>
+		// This work is free. You can redistribute it and/or modify it
+		// under the terms of the WTFPL, Version 2
+		// For more information see LICENSE.txt or http://www.wtfpl.net/
+		//
+		// For more information, the home page:
+		// http://pieroxy.net/blog/pages/lz-string/testing.html
+		//
+		// LZ-based compression algorithm, version 1.4.5
+		var LZString = (function() {
 
-	function getBaseValue(alphabet, character) {
-	  if (!baseReverseDic[alphabet]) {
-	    baseReverseDic[alphabet] = {};
-	    for (var i=0 ; i<alphabet.length ; i++) {
-	      baseReverseDic[alphabet][alphabet.charAt(i)] = i;
-	    }
-	  }
-	  return baseReverseDic[alphabet][character];
-	}
+		// private property
+		var f = String.fromCharCode;
+		var keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+		var keyStrUriSafe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
+		var baseReverseDic = {};
 
-	var LZString = {
-	  compressToBase64 : function (input) {
-	    if (input == null) return "";
-	    var res = LZString._compress(input, 6, function(a){return keyStrBase64.charAt(a);});
-	    switch (res.length % 4) { // To produce valid Base64
-	    default: // When could this happen ?
-	    case 0 : return res;
-	    case 1 : return res+"===";
-	    case 2 : return res+"==";
-	    case 3 : return res+"=";
-	    }
-	  },
+		function getBaseValue(alphabet, character) {
+		  if (!baseReverseDic[alphabet]) {
+		    baseReverseDic[alphabet] = {};
+		    for (var i=0 ; i<alphabet.length ; i++) {
+		      baseReverseDic[alphabet][alphabet.charAt(i)] = i;
+		    }
+		  }
+		  return baseReverseDic[alphabet][character];
+		}
 
-	  decompressFromBase64 : function (input) {
-	    if (input == null) return "";
-	    if (input == "") return null;
-	    return LZString._decompress(input.length, 32, function(index) { return getBaseValue(keyStrBase64, input.charAt(index)); });
-	  },
+		var LZString = {
+		  compressToBase64 : function (input) {
+		    if (input == null) return "";
+		    var res = LZString._compress(input, 6, function(a){return keyStrBase64.charAt(a);});
+		    switch (res.length % 4) { // To produce valid Base64
+		    default: // When could this happen ?
+		    case 0 : return res;
+		    case 1 : return res+"===";
+		    case 2 : return res+"==";
+		    case 3 : return res+"=";
+		    }
+		  },
 
-	  compressToUTF16 : function (input) {
-	    if (input == null) return "";
-	    return LZString._compress(input, 15, function(a){return f(a+32);}) + " ";
-	  },
+		  decompressFromBase64 : function (input) {
+		    if (input == null) return "";
+		    if (input == "") return null;
+		    return LZString._decompress(input.length, 32, function(index) { return getBaseValue(keyStrBase64, input.charAt(index)); });
+		  },
 
-	  decompressFromUTF16: function (compressed) {
-	    if (compressed == null) return "";
-	    if (compressed == "") return null;
-	    return LZString._decompress(compressed.length, 16384, function(index) { return compressed.charCodeAt(index) - 32; });
-	  },
+		  compressToUTF16 : function (input) {
+		    if (input == null) return "";
+		    return LZString._compress(input, 15, function(a){return f(a+32);}) + " ";
+		  },
 
-	  //compress into uint8array (UCS-2 big endian format)
-	  compressToUint8Array: function (uncompressed) {
-	    var compressed = LZString.compress(uncompressed);
-	    var buf=new Uint8Array(compressed.length*2); // 2 bytes per character
+		  decompressFromUTF16: function (compressed) {
+		    if (compressed == null) return "";
+		    if (compressed == "") return null;
+		    return LZString._decompress(compressed.length, 16384, function(index) { return compressed.charCodeAt(index) - 32; });
+		  },
 
-	    for (var i=0, TotalLen=compressed.length; i<TotalLen; i++) {
-	      var current_value = compressed.charCodeAt(i);
-	      buf[i*2] = current_value >>> 8;
-	      buf[i*2+1] = current_value % 256;
-	    }
-	    return buf;
-	  },
+		  //compress into uint8array (UCS-2 big endian format)
+		  compressToUint8Array: function (uncompressed) {
+		    var compressed = LZString.compress(uncompressed);
+		    var buf=new Uint8Array(compressed.length*2); // 2 bytes per character
 
-	  //decompress from uint8array (UCS-2 big endian format)
-	  decompressFromUint8Array:function (compressed) {
-	    if (compressed===null || compressed===undefined){
-	        return LZString.decompress(compressed);
-	    } else {
-	        var buf=new Array(compressed.length/2); // 2 bytes per character
-	        for (var i=0, TotalLen=buf.length; i<TotalLen; i++) {
-	          buf[i]=compressed[i*2]*256+compressed[i*2+1];
-	        }
+		    for (var i=0, TotalLen=compressed.length; i<TotalLen; i++) {
+		      var current_value = compressed.charCodeAt(i);
+		      buf[i*2] = current_value >>> 8;
+		      buf[i*2+1] = current_value % 256;
+		    }
+		    return buf;
+		  },
 
-	        var result = [];
-	        buf.forEach(function (c) {
-	          result.push(f(c));
-	        });
-	        return LZString.decompress(result.join(''));
+		  //decompress from uint8array (UCS-2 big endian format)
+		  decompressFromUint8Array:function (compressed) {
+		    if (compressed===null || compressed===undefined){
+		        return LZString.decompress(compressed);
+		    } else {
+		        var buf=new Array(compressed.length/2); // 2 bytes per character
+		        for (var i=0, TotalLen=buf.length; i<TotalLen; i++) {
+		          buf[i]=compressed[i*2]*256+compressed[i*2+1];
+		        }
 
-	    }
+		        var result = [];
+		        buf.forEach(function (c) {
+		          result.push(f(c));
+		        });
+		        return LZString.decompress(result.join(''));
 
-	  },
+		    }
 
-
-	  //compress into a string that is already URI encoded
-	  compressToEncodedURIComponent: function (input) {
-	    if (input == null) return "";
-	    return LZString._compress(input, 6, function(a){return keyStrUriSafe.charAt(a);});
-	  },
-
-	  //decompress from an output of compressToEncodedURIComponent
-	  decompressFromEncodedURIComponent:function (input) {
-	    if (input == null) return "";
-	    if (input == "") return null;
-	    input = input.replace(/ /g, "+");
-	    return LZString._decompress(input.length, 32, function(index) { return getBaseValue(keyStrUriSafe, input.charAt(index)); });
-	  },
-
-	  compress: function (uncompressed) {
-	    return LZString._compress(uncompressed, 16, function(a){return f(a);});
-	  },
-	  _compress: function (uncompressed, bitsPerChar, getCharFromInt) {
-	    if (uncompressed == null) return "";
-	    var i, value,
-	        context_dictionary= {},
-	        context_dictionaryToCreate= {},
-	        context_c="",
-	        context_wc="",
-	        context_w="",
-	        context_enlargeIn= 2, // Compensate for the first entry which should not count
-	        context_dictSize= 3,
-	        context_numBits= 2,
-	        context_data=[],
-	        context_data_val=0,
-	        context_data_position=0,
-	        ii;
-
-	    for (ii = 0; ii < uncompressed.length; ii += 1) {
-	      context_c = uncompressed.charAt(ii);
-	      if (!Object.prototype.hasOwnProperty.call(context_dictionary,context_c)) {
-	        context_dictionary[context_c] = context_dictSize++;
-	        context_dictionaryToCreate[context_c] = true;
-	      }
-
-	      context_wc = context_w + context_c;
-	      if (Object.prototype.hasOwnProperty.call(context_dictionary,context_wc)) {
-	        context_w = context_wc;
-	      } else {
-	        if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
-	          if (context_w.charCodeAt(0)<256) {
-	            for (i=0 ; i<context_numBits ; i++) {
-	              context_data_val = (context_data_val << 1);
-	              if (context_data_position == bitsPerChar-1) {
-	                context_data_position = 0;
-	                context_data.push(getCharFromInt(context_data_val));
-	                context_data_val = 0;
-	              } else {
-	                context_data_position++;
-	              }
-	            }
-	            value = context_w.charCodeAt(0);
-	            for (i=0 ; i<8 ; i++) {
-	              context_data_val = (context_data_val << 1) | (value&1);
-	              if (context_data_position == bitsPerChar-1) {
-	                context_data_position = 0;
-	                context_data.push(getCharFromInt(context_data_val));
-	                context_data_val = 0;
-	              } else {
-	                context_data_position++;
-	              }
-	              value = value >> 1;
-	            }
-	          } else {
-	            value = 1;
-	            for (i=0 ; i<context_numBits ; i++) {
-	              context_data_val = (context_data_val << 1) | value;
-	              if (context_data_position ==bitsPerChar-1) {
-	                context_data_position = 0;
-	                context_data.push(getCharFromInt(context_data_val));
-	                context_data_val = 0;
-	              } else {
-	                context_data_position++;
-	              }
-	              value = 0;
-	            }
-	            value = context_w.charCodeAt(0);
-	            for (i=0 ; i<16 ; i++) {
-	              context_data_val = (context_data_val << 1) | (value&1);
-	              if (context_data_position == bitsPerChar-1) {
-	                context_data_position = 0;
-	                context_data.push(getCharFromInt(context_data_val));
-	                context_data_val = 0;
-	              } else {
-	                context_data_position++;
-	              }
-	              value = value >> 1;
-	            }
-	          }
-	          context_enlargeIn--;
-	          if (context_enlargeIn == 0) {
-	            context_enlargeIn = Math.pow(2, context_numBits);
-	            context_numBits++;
-	          }
-	          delete context_dictionaryToCreate[context_w];
-	        } else {
-	          value = context_dictionary[context_w];
-	          for (i=0 ; i<context_numBits ; i++) {
-	            context_data_val = (context_data_val << 1) | (value&1);
-	            if (context_data_position == bitsPerChar-1) {
-	              context_data_position = 0;
-	              context_data.push(getCharFromInt(context_data_val));
-	              context_data_val = 0;
-	            } else {
-	              context_data_position++;
-	            }
-	            value = value >> 1;
-	          }
+		  },
 
 
-	        }
-	        context_enlargeIn--;
-	        if (context_enlargeIn == 0) {
-	          context_enlargeIn = Math.pow(2, context_numBits);
-	          context_numBits++;
-	        }
-	        // Add wc to the dictionary.
-	        context_dictionary[context_wc] = context_dictSize++;
-	        context_w = String(context_c);
-	      }
-	    }
+		  //compress into a string that is already URI encoded
+		  compressToEncodedURIComponent: function (input) {
+		    if (input == null) return "";
+		    return LZString._compress(input, 6, function(a){return keyStrUriSafe.charAt(a);});
+		  },
 
-	    // Output the code for w.
-	    if (context_w !== "") {
-	      if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
-	        if (context_w.charCodeAt(0)<256) {
-	          for (i=0 ; i<context_numBits ; i++) {
-	            context_data_val = (context_data_val << 1);
-	            if (context_data_position == bitsPerChar-1) {
-	              context_data_position = 0;
-	              context_data.push(getCharFromInt(context_data_val));
-	              context_data_val = 0;
-	            } else {
-	              context_data_position++;
-	            }
-	          }
-	          value = context_w.charCodeAt(0);
-	          for (i=0 ; i<8 ; i++) {
-	            context_data_val = (context_data_val << 1) | (value&1);
-	            if (context_data_position == bitsPerChar-1) {
-	              context_data_position = 0;
-	              context_data.push(getCharFromInt(context_data_val));
-	              context_data_val = 0;
-	            } else {
-	              context_data_position++;
-	            }
-	            value = value >> 1;
-	          }
-	        } else {
-	          value = 1;
-	          for (i=0 ; i<context_numBits ; i++) {
-	            context_data_val = (context_data_val << 1) | value;
-	            if (context_data_position == bitsPerChar-1) {
-	              context_data_position = 0;
-	              context_data.push(getCharFromInt(context_data_val));
-	              context_data_val = 0;
-	            } else {
-	              context_data_position++;
-	            }
-	            value = 0;
-	          }
-	          value = context_w.charCodeAt(0);
-	          for (i=0 ; i<16 ; i++) {
-	            context_data_val = (context_data_val << 1) | (value&1);
-	            if (context_data_position == bitsPerChar-1) {
-	              context_data_position = 0;
-	              context_data.push(getCharFromInt(context_data_val));
-	              context_data_val = 0;
-	            } else {
-	              context_data_position++;
-	            }
-	            value = value >> 1;
-	          }
-	        }
-	        context_enlargeIn--;
-	        if (context_enlargeIn == 0) {
-	          context_enlargeIn = Math.pow(2, context_numBits);
-	          context_numBits++;
-	        }
-	        delete context_dictionaryToCreate[context_w];
-	      } else {
-	        value = context_dictionary[context_w];
-	        for (i=0 ; i<context_numBits ; i++) {
-	          context_data_val = (context_data_val << 1) | (value&1);
-	          if (context_data_position == bitsPerChar-1) {
-	            context_data_position = 0;
-	            context_data.push(getCharFromInt(context_data_val));
-	            context_data_val = 0;
-	          } else {
-	            context_data_position++;
-	          }
-	          value = value >> 1;
-	        }
+		  //decompress from an output of compressToEncodedURIComponent
+		  decompressFromEncodedURIComponent:function (input) {
+		    if (input == null) return "";
+		    if (input == "") return null;
+		    input = input.replace(/ /g, "+");
+		    return LZString._decompress(input.length, 32, function(index) { return getBaseValue(keyStrUriSafe, input.charAt(index)); });
+		  },
+
+		  compress: function (uncompressed) {
+		    return LZString._compress(uncompressed, 16, function(a){return f(a);});
+		  },
+		  _compress: function (uncompressed, bitsPerChar, getCharFromInt) {
+		    if (uncompressed == null) return "";
+		    var i, value,
+		        context_dictionary= {},
+		        context_dictionaryToCreate= {},
+		        context_c="",
+		        context_wc="",
+		        context_w="",
+		        context_enlargeIn= 2, // Compensate for the first entry which should not count
+		        context_dictSize= 3,
+		        context_numBits= 2,
+		        context_data=[],
+		        context_data_val=0,
+		        context_data_position=0,
+		        ii;
+
+		    for (ii = 0; ii < uncompressed.length; ii += 1) {
+		      context_c = uncompressed.charAt(ii);
+		      if (!Object.prototype.hasOwnProperty.call(context_dictionary,context_c)) {
+		        context_dictionary[context_c] = context_dictSize++;
+		        context_dictionaryToCreate[context_c] = true;
+		      }
+
+		      context_wc = context_w + context_c;
+		      if (Object.prototype.hasOwnProperty.call(context_dictionary,context_wc)) {
+		        context_w = context_wc;
+		      } else {
+		        if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
+		          if (context_w.charCodeAt(0)<256) {
+		            for (i=0 ; i<context_numBits ; i++) {
+		              context_data_val = (context_data_val << 1);
+		              if (context_data_position == bitsPerChar-1) {
+		                context_data_position = 0;
+		                context_data.push(getCharFromInt(context_data_val));
+		                context_data_val = 0;
+		              } else {
+		                context_data_position++;
+		              }
+		            }
+		            value = context_w.charCodeAt(0);
+		            for (i=0 ; i<8 ; i++) {
+		              context_data_val = (context_data_val << 1) | (value&1);
+		              if (context_data_position == bitsPerChar-1) {
+		                context_data_position = 0;
+		                context_data.push(getCharFromInt(context_data_val));
+		                context_data_val = 0;
+		              } else {
+		                context_data_position++;
+		              }
+		              value = value >> 1;
+		            }
+		          } else {
+		            value = 1;
+		            for (i=0 ; i<context_numBits ; i++) {
+		              context_data_val = (context_data_val << 1) | value;
+		              if (context_data_position ==bitsPerChar-1) {
+		                context_data_position = 0;
+		                context_data.push(getCharFromInt(context_data_val));
+		                context_data_val = 0;
+		              } else {
+		                context_data_position++;
+		              }
+		              value = 0;
+		            }
+		            value = context_w.charCodeAt(0);
+		            for (i=0 ; i<16 ; i++) {
+		              context_data_val = (context_data_val << 1) | (value&1);
+		              if (context_data_position == bitsPerChar-1) {
+		                context_data_position = 0;
+		                context_data.push(getCharFromInt(context_data_val));
+		                context_data_val = 0;
+		              } else {
+		                context_data_position++;
+		              }
+		              value = value >> 1;
+		            }
+		          }
+		          context_enlargeIn--;
+		          if (context_enlargeIn == 0) {
+		            context_enlargeIn = Math.pow(2, context_numBits);
+		            context_numBits++;
+		          }
+		          delete context_dictionaryToCreate[context_w];
+		        } else {
+		          value = context_dictionary[context_w];
+		          for (i=0 ; i<context_numBits ; i++) {
+		            context_data_val = (context_data_val << 1) | (value&1);
+		            if (context_data_position == bitsPerChar-1) {
+		              context_data_position = 0;
+		              context_data.push(getCharFromInt(context_data_val));
+		              context_data_val = 0;
+		            } else {
+		              context_data_position++;
+		            }
+		            value = value >> 1;
+		          }
 
 
-	      }
-	      context_enlargeIn--;
-	      if (context_enlargeIn == 0) {
-	        context_enlargeIn = Math.pow(2, context_numBits);
-	        context_numBits++;
-	      }
-	    }
+		        }
+		        context_enlargeIn--;
+		        if (context_enlargeIn == 0) {
+		          context_enlargeIn = Math.pow(2, context_numBits);
+		          context_numBits++;
+		        }
+		        // Add wc to the dictionary.
+		        context_dictionary[context_wc] = context_dictSize++;
+		        context_w = String(context_c);
+		      }
+		    }
 
-	    // Mark the end of the stream
-	    value = 2;
-	    for (i=0 ; i<context_numBits ; i++) {
-	      context_data_val = (context_data_val << 1) | (value&1);
-	      if (context_data_position == bitsPerChar-1) {
-	        context_data_position = 0;
-	        context_data.push(getCharFromInt(context_data_val));
-	        context_data_val = 0;
-	      } else {
-	        context_data_position++;
-	      }
-	      value = value >> 1;
-	    }
+		    // Output the code for w.
+		    if (context_w !== "") {
+		      if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
+		        if (context_w.charCodeAt(0)<256) {
+		          for (i=0 ; i<context_numBits ; i++) {
+		            context_data_val = (context_data_val << 1);
+		            if (context_data_position == bitsPerChar-1) {
+		              context_data_position = 0;
+		              context_data.push(getCharFromInt(context_data_val));
+		              context_data_val = 0;
+		            } else {
+		              context_data_position++;
+		            }
+		          }
+		          value = context_w.charCodeAt(0);
+		          for (i=0 ; i<8 ; i++) {
+		            context_data_val = (context_data_val << 1) | (value&1);
+		            if (context_data_position == bitsPerChar-1) {
+		              context_data_position = 0;
+		              context_data.push(getCharFromInt(context_data_val));
+		              context_data_val = 0;
+		            } else {
+		              context_data_position++;
+		            }
+		            value = value >> 1;
+		          }
+		        } else {
+		          value = 1;
+		          for (i=0 ; i<context_numBits ; i++) {
+		            context_data_val = (context_data_val << 1) | value;
+		            if (context_data_position == bitsPerChar-1) {
+		              context_data_position = 0;
+		              context_data.push(getCharFromInt(context_data_val));
+		              context_data_val = 0;
+		            } else {
+		              context_data_position++;
+		            }
+		            value = 0;
+		          }
+		          value = context_w.charCodeAt(0);
+		          for (i=0 ; i<16 ; i++) {
+		            context_data_val = (context_data_val << 1) | (value&1);
+		            if (context_data_position == bitsPerChar-1) {
+		              context_data_position = 0;
+		              context_data.push(getCharFromInt(context_data_val));
+		              context_data_val = 0;
+		            } else {
+		              context_data_position++;
+		            }
+		            value = value >> 1;
+		          }
+		        }
+		        context_enlargeIn--;
+		        if (context_enlargeIn == 0) {
+		          context_enlargeIn = Math.pow(2, context_numBits);
+		          context_numBits++;
+		        }
+		        delete context_dictionaryToCreate[context_w];
+		      } else {
+		        value = context_dictionary[context_w];
+		        for (i=0 ; i<context_numBits ; i++) {
+		          context_data_val = (context_data_val << 1) | (value&1);
+		          if (context_data_position == bitsPerChar-1) {
+		            context_data_position = 0;
+		            context_data.push(getCharFromInt(context_data_val));
+		            context_data_val = 0;
+		          } else {
+		            context_data_position++;
+		          }
+		          value = value >> 1;
+		        }
 
-	    // Flush the last char
-	    while (true) {
-	      context_data_val = (context_data_val << 1);
-	      if (context_data_position == bitsPerChar-1) {
-	        context_data.push(getCharFromInt(context_data_val));
-	        break;
-	      }
-	      else context_data_position++;
-	    }
-	    return context_data.join('');
-	  },
 
-	  decompress: function (compressed) {
-	    if (compressed == null) return "";
-	    if (compressed == "") return null;
-	    return LZString._decompress(compressed.length, 32768, function(index) { return compressed.charCodeAt(index); });
-	  },
+		      }
+		      context_enlargeIn--;
+		      if (context_enlargeIn == 0) {
+		        context_enlargeIn = Math.pow(2, context_numBits);
+		        context_numBits++;
+		      }
+		    }
 
-	  _decompress: function (length, resetValue, getNextValue) {
-	    var dictionary = [],
-	        enlargeIn = 4,
-	        dictSize = 4,
-	        numBits = 3,
-	        entry = "",
-	        result = [],
-	        i,
-	        w,
-	        bits, resb, maxpower, power,
-	        c,
-	        data = {val:getNextValue(0), position:resetValue, index:1};
+		    // Mark the end of the stream
+		    value = 2;
+		    for (i=0 ; i<context_numBits ; i++) {
+		      context_data_val = (context_data_val << 1) | (value&1);
+		      if (context_data_position == bitsPerChar-1) {
+		        context_data_position = 0;
+		        context_data.push(getCharFromInt(context_data_val));
+		        context_data_val = 0;
+		      } else {
+		        context_data_position++;
+		      }
+		      value = value >> 1;
+		    }
 
-	    for (i = 0; i < 3; i += 1) {
-	      dictionary[i] = i;
-	    }
+		    // Flush the last char
+		    while (true) {
+		      context_data_val = (context_data_val << 1);
+		      if (context_data_position == bitsPerChar-1) {
+		        context_data.push(getCharFromInt(context_data_val));
+		        break;
+		      }
+		      else context_data_position++;
+		    }
+		    return context_data.join('');
+		  },
 
-	    bits = 0;
-	    maxpower = Math.pow(2,2);
-	    power=1;
-	    while (power!=maxpower) {
-	      resb = data.val & data.position;
-	      data.position >>= 1;
-	      if (data.position == 0) {
-	        data.position = resetValue;
-	        data.val = getNextValue(data.index++);
-	      }
-	      bits |= (resb>0 ? 1 : 0) * power;
-	      power <<= 1;
-	    }
+		  decompress: function (compressed) {
+		    if (compressed == null) return "";
+		    if (compressed == "") return null;
+		    return LZString._decompress(compressed.length, 32768, function(index) { return compressed.charCodeAt(index); });
+		  },
 
-	    switch (bits) {
-	      case 0:
-	          bits = 0;
-	          maxpower = Math.pow(2,8);
-	          power=1;
-	          while (power!=maxpower) {
-	            resb = data.val & data.position;
-	            data.position >>= 1;
-	            if (data.position == 0) {
-	              data.position = resetValue;
-	              data.val = getNextValue(data.index++);
-	            }
-	            bits |= (resb>0 ? 1 : 0) * power;
-	            power <<= 1;
-	          }
-	        c = f(bits);
-	        break;
-	      case 1:
-	          bits = 0;
-	          maxpower = Math.pow(2,16);
-	          power=1;
-	          while (power!=maxpower) {
-	            resb = data.val & data.position;
-	            data.position >>= 1;
-	            if (data.position == 0) {
-	              data.position = resetValue;
-	              data.val = getNextValue(data.index++);
-	            }
-	            bits |= (resb>0 ? 1 : 0) * power;
-	            power <<= 1;
-	          }
-	        c = f(bits);
-	        break;
-	      case 2:
-	        return "";
-	    }
-	    dictionary[3] = c;
-	    w = c;
-	    result.push(c);
-	    while (true) {
-	      if (data.index > length) {
-	        return "";
-	      }
+		  _decompress: function (length, resetValue, getNextValue) {
+		    var dictionary = [],
+		        enlargeIn = 4,
+		        dictSize = 4,
+		        numBits = 3,
+		        entry = "",
+		        result = [],
+		        i,
+		        w,
+		        bits, resb, maxpower, power,
+		        c,
+		        data = {val:getNextValue(0), position:resetValue, index:1};
 
-	      bits = 0;
-	      maxpower = Math.pow(2,numBits);
-	      power=1;
-	      while (power!=maxpower) {
-	        resb = data.val & data.position;
-	        data.position >>= 1;
-	        if (data.position == 0) {
-	          data.position = resetValue;
-	          data.val = getNextValue(data.index++);
-	        }
-	        bits |= (resb>0 ? 1 : 0) * power;
-	        power <<= 1;
-	      }
+		    for (i = 0; i < 3; i += 1) {
+		      dictionary[i] = i;
+		    }
 
-	      switch (c = bits) {
-	        case 0:
-	          bits = 0;
-	          maxpower = Math.pow(2,8);
-	          power=1;
-	          while (power!=maxpower) {
-	            resb = data.val & data.position;
-	            data.position >>= 1;
-	            if (data.position == 0) {
-	              data.position = resetValue;
-	              data.val = getNextValue(data.index++);
-	            }
-	            bits |= (resb>0 ? 1 : 0) * power;
-	            power <<= 1;
-	          }
+		    bits = 0;
+		    maxpower = Math.pow(2,2);
+		    power=1;
+		    while (power!=maxpower) {
+		      resb = data.val & data.position;
+		      data.position >>= 1;
+		      if (data.position == 0) {
+		        data.position = resetValue;
+		        data.val = getNextValue(data.index++);
+		      }
+		      bits |= (resb>0 ? 1 : 0) * power;
+		      power <<= 1;
+		    }
 
-	          dictionary[dictSize++] = f(bits);
-	          c = dictSize-1;
-	          enlargeIn--;
-	          break;
-	        case 1:
-	          bits = 0;
-	          maxpower = Math.pow(2,16);
-	          power=1;
-	          while (power!=maxpower) {
-	            resb = data.val & data.position;
-	            data.position >>= 1;
-	            if (data.position == 0) {
-	              data.position = resetValue;
-	              data.val = getNextValue(data.index++);
-	            }
-	            bits |= (resb>0 ? 1 : 0) * power;
-	            power <<= 1;
-	          }
-	          dictionary[dictSize++] = f(bits);
-	          c = dictSize-1;
-	          enlargeIn--;
-	          break;
-	        case 2:
-	          return result.join('');
-	      }
+		    switch (bits) {
+		      case 0:
+		          bits = 0;
+		          maxpower = Math.pow(2,8);
+		          power=1;
+		          while (power!=maxpower) {
+		            resb = data.val & data.position;
+		            data.position >>= 1;
+		            if (data.position == 0) {
+		              data.position = resetValue;
+		              data.val = getNextValue(data.index++);
+		            }
+		            bits |= (resb>0 ? 1 : 0) * power;
+		            power <<= 1;
+		          }
+		        c = f(bits);
+		        break;
+		      case 1:
+		          bits = 0;
+		          maxpower = Math.pow(2,16);
+		          power=1;
+		          while (power!=maxpower) {
+		            resb = data.val & data.position;
+		            data.position >>= 1;
+		            if (data.position == 0) {
+		              data.position = resetValue;
+		              data.val = getNextValue(data.index++);
+		            }
+		            bits |= (resb>0 ? 1 : 0) * power;
+		            power <<= 1;
+		          }
+		        c = f(bits);
+		        break;
+		      case 2:
+		        return "";
+		    }
+		    dictionary[3] = c;
+		    w = c;
+		    result.push(c);
+		    while (true) {
+		      if (data.index > length) {
+		        return "";
+		      }
 
-	      if (enlargeIn == 0) {
-	        enlargeIn = Math.pow(2, numBits);
-	        numBits++;
-	      }
+		      bits = 0;
+		      maxpower = Math.pow(2,numBits);
+		      power=1;
+		      while (power!=maxpower) {
+		        resb = data.val & data.position;
+		        data.position >>= 1;
+		        if (data.position == 0) {
+		          data.position = resetValue;
+		          data.val = getNextValue(data.index++);
+		        }
+		        bits |= (resb>0 ? 1 : 0) * power;
+		        power <<= 1;
+		      }
 
-	      if (dictionary[c]) {
-	        entry = dictionary[c];
-	      } else {
-	        if (c === dictSize) {
-	          entry = w + w.charAt(0);
-	        } else {
-	          return null;
-	        }
-	      }
-	      result.push(entry);
+		      switch (c = bits) {
+		        case 0:
+		          bits = 0;
+		          maxpower = Math.pow(2,8);
+		          power=1;
+		          while (power!=maxpower) {
+		            resb = data.val & data.position;
+		            data.position >>= 1;
+		            if (data.position == 0) {
+		              data.position = resetValue;
+		              data.val = getNextValue(data.index++);
+		            }
+		            bits |= (resb>0 ? 1 : 0) * power;
+		            power <<= 1;
+		          }
 
-	      // Add w+entry[0] to the dictionary.
-	      dictionary[dictSize++] = w + entry.charAt(0);
-	      enlargeIn--;
+		          dictionary[dictSize++] = f(bits);
+		          c = dictSize-1;
+		          enlargeIn--;
+		          break;
+		        case 1:
+		          bits = 0;
+		          maxpower = Math.pow(2,16);
+		          power=1;
+		          while (power!=maxpower) {
+		            resb = data.val & data.position;
+		            data.position >>= 1;
+		            if (data.position == 0) {
+		              data.position = resetValue;
+		              data.val = getNextValue(data.index++);
+		            }
+		            bits |= (resb>0 ? 1 : 0) * power;
+		            power <<= 1;
+		          }
+		          dictionary[dictSize++] = f(bits);
+		          c = dictSize-1;
+		          enlargeIn--;
+		          break;
+		        case 2:
+		          return result.join('');
+		      }
 
-	      w = entry;
+		      if (enlargeIn == 0) {
+		        enlargeIn = Math.pow(2, numBits);
+		        numBits++;
+		      }
 
-	      if (enlargeIn == 0) {
-	        enlargeIn = Math.pow(2, numBits);
-	        numBits++;
-	      }
+		      if (dictionary[c]) {
+		        entry = dictionary[c];
+		      } else {
+		        if (c === dictSize) {
+		          entry = w + w.charAt(0);
+		        } else {
+		          return null;
+		        }
+		      }
+		      result.push(entry);
 
-	    }
-	  }
-	};
-	  return LZString;
-	})();
+		      // Add w+entry[0] to the dictionary.
+		      dictionary[dictSize++] = w + entry.charAt(0);
+		      enlargeIn--;
 
-	if( module != null ) {
-	  module.exports = LZString;
-	} else if( typeof angular !== 'undefined' && angular != null ) {
-	  angular.module('LZString', [])
-	  .factory('LZString', function () {
-	    return LZString;
-	  });
-	} 
-} (lzString));
+		      w = entry;
 
-var lzStringExports = lzString.exports;
+		      if (enlargeIn == 0) {
+		        enlargeIn = Math.pow(2, numBits);
+		        numBits++;
+		      }
+
+		    }
+		  }
+		};
+		  return LZString;
+		})();
+
+		if( module != null ) {
+		  module.exports = LZString;
+		} else if( typeof angular !== 'undefined' && angular != null ) {
+		  angular.module('LZString', [])
+		  .factory('LZString', function () {
+		    return LZString;
+		  });
+		} 
+	} (lzString));
+	return lzString.exports;
+}
+
+var lzStringExports = requireLzString();
 const LZString = /*@__PURE__*/getDefaultExportFromCjs(lzStringExports);
 
 function r(r){var t=r&&r.pop?[]:{};for(var n in r)t[n]=r[n];return t}function cleanSet(t,n,l){n.split&&(n=n.split("."));for(var o=r(t),a=o,e=0,f=n.length;e<f;e++)a=a[n[e]]=e===f-1?l&&l.call?l(a[n[e]]):l:r(a[n[e]]);return o}
@@ -30259,8 +30297,8 @@ var ErrorOverlay = function (props) {
  */
 function ansiToJSON(input, use_classes) {
     if (use_classes === void 0) { use_classes = false; }
-    input = escapeCarriageReturn_1(fixBackspace(input));
-    return Anser$1.ansiToJson(input, {
+    input = escapeCarriageExports.escapeCarriageReturn(fixBackspace(input));
+    return Anser.ansiToJson(input, {
         json: true,
         remove_empty: true,
         use_classes: use_classes,
