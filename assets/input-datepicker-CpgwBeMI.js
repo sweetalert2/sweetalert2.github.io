@@ -1,5 +1,5 @@
 import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-COLPWSRR.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DhF466ih.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-yWswvYdw.js';
 import { C as CreatePortalDocs } from './CreatePortalDocs-D5ZdFTov.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./input-datepicker-src-BgEjI0Hh.js');return { default: __vite_default__ }},true?[]:void 0)).default;
@@ -24,10 +24,10 @@ function Recipe() {
       Sandpack,
       {
         dependencies: {
-          "react": "latest",
-          "react-dom": "latest",
-          "react-day-picker": "latest",
-          "date-fns": "latest"
+          "react": "^18.0.0",
+          "react-dom": "^18.0.0",
+          "react-day-picker": "^9.0.0",
+          "date-fns": "^4.0.0"
         },
         entry: "/App.tsx",
         files: {

@@ -1,5 +1,5 @@
 import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-COLPWSRR.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-DhF466ih.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-yWswvYdw.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./sweetalert2-formik-src-CVNR4Kxb.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 function Recipe() {
@@ -21,9 +21,9 @@ function Recipe() {
       Sandpack,
       {
         dependencies: {
-          "react": "latest",
-          "react-dom": "latest",
-          "sweetalert2-react-content": "latest",
+          "react": "^18.0.0",
+          "react-dom": "^18.0.0",
+          "sweetalert2-react-content": "^5.0.0",
           "formik": "^2.0.0"
         },
         entry: "/App.tsx",
