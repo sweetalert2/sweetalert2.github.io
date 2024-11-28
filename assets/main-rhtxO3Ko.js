@@ -6763,7 +6763,7 @@ function Sponsors() {
           href: "https://bluehive.com/?utm_source=sweetalert2&utm_medium=sponsored&utm_campaign=listing",
           target: "_blank",
           rel: "noopener",
-          "aria-label": "Build your SaaS or App in days, not weeks",
+          "aria-label": "Your Occupational Healthcare Hub",
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/bluehive.png", alt: "Your Occupational Healthcare Hub" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
