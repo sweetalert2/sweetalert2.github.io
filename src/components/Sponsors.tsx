@@ -147,6 +147,18 @@ export function Sponsors() {
       <div className="sponsors">
         <div>
           <a
+            href="https://www.fantasywives.com/cheap-sex-dolls/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Cheap sex dolls"
+          >
+            <img src="/images/sponsors/fantasywives.png" alt="Cheap sex dolls" />
+            <br />
+            Cheap sex dolls
+          </a>
+        </div>
+        <div>
+          <a
             href="https://tabootwin.com?utm_source=sweetalert"
             target="_blank"
             rel="noopener"
