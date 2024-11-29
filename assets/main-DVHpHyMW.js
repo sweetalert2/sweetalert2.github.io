@@ -6875,6 +6875,20 @@ function Sponsors() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
+          href: "https://www.fantasywives.com/cheap-sex-dolls/",
+          target: "_blank",
+          rel: "noopener",
+          "aria-label": "Cheap sex dolls",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/fantasywives.png", alt: "Cheap sex dolls" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            "Cheap sex dolls"
+          ]
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "a",
+        {
           href: "https://tabootwin.com?utm_source=sweetalert",
           target: "_blank",
           rel: "noopener",
