@@ -25,8 +25,8 @@ export function Showcase() {
 
       <div className="center-container">
         <p className="center">
-          <a href="https://m.do.co/c/12907f2ba0bf" target="_blank" rel="noreferrer noopener" tabIndex={-1}>
-            Get $200 in free credits with DigitalOcean!
+          <a href="https://hostinger.com?REFERRALCODE=BKZHOSTINDAB" target="_blank" rel="noreferrer noopener" tabIndex={-1}>
+            Get a 20% discount on Hostiger Web Hosting!
           </a>
         </p>
       </div>
