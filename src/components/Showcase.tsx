@@ -26,7 +26,7 @@ export function Showcase() {
       <div className="center-container">
         <p className="center">
           <a href="https://hostinger.com?REFERRALCODE=BKZHOSTINDAB" target="_blank" rel="noreferrer noopener" tabIndex={-1}>
-            Get a 20% discount on Hostiger Web Hosting!
+            Get up to 79% discount on Hostiger Web Hosting!
           </a>
         </p>
       </div>
