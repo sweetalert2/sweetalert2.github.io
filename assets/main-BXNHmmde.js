@@ -4002,7 +4002,7 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://m.do.co/c/12907f2ba0bf", target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: "Get $200 in free credits with DigitalOcean!" }) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB", target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: "Get a 20% discount on Hostiger Web Hosting!" }) }) })
   ] });
 }
 
