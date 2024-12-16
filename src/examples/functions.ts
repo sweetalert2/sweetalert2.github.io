@@ -39,6 +39,13 @@ export default {
       imageAlt: 'A tall image',
     })
   },
+  draggableModal() {
+    Swal.fire({
+      title: 'Drag me!',
+      icon: 'success',
+      draggable: true,
+    })
+  },
   customHtml() {
     Swal.fire({
       title: '<strong>HTML <u>example</u></strong>',

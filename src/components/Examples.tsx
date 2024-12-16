@@ -62,6 +62,20 @@ export function Examples() {
           <CodeExample code={examples.longText.fnString} />
         </li>
 
+        <li id="draggable-modal">
+          <div className="ui">
+            <p>A draggable modal window:</p>
+            <button
+              className="show-example-btn"
+              aria-label="Try me! Example: A draggable modal window"
+              onClick={examples.draggableModal.fn}
+            >
+              Try me!
+            </button>
+          </div>
+          <CodeExample code={examples.draggableModal.fnString} />
+        </li>
+
         <li id="custom-html">
           <div className="ui">
             <p>Custom HTML description and buttons with ARIA labels</p>
