@@ -544,7 +544,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.14.5
+* sweetalert2 v11.15.0
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -2114,6 +2114,89 @@ const renderImage = (instance, params) => {
   applyCustomClass(image, params, 'image');
 };
 
+let dragging = false;
+let mousedownX = 0;
+let mousedownY = 0;
+let initialX = 0;
+let initialY = 0;
+
+/**
+ * @param {HTMLElement} popup
+ */
+const addDraggableListeners = popup => {
+  popup.addEventListener('mousedown', down);
+  document.body.addEventListener('mousemove', move);
+  popup.addEventListener('mouseup', up);
+  popup.addEventListener('touchstart', down);
+  document.body.addEventListener('touchmove', move);
+  popup.addEventListener('touchend', up);
+};
+
+/**
+ * @param {HTMLElement} popup
+ */
+const removeDraggableListeners = popup => {
+  popup.removeEventListener('mousedown', down);
+  document.body.removeEventListener('mousemove', move);
+  popup.removeEventListener('mouseup', up);
+  popup.removeEventListener('touchstart', down);
+  document.body.removeEventListener('touchmove', move);
+  popup.removeEventListener('touchend', up);
+};
+
+/**
+ * @param {MouseEvent | TouchEvent} event
+ */
+const down = event => {
+  const popup = getPopup();
+  if (event.target === popup || getIcon().contains(/** @type {HTMLElement} */event.target)) {
+    dragging = true;
+    const clientXY = getClientXY(event);
+    mousedownX = clientXY.clientX;
+    mousedownY = clientXY.clientY;
+    initialX = parseInt(popup.style.insetInlineStart) || 0;
+    initialY = parseInt(popup.style.insetBlockStart) || 0;
+  }
+};
+
+/**
+ * @param {MouseEvent | TouchEvent} event
+ */
+const move = event => {
+  const popup = getPopup();
+  if (dragging) {
+    let {
+      clientX,
+      clientY
+    } = getClientXY(event);
+    popup.style.insetInlineStart = `${initialX + (clientX - mousedownX)}px`;
+    popup.style.insetBlockStart = `${initialY + (clientY - mousedownY)}px`;
+  }
+};
+const up = () => {
+  dragging = false;
+};
+
+/**
+ * @param {MouseEvent | TouchEvent} event
+ * @returns {{ clientX: number, clientY: number }}
+ */
+const getClientXY = event => {
+  let clientX = 0,
+    clientY = 0;
+  if (event.type.startsWith('mouse')) {
+    clientX = /** @type {MouseEvent} */event.clientX;
+    clientY = /** @type {MouseEvent} */event.clientY;
+  } else if (event.type.startsWith('touch')) {
+    clientX = /** @type {TouchEvent} */event.touches[0].clientX;
+    clientY = /** @type {TouchEvent} */event.touches[0].clientY;
+  }
+  return {
+    clientX,
+    clientY
+  };
+};
+
 /**
  * @param {SweetAlert} instance
  * @param {SweetAlertOptions} params
@@ -2154,6 +2237,11 @@ const renderPopup = (instance, params) => {
 
   // Classes
   addClasses$1(popup, params);
+  if (params.draggable && !params.toast) {
+    addDraggableListeners(popup);
+  } else {
+    removeDraggableListeners(popup);
+  }
 };
 
 /**
@@ -3498,6 +3586,7 @@ const defaultParams = {
   iconHtml: undefined,
   template: undefined,
   toast: false,
+  draggable: false,
   animation: true,
   showClass: {
     popup: 'swal2-show',
@@ -3578,13 +3667,13 @@ const defaultParams = {
   didDestroy: undefined,
   scrollbarPadding: true
 };
-const updatableParams = ['allowEscapeKey', 'allowOutsideClick', 'background', 'buttonsStyling', 'cancelButtonAriaLabel', 'cancelButtonColor', 'cancelButtonText', 'closeButtonAriaLabel', 'closeButtonHtml', 'color', 'confirmButtonAriaLabel', 'confirmButtonColor', 'confirmButtonText', 'currentProgressStep', 'customClass', 'denyButtonAriaLabel', 'denyButtonColor', 'denyButtonText', 'didClose', 'didDestroy', 'footer', 'hideClass', 'html', 'icon', 'iconColor', 'iconHtml', 'imageAlt', 'imageHeight', 'imageUrl', 'imageWidth', 'preConfirm', 'preDeny', 'progressSteps', 'returnFocus', 'reverseButtons', 'showCancelButton', 'showCloseButton', 'showConfirmButton', 'showDenyButton', 'text', 'title', 'titleText', 'willClose'];
+const updatableParams = ['allowEscapeKey', 'allowOutsideClick', 'background', 'buttonsStyling', 'cancelButtonAriaLabel', 'cancelButtonColor', 'cancelButtonText', 'closeButtonAriaLabel', 'closeButtonHtml', 'color', 'confirmButtonAriaLabel', 'confirmButtonColor', 'confirmButtonText', 'currentProgressStep', 'customClass', 'denyButtonAriaLabel', 'denyButtonColor', 'denyButtonText', 'didClose', 'didDestroy', 'draggable', 'footer', 'hideClass', 'html', 'icon', 'iconColor', 'iconHtml', 'imageAlt', 'imageHeight', 'imageUrl', 'imageWidth', 'preConfirm', 'preDeny', 'progressSteps', 'returnFocus', 'reverseButtons', 'showCancelButton', 'showCloseButton', 'showConfirmButton', 'showDenyButton', 'text', 'title', 'titleText', 'willClose'];
 
 /** @type {Record<string, string | undefined>} */
 const deprecatedParams = {
   allowEnterKey: undefined
 };
-const toastIncompatibleParams = ['allowOutsideClick', 'allowEnterKey', 'backdrop', 'focusConfirm', 'focusDeny', 'focusCancel', 'returnFocus', 'heightAuto', 'keydownListenerCapture'];
+const toastIncompatibleParams = ['allowOutsideClick', 'allowEnterKey', 'backdrop', 'draggable', 'focusConfirm', 'focusDeny', 'focusCancel', 'returnFocus', 'heightAuto', 'keydownListenerCapture'];
 
 /**
  * Is valid parameter
@@ -5031,7 +5120,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.14.5';
+SweetAlert.version = '11.15.0';
 
 const Swal = SweetAlert;
 // @ts-ignore

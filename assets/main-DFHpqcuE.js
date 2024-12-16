@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-COLPWSRR.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DKBlqun8.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -1872,7 +1872,7 @@ function requireCore () {
 	  return mode;
 	}
 
-	var version = "11.10.0";
+	var version = "11.11.0";
 
 	class HTMLInjectionError extends Error {
 	  constructor(reason, html) {
@@ -2399,6 +2399,7 @@ function requireCore () {
 	      // first handler (when ignoreIllegals is true)
 	      if (match.type === "illegal" && lexeme === "") {
 	        // advance so we aren't stuck in an infinite loop
+	        modeBuffer += "\n";
 	        return 1;
 	      }
 
@@ -2692,24 +2693,23 @@ function requireCore () {
 	   * auto-highlights all pre>code elements on the page
 	   */
 	  function highlightAll() {
+	    function boot() {
+	      // if a highlight was requested before DOM was loaded, do now
+	      highlightAll();
+	    }
+
 	    // if we are called too early in the loading process
 	    if (document.readyState === "loading") {
+	      // make sure the event listener is only added once
+	      if (!wantsHighlight) {
+	        window.addEventListener('DOMContentLoaded', boot, false);
+	      }
 	      wantsHighlight = true;
 	      return;
 	    }
 
 	    const blocks = document.querySelectorAll(options.cssSelector);
 	    blocks.forEach(highlightElement);
-	  }
-
-	  function boot() {
-	    // if a highlight was requested before DOM was loaded, do now
-	    if (wantsHighlight) highlightAll();
-	  }
-
-	  // make sure we are in the browser environment
-	  if (typeof window !== 'undefined' && window.addEventListener) {
-	    window.addEventListener('DOMContentLoaded', boot, false);
 	  }
 
 	  /**
@@ -2965,7 +2965,9 @@ const KEYWORDS = [
   "import",
   "from",
   "export",
-  "extends"
+  "extends",
+  // It's reached stage 3, which is "recommended for implementation":
+  "using"
 ];
 const LITERALS = [
   "true",
@@ -3347,7 +3349,7 @@ function javascript(hljs) {
   const PARAMS = {
     className: 'params',
     // convert this to negative lookbehind in v12
-    begin: /(\s*)\(/, // to match the parms with 
+    begin: /(\s*)\(/, // to match the parms with
     end: /\)/,
     excludeBegin: true,
     excludeEnd: true,
@@ -3558,8 +3560,8 @@ function javascript(hljs) {
       NUMBER,
       CLASS_REFERENCE,
       {
-        className: 'attr',
-        begin: IDENT_RE$1 + regex.lookahead(':'),
+        scope: 'attr',
+        match: IDENT_RE$1 + regex.lookahead(':'),
         relevance: 0
       },
       FUNCTION_VARIABLE,
@@ -4002,7 +4004,16 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB", target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: "Get up to 79% discount on Hostiger Web Hosting!" }) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "a",
+      {
+        href: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        tabIndex: -1,
+        children: "Get 20% discount on Hostiger Web Hosting!"
+      }
+    ) }) })
   ] });
 }
 
