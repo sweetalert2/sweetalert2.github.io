@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DKBlqun8.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-iKXT43g_.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -4080,6 +4080,21 @@ function Examples() {
           )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.longText.fnString })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { id: "draggable-modal", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ui", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "A draggable modal window:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              className: "show-example-btn",
+              "aria-label": "Try me! Example: A draggable modal window",
+              onClick: examples.draggableModal.fn,
+              children: "Try me!"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.draggableModal.fnString })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { id: "custom-html", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ui", children: [
