@@ -1,4 +1,4 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-iKXT43g_.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-DiwromfI.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

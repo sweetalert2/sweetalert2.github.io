@@ -5133,7 +5133,7 @@ Swal.default = Swal;
 var reactExports = requireReact();
 const React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-// sweetalert2-react-content v5.0.7
+// sweetalert2-react-content v5.1.0
 
 
 const mounts = [{
@@ -5165,8 +5165,7 @@ const mounts = [{
   getter: swal => swal.getLoader()
 }];
 
-const noop = () => {}; // eslint-disable-line @typescript-eslint/no-empty-function
-
+const noop = () => {};
 function withReactContent(ParentSwal) {
   /* Returns `params` separated into a tuple of `reactParams` (the React params that need to be rendered)
   and`otherParams` (all the other parameters, with any React params replaced with a space ' ') */
@@ -5203,7 +5202,7 @@ function withReactContent(ParentSwal) {
   }
   return class extends ParentSwal {
     static argsToParams(args) {
-      if ( /*#__PURE__*/React.isValidElement(args[0]) || /*#__PURE__*/React.isValidElement(args[1])) {
+      if (/*#__PURE__*/React.isValidElement(args[0]) || /*#__PURE__*/React.isValidElement(args[1])) {
         const params = {};
         ['title', 'html', 'icon'].forEach((name, index) => {
           if (args[index] !== undefined) {
