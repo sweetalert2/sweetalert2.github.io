@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports } from './index-DiwromfI.js';
+import { j as jsxRuntimeExports } from './index-DKUEu_oN.js';
 
 function CreatePortalDocs() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
