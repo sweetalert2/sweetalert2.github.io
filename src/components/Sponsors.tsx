@@ -27,6 +27,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.inksonic.com/" target="_blank" rel="noopener" aria-label="InkSonic">
+            <img src="/images/sponsors/inksonic.png" alt="InkSonic" />
+            <br />
+            InkSonic
+          </a>
+        </div>
+        <div>
           <a
             href="https://bluehive.com/?utm_source=sweetalert2&utm_medium=sponsored&utm_campaign=listing"
             target="_blank"
