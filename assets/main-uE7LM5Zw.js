@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DKUEu_oN.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-BUo69E_g.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -1872,7 +1872,7 @@ function requireCore () {
 	  return mode;
 	}
 
-	var version = "11.11.0";
+	var version = "11.11.1";
 
 	class HTMLInjectionError extends Error {
 	  constructor(reason, html) {
@@ -6781,11 +6781,11 @@ function Sponsors() {
         href: "https://github.com/sweetalert2/sweetalert2/blob/main/SPONSORS.md#sponsors",
         target: "_blank",
         rel: "noopener",
-        "aria-label": "Become a sponsor",
+        "aria-label": "Add your logo and link here",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/plus.png", alt: "" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "Become a sponsor",
+          "Add your logo and link",
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
           "for $29 per month"
         ]
@@ -6892,11 +6892,11 @@ function Sponsors() {
         href: "https://github.com/sweetalert2/sweetalert2/blob/main/SPONSORS.md#sponsors",
         target: "_blank",
         rel: "noopener",
-        "aria-label": "Become a sponsor",
+        "aria-label": "Add your logo and link here",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/plus.png", alt: "" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "Become a sponsor",
+          "Add your logo and link",
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
           "for $29 per month"
         ]

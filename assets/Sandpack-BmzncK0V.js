@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-zioZsEMF.js","assets/base-80a1f760-BQIse1WC.js","assets/consoleHook-59e792cb-BW571zXr.js","assets/index-DKUEu_oN.js","assets/index-Buyfc41S.css","assets/index-599aeaf7-C48prsvt.js","assets/index-BSk6XRml.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DKUEu_oN.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DyphK6sS.js","assets/base-80a1f760-Df668IW8.js","assets/consoleHook-59e792cb-DLl1n1bg.js","assets/index-BUo69E_g.js","assets/index-DjHyChqI.css","assets/index-599aeaf7-BOKtD8Ga.js","assets/index-Cjn4Yo2p.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-BUo69E_g.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-zioZsEMF.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DyphK6sS.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-C48prsvt.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-BOKtD8Ga.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-BSk6XRml.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-Cjn4Yo2p.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -7430,6 +7430,15 @@ class ViewUpdate {
         return (this.flags & 4 /* UpdateFlag.Viewport */) > 0;
     }
     /**
+    Returns true when
+    [`viewportChanged`](https://codemirror.net/6/docs/ref/#view.ViewUpdate.viewportChanged) is true
+    and the viewport change is not just the result of mapping it in
+    response to document changes.
+    */
+    get viewportMoved() {
+        return (this.flags & 8 /* UpdateFlag.ViewportMoved */) > 0;
+    }
+    /**
     Indicates whether the height of a block element in the editor
     changed in this update.
     */
@@ -7441,7 +7450,7 @@ class ViewUpdate {
     editor, or elements within the editor, changed.
     */
     get geometryChanged() {
-        return this.docChanged || (this.flags & (8 /* UpdateFlag.Geometry */ | 2 /* UpdateFlag.Height */)) > 0;
+        return this.docChanged || (this.flags & (16 /* UpdateFlag.Geometry */ | 2 /* UpdateFlag.Height */)) > 0;
     }
     /**
     True when this update indicates a focus change.
@@ -10667,7 +10676,7 @@ class ViewState {
             this.updateViewportLines();
         if (this.lineGaps.length || this.viewport.to - this.viewport.from > (2000 /* LG.Margin */ << 1))
             this.updateLineGaps(this.ensureLineGaps(this.mapLineGaps(this.lineGaps, update.changes)));
-        update.flags |= this.computeVisibleRanges();
+        update.flags |= this.computeVisibleRanges(update.changes);
         if (scrollTarget)
             this.scrollTarget = scrollTarget;
         if (!this.mustEnforceCursorAssoc && update.selectionSet && update.view.lineWrapping &&
@@ -10692,7 +10701,7 @@ class ViewState {
                 scaleY > .005 && Math.abs(this.scaleY - scaleY) > .005) {
                 this.scaleX = scaleX;
                 this.scaleY = scaleY;
-                result |= 8 /* UpdateFlag.Geometry */;
+                result |= 16 /* UpdateFlag.Geometry */;
                 refresh = measureContent = true;
             }
         }
@@ -10702,13 +10711,13 @@ class ViewState {
         if (this.paddingTop != paddingTop || this.paddingBottom != paddingBottom) {
             this.paddingTop = paddingTop;
             this.paddingBottom = paddingBottom;
-            result |= 8 /* UpdateFlag.Geometry */ | 2 /* UpdateFlag.Height */;
+            result |= 16 /* UpdateFlag.Geometry */ | 2 /* UpdateFlag.Height */;
         }
         if (this.editorWidth != view.scrollDOM.clientWidth) {
             if (oracle.lineWrapping)
                 measureContent = true;
             this.editorWidth = view.scrollDOM.clientWidth;
-            result |= 8 /* UpdateFlag.Geometry */;
+            result |= 16 /* UpdateFlag.Geometry */;
         }
         let scrollTop = view.scrollDOM.scrollTop * this.scaleY;
         if (this.scrollTop != scrollTop) {
@@ -10732,7 +10741,7 @@ class ViewState {
         if (this.contentDOMWidth != contentWidth || this.editorHeight != view.scrollDOM.clientHeight) {
             this.contentDOMWidth = domRect.width;
             this.editorHeight = view.scrollDOM.clientHeight;
-            result |= 8 /* UpdateFlag.Geometry */;
+            result |= 16 /* UpdateFlag.Geometry */;
         }
         if (measureContent) {
             let lineHeights = view.docView.measureVisibleLineHeights(this.viewport);
@@ -10743,7 +10752,7 @@ class ViewState {
                 refresh = lineHeight > 0 && oracle.refresh(whiteSpace, lineHeight, charWidth, textHeight, contentWidth / charWidth, lineHeights);
                 if (refresh) {
                     view.docView.minWidth = 0;
-                    result |= 8 /* UpdateFlag.Geometry */;
+                    result |= 16 /* UpdateFlag.Geometry */;
                 }
             }
             if (dTop > 0 && dBottom > 0)
@@ -10956,7 +10965,7 @@ class ViewState {
             this.lineGapDeco = Decoration.set(gaps.map(gap => gap.draw(this, this.heightOracle.lineWrapping)));
         }
     }
-    computeVisibleRanges() {
+    computeVisibleRanges(changes) {
         let deco = this.stateDeco;
         if (this.lineGaps.length)
             deco = deco.concat(this.lineGapDeco);
@@ -10965,10 +10974,22 @@ class ViewState {
             span(from, to) { ranges.push({ from, to }); },
             point() { }
         }, 20);
-        let changed = ranges.length != this.visibleRanges.length ||
-            this.visibleRanges.some((r, i) => r.from != ranges[i].from || r.to != ranges[i].to);
+        let changed = 0;
+        if (ranges.length != this.visibleRanges.length) {
+            changed = 8 /* UpdateFlag.ViewportMoved */ | 4 /* UpdateFlag.Viewport */;
+        }
+        else {
+            for (let i = 0; i < ranges.length && !(changed & 8 /* UpdateFlag.ViewportMoved */); i++) {
+                let old = this.visibleRanges[i], nw = ranges[i];
+                if (old.from != nw.from || old.to != nw.to) {
+                    changed |= 4 /* UpdateFlag.Viewport */;
+                    if (!(changes && changes.mapPos(old.from, -1) == nw.from && changes.mapPos(old.to, 1) == nw.to))
+                        changed |= 8 /* UpdateFlag.ViewportMoved */;
+                }
+            }
+        }
         this.visibleRanges = ranges;
-        return changed ? 4 /* UpdateFlag.Viewport */ : 0;
+        return changed;
     }
     lineBlockAt(pos) {
         return (pos >= this.viewport.from && pos <= this.viewport.to &&
@@ -13546,12 +13567,12 @@ class MatchDecorator {
         let changeFrom = 1e9, changeTo = -1;
         if (update.docChanged)
             update.changes.iterChanges((_f, _t, from, to) => {
-                if (to > update.view.viewport.from && from < update.view.viewport.to) {
+                if (to >= update.view.viewport.from && from <= update.view.viewport.to) {
                     changeFrom = Math.min(from, changeFrom);
                     changeTo = Math.max(to, changeTo);
                 }
             });
-        if (update.viewportChanged || changeTo - changeFrom > 1000)
+        if (update.viewportMoved || changeTo - changeFrom > 1000)
             return this.createDeco(update.view);
         if (changeTo > -1)
             return this.updateRange(update.view, deco.map(update.changes), changeFrom, changeTo);
@@ -18075,7 +18096,7 @@ function syntaxIndentation(cx, ast, pos) {
     let inner = ast.resolveInner(pos, -1).resolve(pos, 0).enterUnfinishedNodesBefore(pos);
     if (inner != stack.node) {
         let add = [];
-        for (let cur = inner; cur != stack.node; cur = cur.parent)
+        for (let cur = inner; cur && !(cur.from == stack.node.from && cur.type == stack.node.type); cur = cur.parent)
             add.push(cur);
         for (let i = add.length - 1; i >= 0; i--)
             stack = { node: add[i], next: stack };
@@ -18998,8 +19019,9 @@ function snippet(template) {
     let snippet = Snippet.parse(template);
     return (editor, completion, from, to) => {
         let { text, ranges } = snippet.instantiate(editor.state, from);
+        let { main } = editor.state.selection;
         let spec = {
-            changes: { from, to, insert: Text.of(text) },
+            changes: { from, to: to == main.from ? main.to : to, insert: Text.of(text) },
             scrollIntoView: true,
             annotations: completion ? [pickedCompletion.of(completion), Transaction.userEvent.of("input.complete")] : undefined
         };
