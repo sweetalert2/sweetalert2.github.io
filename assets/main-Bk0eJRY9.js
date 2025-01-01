@@ -6792,6 +6792,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://startupfa.me/", target: "_blank", rel: "noopener", "aria-label": "Startup Fame", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://startupfa.me/images/logo-square.webp", alt: "Startup Fame" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Startup Fame"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.inksonic.com/", target: "_blank", rel: "noopener", "aria-label": "InkSonic", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/inksonic.png", alt: "InkSonic" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
