@@ -14,11 +14,11 @@ export function Sponsors() {
             href="https://github.com/sweetalert2/sweetalert2/blob/main/SPONSORS.md#sponsors"
             target="_blank"
             rel="noopener"
-            aria-label="Become a sponsor"
+            aria-label="Add your logo and link here"
           >
             <img src="/images/plus.png" alt="" />
             <br />
-            Become a sponsor
+            Add your logo and link
             <br />
             for $29 per month
           </a>
@@ -140,11 +140,11 @@ export function Sponsors() {
             href="https://github.com/sweetalert2/sweetalert2/blob/main/SPONSORS.md#sponsors"
             target="_blank"
             rel="noopener"
-            aria-label="Become a sponsor"
+            aria-label="Add your logo and link here"
           >
             <img src="/images/plus.png" alt="" />
             <br />
-            Become a sponsor
+            Add your logo and link
             <br />
             for $29 per month
           </a>
