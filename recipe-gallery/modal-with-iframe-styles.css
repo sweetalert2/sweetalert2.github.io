@@ -1,0 +1,15 @@
+.swal-with-iframe {
+  padding-bottom: 0;
+}
+
+.swal-with-iframe .swal2-html-container {
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.swal-with-iframe iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  float: left;
+}

@@ -32,6 +32,9 @@ function Recipe() {
           <a href="./three-buttons-dialog.html">Yes/No/Cancel Dialog</a>
         </li>
         <li>
+          <a href="./modal-with-iframe.html">Modal with iframe inside</a>
+        </li>
+        <li>
           <a href="./draw-attention.html">Draw Attention / Persistent Dialog</a>
         </li>
         <li>

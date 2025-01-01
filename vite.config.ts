@@ -19,6 +19,7 @@ export default defineConfig({
         'sweetalert2-react-router': 'recipe-gallery/sweetalert2-react-router.html',
         'sweetalert2-formik': 'recipe-gallery/sweetalert2-formik.html',
         'three-buttons-dialog': 'recipe-gallery/three-buttons-dialog.html',
+        'modal-with-iframe': 'recipe-gallery/modal-with-iframe.html',
         'draw-attention': 'recipe-gallery/draw-attention.html',
         'colored-toasts': 'recipe-gallery/colored-toasts.html',
         'crop-image': 'recipe-gallery/crop-image.html',
