@@ -2816,9 +2816,9 @@ sweetalert2-react-content@^5.0.7:
   integrity sha512-SBh41SdyHDY9NzwrIG6LACbClCMxIlEFP86tGVr/B4zGD4H2gGXB8o7UAJRc/RtBd/iQL9hIvuCAkrk0AgKEMA==
 
 sweetalert2@^11.7.32:
-  version "11.15.8"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.15.8.tgz#202c2848b003f3c4b40c631f2acea9347a4d970a"
-  integrity sha512-6HkGbI7yftv+ZWCQvAOj7CUdN5u5ySNh6fU+NVXs9NWs8rL5X2HvNsE6xM8Xeer6khDhddhAffL2x6PUs3eS3g==
+  version "11.15.9"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.15.9.tgz#127879d433c135cfc2dddba8480e2dfb27ebdf13"
+  integrity sha512-WjL1aLNtmbtPTeQRBCzIMMQ4hv2ePs705gwqkkMqwMso42bLv6mVTwNNCCzRy39OEOfbT/8N1KqEdaAxwmpGYg==
 
 table@^6.9.0:
   version "6.9.0"
