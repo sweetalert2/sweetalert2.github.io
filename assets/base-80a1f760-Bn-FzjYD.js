@@ -1,8 +1,8 @@
-import { f as dequal } from './Sandpack-Bz-t0N41.js';
+import { f as dequal } from './Sandpack-DiCmmEWu.js';
 
 var SandpackClient = /** @class */ (function () {
     function SandpackClient(iframeSelector, sandboxSetup, options) {
-        if (options === void 0) { options = {}; }
+        if (options === undefined) { options = {}; }
         this.status = "idle";
         this.options = options;
         this.sandboxSetup = sandboxSetup;
@@ -18,7 +18,7 @@ var SandpackClient = /** @class */ (function () {
         }
     };
     SandpackClient.prototype.updateSandbox = function (_sandboxSetup, _isInitializationCompile) {
-        if (_sandboxSetup === void 0) { _sandboxSetup = this.sandboxSetup; }
+        if (_sandboxSetup === undefined) { _sandboxSetup = this.sandboxSetup; }
         throw Error("Method not implemented");
     };
     SandpackClient.prototype.destroy = function () {

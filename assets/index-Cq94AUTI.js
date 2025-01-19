@@ -1,6 +1,6 @@
-import { a as __extends, b as __awaiter, c as __generator, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, l as extractErrorDetails } from './Sandpack-Bz-t0N41.js';
-import { S as SandpackClient } from './base-80a1f760-CFjaOBiN.js';
-import { g as getDefaultExportFromCjs } from './index-BHQy7xtG.js';
+import { a as __extends, b as __awaiter, c as __generator, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, l as extractErrorDetails } from './Sandpack-DiCmmEWu.js';
+import { S as SandpackClient } from './base-80a1f760-Bn-FzjYD.js';
+import { g as getDefaultExportFromCjs } from './index-DL8Qx4oM.js';
 
 const require$$0 = {
   "application/1d-interleaved-parityfec": {"source":"iana"},
@@ -2487,7 +2487,7 @@ var Protocol = /** @class */ (function () {
         this.type = type;
         this.handleMessage = handleMessage;
         this.protocol = protocol;
-        this._disposeMessageListener = this.protocol.channelListen(function (msg) { return __awaiter(_this, void 0, void 0, function () {
+        this._disposeMessageListener = this.protocol.channelListen(function (msg) { return __awaiter(_this, undefined, undefined, function () {
             var message, result, response, err_1, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -2662,7 +2662,7 @@ modules) {
     if (!pkg) {
         return "static";
     }
-    var _a = pkg.dependencies, dependencies = _a === void 0 ? {} : _a, _b = pkg.devDependencies, devDependencies = _b === void 0 ? {} : _b;
+    var _a = pkg.dependencies, dependencies = _a === undefined ? {} : _a, _b = pkg.devDependencies, devDependencies = _b === undefined ? {} : _b;
     var totalDependencies = __spreadArray(__spreadArray([], Object.keys(dependencies), true), Object.keys(devDependencies), true);
     var moduleNames = Object.keys(modules);
     var adonis = ["@adonisjs/framework", "@adonisjs/core"];
@@ -2798,11 +2798,11 @@ function getExtension(filepath) {
 
 var _a;
 var SUFFIX_PLACEHOLDER = "-{{suffix}}";
-var BUNDLER_URL = "https://".concat((_a = "2.19.8") === null || _a === void 0 ? void 0 : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
+var BUNDLER_URL = "https://".concat((_a = "2.19.8") === null || _a === undefined ? undefined : _a.replace(/\./g, "-")).concat(SUFFIX_PLACEHOLDER, "-sandpack.codesandbox.io/");
 var SandpackRuntime = /** @class */ (function (_super) {
     __extends(SandpackRuntime, _super);
     function SandpackRuntime(selector, sandboxSetup, options) {
-        if (options === void 0) { options = {}; }
+        if (options === undefined) { options = {}; }
         var _this = _super.call(this, selector, sandboxSetup, options) || this;
         _this.getTranspilerContext = function () {
             return new Promise(function (resolve) {
@@ -2854,7 +2854,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
             }
             _this.iframeProtocol.register();
             if (_this.options.fileResolver) {
-                _this.fileResolverProtocol = new Protocol("fs", function (data) { return __awaiter(_this, void 0, void 0, function () {
+                _this.fileResolverProtocol = new Protocol("fs", function (data) { return __awaiter(_this, undefined, undefined, function () {
                     return __generator(this, function (_a) {
                         if (data.method === "isFile") {
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -2918,7 +2918,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         if (this.options.experimental_enableServiceWorker) {
             var suffixes = [];
             suffixes.push(Math.random().toString(36).slice(4));
-            bundlerURL = bundlerURL.replace(SUFFIX_PLACEHOLDER, "-".concat((_a = this.options.experimental_stableServiceWorkerId) !== null && _a !== void 0 ? _a : suffixes.join("-")));
+            bundlerURL = bundlerURL.replace(SUFFIX_PLACEHOLDER, "-".concat((_a = this.options.experimental_stableServiceWorkerId) !== null && _a !== undefined ? _a : suffixes.join("-")));
         }
         else {
             bundlerURL = bundlerURL.replace(SUFFIX_PLACEHOLDER, "");
@@ -2956,7 +2956,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         this.iframe.addEventListener("load", sendMessage);
     };
     SandpackRuntime.prototype.handleWorkerRequest = function (request, port) {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter(this, undefined, undefined, function () {
             var notFound, filepath_1, headers, files, file, modulesFromManager, body, extension, foundMimetype, responseMessage, err_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -3027,7 +3027,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
         var urlSource = this.options.startRoute
             ? new URL(this.options.startRoute, this.bundlerURL).toString()
             : this.bundlerURL;
-        (_a = this.iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.location.replace(urlSource);
+        (_a = this.iframe.contentWindow) === null || _a === undefined ? undefined : _a.location.replace(urlSource);
         this.iframe.src = urlSource;
     };
     SandpackRuntime.prototype.destroy = function () {
@@ -3043,7 +3043,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
     };
     SandpackRuntime.prototype.updateSandbox = function (sandboxSetup, isInitializationCompile) {
         var _a, _b, _c, _d;
-        if (sandboxSetup === void 0) { sandboxSetup = this.sandboxSetup; }
+        if (sandboxSetup === undefined) { sandboxSetup = this.sandboxSetup; }
         this.sandboxSetup = __assign(__assign({}, this.sandboxSetup), sandboxSetup);
         var files = this.getFiles();
         var modules = Object.keys(files).reduce(function (prev, next) {
@@ -3069,7 +3069,7 @@ var SandpackRuntime = /** @class */ (function (_super) {
             }, _a)));
         }, {});
         this.dispatch(__assign(__assign({}, this.options), { type: "compile", codesandbox: true, version: 3, isInitializationCompile: isInitializationCompile, modules: modules, reactDevTools: this.options.reactDevTools, externalResources: this.options.externalResources || [], hasFileResolver: Boolean(this.options.fileResolver), disableDependencyPreprocessing: this.sandboxSetup.disableDependencyPreprocessing, experimental_enableServiceWorker: this.options.experimental_enableServiceWorker, template: this.sandboxSetup.template ||
-                getTemplate(packageJSON, normalizedModules), showOpenInCodeSandbox: (_a = this.options.showOpenInCodeSandbox) !== null && _a !== void 0 ? _a : true, showErrorScreen: (_b = this.options.showErrorScreen) !== null && _b !== void 0 ? _b : true, showLoadingScreen: (_c = this.options.showLoadingScreen) !== null && _c !== void 0 ? _c : false, skipEval: this.options.skipEval || false, clearConsoleDisabled: !this.options.clearConsoleOnFirstCompile, logLevel: (_d = this.options.logLevel) !== null && _d !== void 0 ? _d : SandpackLogLevel.Info, customNpmRegistries: this.options.customNpmRegistries, teamId: this.options.teamId, sandboxId: this.options.sandboxId }));
+                getTemplate(packageJSON, normalizedModules), showOpenInCodeSandbox: (_a = this.options.showOpenInCodeSandbox) !== null && _a !== undefined ? _a : true, showErrorScreen: (_b = this.options.showErrorScreen) !== null && _b !== undefined ? _b : true, showLoadingScreen: (_c = this.options.showLoadingScreen) !== null && _c !== undefined ? _c : false, skipEval: this.options.skipEval || false, clearConsoleDisabled: !this.options.clearConsoleOnFirstCompile, logLevel: (_d = this.options.logLevel) !== null && _d !== undefined ? _d : SandpackLogLevel.Info, customNpmRegistries: this.options.customNpmRegistries, teamId: this.options.teamId, sandboxId: this.options.sandboxId }));
     };
     SandpackRuntime.prototype.dispatch = function (message) {
         /**

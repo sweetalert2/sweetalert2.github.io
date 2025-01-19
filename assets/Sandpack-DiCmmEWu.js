@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-eRH96nXH.js","assets/base-80a1f760-CFjaOBiN.js","assets/consoleHook-59e792cb-BopwV82H.js","assets/index-BHQy7xtG.js","assets/index-DjHyChqI.css","assets/index-599aeaf7-C-UgeTXK.js","assets/index--EiVnLpj.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-BHQy7xtG.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DaSRMcmb.js","assets/base-80a1f760-Bn-FzjYD.js","assets/consoleHook-59e792cb-7_gbz0RE.js","assets/index-DL8Qx4oM.js","assets/index-DjHyChqI.css","assets/index-599aeaf7-HJMxAhFU.js","assets/index-Cq94AUTI.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DL8Qx4oM.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -61,7 +61,7 @@ const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+d
   });
 };
 
-var t$1="colors",n="sizes",r$1="space",i$1={gap:r$1,gridGap:r$1,columnGap:r$1,gridColumnGap:r$1,rowGap:r$1,gridRowGap:r$1,inset:r$1,insetBlock:r$1,insetBlockEnd:r$1,insetBlockStart:r$1,insetInline:r$1,insetInlineEnd:r$1,insetInlineStart:r$1,margin:r$1,marginTop:r$1,marginRight:r$1,marginBottom:r$1,marginLeft:r$1,marginBlock:r$1,marginBlockEnd:r$1,marginBlockStart:r$1,marginInline:r$1,marginInlineEnd:r$1,marginInlineStart:r$1,padding:r$1,paddingTop:r$1,paddingRight:r$1,paddingBottom:r$1,paddingLeft:r$1,paddingBlock:r$1,paddingBlockEnd:r$1,paddingBlockStart:r$1,paddingInline:r$1,paddingInlineEnd:r$1,paddingInlineStart:r$1,top:r$1,right:r$1,bottom:r$1,left:r$1,scrollMargin:r$1,scrollMarginTop:r$1,scrollMarginRight:r$1,scrollMarginBottom:r$1,scrollMarginLeft:r$1,scrollMarginX:r$1,scrollMarginY:r$1,scrollMarginBlock:r$1,scrollMarginBlockEnd:r$1,scrollMarginBlockStart:r$1,scrollMarginInline:r$1,scrollMarginInlineEnd:r$1,scrollMarginInlineStart:r$1,scrollPadding:r$1,scrollPaddingTop:r$1,scrollPaddingRight:r$1,scrollPaddingBottom:r$1,scrollPaddingLeft:r$1,scrollPaddingX:r$1,scrollPaddingY:r$1,scrollPaddingBlock:r$1,scrollPaddingBlockEnd:r$1,scrollPaddingBlockStart:r$1,scrollPaddingInline:r$1,scrollPaddingInlineEnd:r$1,scrollPaddingInlineStart:r$1,fontSize:"fontSizes",background:t$1,backgroundColor:t$1,backgroundImage:t$1,borderImage:t$1,border:t$1,borderBlock:t$1,borderBlockEnd:t$1,borderBlockStart:t$1,borderBottom:t$1,borderBottomColor:t$1,borderColor:t$1,borderInline:t$1,borderInlineEnd:t$1,borderInlineStart:t$1,borderLeft:t$1,borderLeftColor:t$1,borderRight:t$1,borderRightColor:t$1,borderTop:t$1,borderTopColor:t$1,caretColor:t$1,color:t$1,columnRuleColor:t$1,fill:t$1,outline:t$1,outlineColor:t$1,stroke:t$1,textDecorationColor:t$1,fontFamily:"fonts",fontWeight:"fontWeights",lineHeight:"lineHeights",letterSpacing:"letterSpacings",blockSize:n,minBlockSize:n,maxBlockSize:n,inlineSize:n,minInlineSize:n,maxInlineSize:n,width:n,minWidth:n,maxWidth:n,height:n,minHeight:n,maxHeight:n,flexBasis:n,gridTemplateColumns:n,gridTemplateRows:n,borderWidth:"borderWidths",borderTopWidth:"borderWidths",borderRightWidth:"borderWidths",borderBottomWidth:"borderWidths",borderLeftWidth:"borderWidths",borderStyle:"borderStyles",borderTopStyle:"borderStyles",borderRightStyle:"borderStyles",borderBottomStyle:"borderStyles",borderLeftStyle:"borderStyles",borderRadius:"radii",borderTopLeftRadius:"radii",borderTopRightRadius:"radii",borderBottomRightRadius:"radii",borderBottomLeftRadius:"radii",boxShadow:"shadows",textShadow:"shadows",transition:"transitions",zIndex:"zIndices"},o=(e,t)=>"function"==typeof t?{"()":Function.prototype.toString.call(t)}:t,l=()=>{const e=Object.create(null);return (t,n,...r)=>{const i=(e=>JSON.stringify(e,o))(t);return i in e?e[i]:e[i]=n(t,...r)}},s=Symbol.for("sxs.internal"),a=(e,t)=>Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)),c=e=>{for(const t in e)return !0;return !1},{hasOwnProperty:d}=Object.prototype,g=e=>e.includes("-")?e:e.replace(/[A-Z]/g,(e=>"-"+e.toLowerCase())),p=/\s+(?![^()]*\))/,u=e=>t=>e(..."string"==typeof t?String(t).split(p):[t]),h={appearance:e=>({WebkitAppearance:e,appearance:e}),backfaceVisibility:e=>({WebkitBackfaceVisibility:e,backfaceVisibility:e}),backdropFilter:e=>({WebkitBackdropFilter:e,backdropFilter:e}),backgroundClip:e=>({WebkitBackgroundClip:e,backgroundClip:e}),boxDecorationBreak:e=>({WebkitBoxDecorationBreak:e,boxDecorationBreak:e}),clipPath:e=>({WebkitClipPath:e,clipPath:e}),content:e=>({content:e.includes('"')||e.includes("'")||/^([A-Za-z]+\([^]*|[^]*-quote|inherit|initial|none|normal|revert|unset)$/.test(e)?e:`"${e}"`}),hyphens:e=>({WebkitHyphens:e,hyphens:e}),maskImage:e=>({WebkitMaskImage:e,maskImage:e}),maskSize:e=>({WebkitMaskSize:e,maskSize:e}),tabSize:e=>({MozTabSize:e,tabSize:e}),textSizeAdjust:e=>({WebkitTextSizeAdjust:e,textSizeAdjust:e}),userSelect:e=>({WebkitUserSelect:e,userSelect:e}),marginBlock:u(((e,t)=>({marginBlockStart:e,marginBlockEnd:t||e}))),marginInline:u(((e,t)=>({marginInlineStart:e,marginInlineEnd:t||e}))),maxSize:u(((e,t)=>({maxBlockSize:e,maxInlineSize:t||e}))),minSize:u(((e,t)=>({minBlockSize:e,minInlineSize:t||e}))),paddingBlock:u(((e,t)=>({paddingBlockStart:e,paddingBlockEnd:t||e}))),paddingInline:u(((e,t)=>({paddingInlineStart:e,paddingInlineEnd:t||e})))},f=/([\d.]+)([^]*)/,m=(e,t)=>e.length?e.reduce(((e,n)=>(e.push(...t.map((e=>e.includes("&")?e.replace(/&/g,/[ +>|~]/.test(n)&&/&.*&/.test(e)?`:is(${n})`:n):n+" "+e))),e)),[]):t,b=(e,t)=>e in S$1&&"string"==typeof t?t.replace(/^((?:[^]*[^\w-])?)(fit-content|stretch)((?:[^\w-][^]*)?)$/,((t,n,r,i)=>n+("stretch"===r?`-moz-available${i};${g(e)}:${n}-webkit-fill-available`:`-moz-fit-content${i};${g(e)}:${n}fit-content`)+i)):String(t),S$1={blockSize:1,height:1,inlineSize:1,maxBlockSize:1,maxHeight:1,maxInlineSize:1,maxWidth:1,minBlockSize:1,minHeight:1,minInlineSize:1,minWidth:1,width:1},k=e=>e?e+"-":"",y=(e,t,n)=>e.replace(/([+-])?((?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][+-]?\d+)?)?(\$|--)([$\w-]+)/g,((e,r,i,o,l)=>"$"==o==!!i?e:(r||"--"==o?"calc(":"")+"var(--"+("$"===o?k(t)+(l.includes("$")?"":k(n))+l.replace(/\$/g,"-"):l)+")"+(r||"--"==o?"*"+(r||"")+(i||"1")+")":""))),B=/\s*,\s*(?![^()]*\))/,$=Object.prototype.toString,x=(e,t,n,r,i)=>{let o,l,s;const a=(e,t,n)=>{let c,d;const p=e=>{for(c in e){const x=64===c.charCodeAt(0),z=x&&Array.isArray(e[c])?e[c]:[e[c]];for(d of z){const e=/[A-Z]/.test(S=c)?S:S.replace(/-[^]/g,(e=>e[1].toUpperCase())),z="object"==typeof d&&d&&d.toString===$&&(!r.utils[e]||!t.length);if(e in r.utils&&!z){const t=r.utils[e];if(t!==l){l=t,p(t(d)),l=null;continue}}else if(e in h){const t=h[e];if(t!==s){s=t,p(t(d)),s=null;continue}}if(x&&(u=c.slice(1)in r.media?"@media "+r.media[c.slice(1)]:c,c=u.replace(/\(\s*([\w-]+)\s*(=|<|<=|>|>=)\s*([\w-]+)\s*(?:(<|<=|>|>=)\s*([\w-]+)\s*)?\)/g,((e,t,n,r,i,o)=>{const l=f.test(t),s=.0625*(l?-1:1),[a,c]=l?[r,t]:[t,r];return "("+("="===n[0]?"":">"===n[0]===l?"max-":"min-")+a+":"+("="!==n[0]&&1===n.length?c.replace(f,((e,t,r)=>Number(t)+s*(">"===n?1:-1)+r)):c)+(i?") and ("+(">"===i[0]?"min-":"max-")+a+":"+(1===i.length?o.replace(f,((e,t,n)=>Number(t)+s*(">"===i?-1:1)+n)):o):"")+")"}))),z){const e=x?n.concat(c):[...n],r=x?[...t]:m(t,c.split(B));void 0!==o&&i(I(...o)),o=void 0,a(d,r,e);}else void 0===o&&(o=[[],t,n]),c=x||36!==c.charCodeAt(0)?c:`--${k(r.prefix)}${c.slice(1).replace(/\$/g,"-")}`,d=z?d:"number"==typeof d?d&&e in R?String(d)+"px":String(d):y(b(e,null==d?"":d),r.prefix,r.themeMap[e]),o[0].push(`${x?`${c} `:`${g(c)}:`}${d}`);}}var u,S;};p(e),void 0!==o&&i(I(...o)),o=void 0;};a(e,t,n);},I=(e,t,n)=>`${n.map((e=>`${e}{`)).join("")}${t.length?`${t.join(",")}{`:""}${e.join(";")}${t.length?"}":""}${Array(n.length?n.length+1:0).join("}")}`,R={animationDelay:1,animationDuration:1,backgroundSize:1,blockSize:1,border:1,borderBlock:1,borderBlockEnd:1,borderBlockEndWidth:1,borderBlockStart:1,borderBlockStartWidth:1,borderBlockWidth:1,borderBottom:1,borderBottomLeftRadius:1,borderBottomRightRadius:1,borderBottomWidth:1,borderEndEndRadius:1,borderEndStartRadius:1,borderInlineEnd:1,borderInlineEndWidth:1,borderInlineStart:1,borderInlineStartWidth:1,borderInlineWidth:1,borderLeft:1,borderLeftWidth:1,borderRadius:1,borderRight:1,borderRightWidth:1,borderSpacing:1,borderStartEndRadius:1,borderStartStartRadius:1,borderTop:1,borderTopLeftRadius:1,borderTopRightRadius:1,borderTopWidth:1,borderWidth:1,bottom:1,columnGap:1,columnRule:1,columnRuleWidth:1,columnWidth:1,containIntrinsicSize:1,flexBasis:1,fontSize:1,gap:1,gridAutoColumns:1,gridAutoRows:1,gridTemplateColumns:1,gridTemplateRows:1,height:1,inlineSize:1,inset:1,insetBlock:1,insetBlockEnd:1,insetBlockStart:1,insetInline:1,insetInlineEnd:1,insetInlineStart:1,left:1,letterSpacing:1,margin:1,marginBlock:1,marginBlockEnd:1,marginBlockStart:1,marginBottom:1,marginInline:1,marginInlineEnd:1,marginInlineStart:1,marginLeft:1,marginRight:1,marginTop:1,maxBlockSize:1,maxHeight:1,maxInlineSize:1,maxWidth:1,minBlockSize:1,minHeight:1,minInlineSize:1,minWidth:1,offsetDistance:1,offsetRotate:1,outline:1,outlineOffset:1,outlineWidth:1,overflowClipMargin:1,padding:1,paddingBlock:1,paddingBlockEnd:1,paddingBlockStart:1,paddingBottom:1,paddingInline:1,paddingInlineEnd:1,paddingInlineStart:1,paddingLeft:1,paddingRight:1,paddingTop:1,perspective:1,right:1,rowGap:1,scrollMargin:1,scrollMarginBlock:1,scrollMarginBlockEnd:1,scrollMarginBlockStart:1,scrollMarginBottom:1,scrollMarginInline:1,scrollMarginInlineEnd:1,scrollMarginInlineStart:1,scrollMarginLeft:1,scrollMarginRight:1,scrollMarginTop:1,scrollPadding:1,scrollPaddingBlock:1,scrollPaddingBlockEnd:1,scrollPaddingBlockStart:1,scrollPaddingBottom:1,scrollPaddingInline:1,scrollPaddingInlineEnd:1,scrollPaddingInlineStart:1,scrollPaddingLeft:1,scrollPaddingRight:1,scrollPaddingTop:1,shapeMargin:1,textDecoration:1,textDecorationThickness:1,textIndent:1,textUnderlineOffset:1,top:1,transitionDelay:1,transitionDuration:1,verticalAlign:1,width:1,wordSpacing:1},z=e=>String.fromCharCode(e+(e>25?39:97)),W=e=>(e=>{let t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=z(t%52)+n;return z(t%52)+n})(((e,t)=>{let n=t.length;for(;n;)e=33*e^t.charCodeAt(--n);return e})(5381,JSON.stringify(e))>>>0),j=["themed","global","styled","onevar","resonevar","allvar","inline"],E=e=>{if(e.href&&!e.href.startsWith(location.origin))return !1;try{return !!e.cssRules}catch(e){return !1}},T=e=>{let t;const n=()=>{const{cssRules:e}=t.sheet;return [].map.call(e,((n,r)=>{const{cssText:i}=n;let o="";if(i.startsWith("--sxs"))return "";if(e[r-1]&&(o=e[r-1].cssText).startsWith("--sxs")){if(!n.cssRules.length)return "";for(const e in t.rules)if(t.rules[e].group===n)return `--sxs{--sxs:${[...t.rules[e].cache].join(" ")}}${i}`;return n.cssRules.length?`${o}${i}`:""}return i})).join("")},r=()=>{if(t){const{rules:e,sheet:n}=t;if(!n.deleteRule){for(;3===Object(Object(n.cssRules)[0]).type;)n.cssRules.splice(0,1);n.cssRules=[];}for(const t in e)delete e[t];}const i=Object(e).styleSheets||[];for(const e of i)if(E(e)){for(let i=0,o=e.cssRules;o[i];++i){const l=Object(o[i]);if(1!==l.type)continue;const s=Object(o[i+1]);if(4!==s.type)continue;++i;const{cssText:a}=l;if(!a.startsWith("--sxs"))continue;const c=a.slice(14,-3).trim().split(/\s+/),d=j[c[0]];d&&(t||(t={sheet:e,reset:r,rules:{},toString:n}),t.rules[d]={group:s,index:i,cache:new Set(c)});}if(t)break}if(!t){const i=(e,t)=>({type:t,cssRules:[],insertRule(e,t){this.cssRules.splice(t,0,i(e,{import:3,undefined:1}[(e.toLowerCase().match(/^@([a-z]+)/)||[])[1]]||4));},get cssText(){return "@media{}"===e?`@media{${[].map.call(this.cssRules,(e=>e.cssText)).join("")}}`:e}});t={sheet:e?(e.head||e).appendChild(document.createElement("style")).sheet:i("","text/css"),rules:{},reset:r,toString:n};}const{sheet:o,rules:l}=t;for(let e=j.length-1;e>=0;--e){const t=j[e];if(!l[t]){const n=j[e+1],r=l[n]?l[n].index:o.cssRules.length;o.insertRule("@media{}",r),o.insertRule(`--sxs{--sxs:${e}}`,r),l[t]={group:o.cssRules[r+1],index:r,cache:new Set([e])};}v(l[t]);}};return r(),t},v=e=>{const t=e.group;let n=t.cssRules.length;e.apply=e=>{try{t.insertRule(e,n),++n;}catch(e){}};},M=Symbol(),w=l(),C$1=(e,t)=>w(e,(()=>(...n)=>{let r={type:null,composers:new Set};for(const t of n)if(null!=t)if(t[s]){null==r.type&&(r.type=t[s].type);for(const e of t[s].composers)r.composers.add(e);}else t.constructor!==Object||t.$$typeof?null==r.type&&(r.type=t):r.composers.add(P(t,e));return null==r.type&&(r.type="span"),r.composers.size||r.composers.add(["PJLV",{},[],[],{},[]]),L(e,r,t)})),P=({variants:e,compoundVariants:t,defaultVariants:n,...r},i)=>{const o=`${k(i.prefix)}c-${W(r)}`,l=[],s=[],a=Object.create(null),g=[];for(const e in n)a[e]=String(n[e]);if("object"==typeof e&&e)for(const t in e){p=a,u=t,d.call(p,u)||(a[t]="undefined");const n=e[t];for(const e in n){const r={[t]:String(e)};"undefined"===String(e)&&g.push(t);const i=n[e],o=[r,i,!c(i)];l.push(o);}}var p,u;if("object"==typeof t&&t)for(const e of t){let{css:t,...n}=e;t="object"==typeof t&&t||{};for(const e in n)n[e]=String(n[e]);const r=[n,t,!c(t)];s.push(r);}return [o,r,l,s,a,g]},L=(e,t,n)=>{const[r,i,o,l]=O(t.composers),c="function"==typeof t.type||t.type.$$typeof?(e=>{function t(){for(let n=0;n<t[M].length;n++){const[r,i]=t[M][n];e.rules[r].apply(i);}return t[M]=[],null}return t[M]=[],t.rules={},j.forEach((e=>t.rules[e]={apply:n=>t[M].push([e,n])})),t})(n):null,d=(c||n).rules,g=`.${r}${i.length>1?`:where(.${i.slice(1).join(".")})`:""}`,p=s=>{s="object"==typeof s&&s||D;const{css:a,...p}=s,u={};for(const e in o)if(delete p[e],e in s){let t=s[e];"object"==typeof t&&t?u[e]={"@initial":o[e],...t}:(t=String(t),u[e]="undefined"!==t||l.has(e)?t:o[e]);}else u[e]=o[e];const h=new Set([...i]);for(const[r,i,o,l]of t.composers){n.rules.styled.cache.has(r)||(n.rules.styled.cache.add(r),x(i,[`.${r}`],[],e,(e=>{d.styled.apply(e);})));const t=A(o,u,e.media),s=A(l,u,e.media,!0);for(const i of t)if(void 0!==i)for(const[t,o,l]of i){const i=`${r}-${W(o)}-${t}`;h.add(i);const s=(l?n.rules.resonevar:n.rules.onevar).cache,a=l?d.resonevar:d.onevar;s.has(i)||(s.add(i),x(o,[`.${i}`],[],e,(e=>{a.apply(e);})));}for(const t of s)if(void 0!==t)for(const[i,o]of t){const t=`${r}-${W(o)}-${i}`;h.add(t),n.rules.allvar.cache.has(t)||(n.rules.allvar.cache.add(t),x(o,[`.${t}`],[],e,(e=>{d.allvar.apply(e);})));}}if("object"==typeof a&&a){const t=`${r}-i${W(a)}-css`;h.add(t),n.rules.inline.cache.has(t)||(n.rules.inline.cache.add(t),x(a,[`.${t}`],[],e,(e=>{d.inline.apply(e);})));}for(const e of String(s.className||"").trim().split(/\s+/))e&&h.add(e);const f=p.className=[...h].join(" ");return {type:t.type,className:f,selector:g,props:p,toString:()=>f,deferredInjector:c}};return a(p,{className:r,selector:g,[s]:t,toString:()=>(n.rules.styled.cache.has(r)||p(),r)})},O=e=>{let t="";const n=[],r={},i=[];for(const[o,,,,l,s]of e){""===t&&(t=o),n.push(o),i.push(...s);for(const e in l){const t=l[e];(void 0===r[e]||"undefined"!==t||s.includes(t))&&(r[e]=t);}}return [t,n,r,new Set(i)]},A=(e,t,n,r)=>{const i=[];e:for(let[o,l,s]of e){if(s)continue;let e,a=0,c=!1;for(e in o){const r=o[e];let i=t[e];if(i!==r){if("object"!=typeof i||!i)continue e;{let e,t,o=0;for(const l in i){if(r===String(i[l])){if("@initial"!==l){const e=l.slice(1);(t=t||[]).push(e in n?n[e]:l.replace(/^@media ?/,"")),c=!0;}a+=o,e=!0;}++o;}if(t&&t.length&&(l={["@media "+t.join(", ")]:l}),!e)continue e}}}(i[a]=i[a]||[]).push([r?"cv":`${e}-${o[e]}`,l,c]);}return i},D={},H=l(),N=(e,t)=>H(e,(()=>(...n)=>{const r=()=>{for(let r of n){r="object"==typeof r&&r||{};let n=W(r);if(!t.rules.global.cache.has(n)){if(t.rules.global.cache.add(n),"@import"in r){let e=[].indexOf.call(t.sheet.cssRules,t.rules.themed.group)-1;for(let n of [].concat(r["@import"]))n=n.includes('"')||n.includes("'")?n:`"${n}"`,t.sheet.insertRule(`@import ${n};`,e++);delete r["@import"];}x(r,[],[],e,(e=>{t.rules.global.apply(e);}));}}return ""};return a(r,{toString:r})})),V=l(),G=(e,t)=>V(e,(()=>n=>{const r=`${k(e.prefix)}k-${W(n)}`,i=()=>{if(!t.rules.global.cache.has(r)){t.rules.global.cache.add(r);const i=[];x(n,[],[],e,(e=>i.push(e)));const o=`@keyframes ${r}{${i.join("")}}`;t.rules.global.apply(o);}return r};return a(i,{get name(){return i()},toString:i})})),F=class{constructor(e,t,n,r){this.token=null==e?"":String(e),this.value=null==t?"":String(t),this.scale=null==n?"":String(n),this.prefix=null==r?"":String(r);}get computedValue(){return "var("+this.variable+")"}get variable(){return "--"+k(this.prefix)+k(this.scale)+this.token}toString(){return this.computedValue}},J=l(),U=(e,t)=>J(e,(()=>(n,r)=>{r="object"==typeof n&&n||Object(r);const i=`.${n=(n="string"==typeof n?n:"")||`${k(e.prefix)}t-${W(r)}`}`,o={},l=[];for(const t in r){o[t]={};for(const n in r[t]){const i=`--${k(e.prefix)}${t}-${n}`,s=y(String(r[t][n]),e.prefix,t);o[t][n]=new F(n,s,t,e.prefix),l.push(`${i}:${s}`);}}const s=()=>{if(l.length&&!t.rules.themed.cache.has(n)){t.rules.themed.cache.add(n);const i=`${r===e.theme?":root,":""}.${n}{${l.join(";")}}`;t.rules.themed.apply(i);}return n};return {...o,get className(){return s()},selector:i,toString:s}})),Z=l(),X=e=>{let t=!1;const n=Z(e,(e=>{t=!0;const n="prefix"in(e="object"==typeof e&&e||{})?String(e.prefix):"",r="object"==typeof e.media&&e.media||{},o="object"==typeof e.root?e.root||null:globalThis.document||null,l="object"==typeof e.theme&&e.theme||{},s={prefix:n,media:r,theme:l,themeMap:"object"==typeof e.themeMap&&e.themeMap||{...i$1},utils:"object"==typeof e.utils&&e.utils||{}},a=T(o),c={css:C$1(s,a),globalCss:N(s,a),keyframes:G(s,a),createTheme:U(s,a),reset(){a.reset(),c.theme.toString();},theme:{},sheet:a,config:s,prefix:n,getCssText:a.toString,toString:a.toString};return String(c.theme=c.createTheme(l)),c}));return t||n.reset(),n};//# sourceMappingUrl=index.map
+var t$1="colors",n="sizes",r$1="space",i$1={gap:r$1,gridGap:r$1,columnGap:r$1,gridColumnGap:r$1,rowGap:r$1,gridRowGap:r$1,inset:r$1,insetBlock:r$1,insetBlockEnd:r$1,insetBlockStart:r$1,insetInline:r$1,insetInlineEnd:r$1,insetInlineStart:r$1,margin:r$1,marginTop:r$1,marginRight:r$1,marginBottom:r$1,marginLeft:r$1,marginBlock:r$1,marginBlockEnd:r$1,marginBlockStart:r$1,marginInline:r$1,marginInlineEnd:r$1,marginInlineStart:r$1,padding:r$1,paddingTop:r$1,paddingRight:r$1,paddingBottom:r$1,paddingLeft:r$1,paddingBlock:r$1,paddingBlockEnd:r$1,paddingBlockStart:r$1,paddingInline:r$1,paddingInlineEnd:r$1,paddingInlineStart:r$1,top:r$1,right:r$1,bottom:r$1,left:r$1,scrollMargin:r$1,scrollMarginTop:r$1,scrollMarginRight:r$1,scrollMarginBottom:r$1,scrollMarginLeft:r$1,scrollMarginX:r$1,scrollMarginY:r$1,scrollMarginBlock:r$1,scrollMarginBlockEnd:r$1,scrollMarginBlockStart:r$1,scrollMarginInline:r$1,scrollMarginInlineEnd:r$1,scrollMarginInlineStart:r$1,scrollPadding:r$1,scrollPaddingTop:r$1,scrollPaddingRight:r$1,scrollPaddingBottom:r$1,scrollPaddingLeft:r$1,scrollPaddingX:r$1,scrollPaddingY:r$1,scrollPaddingBlock:r$1,scrollPaddingBlockEnd:r$1,scrollPaddingBlockStart:r$1,scrollPaddingInline:r$1,scrollPaddingInlineEnd:r$1,scrollPaddingInlineStart:r$1,fontSize:"fontSizes",background:t$1,backgroundColor:t$1,backgroundImage:t$1,borderImage:t$1,border:t$1,borderBlock:t$1,borderBlockEnd:t$1,borderBlockStart:t$1,borderBottom:t$1,borderBottomColor:t$1,borderColor:t$1,borderInline:t$1,borderInlineEnd:t$1,borderInlineStart:t$1,borderLeft:t$1,borderLeftColor:t$1,borderRight:t$1,borderRightColor:t$1,borderTop:t$1,borderTopColor:t$1,caretColor:t$1,color:t$1,columnRuleColor:t$1,fill:t$1,outline:t$1,outlineColor:t$1,stroke:t$1,textDecorationColor:t$1,fontFamily:"fonts",fontWeight:"fontWeights",lineHeight:"lineHeights",letterSpacing:"letterSpacings",blockSize:n,minBlockSize:n,maxBlockSize:n,inlineSize:n,minInlineSize:n,maxInlineSize:n,width:n,minWidth:n,maxWidth:n,height:n,minHeight:n,maxHeight:n,flexBasis:n,gridTemplateColumns:n,gridTemplateRows:n,borderWidth:"borderWidths",borderTopWidth:"borderWidths",borderRightWidth:"borderWidths",borderBottomWidth:"borderWidths",borderLeftWidth:"borderWidths",borderStyle:"borderStyles",borderTopStyle:"borderStyles",borderRightStyle:"borderStyles",borderBottomStyle:"borderStyles",borderLeftStyle:"borderStyles",borderRadius:"radii",borderTopLeftRadius:"radii",borderTopRightRadius:"radii",borderBottomRightRadius:"radii",borderBottomLeftRadius:"radii",boxShadow:"shadows",textShadow:"shadows",transition:"transitions",zIndex:"zIndices"},o=(e,t)=>"function"==typeof t?{"()":Function.prototype.toString.call(t)}:t,l=()=>{const e=Object.create(null);return (t,n,...r)=>{const i=(e=>JSON.stringify(e,o))(t);return i in e?e[i]:e[i]=n(t,...r)}},s=Symbol.for("sxs.internal"),a=(e,t)=>Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)),c=e=>{for(const t in e)return  true;return  false},{hasOwnProperty:d}=Object.prototype,g=e=>e.includes("-")?e:e.replace(/[A-Z]/g,(e=>"-"+e.toLowerCase())),p=/\s+(?![^()]*\))/,u=e=>t=>e(..."string"==typeof t?String(t).split(p):[t]),h={appearance:e=>({WebkitAppearance:e,appearance:e}),backfaceVisibility:e=>({WebkitBackfaceVisibility:e,backfaceVisibility:e}),backdropFilter:e=>({WebkitBackdropFilter:e,backdropFilter:e}),backgroundClip:e=>({WebkitBackgroundClip:e,backgroundClip:e}),boxDecorationBreak:e=>({WebkitBoxDecorationBreak:e,boxDecorationBreak:e}),clipPath:e=>({WebkitClipPath:e,clipPath:e}),content:e=>({content:e.includes('"')||e.includes("'")||/^([A-Za-z]+\([^]*|[^]*-quote|inherit|initial|none|normal|revert|unset)$/.test(e)?e:`"${e}"`}),hyphens:e=>({WebkitHyphens:e,hyphens:e}),maskImage:e=>({WebkitMaskImage:e,maskImage:e}),maskSize:e=>({WebkitMaskSize:e,maskSize:e}),tabSize:e=>({MozTabSize:e,tabSize:e}),textSizeAdjust:e=>({WebkitTextSizeAdjust:e,textSizeAdjust:e}),userSelect:e=>({WebkitUserSelect:e,userSelect:e}),marginBlock:u(((e,t)=>({marginBlockStart:e,marginBlockEnd:t||e}))),marginInline:u(((e,t)=>({marginInlineStart:e,marginInlineEnd:t||e}))),maxSize:u(((e,t)=>({maxBlockSize:e,maxInlineSize:t||e}))),minSize:u(((e,t)=>({minBlockSize:e,minInlineSize:t||e}))),paddingBlock:u(((e,t)=>({paddingBlockStart:e,paddingBlockEnd:t||e}))),paddingInline:u(((e,t)=>({paddingInlineStart:e,paddingInlineEnd:t||e})))},f=/([\d.]+)([^]*)/,m=(e,t)=>e.length?e.reduce(((e,n)=>(e.push(...t.map((e=>e.includes("&")?e.replace(/&/g,/[ +>|~]/.test(n)&&/&.*&/.test(e)?`:is(${n})`:n):n+" "+e))),e)),[]):t,b=(e,t)=>e in S$1&&"string"==typeof t?t.replace(/^((?:[^]*[^\w-])?)(fit-content|stretch)((?:[^\w-][^]*)?)$/,((t,n,r,i)=>n+("stretch"===r?`-moz-available${i};${g(e)}:${n}-webkit-fill-available`:`-moz-fit-content${i};${g(e)}:${n}fit-content`)+i)):String(t),S$1={blockSize:1,height:1,inlineSize:1,maxBlockSize:1,maxHeight:1,maxInlineSize:1,maxWidth:1,minBlockSize:1,minHeight:1,minInlineSize:1,minWidth:1,width:1},k=e=>e?e+"-":"",y=(e,t,n)=>e.replace(/([+-])?((?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][+-]?\d+)?)?(\$|--)([$\w-]+)/g,((e,r,i,o,l)=>"$"==o==!!i?e:(r||"--"==o?"calc(":"")+"var(--"+("$"===o?k(t)+(l.includes("$")?"":k(n))+l.replace(/\$/g,"-"):l)+")"+(r||"--"==o?"*"+(r||"")+(i||"1")+")":""))),B=/\s*,\s*(?![^()]*\))/,$=Object.prototype.toString,x=(e,t,n,r,i)=>{let o,l,s;const a=(e,t,n)=>{let c,d;const p=e=>{for(c in e){const x=64===c.charCodeAt(0),z=x&&Array.isArray(e[c])?e[c]:[e[c]];for(d of z){const e=/[A-Z]/.test(S=c)?S:S.replace(/-[^]/g,(e=>e[1].toUpperCase())),z="object"==typeof d&&d&&d.toString===$&&(!r.utils[e]||!t.length);if(e in r.utils&&!z){const t=r.utils[e];if(t!==l){l=t,p(t(d)),l=null;continue}}else if(e in h){const t=h[e];if(t!==s){s=t,p(t(d)),s=null;continue}}if(x&&(u=c.slice(1)in r.media?"@media "+r.media[c.slice(1)]:c,c=u.replace(/\(\s*([\w-]+)\s*(=|<|<=|>|>=)\s*([\w-]+)\s*(?:(<|<=|>|>=)\s*([\w-]+)\s*)?\)/g,((e,t,n,r,i,o)=>{const l=f.test(t),s=.0625*(l?-1:1),[a,c]=l?[r,t]:[t,r];return "("+("="===n[0]?"":">"===n[0]===l?"max-":"min-")+a+":"+("="!==n[0]&&1===n.length?c.replace(f,((e,t,r)=>Number(t)+s*(">"===n?1:-1)+r)):c)+(i?") and ("+(">"===i[0]?"min-":"max-")+a+":"+(1===i.length?o.replace(f,((e,t,n)=>Number(t)+s*(">"===i?-1:1)+n)):o):"")+")"}))),z){const e=x?n.concat(c):[...n],r=x?[...t]:m(t,c.split(B));undefined!==o&&i(I(...o)),o=undefined,a(d,r,e);}else undefined===o&&(o=[[],t,n]),c=x||36!==c.charCodeAt(0)?c:`--${k(r.prefix)}${c.slice(1).replace(/\$/g,"-")}`,d=z?d:"number"==typeof d?d&&e in R?String(d)+"px":String(d):y(b(e,null==d?"":d),r.prefix,r.themeMap[e]),o[0].push(`${x?`${c} `:`${g(c)}:`}${d}`);}}var u,S;};p(e),undefined!==o&&i(I(...o)),o=undefined;};a(e,t,n);},I=(e,t,n)=>`${n.map((e=>`${e}{`)).join("")}${t.length?`${t.join(",")}{`:""}${e.join(";")}${t.length?"}":""}${Array(n.length?n.length+1:0).join("}")}`,R={animationDelay:1,animationDuration:1,backgroundSize:1,blockSize:1,border:1,borderBlock:1,borderBlockEnd:1,borderBlockEndWidth:1,borderBlockStart:1,borderBlockStartWidth:1,borderBlockWidth:1,borderBottom:1,borderBottomLeftRadius:1,borderBottomRightRadius:1,borderBottomWidth:1,borderEndEndRadius:1,borderEndStartRadius:1,borderInlineEnd:1,borderInlineEndWidth:1,borderInlineStart:1,borderInlineStartWidth:1,borderInlineWidth:1,borderLeft:1,borderLeftWidth:1,borderRadius:1,borderRight:1,borderRightWidth:1,borderSpacing:1,borderStartEndRadius:1,borderStartStartRadius:1,borderTop:1,borderTopLeftRadius:1,borderTopRightRadius:1,borderTopWidth:1,borderWidth:1,bottom:1,columnGap:1,columnRule:1,columnRuleWidth:1,columnWidth:1,containIntrinsicSize:1,flexBasis:1,fontSize:1,gap:1,gridAutoColumns:1,gridAutoRows:1,gridTemplateColumns:1,gridTemplateRows:1,height:1,inlineSize:1,inset:1,insetBlock:1,insetBlockEnd:1,insetBlockStart:1,insetInline:1,insetInlineEnd:1,insetInlineStart:1,left:1,letterSpacing:1,margin:1,marginBlock:1,marginBlockEnd:1,marginBlockStart:1,marginBottom:1,marginInline:1,marginInlineEnd:1,marginInlineStart:1,marginLeft:1,marginRight:1,marginTop:1,maxBlockSize:1,maxHeight:1,maxInlineSize:1,maxWidth:1,minBlockSize:1,minHeight:1,minInlineSize:1,minWidth:1,offsetDistance:1,offsetRotate:1,outline:1,outlineOffset:1,outlineWidth:1,overflowClipMargin:1,padding:1,paddingBlock:1,paddingBlockEnd:1,paddingBlockStart:1,paddingBottom:1,paddingInline:1,paddingInlineEnd:1,paddingInlineStart:1,paddingLeft:1,paddingRight:1,paddingTop:1,perspective:1,right:1,rowGap:1,scrollMargin:1,scrollMarginBlock:1,scrollMarginBlockEnd:1,scrollMarginBlockStart:1,scrollMarginBottom:1,scrollMarginInline:1,scrollMarginInlineEnd:1,scrollMarginInlineStart:1,scrollMarginLeft:1,scrollMarginRight:1,scrollMarginTop:1,scrollPadding:1,scrollPaddingBlock:1,scrollPaddingBlockEnd:1,scrollPaddingBlockStart:1,scrollPaddingBottom:1,scrollPaddingInline:1,scrollPaddingInlineEnd:1,scrollPaddingInlineStart:1,scrollPaddingLeft:1,scrollPaddingRight:1,scrollPaddingTop:1,shapeMargin:1,textDecoration:1,textDecorationThickness:1,textIndent:1,textUnderlineOffset:1,top:1,transitionDelay:1,transitionDuration:1,verticalAlign:1,width:1,wordSpacing:1},z=e=>String.fromCharCode(e+(e>25?39:97)),W=e=>(e=>{let t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=z(t%52)+n;return z(t%52)+n})(((e,t)=>{let n=t.length;for(;n;)e=33*e^t.charCodeAt(--n);return e})(5381,JSON.stringify(e))>>>0),j=["themed","global","styled","onevar","resonevar","allvar","inline"],E=e=>{if(e.href&&!e.href.startsWith(location.origin))return  false;try{return !!e.cssRules}catch(e){return  false}},T=e=>{let t;const n=()=>{const{cssRules:e}=t.sheet;return [].map.call(e,((n,r)=>{const{cssText:i}=n;let o="";if(i.startsWith("--sxs"))return "";if(e[r-1]&&(o=e[r-1].cssText).startsWith("--sxs")){if(!n.cssRules.length)return "";for(const e in t.rules)if(t.rules[e].group===n)return `--sxs{--sxs:${[...t.rules[e].cache].join(" ")}}${i}`;return n.cssRules.length?`${o}${i}`:""}return i})).join("")},r=()=>{if(t){const{rules:e,sheet:n}=t;if(!n.deleteRule){for(;3===Object(Object(n.cssRules)[0]).type;)n.cssRules.splice(0,1);n.cssRules=[];}for(const t in e)delete e[t];}const i=Object(e).styleSheets||[];for(const e of i)if(E(e)){for(let i=0,o=e.cssRules;o[i];++i){const l=Object(o[i]);if(1!==l.type)continue;const s=Object(o[i+1]);if(4!==s.type)continue;++i;const{cssText:a}=l;if(!a.startsWith("--sxs"))continue;const c=a.slice(14,-3).trim().split(/\s+/),d=j[c[0]];d&&(t||(t={sheet:e,reset:r,rules:{},toString:n}),t.rules[d]={group:s,index:i,cache:new Set(c)});}if(t)break}if(!t){const i=(e,t)=>({type:t,cssRules:[],insertRule(e,t){this.cssRules.splice(t,0,i(e,{import:3,undefined:1}[(e.toLowerCase().match(/^@([a-z]+)/)||[])[1]]||4));},get cssText(){return "@media{}"===e?`@media{${[].map.call(this.cssRules,(e=>e.cssText)).join("")}}`:e}});t={sheet:e?(e.head||e).appendChild(document.createElement("style")).sheet:i("","text/css"),rules:{},reset:r,toString:n};}const{sheet:o,rules:l}=t;for(let e=j.length-1;e>=0;--e){const t=j[e];if(!l[t]){const n=j[e+1],r=l[n]?l[n].index:o.cssRules.length;o.insertRule("@media{}",r),o.insertRule(`--sxs{--sxs:${e}}`,r),l[t]={group:o.cssRules[r+1],index:r,cache:new Set([e])};}v(l[t]);}};return r(),t},v=e=>{const t=e.group;let n=t.cssRules.length;e.apply=e=>{try{t.insertRule(e,n),++n;}catch(e){}};},M=Symbol(),w=l(),C$1=(e,t)=>w(e,(()=>(...n)=>{let r={type:null,composers:new Set};for(const t of n)if(null!=t)if(t[s]){null==r.type&&(r.type=t[s].type);for(const e of t[s].composers)r.composers.add(e);}else t.constructor!==Object||t.$$typeof?null==r.type&&(r.type=t):r.composers.add(P(t,e));return null==r.type&&(r.type="span"),r.composers.size||r.composers.add(["PJLV",{},[],[],{},[]]),L(e,r,t)})),P=({variants:e,compoundVariants:t,defaultVariants:n,...r},i)=>{const o=`${k(i.prefix)}c-${W(r)}`,l=[],s=[],a=Object.create(null),g=[];for(const e in n)a[e]=String(n[e]);if("object"==typeof e&&e)for(const t in e){p=a,u=t,d.call(p,u)||(a[t]="undefined");const n=e[t];for(const e in n){const r={[t]:String(e)};"undefined"===String(e)&&g.push(t);const i=n[e],o=[r,i,!c(i)];l.push(o);}}var p,u;if("object"==typeof t&&t)for(const e of t){let{css:t,...n}=e;t="object"==typeof t&&t||{};for(const e in n)n[e]=String(n[e]);const r=[n,t,!c(t)];s.push(r);}return [o,r,l,s,a,g]},L=(e,t,n)=>{const[r,i,o,l]=O(t.composers),c="function"==typeof t.type||t.type.$$typeof?(e=>{function t(){for(let n=0;n<t[M].length;n++){const[r,i]=t[M][n];e.rules[r].apply(i);}return t[M]=[],null}return t[M]=[],t.rules={},j.forEach((e=>t.rules[e]={apply:n=>t[M].push([e,n])})),t})(n):null,d=(c||n).rules,g=`.${r}${i.length>1?`:where(.${i.slice(1).join(".")})`:""}`,p=s=>{s="object"==typeof s&&s||D;const{css:a,...p}=s,u={};for(const e in o)if(delete p[e],e in s){let t=s[e];"object"==typeof t&&t?u[e]={"@initial":o[e],...t}:(t=String(t),u[e]="undefined"!==t||l.has(e)?t:o[e]);}else u[e]=o[e];const h=new Set([...i]);for(const[r,i,o,l]of t.composers){n.rules.styled.cache.has(r)||(n.rules.styled.cache.add(r),x(i,[`.${r}`],[],e,(e=>{d.styled.apply(e);})));const t=A(o,u,e.media),s=A(l,u,e.media,true);for(const i of t)if(undefined!==i)for(const[t,o,l]of i){const i=`${r}-${W(o)}-${t}`;h.add(i);const s=(l?n.rules.resonevar:n.rules.onevar).cache,a=l?d.resonevar:d.onevar;s.has(i)||(s.add(i),x(o,[`.${i}`],[],e,(e=>{a.apply(e);})));}for(const t of s)if(undefined!==t)for(const[i,o]of t){const t=`${r}-${W(o)}-${i}`;h.add(t),n.rules.allvar.cache.has(t)||(n.rules.allvar.cache.add(t),x(o,[`.${t}`],[],e,(e=>{d.allvar.apply(e);})));}}if("object"==typeof a&&a){const t=`${r}-i${W(a)}-css`;h.add(t),n.rules.inline.cache.has(t)||(n.rules.inline.cache.add(t),x(a,[`.${t}`],[],e,(e=>{d.inline.apply(e);})));}for(const e of String(s.className||"").trim().split(/\s+/))e&&h.add(e);const f=p.className=[...h].join(" ");return {type:t.type,className:f,selector:g,props:p,toString:()=>f,deferredInjector:c}};return a(p,{className:r,selector:g,[s]:t,toString:()=>(n.rules.styled.cache.has(r)||p(),r)})},O=e=>{let t="";const n=[],r={},i=[];for(const[o,,,,l,s]of e){""===t&&(t=o),n.push(o),i.push(...s);for(const e in l){const t=l[e];(undefined===r[e]||"undefined"!==t||s.includes(t))&&(r[e]=t);}}return [t,n,r,new Set(i)]},A=(e,t,n,r)=>{const i=[];e:for(let[o,l,s]of e){if(s)continue;let e,a=0,c=false;for(e in o){const r=o[e];let i=t[e];if(i!==r){if("object"!=typeof i||!i)continue e;{let e,t,o=0;for(const l in i){if(r===String(i[l])){if("@initial"!==l){const e=l.slice(1);(t=t||[]).push(e in n?n[e]:l.replace(/^@media ?/,"")),c=true;}a+=o,e=true;}++o;}if(t&&t.length&&(l={["@media "+t.join(", ")]:l}),!e)continue e}}}(i[a]=i[a]||[]).push([r?"cv":`${e}-${o[e]}`,l,c]);}return i},D={},H=l(),N=(e,t)=>H(e,(()=>(...n)=>{const r=()=>{for(let r of n){r="object"==typeof r&&r||{};let n=W(r);if(!t.rules.global.cache.has(n)){if(t.rules.global.cache.add(n),"@import"in r){let e=[].indexOf.call(t.sheet.cssRules,t.rules.themed.group)-1;for(let n of [].concat(r["@import"]))n=n.includes('"')||n.includes("'")?n:`"${n}"`,t.sheet.insertRule(`@import ${n};`,e++);delete r["@import"];}x(r,[],[],e,(e=>{t.rules.global.apply(e);}));}}return ""};return a(r,{toString:r})})),V=l(),G=(e,t)=>V(e,(()=>n=>{const r=`${k(e.prefix)}k-${W(n)}`,i=()=>{if(!t.rules.global.cache.has(r)){t.rules.global.cache.add(r);const i=[];x(n,[],[],e,(e=>i.push(e)));const o=`@keyframes ${r}{${i.join("")}}`;t.rules.global.apply(o);}return r};return a(i,{get name(){return i()},toString:i})})),F=class{constructor(e,t,n,r){this.token=null==e?"":String(e),this.value=null==t?"":String(t),this.scale=null==n?"":String(n),this.prefix=null==r?"":String(r);}get computedValue(){return "var("+this.variable+")"}get variable(){return "--"+k(this.prefix)+k(this.scale)+this.token}toString(){return this.computedValue}},J=l(),U=(e,t)=>J(e,(()=>(n,r)=>{r="object"==typeof n&&n||Object(r);const i=`.${n=(n="string"==typeof n?n:"")||`${k(e.prefix)}t-${W(r)}`}`,o={},l=[];for(const t in r){o[t]={};for(const n in r[t]){const i=`--${k(e.prefix)}${t}-${n}`,s=y(String(r[t][n]),e.prefix,t);o[t][n]=new F(n,s,t,e.prefix),l.push(`${i}:${s}`);}}const s=()=>{if(l.length&&!t.rules.themed.cache.has(n)){t.rules.themed.cache.add(n);const i=`${r===e.theme?":root,":""}.${n}{${l.join(";")}}`;t.rules.themed.apply(i);}return n};return {...o,get className(){return s()},selector:i,toString:s}})),Z=l(),X=e=>{let t=false;const n=Z(e,(e=>{t=true;const n="prefix"in(e="object"==typeof e&&e||{})?String(e.prefix):"",r="object"==typeof e.media&&e.media||{},o="object"==typeof e.root?e.root||null:globalThis.document||null,l="object"==typeof e.theme&&e.theme||{},s={prefix:n,media:r,theme:l,themeMap:"object"==typeof e.themeMap&&e.themeMap||{...i$1},utils:"object"==typeof e.utils&&e.utils||{}},a=T(o),c={css:C$1(s,a),globalCss:N(s,a),keyframes:G(s,a),createTheme:U(s,a),reset(){a.reset(),c.theme.toString();},theme:{},sheet:a,config:s,prefix:n,getCssText:a.toString,toString:a.toString};return String(c.theme=c.createTheme(l)),c}));return t||n.reset(),n};//# sourceMappingUrl=index.map
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -303,7 +303,7 @@ function __generator$1(thisArg, body) {
             }
             op = body.call(thisArg, _);
         } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : undefined, done: true };
     }
 }
 
@@ -330,16 +330,16 @@ var createError = function (message) {
     return "[sandpack-client]: ".concat(message);
 };
 function nullthrows(value, err) {
-    if (err === void 0) { err = "Value is nullish"; }
+    if (err === undefined) { err = "Value is nullish"; }
     invariant(value != null, createError(err));
     return value;
 }
 var DEPENDENCY_ERROR_MESSAGE = "\"dependencies\" was not specified - provide either a package.json or a \"dependencies\" value";
 var ENTRY_ERROR_MESSAGE = "\"entry\" was not specified - provide either a package.json with the \"main\" field or an \"entry\" value";
 function createPackageJSON(dependencies, devDependencies, entry) {
-    if (dependencies === void 0) { dependencies = {}; }
-    if (devDependencies === void 0) { devDependencies = {}; }
-    if (entry === void 0) { entry = "/index.js"; }
+    if (dependencies === undefined) { dependencies = {}; }
+    if (devDependencies === undefined) { devDependencies = {}; }
+    if (entry === undefined) { entry = "/index.js"; }
     return JSON.stringify({
         name: "sandpack-project",
         main: entry,
@@ -369,10 +369,10 @@ function addPackageJSONIfNeeded(files, dependencies, devDependencies, entry) {
         var packageJsonContent = JSON.parse(packageJsonFile.code);
         nullthrows(!(!dependencies && !packageJsonContent.dependencies), ENTRY_ERROR_MESSAGE);
         if (dependencies) {
-            packageJsonContent.dependencies = __assign$1(__assign$1({}, ((_a = packageJsonContent.dependencies) !== null && _a !== void 0 ? _a : {})), (dependencies !== null && dependencies !== void 0 ? dependencies : {}));
+            packageJsonContent.dependencies = __assign$1(__assign$1({}, ((_a = packageJsonContent.dependencies) !== null && _a !== undefined ? _a : {})), (dependencies !== null && dependencies !== undefined ? dependencies : {}));
         }
         if (devDependencies) {
-            packageJsonContent.devDependencies = __assign$1(__assign$1({}, ((_b = packageJsonContent.devDependencies) !== null && _b !== void 0 ? _b : {})), (devDependencies !== null && devDependencies !== void 0 ? devDependencies : {}));
+            packageJsonContent.devDependencies = __assign$1(__assign$1({}, ((_b = packageJsonContent.devDependencies) !== null && _b !== undefined ? _b : {})), (devDependencies !== null && devDependencies !== undefined ? devDependencies : {}));
         }
         if (entry) {
             packageJsonContent.main = entry;
@@ -389,7 +389,7 @@ function extractErrorDetails(msg) {
         var title = msg.title, path = msg.path, message = msg.message, line = msg.line, column = msg.column;
         return { title: title, path: path, message: message, line: line, column: column };
     }
-    var relevantStackFrame = getRelevantStackFrame((_a = msg.payload) === null || _a === void 0 ? void 0 : _a.frames);
+    var relevantStackFrame = getRelevantStackFrame((_a = msg.payload) === null || _a === undefined ? undefined : _a.frames);
     if (!relevantStackFrame) {
         return { message: msg.message };
     }
@@ -467,28 +467,28 @@ var normalizePath = function (path) {
 
 function loadSandpackClient(iframeSelector, sandboxSetup, options) {
     var _a;
-    if (options === void 0) { options = {}; }
-    return __awaiter$1(this, void 0, void 0, function () {
+    if (options === undefined) { options = {}; }
+    return __awaiter$1(this, undefined, undefined, function () {
         var template, Client, _b;
         return __generator$1(this, function (_c) {
             switch (_c.label) {
                 case 0:
-                    template = (_a = sandboxSetup.template) !== null && _a !== void 0 ? _a : "parcel";
+                    template = (_a = sandboxSetup.template) !== null && _a !== undefined ? _a : "parcel";
                     _b = template;
                     switch (_b) {
                         case "node": return [3 /*break*/, 1];
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-eRH96nXH.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DaSRMcmb.js'),true?__vite__mapDeps([0,1,2,3,4]):undefined).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-C-UgeTXK.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-HJMxAhFU.js'),true?__vite__mapDeps([5,2,1,3,4]):undefined).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index--EiVnLpj.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-Cq94AUTI.js'),true?__vite__mapDeps([6,1,3,4]):undefined).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -2049,13 +2049,13 @@ class EditorSelection {
     static cursor(pos, assoc = 0, bidiLevel, goalColumn) {
         return SelectionRange.create(pos, pos, (assoc == 0 ? 0 : assoc < 0 ? 8 /* RangeFlag.AssocBefore */ : 16 /* RangeFlag.AssocAfter */) |
             (bidiLevel == null ? 7 : Math.min(6, bidiLevel)) |
-            ((goalColumn !== null && goalColumn !== void 0 ? goalColumn : 16777215 /* RangeFlag.NoGoalColumn */) << 6 /* RangeFlag.GoalColumnOffset */));
+            ((goalColumn !== null && goalColumn !== undefined ? goalColumn : 16777215 /* RangeFlag.NoGoalColumn */) << 6 /* RangeFlag.GoalColumnOffset */));
     }
     /**
     Create a selection range.
     */
     static range(anchor, head, goalColumn, bidiLevel) {
-        let flags = ((goalColumn !== null && goalColumn !== void 0 ? goalColumn : 16777215 /* RangeFlag.NoGoalColumn */) << 6 /* RangeFlag.GoalColumnOffset */) |
+        let flags = ((goalColumn !== null && goalColumn !== undefined ? goalColumn : 16777215 /* RangeFlag.NoGoalColumn */) << 6 /* RangeFlag.GoalColumnOffset */) |
             (bidiLevel == null ? 7 : Math.min(6, bidiLevel));
         return head < anchor ? SelectionRange.create(head, anchor, 32 /* RangeFlag.Inverted */ | 16 /* RangeFlag.AssocAfter */ | flags)
             : SelectionRange.create(anchor, head, (head > anchor ? 8 /* RangeFlag.AssocBefore */ : 0) | flags);
@@ -2192,7 +2192,7 @@ class FacetProvider {
                 depDoc = true;
             else if (dep == "selection")
                 depSel = true;
-            else if ((((_a = addresses[dep.id]) !== null && _a !== void 0 ? _a : 1) & 1) == 0)
+            else if ((((_a = addresses[dep.id]) !== null && _a !== undefined ? _a : 1) & 1) == 0)
                 depAddrs.push(addresses[dep.id]);
         }
         return {
@@ -2332,7 +2332,7 @@ class StateField {
     }
     create(state) {
         let init = state.facet(initField).find(i => i.field == this);
-        return ((init === null || init === void 0 ? void 0 : init.create) || this.createF)(state);
+        return ((init === null || init === undefined ? undefined : init.create) || this.createF)(state);
     }
     /**
     @internal
@@ -2490,7 +2490,7 @@ class Configuration {
             address[field.id] = dynamicSlots.length << 1;
             dynamicSlots.push(a => field.slot(a));
         }
-        let oldFacets = oldState === null || oldState === void 0 ? void 0 : oldState.config.facets;
+        let oldFacets = oldState === null || oldState === undefined ? undefined : oldState.config.facets;
         for (let id in facets) {
             let providers = facets[id], facet = providers[0].facet;
             let oldProviders = oldFacets && oldFacets[id] || [];
@@ -2946,7 +2946,7 @@ function mergeTransaction(a, b, sequential) {
     }
     return {
         changes,
-        selection: b.selection ? b.selection.map(mapForB) : (_a = a.selection) === null || _a === void 0 ? void 0 : _a.map(mapForA),
+        selection: b.selection ? b.selection.map(mapForB) : (_a = a.selection) === null || _a === undefined ? undefined : _a.map(mapForA),
         effects: StateEffect.mapEffects(a.effects, mapForA).concat(StateEffect.mapEffects(b.effects, mapForB)),
         annotations: a.annotations.length ? a.annotations.concat(b.annotations) : b.annotations,
         scrollIntoView: a.scrollIntoView || b.scrollIntoView
@@ -3645,7 +3645,7 @@ class Chunk {
         }
     }
     between(offset, from, to, f) {
-        for (let i = this.findIndex(from, -1000000000 /* C.Far */, true), e = this.findIndex(to, 1000000000 /* C.Far */, false, i); i < e; i++)
+        for (let i = this.findIndex(from, -1e9 /* C.Far */, true), e = this.findIndex(to, 1000000000 /* C.Far */, false, i); i < e; i++)
             if (f(this.from[i] + offset, this.to[i] + offset, this.value[i]) === false)
                 return false;
     }
@@ -4000,8 +4000,8 @@ class RangeSetBuilder {
         this.chunkPos = [];
         this.chunkStart = -1;
         this.last = null;
-        this.lastFrom = -1000000000 /* C.Far */;
-        this.lastTo = -1000000000 /* C.Far */;
+        this.lastFrom = -1e9 /* C.Far */;
+        this.lastTo = -1e9 /* C.Far */;
         this.from = [];
         this.to = [];
         this.value = [];
@@ -4086,7 +4086,7 @@ function findSharedChunks(a, b, textDiff) {
         for (let i = 0; i < set.chunk.length; i++) {
             let known = inA.get(set.chunk[i]);
             if (known != null && (textDiff ? textDiff.mapPos(known) : known) == set.chunkPos[i] &&
-                !(textDiff === null || textDiff === void 0 ? void 0 : textDiff.touchesRange(known, known + set.chunk[i].length)))
+                !(textDiff === null || textDiff === undefined ? undefined : textDiff.touchesRange(known, known + set.chunk[i].length)))
                 shared.add(set.chunk[i]);
         }
     return shared;
@@ -4100,7 +4100,7 @@ class LayerCursor {
     }
     get startSide() { return this.value ? this.value.startSide : 0; }
     get endSide() { return this.value ? this.value.endSide : 0; }
-    goto(pos, side = -1000000000 /* C.Far */) {
+    goto(pos, side = -1e9 /* C.Far */) {
         this.chunkIndex = this.rangeIndex = 0;
         this.gotoInner(pos, side, false);
         return this;
@@ -4183,7 +4183,7 @@ class HeapCursor {
         return heap.length == 1 ? heap[0] : new HeapCursor(heap);
     }
     get startSide() { return this.value ? this.value.startSide : 0; }
-    goto(pos, side = -1000000000 /* C.Far */) {
+    goto(pos, side = -1e9 /* C.Far */) {
         for (let cur of this.heap)
             cur.goto(pos, side);
         for (let i = this.heap.length >> 1; i >= 0; i--)
@@ -4245,14 +4245,14 @@ class SpanCursor {
         this.point = null;
         this.pointFrom = 0;
         this.pointRank = 0;
-        this.to = -1000000000 /* C.Far */;
+        this.to = -1e9 /* C.Far */;
         this.endSide = 0;
         // The amount of open active ranges at the start of the iterator.
         // Not including points.
         this.openStart = -1;
         this.cursor = HeapCursor.from(sets, skip, minPoint);
     }
-    goto(pos, side = -1000000000 /* C.Far */) {
+    goto(pos, side = -1e9 /* C.Far */) {
         this.cursor.goto(pos, side);
         this.active.length = this.activeTo.length = this.activeRank.length = 0;
         this.minActive = -1;
@@ -4421,7 +4421,7 @@ taking extending characters and tab size into account.
 */
 function countColumn(string, tabSize, to = string.length) {
     let n = 0;
-    for (let i = 0; i < to;) {
+    for (let i = 0; i < to && i < string.length;) {
         if (string.charCodeAt(i) == 9) {
             n += tabSize - (n % tabSize);
             i++;
@@ -5170,7 +5170,7 @@ class ContentView {
                             child.reuseDOM(next);
                     }
                     child.sync(view, track);
-                    child.flags &= ~7 /* ViewFlag.Dirty */;
+                    child.flags &= -8 /* ViewFlag.Dirty */;
                 }
                 next = prev ? prev.nextSibling : parent.firstChild;
                 if (track && !track.written && track.node == parent && next != child.dom)
@@ -5194,7 +5194,7 @@ class ContentView {
             for (let child of this.children)
                 if (child.flags & 7 /* ViewFlag.Dirty */) {
                     child.sync(view, track);
-                    child.flags &= ~7 /* ViewFlag.Dirty */;
+                    child.flags &= -8 /* ViewFlag.Dirty */;
                 }
         }
     }
@@ -5383,7 +5383,7 @@ function replaceRange(parent, fromI, fromOff, toI, toOff, insert, breakAtStart, 
     if (toI < children.length) {
         let after = children[toI];
         // Make sure the end of the child after the update is preserved in `after`
-        if (after && (toOff < after.length || after.breakAfter && (last === null || last === void 0 ? void 0 : last.breakAfter))) {
+        if (after && (toOff < after.length || after.breakAfter && (last === null || last === undefined ? undefined : last.breakAfter))) {
             // If we're splitting a child, separate part of it to avoid that
             // being mangled when updating the child before the update.
             if (fromI == toI) {
@@ -5403,7 +5403,7 @@ function replaceRange(parent, fromI, fromOff, toI, toOff, insert, breakAtStart, 
                 insert.push(after);
             }
         }
-        else if (after === null || after === void 0 ? void 0 : after.breakAfter) {
+        else if (after === null || after === undefined ? undefined : after.breakAfter) {
             // The element at `toI` is entirely covered by this range.
             // Preserve its line break, if any.
             if (last)
@@ -6044,10 +6044,10 @@ class Decoration extends RangeValue {
     given position.
     */
     static widget(spec) {
-        let side = Math.max(-10000, Math.min(10000, spec.side || 0)), block = !!spec.block;
+        let side = Math.max(-1e4, Math.min(10000, spec.side || 0)), block = !!spec.block;
         side += (block && !spec.inlineOrder)
-            ? (side > 0 ? 300000000 /* Side.BlockAfter */ : -400000000 /* Side.BlockBefore */)
-            : (side > 0 ? 100000000 /* Side.InlineAfter */ : -100000000 /* Side.InlineBefore */);
+            ? (side > 0 ? 300000000 /* Side.BlockAfter */ : -4e8 /* Side.BlockBefore */)
+            : (side > 0 ? 100000000 /* Side.InlineAfter */ : -1e8 /* Side.InlineBefore */);
         return new PointDecoration(spec, side, side, block, spec.widget || null, false);
     }
     /**
@@ -6057,13 +6057,13 @@ class Decoration extends RangeValue {
     static replace(spec) {
         let block = !!spec.block, startSide, endSide;
         if (spec.isBlockGap) {
-            startSide = -500000000 /* Side.GapStart */;
+            startSide = -5e8 /* Side.GapStart */;
             endSide = 400000000 /* Side.GapEnd */;
         }
         else {
             let { start, end } = getInclusive(spec, block);
-            startSide = (start ? (block ? -300000000 /* Side.BlockIncStart */ : -1 /* Side.InlineIncStart */) : 500000000 /* Side.NonIncStart */) - 1;
-            endSide = (end ? (block ? 200000000 /* Side.BlockIncEnd */ : 1 /* Side.InlineIncEnd */) : -600000000 /* Side.NonIncEnd */) + 1;
+            startSide = (start ? (block ? -3e8 /* Side.BlockIncStart */ : -1 /* Side.InlineIncStart */) : 500000000 /* Side.NonIncStart */) - 1;
+            endSide = (end ? (block ? 200000000 /* Side.BlockIncEnd */ : 1 /* Side.InlineIncEnd */) : -6e8 /* Side.NonIncEnd */) + 1;
         }
         return new PointDecoration(spec, startSide, endSide, block, spec.widget || null, true);
     }
@@ -6094,7 +6094,7 @@ Decoration.none = RangeSet.empty;
 class MarkDecoration extends Decoration {
     constructor(spec) {
         let { start, end } = getInclusive(spec);
-        super(start ? -1 /* Side.InlineIncStart */ : 500000000 /* Side.NonIncStart */, end ? 1 /* Side.InlineIncEnd */ : -600000000 /* Side.NonIncEnd */, null, spec);
+        super(start ? -1 /* Side.InlineIncStart */ : 500000000 /* Side.NonIncStart */, end ? 1 /* Side.InlineIncEnd */ : -6e8 /* Side.NonIncEnd */, null, spec);
         this.tagName = spec.tagName || "span";
         this.class = spec.class || "";
         this.attrs = spec.attributes || null;
@@ -6104,7 +6104,7 @@ class MarkDecoration extends Decoration {
         return this == other ||
             other instanceof MarkDecoration &&
                 this.tagName == other.tagName &&
-                (this.class || ((_a = this.attrs) === null || _a === void 0 ? void 0 : _a.class)) == (other.class || ((_b = other.attrs) === null || _b === void 0 ? void 0 : _b.class)) &&
+                (this.class || ((_a = this.attrs) === null || _a === undefined ? undefined : _a.class)) == (other.class || ((_b = other.attrs) === null || _b === undefined ? undefined : _b.class)) &&
                 attrsEq(this.attrs, other.attrs, "class");
     }
     range(from, to = from) {
@@ -6116,7 +6116,7 @@ class MarkDecoration extends Decoration {
 MarkDecoration.prototype.point = false;
 class LineDecoration extends Decoration {
     constructor(spec) {
-        super(-200000000 /* Side.Line */, -200000000 /* Side.Line */, null, spec);
+        super(-2e8 /* Side.Line */, -2e8 /* Side.Line */, null, spec);
     }
     eq(other) {
         return other instanceof LineDecoration &&
@@ -6167,7 +6167,7 @@ function getInclusive(spec, block = false) {
         start = spec.inclusive;
     if (end == null)
         end = spec.inclusive;
-    return { start: start !== null && start !== void 0 ? start : block, end: end !== null && end !== void 0 ? end : block };
+    return { start: start !== null && start !== undefined ? start : block, end: end !== null && end !== undefined ? end : block };
 }
 function widgetsEq(a, b) {
     return a == b || !!(a && b && a.compare(b));
@@ -6282,7 +6282,7 @@ class LineView extends ContentView {
         while (last && ContentView.get(last) instanceof MarkView)
             last = last.lastChild;
         if (!last || !this.length ||
-            last.nodeName != "BR" && ((_a = ContentView.get(last)) === null || _a === void 0 ? void 0 : _a.isEditable) == false &&
+            last.nodeName != "BR" && ((_a = ContentView.get(last)) === null || _a === undefined ? undefined : _a.isEditable) == false &&
                 (!browser.ios || !this.children.some(ch => ch instanceof TextView))) {
             let hack = document.createElement("BR");
             hack.cmIgnore = true;
@@ -7063,7 +7063,7 @@ let movedOver = "";
 function moveVisually(line, order, dir, start, forward) {
     var _a;
     let startIndex = start.head - line.from;
-    let spanI = BidiSpan.find(order, startIndex, (_a = start.bidiLevel) !== null && _a !== void 0 ? _a : -1, start.assoc);
+    let spanI = BidiSpan.find(order, startIndex, (_a = start.bidiLevel) !== null && _a !== undefined ? _a : -1, start.assoc);
     let span = order[spanI], spanEnd = span.side(forward, dir);
     // End of span
     if (startIndex == spanEnd) {
@@ -7264,7 +7264,7 @@ class PluginInstance {
     }
     destroy(view) {
         var _a;
-        if ((_a = this.value) === null || _a === void 0 ? void 0 : _a.destroy) {
+        if ((_a = this.value) === null || _a === undefined ? undefined : _a.destroy) {
             try {
                 this.value.destroy();
             }
@@ -7528,7 +7528,7 @@ class DocView extends ContentView {
         this.updateEditContextFormatting(update);
         let readCompositionAt = -1;
         if (this.view.inputState.composing >= 0 && !this.view.observer.editContext) {
-            if ((_a = this.domChanged) === null || _a === void 0 ? void 0 : _a.newSel)
+            if ((_a = this.domChanged) === null || _a === undefined ? undefined : _a.newSel)
                 readCompositionAt = this.domChanged.newSel.head;
             else if (!touchesComposition(update.changes, this.hasComposition) && !update.selectionSet)
                 readCompositionAt = update.state.selection.main.head;
@@ -7582,12 +7582,12 @@ class DocView extends ContentView {
             // to detect that situation.
             let track = browser.chrome || browser.ios ? { node: observer.selectionRange.focusNode, written: false } : undefined;
             this.sync(this.view, track);
-            this.flags &= ~7 /* ViewFlag.Dirty */;
+            this.flags &= -8 /* ViewFlag.Dirty */;
             if (track && (track.written || observer.selectionRange.focusNode != track.node))
                 this.forceSelection = true;
             this.dom.style.height = "";
         });
-        this.markedForComposition.forEach(cView => cView.flags &= ~8 /* ViewFlag.Composition */);
+        this.markedForComposition.forEach(cView => cView.flags &= -9 /* ViewFlag.Composition */);
         let gaps = [];
         if (this.view.viewport.from || this.view.viewport.to < this.view.state.doc.length)
             for (let child of this.children)
@@ -8311,7 +8311,7 @@ function posAtCoords(view, coords, precise, bias = -1) {
     // There's visible editor content under the point, so we can try
     // using caret(Position|Range)FromPoint as a shortcut
     let node, offset = -1;
-    if (element && ((_a = view.docView.nearest(element)) === null || _a === void 0 ? void 0 : _a.isEditable) != false) {
+    if (element && ((_a = view.docView.nearest(element)) === null || _a === undefined ? undefined : _a.isEditable) != false) {
         if (doc.caretPositionFromPoint) {
             let pos = doc.caretPositionFromPoint(x, y);
             if (pos)
@@ -8343,7 +8343,7 @@ function posAtCoords(view, coords, precise, bias = -1) {
     let nearest = view.docView.nearest(node);
     if (!nearest)
         return null;
-    if (nearest.isWidget && ((_b = nearest.dom) === null || _b === void 0 ? void 0 : _b.nodeType) == 1) {
+    if (nearest.isWidget && ((_b = nearest.dom) === null || _b === undefined ? undefined : _b.nodeType) == 1) {
         let rect = nearest.dom.getBoundingClientRect();
         return coords.y < rect.top || coords.y <= rect.bottom && coords.x <= (rect.left + rect.right) / 2
             ? nearest.posAtStart : nearest.posAtEnd;
@@ -8467,7 +8467,7 @@ function moveVertically(view, start, forward, distance) {
         startY = (dir < 0 ? line.top : line.bottom) + docTop;
     }
     let resolvedGoal = rect.left + goal;
-    let dist = distance !== null && distance !== void 0 ? distance : (view.viewState.heightOracle.textHeight >> 1);
+    let dist = distance !== null && distance !== undefined ? distance : (view.viewState.heightOracle.textHeight >> 1);
     for (let extra = 0;; extra += 10) {
         let curY = startY + (dist + extra) * dir;
         let pos = posAtCoords(view, { x: resolvedGoal, y: curY }, false, dir);
@@ -8692,6 +8692,14 @@ function applyDOMChange(view, domChange) {
         // Heuristic to notice typing over a selected character
         change = { from: sel.from, to: sel.to, insert: view.state.doc.slice(sel.from, sel.to) };
     }
+    else if ((browser.mac || browser.android) && change && change.from == change.to && change.from == sel.head - 1 &&
+        /^\. ?$/.test(change.insert.toString()) && view.contentDOM.getAttribute("autocorrect") == "off") {
+        // Detect insert-period-on-double-space Mac and Android behavior,
+        // and transform it into a regular space insert.
+        if (newSel && change.insert.length == 2)
+            newSel = EditorSelection.single(newSel.main.anchor - 1, newSel.main.head - 1);
+        change = { from: change.from, to: change.to, insert: Text.of([change.insert.toString().replace(".", " ")]) };
+    }
     else if (change && change.from >= sel.from && change.to <= sel.to &&
         (change.from != sel.from || change.to != sel.to) &&
         (sel.to - sel.from) - (change.to - change.from) <= 4) {
@@ -8702,14 +8710,6 @@ function applyDOMChange(view, domChange) {
             from: sel.from, to: sel.to,
             insert: view.state.doc.slice(sel.from, change.from).append(change.insert).append(view.state.doc.slice(change.to, sel.to))
         };
-    }
-    else if ((browser.mac || browser.android) && change && change.from == change.to && change.from == sel.head - 1 &&
-        /^\. ?$/.test(change.insert.toString()) && view.contentDOM.getAttribute("autocorrect") == "off") {
-        // Detect insert-period-on-double-space Mac and Android behavior,
-        // and transform it into a regular space insert.
-        if (newSel && change.insert.length == 2)
-            newSel = EditorSelection.single(newSel.main.anchor - 1, newSel.main.head - 1);
-        change = { from: sel.from, to: sel.to, insert: Text.of([" "]) };
     }
     else if (browser.chrome && change && change.from == change.to && change.from == sel.head &&
         change.insert.toString() == "\n " && view.lineWrapping) {
@@ -9704,7 +9704,7 @@ handlers.beforeinput = (view, event) => {
     // In EditContext mode, we must handle insertReplacementText events
     // directly, to make spell checking corrections work
     if (event.inputType == "insertReplacementText" && view.observer.editContext) {
-        let text = (_a = event.dataTransfer) === null || _a === void 0 ? void 0 : _a.getData("text/plain"), ranges = event.getTargetRanges();
+        let text = (_a = event.dataTransfer) === null || _a === undefined ? undefined : _a.getData("text/plain"), ranges = event.getTargetRanges();
         if (text && ranges.length) {
             let r = ranges[0];
             let from = view.posAtDOM(r.startContainer, r.startOffset), to = view.posAtDOM(r.endContainer, r.endOffset);
@@ -9723,13 +9723,13 @@ handlers.beforeinput = (view, event) => {
     if (browser.chrome && browser.android && (pending = PendingKeys.find(key => key.inputType == event.inputType))) {
         view.observer.delayAndroidKey(pending.key, pending.keyCode);
         if (pending.key == "Backspace" || pending.key == "Delete") {
-            let startViewHeight = ((_b = window.visualViewport) === null || _b === void 0 ? void 0 : _b.height) || 0;
+            let startViewHeight = ((_b = window.visualViewport) === null || _b === undefined ? undefined : _b.height) || 0;
             setTimeout(() => {
                 var _a;
                 // Backspacing near uneditable nodes on Chrome Android sometimes
                 // closes the virtual keyboard. This tries to crudely detect
                 // that and refocus to get it back.
-                if ((((_a = window.visualViewport) === null || _a === void 0 ? void 0 : _a.height) || 0) > startViewHeight + 10 && view.hasFocus) {
+                if ((((_a = window.visualViewport) === null || _a === undefined ? undefined : _a.height) || 0) > startViewHeight + 10 && view.hasFocus) {
                     view.contentDOM.blur();
                     view.focus();
                 }
@@ -9930,7 +9930,7 @@ class HeightMap {
         this.flags = flags;
     }
     get outdated() { return (this.flags & 2 /* Flag.Outdated */) > 0; }
-    set outdated(value) { this.flags = (value ? 2 /* Flag.Outdated */ : 0) | (this.flags & ~2 /* Flag.Outdated */); }
+    set outdated(value) { this.flags = (value ? 2 /* Flag.Outdated */ : 0) | (this.flags & -3 /* Flag.Outdated */); }
     setHeight(height) {
         if (this.height != height) {
             if (Math.abs(this.height - height) > Epsilon)
@@ -10512,6 +10512,11 @@ function visiblePixelRange(dom, paddingTop) {
     return { left: left - rect.left, right: Math.max(left, right) - rect.left,
         top: top - (rect.top + paddingTop), bottom: Math.max(top, bottom) - (rect.top + paddingTop) };
 }
+function inWindow(elt) {
+    let rect = elt.getBoundingClientRect(), win = elt.ownerDocument.defaultView || window;
+    return rect.left < win.innerWidth && rect.right > 0 &&
+        rect.top < win.innerHeight && rect.bottom > 0;
+}
 function fullPixelRange(dom, paddingTop) {
     let rect = dom.getBoundingClientRect();
     return { left: 0, right: rect.right - rect.left,
@@ -10735,7 +10740,7 @@ class ViewState {
             if (inView)
                 measureContent = true;
         }
-        if (!this.inView && !this.scrollTarget)
+        if (!this.inView && !this.scrollTarget && !inWindow(view.dom))
             return 0;
         let contentWidth = domRect.width;
         if (this.contentDOMWidth != contentWidth || this.editorHeight != view.scrollDOM.clientHeight) {
@@ -11478,7 +11483,7 @@ class DOMObserver {
         if (typeof ResizeObserver == "function") {
             this.resizeScroll = new ResizeObserver(() => {
                 var _a;
-                if (((_a = this.view.docView) === null || _a === void 0 ? void 0 : _a.lastUpdate) < Date.now() - 75)
+                if (((_a = this.view.docView) === null || _a === undefined ? undefined : _a.lastUpdate) < Date.now() - 75)
                     this.onResize();
             });
             this.resizeScroll.observe(view.scrollDOM);
@@ -11698,7 +11703,7 @@ class DOMObserver {
                 // this isn't coming right after another change, in which case
                 // it is probably part of a weird chain of updates, and should
                 // be ignored if it returns the DOM to its previous state.
-                force: this.lastChange < Date.now() - 50 || !!((_a = this.delayedAndroidKey) === null || _a === void 0 ? void 0 : _a.force)
+                force: this.lastChange < Date.now() - 50 || !!((_a = this.delayedAndroidKey) === null || _a === undefined ? undefined : _a.force)
             };
     }
     clearDelayedAndroidKey() {
@@ -11841,9 +11846,9 @@ class DOMObserver {
     destroy() {
         var _a, _b, _c;
         this.stop();
-        (_a = this.intersection) === null || _a === void 0 ? void 0 : _a.disconnect();
-        (_b = this.gapIntersection) === null || _b === void 0 ? void 0 : _b.disconnect();
-        (_c = this.resizeScroll) === null || _c === void 0 ? void 0 : _c.disconnect();
+        (_a = this.intersection) === null || _a === undefined ? undefined : _a.disconnect();
+        (_b = this.gapIntersection) === null || _b === undefined ? undefined : _b.disconnect();
+        (_c = this.resizeScroll) === null || _c === undefined ? undefined : _c.disconnect();
         for (let dom of this.scrollTargets)
             dom.removeEventListener("scroll", this.onScroll);
         this.removeWindowListeners(this.win);
@@ -11925,7 +11930,7 @@ class EditContextManager {
             selectionEnd: this.toContextPos(view.state.selection.main.head)
         });
         this.handlers.textupdate = e => {
-            let { anchor } = view.state.selection.main;
+            let main = view.state.selection.main, { anchor, head } = main;
             let from = this.toEditorPos(e.updateRangeStart), to = this.toEditorPos(e.updateRangeEnd);
             if (view.inputState.composing >= 0 && !this.composing)
                 this.composing = { contextBase: e.updateRangeStart, editorBase: from, drifted: false };
@@ -11937,8 +11942,15 @@ class EditContextManager {
             else if (change.to == this.to && anchor > this.to)
                 change.to = anchor;
             // Edit contexts sometimes fire empty changes
-            if (change.from == change.to && !change.insert.length)
+            if (change.from == change.to && !change.insert.length) {
+                let newSel = EditorSelection.single(this.toEditorPos(e.selectionStart), this.toEditorPos(e.selectionEnd));
+                if (!newSel.main.eq(main))
+                    view.dispatch({ selection: newSel, userEvent: "select" });
                 return;
+            }
+            if ((browser.mac || browser.android) && change.from == head - 1 &&
+                /^\. ?$/.test(e.text) && view.contentDOM.getAttribute("autocorrect") == "off")
+                change = { from, to, insert: Text.of([e.text.replace(".", " ")]) };
             this.pendingContextChange = change;
             if (!view.state.readOnly) {
                 let newLen = this.to - this.from + (change.to - change.from + change.insert.length);
@@ -12222,7 +12234,7 @@ class EditorView {
         this.updateAttrs();
         this.updateState = 0 /* UpdateState.Idle */;
         this.requestMeasure();
-        if ((_a = document.fonts) === null || _a === void 0 ? void 0 : _a.ready)
+        if ((_a = document.fonts) === null || _a === undefined ? undefined : _a.ready)
             document.fonts.ready.then(() => this.requestMeasure());
     }
     dispatch(...input) {
@@ -12892,7 +12904,7 @@ class EditorView {
         // or closing, which leads us to ignore selection changes from the
         // context menu because it looks like the editor isn't focused.
         // This kludges around that.
-        return (this.dom.ownerDocument.hasFocus() || browser.safari && ((_a = this.inputState) === null || _a === void 0 ? void 0 : _a.lastContextMenu) > Date.now() - 3e4) &&
+        return (this.dom.ownerDocument.hasFocus() || browser.safari && ((_a = this.inputState) === null || _a === undefined ? undefined : _a.lastContextMenu) > Date.now() - 3e4) &&
             this.root.activeElement == this.contentDOM;
     }
     /**
@@ -13048,7 +13060,7 @@ class EditorView {
         var _a;
         let content = dom.querySelector(".cm-content");
         let cView = content && ContentView.get(content) || ContentView.get(dom);
-        return ((_a = cView === null || cView === void 0 ? void 0 : cView.rootView) === null || _a === void 0 ? void 0 : _a.view) || null;
+        return ((_a = cView === null || cView === undefined ? undefined : cView.rootView) === null || _a === undefined ? undefined : _a.view) || null;
     }
 }
 /**
@@ -13376,7 +13388,7 @@ function buildKeymap(bindings, platform = currentPlatform) {
         let binding = scopeObj[full] || (scopeObj[full] = {
             preventDefault: false,
             stopPropagation: false,
-            run: ((_b = (_a = scopeObj._any) === null || _a === void 0 ? void 0 : _a.run) === null || _b === void 0 ? void 0 : _b.slice()) || []
+            run: ((_b = (_a = scopeObj._any) === null || _a === undefined ? undefined : _a.run) === null || _b === undefined ? undefined : _b.slice()) || []
         });
         if (command)
             binding.run.push(command);
@@ -13643,7 +13655,7 @@ function supportsTabSize() {
     var _a;
     if (_supportsTabSize == null && typeof document != "undefined" && document.body) {
         let styles = document.body.style;
-        _supportsTabSize = ((_a = styles.tabSize) !== null && _a !== void 0 ? _a : styles.MozTabSize) != null;
+        _supportsTabSize = ((_a = styles.tabSize) !== null && _a !== undefined ? _a : styles.MozTabSize) != null;
     }
     return _supportsTabSize || false;
 }
@@ -14905,7 +14917,7 @@ function resolveNode(node, pos, side, overlays) {
     // Must go up out of overlays when those do not overlap with pos
     if (overlays)
         for (let scan = node, parent = scan.parent; parent; scan = parent, parent = scan.parent) {
-            if (scan instanceof TreeNode && scan.index < 0 && ((_a = parent.enter(pos, side, mode)) === null || _a === void 0 ? void 0 : _a.from) != scan.from)
+            if (scan instanceof TreeNode && scan.index < 0 && ((_a = parent.enter(pos, side, mode)) === null || _a === undefined ? undefined : _a.from) != scan.from)
                 node = parent;
         }
     for (;;) {
@@ -15723,7 +15735,7 @@ function buildTree(data) {
     let children = [], positions = [];
     while (cursor.pos > 0)
         takeNode(data.start || 0, data.bufferStart || 0, children, positions, -1, 0);
-    let length = (_a = data.length) !== null && _a !== void 0 ? _a : (children.length ? positions[0] + children[0].length : 0);
+    let length = (_a = data.length) !== null && _a !== undefined ? _a : (children.length ? positions[0] + children[0].length : 0);
     return new Tree(types[data.topID], children.reverse(), positions.reverse(), length);
 }
 const nodeSizeCache = new WeakMap;
@@ -16270,7 +16282,7 @@ let FragmentCursor$1 = class FragmentCursor {
         this.fragI = 0;
         if (fragments.length) {
             let first = this.curFrag = fragments[0];
-            this.curTo = (_a = first.tree.prop(stoppedInner)) !== null && _a !== void 0 ? _a : first.to;
+            this.curTo = (_a = first.tree.prop(stoppedInner)) !== null && _a !== undefined ? _a : first.to;
             this.inner = new StructureCursor(first.tree, -first.offset);
         }
         else {
@@ -16290,7 +16302,7 @@ let FragmentCursor$1 = class FragmentCursor {
         }
         else {
             let frag = this.curFrag = this.fragments[this.fragI];
-            this.curTo = (_a = frag.tree.prop(stoppedInner)) !== null && _a !== void 0 ? _a : frag.to;
+            this.curTo = (_a = frag.tree.prop(stoppedInner)) !== null && _a !== undefined ? _a : frag.to;
             this.inner = new StructureCursor(frag.tree, -frag.offset);
         }
     }
@@ -16300,7 +16312,7 @@ let FragmentCursor$1 = class FragmentCursor {
         if (this.inner) {
             this.inner.cursor.moveTo(pos, 1);
             for (let pos = this.inner.cursor.node; pos; pos = pos.parent) {
-                let mount = (_a = pos.tree) === null || _a === void 0 ? void 0 : _a.prop(NodeProp.mounted);
+                let mount = (_a = pos.tree) === null || _a === undefined ? undefined : _a.prop(NodeProp.mounted);
                 if (mount && mount.parser == parser) {
                     for (let i = this.fragI; i < this.fragments.length; i++) {
                         let frag = this.fragments[i];
@@ -16469,7 +16481,7 @@ class Tag {
         let name = typeof nameOrParent == "string" ? nameOrParent : "?";
         if (nameOrParent instanceof Tag)
             parent = nameOrParent;
-        if (parent === null || parent === void 0 ? void 0 : parent.base)
+        if (parent === null || parent === undefined ? undefined : parent.base)
             throw new Error("Can not derive from a modified tag");
         let tag = new Tag(name, [], null, []);
         tag.set.push(tag);
@@ -17369,7 +17381,7 @@ class Language {
     */
     findRegions(state) {
         let lang = state.facet(language);
-        if ((lang === null || lang === void 0 ? void 0 : lang.data) == this.data)
+        if ((lang === null || lang === undefined ? undefined : lang.data) == this.data)
             return [{ from: 0, to: state.doc.length }];
         if (!lang || !lang.allowsNesting)
             return [];
@@ -17566,7 +17578,7 @@ class ParseContext {
     work(until, upto) {
         if (upto != null && upto >= this.state.doc.length)
             upto = undefined;
-        if (this.tree != Tree.empty && this.isDone(upto !== null && upto !== void 0 ? upto : this.state.doc.length)) {
+        if (this.tree != Tree.empty && this.isDone(upto !== null && upto !== undefined ? upto : this.state.doc.length)) {
             this.takeTree();
             return true;
         }
@@ -17585,10 +17597,10 @@ class ParseContext {
                 let done = this.parse.advance();
                 if (done) {
                     this.fragments = this.withoutTempSkipped(TreeFragment.addTree(done, this.fragments, this.parse.stoppedAt != null));
-                    this.treeLen = (_a = this.parse.stoppedAt) !== null && _a !== void 0 ? _a : this.state.doc.length;
+                    this.treeLen = (_a = this.parse.stoppedAt) !== null && _a !== undefined ? _a : this.state.doc.length;
                     this.tree = done;
                     this.parse = null;
-                    if (this.treeLen < (upto !== null && upto !== void 0 ? upto : this.state.doc.length))
+                    if (this.treeLen < (upto !== null && upto !== undefined ? upto : this.state.doc.length))
                         this.parse = this.startParse();
                     else
                         return true;
@@ -17790,7 +17802,7 @@ if (typeof requestIdleCallback != "undefined")
         }, 100 /* Work.MinPause */);
         return () => idle < 0 ? clearTimeout(timeout) : cancelIdleCallback(idle);
     };
-const isInputPending = typeof navigator != "undefined" && ((_a$b = navigator.scheduling) === null || _a$b === void 0 ? void 0 : _a$b.isInputPending)
+const isInputPending = typeof navigator != "undefined" && ((_a$b = navigator.scheduling) === null || _a$b === undefined ? undefined : _a$b.isInputPending)
     ? () => navigator.scheduling.isInputPending() : null;
 const parseWorker = /*@__PURE__*/ViewPlugin.fromClass(class ParseWorker {
     constructor(view) {
@@ -18550,7 +18562,7 @@ function matchBrackets(state, pos, dir, config = {}) {
 }
 function matchMarkedBrackets(_state, _pos, dir, token, handle, matching, brackets) {
     let parent = token.parent, firstToken = { from: handle.from, to: handle.to };
-    let depth = 0, cursor = parent === null || parent === void 0 ? void 0 : parent.cursor();
+    let depth = 0, cursor = parent === null || parent === undefined ? undefined : parent.cursor();
     if (cursor && (dir < 0 ? cursor.childBefore(token.from) : cursor.childAfter(token.to)))
         do {
             if (dir < 0 ? cursor.to <= token.from : cursor.from >= token.to) {
@@ -19671,9 +19683,9 @@ class HistEvent {
     toJSON() {
         var _a, _b, _c;
         return {
-            changes: (_a = this.changes) === null || _a === void 0 ? void 0 : _a.toJSON(),
-            mapped: (_b = this.mapped) === null || _b === void 0 ? void 0 : _b.toJSON(),
-            startSelection: (_c = this.startSelection) === null || _c === void 0 ? void 0 : _c.toJSON(),
+            changes: (_a = this.changes) === null || _a === undefined ? undefined : _a.toJSON(),
+            mapped: (_b = this.mapped) === null || _b === undefined ? undefined : _b.toJSON(),
+            startSelection: (_c = this.startSelection) === null || _c === undefined ? undefined : _c.toJSON(),
             selectionsAfter: this.selectionsAfter.map(s => s.toJSON())
         };
     }
@@ -19964,10 +19976,10 @@ function pageInfo(view) {
     if (selfScroll) {
         for (let source of view.state.facet(EditorView.scrollMargins)) {
             let margins = source(view);
-            if (margins === null || margins === void 0 ? void 0 : margins.top)
-                marginTop = Math.max(margins === null || margins === void 0 ? void 0 : margins.top, marginTop);
-            if (margins === null || margins === void 0 ? void 0 : margins.bottom)
-                marginBottom = Math.max(margins === null || margins === void 0 ? void 0 : margins.bottom, marginBottom);
+            if (margins === null || margins === undefined ? undefined : margins.top)
+                marginTop = Math.max(margins === null || margins === undefined ? undefined : margins.top, marginTop);
+            if (margins === null || margins === undefined ? undefined : margins.bottom)
+                marginBottom = Math.max(margins === null || margins === undefined ? undefined : margins.bottom, marginBottom);
         }
         height = view.scrollDOM.clientHeight - marginTop - marginBottom;
     }
@@ -21777,7 +21789,7 @@ function requireIntersectionObserver () {
 
 requireIntersectionObserver();
 
-const usePassiveLayoutEffect = React[typeof document !== 'undefined' && document.createElement !== void 0 ? 'useLayoutEffect' : 'useEffect'];
+const usePassiveLayoutEffect = React[typeof document !== 'undefined' && document.createElement !== undefined ? 'useLayoutEffect' : 'useEffect'];
 
 function useIntersectionObserver(target, options = {}) {
   const {
@@ -21967,7 +21979,7 @@ class Stack {
     }
     let base = this.stack.length - (depth - 1) * 3 - (action & 262144 ? 6 : 0);
     let start = base ? this.stack[base - 2] : this.p.ranges[0].from, size = this.reducePos - start;
-    if (size >= 2e3 && !((_a = this.p.parser.nodeSet.types[type]) === null || _a === void 0 ? void 0 : _a.isAnonymous)) {
+    if (size >= 2e3 && !((_a = this.p.parser.nodeSet.types[type]) === null || _a === undefined ? undefined : _a.isAnonymous)) {
       if (start == this.p.lastBigReductionStart) {
         this.p.bigReductionCount++;
         this.p.lastBigReductionSize = size;
@@ -23369,7 +23381,7 @@ class LRParser extends Parser {
         }
       }
     this.nodeSet = new NodeSet(nodeNames.map((name, i) => NodeType.define({
-      name: i >= this.minRepeatTerm ? void 0 : name,
+      name: i >= this.minRepeatTerm ? undefined : name,
       id: i,
       props: nodeProps[i],
       top: topTerms.indexOf(i) > -1,
@@ -23482,7 +23494,7 @@ class LRParser extends Parser {
       4
       /* ParseState.DefaultReduce */
     );
-    let result = deflt ? action(deflt) : void 0;
+    let result = deflt ? action(deflt) : undefined;
     for (let i = this.stateSlot(
       state,
       1
@@ -23911,8 +23923,8 @@ function isVarArg(node, doc) {
         node = node.parent || node;
     if (node.name != "ArgList")
         return false;
-    let callee = (_a = node.parent) === null || _a === void 0 ? void 0 : _a.firstChild;
-    if ((callee === null || callee === void 0 ? void 0 : callee.name) != "Callee")
+    let callee = (_a = node.parent) === null || _a === undefined ? undefined : _a.firstChild;
+    if ((callee === null || callee === undefined ? undefined : callee.name) != "Callee")
         return false;
     return doc.sliceString(callee.from, callee.to) == "var";
 }
@@ -23947,7 +23959,7 @@ function variableNames(doc, node, isVariable) {
         let result = [], seen = new Set;
         node.cursor().iterate(node => {
             var _a;
-            if (isVariable(node) && node.matchContext(declSelector) && ((_a = node.node.nextSibling) === null || _a === void 0 ? void 0 : _a.name) == ":") {
+            if (isVariable(node) && node.matchContext(declSelector) && ((_a = node.node.nextSibling) === null || _a === undefined ? undefined : _a.name) == ":") {
                 let name = doc.sliceString(node.from, node.to);
                 if (!seen.has(name)) {
                     seen.add(name);
@@ -24841,7 +24853,7 @@ function findOpenTag(node) {
     }
 }
 function elementName$1(doc, tree, max = doc.length) {
-    for (let ch = tree === null || tree === void 0 ? void 0 : tree.firstChild; ch; ch = ch.nextSibling) {
+    for (let ch = tree === null || tree === undefined ? undefined : tree.firstChild; ch; ch = ch.nextSibling) {
         if (ch.name == "JSXIdentifier" || ch.name == "JSXBuiltin" || ch.name == "JSXNamespacedName" ||
             ch.name == "JSXMemberExpression")
             return doc.sliceString(ch.from, Math.min(ch.to, max));
@@ -24871,7 +24883,7 @@ const autoCloseTags$1 = /*@__PURE__*/EditorView.inputHandler.of((view, from, to,
         else if (text == "/" && around.name == "JSXStartCloseTag") {
             let empty = around.parent, base = empty.parent;
             if (base && empty.from == head - 2 &&
-                ((name = elementName$1(state.doc, base.firstChild, head)) || ((_a = base.firstChild) === null || _a === void 0 ? void 0 : _a.name) == "JSXFragmentTag")) {
+                ((name = elementName$1(state.doc, base.firstChild, head)) || ((_a = base.firstChild) === null || _a === undefined ? undefined : _a.name) == "JSXFragmentTag")) {
                 let insert = `${name}>`;
                 return { range: EditorSelection.cursor(head + insert.length, -1), changes: { from: head, insert } };
             }
@@ -25264,7 +25276,7 @@ function findParentElement(tree, skip = false) {
 }
 function allowedChildren(doc, tree, schema) {
     let parentInfo = schema.tags[elementName(doc, findParentElement(tree))];
-    return (parentInfo === null || parentInfo === void 0 ? void 0 : parentInfo.children) || schema.allTags;
+    return (parentInfo === null || parentInfo === undefined ? undefined : parentInfo.children) || schema.allTags;
 }
 function openTags(doc, tree) {
     let open = [];
@@ -25311,14 +25323,14 @@ function completeAttrName(state, schema, tree, from, to) {
 }
 function completeAttrValue(state, schema, tree, from, to) {
     var _a;
-    let nameNode = (_a = tree.parent) === null || _a === void 0 ? void 0 : _a.getChild("AttributeName");
+    let nameNode = (_a = tree.parent) === null || _a === undefined ? undefined : _a.getChild("AttributeName");
     let options = [], token = undefined;
     if (nameNode) {
         let attrName = state.sliceDoc(nameNode.from, nameNode.to);
         let attrs = schema.globalAttrs[attrName];
         if (!attrs) {
             let elt = findParentElement(tree), info = elt ? schema.tags[elementName(state.doc, elt)] : null;
-            attrs = (info === null || info === void 0 ? void 0 : info.attrs) && info.attrs[attrName];
+            attrs = (info === null || info === undefined ? undefined : info.attrs) && info.attrs[attrName];
         }
         if (attrs) {
             let base = state.sliceDoc(from, to).toLowerCase(), quoteStart = '"', quoteEnd = '"';
@@ -25512,7 +25524,7 @@ const autoCloseTags = /*@__PURE__*/EditorView.inputHandler.of((view, from, to, t
         let { head } = range, after = syntaxTree(state).resolveInner(head, -1), name;
         if (didType && text == ">" && after.name == "EndTag") {
             let tag = after.parent;
-            if (((_b = (_a = tag.parent) === null || _a === void 0 ? void 0 : _a.lastChild) === null || _b === void 0 ? void 0 : _b.name) != "CloseTag" &&
+            if (((_b = (_a = tag.parent) === null || _a === undefined ? undefined : _a.lastChild) === null || _b === undefined ? undefined : _b.name) != "CloseTag" &&
                 (name = elementName(state.doc, tag.parent, head)) &&
                 !selfClosers.has(name)) {
                 let to = head + (state.doc.sliceString(head, head + 1) === ">" ? 1 : 0);
@@ -25522,7 +25534,7 @@ const autoCloseTags = /*@__PURE__*/EditorView.inputHandler.of((view, from, to, t
         }
         else if (didType && text == "/" && after.name == "IncompleteCloseTag") {
             let tag = after.parent;
-            if (after.from == head - 2 && ((_c = tag.lastChild) === null || _c === void 0 ? void 0 : _c.name) != "CloseTag" &&
+            if (after.from == head - 2 && ((_c = tag.lastChild) === null || _c === undefined ? undefined : _c.name) != "CloseTag" &&
                 (name = elementName(state.doc, tag, head)) && !selfClosers.has(name)) {
                 let to = head + (state.doc.sliceString(head, head + 1) === ">" ? 1 : 0);
                 let insert = `${name}>`;
@@ -26148,7 +26160,7 @@ function requireLib () {
 
 	            var render_data = function render_data(data) {
 	                var fragments = [];
-	                var key = void 0;
+	                var key = undefined;
 	                for (key in data) {
 	                    if (data.hasOwnProperty(key)) {
 	                        fragments.push("data-" + key + "=\"" + _this2.escapeForHtml(data[key]) + "\"");
@@ -26914,7 +26926,7 @@ function __generator(thisArg, body) {
             }
             op = body.call(thisArg, _);
         } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : undefined, done: true };
     }
 }
 
@@ -27021,7 +27033,7 @@ var SANDPACK_THEMES = {
     light: defaultLight,
     dark: defaultDark,
     auto: typeof window !== "undefined"
-        ? ((_a$a = window === null || window === void 0 ? void 0 : window.matchMedia) === null || _a$a === void 0 ? void 0 : _a$a.call(window, "(prefers-color-scheme: dark)").matches)
+        ? ((_a$a = window === null || window === undefined ? undefined : window.matchMedia) === null || _a$a === undefined ? undefined : _a$a.call(window, "(prefers-color-scheme: dark)").matches)
             ? defaultDark
             : defaultLight
         : defaultLight,
@@ -27155,7 +27167,7 @@ var standardizeStitchesTheme = function (theme) {
  */
 var standardizeTheme = function (inputTheme) {
     var _a, _b, _c, _d, _e;
-    if (inputTheme === void 0) { inputTheme = "light"; }
+    if (inputTheme === undefined) { inputTheme = "light"; }
     var defaultLightThemeKey = "default";
     /**
      * Set a local theme: dark or light
@@ -27174,7 +27186,7 @@ var standardizeTheme = function (inputTheme) {
     /**
      * Fullfill the colors key, in case it's missing any key
      */
-    var mode = isDarkColor((_b = (_a = inputTheme === null || inputTheme === void 0 ? void 0 : inputTheme.colors) === null || _a === void 0 ? void 0 : _a.surface1) !== null && _b !== void 0 ? _b : defaultLight.colors.surface1)
+    var mode = isDarkColor((_b = (_a = inputTheme === null || inputTheme === undefined ? undefined : inputTheme.colors) === null || _a === undefined ? undefined : _a.surface1) !== null && _b !== undefined ? _b : defaultLight.colors.surface1)
         ? "dark"
         : "light";
     /**
@@ -27182,9 +27194,9 @@ var standardizeTheme = function (inputTheme) {
      * error, warning and success colors have different values between dark and light
      */
     var baseTheme = mode === "dark" ? defaultDark : defaultLight;
-    var colorsByMode = __assign(__assign({}, baseTheme.colors), ((_c = inputTheme === null || inputTheme === void 0 ? void 0 : inputTheme.colors) !== null && _c !== void 0 ? _c : {}));
-    var syntaxByMode = __assign(__assign({}, baseTheme.syntax), ((_d = inputTheme === null || inputTheme === void 0 ? void 0 : inputTheme.syntax) !== null && _d !== void 0 ? _d : {}));
-    var fontByMode = __assign(__assign({}, baseTheme.font), ((_e = inputTheme === null || inputTheme === void 0 ? void 0 : inputTheme.font) !== null && _e !== void 0 ? _e : {}));
+    var colorsByMode = __assign(__assign({}, baseTheme.colors), ((_c = inputTheme === null || inputTheme === undefined ? undefined : inputTheme.colors) !== null && _c !== undefined ? _c : {}));
+    var syntaxByMode = __assign(__assign({}, baseTheme.syntax), ((_d = inputTheme === null || inputTheme === undefined ? undefined : inputTheme.syntax) !== null && _d !== undefined ? _d : {}));
+    var fontByMode = __assign(__assign({}, baseTheme.font), ((_e = inputTheme === null || inputTheme === undefined ? undefined : inputTheme.font) !== null && _e !== undefined ? _e : {}));
     var theme = {
         colors: colorsByMode,
         syntax: syntaxByMode,
@@ -27234,9 +27246,9 @@ var useClassNames = function () {
     return function sandpackClassNames(customClassName, 
     /* eslint-disable @typescript-eslint/no-explicit-any */
     allClassNames) {
-        if (allClassNames === void 0) { allClassNames = []; }
+        if (allClassNames === undefined) { allClassNames = []; }
         var custom = "".concat(THEME_PREFIX, "-").concat(customClassName);
-        return joinClassNames.apply(void 0, __spreadArray(__spreadArray([], allClassNames, false), [custom, contextClassNames[custom]], false));
+        return joinClassNames.apply(undefined, __spreadArray(__spreadArray([], allClassNames, false), [custom, contextClassNames[custom]], false));
     };
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -28188,9 +28200,9 @@ var getSandpackStateFromProps = function (props) {
         files: normalizedFilesPath,
     });
     // visibleFiles and activeFile override the setup flags
-    var visibleFiles = normalizePath((_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.visibleFiles) !== null && _b !== void 0 ? _b : []);
-    var activeFile = ((_c = props.options) === null || _c === void 0 ? void 0 : _c.activeFile)
-        ? resolveFile((_d = props.options) === null || _d === void 0 ? void 0 : _d.activeFile, projectSetup.files)
+    var visibleFiles = normalizePath((_b = (_a = props.options) === null || _a === undefined ? undefined : _a.visibleFiles) !== null && _b !== undefined ? _b : []);
+    var activeFile = ((_c = props.options) === null || _c === undefined ? undefined : _c.activeFile)
+        ? resolveFile((_d = props.options) === null || _d === undefined ? undefined : _d.activeFile, projectSetup.files)
         : undefined;
     if (visibleFiles.length === 0 && normalizedFilesPath) {
         // extract open and active files from the custom input files
@@ -28234,7 +28246,7 @@ var getSandpackStateFromProps = function (props) {
     if (!visibleFiles.includes(activeFile)) {
         visibleFiles.push(activeFile);
     }
-    var files = addPackageJSONIfNeeded(projectSetup.files, (_e = projectSetup.dependencies) !== null && _e !== void 0 ? _e : {}, (_f = projectSetup.devDependencies) !== null && _f !== void 0 ? _f : {}, projectSetup.entry);
+    var files = addPackageJSONIfNeeded(projectSetup.files, (_e = projectSetup.dependencies) !== null && _e !== undefined ? _e : {}, (_f = projectSetup.devDependencies) !== null && _f !== undefined ? _f : {}, projectSetup.entry);
     var existOpenPath = visibleFiles.filter(function (path) { return files[path]; });
     return {
         visibleFiles: existOpenPath,
@@ -28313,11 +28325,11 @@ var combineTemplateFilesToSetup = function (_a) {
          * Merge template dependencies and user custom dependencies.
          * As a rule, the custom dependencies must overwrite the template ones.
          */
-        dependencies: __assign(__assign({}, baseTemplate.dependencies), customSetup === null || customSetup === void 0 ? void 0 : customSetup.dependencies),
-        devDependencies: __assign(__assign({}, baseTemplate.devDependencies), customSetup === null || customSetup === void 0 ? void 0 : customSetup.devDependencies),
-        entry: normalizePath(customSetup === null || customSetup === void 0 ? void 0 : customSetup.entry),
+        dependencies: __assign(__assign({}, baseTemplate.dependencies), customSetup === null || customSetup === undefined ? undefined : customSetup.dependencies),
+        devDependencies: __assign(__assign({}, baseTemplate.devDependencies), customSetup === null || customSetup === undefined ? undefined : customSetup.devDependencies),
+        entry: normalizePath(customSetup === null || customSetup === undefined ? undefined : customSetup.entry),
         main: baseTemplate.main,
-        environment: (customSetup === null || customSetup === void 0 ? void 0 : customSetup.environment) || baseTemplate.environment,
+        environment: (customSetup === null || customSetup === undefined ? undefined : customSetup.environment) || baseTemplate.environment,
     };
 };
 /**
@@ -28375,7 +28387,7 @@ var useAsyncSandpackId = function (files) {
     if (typeof reactExports.useId === "function") {
         /* eslint-disable-next-line react-hooks/rules-of-hooks */
         var reactDomId_1 = reactExports.useId();
-        return function () { return __awaiter(void 0, void 0, void 0, function () {
+        return function () { return __awaiter(undefined, undefined, undefined, function () {
             var allCode, sha;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -28404,7 +28416,7 @@ function ensureLength(str, length) {
     }
 }
 function generateShortId(input) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter(this, undefined, undefined, function () {
         var encoder, data, hashBuffer, hashArray;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -28425,16 +28437,16 @@ var BUNDLER_TIMEOUT = 40000;
 var useClient = function (_a, filesState) {
     var _b, _c, _d;
     var options = _a.options, customSetup = _a.customSetup, teamId = _a.teamId, sandboxId = _a.sandboxId;
-    options !== null && options !== void 0 ? options : (options = {});
-    customSetup !== null && customSetup !== void 0 ? customSetup : (customSetup = {});
-    var initModeFromProps = (options === null || options === void 0 ? void 0 : options.initMode) || "lazy";
+    options !== null && options !== undefined ? options : (options = {});
+    customSetup !== null && customSetup !== undefined ? customSetup : (customSetup = {});
+    var initModeFromProps = (options === null || options === undefined ? undefined : options.initMode) || "lazy";
     var _e = reactExports.useState({
-        startRoute: options === null || options === void 0 ? void 0 : options.startRoute,
+        startRoute: options === null || options === undefined ? undefined : options.startRoute,
         bundlerState: undefined,
         error: null,
         initMode: initModeFromProps,
         reactDevTools: undefined,
-        status: ((_b = options === null || options === void 0 ? void 0 : options.autorun) !== null && _b !== void 0 ? _b : true) ? "initial" : "idle",
+        status: ((_b = options === null || options === undefined ? undefined : options.autorun) !== null && _b !== undefined ? _b : true) ? "initial" : "idle",
     }), state = _e[0], setState = _e[1];
     var intersectionObserverCallback = reactExports.useRef();
     var intersectionObserver = reactExports.useRef(null);
@@ -28451,7 +28463,7 @@ var useClient = function (_a, filesState) {
     /**
      * Callbacks
      */
-    var createClient = reactExports.useCallback(function (iframe, clientId, clientPropsOverride) { return __awaiter(void 0, void 0, void 0, function () {
+    var createClient = reactExports.useCallback(function (iframe, clientId, clientPropsOverride) { return __awaiter(undefined, undefined, undefined, function () {
         var timeOut, shouldSetTimeout, getStableServiceWorkerId, client, _a, _b, globalListeners;
         var _c;
         var _d, _e, _f;
@@ -28463,9 +28475,9 @@ var useClient = function (_a, filesState) {
                     if (clients.current[clientId]) {
                         clients.current[clientId].destroy();
                     }
-                    options !== null && options !== void 0 ? options : (options = {});
-                    customSetup !== null && customSetup !== void 0 ? customSetup : (customSetup = {});
-                    timeOut = (_d = options === null || options === void 0 ? void 0 : options.bundlerTimeOut) !== null && _d !== void 0 ? _d : BUNDLER_TIMEOUT;
+                    options !== null && options !== undefined ? options : (options = {});
+                    customSetup !== null && customSetup !== undefined ? customSetup : (customSetup = {});
+                    timeOut = (_d = options === null || options === undefined ? undefined : options.bundlerTimeOut) !== null && _d !== undefined ? _d : BUNDLER_TIMEOUT;
                     if (timeoutHook.current) {
                         clearTimeout(timeoutHook.current);
                     }
@@ -28476,12 +28488,12 @@ var useClient = function (_a, filesState) {
                             setState(function (prev) { return (__assign(__assign({}, prev), { status: "timeout" })); });
                         }, timeOut);
                     }
-                    getStableServiceWorkerId = function () { return __awaiter(void 0, void 0, void 0, function () {
+                    getStableServiceWorkerId = function () { return __awaiter(undefined, undefined, undefined, function () {
                         var key, fixedId;
                         return __generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
-                                    if (!(options === null || options === void 0 ? void 0 : options.experimental_enableStableServiceWorkerId)) return [3 /*break*/, 3];
+                                    if (!(options === null || options === undefined ? undefined : options.experimental_enableStableServiceWorkerId)) return [3 /*break*/, 3];
                                     key = "SANDPACK_INTERNAL:URL-CONSISTENT-ID";
                                     fixedId = localStorage.getItem(key);
                                     if (!!fixedId) return [3 /*break*/, 2];
@@ -28505,20 +28517,20 @@ var useClient = function (_a, filesState) {
                     _c = {
                         externalResources: options.externalResources,
                         bundlerURL: options.bundlerURL,
-                        startRoute: (_e = clientPropsOverride === null || clientPropsOverride === void 0 ? void 0 : clientPropsOverride.startRoute) !== null && _e !== void 0 ? _e : options.startRoute,
+                        startRoute: (_e = clientPropsOverride === null || clientPropsOverride === undefined ? undefined : clientPropsOverride.startRoute) !== null && _e !== undefined ? _e : options.startRoute,
                         fileResolver: options.fileResolver,
-                        skipEval: (_f = options.skipEval) !== null && _f !== void 0 ? _f : false,
+                        skipEval: (_f = options.skipEval) !== null && _f !== undefined ? _f : false,
                         logLevel: options.logLevel,
                         showOpenInCodeSandbox: false,
                         showErrorScreen: true,
                         showLoadingScreen: false,
                         reactDevTools: state.reactDevTools,
-                        customNpmRegistries: customSetup === null || customSetup === void 0 ? void 0 : customSetup.npmRegistries,
+                        customNpmRegistries: customSetup === null || customSetup === undefined ? undefined : customSetup.npmRegistries,
                         teamId: teamId,
-                        experimental_enableServiceWorker: !!(options === null || options === void 0 ? void 0 : options.experimental_enableServiceWorker)
+                        experimental_enableServiceWorker: !!(options === null || options === undefined ? undefined : options.experimental_enableServiceWorker)
                     };
                     return [4 /*yield*/, getStableServiceWorkerId()];
-                case 1: return [4 /*yield*/, _a.apply(void 0, _b.concat([(_c.experimental_stableServiceWorkerId = _g.sent(),
+                case 1: return [4 /*yield*/, _a.apply(undefined, _b.concat([(_c.experimental_stableServiceWorkerId = _g.sent(),
                             _c.sandboxId = sandboxId,
                             _c)]))];
                 case 2:
@@ -28564,12 +28576,12 @@ var useClient = function (_a, filesState) {
             unsubscribe.current = undefined;
         }
     }, []);
-    var runSandpack = reactExports.useCallback(function () { return __awaiter(void 0, void 0, void 0, function () {
+    var runSandpack = reactExports.useCallback(function () { return __awaiter(undefined, undefined, undefined, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, Promise.all(Object.entries(registeredIframes.current).map(function (_a) {
-                        var clientId = _a[0], _b = _a[1], iframe = _b.iframe, _c = _b.clientPropsOverride, clientPropsOverride = _c === void 0 ? {} : _c;
-                        return __awaiter(void 0, void 0, void 0, function () {
+                        var clientId = _a[0], _b = _a[1], iframe = _b.iframe, _c = _b.clientPropsOverride, clientPropsOverride = _c === undefined ? {} : _c;
+                        return __awaiter(undefined, undefined, undefined, function () {
                             return __generator(this, function (_d) {
                                 switch (_d.label) {
                                     case 0: return [4 /*yield*/, createClient(iframe, clientId, clientPropsOverride)];
@@ -28597,15 +28609,15 @@ var useClient = function (_a, filesState) {
     };
     var initializeSandpackIframe = reactExports.useCallback(function () {
         var _a, _b, _c;
-        var autorun = (_a = options === null || options === void 0 ? void 0 : options.autorun) !== null && _a !== void 0 ? _a : true;
+        var autorun = (_a = options === null || options === undefined ? undefined : options.autorun) !== null && _a !== undefined ? _a : true;
         if (!autorun) {
             return;
         }
-        var observerOptions = (_b = options === null || options === void 0 ? void 0 : options.initModeObserverOptions) !== null && _b !== void 0 ? _b : {
+        var observerOptions = (_b = options === null || options === undefined ? undefined : options.initModeObserverOptions) !== null && _b !== undefined ? _b : {
             rootMargin: "1000px 0px",
         };
         if (intersectionObserver.current && lazyAnchorRef.current) {
-            (_c = intersectionObserver.current) === null || _c === void 0 ? void 0 : _c.unobserve(lazyAnchorRef.current);
+            (_c = intersectionObserver.current) === null || _c === undefined ? undefined : _c.unobserve(lazyAnchorRef.current);
         }
         if (lazyAnchorRef.current && state.initMode === "lazy") {
             // If any component registered a lazy anchor ref component, use that for the intersection observer
@@ -28615,8 +28627,8 @@ var useClient = function (_a, filesState) {
                     // Trigger it once
                     if (entries.some(function (entry) { return entry.isIntersecting; }) &&
                         lazyAnchorRef.current) {
-                        (_a = intersectionObserverCallback.current) === null || _a === void 0 ? void 0 : _a.call(intersectionObserverCallback, entries);
-                        (_b = intersectionObserver.current) === null || _b === void 0 ? void 0 : _b.unobserve(lazyAnchorRef.current);
+                        (_a = intersectionObserverCallback.current) === null || _a === undefined ? undefined : _a.call(intersectionObserverCallback, entries);
+                        (_b = intersectionObserver.current) === null || _b === undefined ? undefined : _b.unobserve(lazyAnchorRef.current);
                     }
                 }
             }, observerOptions);
@@ -28625,7 +28637,7 @@ var useClient = function (_a, filesState) {
         else if (lazyAnchorRef.current && state.initMode === "user-visible") {
             intersectionObserver.current = new IntersectionObserver(function (entries) {
                 var _a;
-                (_a = intersectionObserverCallback.current) === null || _a === void 0 ? void 0 : _a.call(intersectionObserverCallback, entries);
+                (_a = intersectionObserverCallback.current) === null || _a === undefined ? undefined : _a.call(intersectionObserverCallback, entries);
             }, observerOptions);
             intersectionObserver.current.observe(lazyAnchorRef.current);
         }
@@ -28633,13 +28645,13 @@ var useClient = function (_a, filesState) {
             runSandpack();
         }
     }, [
-        options === null || options === void 0 ? void 0 : options.autorun,
-        options === null || options === void 0 ? void 0 : options.initModeObserverOptions,
+        options === null || options === undefined ? undefined : options.autorun,
+        options === null || options === undefined ? undefined : options.initModeObserverOptions,
         runSandpack,
         state.initMode,
         unregisterAllClients,
     ]);
-    var registerBundler = reactExports.useCallback(function (iframe, clientId, clientPropsOverride) { return __awaiter(void 0, void 0, void 0, function () {
+    var registerBundler = reactExports.useCallback(function (iframe, clientId, clientPropsOverride) { return __awaiter(undefined, undefined, undefined, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -28663,7 +28675,7 @@ var useClient = function (_a, filesState) {
         var client = clients.current[clientId];
         if (client) {
             client.destroy();
-            (_a = client.iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.location.replace("about:blank");
+            (_a = client.iframe.contentWindow) === null || _a === undefined ? undefined : _a.location.replace("about:blank");
             client.iframe.removeAttribute("src");
             delete clients.current[clientId];
         }
@@ -28673,7 +28685,7 @@ var useClient = function (_a, filesState) {
         if (timeoutHook.current) {
             clearTimeout(timeoutHook.current);
         }
-        var unsubscribeQueuedClients = Object.values((_b = unsubscribeClientListeners.current[clientId]) !== null && _b !== void 0 ? _b : {});
+        var unsubscribeQueuedClients = Object.values((_b = unsubscribeClientListeners.current[clientId]) !== null && _b !== undefined ? _b : {});
         // Unsubscribing all listener registered
         unsubscribeQueuedClients.forEach(function (listenerOfClient) {
             var listenerFunctions = Object.values(listenerOfClient);
@@ -28712,8 +28724,8 @@ var useClient = function (_a, filesState) {
     var registerReactDevTools = function (value) {
         setState(function (prev) { return (__assign(__assign({}, prev), { reactDevTools: value })); });
     };
-    var recompileMode = (_c = options === null || options === void 0 ? void 0 : options.recompileMode) !== null && _c !== void 0 ? _c : "delayed";
-    var recompileDelay = (_d = options === null || options === void 0 ? void 0 : options.recompileDelay) !== null && _d !== void 0 ? _d : 200;
+    var recompileMode = (_c = options === null || options === undefined ? undefined : options.recompileMode) !== null && _c !== undefined ? _c : "delayed";
+    var recompileDelay = (_d = options === null || options === undefined ? undefined : options.recompileDelay) !== null && _d !== undefined ? _d : 200;
     var dispatchMessage = function (message, clientId) {
         if (state.status !== "running") {
             console.warn("[sandpack-react]: dispatch cannot be called while in idle mode");
@@ -28784,7 +28796,7 @@ var useClient = function (_a, filesState) {
                 // Unsubscribe in case it was added later from `global`
                 Object.values(unsubscribeClientListeners.current).forEach(function (client) {
                     var _a;
-                    (_a = client === null || client === void 0 ? void 0 : client[listenerId_2]) === null || _a === void 0 ? void 0 : _a.call(client);
+                    (_a = client === null || client === undefined ? undefined : client[listenerId_2]) === null || _a === undefined ? undefined : _a.call(client);
                 });
             };
             return unsubscribeListener;
@@ -28904,7 +28916,7 @@ var useFiles = function (props) {
         }
     }, [props.files, props.customSetup, props.template]);
     var updateFile = function (pathOrFiles, code, shouldUpdatePreview) {
-        if (shouldUpdatePreview === void 0) { shouldUpdatePreview = true; }
+        if (shouldUpdatePreview === undefined) { shouldUpdatePreview = true; }
         setState(function (prev) {
             var _a;
             var files = prev.files;
@@ -28942,7 +28954,7 @@ var useFiles = function (props) {
             }
         },
         updateCurrentFile: function (code, shouldUpdatePreview) {
-            if (shouldUpdatePreview === void 0) { shouldUpdatePreview = true; }
+            if (shouldUpdatePreview === undefined) { shouldUpdatePreview = true; }
             updateFile(state.activeFile, code, shouldUpdatePreview);
         },
         updateFile: updateFile,
@@ -28963,7 +28975,7 @@ var useFiles = function (props) {
             });
         },
         deleteFile: function (path, shouldUpdatePreview) {
-            if (shouldUpdatePreview === void 0) { shouldUpdatePreview = true; }
+            if (shouldUpdatePreview === undefined) { shouldUpdatePreview = true; }
             setState(function (_a) {
                 var visibleFiles = _a.visibleFiles, files = _a.files, activeFile = _a.activeFile, rest = __rest(_a, ["visibleFiles", "files", "activeFile"]);
                 var newFiles = __assign({}, files);
@@ -28996,7 +29008,7 @@ var SandpackProvider = function (props) {
     reactExports.useEffect(function () {
         clientOperations.initializeSandpackIframe();
     }, []);
-    return (jsxRuntimeExports.jsx(Sandpack$1.Provider, { value: __assign(__assign(__assign(__assign(__assign(__assign({}, fileState), clientState), appState), fileOperations), clientOperations), { autoReload: (_b = (_a = props.options) === null || _a === void 0 ? void 0 : _a.autoReload) !== null && _b !== void 0 ? _b : true, teamId: props === null || props === void 0 ? void 0 : props.teamId, exportOptions: (_c = props === null || props === void 0 ? void 0 : props.customSetup) === null || _c === void 0 ? void 0 : _c.exportOptions, listen: addListener, dispatch: dispatchMessage }), children: jsxRuntimeExports.jsx(ClassNamesProvider, { classes: options === null || options === void 0 ? void 0 : options.classes, children: jsxRuntimeExports.jsx(SandpackThemeProvider, { className: className, style: style, theme: theme, children: children }) }) }));
+    return (jsxRuntimeExports.jsx(Sandpack$1.Provider, { value: __assign(__assign(__assign(__assign(__assign(__assign({}, fileState), clientState), appState), fileOperations), clientOperations), { autoReload: (_b = (_a = props.options) === null || _a === undefined ? undefined : _a.autoReload) !== null && _b !== undefined ? _b : true, teamId: props === null || props === undefined ? undefined : props.teamId, exportOptions: (_c = props === null || props === undefined ? undefined : props.customSetup) === null || _c === undefined ? undefined : _c.exportOptions, listen: addListener, dispatch: dispatchMessage }), children: jsxRuntimeExports.jsx(ClassNamesProvider, { classes: options === null || options === undefined ? undefined : options.classes, children: jsxRuntimeExports.jsx(SandpackThemeProvider, { className: className, style: style, theme: theme, children: children }) }) }));
 };
 /**
  * @category Provider
@@ -29029,8 +29041,8 @@ var useActiveCode = function () {
     var _a, _b, _c;
     var sandpack = useSandpack().sandpack;
     return {
-        code: (_a = sandpack.files[sandpack.activeFile]) === null || _a === void 0 ? void 0 : _a.code,
-        readOnly: (_c = (_b = sandpack.files[sandpack.activeFile]) === null || _b === void 0 ? void 0 : _b.readOnly) !== null && _c !== void 0 ? _c : false,
+        code: (_a = sandpack.files[sandpack.activeFile]) === null || _a === undefined ? undefined : _a.code,
+        readOnly: (_c = (_b = sandpack.files[sandpack.activeFile]) === null || _b === undefined ? undefined : _b.readOnly) !== null && _c !== undefined ? _c : false,
         updateCode: sandpack.updateCurrentFile,
     };
 };
@@ -29248,7 +29260,7 @@ var FileTabs = function (_a) {
                 {
                     var leftSibling = target.previousElementSibling;
                     if (leftSibling) {
-                        (_b = leftSibling.querySelector("button")) === null || _b === void 0 ? void 0 : _b.focus();
+                        (_b = leftSibling.querySelector("button")) === null || _b === undefined ? undefined : _b.focus();
                         setActiveFile(visibleFiles[index - 1]);
                     }
                 }
@@ -29257,7 +29269,7 @@ var FileTabs = function (_a) {
                 {
                     var rightSibling = target.nextElementSibling;
                     if (rightSibling) {
-                        (_c = rightSibling.querySelector("button")) === null || _c === void 0 ? void 0 : _c.focus();
+                        (_c = rightSibling.querySelector("button")) === null || _c === undefined ? undefined : _c.focus();
                         setActiveFile(visibleFiles[index + 1]);
                     }
                 }
@@ -29265,14 +29277,14 @@ var FileTabs = function (_a) {
             case "Home": {
                 var parent_1 = target.parentElement;
                 var firstChild = parent_1.firstElementChild;
-                (_d = firstChild.querySelector("button")) === null || _d === void 0 ? void 0 : _d.focus();
+                (_d = firstChild.querySelector("button")) === null || _d === undefined ? undefined : _d.focus();
                 setActiveFile(visibleFiles[0]);
                 break;
             }
             case "End": {
                 var parent_2 = target.parentElement;
                 var lastChild = parent_2.lastElementChild;
-                (_e = lastChild.querySelector("button")) === null || _e === void 0 ? void 0 : _e.focus();
+                (_e = lastChild.querySelector("button")) === null || _e === undefined ? undefined : _e.focus();
                 setActiveFile(visibleFiles[-1]);
                 break;
             }
@@ -29313,7 +29325,7 @@ var RunButton$1 = function (_a) {
     var sandpack = useSandpack().sandpack;
     return (jsxRuntimeExports.jsxs(RoundedButton, __assign({ className: runButtonClassName.toString(), onClick: function (event) {
             sandpack.runSandpack();
-            onClick === null || onClick === void 0 ? void 0 : onClick(event);
+            onClick === null || onClick === undefined ? undefined : onClick(event);
         } }, props, { children: [jsxRuntimeExports.jsx(RunIcon, {}), jsxRuntimeExports.jsx("span", { children: "Run" })] })));
 };
 
@@ -29360,7 +29372,7 @@ var shallowEqual = function (a, b) {
 
 var getCodeMirrorPosition = function (doc, _a) {
     var line = _a.line, column = _a.column;
-    return doc.line(line).from + (column !== null && column !== void 0 ? column : 0) - 1;
+    return doc.line(line).from + (column !== null && column !== undefined ? column : 0) - 1;
 };
 var getEditorTheme = function () {
     return EditorView.theme({
@@ -29575,11 +29587,11 @@ function highlightDecorators(positions) {
             var rangesDecorators = positions.map(function (item) {
                 var _a, _b, _c;
                 var lineDeco = Decoration.line({
-                    attributes: { class: (_a = item.className) !== null && _a !== void 0 ? _a : "" },
+                    attributes: { class: (_a = item.className) !== null && _a !== undefined ? _a : "" },
                 });
                 var markDeco = Decoration.mark({
-                    class: (_b = item.className) !== null && _b !== void 0 ? _b : "",
-                    attributes: (_c = item.elementAttributes) !== null && _c !== void 0 ? _c : undefined,
+                    class: (_b = item.className) !== null && _b !== undefined ? _b : "",
+                    attributes: (_c = item.elementAttributes) !== null && _c !== undefined ? _c : undefined,
                 });
                 var positionLineStart = getCodeMirrorPosition(view.state.doc, {
                     line: item.line,
@@ -29687,7 +29699,7 @@ var readOnlyClassName = css((_b$1 = {
     _b$1));
 
 var useSyntaxHighlight = function (_a) {
-    var langSupport = _a.langSupport, highlightTheme = _a.highlightTheme, _b = _a.code, code = _b === void 0 ? "" : _b;
+    var langSupport = _a.langSupport, highlightTheme = _a.highlightTheme, _b = _a.code, code = _b === undefined ? "" : _b;
     var tree = langSupport.language.parser.parse(code);
     var offSet = 0;
     var codeElementsRender = [];
@@ -29714,14 +29726,14 @@ var useSyntaxHighlight = function (_a) {
      * includes an end empty line, and the parse here doesn't,
      * so let's add it manually.
      */
-    if (offSet < code.length && (code === null || code === void 0 ? void 0 : code.includes("\n"))) {
+    if (offSet < code.length && (code === null || code === undefined ? undefined : code.includes("\n"))) {
         codeElementsRender.push("\n\n");
     }
     return codeElementsRender;
 };
 
 var CodeMirror = reactExports.forwardRef(function (_a, ref) {
-    var _b = _a.code, code = _b === void 0 ? "" : _b, filePath = _a.filePath, fileType = _a.fileType, onCodeUpdate = _a.onCodeUpdate, _c = _a.showLineNumbers, showLineNumbers = _c === void 0 ? false : _c, _d = _a.showInlineErrors, showInlineErrors = _d === void 0 ? false : _d, _e = _a.wrapContent, wrapContent = _e === void 0 ? false : _e, _f = _a.editorState, editorState = _f === void 0 ? "pristine" : _f, _g = _a.readOnly, readOnly = _g === void 0 ? false : _g, _h = _a.showReadOnly, showReadOnly = _h === void 0 ? true : _h, decorators = _a.decorators, _j = _a.initMode, initMode = _j === void 0 ? "lazy" : _j, _k = _a.extensions, extensions = _k === void 0 ? [] : _k, _l = _a.extensionsKeymap, extensionsKeymap = _l === void 0 ? [] : _l, _m = _a.additionalLanguages, additionalLanguages = _m === void 0 ? [] : _m;
+    var _b = _a.code, code = _b === undefined ? "" : _b, filePath = _a.filePath, fileType = _a.fileType, onCodeUpdate = _a.onCodeUpdate, _c = _a.showLineNumbers, showLineNumbers = _c === undefined ? false : _c, _d = _a.showInlineErrors, showInlineErrors = _d === undefined ? false : _d, _e = _a.wrapContent, wrapContent = _e === undefined ? false : _e, _f = _a.editorState, editorState = _f === undefined ? "pristine" : _f, _g = _a.readOnly, readOnly = _g === undefined ? false : _g, _h = _a.showReadOnly, showReadOnly = _h === undefined ? true : _h, decorators = _a.decorators, _j = _a.initMode, initMode = _j === undefined ? "lazy" : _j, _k = _a.extensions, extensions = _k === undefined ? [] : _k, _l = _a.extensionsKeymap, extensionsKeymap = _l === undefined ? [] : _l, _m = _a.additionalLanguages, additionalLanguages = _m === undefined ? [] : _m;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     var wrapper = reactExports.useRef(null);
     var combinedRef = useCombinedRefs(wrapper, ref);
@@ -29761,7 +29773,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
             ? decorators.sort(function (d1, d2) { return d1.line - d2.line; })
             : decorators;
     }, [decorators]);
-    var useStaticReadOnly = readOnly && (decorators === null || decorators === void 0 ? void 0 : decorators.length) === 0;
+    var useStaticReadOnly = readOnly && (decorators === null || decorators === undefined ? undefined : decorators.length) === 0;
     reactExports.useEffect(function () {
         if (!wrapper.current || !shouldInitEditor || useStaticReadOnly) {
             return;
@@ -29783,7 +29795,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
         cmView.current = view;
         return function () {
             var _a;
-            (_a = cmView.current) === null || _a === void 0 ? void 0 : _a.destroy();
+            (_a = cmView.current) === null || _a === undefined ? undefined : _a.destroy();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [shouldInitEditor, readOnly, useStaticReadOnly]);
@@ -29802,7 +29814,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                             var key = _a.key;
                             return key === "Tab";
                         });
-                        return (_b = (_a = customKey === null || customKey === void 0 ? void 0 : customKey.run) === null || _a === void 0 ? void 0 : _a.call(customKey, view)) !== null && _b !== void 0 ? _b : true;
+                        return (_b = (_a = customKey === null || customKey === undefined ? undefined : customKey.run) === null || _a === undefined ? undefined : _a.call(customKey, view)) !== null && _b !== undefined ? _b : true;
                     },
                 },
                 {
@@ -29814,7 +29826,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                             var key = _a.key;
                             return key === "Shift-Tab";
                         });
-                        return (_b = (_a = customKey === null || customKey === void 0 ? void 0 : customKey.run) === null || _a === void 0 ? void 0 : _a.call(customKey, view)) !== null && _b !== void 0 ? _b : true;
+                        return (_b = (_a = customKey === null || customKey === undefined ? undefined : customKey.run) === null || _a === undefined ? undefined : _a.call(customKey, view)) !== null && _b !== undefined ? _b : true;
                     },
                 },
                 {
@@ -29846,7 +29858,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                     if (update.docChanged) {
                         var newCode = update.state.doc.toString();
                         setInternalCode(newCode);
-                        onCodeUpdate === null || onCodeUpdate === void 0 ? void 0 : onCodeUpdate(newCode);
+                        onCodeUpdate === null || onCodeUpdate === undefined ? undefined : onCodeUpdate(newCode);
                     }
                 }),
             ], false);
@@ -29932,7 +29944,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
         var unsubscribe = listen(function (message) {
             var view = cmView.current;
             if (message.type === "success") {
-                view === null || view === void 0 ? void 0 : view.dispatch({
+                view === null || view === undefined ? undefined : view.dispatch({
                     // @ts-ignore
                     annotations: [new Annotation("remove-errors", true)],
                 });
@@ -29941,7 +29953,7 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
                 message.action === "show-error" &&
                 message.path === filePath &&
                 message.line) {
-                view === null || view === void 0 ? void 0 : view.dispatch({
+                view === null || view === undefined ? undefined : view.dispatch({
                     // @ts-ignore
                     annotations: [new Annotation("show-error", message.line)],
                 });
@@ -29985,18 +29997,18 @@ var CodeMirror = reactExports.forwardRef(function (_a, ref) {
 });
 
 var SandpackCodeEditor = reactExports.forwardRef(function (_a, ref) {
-    var showTabs = _a.showTabs, _b = _a.showLineNumbers, showLineNumbers = _b === void 0 ? false : _b, _c = _a.showInlineErrors, showInlineErrors = _c === void 0 ? false : _c, _d = _a.showRunButton, showRunButton = _d === void 0 ? true : _d, _e = _a.wrapContent, wrapContent = _e === void 0 ? false : _e, _f = _a.closableTabs, closableTabs = _f === void 0 ? false : _f, initMode = _a.initMode, extensions = _a.extensions, extensionsKeymap = _a.extensionsKeymap, readOnly = _a.readOnly, showReadOnly = _a.showReadOnly, additionalLanguages = _a.additionalLanguages, className = _a.className, props = __rest(_a, ["showTabs", "showLineNumbers", "showInlineErrors", "showRunButton", "wrapContent", "closableTabs", "initMode", "extensions", "extensionsKeymap", "readOnly", "showReadOnly", "additionalLanguages", "className"]);
+    var showTabs = _a.showTabs, _b = _a.showLineNumbers, showLineNumbers = _b === undefined ? false : _b, _c = _a.showInlineErrors, showInlineErrors = _c === undefined ? false : _c, _d = _a.showRunButton, showRunButton = _d === undefined ? true : _d, _e = _a.wrapContent, wrapContent = _e === undefined ? false : _e, _f = _a.closableTabs, closableTabs = _f === undefined ? false : _f, initMode = _a.initMode, extensions = _a.extensions, extensionsKeymap = _a.extensionsKeymap, readOnly = _a.readOnly, showReadOnly = _a.showReadOnly, additionalLanguages = _a.additionalLanguages, className = _a.className, props = __rest(_a, ["showTabs", "showLineNumbers", "showInlineErrors", "showRunButton", "wrapContent", "closableTabs", "initMode", "extensions", "extensionsKeymap", "readOnly", "showReadOnly", "additionalLanguages", "className"]);
     var sandpack = useSandpack().sandpack;
     var _g = useActiveCode(), code = _g.code, updateCode = _g.updateCode, readOnlyFile = _g.readOnly;
     var activeFile = sandpack.activeFile, status = sandpack.status, editorState = sandpack.editorState;
-    var shouldShowTabs = showTabs !== null && showTabs !== void 0 ? showTabs : sandpack.visibleFiles.length > 1;
+    var shouldShowTabs = showTabs !== null && showTabs !== undefined ? showTabs : sandpack.visibleFiles.length > 1;
     var classNames = useClassNames();
     var handleCodeUpdate = function (newCode, shouldUpdatePreview) {
-        if (shouldUpdatePreview === void 0) { shouldUpdatePreview = true; }
+        if (shouldUpdatePreview === undefined) { shouldUpdatePreview = true; }
         updateCode(newCode, shouldUpdatePreview);
     };
     var activeFileUniqueId = useSandpackId();
-    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor", [className]) }, props, { children: [shouldShowTabs && (jsxRuntimeExports.jsx(FileTabs, { activeFileUniqueId: activeFileUniqueId, closableTabs: closableTabs })), jsxRuntimeExports.jsxs("div", { "aria-labelledby": "".concat(activeFile, "-").concat(activeFileUniqueId, "-tab"), className: classNames("code-editor", [editorClassName]), id: "".concat(activeFile, "-").concat(activeFileUniqueId, "-tab-panel"), role: "tabpanel", children: [jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: code, editorState: editorState, extensions: extensions, extensionsKeymap: extensionsKeymap, filePath: activeFile, initMode: initMode || sandpack.initMode, onCodeUpdate: function (newCode) { var _a; return handleCodeUpdate(newCode, (_a = sandpack.autoReload) !== null && _a !== void 0 ? _a : true); }, readOnly: readOnly || readOnlyFile, showInlineErrors: showInlineErrors, showLineNumbers: showLineNumbers, showReadOnly: showReadOnly, wrapContent: wrapContent }, activeFile), showRunButton && (!sandpack.autoReload || status === "idle") ? (jsxRuntimeExports.jsx(RunButton$1, {})) : null] })] })));
+    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor", [className]) }, props, { children: [shouldShowTabs && (jsxRuntimeExports.jsx(FileTabs, { activeFileUniqueId: activeFileUniqueId, closableTabs: closableTabs })), jsxRuntimeExports.jsxs("div", { "aria-labelledby": "".concat(activeFile, "-").concat(activeFileUniqueId, "-tab"), className: classNames("code-editor", [editorClassName]), id: "".concat(activeFile, "-").concat(activeFileUniqueId, "-tab-panel"), role: "tabpanel", children: [jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: code, editorState: editorState, extensions: extensions, extensionsKeymap: extensionsKeymap, filePath: activeFile, initMode: initMode || sandpack.initMode, onCodeUpdate: function (newCode) { var _a; return handleCodeUpdate(newCode, (_a = sandpack.autoReload) !== null && _a !== undefined ? _a : true); }, readOnly: readOnly || readOnlyFile, showInlineErrors: showInlineErrors, showLineNumbers: showLineNumbers, showReadOnly: showReadOnly, wrapContent: wrapContent }, activeFile), showRunButton && (!sandpack.autoReload || status === "idle") ? (jsxRuntimeExports.jsx(RunButton$1, {})) : null] })] })));
 });
 
 reactExports.forwardRef(function (_a, ref) {
@@ -30004,9 +30016,9 @@ reactExports.forwardRef(function (_a, ref) {
     var sandpack = useSandpack().sandpack;
     var code = useActiveCode().code;
     var classNames = useClassNames();
-    var shouldShowTabs = showTabs !== null && showTabs !== void 0 ? showTabs : sandpack.visibleFiles.length > 1;
+    var shouldShowTabs = showTabs !== null && showTabs !== undefined ? showTabs : sandpack.visibleFiles.length > 1;
     var activeFileUniqueId = useSandpackId();
-    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor-viewer") }, props, { children: [shouldShowTabs ? (jsxRuntimeExports.jsx(FileTabs, { activeFileUniqueId: activeFileUniqueId })) : null, jsxRuntimeExports.jsx("div", { "aria-labelledby": "".concat(sandpack.activeFile, "-").concat(activeFileUniqueId, "-tab"), className: classNames("code-editor", [editorClassName]), id: "".concat(sandpack.activeFile, "-").concat(activeFileUniqueId, "-tab-panel"), role: "tabpanel", children: jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: propCode !== null && propCode !== void 0 ? propCode : code, decorators: decorators, filePath: sandpack.activeFile, initMode: initMode || sandpack.initMode, showLineNumbers: showLineNumbers, showReadOnly: false, wrapContent: wrapContent, readOnly: true }) }), sandpack.status === "idle" ? jsxRuntimeExports.jsx(RunButton$1, {}) : null] })));
+    return (jsxRuntimeExports.jsxs(SandpackStack, __assign({ className: classNames("editor-viewer") }, props, { children: [shouldShowTabs ? (jsxRuntimeExports.jsx(FileTabs, { activeFileUniqueId: activeFileUniqueId })) : null, jsxRuntimeExports.jsx("div", { "aria-labelledby": "".concat(sandpack.activeFile, "-").concat(activeFileUniqueId, "-tab"), className: classNames("code-editor", [editorClassName]), id: "".concat(sandpack.activeFile, "-").concat(activeFileUniqueId, "-tab-panel"), role: "tabpanel", children: jsxRuntimeExports.jsx(CodeMirror, { ref: ref, additionalLanguages: additionalLanguages, code: propCode !== null && propCode !== undefined ? propCode : code, decorators: decorators, filePath: sandpack.activeFile, initMode: initMode || sandpack.initMode, showLineNumbers: showLineNumbers, showReadOnly: false, wrapContent: wrapContent, readOnly: true }) }), sandpack.status === "idle" ? jsxRuntimeExports.jsx(RunButton$1, {}) : null] })));
 });
 
 var _a$4, _b;
@@ -30062,7 +30074,7 @@ var useErrorMessage = function () {
     var _a;
     var sandpack = useSandpack().sandpack;
     var error = sandpack.error;
-    return (_a = error === null || error === void 0 ? void 0 : error.message) !== null && _a !== void 0 ? _a : null;
+    return (_a = error === null || error === undefined ? undefined : error.message) !== null && _a !== undefined ? _a : null;
 };
 
 var FADE_ANIMATION_DURATION = 200;
@@ -30183,15 +30195,15 @@ var mapProgressMessage = function (originalMessage, firstTotalPending) {
         case "starting_command":
             return "[3/3] Starting command";
         case "command_running":
-            return "[3/3] Running \"".concat((_a = originalMessage.command) === null || _a === void 0 ? void 0 : _a.trim(), "\"");
+            return "[3/3] Running \"".concat((_a = originalMessage.command) === null || _a === undefined ? undefined : _a.trim(), "\"");
     }
 };
 var useSandpackPreviewProgress = function (props) {
     var _a = reactExports.useState(false), isReady = _a[0], setIsReady = _a[1];
     var _b = reactExports.useState(), totalDependencies = _b[0], setTotalDependencies = _b[1];
     var _c = reactExports.useState(null), loadingMessage = _c[0], setLoadingMessage = _c[1];
-    var timeout = props === null || props === void 0 ? void 0 : props.timeout;
-    var clientId = props === null || props === void 0 ? void 0 : props.clientId;
+    var timeout = props === null || props === undefined ? undefined : props.timeout;
+    var clientId = props === null || props === undefined ? undefined : props.clientId;
     var listen = useSandpack().listen;
     reactExports.useEffect(function () {
         var timer;
@@ -30243,7 +30255,7 @@ var useSandpackPreviewProgress = function (props) {
 
 var MAX_MESSAGE_COUNT$1 = 400 * 2;
 var useSandpackShellStdout = function (_a) {
-    var clientId = _a.clientId, _b = _a.maxMessageCount, maxMessageCount = _b === void 0 ? MAX_MESSAGE_COUNT$1 : _b; _a.resetOnPreviewRestart;
+    var clientId = _a.clientId, _b = _a.maxMessageCount, maxMessageCount = _b === undefined ? MAX_MESSAGE_COUNT$1 : _b; _a.resetOnPreviewRestart;
     var _d = reactExports.useState([]), logs = _d[0], setLogs = _d[1];
     var listen = useSandpack().listen;
     reactExports.useEffect(function () {
@@ -30294,8 +30306,8 @@ var ErrorOverlay = function (props) {
     if (!errorMessage && !children) {
         return null;
     }
-    var isSandpackBundlerError = errorMessage === null || errorMessage === void 0 ? void 0 : errorMessage.startsWith("[sandpack-client]");
-    var privateDependencyError = errorMessage === null || errorMessage === void 0 ? void 0 : errorMessage.includes("NPM_REGISTRY_UNAUTHENTICATED_REQUEST");
+    var isSandpackBundlerError = errorMessage === null || errorMessage === undefined ? undefined : errorMessage.startsWith("[sandpack-client]");
+    var privateDependencyError = errorMessage === null || errorMessage === undefined ? undefined : errorMessage.includes("NPM_REGISTRY_UNAUTHENTICATED_REQUEST");
     var onSignIn = function () {
         if (teamId) {
             dispatch({ type: "sign-in", teamId: teamId });
@@ -30352,7 +30364,7 @@ var ErrorOverlay = function (props) {
  * @return {Array} The parsed input.
  */
 function ansiToJSON(input, use_classes) {
-    if (use_classes === void 0) { use_classes = false; }
+    if (use_classes === undefined) { use_classes = false; }
     input = escapeCarriageExports.escapeCarriageReturn(fixBackspace(input));
     return Anser.ansiToJson(input, {
         json: true,
@@ -30464,7 +30476,7 @@ function convertBundleIntoReact(linkify, useClasses, bundle, key) {
 }
 function Ansi(props) {
     var className = props.className, useClasses = props.useClasses, children = props.children, linkify = props.linkify;
-    return reactExports.createElement("code", { className: className }, ansiToJSON(children !== null && children !== void 0 ? children : "", useClasses !== null && useClasses !== void 0 ? useClasses : false).map(convertBundleIntoReact.bind(null, linkify !== null && linkify !== void 0 ? linkify : false, useClasses !== null && useClasses !== void 0 ? useClasses : false)));
+    return reactExports.createElement("code", { className: className }, ansiToJSON(children !== null && children !== undefined ? children : "", useClasses !== null && useClasses !== undefined ? useClasses : false).map(convertBundleIntoReact.bind(null, linkify !== null && linkify !== undefined ? linkify : false, useClasses !== null && useClasses !== undefined ? useClasses : false)));
 }
 // This is copied from the Jupyter Classic source code
 // notebook/static/base/js/utils.js to handle \b in a way
@@ -30536,13 +30548,13 @@ var UnstyledOpenInCodeSandboxButton = function (props) {
 };
 var ExportToWorkspaceButton = function (_a) {
     var children = _a.children, state = _a.state, props = __rest(_a, ["children", "state"]);
-    var submit = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var submit = function () { return __awaiter(undefined, undefined, undefined, function () {
         var normalizedFiles, response, data;
         var _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    if (!((_a = state.exportOptions) === null || _a === void 0 ? void 0 : _a.apiToken)) {
+                    if (!((_a = state.exportOptions) === null || _a === undefined ? undefined : _a.apiToken)) {
                         throw new Error("Missing `apiToken` property");
                     }
                     normalizedFiles = Object.keys(state.files).reduce(function (prev, next) {
@@ -30600,13 +30612,13 @@ var RegularExportButton = function (_a) {
      * This is a safe limit to avoid too long requests (401),
      * as all parameters are attached in the URL
      */
-    if (((_d = (_c = (_b = paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.get) === null || _b === void 0 ? void 0 : _b.call(paramsValues, "parameters")) === null || _c === void 0 ? void 0 : _c.length) !== null && _d !== void 0 ? _d : 0) > 1500) {
-        return (jsxRuntimeExports.jsxs("button", __assign({ onClick: function () { var _a; return (_a = formRef.current) === null || _a === void 0 ? void 0 : _a.submit(); }, title: "Open in CodeSandbox", type: "button" }, props, { children: [jsxRuntimeExports.jsxs("form", { ref: formRef, action: CSB_URL, method: "POST", style: { visibility: "hidden" }, target: "_blank", children: [jsxRuntimeExports.jsx("input", { name: "environment", type: "hidden", value: state.environment === "node" ? "server" : state.environment }), Array.from(paramsValues, function (_a) {
+    if (((_d = (_c = (_b = paramsValues === null || paramsValues === undefined ? undefined : paramsValues.get) === null || _b === undefined ? undefined : _b.call(paramsValues, "parameters")) === null || _c === undefined ? undefined : _c.length) !== null && _d !== undefined ? _d : 0) > 1500) {
+        return (jsxRuntimeExports.jsxs("button", __assign({ onClick: function () { var _a; return (_a = formRef.current) === null || _a === undefined ? undefined : _a.submit(); }, title: "Open in CodeSandbox", type: "button" }, props, { children: [jsxRuntimeExports.jsxs("form", { ref: formRef, action: CSB_URL, method: "POST", style: { visibility: "hidden" }, target: "_blank", children: [jsxRuntimeExports.jsx("input", { name: "environment", type: "hidden", value: state.environment === "node" ? "server" : state.environment }), Array.from(paramsValues, function (_a) {
                             var key = _a[0], value = _a[1];
                             return (jsxRuntimeExports.jsx("input", { name: key, type: "hidden", value: value }, key));
                         })] }), children] })));
     }
-    return (jsxRuntimeExports.jsx("a", __assign({ href: "".concat(CSB_URL, "?").concat(paramsValues === null || paramsValues === void 0 ? void 0 : paramsValues.toString(), "&environment=").concat(state.environment === "node" ? "server" : state.environment), rel: "noreferrer noopener", target: "_blank", title: "Open in CodeSandbox" }, props, { children: children })));
+    return (jsxRuntimeExports.jsx("a", __assign({ href: "".concat(CSB_URL, "?").concat(paramsValues === null || paramsValues === undefined ? undefined : paramsValues.toString(), "&environment=").concat(state.environment === "node" ? "server" : state.environment), rel: "noreferrer noopener", target: "_blank", title: "Open in CodeSandbox" }, props, { children: children })));
 };
 
 var OpenInCodeSandboxButton = function () {
@@ -30701,7 +30713,7 @@ var LoadingOverlay = function (_a) {
     var stdoutData = useSandpackShellStdout({ clientId: clientId }).logs;
     reactExports.useEffect(function () {
         var timer;
-        if (progressMessage === null || progressMessage === void 0 ? void 0 : progressMessage.includes("Running")) {
+        if (progressMessage === null || progressMessage === undefined ? undefined : progressMessage.includes("Running")) {
             timer = setTimeout(function () {
                 setShouldShowStdout(true);
             }, 3000);
@@ -30860,7 +30872,7 @@ var Navigator = function (_a) {
     var clientId = _a.clientId, onURLChange = _a.onURLChange, className = _a.className, startRoute = _a.startRoute, props = __rest(_a, ["clientId", "onURLChange", "className", "startRoute"]);
     var _c = reactExports.useState(""), baseUrl = _c[0], setBaseUrl = _c[1];
     var _d = useSandpack(), sandpack = _d.sandpack, dispatch = _d.dispatch, listen = _d.listen;
-    var _e = reactExports.useState((_b = startRoute !== null && startRoute !== void 0 ? startRoute : sandpack.startRoute) !== null && _b !== void 0 ? _b : "/"), relativeUrl = _e[0], setRelativeUrl = _e[1];
+    var _e = reactExports.useState((_b = startRoute !== null && startRoute !== undefined ? startRoute : sandpack.startRoute) !== null && _b !== undefined ? _b : "/"), relativeUrl = _e[0], setRelativeUrl = _e[1];
     var _f = reactExports.useState(false), backEnabled = _f[0], setBackEnabled = _f[1];
     var _g = reactExports.useState(false), forwardEnabled = _g[0], setForwardEnabled = _g[1];
     var classNames = useClassNames();
@@ -30954,7 +30966,7 @@ var previewActionsClassName$1 = css({
     gap: "$space$2",
 });
 var SandpackPreview = reactExports.forwardRef(function (_a, ref) {
-    var _b = _a.showNavigator, showNavigator = _b === void 0 ? false : _b, _c = _a.showRefreshButton, showRefreshButton = _c === void 0 ? true : _c, _d = _a.showOpenInCodeSandbox, showOpenInCodeSandbox = _d === void 0 ? true : _d, _e = _a.showSandpackErrorOverlay, showSandpackErrorOverlay = _e === void 0 ? true : _e; _a.showOpenNewtab; var _g = _a.showRestartButton, showRestartButton = _g === void 0 ? true : _g, _h = _a.actionsChildren, actionsChildren = _h === void 0 ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}) : _h, children = _a.children, className = _a.className, _j = _a.startRoute, startRoute = _j === void 0 ? "/" : _j, props = __rest(_a, ["showNavigator", "showRefreshButton", "showOpenInCodeSandbox", "showSandpackErrorOverlay", "showOpenNewtab", "showRestartButton", "actionsChildren", "children", "className", "startRoute"]);
+    var _b = _a.showNavigator, showNavigator = _b === undefined ? false : _b, _c = _a.showRefreshButton, showRefreshButton = _c === undefined ? true : _c, _d = _a.showOpenInCodeSandbox, showOpenInCodeSandbox = _d === undefined ? true : _d, _e = _a.showSandpackErrorOverlay, showSandpackErrorOverlay = _e === undefined ? true : _e; _a.showOpenNewtab; var _g = _a.showRestartButton, showRestartButton = _g === undefined ? true : _g, _h = _a.actionsChildren, actionsChildren = _h === undefined ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}) : _h, children = _a.children, className = _a.className, _j = _a.startRoute, startRoute = _j === undefined ? "/" : _j, props = __rest(_a, ["showNavigator", "showRefreshButton", "showOpenInCodeSandbox", "showSandpackErrorOverlay", "showOpenNewtab", "showRestartButton", "actionsChildren", "children", "className", "startRoute"]);
     var _k = useSandpackClient({ startRoute: startRoute }), sandpack = _k.sandpack, listen = _k.listen, iframe = _k.iframe, getClient = _k.getClient, clientId = _k.clientId, dispatch = _k.dispatch;
     var _l = reactExports.useState(null), iframeComputedHeight = _l[0], setComputedAutoHeight = _l[1];
     var status = sandpack.status;
@@ -31119,7 +31131,7 @@ var Tests = function (_a) {
 var getTests = function (block) {
     var _a;
     var _b, _c;
-    return (_a = Object.values((_b = block.tests) !== null && _b !== void 0 ? _b : {})).concat.apply(_a, Object.values((_c = block.describes) !== null && _c !== void 0 ? _c : {}).map(getTests));
+    return (_a = Object.values((_b = block.tests) !== null && _b !== undefined ? _b : {})).concat.apply(_a, Object.values((_c = block.describes) !== null && _c !== undefined ? _c : {}).map(getTests));
 };
 var getFailingTests = function (block) {
     return getTests(block).filter(function (t) { return t.status === "fail"; });
@@ -31150,8 +31162,8 @@ var getAllSuiteResults = function (specs) {
     return specs
         .filter(function (spec) {
         var _a, _b;
-        return Object.values((_a = spec.describes) !== null && _a !== void 0 ? _a : {}).length > 0 ||
-            Object.values((_b = spec.tests) !== null && _b !== void 0 ? _b : {}).length > 0;
+        return Object.values((_a = spec.describes) !== null && _a !== undefined ? _a : {}).length > 0 ||
+            Object.values((_b = spec.tests) !== null && _b !== undefined ? _b : {}).length > 0;
     })
         .map(getSpecTestResults)
         .reduce(function (acc, stats) {
@@ -31167,8 +31179,8 @@ var getDuration = function (specs) {
 };
 var isEmpty = function (block) {
     var _a, _b;
-    return Object.values((_a = block.describes) !== null && _a !== void 0 ? _a : {}).length === 0 &&
-        Object.values((_b = block.tests) !== null && _b !== void 0 ? _b : {}).length === 0;
+    return Object.values((_a = block.describes) !== null && _a !== undefined ? _a : {}).length === 0 &&
+        Object.values((_b = block.tests) !== null && _b !== undefined ? _b : {}).length === 0;
 };
 var splitTail = function (as) {
     var lastIndex = as.length - 1;
@@ -31201,8 +31213,8 @@ var Describes = function (_a) {
             if (isEmpty(describe)) {
                 return null;
             }
-            var tests = Object.values((_a = describe.tests) !== null && _a !== void 0 ? _a : {});
-            var describes = Object.values((_b = describe.describes) !== null && _b !== void 0 ? _b : {});
+            var tests = Object.values((_a = describe.tests) !== null && _a !== undefined ? _a : {});
+            var describes = Object.values((_b = describe.describes) !== null && _b !== undefined ? _b : {});
             return (jsxRuntimeExports.jsxs("div", { className: classNames("test-describe", [containerClassName$3]), children: [jsxRuntimeExports.jsx("div", { className: classNames("test-name", [nameClassName]), children: describe.name }), jsxRuntimeExports.jsx(Tests, { tests: tests }), jsxRuntimeExports.jsx(Describes, { describes: describes })] }, describe.name));
         }) }));
 };
@@ -31230,7 +31242,7 @@ var formatDiffMessage = function (error, path) {
     var _a, _b;
     var finalMessage = "";
     if (error.matcherResult) {
-        finalMessage = "<span>".concat(escapeHtml((_a = error.message) !== null && _a !== void 0 ? _a : "")
+        finalMessage = "<span>".concat(escapeHtml((_a = error.message) !== null && _a !== undefined ? _a : "")
             .replace(/(expected)/m, "<span class=\"".concat(passTextClassName, "\">$1</span>"))
             .replace(/(received)/m, "<span class=\"".concat(failTextClassName, "\">$1</span>"))
             .replace(/(Difference:)/m, "<span>$1</span>")
@@ -31240,7 +31252,7 @@ var formatDiffMessage = function (error, path) {
             .replace(/^(\+.*)/gm, "<span class=\"".concat(passTextClassName, "\">$1</span>")), "</span>");
     }
     else {
-        finalMessage = escapeHtml((_b = error.message) !== null && _b !== void 0 ? _b : "");
+        finalMessage = escapeHtml((_b = error.message) !== null && _b !== undefined ? _b : "");
     }
     if (error.mappedErrors &&
         error.mappedErrors[0] &&
@@ -31432,7 +31444,7 @@ var INITIAL_STATE = {
     specsCount: 0,
 };
 var SandpackTests = function (_a) {
-    var _b = _a.verbose, verbose = _b === void 0 ? false : _b, _c = _a.watchMode, watchMode = _c === void 0 ? true : _c, style = _a.style, className = _a.className, onComplete = _a.onComplete, actionsChildren = _a.actionsChildren, _d = _a.showVerboseButton, showVerboseButton = _d === void 0 ? true : _d, _e = _a.showWatchButton, showWatchButton = _e === void 0 ? true : _e, _f = _a.hideTestsAndSupressLogs, hideTestsAndSupressLogs = _f === void 0 ? false : _f, props = __rest(_a, ["verbose", "watchMode", "style", "className", "onComplete", "actionsChildren", "showVerboseButton", "showWatchButton", "hideTestsAndSupressLogs"]);
+    var _b = _a.verbose, verbose = _b === undefined ? false : _b, _c = _a.watchMode, watchMode = _c === undefined ? true : _c, style = _a.style, className = _a.className, onComplete = _a.onComplete, actionsChildren = _a.actionsChildren, _d = _a.showVerboseButton, showVerboseButton = _d === undefined ? true : _d, _e = _a.showWatchButton, showWatchButton = _e === undefined ? true : _e, _f = _a.hideTestsAndSupressLogs, hideTestsAndSupressLogs = _f === undefined ? false : _f, props = __rest(_a, ["verbose", "watchMode", "style", "className", "onComplete", "actionsChildren", "showVerboseButton", "showWatchButton", "hideTestsAndSupressLogs"]);
     var theme = useSandpackTheme();
     var _g = useSandpackClient(), getClient = _g.getClient, iframe = _g.iframe, listen = _g.listen, sandpack = _g.sandpack;
     var _h = reactExports.useState(__assign(__assign({}, INITIAL_STATE), { verbose: verbose, watchMode: watchMode })), state = _h[0], setState = _h[1];
@@ -31748,7 +31760,7 @@ var transformers = {
         return NaN;
     },
     "[[undefined]]": function () {
-        return void 0;
+        return undefined;
     },
     "[[Date]]": function (val) {
         var date = new Date();
@@ -31832,7 +31844,7 @@ var formatSymbols = function (message) {
         return transform(message.data);
     }
     else if (typeof message == "object" &&
-        ((_a = message.constructor) === null || _a === void 0 ? void 0 : _a.name) === "NodeList") {
+        ((_a = message.constructor) === null || _a === undefined ? undefined : _a.name) === "NodeList") {
         var NodeList_1 = {};
         Object.entries(message).forEach(function (_a) {
             var key = _a[0], value = _a[1];
@@ -31872,7 +31884,7 @@ var objectToString = function (output, references, level) {
 };
 var fromConsoleToString = function (message, references, level) {
     var _a;
-    if (level === void 0) { level = 0; }
+    if (level === undefined) { level = 0; }
     try {
         var output_1 = formatSymbols(message);
         if (Array.isArray(output_1)) {
@@ -32066,7 +32078,7 @@ var Header = function (_a) {
  * @category Hooks
  */
 var useSandpackConsole = function (_a) {
-    var clientId = _a.clientId, _b = _a.maxMessageCount, maxMessageCount = _b === void 0 ? MAX_MESSAGE_COUNT : _b, _c = _a.showSyntaxError, showSyntaxError = _c === void 0 ? false : _c, _d = _a.resetOnPreviewRestart, resetOnPreviewRestart = _d === void 0 ? false : _d;
+    var clientId = _a.clientId, _b = _a.maxMessageCount, maxMessageCount = _b === undefined ? MAX_MESSAGE_COUNT : _b, _c = _a.showSyntaxError, showSyntaxError = _c === undefined ? false : _c, _d = _a.resetOnPreviewRestart, resetOnPreviewRestart = _d === undefined ? false : _d;
     var _e = reactExports.useState([]), logs = _e[0], setLogs = _e[1];
     var listen = useSandpack().listen;
     reactExports.useEffect(function () {
@@ -32088,14 +32100,14 @@ var useSandpackConsole = function (_a) {
                     ? payloadLog
                     : payloadLog.filter(function (messageItem) {
                         var _a, _b, _c;
-                        var messagesWithoutSyntaxErrors = (_c = (_b = (_a = messageItem === null || messageItem === void 0 ? void 0 : messageItem.data) === null || _a === void 0 ? void 0 : _a.filter) === null || _b === void 0 ? void 0 : _b.call(_a, function (dataItem) {
+                        var messagesWithoutSyntaxErrors = (_c = (_b = (_a = messageItem === null || messageItem === undefined ? undefined : messageItem.data) === null || _a === undefined ? undefined : _a.filter) === null || _b === undefined ? undefined : _b.call(_a, function (dataItem) {
                             if (typeof dataItem !== "string")
                                 return true;
                             var matches = SYNTAX_ERROR_PATTERN.filter(function (lookFor) {
                                 return dataItem.startsWith(lookFor);
                             });
                             return matches.length === 0;
-                        })) !== null && _c !== void 0 ? _c : [];
+                        })) !== null && _c !== undefined ? _c : [];
                         return messagesWithoutSyntaxErrors.length > 0;
                     });
                 if (!logsMessages_1)
@@ -32124,7 +32136,7 @@ var useSandpackConsole = function (_a) {
  */
 var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
     var _b;
-    var _c = _a.showHeader, showHeader = _c === void 0 ? true : _c, _d = _a.showSyntaxError, showSyntaxError = _d === void 0 ? false : _d, maxMessageCount = _a.maxMessageCount, onLogsChange = _a.onLogsChange, className = _a.className; _a.showSetupProgress; var _f = _a.showResetConsoleButton, showResetConsoleButton = _f === void 0 ? true : _f, _g = _a.showRestartButton, showRestartButton = _g === void 0 ? true : _g, _h = _a.resetOnPreviewRestart, resetOnPreviewRestart = _h === void 0 ? false : _h, _j = _a.actionsChildren, actionsChildren = _j === void 0 ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}) : _j, _k = _a.standalone, standalone = _k === void 0 ? false : _k, props = __rest(_a, ["showHeader", "showSyntaxError", "maxMessageCount", "onLogsChange", "className", "showSetupProgress", "showResetConsoleButton", "showRestartButton", "resetOnPreviewRestart", "actionsChildren", "standalone"]);
+    var _c = _a.showHeader, showHeader = _c === undefined ? true : _c, _d = _a.showSyntaxError, showSyntaxError = _d === undefined ? false : _d, maxMessageCount = _a.maxMessageCount, onLogsChange = _a.onLogsChange, className = _a.className; _a.showSetupProgress; var _f = _a.showResetConsoleButton, showResetConsoleButton = _f === undefined ? true : _f, _g = _a.showRestartButton, showRestartButton = _g === undefined ? true : _g, _h = _a.resetOnPreviewRestart, resetOnPreviewRestart = _h === undefined ? false : _h, _j = _a.actionsChildren, actionsChildren = _j === undefined ? jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}) : _j, _k = _a.standalone, standalone = _k === undefined ? false : _k, props = __rest(_a, ["showHeader", "showSyntaxError", "maxMessageCount", "onLogsChange", "className", "showSetupProgress", "showResetConsoleButton", "showRestartButton", "resetOnPreviewRestart", "actionsChildren", "standalone"]);
     var environment = useSandpack().sandpack.environment;
     var _l = useSandpackClient(), iframe = _l.iframe, internalClientId = _l.clientId;
     var restart = useSandpackShell().restart;
@@ -32143,7 +32155,7 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
     }), stdoutData = _p.logs, resetStdout = _p.reset;
     var wrapperRef = reactExports.useRef(null);
     reactExports.useEffect(function () {
-        onLogsChange === null || onLogsChange === void 0 ? void 0 : onLogsChange(consoleData);
+        onLogsChange === null || onLogsChange === undefined ? undefined : onLogsChange(consoleData);
         if (wrapperRef.current) {
             wrapperRef.current.scrollTop = wrapperRef.current.scrollHeight;
         }
@@ -32204,11 +32216,11 @@ var SandpackConsole = reactExports.forwardRef(function (_a, ref) {
 var Sandpack$2 = function (_a) {
     var _b, _c, _d, _e, _f, _g, _h, _j;
     var options = _a.options, template = _a.template, customSetup = _a.customSetup, files = _a.files, theme = _a.theme, props = __rest(_a, ["options", "template", "customSetup", "files", "theme"]);
-    options !== null && options !== void 0 ? options : (options = {});
-    (_b = options.resizablePanels) !== null && _b !== void 0 ? _b : (options.resizablePanels = true);
-    (_c = options.editorWidthPercentage) !== null && _c !== void 0 ? _c : (options.editorWidthPercentage = 50);
-    (_d = options.showConsole) !== null && _d !== void 0 ? _d : (options.showConsole = false);
-    var rtlLayout = (_e = options === null || options === void 0 ? void 0 : options.rtl) !== null && _e !== void 0 ? _e : false;
+    options !== null && options !== undefined ? options : (options = {});
+    (_b = options.resizablePanels) !== null && _b !== undefined ? _b : (options.resizablePanels = true);
+    (_c = options.editorWidthPercentage) !== null && _c !== undefined ? _c : (options.editorWidthPercentage = 50);
+    (_d = options.showConsole) !== null && _d !== undefined ? _d : (options.showConsole = false);
+    var rtlLayout = (_e = options === null || options === undefined ? undefined : options.rtl) !== null && _e !== undefined ? _e : false;
     var codeEditorOptions = {
         showTabs: options.showTabs,
         showLineNumbers: options.showLineNumbers,
@@ -32216,11 +32228,11 @@ var Sandpack$2 = function (_a) {
         wrapContent: options.wrapContent,
         closableTabs: options.closableTabs,
         initMode: options.initMode,
-        extensions: (_f = options.codeEditor) === null || _f === void 0 ? void 0 : _f.extensions,
-        extensionsKeymap: (_g = options.codeEditor) === null || _g === void 0 ? void 0 : _g.extensionsKeymap,
+        extensions: (_f = options.codeEditor) === null || _f === undefined ? undefined : _f.extensions,
+        extensionsKeymap: (_g = options.codeEditor) === null || _g === undefined ? undefined : _g.extensionsKeymap,
         readOnly: options.readOnly,
         showReadOnly: options.showReadOnly,
-        additionalLanguages: (_h = options.codeEditor) === null || _h === void 0 ? void 0 : _h.additionalLanguages,
+        additionalLanguages: (_h = options.codeEditor) === null || _h === undefined ? undefined : _h.additionalLanguages,
     };
     var providerOptions = {
         /**
@@ -32251,9 +32263,9 @@ var Sandpack$2 = function (_a) {
     var _l = reactExports.useState(0), counter = _l[0], setCounter = _l[1];
     var hasRightColumn = options.showConsole || options.showConsoleButton;
     /* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
-    var templateFiles = (_j = SANDBOX_TEMPLATES[template]) !== null && _j !== void 0 ? _j : {};
-    var mode = ((options === null || options === void 0 ? void 0 : options.layout)
-        ? options === null || options === void 0 ? void 0 : options.layout
+    var templateFiles = (_j = SANDBOX_TEMPLATES[template]) !== null && _j !== undefined ? _j : {};
+    var mode = ((options === null || options === undefined ? undefined : options.layout)
+        ? options === null || options === undefined ? undefined : options.layout
         : "mode" in templateFiles
             ? templateFiles.mode
             : "preview");
@@ -32307,7 +32319,7 @@ var Sandpack$2 = function (_a) {
     };
     var stopDragging = function () {
         var _a;
-        var container = (_a = dragEventTargetRef.current) === null || _a === void 0 ? void 0 : _a.parentElement;
+        var container = (_a = dragEventTargetRef.current) === null || _a === undefined ? undefined : _a.parentElement;
         if (!container)
             return;
         container.querySelectorAll(".".concat(THEME_PREFIX, "-stack")).forEach(function (item) {
@@ -32316,7 +32328,7 @@ var Sandpack$2 = function (_a) {
         dragEventTargetRef.current = null;
     };
     reactExports.useEffect(function () {
-        if (!(options === null || options === void 0 ? void 0 : options.resizablePanels))
+        if (!(options === null || options === undefined ? undefined : options.resizablePanels))
             return;
         document.body.addEventListener("mousemove", onDragMove);
         document.body.addEventListener("mouseup", stopDragging);
@@ -32327,7 +32339,7 @@ var Sandpack$2 = function (_a) {
     }, [options]);
     reactExports.useEffect(function () {
         var _a;
-        setConsoleVisibility((_a = options === null || options === void 0 ? void 0 : options.showConsole) !== null && _a !== void 0 ? _a : false);
+        setConsoleVisibility((_a = options === null || options === undefined ? undefined : options.showConsole) !== null && _a !== undefined ? _a : false);
     }, [options.showConsole]);
     var rightColumnProps = hasRightColumn
         ? { className: THEME_PREFIX + "-preset-column", style: rightColumnStyle }
