@@ -3,7 +3,7 @@ import langJavascript from 'highlight.js/lib/languages/javascript'
 import langXml from 'highlight.js/lib/languages/xml'
 
 import { useEffect, useRef } from 'react'
-import type { MouseEventHandler, MutableRefObject } from 'react'
+import type { MouseEventHandler, RefObject } from 'react'
 
 type CodeExampleProps = {
   code: string
@@ -21,9 +21,9 @@ export function CodeExample({
   withoutCodepen,
   ...props
 }: CodeExampleProps) {
-  const codeRef = useRef() as MutableRefObject<HTMLElement>
-  const codepenForm = useRef() as MutableRefObject<HTMLFormElement>
-  const codepenFormData = useRef() as MutableRefObject<HTMLInputElement>
+  const codeRef = useRef(null) as RefObject<HTMLElement | null>
+  const codepenForm = useRef(null) as RefObject<HTMLFormElement | null>
+  const codepenFormData = useRef(null) as RefObject<HTMLInputElement | null>
 
   const isAsync = !!code.match(/(^|\n)\w.*await/)
 
@@ -67,8 +67,10 @@ export function CodeExample({
         codepenValue.js += `\n})()`
       }
       // submit form
-      codepenFormData.current.value = JSON.stringify(codepenValue)
-      codepenForm.current.submit()
+      if (codepenFormData.current && codepenForm.current) {
+        codepenFormData.current.value = JSON.stringify(codepenValue)
+        codepenForm.current.submit()
+      }
     }
   }
 

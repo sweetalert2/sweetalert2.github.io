@@ -26,9 +26,6 @@ function Recipe() {
           <a href="./sweetalert2-react-router.html">React Router example</a>
         </li>
         <li>
-          <a href="./sweetalert2-formik.html">Formik example</a>
-        </li>
-        <li>
           <a href="./three-buttons-dialog.html">Yes/No/Cancel Dialog</a>
         </li>
         <li>

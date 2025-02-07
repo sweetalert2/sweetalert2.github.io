@@ -17,7 +17,6 @@ export default defineConfig({
         'custom-icon': 'recipe-gallery/custom-icon.html',
         'sweetalert2-react': 'recipe-gallery/sweetalert2-react.html',
         'sweetalert2-react-router': 'recipe-gallery/sweetalert2-react-router.html',
-        'sweetalert2-formik': 'recipe-gallery/sweetalert2-formik.html',
         'three-buttons-dialog': 'recipe-gallery/three-buttons-dialog.html',
         'modal-with-iframe': 'recipe-gallery/modal-with-iframe.html',
         'draw-attention': 'recipe-gallery/draw-attention.html',
