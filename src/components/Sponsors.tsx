@@ -160,6 +160,20 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.xndoll.com" target="_blank" rel="noopener" aria-label="XNDOLL">
+            <img src="/images/sponsors/xndoll.png" alt="XNDOLL" />
+            <br />
+            XNDOLL
+          </a>
+        </div>
+        <div>
+          <a href="https://www.pidoll.com" target="_blank" rel="noopener" aria-label="PIDOLL">
+            <img src="/images/sponsors/pidoll.png" alt="PIDOLL" />
+            <br />
+            PIDOLL
+          </a>
+        </div>
+        <div>
           <a
             href="https://www.fantasywives.com/cheap-sex-dolls/"
             target="_blank"
