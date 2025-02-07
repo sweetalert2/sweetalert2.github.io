@@ -1,7 +1,7 @@
 @charset "UTF-8";@import url("https://fonts.googleapis.com/css?family=Montserrat");@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
 
-/*! @docsearch/css 3.8.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 3.8.3 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#5468ff;
   --docsearch-text-color:#1c1e21;
@@ -102,7 +102,15 @@ html[data-theme=dark] {
   padding: 0 0 2px;
   position: relative;
   top: -1px;
+  transition-duration: 0.1s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 20px;
+}
+@media (prefers-reduced-motion) {
+  .DocSearch-Button-Key {
+    transition: none;
+  }
 }
 .DocSearch-Button-Key--pressed {
   box-shadow: var(--docsearch-key-pressed-shadow);
@@ -314,6 +322,7 @@ html[data-theme=dark] {
   display: flex;
   padding-bottom: 4px;
   position: relative;
+  scroll-margin-top: 40px;
 }
 @media screen and (prefers-reduced-motion: reduce) {
   .DocSearch-Hit--deleting {
