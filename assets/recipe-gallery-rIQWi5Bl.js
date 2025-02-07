@@ -1,4 +1,4 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-DoPuDiwk.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-D_I6Q6h_.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -11,7 +11,6 @@ function Recipe() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./custom-icon.html", children: "Custom Icon" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-react.html", children: "React example" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-react-router.html", children: "React Router example" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-formik.html", children: "Formik example" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./three-buttons-dialog.html", children: "Yes/No/Cancel Dialog" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./modal-with-iframe.html", children: "Modal with iframe inside" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./draw-attention.html", children: "Draw Attention / Persistent Dialog" }) }),

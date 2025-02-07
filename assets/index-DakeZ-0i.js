@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-D5KPnIv2.js';
-import { S as SandpackClient } from './base-80a1f760-DveC9x_r.js';
-import { g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter, c as consoleHook } from './consoleHook-59e792cb-BSE6H9qg.js';
-import './index-DoPuDiwk.js';
+import { a as __extends, b as __awaiter, c as __generator, d as __assign, e as createError, n as nullthrows } from './Sandpack-6-rCqfsF.js';
+import { S as SandpackClient } from './base-80a1f760-BqbXDb2u.js';
+import { g as getMessageFromError, r as readBuffer, f as findStartScriptPackageJson, w as writeBuffer, a as fromBundlerFilesToFS, b as generateRandomId, E as EventEmitter, c as consoleHook } from './consoleHook-59e792cb-55VjjhM8.js';
+import './index-D_I6Q6h_.js';
 
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -144,7 +144,7 @@ var require_cuid = __commonJS({
 var require_createDeferredExecutor = __commonJS({
   "../../node_modules/.pnpm/@open-draft+deferred-promise@2.1.0/node_modules/@open-draft/deferred-promise/build/createDeferredExecutor.js"(exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.createDeferredExecutor = undefined;
+    exports.createDeferredExecutor = void 0;
     function createDeferredExecutor() {
       const executor = (resolve, reject) => {
         executor.state = "pending";
@@ -179,7 +179,7 @@ var require_createDeferredExecutor = __commonJS({
 var require_DeferredPromise = __commonJS({
   "../../node_modules/.pnpm/@open-draft+deferred-promise@2.1.0/node_modules/@open-draft/deferred-promise/build/DeferredPromise.js"(exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.DeferredPromise = undefined;
+    exports.DeferredPromise = void 0;
     var createDeferredExecutor_1 = require_createDeferredExecutor();
     var DeferredPromise4 = class extends Promise {
       #executor;
@@ -225,7 +225,7 @@ var require_DeferredPromise = __commonJS({
 var require_build = __commonJS({
   "../../node_modules/.pnpm/@open-draft+deferred-promise@2.1.0/node_modules/@open-draft/deferred-promise/build/index.js"(exports) {
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === undefined)
+      if (k2 === void 0)
         k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -235,7 +235,7 @@ var require_build = __commonJS({
       }
       Object.defineProperty(o, k2, desc);
     } : function(o, m, k, k2) {
-      if (k2 === undefined)
+      if (k2 === void 0)
         k2 = k;
       o[k2] = m[k];
     });
@@ -254,7 +254,7 @@ var require_build = __commonJS({
 var require_MemoryLeakError = __commonJS({
   "../../node_modules/.pnpm/strict-event-emitter@0.4.3/node_modules/strict-event-emitter/lib/MemoryLeakError.js"(exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.MemoryLeakError = undefined;
+    exports.MemoryLeakError = void 0;
     var MemoryLeakError = class extends Error {
       emitter;
       type;
@@ -275,7 +275,7 @@ var require_MemoryLeakError = __commonJS({
 var require_Emitter = __commonJS({
   "../../node_modules/.pnpm/strict-event-emitter@0.4.3/node_modules/strict-event-emitter/lib/Emitter.js"(exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Emitter = undefined;
+    exports.Emitter = void 0;
     var MemoryLeakError_1 = require_MemoryLeakError();
     var _events, _maxListeners, _hasWarnedAboutPotentialMemortyLeak, _getListeners, getListeners_fn, _removeListener, removeListener_fn, _wrapOnceListener, wrapOnceListener_fn, _internalEmit, internalEmit_fn;
     var _Emitter = class {
@@ -284,9 +284,9 @@ var require_Emitter = __commonJS({
         __privateAdd(this, _removeListener);
         __privateAdd(this, _wrapOnceListener);
         __privateAdd(this, _internalEmit);
-        __privateAdd(this, _events, undefined);
-        __privateAdd(this, _maxListeners, undefined);
-        __privateAdd(this, _hasWarnedAboutPotentialMemortyLeak, undefined);
+        __privateAdd(this, _events, void 0);
+        __privateAdd(this, _maxListeners, void 0);
+        __privateAdd(this, _hasWarnedAboutPotentialMemortyLeak, void 0);
         __privateSet(this, _events, /* @__PURE__ */ new Map());
         __privateSet(this, _maxListeners, _Emitter.defaultMaxListeners);
         __privateSet(this, _hasWarnedAboutPotentialMemortyLeak, false);
@@ -411,7 +411,7 @@ var require_Emitter = __commonJS({
 var require_lib = __commonJS({
   "../../node_modules/.pnpm/strict-event-emitter@0.4.3/node_modules/strict-event-emitter/lib/index.js"(exports) {
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === undefined)
+      if (k2 === void 0)
         k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -421,7 +421,7 @@ var require_lib = __commonJS({
       }
       Object.defineProperty(o, k2, desc);
     } : function(o, m, k, k2) {
-      if (k2 === undefined)
+      if (k2 === void 0)
         k2 = k;
       o[k2] = m[k];
     });
@@ -674,7 +674,7 @@ var FileSystemApi = class {
     return response.data;
   }
   async writeFile(path, content, options) {
-    let encoding = undefined;
+    let encoding = void 0;
     let recursive = false;
     if (typeof options === "object") {
       encoding = options.encoding;
@@ -816,7 +816,7 @@ var ShellProcess = class {
     await this.channel.send("shell/exit", { id: this.id }).catch((error) => {
       throw new Error(format('Failed to kill shell with ID "%s"', this.id), { cause: error });
     });
-    this.id = undefined;
+    this.id = void 0;
   }
 };
 
@@ -981,7 +981,7 @@ var INJECT_MESSAGE_TYPE = "INJECT_AND_INVOKE";
 var PREVIEW_LOADED_MESSAGE_TYPE = "PREVIEW_LOADED";
 
 function loadPreviewIframe(iframe, url) {
-    return __awaiter(this, undefined, undefined, function () {
+    return __awaiter(this, void 0, void 0, function () {
         var contentWindow, TIME_OUT, MAX_MANY_TIRES, tries, timeout;
         return __generator(this, function (_a) {
             contentWindow = iframe.contentWindow;
@@ -1154,7 +1154,7 @@ var injectScriptToIframe = function (iframe, channelId) {
             code: "exports.activate = ".concat(code),
             scope: { channelId: channelId },
         };
-        (_b = iframe.contentWindow) === null || _b === undefined ? undefined : _b.postMessage(message, "*");
+        (_b = iframe.contentWindow) === null || _b === void 0 ? void 0 : _b.postMessage(message, "*");
     });
 };
 
@@ -1162,7 +1162,7 @@ var injectScriptToIframe = function (iframe, channelId) {
 var SandpackNode = /** @class */ (function (_super) {
     __extends(SandpackNode, _super);
     function SandpackNode(selector, sandboxInfo, options) {
-        if (options === undefined) { options = {}; }
+        if (options === void 0) { options = {}; }
         var _this = _super.call(this, selector, sandboxInfo, __assign(__assign({}, options), { bundlerURL: options.bundlerURL })) || this;
         _this._modulesCache = new Map();
         _this.messageChannelId = generateRandomId();
@@ -1181,7 +1181,7 @@ var SandpackNode = /** @class */ (function (_super) {
     }
     // Initialize nodebox, should only ever be called once
     SandpackNode.prototype._init = function (files) {
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.emulator.connect()];
@@ -1206,7 +1206,7 @@ var SandpackNode = /** @class */ (function (_super) {
      * It initializes the emulator and provide it with files, template and script to run
      */
     SandpackNode.prototype.compile = function (files) {
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var shellId, err_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -1255,7 +1255,7 @@ var SandpackNode = /** @class */ (function (_super) {
      * It creates a new shell and run the starting task
      */
     SandpackNode.prototype.createShellProcessFromTask = function (files) {
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var packageJsonContent;
             var _a;
             var _this = this;
@@ -1284,8 +1284,8 @@ var SandpackNode = /** @class */ (function (_super) {
                                     _this.dispatch({
                                         type: "shell/progress",
                                         data: __assign(__assign({}, data), { command: [
-                                                (_a = _this.emulatorCommand) === null || _a === undefined ? undefined : _a[0],
-                                                (_b = _this.emulatorCommand) === null || _b === undefined ? undefined : _b[1].join(" "),
+                                                (_a = _this.emulatorCommand) === null || _a === void 0 ? void 0 : _a[0],
+                                                (_b = _this.emulatorCommand) === null || _b === void 0 ? void 0 : _b[1].join(" "),
                                             ].join(" ") }),
                                     });
                                     _this.status = "installing-dependencies";
@@ -1309,7 +1309,7 @@ var SandpackNode = /** @class */ (function (_super) {
     };
     SandpackNode.prototype.createPreviewURLFromId = function (id) {
         var _a;
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var url;
             return __generator(this, function (_b) {
                 switch (_b.label) {
@@ -1318,7 +1318,7 @@ var SandpackNode = /** @class */ (function (_super) {
                         return [4 /*yield*/, this.emulator.preview.getByShellId(id)];
                     case 1:
                         url = (_b.sent()).url;
-                        this.iframePreviewUrl = url + ((_a = this.options.startRoute) !== null && _a !== undefined ? _a : "");
+                        this.iframePreviewUrl = url + ((_a = this.options.startRoute) !== null && _a !== void 0 ? _a : "");
                         return [2 /*return*/];
                 }
             });
@@ -1340,7 +1340,7 @@ var SandpackNode = /** @class */ (function (_super) {
             var element = document.querySelector(selector);
             nullthrows(element, "The element '".concat(selector, "' was not found"));
             this.iframe = document.createElement("iframe");
-            element === null || element === undefined ? undefined : element.appendChild(this.iframe);
+            element === null || element === void 0 ? void 0 : element.appendChild(this.iframe);
         }
         else {
             this.iframe = selector;
@@ -1354,10 +1354,10 @@ var SandpackNode = /** @class */ (function (_super) {
          */
         this.emulatorIframe = document.createElement("iframe");
         this.emulatorIframe.classList.add("sp-bridge-frame");
-        (_a = this.iframe.parentNode) === null || _a === undefined ? undefined : _a.appendChild(this.emulatorIframe);
+        (_a = this.iframe.parentNode) === null || _a === void 0 ? void 0 : _a.appendChild(this.emulatorIframe);
     };
     SandpackNode.prototype.setLocationURLIntoIFrame = function () {
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -1388,7 +1388,7 @@ var SandpackNode = /** @class */ (function (_super) {
         }
     };
     SandpackNode.prototype.globalListeners = function () {
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -1418,7 +1418,7 @@ var SandpackNode = /** @class */ (function (_super) {
                                 "vendor",
                                 ".config",
                                 ".vuepress",
-                            ], function (message) { return __awaiter(_this, undefined, undefined, function () {
+                            ], function (message) { return __awaiter(_this, void 0, void 0, function () {
                                 var event, path, type, _a, content, newContent, err_2;
                                 return __generator(this, function (_b) {
                                     switch (_b.label) {
@@ -1508,7 +1508,7 @@ var SandpackNode = /** @class */ (function (_super) {
      */
     SandpackNode.prototype.restartShellProcess = function () {
         var _a;
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -1521,7 +1521,7 @@ var SandpackNode = /** @class */ (function (_super) {
                     case 1:
                         // 2. Exit shell
                         _b.sent();
-                        (_a = this.iframe) === null || _a === undefined ? undefined : _a.removeAttribute("attr");
+                        (_a = this.iframe) === null || _a === void 0 ? void 0 : _a.removeAttribute("attr");
                         this.emulator.fs.rm("/node_modules/.vite", {
                             recursive: true,
                             force: true,
@@ -1544,7 +1544,7 @@ var SandpackNode = /** @class */ (function (_super) {
         /**
          * Update file changes
          */
-        if (((_a = this.emulatorShellProcess) === null || _a === undefined ? undefined : _a.state) === "running") {
+        if (((_a = this.emulatorShellProcess) === null || _a === void 0 ? void 0 : _a.state) === "running") {
             Object.entries(modules).forEach(function (_a) {
                 var key = _a[0], value = _a[1];
                 if (!_this._modulesCache.get(key) ||
@@ -1575,7 +1575,7 @@ var SandpackNode = /** @class */ (function (_super) {
     };
     SandpackNode.prototype.dispatch = function (message) {
         var _a, _b;
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var _c;
             return __generator(this, function (_d) {
                 switch (_d.label) {
@@ -1598,7 +1598,7 @@ var SandpackNode = /** @class */ (function (_super) {
                         _d.sent();
                         return [3 /*break*/, 8];
                     case 4:
-                        (_b = (_a = this.iframe) === null || _a === undefined ? undefined : _a.contentWindow) === null || _b === undefined ? undefined : _b.postMessage(message, "*");
+                        (_b = (_a = this.iframe) === null || _a === void 0 ? void 0 : _a.contentWindow) === null || _b === void 0 ? void 0 : _b.postMessage(message, "*");
                         return [3 /*break*/, 8];
                     case 5:
                         this.restartShellProcess();

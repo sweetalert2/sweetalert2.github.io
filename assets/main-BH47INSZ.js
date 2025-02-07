@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DoPuDiwk.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-D_I6Q6h_.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -3939,9 +3939,9 @@ function CodeExample({
   withoutCodepen,
   ...props
 }) {
-  const codeRef = reactExports.useRef();
-  const codepenForm = reactExports.useRef();
-  const codepenFormData = reactExports.useRef();
+  const codeRef = reactExports.useRef(null);
+  const codepenForm = reactExports.useRef(null);
+  const codepenFormData = reactExports.useRef(null);
   const isAsync = !!code.match(/(^|\n)\w.*await/);
   reactExports.useEffect(() => {
     if (!codeRef.current || codeRef.current.classList.contains("hljs")) {
@@ -3973,8 +3973,10 @@ function CodeExample({
         codepenValue.js += `
 })()`;
       }
-      codepenFormData.current.value = JSON.stringify(codepenValue);
-      codepenForm.current.submit();
+      if (codepenFormData.current && codepenForm.current) {
+        codepenFormData.current.value = JSON.stringify(codepenValue);
+        codepenForm.current.submit();
+      }
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

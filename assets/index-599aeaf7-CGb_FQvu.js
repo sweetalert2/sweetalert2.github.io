@@ -1,7 +1,7 @@
-import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-D5KPnIv2.js';
-import { a as fromBundlerFilesToFS, E as EventEmitter, b as generateRandomId, c as consoleHook } from './consoleHook-59e792cb-BSE6H9qg.js';
-import { S as SandpackClient } from './base-80a1f760-DveC9x_r.js';
-import './index-DoPuDiwk.js';
+import { a as __extends, b as __awaiter, c as __generator } from './Sandpack-6-rCqfsF.js';
+import { a as fromBundlerFilesToFS, E as EventEmitter, b as generateRandomId, c as consoleHook } from './consoleHook-59e792cb-55VjjhM8.js';
+import { S as SandpackClient } from './base-80a1f760-BqbXDb2u.js';
+import './index-D_I6Q6h_.js';
 
 var main;
 var hasRequiredMain;
@@ -8809,14 +8809,14 @@ var validateHtml = function (content) {
 var SandpackStatic = /** @class */ (function (_super) {
     __extends(SandpackStatic, _super);
     function SandpackStatic(selector, sandboxSetup, options) {
-        if (options === undefined) { options = {}; }
+        if (options === void 0) { options = {}; }
         var _a;
         var _this = _super.call(this, selector, sandboxSetup, options) || this;
         _this.files = new Map();
         _this.status = "initializing";
         _this.emitter = new EventEmitter();
         _this.previewController = new mainExports.PreviewController({
-            baseUrl: (_a = options.bundlerURL) !== null && _a !== undefined ? _a : "https://preview.sandpack-static-server.codesandbox.io",
+            baseUrl: (_a = options.bundlerURL) !== null && _a !== void 0 ? _a : "https://preview.sandpack-static-server.codesandbox.io",
             // filepath is always normalized to start with / and not end with a slash
             getFileContent: function (filepath) {
                 var content = _this.files.get(filepath);
@@ -8868,7 +8868,7 @@ var SandpackStatic = /** @class */ (function (_super) {
         content = readBuffer(content);
         // Inject script
         content =
-            (_a = insertHtmlAfterRegex(/<head[^<>]*>/g, content, "\n" + contentToInsert)) !== null && _a !== undefined ? _a : contentToInsert + "\n" + content;
+            (_a = insertHtmlAfterRegex(/<head[^<>]*>/g, content, "\n" + contentToInsert)) !== null && _a !== void 0 ? _a : contentToInsert + "\n" + content;
         return content;
     };
     SandpackStatic.prototype.injectProtocolScript = function (content) {
@@ -8876,11 +8876,11 @@ var SandpackStatic = /** @class */ (function (_super) {
         return this.injectContentIntoHead(content, scriptToInsert);
     };
     SandpackStatic.prototype.injectExternalResources = function (content, externalResources) {
-        if (externalResources === undefined) { externalResources = []; }
+        if (externalResources === void 0) { externalResources = []; }
         var tagsToInsert = externalResources
             .map(function (resource) {
             var match = resource.match(/\.([^.]*)$/);
-            var fileType = match === null || match === undefined ? undefined : match[1];
+            var fileType = match === null || match === void 0 ? void 0 : match[1];
             if (fileType === "css" || resource.includes("fonts.googleapis")) {
                 return "<link rel=\"stylesheet\" href=\"".concat(resource, "\">");
             }
@@ -8893,12 +8893,12 @@ var SandpackStatic = /** @class */ (function (_super) {
         return this.injectContentIntoHead(content, tagsToInsert);
     };
     SandpackStatic.prototype.injectScriptIntoHead = function (content, opts) {
-        var script = opts.script, _a = opts.scope, scope = _a === undefined ? {} : _a;
+        var script = opts.script, _a = opts.scope, scope = _a === void 0 ? {} : _a;
         var scriptToInsert = "\n    <script>\n      const scope = ".concat(JSON.stringify(scope), ";\n      ").concat(script, "\n    </script>\n    ").trim();
         return this.injectContentIntoHead(content, scriptToInsert);
     };
     SandpackStatic.prototype.updateSandbox = function (setup, _isInitializationCompile) {
-        if (setup === undefined) { setup = this.sandboxSetup; }
+        if (setup === void 0) { setup = this.sandboxSetup; }
         var modules = fromBundlerFilesToFS(setup.files);
         /**
          * Pass init files to the bundler
@@ -8911,7 +8911,7 @@ var SandpackStatic = /** @class */ (function (_super) {
         });
     };
     SandpackStatic.prototype.compile = function (files) {
-        return __awaiter(this, undefined, undefined, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var previewUrl;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -8956,7 +8956,7 @@ var SandpackStatic = /** @class */ (function (_super) {
                 this.compile(message.modules);
                 break;
             default:
-                (_a = this.iframe.contentWindow) === null || _a === undefined ? undefined : _a.postMessage(message, "*");
+                (_a = this.iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(message, "*");
                 this.emitter.dispatch(message);
         }
     };
