@@ -6908,6 +6908,16 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.xndoll.com", target: "_blank", rel: "noopener", "aria-label": "XNDOLL", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/xndoll.png", alt: "XNDOLL" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "XNDOLL"
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.pidoll.com", target: "_blank", rel: "noopener", "aria-label": "PIDOLL", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/pidoll.png", alt: "PIDOLL" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "PIDOLL"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
