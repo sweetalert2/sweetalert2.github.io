@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-D_I6Q6h_.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DgSrmV1_.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -6675,100 +6675,6 @@ function Methods() {
   ] }) });
 }
 
-function Themes() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "themes", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://github.com/sweetalert2/sweetalert2-themes", target: "_blank", children: [
-      "Themes ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "fa fa-external-link" })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "themes center-container", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Dark" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/dark", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-dark.png", alt: "theme dark" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Minimal" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/minimal", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-minimal.png", alt: "theme minimal" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Borderless" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/borderless", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-borderless.png", alt: "theme borderless" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Bootstrap 4" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/bootstrap-4", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-bootstrap-4.png", alt: "theme bootstrap 4" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Bulma" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/bulma", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-bulma.png", alt: "theme bulma" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Material UI" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/material-ui", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-material-ui.png", alt: "theme material ui" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "WordPress Admin" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/sweetalert2/sweetalert2-themes/tree/main/wordpress-admin", target: "_blank", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "images/themes-wordpress-admin.png", alt: "theme material ui" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Themes Installation" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "code-label", children: "You can install all themes at once:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("pre", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("code", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "unselectable", children: "$ " }),
-        "npm install @sweetalert2/themes"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "code-label", children: [
-        "Or just a single theme ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "@sweetalert2/theme-<theme_name>" }),
-        ", e.g.:"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("pre", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("code", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "unselectable", children: "$ " }),
-        "npm install @sweetalert2/theme-dark"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "code-label", children: "Or from jsdelivr CDN, e.g.:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CodeExample,
-        {
-          code: `
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"><\/script>
-          `.trim(),
-          language: "xml",
-          withoutCodepen: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Themes Usage" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "code-label", children: "With CSS:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CodeExample,
-        {
-          code: `
-<!-- Include a required theme -->
-<link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
-<script src="sweetalert2/dist/sweetalert2.min.js"><\/script>
-          `.trim(),
-          language: "xml",
-          withoutCodepen: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "code-label", children: "With SASS:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CodeExample,
-        {
-          code: `
-// your-app.js
-import Swal from 'sweetalert2/src/sweetalert2.js'
-
-// your-app.scss
-@import '@sweetalert2/themes/dark/dark.scss';
-          `.trim(),
-          withoutCodepen: true
-        }
-      )
-    ] })
-  ] });
-}
-
 function Sponsors() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "sponsors", children: "Sponsors" }),
@@ -7197,7 +7103,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(Icons, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(InputTypes, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Methods, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Themes, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Sponsors, {})
   ] })
 );
