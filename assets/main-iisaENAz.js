@@ -1,4 +1,4 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DgSrmV1_.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, g as getDefaultExportFromCjs, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DALtNS7a.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -4596,6 +4596,28 @@ function ConfigurationParams() {
               "If set to ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
               ", the popup animation will be disabled"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "theme", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#theme", children: "#" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "theme" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "'light'" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              "Theme of the popup. ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'light'" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'dark'" }),
+              ", ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'auto'" }),
+              ", and",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'borderless'" }),
+              " for now. This is a new feature, more themes are coming. ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "Feel free to request new themes (or create your own and PR it)."
             ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "showClass", children: [
