@@ -70,9 +70,6 @@ export function Sidebar() {
       <a href="/#methods" className="mobile-hidden" onClick={() => Swal.close()}>
         <span>Methods</span>
       </a>
-      <a href="/#themes" onClick={() => Swal.close()}>
-        <span>Themes</span>
-      </a>
       <a href="/#sponsors" onClick={() => Swal.close()}>
         <span>Sponsors</span>
       </a>

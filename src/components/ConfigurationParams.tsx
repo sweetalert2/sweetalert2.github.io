@@ -112,6 +112,19 @@ export function ConfigurationParams() {
                 If set to <strong>false</strong>, the popup animation will be disabled
               </td>
             </tr>
+            <tr id="theme">
+              <td>
+                <a className="hover-anchor" href="#theme" children="#" />
+                <h4>theme</h4>
+                <br />
+                <i>'light'</i>
+              </td>
+              <td>
+                Theme of the popup. <strong>'light'</strong>, <strong>'dark'</strong>, <strong>'auto'</strong>, and{' '}
+                <strong>'borderless'</strong> for now. This is a new feature, more themes are coming. <br />
+                Feel free to request new themes (or create your own and PR it).
+              </td>
+            </tr>
             <tr id="showClass">
               <td>
                 <a className="hover-anchor" href="#showClass" children="#" />
