@@ -1,12 +1,10 @@
-import Swal from 'sweetalert2'
-
 export default {
   // Top of page
   normalAlert() {
     alert('You clicked the button!')
   },
   sweetAlert() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Good job!',
       text: 'You clicked the button!',
       icon: 'success',
@@ -15,17 +13,17 @@ export default {
 
   // Examples section
   basicMessage() {
-    Swal.fire('SweetAlert2 is working!')
+    window.Swal.fire('SweetAlert2 is working!')
   },
   titleText() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'The Internet?',
       text: 'That thing is still around?',
       icon: 'question',
     })
   },
   errorType() {
-    Swal.fire({
+    window.Swal.fire({
       icon: 'error',
       title: 'Oops...',
       text: 'Something went wrong!',
@@ -33,21 +31,21 @@ export default {
     })
   },
   longText() {
-    Swal.fire({
+    window.Swal.fire({
       imageUrl: 'https://placeholder.pics/svg/300x1500',
       imageHeight: 1500,
       imageAlt: 'A tall image',
     })
   },
   draggableModal() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Drag me!',
       icon: 'success',
       draggable: true,
     })
   },
   customHtml() {
-    Swal.fire({
+    window.Swal.fire({
       title: '<strong>HTML <u>example</u></strong>',
       icon: 'info',
       html: `
@@ -69,7 +67,7 @@ export default {
     })
   },
   threeButtons() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Do you want to save the changes?',
       showDenyButton: true,
       showCancelButton: true,
@@ -78,14 +76,14 @@ export default {
     }).then((result) => {
       /*! Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire('Saved!', '', 'success')
+        window.Swal.fire('Saved!', '', 'success')
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        window.Swal.fire('Changes are not saved', '', 'info')
       }
     })
   },
   customPosition() {
-    Swal.fire({
+    window.Swal.fire({
       position: 'top-end',
       icon: 'success',
       title: 'Your work has been saved',
@@ -94,7 +92,7 @@ export default {
     })
   },
   customAnimation() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Custom animation with Animate.css',
       showClass: {
         popup: `
@@ -113,7 +111,7 @@ export default {
     })
   },
   warningConfirm() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
       icon: 'warning',
@@ -123,7 +121,7 @@ export default {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
+        window.Swal.fire({
           title: 'Deleted!',
           text: 'Your file has been deleted.',
           icon: 'success',
@@ -132,7 +130,7 @@ export default {
     })
   },
   handleDismiss() {
-    const swalWithBootstrapButtons = Swal.mixin({
+    const swalWithBootstrapButtons = window.Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
         cancelButton: 'btn btn-danger',
@@ -159,7 +157,7 @@ export default {
           })
         } else if (
           /*! Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
+          result.dismiss === window.Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
             title: 'Cancelled',
@@ -170,7 +168,7 @@ export default {
       })
   },
   customImage() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Sweet!',
       text: 'Modal with a custom image.',
       imageUrl: 'https://unsplash.it/400/200',
@@ -180,7 +178,7 @@ export default {
     })
   },
   customWidth() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Custom width, padding, color, background.',
       width: 600,
       padding: '3em',
@@ -196,16 +194,16 @@ export default {
   },
   timer() {
     let timerInterval: undefined | ReturnType<typeof setTimeout>
-    Swal.fire({
+    window.Swal.fire({
       title: 'Auto close alert!',
       html: 'I will close in <b></b> milliseconds.',
       timer: 2000,
       timerProgressBar: true,
       didOpen: () => {
-        Swal.showLoading()
-        const timer = Swal.getPopup()!.querySelector('b')
+        window.Swal.showLoading()
+        const timer = window.Swal.getPopup()!.querySelector('b')
         timerInterval = setInterval(() => {
-          timer!.textContent = `${Swal.getTimerLeft()}`
+          timer!.textContent = `${window.Swal.getTimerLeft()}`
         }, 100)
       },
       willClose: () => {
@@ -213,13 +211,13 @@ export default {
       },
     }).then((result) => {
       /*! Read more about handling dismissals below */
-      if (result.dismiss === Swal.DismissReason.timer) {
+      if (result.dismiss === window.Swal.DismissReason.timer) {
         console.log('I was closed by the timer')
       }
     })
   },
   rtl() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'هل تريد الاستمرار؟',
       icon: 'question',
       iconHtml: '؟',
@@ -231,7 +229,7 @@ export default {
     })
   },
   ajaxRequest() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'Submit your Github username',
       input: 'text',
       inputAttributes: {
@@ -247,21 +245,21 @@ export default {
           `
           const response = await fetch(githubUrl)
           if (!response.ok) {
-            return Swal.showValidationMessage(`
+            return window.Swal.showValidationMessage(`
               ${JSON.stringify(await response.json())}
             `)
           }
           return response.json()
         } catch (error) {
-          Swal.showValidationMessage(`
+          window.Swal.showValidationMessage(`
             Request failed: ${error}
           `)
         }
       },
-      allowOutsideClick: () => !Swal.isLoading(),
+      allowOutsideClick: () => !window.Swal.isLoading(),
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
+        window.Swal.fire({
           title: `${result.value.login}'s avatar`,
           imageUrl: result.value.avatar_url,
         })
@@ -271,15 +269,15 @@ export default {
 
   // Configuration section
   mixin() {
-    const Toast = Swal.mixin({
+    const Toast = window.Swal.mixin({
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer
-        toast.onmouseleave = Swal.resumeTimer
+        toast.onmouseenter = window.Swal.stopTimer
+        toast.onmouseleave = window.Swal.resumeTimer
       },
     })
 
@@ -291,16 +289,16 @@ export default {
 
   // Declarative templates
   declarativeTemplate() {
-    Swal.fire({
+    window.Swal.fire({
       template: '#my-template',
     })
   },
 
   // Declarative triggering
   declarativeTriggering() {
-    Swal.bindClickHandler()
+    window.Swal.bindClickHandler()
     /*! Bind a mixin to a click handler */
-    Swal.mixin({
+    window.Swal.mixin({
       toast: true,
     }).bindClickHandler('data-swal-toast-template')
   },
@@ -313,7 +311,7 @@ export default {
     const data = await response.json()
     const inputValue = data.ip
 
-    const { value: ipAddress } = await Swal.fire({
+    const { value: ipAddress } = await window.Swal.fire({
       title: 'Enter your IP address',
       input: 'text',
       inputLabel: 'Your IP address',
@@ -327,11 +325,11 @@ export default {
     })
 
     if (ipAddress) {
-      Swal.fire(`Your IP address is ${ipAddress}`)
+      window.Swal.fire(`Your IP address is ${ipAddress}`)
     }
   },
   async emailInput() {
-    const { value: email } = await Swal.fire({
+    const { value: email } = await window.Swal.fire({
       title: 'Input email address',
       input: 'email',
       inputLabel: 'Your email address',
@@ -339,22 +337,22 @@ export default {
     })
 
     if (email) {
-      Swal.fire(`Entered email: ${email}`)
+      window.Swal.fire(`Entered email: ${email}`)
     }
   },
   async urlInput() {
-    const { value: url } = await Swal.fire({
+    const { value: url } = await window.Swal.fire({
       input: 'url',
       inputLabel: 'URL address',
       inputPlaceholder: 'Enter the URL',
     })
 
     if (url) {
-      Swal.fire(`Entered URL: ${url}`)
+      window.Swal.fire(`Entered URL: ${url}`)
     }
   },
   async passwordInput() {
-    const { value: password } = await Swal.fire({
+    const { value: password } = await window.Swal.fire({
       title: 'Enter your password',
       input: 'password',
       inputLabel: 'Password',
@@ -367,11 +365,11 @@ export default {
     })
 
     if (password) {
-      Swal.fire(`Entered password: ${password}`)
+      window.Swal.fire(`Entered password: ${password}`)
     }
   },
   async textareaInput() {
-    const { value: text } = await Swal.fire({
+    const { value: text } = await window.Swal.fire({
       input: 'textarea',
       inputLabel: 'Message',
       inputPlaceholder: 'Type your message here...',
@@ -382,11 +380,11 @@ export default {
     })
 
     if (text) {
-      Swal.fire(text)
+      window.Swal.fire(text)
     }
   },
   async selectInput() {
-    const { value: fruit } = await Swal.fire({
+    const { value: fruit } = await window.Swal.fire({
       title: 'Select field validation',
       input: 'select',
       inputOptions: {
@@ -417,7 +415,7 @@ export default {
     })
 
     if (fruit) {
-      Swal.fire(`You selected: ${fruit}`)
+      window.Swal.fire(`You selected: ${fruit}`)
     }
   },
   async radioInput() {
@@ -432,7 +430,7 @@ export default {
       }, 1000)
     })
 
-    const { value: color } = await Swal.fire({
+    const { value: color } = await window.Swal.fire({
       title: 'Select color',
       input: 'radio',
       inputOptions: inputOptions,
@@ -444,11 +442,11 @@ export default {
     })
 
     if (color) {
-      Swal.fire({ html: `You selected: ${color}` })
+      window.Swal.fire({ html: `You selected: ${color}` })
     }
   },
   async checkboxInput() {
-    const { value: accept } = await Swal.fire({
+    const { value: accept } = await window.Swal.fire({
       title: 'Terms and conditions',
       input: 'checkbox',
       inputValue: 1,
@@ -464,25 +462,25 @@ export default {
     })
 
     if (accept) {
-      Swal.fire('You agreed with T&C :)')
+      window.Swal.fire('You agreed with T&C :)')
     }
   },
   async dateInput() {
-    const { value: date } = await Swal.fire({
+    const { value: date } = await window.Swal.fire({
       title: 'select departure date',
       input: 'date',
       didOpen: () => {
         const today = new Date().toISOString()
-        Swal.getInput()!.min = today.split('T')[0]
+        window.Swal.getInput()!.min = today.split('T')[0]
       },
     })
 
     if (date) {
-      Swal.fire('Departure date', date)
+      window.Swal.fire('Departure date', date)
     }
   },
   async fileInput() {
-    const { value: file } = await Swal.fire({
+    const { value: file } = await window.Swal.fire({
       title: 'Select image',
       input: 'file',
       inputAttributes: {
@@ -494,7 +492,7 @@ export default {
     if (file) {
       const reader = new FileReader()
       reader.onload = (e) => {
-        Swal.fire({
+        window.Swal.fire({
           title: 'Your uploaded picture',
           imageUrl: e.target!.result as string,
           imageAlt: 'The uploaded picture',
@@ -504,7 +502,7 @@ export default {
     }
   },
   rangeInput() {
-    Swal.fire({
+    window.Swal.fire({
       title: 'How old are you?',
       icon: 'question',
       input: 'range',
@@ -518,7 +516,7 @@ export default {
     })
   },
   async multipleInputs() {
-    const { value: formValues } = await Swal.fire({
+    const { value: formValues } = await window.Swal.fire({
       title: 'Multiple inputs',
       html: `
         <input id="swal-input1" class="swal2-input">
@@ -534,7 +532,7 @@ export default {
     })
 
     if (formValues) {
-      Swal.fire(JSON.stringify(formValues))
+      window.Swal.fire(JSON.stringify(formValues))
     }
   },
 }

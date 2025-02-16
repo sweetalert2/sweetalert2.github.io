@@ -3,7 +3,7 @@ import functions from './functions'
 const functionStrings: Record<string, string> = {}
 Object.entries(functions).forEach(([id, fn]) => {
   functionStrings[id] = String(fn)
-    .replace(/import_sweetalert\d+.default/g, 'Swal')
+    .replace(/window\.Swal/g, 'Swal')
     .replace(/^.*\n/, '')
     .replace(/}$/, '')
     .replace(/(^|\n) {4}/g, '$1')

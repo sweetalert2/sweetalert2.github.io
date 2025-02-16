@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2'
 import { showSidebar } from '../utils'
 import { DocSearch } from './DocSearch'
+import { ThemeSelector } from '../utils/themableSwal'
 
 export const sidebarUrl = 'https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx'
 
@@ -15,7 +16,6 @@ export function Nav({
     <>
       <Sidebar />
       <i className="fa fa-bars" id="show-sidebar" onClick={() => showSidebar()}></i>
-      <link rel="stylesheet" id="current-theme" />
 
       {recipeGallery ? (
         <div className="recipe-gallery-top-nav">
@@ -79,40 +79,7 @@ export function Sidebar() {
       <a href="/#nsfw-sponsors" onClick={() => Swal.close()}>
         <span>NSFW Sponsors</span>
       </a>
-
       <ThemeSelector />
     </nav>
-  )
-}
-
-function ThemeSelector() {
-  return (
-    <div className="theme-selector">
-      <label>
-        Theme:{' '}
-        <select
-          autoComplete="off"
-          onChange={(event) => {
-            const currentTheme = document.querySelector('#current-theme') as HTMLLinkElement
-            currentTheme.href = event.target.value
-          }}
-        >
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default/default.css">Default</option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark/dark.css">Dark</option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
-            Bootstrap 4
-          </option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css">Bulma</option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css">Minimal</option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless/borderless.css">Borderless</option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.css">
-            Material UI
-          </option>
-          <option value="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-wordpress-admin/wordpress-admin.css">
-            WordPress Admin
-          </option>
-        </select>
-      </label>
-    </div>
   )
 }
