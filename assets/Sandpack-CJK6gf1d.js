@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-XGM21imE.js","assets/base-80a1f760-BD2Mu7tZ.js","assets/consoleHook-59e792cb-BeR7JuZa.js","assets/index-DALtNS7a.js","assets/index-C5SkYj0A.css","assets/index-599aeaf7-B3wjN8kj.js","assets/index-B7urfGQg.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DALtNS7a.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DhbxIEq-.js","assets/base-80a1f760-CXTwmP4a.js","assets/consoleHook-59e792cb-BKb5Yt_3.js","assets/index-Cg0Jp0AV.js","assets/index-CNNNiuuM.css","assets/index-599aeaf7-Bxb6yrTy.js","assets/index-Bw9q06Nx.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-Cg0Jp0AV.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-XGM21imE.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DhbxIEq-.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-B3wjN8kj.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-Bxb6yrTy.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-B7urfGQg.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-Bw9q06Nx.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -8953,7 +8953,10 @@ class InputState {
             return;
         if (event.type == "keydown" && this.keydown(event))
             return;
-        this.runHandlers(event.type, event);
+        if (this.view.updateState != 0 /* UpdateState.Idle */)
+            Promise.resolve().then(() => this.runHandlers(event.type, event));
+        else
+            this.runHandlers(event.type, event);
     }
     runHandlers(type, event) {
         let handlers = this.handlers[type];
@@ -12056,8 +12059,11 @@ class EditContextManager {
         return !abort;
     }
     update(update) {
-        let reverted = this.pendingContextChange;
-        if (this.composing && (this.composing.drifted || update.transactions.some(tr => !tr.isUserEvent("input.type") && tr.changes.touchesRange(this.from, this.to)))) {
+        let reverted = this.pendingContextChange, startSel = update.startState.selection.main;
+        if (this.composing &&
+            (this.composing.drifted ||
+                (!update.changes.touchesRange(startSel.from, startSel.to) &&
+                    update.transactions.some(tr => !tr.isUserEvent("input.type") && tr.changes.touchesRange(this.from, this.to))))) {
             this.composing.drifted = true;
             this.composing.editorBase = update.changes.mapPos(this.composing.editorBase);
         }
