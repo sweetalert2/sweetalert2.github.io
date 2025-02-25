@@ -27,13 +27,6 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
-          <a href="https://startupfa.me/" target="_blank" rel="noopener" aria-label="Startup Fame">
-            <img src="https://startupfa.me/images/logo-square.webp" alt="Startup Fame" />
-            <br />
-            Startup Fame
-          </a>
-        </div>
-        <div>
           <a href="https://www.inksonic.com/" target="_blank" rel="noopener" aria-label="InkSonic">
             <img src="/images/sponsors/inksonic.png" alt="InkSonic" />
             <br />
