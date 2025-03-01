@@ -31,7 +31,8 @@ export function Showcase() {
             rel="noreferrer noopener"
             tabIndex={-1}
           >
-            Get 20% discount on Hostiger Web Hosting!
+            <span className="mobile-hidden">✨ 🚀 ✨ Get </span>
+            20% discount on Hostiger Web Hosting! <span className="mobile-hidden">✨ 🚀 ✨</span>
           </a>
         </p>
       </div>
