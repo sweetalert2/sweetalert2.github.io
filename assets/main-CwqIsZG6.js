@@ -4006,14 +4006,18 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "a",
       {
         href: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB",
         target: "_blank",
         rel: "noreferrer noopener",
         tabIndex: -1,
-        children: "Get 20% discount on Hostiger Web Hosting!"
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mobile-hidden", children: "✨ 🚀 ✨ Get " }),
+          "20% discount on Hostiger Web Hosting! ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mobile-hidden", children: "✨ 🚀 ✨" })
+        ]
       }
     ) }) })
   ] });
