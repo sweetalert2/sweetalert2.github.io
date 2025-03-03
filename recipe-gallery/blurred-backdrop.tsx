@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Kinsta, Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const styles = (await import(`./blurred-backdrop-styles.css?raw`)).default
@@ -9,6 +9,7 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
+      <Kinsta />
       <h1>Blurred Backdrop</h1>
 
       <p>

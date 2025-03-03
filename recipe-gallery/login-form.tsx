@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Kinsta, Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./login-form-src?raw')).default
@@ -8,6 +8,7 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
+      <Kinsta />
       <h1>Login Form</h1>
 
       <p>

@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Kinsta, Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const html = (await import(`./validation-message-custom-icon-html.html?raw`)).default
@@ -10,6 +10,7 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
+      <Kinsta />
       <h1>Validation Message with a Custom Icon</h1>
 
       <p>In this example, we are using the Font Awesome icon instead of the default one.</p>

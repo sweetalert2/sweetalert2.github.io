@@ -14,11 +14,13 @@ import {
   Showcase,
   Sponsors,
 } from './components'
+import { Kinsta } from './components/Kinsta'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <>
     <Nav />
     <Header />
+    <Kinsta />
     <Showcase />
     <Examples />
     <Installation />

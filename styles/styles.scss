@@ -962,6 +962,16 @@ $bouncing-logo-min-height: 35%;
   }
 }
 
+.kinsta-lg {
+  position: fixed;
+  top: 100px;
+  left: calc(50% + 500px);
+
+  @media all and (width <= 1600px) {
+    display: none;
+  }
+}
+
 @media all and (width <= 750px) {
   // stylelint-disable-next-line
   .DocSearch-Container {
