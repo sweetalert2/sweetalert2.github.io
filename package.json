@@ -17,6 +17,8 @@
     "@codesandbox/sandpack-themes": "^2.0.21",
     "@docsearch/css": "^3.5.2",
     "@docsearch/js": "^3.5.2",
+    "@fontsource/montserrat": "^5.2.5",
+    "@fontsource/source-code-pro": "^5.2.5",
     "@github/mini-throttle": "^2.1.1",
     "@lezer/common": "^1.1.0",
     "@popperjs/core": "^2.11.8",

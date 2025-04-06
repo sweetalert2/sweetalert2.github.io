@@ -4,8 +4,8 @@
 @use '/node_modules/highlight.js/styles/atom-one-dark.css';
 @use '../public/bootstrap4-buttons.css';
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); // Source Code Pro font
+@import '@fontsource/montserrat/latin-400.css';
+@import '@fontsource/source-code-pro/latin-400.css';
 
 $black: #000;
 $white: #fff;
