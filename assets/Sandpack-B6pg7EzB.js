@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-6OvsRc5C.js","assets/base-80a1f760-aXCXodpj.js","assets/consoleHook-59e792cb-BvQUMb0v.js","assets/index-z13bn8jz.js","assets/index-DFDFyQcO.css","assets/index-599aeaf7-BXADsN_t.js","assets/index-B0O_2MNe.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-z13bn8jz.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-C5FFWMZ6.js","assets/base-80a1f760-BmRJ0EX3.js","assets/consoleHook-59e792cb-D-986M59.js","assets/index-DOLmnplw.js","assets/index-i6YYBEOR.css","assets/index-599aeaf7-DeqjHqFz.js","assets/index-Dh8DJaRX.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DOLmnplw.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -480,15 +480,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-6OvsRc5C.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-C5FFWMZ6.js'),true?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-BXADsN_t.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-DeqjHqFz.js'),true?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-B0O_2MNe.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-Dh8DJaRX.js'),true?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -4879,14 +4879,14 @@ function scrollRectIntoView(dom, rect, side, x, y, xMargin, yMargin, ltr) {
             let moveX = 0, moveY = 0;
             if (y == "nearest") {
                 if (rect.top < bounding.top) {
-                    moveY = -(bounding.top - rect.top + yMargin);
+                    moveY = rect.top - (bounding.top + yMargin);
                     if (side > 0 && rect.bottom > bounding.bottom + moveY)
-                        moveY = rect.bottom - bounding.bottom + moveY + yMargin;
+                        moveY = rect.bottom - bounding.bottom + yMargin;
                 }
                 else if (rect.bottom > bounding.bottom) {
                     moveY = rect.bottom - bounding.bottom + yMargin;
                     if (side < 0 && (rect.top - moveY) < bounding.top)
-                        moveY = -(bounding.top + moveY - rect.top + yMargin);
+                        moveY = rect.top - (bounding.top + yMargin);
                 }
             }
             else {
@@ -4898,14 +4898,14 @@ function scrollRectIntoView(dom, rect, side, x, y, xMargin, yMargin, ltr) {
             }
             if (x == "nearest") {
                 if (rect.left < bounding.left) {
-                    moveX = -(bounding.left - rect.left + xMargin);
+                    moveX = rect.left - (bounding.left + xMargin);
                     if (side > 0 && rect.right > bounding.right + moveX)
-                        moveX = rect.right - bounding.right + moveX + xMargin;
+                        moveX = rect.right - bounding.right + xMargin;
                 }
                 else if (rect.right > bounding.right) {
                     moveX = rect.right - bounding.right + xMargin;
                     if (side < 0 && rect.left < bounding.left + moveX)
-                        moveX = -(bounding.left + moveX - rect.left + xMargin);
+                        moveX = rect.left - (bounding.left + xMargin);
                 }
             }
             else {
@@ -4940,6 +4940,10 @@ function scrollRectIntoView(dom, rect, side, x, y, xMargin, yMargin, ltr) {
             }
             if (top)
                 break;
+            if (rect.top < bounding.top || rect.bottom > bounding.bottom ||
+                rect.left < bounding.left || rect.right > bounding.right)
+                rect = { left: Math.max(rect.left, bounding.left), right: Math.min(rect.right, bounding.right),
+                    top: Math.max(rect.top, bounding.top), bottom: Math.min(rect.bottom, bounding.bottom) };
             cur = cur.assignedSlot || cur.parentNode;
         }
         else if (cur.nodeType == 11) { // A shadow root
@@ -5488,7 +5492,6 @@ var browser = {
     chrome_version: chrome ? +chrome[1] : 0,
     ios,
     android: /*@__PURE__*//Android\b/.test(nav.userAgent),
-    webkit,
     safari,
     webkit_version: webkit ? +(/*@__PURE__*//\bAppleWebKit\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
     tabSize: doc.documentElement.style.tabSize != null ? "tab-size" : "-moz-tab-size"
@@ -5814,7 +5817,7 @@ function coordsInChildren(view, pos, side) {
                 if (child.children.length) {
                     scan(child, pos - off);
                 }
-                else if ((!after || after.isHidden && side > 0) &&
+                else if ((!after || after.isHidden && (side > 0 || onSameLine(after, child))) &&
                     (end > pos || off == end && child.getSide() > 0)) {
                     after = child;
                     afterPos = pos - off;
@@ -5839,6 +5842,10 @@ function fallbackRect(view) {
         return view.dom.getBoundingClientRect();
     let rects = clientRectsFor(last);
     return rects[rects.length - 1] || null;
+}
+function onSameLine(a, b) {
+    let posA = a.coordsAt(0, 1), posB = b.coordsAt(0, 1);
+    return posA && posB && posB.top < posA.bottom;
 }
 
 function combineAttrs(source, target) {
@@ -11358,6 +11365,7 @@ const baseTheme$1$1 = /*@__PURE__*/buildTheme("." + baseThemeID, {
         color: "#888",
         display: "inline-block",
         verticalAlign: "top",
+        userSelect: "none"
     },
     ".cm-highlightSpace": {
         backgroundImage: "radial-gradient(circle at 50% 55%, #aaa 20%, transparent 5%)",
@@ -13494,16 +13502,6 @@ function runHandlers(map, event, view, scope) {
     currentKeyEvent = null;
     return handled;
 }
-
-const CanHidePrimary = !(browser.ios && browser.webkit && browser.webkit_version < 534);
-const themeSpec = {
-    ".cm-line": {
-        },
-    ".cm-content": {
-        }
-};
-if (CanHidePrimary)
-    themeSpec[".cm-line"].caretColor = themeSpec[".cm-content"].caretColor = "transparent !important";
 
 function iterMatches(doc, re, from, to, f) {
     re.lastIndex = 0;
@@ -19363,7 +19361,7 @@ block comments.
 */
 const toggleBlockCommentByLine = /*@__PURE__*/command((o, s) => changeBlockComment(o, s, selectedLineRanges(s)), 0 /* CommentOption.Toggle */);
 function getConfig(state, pos) {
-    let data = state.languageDataAt("commentTokens", pos);
+    let data = state.languageDataAt("commentTokens", pos, 1);
     return data.length ? data[0] : {};
 }
 const SearchMargin = 50;
@@ -23624,10 +23622,10 @@ function getSpecializer(spec) {
 }
 
 // This file was generated by lezer-generator. You probably shouldn't edit it.
-const descendantOp = 100,
+const descendantOp = 101,
   Unit = 1,
-  callee = 101,
-  identifier$2 = 102,
+  callee = 102,
+  identifier$2 = 103,
   VariableName = 2;
 
 /* Hand-written tokenizers for CSS tokens that can't be
@@ -23723,11 +23721,11 @@ const spec_AtKeyword = {__proto__:null,"@import":120, "@media":144, "@charset":1
 const spec_identifier$1 = {__proto__:null,not:134, only:134};
 const parser$2 = LRParser.deserialize({
   version: 14,
-  states: ":jQYQ[OOO#_Q[OOP#fOWOOOOQP'#Cd'#CdOOQP'#Cc'#CcO#kQ[O'#CfO$_QXO'#CaO$fQ[O'#CiO$qQ[O'#DUO$vQ[O'#DXOOQP'#En'#EnO${QdO'#DhO%jQ[O'#DuO${QdO'#DwO%{Q[O'#DyO&WQ[O'#D|O&`Q[O'#ESO&nQ[O'#EUOOQS'#Em'#EmOOQS'#EX'#EXQYQ[OOO&uQXO'#CdO'jQWO'#DdO'oQWO'#EsO'zQ[O'#EsQOQWOOP(UO#tO'#C_POOO)C@])C@]OOQP'#Ch'#ChOOQP,59Q,59QO#kQ[O,59QO(aQ[O'#E]O({QWO,58{O)TQ[O,59TO$qQ[O,59pO$vQ[O,59sO(aQ[O,59vO(aQ[O,59xO(aQ[O,59yO)`Q[O'#DcOOQS,58{,58{OOQP'#Cl'#ClOOQO'#DS'#DSOOQP,59T,59TO)gQWO,59TO)lQWO,59TOOQP'#DW'#DWOOQP,59p,59pOOQO'#DY'#DYO)qQ`O,59sOOQS'#Cq'#CqO${QdO'#CrO)yQvO'#CtO+ZQtO,5:SOOQO'#Cy'#CyO)lQWO'#CxO+oQWO'#CzO+tQ[O'#DPOOQS'#Ep'#EpOOQO'#Dk'#DkO+|Q[O'#DrO,[QWO'#EtO&`Q[O'#DpO,jQWO'#DsOOQO'#Eu'#EuO)OQWO,5:aO,oQpO,5:cOOQS'#D{'#D{O,wQWO,5:eO,|Q[O,5:eOOQO'#EO'#EOO-UQWO,5:hO-ZQWO,5:nO-cQWO,5:pOOQS-E8V-E8VO-kQdO,5:OO-{Q[O'#E_O.YQWO,5;_O.YQWO,5;_POOO'#EW'#EWP.eO#tO,58yPOOO,58y,58yOOQP1G.l1G.lO/[QXO,5:wOOQO-E8Z-E8ZOOQS1G.g1G.gOOQP1G.o1G.oO)gQWO1G.oO)lQWO1G.oOOQP1G/[1G/[O/iQ`O1G/_O0SQXO1G/bO0jQXO1G/dO1QQXO1G/eO1hQWO,59}O1mQ[O'#DTO1tQdO'#CpOOQP1G/_1G/_O${QdO1G/_O1{QpO,59^OOQS,59`,59`O${QdO,59bO2TQWO1G/nOOQS,59d,59dO2YQ!bO,59fOOQS'#DQ'#DQOOQS'#EZ'#EZO2eQ[O,59kOOQS,59k,59kO2mQWO'#DkO2xQWO,5:WO2}QWO,5:^O&`Q[O,5:YO&`Q[O'#E`O3VQWO,5;`O3bQWO,5:[O(aQ[O,5:_OOQS1G/{1G/{OOQS1G/}1G/}OOQS1G0P1G0PO3sQWO1G0PO3xQdO'#EPOOQS1G0S1G0SOOQS1G0Y1G0YOOQS1G0[1G0[O4TQtO1G/jOOQO1G/j1G/jOOQO,5:y,5:yO4kQ[O,5:yOOQO-E8]-E8]O4xQWO1G0yPOOO-E8U-E8UPOOO1G.e1G.eOOQP7+$Z7+$ZOOQP7+$y7+$yO${QdO7+$yOOQS1G/i1G/iO5TQXO'#ErO5[QWO,59oO5aQtO'#EYO6XQdO'#EoO6cQWO,59[O6hQpO7+$yOOQS1G.x1G.xOOQS1G.|1G.|OOQS7+%Y7+%YOOQS1G/Q1G/QO6pQWO1G/QOOQS-E8X-E8XOOQS1G/V1G/VO${QdO1G/rOOQO1G/x1G/xOOQO1G/t1G/tO6uQWO,5:zOOQO-E8^-E8^O7TQXO1G/yOOQS7+%k7+%kO7[QYO'#CtOOQO'#ER'#ERO7gQ`O'#EQOOQO'#EQ'#EQO7rQWO'#EaO7zQdO,5:kOOQS,5:k,5:kO8VQtO'#E^O${QdO'#E^O9WQdO7+%UOOQO7+%U7+%UOOQO1G0e1G0eO9kQpO<<HeO9sQWO,5;^OOQP1G/Z1G/ZOOQS-E8W-E8WO${QdO'#E[O9{QWO,5;ZOOQT1G.v1G.vOOQP<<He<<HeOOQS7+$l7+$lO:TQdO7+%^OOQO7+%e7+%eOOQO,5:l,5:lO3{QdO'#EbO7rQWO,5:{OOQS,5:{,5:{OOQS-E8_-E8_OOQS1G0V1G0VO:[QtO,5:xOOQS-E8[-E8[OOQO<<Hp<<HpOOQPAN>PAN>PO;]QdO,5:vOOQO-E8Y-E8YOOQO<<Hx<<HxOOQO,5:|,5:|OOQO-E8`-E8`OOQS1G0g1G0g",
-  stateData: ";o~O#[OS#]QQ~OUYOXYOZTO^VO_VOrXOyWO!]aO!^ZO!j[O!l]O!n^O!q_O!w`O#YRO~OQfOUYOXYOZTO^VO_VOrXOyWO!]aO!^ZO!j[O!l]O!n^O!q_O!w`O#YeO~O#V#gP~P!ZO#]jO~O#YlO~OZnO^qO_qOrsOuoOyrO!PtO!SvO#WuO~O!UwO~P#pOa}O#XzO#YyO~O#Y!OO~O#Y!QO~OQ![Oc!TOg![Oi![Oo!YOr!ZO#X!WO#Y!SO#e!UO~Oc!^O!e!`O!h!aO#Y!]O!U#hP~Oi!fOo!YO#Y!eO~Oi!hO#Y!hO~Oc!^O!e!`O!h!aO#Y!]O~O!Z#hP~P%jOZWX^WX^!XX_WXrWXuWXyWX!PWX!SWX!UWX#WWX~O^!mO~O!Z!nO#V#gX!T#gX~O#V#gX!T#gX~P!ZO#^!qO#_!qO#`!sO~OUYOXYOZTO^VO_VOrXOyWO#YRO~OuoO!UwO~Oa!zO#XzO#YyO~O!T#gP~P!ZOc#RO~Oc#SO~Oq#TO}#UO~OP#WOchXkhX!ZhX!ehX!hhX#YhXbhXQhXghXihXohXrhXuhX!YhX#VhX#XhX#ehXqhX!ThX~Oc!^Ok#XO!e!`O!h!aO#Y!]O!Z#hP~Oc#[O~Oq#`O#Y#]O~Oc!^O!e!`O!h!aO#Y#aO~Ou#eO!c#dO!U#hX!Z#hX~Oc#hO~Ok#XO!Z#jO~O!Z#kO~Oi#lOo!YO~O!U#mO~O!UwO!c#dO~O!UwO!Z#pO~O!Y#rO!Z!Wa#V!Wa!T!Wa~P${O!Z#RX#V#RX!T#RX~P!ZO!Z!nO#V#ga!T#ga~O#^!qO#_!qO#`#xO~OZnO^qO_qOrsOyrO!PtO!SvO#WuO~Ou#Pa!U#Pab#Pa~P.pOq#zO}#{O~OZnO^qO_qOrsOyrO~Ou!Oi!P!Oi!S!Oi!U!Oi#W!Oib!Oi~P/qOu!Qi!P!Qi!S!Qi!U!Qi#W!Qib!Qi~P/qOu!Ri!P!Ri!S!Ri!U!Ri#W!Rib!Ri~P/qO!T#|O~Ob#fP~P(aOb#cP~P${Ob$TOk#XO~O!Z$VO~Ob$WOi$XOp$XO~Oq$ZO#Y#]O~O^!aXb!_X!c!_X~O^$[O~Ob$]O!c#dO~Ou#eO!U#ha!Z#ha~O!c#dOu!da!U!da!Z!dab!da~O!Z$bO~O!T$iO#Y$dO#e$cO~Ok#XOu$kO!Y$mO!Z!Wi#V!Wi!T!Wi~P${O!Z#Ra#V#Ra!T#Ra~P!ZO!Z!nO#V#gi!T#gi~Ob#fX~P#pOb$qO~Ok#XOQ!|Xb!|Xc!|Xg!|Xi!|Xo!|Xr!|Xu!|X#X!|X#Y!|X#e!|X~Ou$sOb#cX~P${Ob$uO~Ok#XOq$vO~Ob$wO~O!c#dOu#Sa!U#Sa!Z#Sa~Ob$yO~P.pOP#WOuhX!UhX~O#e$cOu!tX!U!tX~Ou${O!UwO~O!T%PO#Y$dO#e$cO~Ok#XOQ#QXc#QXg#QXi#QXo#QXr#QXu#QX!Y#QX!Z#QX#V#QX#X#QX#Y#QX#e#QX!T#QX~Ou$kO!Y%SO!Z!Wq#V!Wq!T!Wq~P${Ok#XOq%TO~OuoOb#fa~Ou$sOb#ca~Ob%WO~P${Ok#XOQ#Qac#Qag#Qai#Qao#Qar#Qau#Qa!Y#Qa!Z#Qa#V#Qa#X#Qa#Y#Qa#e#Qa!T#Qa~Ob#Oau#Oa~P${O#[p#]#ek!S#e~",
-  goto: "-g#jPPP#kP#nP#w$WP#wP$g#wPP$mPPP$s$|$|P%`P$|P$|%z&^PPPP$|&vP&z'Q#wP'W#w'^P#wP#w#wPPP'd'y(WPP#nPP(_(_(i(_P(_P(_(_P#nP#nP#nP(l#nP(o(r(u(|#nP#nP)R)X)h)v)|*S*^*d*n*t*zPPPPPPPPPP+Q+Z+v+yP,o,r,x-RRkQ_bOPdhw!n#tkYOPdhotuvw!n#R#h#tkSOPdhotuvw!n#R#h#tQmTR!tnQ{VR!xqQ!x}Q#Z!XR#y!zq![Z]!T!m#S#U#X#q#{$Q$[$k$l$s$x%Up![Z]!T!m#S#U#X#q#{$Q$[$k$l$s$x%UU$f#m$h${R$z$eq!XZ]!T!m#S#U#X#q#{$Q$[$k$l$s$x%Up![Z]!T!m#S#U#X#q#{$Q$[$k$l$s$x%UQ!f^R#l!gT#^!Z#_Q|VR!yqQ!x|R#y!yQ!PWR!{rQ!RXR!|sQxUQ!wpQ#i!cQ#o!jQ#p!kQ$}$gR%Z$|SgPwQ!phQ#s!nR$n#tZfPhw!n#ta!b[`a!V!^!`#d#eR#b!^R!g^R!i_R#n!iS$g#m$hR%X${V$e#m$h${Q!rjR#w!rQdOShPwU!ldh#tR#t!nQ$Q#SU$r$Q$x%UQ$x$[R%U$sQ#_!ZR$Y#_Q$t$QR%V$tQpUS!vp$pR$p#}Q$l#qR%R$lQ!ogS#u!o#vR#v!pQ#f!_R$`#fQ$h#mR%O$hQ$|$gR%Y$|_cOPdhw!n#t^UOPdhw!n#tQ!uoQ!}tQ#OuQ#PvQ#}#RR$a#hR$R#SQ!VZQ!d]Q#V!TQ#q!m[$P#S$Q$[$s$x%UQ$S#UQ$U#XS$j#q$lQ$o#{R%Q$kR$O#RQiPR#QwQ!c[Q!kaR#Y!VU!_[a!VQ!j`Q#c!^Q#g!`Q$^#dR$_#e",
+  states: ":|QYQ[OOO#_Q[OOP#fOWOOOOQP'#Cd'#CdOOQP'#Cc'#CcO#kQ[O'#CfO$[QXO'#CaO$fQ[O'#CiO$qQ[O'#DUO$vQ[O'#DXOOQP'#Eo'#EoO${QdO'#DhO%jQ[O'#DuO${QdO'#DwO%{Q[O'#DyO&WQ[O'#D|O&`Q[O'#ESO&nQ[O'#EUOOQS'#En'#EnOOQS'#EX'#EXQYQ[OOO&uQXO'#CdO'jQWO'#DdO'oQWO'#EtO'zQ[O'#EtQOQWOOP(UO#tO'#C_POOO)C@^)C@^OOQP'#Ch'#ChOOQP,59Q,59QO#kQ[O,59QO(aQ[O,59TO$qQ[O,59pO$vQ[O,59sO(lQ[O,59vO(lQ[O,59xO(lQ[O,59yO(lQ[O'#E^O)WQWO,58{O)`Q[O'#DcOOQS,58{,58{OOQP'#Cl'#ClOOQO'#DS'#DSOOQP,59T,59TO)gQWO,59TO)lQWO,59TOOQP'#DW'#DWOOQP,59p,59pOOQO'#DY'#DYO)qQ`O,59sOOQS'#Cq'#CqO${QdO'#CrO)yQvO'#CtO+ZQtO,5:SOOQO'#Cy'#CyO)lQWO'#CxO+oQWO'#CzO+tQ[O'#DPOOQS'#Eq'#EqOOQO'#Dk'#DkO+|Q[O'#DrO,[QWO'#EuO&`Q[O'#DpO,jQWO'#DsOOQO'#Ev'#EvO)ZQWO,5:aO,oQpO,5:cOOQS'#D{'#D{O,wQWO,5:eO,|Q[O,5:eOOQO'#EO'#EOO-UQWO,5:hO-ZQWO,5:nO-cQWO,5:pOOQS-E8V-E8VO-kQdO,5:OO-{Q[O'#E`O.YQWO,5;`O.YQWO,5;`POOO'#EW'#EWP.eO#tO,58yPOOO,58y,58yOOQP1G.l1G.lOOQP1G.o1G.oO)gQWO1G.oO)lQWO1G.oOOQP1G/[1G/[O.pQ`O1G/_O/ZQXO1G/bO/qQXO1G/dO0XQXO1G/eO0oQXO,5:xOOQO-E8[-E8[OOQS1G.g1G.gO0yQWO,59}O1OQ[O'#DTO1VQdO'#CpOOQP1G/_1G/_O${QdO1G/_O1^QpO,59^OOQS,59`,59`O${QdO,59bO1fQWO1G/nOOQS,59d,59dO1kQ!bO,59fOOQS'#DQ'#DQOOQS'#EZ'#EZO1vQ[O,59kOOQS,59k,59kO2OQWO'#DkO2ZQWO,5:WO2`QWO,5:^O&`Q[O,5:YO2hQ[O'#EaO3PQWO,5;aO3[QWO,5:[O(lQ[O,5:_OOQS1G/{1G/{OOQS1G/}1G/}OOQS1G0P1G0PO3mQWO1G0PO3rQdO'#EPOOQS1G0S1G0SOOQS1G0Y1G0YOOQS1G0[1G0[O3}QtO1G/jOOQO1G/j1G/jOOQO,5:z,5:zO4eQ[O,5:zOOQO-E8^-E8^O4rQWO1G0zPOOO-E8U-E8UPOOO1G.e1G.eOOQP7+$Z7+$ZOOQP7+$y7+$yO${QdO7+$yOOQS1G/i1G/iO4}QXO'#EsO5XQWO,59oO5^QtO'#EYO6UQdO'#EpO6`QWO,59[O6eQpO7+$yOOQS1G.x1G.xOOQS1G.|1G.|OOQS7+%Y7+%YOOQS1G/Q1G/QO6mQWO1G/QOOQS-E8X-E8XOOQS1G/V1G/VO${QdO1G/rOOQO1G/x1G/xOOQO1G/t1G/tO6rQWO,5:{OOQO-E8_-E8_O7QQXO1G/yOOQS7+%k7+%kO7XQYO'#CtOOQO'#ER'#ERO7dQ`O'#EQOOQO'#EQ'#EQO7oQWO'#EbO7wQdO,5:kOOQS,5:k,5:kO8SQtO'#E_O${QdO'#E_O9TQdO7+%UOOQO7+%U7+%UOOQO1G0f1G0fO9hQpO<<HeO9pQ[O'#E]O9zQWO,5;_OOQP1G/Z1G/ZOOQS-E8W-E8WO:SQdO'#E[O:^QWO,5;[OOQT1G.v1G.vOOQP<<He<<HeOOQS7+$l7+$lO:fQdO7+%^OOQO7+%e7+%eOOQO,5:l,5:lO3uQdO'#EcO7oQWO,5:|OOQS,5:|,5:|OOQS-E8`-E8`OOQS1G0V1G0VO:mQtO,5:yOOQS-E8]-E8]OOQO<<Hp<<HpOOQPAN>PAN>PO;nQXO,5:wOOQO-E8Z-E8ZO;xQdO,5:vOOQO-E8Y-E8YOOQO<<Hx<<HxOOQO,5:},5:}OOQO-E8a-E8aOOQS1G0h1G0h",
+  stateData: "<[~O#]OS#^QQ~OUYOXYOZTO^VO_VOrXOyWO!]aO!^ZO!j[O!l]O!n^O!q_O!w`O#ZRO~OQfOUYOXYOZTO^VO_VOrXOyWO!]aO!^ZO!j[O!l]O!n^O!q_O!w`O#ZeO~O#W#hP~P!ZO#^jO~O#ZlO~OZnO^oO_oOrqOypO!PrO!StO#XsO~OuuO!UwO~P#pOa}O#YzO#ZyO~O#Z!OO~O#Z!QO~OQ![Oc!TOg![Oi![Oo!YOr!ZO#Y!WO#Z!SO#f!UO~Oc!^O!e!`O!h!aO#Z!]O!U#iP~Oi!fOo!YO#Z!eO~Oi!hO#Z!hO~Oc!^O!e!`O!h!aO#Z!]O~O!Z#iP~P%jOZWX^WX^!XX_WXrWXuWXyWX!PWX!SWX!UWX#XWX~O^!mO~O!Z!nO#W#hX!T#hX~O#W#hX!T#hX~P!ZO#_!qO#`!qO#a!sO~Oa!wO#YzO#ZyO~OUYOXYOZTO^VO_VOrXOyWO#ZRO~OuuO!UwO~O!T#hP~P!ZOc#RO~Oc#SO~Oq#TO}#UO~OP#WOchXkhX!ZhX!ehX!hhX#ZhXbhXQhXghXihXohXrhXuhX!YhX#WhX#YhX#fhXqhX!ThX~Oc!^Ok#XO!e!`O!h!aO#Z!]O!Z#iP~Oc#[O~Oq#`O#Z#]O~Oc!^O!e!`O!h!aO#Z#aO~Ou#eO!c#dO!U#iX!Z#iX~Oc#hO~Ok#XO!Z#jO~O!Z#kO~Oi#lOo!YO~O!U#mO~O!UwO!c#dO~O!UwO!Z#pO~O!Y#rO!Z!Wa#W!Wa!T!Wa~P${O!Z#SX#W#SX!T#SX~P!ZO!Z!nO#W#ha!T#ha~O#_!qO#`!qO#a#xO~Oq#zO}#{O~OZnO^oO_oOrqOypO~Ou!Oi!P!Oi!S!Oi!U!Oi#X!Oib!Oi~P.xOu!Qi!P!Qi!S!Qi!U!Qi#X!Qib!Qi~P.xOu!Ri!P!Ri!S!Ri!U!Ri#X!Rib!Ri~P.xOu#Qa!U#Qa~P#pO!T#|O~Ob#gP~P(lOb#dP~P${Ob$TOk#XO~O!Z$VO~Ob$WOi$XOp$XO~Oq$ZO#Z#]O~O^!aXb!_X!c!_X~O^$[O~Ob$]O!c#dO~Oc!^O!e!`O!h!aO#Z!]Ou#TX!U#TX!Z#TX~Ou#eO!U#ia!Z#ia~O!c#dOu!da!U!da!Z!dab!da~O!Z$bO~O!T$iO#Z$dO#f$cO~Ok#XOu$kO!Y$mO!Z!Wi#W!Wi!T!Wi~P${O!Z#Sa#W#Sa!T#Sa~P!ZO!Z!nO#W#hi!T#hi~Ou$pOb#gX~P#pOb$rO~Ok#XOQ!|Xb!|Xc!|Xg!|Xi!|Xo!|Xr!|Xu!|X#Y!|X#Z!|X#f!|X~Ou$tOb#dX~P${Ob$vO~Ok#XOq$wO~Ob$xO~O!c#dOu#Ta!U#Ta!Z#Ta~Ob$zO~P#pOP#WOuhX!UhX~O#f$cOu!tX!U!tX~Ou$|O!UwO~O!T%QO#Z$dO#f$cO~Ok#XOQ#RXc#RXg#RXi#RXo#RXr#RXu#RX!Y#RX!Z#RX#W#RX#Y#RX#Z#RX#f#RX!T#RX~Ou$kO!Y%TO!Z!Wq#W!Wq!T!Wq~P${Ok#XOq%UO~Ob#PXu#PX~P(lOu$pOb#ga~Ob#OXu#OX~P${Ou$tOb#da~Ob%ZO~P${Ok#XOQ#Rac#Rag#Rai#Rao#Rar#Rau#Ra!Y#Ra!Z#Ra#W#Ra#Y#Ra#Z#Ra#f#Ra!T#Ra~Ob#Pau#Pa~P#pOb#Oau#Oa~P${O#]p#^#fk!S#f~",
+  goto: "-o#kPPP#lP#oP#x$YP#xP$j#xPP$pPPP$v%P%PP%cP%PP%P%}&aPPPP%P&yP&}'T#xP'Z#x'aP#xP#x#xPPP'g'|(ZPP#oPP(b(b(l(bP(bP(b(bP#oP#oP#oP(o#oP(r(u(x)P#oP#oP)U)[)k)y*P*V*]*c*i*s*y+PPPPPPPPPPP+V+`,O,RP,w,z-Q-ZRkQ_bOPdhw!n#tmYOPdhrstuw!n#R#h#t$pmSOPdhrstuw!n#R#h#t$pQmTR!tnQ{VR!uoQ!u}Q#Z!XR#y!wq![Z]!T!m#S#U#X#q#{$Q$[$k$l$t$y%Xp![Z]!T!m#S#U#X#q#{$Q$[$k$l$t$y%XU$f#m$h$|R${$eq!XZ]!T!m#S#U#X#q#{$Q$[$k$l$t$y%Xp![Z]!T!m#S#U#X#q#{$Q$[$k$l$t$y%XQ!f^R#l!gT#^!Z#_Q|VR!voQ!u|R#y!vQ!PWR!xpQ!RXR!yqQxUQ#PvQ#i!cQ#o!jQ#p!kQ%O$gR%^$}SgPwQ!phQ#s!nR$n#tZfPhw!n#ta!b[`a!V!^!`#d#eR#b!^R!g^R!i_R#n!iS$g#m$hR%[$|V$e#m$h$|Q!rjR#w!rQdOShPwU!ldh#tR#t!nQ$Q#SU$s$Q$y%XQ$y$[R%X$tQ#_!ZR$Y#_Q$u$QR%Y$uQ$q#}R%W$qQvUR#OvQ$l#qR%S$lQ!ogS#u!o#vR#v!pQ#f!_R$`#fQ$h#mR%P$hQ$}$gR%]$}_cOPdhw!n#t^UOPdhw!n#tQ!zrQ!{sQ!|tQ!}uQ#}#RQ$a#hR%V$pR$R#SQ!VZQ!d]Q#V!TQ#q!m[$P#S$Q$[$t$y%XQ$S#UQ$U#XS$j#q$lQ$o#{R%R$kR$O#RQiPR#QwQ!c[Q!kaR#Y!VU!_[a!VQ!j`Q#c!^Q#g!`Q$^#dR$_#e",
   nodeNames: "⚠ Unit VariableName Comment StyleSheet RuleSet UniversalSelector TagSelector TagName NestingSelector ClassSelector . ClassName PseudoClassSelector : :: PseudoClassName PseudoClassName ) ( ArgList ValueName ParenthesizedValue ColorLiteral NumberLiteral StringLiteral BinaryExpression BinOp CallExpression Callee CallLiteral CallTag ParenthesizedContent ] [ LineNames LineName , PseudoClassName ArgList IdSelector # IdName AttributeSelector AttributeName MatchOp ChildSelector ChildOp DescendantSelector SiblingSelector SiblingOp } { Block Declaration PropertyName Important ; ImportStatement AtKeyword import KeywordQuery FeatureQuery FeatureName BinaryQuery LogicOp UnaryQuery UnaryQueryOp ParenthesizedQuery SelectorQuery selector MediaStatement media CharsetStatement charset NamespaceStatement namespace NamespaceName KeyframesStatement keyframes KeyframeName KeyframeList KeyframeSelector KeyframeRangeName SupportsStatement supports AtRule Styles",
-  maxTerm: 117,
+  maxTerm: 118,
   nodeProps: [
     ["isolate", -2,3,25,""],
     ["openedBy", 18,"(",33,"[",51,"{"],
@@ -23735,12 +23733,12 @@ const parser$2 = LRParser.deserialize({
   ],
   propSources: [cssHighlighting],
   skippedNodes: [0,3,88],
-  repeatNodeCount: 11,
-  tokenData: "J^~R!^OX$}X^%u^p$}pq%uqr)Xrs.Rst/utu6duv$}vw7^wx7oxy9^yz9oz{9t{|:_|}?Q}!O?c!O!P@Q!P!Q@i!Q![Ab![!]B]!]!^CX!^!_$}!_!`Cj!`!aC{!a!b$}!b!cDw!c!}$}!}#OFa#O#P$}#P#QFr#Q#R6d#R#T$}#T#UGT#U#c$}#c#dHf#d#o$}#o#pH{#p#q6d#q#rI^#r#sIo#s#y$}#y#z%u#z$f$}$f$g%u$g#BY$}#BY#BZ%u#BZ$IS$}$IS$I_%u$I_$I|$}$I|$JO%u$JO$JT$}$JT$JU%u$JU$KV$}$KV$KW%u$KW&FU$}&FU&FV%u&FV;'S$};'S;=`JW<%lO$}`%QSOy%^z;'S%^;'S;=`%o<%lO%^`%cSp`Oy%^z;'S%^;'S;=`%o<%lO%^`%rP;=`<%l%^~%zh#[~OX%^X^'f^p%^pq'fqy%^z#y%^#y#z'f#z$f%^$f$g'f$g#BY%^#BY#BZ'f#BZ$IS%^$IS$I_'f$I_$I|%^$I|$JO'f$JO$JT%^$JT$JU'f$JU$KV%^$KV$KW'f$KW&FU%^&FU&FV'f&FV;'S%^;'S;=`%o<%lO%^~'mh#[~p`OX%^X^'f^p%^pq'fqy%^z#y%^#y#z'f#z$f%^$f$g'f$g#BY%^#BY#BZ'f#BZ$IS%^$IS$I_'f$I_$I|%^$I|$JO'f$JO$JT%^$JT$JU'f$JU$KV%^$KV$KW'f$KW&FU%^&FU&FV'f&FV;'S%^;'S;=`%o<%lO%^l)[UOy%^z#]%^#]#^)n#^;'S%^;'S;=`%o<%lO%^l)sUp`Oy%^z#a%^#a#b*V#b;'S%^;'S;=`%o<%lO%^l*[Up`Oy%^z#d%^#d#e*n#e;'S%^;'S;=`%o<%lO%^l*sUp`Oy%^z#c%^#c#d+V#d;'S%^;'S;=`%o<%lO%^l+[Up`Oy%^z#f%^#f#g+n#g;'S%^;'S;=`%o<%lO%^l+sUp`Oy%^z#h%^#h#i,V#i;'S%^;'S;=`%o<%lO%^l,[Up`Oy%^z#T%^#T#U,n#U;'S%^;'S;=`%o<%lO%^l,sUp`Oy%^z#b%^#b#c-V#c;'S%^;'S;=`%o<%lO%^l-[Up`Oy%^z#h%^#h#i-n#i;'S%^;'S;=`%o<%lO%^l-uS!Y[p`Oy%^z;'S%^;'S;=`%o<%lO%^~.UWOY.RZr.Rrs.ns#O.R#O#P.s#P;'S.R;'S;=`/o<%lO.R~.sOi~~.vRO;'S.R;'S;=`/P;=`O.R~/SXOY.RZr.Rrs.ns#O.R#O#P.s#P;'S.R;'S;=`/o;=`<%l.R<%lO.R~/rP;=`<%l.Rn/zYyQOy%^z!Q%^!Q![0j![!c%^!c!i0j!i#T%^#T#Z0j#Z;'S%^;'S;=`%o<%lO%^l0oYp`Oy%^z!Q%^!Q![1_![!c%^!c!i1_!i#T%^#T#Z1_#Z;'S%^;'S;=`%o<%lO%^l1dYp`Oy%^z!Q%^!Q![2S![!c%^!c!i2S!i#T%^#T#Z2S#Z;'S%^;'S;=`%o<%lO%^l2ZYg[p`Oy%^z!Q%^!Q![2y![!c%^!c!i2y!i#T%^#T#Z2y#Z;'S%^;'S;=`%o<%lO%^l3QYg[p`Oy%^z!Q%^!Q![3p![!c%^!c!i3p!i#T%^#T#Z3p#Z;'S%^;'S;=`%o<%lO%^l3uYp`Oy%^z!Q%^!Q![4e![!c%^!c!i4e!i#T%^#T#Z4e#Z;'S%^;'S;=`%o<%lO%^l4lYg[p`Oy%^z!Q%^!Q![5[![!c%^!c!i5[!i#T%^#T#Z5[#Z;'S%^;'S;=`%o<%lO%^l5aYp`Oy%^z!Q%^!Q![6P![!c%^!c!i6P!i#T%^#T#Z6P#Z;'S%^;'S;=`%o<%lO%^l6WSg[p`Oy%^z;'S%^;'S;=`%o<%lO%^d6gUOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^d7QS}Sp`Oy%^z;'S%^;'S;=`%o<%lO%^b7cSXQOy%^z;'S%^;'S;=`%o<%lO%^~7rWOY7oZw7owx.nx#O7o#O#P8[#P;'S7o;'S;=`9W<%lO7o~8_RO;'S7o;'S;=`8h;=`O7o~8kXOY7oZw7owx.nx#O7o#O#P8[#P;'S7o;'S;=`9W;=`<%l7o<%lO7o~9ZP;=`<%l7on9cSc^Oy%^z;'S%^;'S;=`%o<%lO%^~9tOb~n9{UUQkWOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^n:fWkW!SQOy%^z!O%^!O!P;O!P!Q%^!Q![>T![;'S%^;'S;=`%o<%lO%^l;TUp`Oy%^z!Q%^!Q![;g![;'S%^;'S;=`%o<%lO%^l;nYp`#e[Oy%^z!Q%^!Q![;g![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^l<cYp`Oy%^z{%^{|=R|}%^}!O=R!O!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l=WUp`Oy%^z!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l=qUp`#e[Oy%^z!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l>[[p`#e[Oy%^z!O%^!O!P;g!P!Q%^!Q![>T![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^n?VSu^Oy%^z;'S%^;'S;=`%o<%lO%^l?hWkWOy%^z!O%^!O!P;O!P!Q%^!Q![>T![;'S%^;'S;=`%o<%lO%^n@VUZQOy%^z!Q%^!Q![;g![;'S%^;'S;=`%o<%lO%^~@nTkWOy%^z{@}{;'S%^;'S;=`%o<%lO%^~AUSp`#]~Oy%^z;'S%^;'S;=`%o<%lO%^lAg[#e[Oy%^z!O%^!O!P;g!P!Q%^!Q![>T![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^bBbU^QOy%^z![%^![!]Bt!];'S%^;'S;=`%o<%lO%^bB{S_Qp`Oy%^z;'S%^;'S;=`%o<%lO%^nC^S!Z^Oy%^z;'S%^;'S;=`%o<%lO%^dCoS}SOy%^z;'S%^;'S;=`%o<%lO%^bDQU!PQOy%^z!`%^!`!aDd!a;'S%^;'S;=`%o<%lO%^bDkS!PQp`Oy%^z;'S%^;'S;=`%o<%lO%^bDzWOy%^z!c%^!c!}Ed!}#T%^#T#oEd#o;'S%^;'S;=`%o<%lO%^bEk[!]Qp`Oy%^z}%^}!OEd!O!Q%^!Q![Ed![!c%^!c!}Ed!}#T%^#T#oEd#o;'S%^;'S;=`%o<%lO%^nFfSr^Oy%^z;'S%^;'S;=`%o<%lO%^nFwSq^Oy%^z;'S%^;'S;=`%o<%lO%^bGWUOy%^z#b%^#b#cGj#c;'S%^;'S;=`%o<%lO%^bGoUp`Oy%^z#W%^#W#XHR#X;'S%^;'S;=`%o<%lO%^bHYS!cQp`Oy%^z;'S%^;'S;=`%o<%lO%^bHiUOy%^z#f%^#f#gHR#g;'S%^;'S;=`%o<%lO%^fIQS!UUOy%^z;'S%^;'S;=`%o<%lO%^nIcS!T^Oy%^z;'S%^;'S;=`%o<%lO%^fItU!SQOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^`JZP;=`<%l$}",
-  tokenizers: [descendant, unitToken, identifiers, 1, 2, 3, 4, new LocalTokenGroup("m~RRYZ[z{a~~g~aO#_~~dP!P!Qg~lO#`~~", 28, 106)],
+  repeatNodeCount: 12,
+  tokenData: "J^~R!^OX$}X^%u^p$}pq%uqr)Xrs.Rst/utu6duv$}vw7^wx7oxy9^yz9oz{9t{|:_|}?Q}!O?c!O!P@Q!P!Q@i!Q![Ab![!]B]!]!^CX!^!_$}!_!`Cj!`!aC{!a!b$}!b!cDw!c!}$}!}#OFa#O#P$}#P#QFr#Q#R6d#R#T$}#T#UGT#U#c$}#c#dHf#d#o$}#o#pH{#p#q6d#q#rI^#r#sIo#s#y$}#y#z%u#z$f$}$f$g%u$g#BY$}#BY#BZ%u#BZ$IS$}$IS$I_%u$I_$I|$}$I|$JO%u$JO$JT$}$JT$JU%u$JU$KV$}$KV$KW%u$KW&FU$}&FU&FV%u&FV;'S$};'S;=`JW<%lO$}`%QSOy%^z;'S%^;'S;=`%o<%lO%^`%cSp`Oy%^z;'S%^;'S;=`%o<%lO%^`%rP;=`<%l%^~%zh#]~OX%^X^'f^p%^pq'fqy%^z#y%^#y#z'f#z$f%^$f$g'f$g#BY%^#BY#BZ'f#BZ$IS%^$IS$I_'f$I_$I|%^$I|$JO'f$JO$JT%^$JT$JU'f$JU$KV%^$KV$KW'f$KW&FU%^&FU&FV'f&FV;'S%^;'S;=`%o<%lO%^~'mh#]~p`OX%^X^'f^p%^pq'fqy%^z#y%^#y#z'f#z$f%^$f$g'f$g#BY%^#BY#BZ'f#BZ$IS%^$IS$I_'f$I_$I|%^$I|$JO'f$JO$JT%^$JT$JU'f$JU$KV%^$KV$KW'f$KW&FU%^&FU&FV'f&FV;'S%^;'S;=`%o<%lO%^l)[UOy%^z#]%^#]#^)n#^;'S%^;'S;=`%o<%lO%^l)sUp`Oy%^z#a%^#a#b*V#b;'S%^;'S;=`%o<%lO%^l*[Up`Oy%^z#d%^#d#e*n#e;'S%^;'S;=`%o<%lO%^l*sUp`Oy%^z#c%^#c#d+V#d;'S%^;'S;=`%o<%lO%^l+[Up`Oy%^z#f%^#f#g+n#g;'S%^;'S;=`%o<%lO%^l+sUp`Oy%^z#h%^#h#i,V#i;'S%^;'S;=`%o<%lO%^l,[Up`Oy%^z#T%^#T#U,n#U;'S%^;'S;=`%o<%lO%^l,sUp`Oy%^z#b%^#b#c-V#c;'S%^;'S;=`%o<%lO%^l-[Up`Oy%^z#h%^#h#i-n#i;'S%^;'S;=`%o<%lO%^l-uS!Y[p`Oy%^z;'S%^;'S;=`%o<%lO%^~.UWOY.RZr.Rrs.ns#O.R#O#P.s#P;'S.R;'S;=`/o<%lO.R~.sOi~~.vRO;'S.R;'S;=`/P;=`O.R~/SXOY.RZr.Rrs.ns#O.R#O#P.s#P;'S.R;'S;=`/o;=`<%l.R<%lO.R~/rP;=`<%l.Rn/zYyQOy%^z!Q%^!Q![0j![!c%^!c!i0j!i#T%^#T#Z0j#Z;'S%^;'S;=`%o<%lO%^l0oYp`Oy%^z!Q%^!Q![1_![!c%^!c!i1_!i#T%^#T#Z1_#Z;'S%^;'S;=`%o<%lO%^l1dYp`Oy%^z!Q%^!Q![2S![!c%^!c!i2S!i#T%^#T#Z2S#Z;'S%^;'S;=`%o<%lO%^l2ZYg[p`Oy%^z!Q%^!Q![2y![!c%^!c!i2y!i#T%^#T#Z2y#Z;'S%^;'S;=`%o<%lO%^l3QYg[p`Oy%^z!Q%^!Q![3p![!c%^!c!i3p!i#T%^#T#Z3p#Z;'S%^;'S;=`%o<%lO%^l3uYp`Oy%^z!Q%^!Q![4e![!c%^!c!i4e!i#T%^#T#Z4e#Z;'S%^;'S;=`%o<%lO%^l4lYg[p`Oy%^z!Q%^!Q![5[![!c%^!c!i5[!i#T%^#T#Z5[#Z;'S%^;'S;=`%o<%lO%^l5aYp`Oy%^z!Q%^!Q![6P![!c%^!c!i6P!i#T%^#T#Z6P#Z;'S%^;'S;=`%o<%lO%^l6WSg[p`Oy%^z;'S%^;'S;=`%o<%lO%^d6gUOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^d7QS}Sp`Oy%^z;'S%^;'S;=`%o<%lO%^b7cSXQOy%^z;'S%^;'S;=`%o<%lO%^~7rWOY7oZw7owx.nx#O7o#O#P8[#P;'S7o;'S;=`9W<%lO7o~8_RO;'S7o;'S;=`8h;=`O7o~8kXOY7oZw7owx.nx#O7o#O#P8[#P;'S7o;'S;=`9W;=`<%l7o<%lO7o~9ZP;=`<%l7on9cSc^Oy%^z;'S%^;'S;=`%o<%lO%^~9tOb~n9{UUQkWOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^n:fWkW!SQOy%^z!O%^!O!P;O!P!Q%^!Q![>T![;'S%^;'S;=`%o<%lO%^l;TUp`Oy%^z!Q%^!Q![;g![;'S%^;'S;=`%o<%lO%^l;nYp`#f[Oy%^z!Q%^!Q![;g![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^l<cYp`Oy%^z{%^{|=R|}%^}!O=R!O!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l=WUp`Oy%^z!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l=qUp`#f[Oy%^z!Q%^!Q![=j![;'S%^;'S;=`%o<%lO%^l>[[p`#f[Oy%^z!O%^!O!P;g!P!Q%^!Q![>T![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^n?VSu^Oy%^z;'S%^;'S;=`%o<%lO%^l?hWkWOy%^z!O%^!O!P;O!P!Q%^!Q![>T![;'S%^;'S;=`%o<%lO%^n@VUZQOy%^z!Q%^!Q![;g![;'S%^;'S;=`%o<%lO%^~@nTkWOy%^z{@}{;'S%^;'S;=`%o<%lO%^~AUSp`#^~Oy%^z;'S%^;'S;=`%o<%lO%^lAg[#f[Oy%^z!O%^!O!P;g!P!Q%^!Q![>T![!g%^!g!h<^!h#X%^#X#Y<^#Y;'S%^;'S;=`%o<%lO%^bBbU^QOy%^z![%^![!]Bt!];'S%^;'S;=`%o<%lO%^bB{S_Qp`Oy%^z;'S%^;'S;=`%o<%lO%^nC^S!Z^Oy%^z;'S%^;'S;=`%o<%lO%^dCoS}SOy%^z;'S%^;'S;=`%o<%lO%^bDQU!PQOy%^z!`%^!`!aDd!a;'S%^;'S;=`%o<%lO%^bDkS!PQp`Oy%^z;'S%^;'S;=`%o<%lO%^bDzWOy%^z!c%^!c!}Ed!}#T%^#T#oEd#o;'S%^;'S;=`%o<%lO%^bEk[!]Qp`Oy%^z}%^}!OEd!O!Q%^!Q![Ed![!c%^!c!}Ed!}#T%^#T#oEd#o;'S%^;'S;=`%o<%lO%^nFfSr^Oy%^z;'S%^;'S;=`%o<%lO%^nFwSq^Oy%^z;'S%^;'S;=`%o<%lO%^bGWUOy%^z#b%^#b#cGj#c;'S%^;'S;=`%o<%lO%^bGoUp`Oy%^z#W%^#W#XHR#X;'S%^;'S;=`%o<%lO%^bHYS!cQp`Oy%^z;'S%^;'S;=`%o<%lO%^bHiUOy%^z#f%^#f#gHR#g;'S%^;'S;=`%o<%lO%^fIQS!UUOy%^z;'S%^;'S;=`%o<%lO%^nIcS!T^Oy%^z;'S%^;'S;=`%o<%lO%^fItU!SQOy%^z!_%^!_!`6y!`;'S%^;'S;=`%o<%lO%^`JZP;=`<%l$}",
+  tokenizers: [descendant, unitToken, identifiers, 1, 2, 3, 4, new LocalTokenGroup("m~RRYZ[z{a~~g~aO#`~~dP!P!Qg~lO#a~~", 28, 107)],
   topRules: {"StyleSheet":[0,4],"Styles":[1,87]},
-  specialized: [{term: 101, get: (value) => spec_callee[value] || -1},{term: 59, get: (value) => spec_AtKeyword[value] || -1},{term: 102, get: (value) => spec_identifier$1[value] || -1}],
-  tokenPrec: 1219
+  specialized: [{term: 102, get: (value) => spec_callee[value] || -1},{term: 59, get: (value) => spec_AtKeyword[value] || -1},{term: 103, get: (value) => spec_identifier$1[value] || -1}],
+  tokenPrec: 1246
 });
 
 let _properties = null;

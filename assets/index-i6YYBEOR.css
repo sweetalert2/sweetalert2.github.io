@@ -1,6 +1,20 @@
-@charset "UTF-8";@import url("https://fonts.googleapis.com/css?family=Montserrat");@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-
-
+@charset "UTF-8";
+/* montserrat-latin-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/montserrat-latin-400-normal-CIMKXMQI.woff2) format('woff2'), url(/assets/montserrat-latin-400-normal-Sf4eHQyG.woff) format('woff');
+}
+/* source-code-pro-latin-400-normal */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/source-code-pro-latin-400-normal-BUJ3hEal.woff2) format('woff2'), url(/assets/source-code-pro-latin-400-normal-D8-c85EH.woff) format('woff');
+}
 /*! @docsearch/css 3.9.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#5468ff;
