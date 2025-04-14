@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom/client'
 import { Kinsta, Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
-const styles = (await import(`./modal-with-iframe-styles.css?raw`)).default
 const src = (await import('./modal-with-iframe-src?raw')).default
 
 function Recipe() {
@@ -15,18 +14,15 @@ function Recipe() {
       </h1>
 
       <p>
-        The important detail here is to keep the aspect ratio of the iframe. This is done by using CSS property{' '}
-        <strong>aspect-ratio: 16 / 9;</strong>
+        The best way to show iframes is to use the <strong>embed-iframe</strong> theme.
       </p>
-
-      <p>The rest of CSS styles are to remove the default paddings and make iframe take all the space available.</p>
+      <p>Import the theme and set it in the swal options:</p>
 
       <Sandpack
         files={{
           '/App.ts': src,
-          '/styles.css': styles,
         }}
-        editorHeight={350}
+        editorHeight={300}
         previewHeight={600}
       />
     </>

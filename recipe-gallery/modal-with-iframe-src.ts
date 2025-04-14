@@ -1,13 +1,11 @@
 import Swal from 'sweetalert2'
-import './styles.css'
+import 'sweetalert2/themes/embed-iframe.css' // import the embed-iframe theme
 
 Swal.fire({
+  theme: 'embed-iframe', // set the theme
   title: 'Modal with iframe',
   html: '<iframe frameborder="0" src="https://www.youtube.com/embed/6JxAis_v2mw"></iframe>',
   showCloseButton: true,
   showConfirmButton: false,
-  customClass: {
-    popup: 'swal-with-iframe',
-  },
   width: 1000,
 })
