@@ -1,4 +1,4 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav, K as Kinsta } from './index-DOLmnplw.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav, K as Kinsta } from './index-5JlDAMlJ.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
