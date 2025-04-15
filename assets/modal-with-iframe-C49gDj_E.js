@@ -1,5 +1,5 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav, K as Kinsta } from './index-5JlDAMlJ.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-D9Bk6xME.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav, K as Kinsta } from './index-CBkw1oz0.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-BfG3R__Q.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./modal-with-iframe-src-BxYtQbbm.js');return { default: __vite_default__ }},true?[]:void 0)).default;
 function Recipe() {
@@ -23,7 +23,7 @@ function Recipe() {
         files: {
           "/App.ts": src
         },
-        editorHeight: 350,
+        editorHeight: 300,
         previewHeight: 600
       }
     )
