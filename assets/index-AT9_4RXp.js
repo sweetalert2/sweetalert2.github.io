@@ -16695,7 +16695,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.19.0
+* sweetalert2 v11.19.1
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -18629,6 +18629,11 @@ const setFocus = (index, increment) => {
   // search for visible elements and select the next possible match
   if (focusableElements.length) {
     index = index + increment;
+
+    // shift + tab when .swal2-popup is focused
+    if (index === -2) {
+      index = focusableElements.length - 1;
+    }
 
     // rollover to first item
     if (index === focusableElements.length) {
@@ -21299,7 +21304,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.19.0';
+SweetAlert.version = '11.19.1';
 
 const Swal = SweetAlert;
 // @ts-ignore
