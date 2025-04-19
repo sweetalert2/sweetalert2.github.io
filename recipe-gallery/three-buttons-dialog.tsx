@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Kinsta, Nav } from '../src/components'
+import { Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const styles = (await import(`./three-buttons-dialog-styles.css?raw`)).default
@@ -9,7 +9,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Kinsta />
       <h1>Yes/No/Cancel Dialog</h1>
 
       <p>

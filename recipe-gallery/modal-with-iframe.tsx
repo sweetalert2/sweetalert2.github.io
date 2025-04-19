@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Kinsta, Nav } from '../src/components'
+import { Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./modal-with-iframe-src?raw')).default
@@ -8,7 +8,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Kinsta />
       <h1>
         Modal with <strong>iframe</strong> inside
       </h1>

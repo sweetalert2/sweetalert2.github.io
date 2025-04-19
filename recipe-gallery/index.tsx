@@ -1,11 +1,10 @@
 import ReactDOM from 'react-dom/client'
-import { Kinsta, Nav } from '../src/components'
+import { Nav } from '../src/components'
 
 function Recipe() {
   return (
     <>
       <Nav recipeGallery showBackToRecipeGalleryLink={false} />
-      <Kinsta />
       <h1>Recipe Gallery</h1>
       <p className="center">
         A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less.

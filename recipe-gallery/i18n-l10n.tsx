@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Kinsta, Nav } from '../src/components'
+import { Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./i18n-l10n-src?raw')).default
@@ -8,7 +8,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Kinsta />
       <h1>Internationalization (i18n) and localization (l10n)</h1>
 
       <p>

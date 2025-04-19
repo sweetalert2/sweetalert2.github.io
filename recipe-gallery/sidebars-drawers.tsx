@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Kinsta, Nav } from '../src/components'
+import { Nav } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const html = (await import(`./sidebars-drawers-html.html?raw`)).default
@@ -9,7 +9,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Kinsta />
       <h1>Sidebars and Drawers (Left, Right, Top, Bottom)</h1>
 
       <p>
