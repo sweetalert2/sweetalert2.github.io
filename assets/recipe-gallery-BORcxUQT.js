@@ -22,7 +22,8 @@ function Recipe() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./input-number-input-range.html", children: "input[number] + input[range]" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./validation-message-custom-icon.html", children: "Validation Message with a Custom Icon" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./blurred-backdrop.html", children: "Blurred Backdrop" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sidebars-drawers.html", children: "Sidebars and Drawers (Left, Right, Top, Bottom)" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sidebars-drawers.html", children: "Sidebars and Drawers (Left, Right, Top, Bottom)" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "./sweetalert2-laravel.html", children: "Laravel Example" }) })
     ] })
   ] });
 }
