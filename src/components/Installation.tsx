@@ -67,7 +67,7 @@ import 'sweetalert2/src/sweetalert2.scss'`}
       </div>
 
       <div className="center-container">
-        <h3 id="frameworks-integrations">Integrations with major JS frameworks</h3>
+        <h3 id="frameworks-integrations">Integrations with major frameworks</h3>
         <div className="frameworks-integrations">
           <div>
             <a
@@ -103,6 +103,18 @@ import 'sweetalert2/src/sweetalert2.scss'`}
               Angular
               <br />
               <img src="/images/angular.svg" width="125" alt="" />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://github.com/sweetalert2/sweetalert2-laravel"
+              target="_blank"
+              rel="noopener"
+              aria-label="Laravel integration"
+            >
+              Laravel
+              <br />
+              <img src="/images/laravel.svg" width="125" alt="" />
             </a>
           </div>
         </div>

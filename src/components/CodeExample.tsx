@@ -1,13 +1,14 @@
 import hljs from 'highlight.js/lib/core'
 import langJavascript from 'highlight.js/lib/languages/javascript'
 import langXml from 'highlight.js/lib/languages/xml'
+import langPhp from 'highlight.js/lib/languages/php'
 
 import { useEffect, useRef } from 'react'
 import type { MouseEventHandler, RefObject } from 'react'
 
 type CodeExampleProps = {
   code: string
-  language?: 'javascript' | 'xml'
+  language?: 'javascript' | 'xml' | 'php'
   codepenHtml?: string
   codepenCssExternal?: string
   withoutCodepen?: boolean
@@ -26,7 +27,6 @@ export function CodeExample({
   const codepenFormData = useRef(null) as RefObject<HTMLInputElement | null>
 
   const isAsync = !!code.match(/(^|\n)\w.*await/)
-
   useEffect(() => {
     if (
       !codeRef.current ||
@@ -38,6 +38,8 @@ export function CodeExample({
       hljs.registerLanguage('javascript', langJavascript)
     } else if (language === 'xml') {
       hljs.registerLanguage('xml', langXml)
+    } else if (language === 'php') {
+      hljs.registerLanguage('php', langPhp)
     }
     hljs.highlightElement(codeRef.current)
   }, [codeRef, language])

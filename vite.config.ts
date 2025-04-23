@@ -15,6 +15,7 @@ export default defineConfig({
         'queue-with-progress-steps': 'recipe-gallery/queue-with-progress-steps.html',
         'bootstrap-custom-loader': 'recipe-gallery/bootstrap-custom-loader.html',
         'custom-icon': 'recipe-gallery/custom-icon.html',
+        'sweetalert2-laravel': 'recipe-gallery/sweetalert2-laravel.html',
         'sweetalert2-react': 'recipe-gallery/sweetalert2-react.html',
         'sweetalert2-react-router': 'recipe-gallery/sweetalert2-react-router.html',
         'three-buttons-dialog': 'recipe-gallery/three-buttons-dialog.html',

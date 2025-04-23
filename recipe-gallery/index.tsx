@@ -61,6 +61,9 @@ function Recipe() {
         <li>
           <a href="./sidebars-drawers.html">Sidebars and Drawers (Left, Right, Top, Bottom)</a>
         </li>
+        <li>
+          <a href="./sweetalert2-laravel.html">Laravel Example</a>
+        </li>
       </ul>
     </>
   )
