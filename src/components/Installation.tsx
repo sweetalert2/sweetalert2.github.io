@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CodeExample } from './CodeExample'
+import { Partners } from './Partners'
 
 export function Installation() {
   return (
@@ -24,6 +25,8 @@ export function Installation() {
         />
         <JsdelivrInfo />
       </div>
+
+      <Partners />
 
       <div className="center-container">
         <h3 id="usage">Usage</h3>
@@ -119,6 +122,8 @@ import 'sweetalert2/src/sweetalert2.scss'`}
           </div>
         </div>
       </div>
+
+      <Partners />
     </>
   )
 }

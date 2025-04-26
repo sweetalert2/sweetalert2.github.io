@@ -1,3 +1,5 @@
+import { Partners } from './Partners'
+
 export function HandlingDismissals() {
   return (
     <div className="center-container">
@@ -79,6 +81,8 @@ export function HandlingDismissals() {
         </strong>{' '}
         (<strong>dismiss</strong> will be <strong>undefined</strong>).
       </p>
+
+      <Partners />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import type { SweetAlertIcon } from 'sweetalert2'
 import Swal from 'sweetalert2'
+import { Partners } from './Partners'
 
 export function Icons() {
   const showExample = (icon: SweetAlertIcon) => {
@@ -118,6 +119,8 @@ export function Icons() {
           </tr>
         </tbody>
       </table>
+
+      <Partners />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { examples } from '../examples'
 import { CodeExample } from './CodeExample'
+import { Partners } from './Partners'
 
 export function InputTypes() {
   return (
@@ -234,6 +235,8 @@ export function InputTypes() {
           </tr>
         </tbody>
       </table>
+
+      <Partners />
     </>
   )
 }

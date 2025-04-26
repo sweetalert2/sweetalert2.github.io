@@ -2,6 +2,7 @@ import Swal from 'sweetalert2'
 import { showSidebar } from '../utils'
 import { DocSearch } from './DocSearch'
 import { ThemeSelector } from '../utils/themableSwal'
+import { Partners } from './Partners'
 
 export const sidebarUrl = 'https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx'
 
@@ -18,14 +19,17 @@ export function Nav({
       <i className="fa fa-bars" id="show-sidebar" onClick={() => showSidebar()}></i>
 
       {recipeGallery ? (
-        <div className="recipe-gallery-top-nav">
-          {showBackToRecipeGalleryLink ? (
-            <a href="/recipe-gallery/">
-              <i className="fa fa-arrow-left"></i> Back to Recipe Gallery
-            </a>
-          ) : null}
-          <DocSearch />
-        </div>
+        <>
+          <div className="recipe-gallery-top-nav">
+            {showBackToRecipeGalleryLink ? (
+              <a href="/recipe-gallery/">
+                <i className="fa fa-arrow-left"></i> Back to Recipe Gallery
+              </a>
+            ) : null}
+            <DocSearch />
+          </div>
+          <Partners />
+        </>
       ) : null}
     </>
   )

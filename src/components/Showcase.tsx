@@ -1,5 +1,6 @@
 import { examples } from '../examples'
 import { CodeExample } from './CodeExample'
+import { Partners } from './Partners'
 
 export function Showcase() {
   return (
@@ -23,19 +24,7 @@ export function Showcase() {
         <CodeExample code={examples.sweetAlert.fnString} />
       </div>
 
-      <div className="center-container">
-        <p className="center">
-          <a
-            href="https://hostinger.com?REFERRALCODE=BKZHOSTINDAB"
-            target="_blank"
-            rel="noreferrer noopener"
-            tabIndex={-1}
-          >
-            <span className="mobile-hidden">✨ 🚀 ✨ Get </span>
-            20% discount on Hostiger Web Hosting! <span className="mobile-hidden">✨ 🚀 ✨</span>
-          </a>
-        </p>
-      </div>
+      <Partners />
     </>
   )
 }

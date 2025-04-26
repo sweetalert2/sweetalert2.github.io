@@ -1,3 +1,5 @@
+import { Partners } from './Partners'
+
 export function HandlingButtons() {
   return (
     <div className="center-container">
@@ -70,6 +72,8 @@ export function HandlingButtons() {
           </tr>
         </tbody>
       </table>
+
+      <Partners />
     </div>
   )
 }

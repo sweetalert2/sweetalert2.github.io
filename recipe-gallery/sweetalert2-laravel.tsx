@@ -88,12 +88,15 @@ Swal::toastQuestion([
     'title' => 'Toast with a question icon',
 ]);`}
         language="php"
-        style={{maxWidth: '600px'}}
+        style={{ maxWidth: '600px' }}
         withoutCodepen
       />
 
       <p>
-        <img src="https://github.com/sweetalert2/sweetalert2-laravel/raw/main/sweetalert2-laravel.png" style={{ maxWidth: 840 }}/>
+        <img
+          src="https://github.com/sweetalert2/sweetalert2-laravel/raw/main/sweetalert2-laravel.png"
+          style={{ maxWidth: 840 }}
+        />
       </p>
     </>
   )
