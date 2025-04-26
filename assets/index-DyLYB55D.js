@@ -21493,6 +21493,59 @@ const ThemeSelector = () => {
   ] }) });
 };
 
+function Partners() {
+  const partners = [
+    // Hostinger
+    {
+      link: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 20% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on Hostiger Web Hosting!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "Everything you need to create a website. ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Free domain. Free website migration. Free SSL."
+      ] }),
+      imageUrl: "/images/hostinger.png"
+    },
+    // NordVPN
+    {
+      link: "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=122472&url_id=902",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 75% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on NordVPN's 2-year plan!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "A truly global VPN server network.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Cybersecurity kit built for every day."
+      ] }),
+      imageUrl: "/images/nordvpn.png"
+    },
+    // NordPass
+    {
+      link: "https://go.nordpass.io/aff_c?offer_id=488&aff_id=122472&url_id=9356",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 50% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on NordPass Premium!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "NordPass is a leading password manager.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Trusted by millions."
+      ] }),
+      imageUrl: "/images/nordpass.png"
+    }
+  ];
+  const partner = partners[Math.floor(Math.random() * partners.length)];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "partner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: partner.link, target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: partner.imageUrl, alt: "" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: partner.title }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "description", children: partner.description })
+  ] }) });
+}
+
 const sidebarUrl = "https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx";
 function Nav({
   recipeGallery = false,
@@ -21501,12 +21554,15 @@ function Nav({
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Sidebar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "fa fa-bars", id: "show-sidebar", onClick: () => showSidebar() }),
-    recipeGallery ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "recipe-gallery-top-nav", children: [
-      showBackToRecipeGalleryLink ? /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "/recipe-gallery/", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "fa fa-arrow-left" }),
-        " Back to Recipe Gallery"
-      ] }) : null,
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DocSearch, {})
+    recipeGallery ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "recipe-gallery-top-nav", children: [
+        showBackToRecipeGalleryLink ? /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "/recipe-gallery/", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "fa fa-arrow-left" }),
+          " Back to Recipe Gallery"
+        ] }) : null,
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DocSearch, {})
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
     ] }) : null
   ] });
 }
@@ -22062,4 +22118,4 @@ const examples = Object.keys(functions).reduce((acc, id) => {
   return acc;
 }, {});
 
-export { DocSearch as D, Nav as N, ReactDOM as R, Swal as S, React as a, examples as e, getDefaultExportFromCjs as g, jsxRuntimeExports as j, reactExports as r };
+export { DocSearch as D, Nav as N, Partners as P, ReactDOM as R, Swal as S, React as a, examples as e, getDefaultExportFromCjs as g, jsxRuntimeExports as j, reactExports as r };

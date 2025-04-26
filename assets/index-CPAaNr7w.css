@@ -1802,6 +1802,9 @@ kbd {
   font-weight: 400;
   line-height: 1.5em;
 }
+.partner:has(+ h1) {
+  margin: 1em auto;
+}
 .examples {
   max-width: 900px;
   margin: 0 auto;
@@ -2153,6 +2156,7 @@ tr:hover .hover-anchor {
   max-width: 95%;
 }
 .recipes-list {
+  padding: 0;
   list-style: none;
 }
 .recipes-list li {
@@ -2224,6 +2228,9 @@ tr:hover .hover-anchor {
     border-radius: 50%;
     box-shadow: 0 0 0 1px #f2f4f6;
   }
+}
+.DocSearch-Button {
+  margin: 0;
 }
 @media all and (width <= 750px) {
   .DocSearch-Container {

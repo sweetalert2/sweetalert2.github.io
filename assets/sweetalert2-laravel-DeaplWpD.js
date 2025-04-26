@@ -1,5 +1,5 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-D1vRsKa5.js';
-import { C as CodeExample } from './CodeExample-DmZTPiHe.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-DyLYB55D.js';
+import { C as CodeExample } from './CodeExample-DiQK4S0U.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -83,7 +83,13 @@ Swal::toastQuestion([
         withoutCodepen: true
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://github.com/sweetalert2/sweetalert2-laravel/raw/main/sweetalert2-laravel.png", style: { maxWidth: 840 } }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        src: "https://github.com/sweetalert2/sweetalert2-laravel/raw/main/sweetalert2-laravel.png",
+        style: { maxWidth: 840 }
+      }
+    ) })
   ] });
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));
