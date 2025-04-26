@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-QxRQooNs.js';
-import { C as CodeExample } from './CodeExample-D2rpTROX.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-D1vRsKa5.js';
+import { C as CodeExample } from './CodeExample-DmZTPiHe.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -335,21 +335,7 @@ function Showcase() {
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "a",
-      {
-        href: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB",
-        target: "_blank",
-        rel: "noreferrer noopener",
-        tabIndex: -1,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mobile-hidden", children: "✨ 🚀 ✨ Get " }),
-          "20% discount on Hostiger Web Hosting! ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mobile-hidden", children: "✨ 🚀 ✨" })
-        ]
-      }
-    ) }) })
+    ] })
   ] });
 }
 
@@ -3045,6 +3031,59 @@ function Methods() {
   ] }) });
 }
 
+function Partners() {
+  const partners = [
+    // Hostinger
+    {
+      link: "https://hostinger.com?REFERRALCODE=BKZHOSTINDAB",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 20% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on Hostiger Web Hosting!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "Everything you need to create a website. ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Free domain. Free website migration. Free SSL."
+      ] }),
+      imageUrl: "/images/hostinger.png"
+    },
+    // NordVPN
+    {
+      link: "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=122472&url_id=902",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 75% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on NordVPN's 2-year plan!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "A truly global VPN server network.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Cybersecurity kit built for every day."
+      ] }),
+      imageUrl: "/images/nordvpn.png"
+    },
+    // NordPass
+    {
+      link: "https://go.nordpass.io/aff_c?offer_id=488&aff_id=122472&url_id=9356",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 50% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on NordPass Premium!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "NordPass is a leading password manager.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Trusted by millions."
+      ] }),
+      imageUrl: "/images/nordpass.png"
+    }
+  ];
+  const partner = partners[Math.floor(Math.random() * partners.length)];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "partner", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: partner.link, target: "_blank", rel: "noreferrer noopener", tabIndex: -1, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: partner.imageUrl, alt: "" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: partner.title }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "description", children: partner.description })
+  ] }) });
+}
+
 function Sponsors() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "sponsors", children: "Sponsors" }),
@@ -3459,6 +3498,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Header, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Showcase, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Examples, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Installation, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ConfigurationParams, {}),
