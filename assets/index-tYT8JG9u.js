@@ -21536,6 +21536,20 @@ function Partners() {
         "Trusted by millions."
       ] }),
       imageUrl: "/images/nordpass.png"
+    },
+    // CareerFoundry
+    {
+      link: "https://careerfoundry.com/en/referral_registrations/new?referral=4rARax01",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
+        "Get 10% discount ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on CareerFoundry courses!" })
+      ] }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "Career-change programs with a job guarantee.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Launch a career in tech that lasts 🚀"
+      ] }),
+      imageUrl: "/images/careerfoundry.png"
     }
   ];
   const partner = partners[Math.floor(Math.random() * partners.length)];
