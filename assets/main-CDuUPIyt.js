@@ -652,7 +652,7 @@ function Installation() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "usage", children: "Usage" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mobile-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "1. Import the plugin:" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           CodeExample,
@@ -702,6 +702,7 @@ import 'sweetalert2/src/sweetalert2.scss'`,
         )
       ] })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "frameworks-integrations", children: "Integrations with major frameworks" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "frameworks-integrations", children: [
@@ -762,8 +763,7 @@ import 'sweetalert2/src/sweetalert2.scss'`,
           }
         ) })
       ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
+    ] })
   ] });
 }
 function JsdelivrInfo() {
@@ -2172,7 +2172,7 @@ function ConfigurationParams() {
         ":"
       ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "examples", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "examples mobile-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ui", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Mixin example" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "show-example-btn", "aria-label": "Try me! Example: Mixin", onClick: examples.mixin.fn, children: "Try me!" })
@@ -2765,281 +2765,278 @@ function InputTypes() {
 }
 
 function Methods() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mobile-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "methods", children: "Methods" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "titles", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { children: "Method" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("th", { children: "Description" })
-        ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("tbody", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isVisible()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Determine if popup is shown." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h4", { children: [
-              "Swal.mixin(",
-              `{`,
-              " ...options ",
-              `}`,
-              ")"
-            ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Returns an extended version of ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal" }),
-              " containing ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "params" }),
-              " as defaults. Useful for reusing Swal configuration."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "update", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h4", { children: [
-              "Swal.update(",
-              `{`,
-              "...options",
-              `}`,
-              ")"
-            ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Updates popup options." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.close()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Close the currently open SweetAlert2 popup programmatically, the Promise returned by",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire()" }),
-              " will be resolved with an empty object",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: `{ }` })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getContainer()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup container which contains the backdrop and the popup itself." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getPopup()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getTitle()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup title." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getProgressSteps()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the progress steps." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getCloseButton()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the close button." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getIcon()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Get the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#icons", children: "icon" }),
-              "."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getIconContent()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Get the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#icons", children: "icon" }),
-              " content (without border)."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getHtmlContainer()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Gets the DOM element where the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "html" }),
-              "/",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "text" }),
-              " parameter is rendered to."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getImage()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Get the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#image", children: "image" }),
-              "."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getActions()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the actions block (buttons container)." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getFooter()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup footer." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getFocusableElements()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get all focusable elements in the popup." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "getConfirmButton", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getConfirmButton()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Get the "Confirm" button.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getDenyButton()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Get the "Deny" button.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getCancelButton()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Get the "Cancel" button.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.enableButtons()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Enable "Confirm" and "Cancel" buttons.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.disableButtons()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Disable "Confirm" and "Cancel" buttons.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "showLoading", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.showLoading()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Shows loader (spinner), this is useful with AJAX requests.",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-              'By default the loader be shown instead of the "Confirm" button, but if you want another button to be replaced with a loader, just pass it like this:',
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: "Swal.showLoading(Swal.getDenyButton())" })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "hideLoading", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.hideLoading()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Hides loader and shows back the button which was hidden by .showLoading()" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isLoading()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Determine if popup is in the loading state. Related methods:",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#showLoading", className: "nowrap", children: "Swal.showLoading()" }),
-              " ",
-              "and",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#hideLoading", className: "nowrap", children: "Swal.hideLoading()" })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "getTimerLeft", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getTimerLeft()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Returns the time left in case when ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
-              " parameter is set."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "stopTimer", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.stopTimer()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Stops the timer in case when ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
-              " parameter is set. Returns the time left"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "resumeTimer", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.resumeTimer()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Resume the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
-              " previously stopped. Returns the time left"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "toggleTimer", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.toggleTimer()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Toggle state of the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
-              " between stopped and running. Returns the time left"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "isTimerRunning", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isTimerRunning()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Returns the status of a ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
-              ": ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "true" }),
-              " if is running,",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
-              " if it's paused"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "increaseTimer", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.increaseTimer(ms)" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Increase the ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
-              " by ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "ms" }),
-              " milliseconds. Returns the time left"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.clickConfirm()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Click the "Confirm"-button programmatically.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.clickDeny()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Click the "Deny"-button programmatically.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.clickCancel()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Click the "Cancel"-button programmatically.' })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getInput()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Get the input DOM node, this method works with ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#input", children: "input parameter" }),
-              "."
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.disableInput()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Disable input. A disabled input element is unusable and un-clickable." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.enableInput()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Enable input." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "showValidationMessage", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.showValidationMessage(message)" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Show the validation message DOM node." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.resetValidationMessage()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Hide the validation message DOM node." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getValidationMessage()" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the validation message DOM node." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isValidParameter(param)" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Determine if parameter name is valid." })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isUpdatableParameter(param)" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
-              "Determine if parameter name is valid for ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#update", children: "Swal.update()" }),
-              " method."
-            ] })
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mobile-hidden", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "methods", children: "Methods" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "titles", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("th", { children: "Method" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("th", { children: "Description" })
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("tbody", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isVisible()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Determine if popup is shown." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h4", { children: [
+            "Swal.mixin(",
+            `{`,
+            " ...options ",
+            `}`,
+            ")"
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Returns an extended version of ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal" }),
+            " containing ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "params" }),
+            " as defaults. Useful for reusing Swal configuration."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "update", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h4", { children: [
+            "Swal.update(",
+            `{`,
+            "...options",
+            `}`,
+            ")"
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Updates popup options." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.close()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Close the currently open SweetAlert2 popup programmatically, the Promise returned by",
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Swal.fire()" }),
+            " will be resolved with an empty object",
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: `{ }` })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getContainer()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup container which contains the backdrop and the popup itself." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getPopup()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getTitle()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup title." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getProgressSteps()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the progress steps." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getCloseButton()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the close button." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getIcon()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Get the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#icons", children: "icon" }),
+            "."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getIconContent()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Get the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#icons", children: "icon" }),
+            " content (without border)."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getHtmlContainer()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Gets the DOM element where the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "html" }),
+            "/",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "text" }),
+            " parameter is rendered to."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getImage()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Get the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#image", children: "image" }),
+            "."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getActions()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the actions block (buttons container)." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getFooter()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the popup footer." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getFocusableElements()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get all focusable elements in the popup." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "getConfirmButton", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getConfirmButton()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Get the "Confirm" button.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getDenyButton()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Get the "Deny" button.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getCancelButton()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Get the "Cancel" button.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.enableButtons()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Enable "Confirm" and "Cancel" buttons.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.disableButtons()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Disable "Confirm" and "Cancel" buttons.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "showLoading", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.showLoading()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Shows loader (spinner), this is useful with AJAX requests.",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+            'By default the loader be shown instead of the "Confirm" button, but if you want another button to be replaced with a loader, just pass it like this:',
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "nowrap", children: "Swal.showLoading(Swal.getDenyButton())" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "hideLoading", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.hideLoading()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Hides loader and shows back the button which was hidden by .showLoading()" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isLoading()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Determine if popup is in the loading state. Related methods:",
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#showLoading", className: "nowrap", children: "Swal.showLoading()" }),
+            " ",
+            "and",
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#hideLoading", className: "nowrap", children: "Swal.hideLoading()" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "getTimerLeft", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getTimerLeft()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Returns the time left in case when ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
+            " parameter is set."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "stopTimer", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.stopTimer()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Stops the timer in case when ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
+            " parameter is set. Returns the time left"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "resumeTimer", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.resumeTimer()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Resume the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
+            " previously stopped. Returns the time left"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "toggleTimer", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.toggleTimer()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Toggle state of the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
+            " between stopped and running. Returns the time left"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "isTimerRunning", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isTimerRunning()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Returns the status of a ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
+            ": ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "true" }),
+            " if is running,",
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
+            " if it's paused"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "increaseTimer", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.increaseTimer(ms)" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Increase the ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#timer", children: "timer" }),
+            " by ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "ms" }),
+            " milliseconds. Returns the time left"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.clickConfirm()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Click the "Confirm"-button programmatically.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.clickDeny()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Click the "Deny"-button programmatically.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.clickCancel()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: 'Click the "Cancel"-button programmatically.' })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getInput()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Get the input DOM node, this method works with ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#input", children: "input parameter" }),
+            "."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.disableInput()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Disable input. A disabled input element is unusable and un-clickable." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.enableInput()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Enable input." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "showValidationMessage", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.showValidationMessage(message)" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Show the validation message DOM node." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.resetValidationMessage()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Hide the validation message DOM node." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.getValidationMessage()" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Get the validation message DOM node." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isValidParameter(param)" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Determine if parameter name is valid." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Swal.isUpdatableParameter(param)" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+            "Determine if parameter name is valid for ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#update", children: "Swal.update()" }),
+            " method."
           ] })
         ] })
       ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
-  ] });
+    ] })
+  ] }) });
 }
 
 function Sponsors() {
