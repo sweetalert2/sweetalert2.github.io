@@ -52,6 +52,24 @@ export function Partners() {
       ),
       imageUrl: '/images/nordpass.png',
     },
+
+    // CareerFoundry
+    {
+      link: 'https://careerfoundry.com/en/referral_registrations/new?referral=4rARax01',
+      title: (
+        <b>
+          Get 10% discount <span className="nowrap"> on CareerFoundry courses!</span>
+        </b>
+      ),
+      description: (
+        <>
+          Career-change programs with a job guarantee.
+          <br />
+          Launch a career in tech that lasts 🚀
+        </>
+      ),
+      imageUrl: '/images/careerfoundry.png',
+    },
   ]
 
   const partner = partners[Math.floor(Math.random() * partners.length)]
