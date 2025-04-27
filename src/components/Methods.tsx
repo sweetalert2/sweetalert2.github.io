@@ -1,5 +1,3 @@
-import { Partners } from './Partners'
-
 export function Methods() {
   return (
     <>
@@ -314,8 +312,6 @@ export function Methods() {
           </tbody>
         </table>
       </div>
-
-      <Partners />
     </>
   )
 }

@@ -30,7 +30,7 @@ export function Installation() {
 
       <div className="center-container">
         <h3 id="usage">Usage</h3>
-        <div className="mobile-hidden">
+        <div>
           <p>1. Import the plugin:</p>
           <CodeExample
             code={`import Swal from 'sweetalert2'
@@ -68,6 +68,8 @@ import 'sweetalert2/src/sweetalert2.scss'`}
           />
         </div>
       </div>
+
+      <Partners />
 
       <div className="center-container">
         <h3 id="frameworks-integrations">Integrations with major frameworks</h3>
@@ -122,8 +124,6 @@ import 'sweetalert2/src/sweetalert2.scss'`}
           </div>
         </div>
       </div>
-
-      <Partners />
     </>
   )
 }

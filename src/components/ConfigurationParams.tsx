@@ -1062,7 +1062,7 @@ export function ConfigurationParams() {
           :
         </p>
       </div>
-      <ul className="examples">
+      <ul className="examples mobile-hidden">
         <li>
           <div className="ui">
             <p>Mixin example</p>
