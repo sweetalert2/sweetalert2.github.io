@@ -70,6 +70,20 @@ export function Partners() {
       ),
       imageUrl: '/images/careerfoundry.png',
     },
+
+    // Coursera (via Impact)
+    {
+      link: 'https://imp.i384100.net/kOJnXz',
+      title: <b>Learn web development on Coursera!</b>,
+      description: (
+        <>
+          Start, switch, or advance your career with
+          <br />
+          more than 10,000 courses 🚀
+        </>
+      ),
+      imageUrl: '/images/coursera.png',
+    },
   ]
 
   const partner = partners[Math.floor(Math.random() * partners.length)]
