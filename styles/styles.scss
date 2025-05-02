@@ -9,30 +9,11 @@
 
 $black: #000;
 $white: #fff;
-$transparent: rgba($black, 0);
 $body-background: #f2f4f6;
-$salmon: #f77;
-$dovegray: #666;
 $gallery: #eee;
 $regentgray: #8d98a5;
 $chateaugray: #a7adb2;
 $porcelain: #e2e5e8;
-$white-button: rgba($white, 0.8);
-$pastel-green: #87d25f;
-$fruit-salad: #4caf50;
-$shark: #282c34;
-$facebook: #425f9c;
-$twitter: #1da1f3;
-$bitcoin: #f2660f;
-$ethereum: #2f3fd9;
-$bitcoincash: #5ca930;
-$stellar: #192786;
-
-@mixin retina-background($url, $type: png) {
-  background-image: image-set(url('/images/#{$url}.#{$type}') 1x, url('/images/#{$url}@2x.#{$type}') 2x);
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
 
 html,
 body {
@@ -208,7 +189,7 @@ h3 {
   position: relative;
   margin-top: 3em;
   padding-top: 3em;
-  color: $dovegray;
+  color: #666;
   font-size: 1.75em;
   text-align: center;
   text-transform: uppercase;
@@ -322,7 +303,7 @@ pre {
   position: relative;
   max-width: 95%;
   margin: 0 auto;
-  background: $shark;
+  background: #282c34;
   color: color.adjust($black, $lightness: 97%);
   font-size: 1.2em !important;
   line-height: 1.2;
@@ -437,14 +418,15 @@ kbd {
   }
 
   .vs-icon {
-    @include retina-background('vs_icon');
-
     position: absolute;
     z-index: 2;
-    top: 3.75em;
-    right: -2.125em;
-    width: 4.3125em;
-    height: 4.3125em;
+    top: 60px;
+    right: -34px;
+    width: 69px;
+    height: 69px;
+    background-image: url('/images/vs_icon.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
 
@@ -595,7 +577,7 @@ table {
     position: relative;
     padding: 0.625em 1.25em;
     background-color: $white;
-    color: $dovegray;
+    color: #666;
     font-weight: 400;
     white-space: nowrap;
 
@@ -755,45 +737,10 @@ tr:hover {
   }
 }
 
-.banners {
-  img {
-    transition: box-shadow 0.1s ease-out;
-    border: 1px solid #ccc;
-    border-radius: 0.3em;
-
-    &:hover {
-      border: 1px solid #aaa;
-      box-shadow: 1px 1px 2px #ccc;
-    }
-  }
-}
-
-.cryptocurrency-qr-code {
-  width: 200px;
-  height: 200px;
-  margin-top: 1em;
-}
-
-.bitcoin {
-  color: $bitcoin;
-}
-
-.ethereum {
-  color: $ethereum;
-}
-
-.bitcoincash {
-  color: $bitcoincash;
-}
-
-.stellar {
-  display: block;
-  color: $stellar;
-}
-
 .stats {
   display: flex;
   justify-content: center;
+  height: 19px;
   gap: 20px;
   font-size: 0.8125em;
 }
