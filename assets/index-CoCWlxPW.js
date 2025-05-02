@@ -21550,6 +21550,17 @@ function Partners() {
         "Launch a career in tech that lasts 🚀"
       ] }),
       imageUrl: "/images/careerfoundry.png"
+    },
+    // Coursera (via Impact)
+    {
+      link: "https://imp.i384100.net/kOJnXz",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "Learn web development on Coursera!" }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "Start, switch, or advance your career with",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "more than 10,000 courses 🚀"
+      ] }),
+      imageUrl: "/images/coursera.png"
     }
   ];
   const partner = partners[Math.floor(Math.random() * partners.length)];
