@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-CZw3uB53.js","assets/base-80a1f760-DUsDUsoW.js","assets/consoleHook-59e792cb-BZ6O6a-s.js","assets/index-C_4s0rQk.js","assets/index-DPg__xC7.css","assets/index-599aeaf7-DktRY1uK.js","assets/index-C1quKEe3.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-C_4s0rQk.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-CI2boQJr.js","assets/base-80a1f760-BX4ByD56.js","assets/consoleHook-59e792cb-BTaZAmDo.js","assets/index-DHz3rGcK.js","assets/index-CodsVOFr.css","assets/index-599aeaf7-gPzfTO0t.js","assets/index-csQCYINv.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-DHz3rGcK.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -490,15 +490,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-CZw3uB53.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-CI2boQJr.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-DktRY1uK.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-gPzfTO0t.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-C1quKEe3.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-csQCYINv.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
