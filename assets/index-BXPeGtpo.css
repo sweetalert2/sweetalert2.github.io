@@ -1743,15 +1743,15 @@ kbd {
   margin: 2em auto;
 }
 .showcase .vs-icon {
-  background-image: image-set(url("/images/vs_icon.png") 1x, url("/images/vs_icon@2x.png") 2x);
-  background-repeat: no-repeat;
-  background-size: 100%;
   position: absolute;
   z-index: 2;
-  top: 3.75em;
-  right: -2.125em;
-  width: 4.3125em;
-  height: 4.3125em;
+  top: 60px;
+  right: -34px;
+  width: 69px;
+  height: 69px;
+  background-image: url("/images/vs_icon.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .partner {
   margin: 3em auto -3em;
@@ -2009,36 +2009,10 @@ tr:hover .hover-anchor {
 .sponsors div {
   margin: 1em;
 }
-.banners img {
-  transition: box-shadow 0.1s ease-out;
-  border: 1px solid #ccc;
-  border-radius: 0.3em;
-}
-.banners img:hover {
-  border: 1px solid #aaa;
-  box-shadow: 1px 1px 2px #ccc;
-}
-.cryptocurrency-qr-code {
-  width: 200px;
-  height: 200px;
-  margin-top: 1em;
-}
-.bitcoin {
-  color: #f2660f;
-}
-.ethereum {
-  color: #2f3fd9;
-}
-.bitcoincash {
-  color: #5ca930;
-}
-.stellar {
-  display: block;
-  color: #192786;
-}
 .stats {
   display: flex;
   justify-content: center;
+  height: 19px;
   gap: 20px;
   font-size: 0.8125em;
 }
