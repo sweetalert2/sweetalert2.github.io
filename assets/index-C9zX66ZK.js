@@ -21561,6 +21561,17 @@ function Partners() {
         "more than 10,000 courses 🚀"
       ] }),
       imageUrl: "/images/coursera.png"
+    },
+    // SentryPC (via Impact)
+    {
+      link: "https://sentrypc.7eer.net/e1ajMj",
+      title: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "Monitor. Filter. Control." }),
+      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        "Protect, understand, and manage your users'",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "computer and mobile activities anywhere 🕵️‍♂️"
+      ] }),
+      imageUrl: "/images/sentrypc.png"
     }
   ];
   const partner = partners[Math.floor(Math.random() * partners.length)];
