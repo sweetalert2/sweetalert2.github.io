@@ -21556,9 +21556,9 @@ function Partners() {
       link: "https://imp.i384100.net/kOJnXz",
       title: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "Learn web development on Coursera!" }),
       description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "Start, switch, or advance your career with",
+        "Flexible learning paths for your goals.",
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "more than 10,000 courses 🚀"
+        "Unlock your potential now! 🚀"
       ] }),
       imageUrl: "/images/coursera.png"
     },
@@ -21567,9 +21567,9 @@ function Partners() {
       link: "https://sentrypc.7eer.net/e1ajMj",
       title: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "Monitor. Filter. Control." }),
       description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "Protect, understand, and manage your users'",
+        "Know everything your users do on their PC",
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "computer and mobile activities anywhere 🕵️‍♂️"
+        "and mobile devices on the Internet."
       ] }),
       imageUrl: "/images/sentrypc.png"
     }
