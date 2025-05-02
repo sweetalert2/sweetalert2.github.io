@@ -1,5 +1,5 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-DHz3rGcK.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-BxHEMxSY.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-e3U1B4UL.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-BrYjTtXS.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./i18n-l10n-src-DiKUhmni.js');return { default: __vite_default__ }},true              ?[]:void 0)).default;
 function Recipe() {
