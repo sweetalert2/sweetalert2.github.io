@@ -2039,6 +2039,7 @@ tr:hover .hover-anchor {
 .stats {
   display: flex;
   justify-content: center;
+  height: 19px;
   gap: 20px;
   font-size: 0.8125em;
 }
