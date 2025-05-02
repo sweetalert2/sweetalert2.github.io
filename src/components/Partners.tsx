@@ -77,12 +77,26 @@ export function Partners() {
       title: <b>Learn web development on Coursera!</b>,
       description: (
         <>
-          Start, switch, or advance your career with
+          Flexible learning paths for your goals.
           <br />
-          more than 10,000 courses 🚀
+          Unlock your potential now! 🚀
         </>
       ),
       imageUrl: '/images/coursera.png',
+    },
+
+    // SentryPC (via Impact)
+    {
+      link: 'https://sentrypc.7eer.net/e1ajMj',
+      title: <b>Monitor. Filter. Control.</b>,
+      description: (
+        <>
+          Know everything your users do on their PC
+          <br />
+          and mobile devices on the Internet.
+        </>
+      ),
+      imageUrl: '/images/sentrypc.png',
     },
   ]
 
