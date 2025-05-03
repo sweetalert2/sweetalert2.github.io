@@ -206,6 +206,15 @@ export function ConfigurationParams() {
               </td>
               <td>The container element for adding popup into.</td>
             </tr>
+            <tr id="topLayer">
+              <td>
+                <a className="hover-anchor" href="#topLayer" children="#" />
+                <h4>topLayer</h4>
+                <br />
+                <i>false</i>
+              </td>
+              <td>Set to `true` to put the popup on top of all other elements (Top Layer).</td>
+            </tr>
             <tr id="input">
               <td>
                 <a className="hover-anchor" href="#input" children="#" />
