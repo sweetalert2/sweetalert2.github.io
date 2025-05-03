@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-B4xIpDXp.js","assets/base-80a1f760-wF38vKF0.js","assets/consoleHook-59e792cb-Gt_gNJZI.js","assets/index-aEmYZnvw.js","assets/index-BXPeGtpo.css","assets/index-599aeaf7-DtnyJGKR.js","assets/index-DOn-_A8F.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-aEmYZnvw.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-Dtd5M9y4.js","assets/base-80a1f760-CSyXp1rl.js","assets/consoleHook-59e792cb-CCDfDPLy.js","assets/index-D30iM8bY.js","assets/index-BXPeGtpo.css","assets/index-599aeaf7-irognF89.js","assets/index-DU_f8VUf.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-D30iM8bY.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -490,15 +490,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-B4xIpDXp.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-Dtd5M9y4.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-DtnyJGKR.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-irognF89.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DOn-_A8F.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DU_f8VUf.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -12198,14 +12198,14 @@ class EditorView {
     [IME](https://en.wikipedia.org/wiki/Input_method), and at least
     one change has been made in the current composition.
     */
-    get composing() { return this.inputState.composing > 0; }
+    get composing() { return !!this.inputState && this.inputState.composing > 0; }
     /**
     Indicates whether the user is currently in composing state. Note
     that on some platforms, like Android, this will be the case a
     lot, since just putting the cursor on a word starts a
     composition there.
     */
-    get compositionStarted() { return this.inputState.composing >= 0; }
+    get compositionStarted() { return !!this.inputState && this.inputState.composing >= 0; }
     /**
     The document or shadow root that the view lives in.
     */

@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-aEmYZnvw.js';
-import { C as CodeExample } from './CodeExample-D_2EdFWR.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-D30iM8bY.js';
+import { C as CodeExample } from './CodeExample-DdPV26XD.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -1044,6 +1044,15 @@ function ConfigurationParams() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "'body'" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "The container element for adding popup into." })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "topLayer", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "hover-anchor", href: "#topLayer", children: "#" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "topLayer" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("i", { children: "false" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { children: "Set to `true` to put the popup on top of all other elements (Top Layer)." })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { id: "input", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { children: [
