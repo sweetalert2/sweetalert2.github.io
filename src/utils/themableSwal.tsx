@@ -3,6 +3,7 @@ import type { SweetAlertTheme } from 'sweetalert2'
 import Swal from 'sweetalert2'
 
 import 'sweetalert2/themes/borderless.css'
+import 'sweetalert2/themes/minimal.css'
 
 declare global {
   interface Window {
@@ -33,6 +34,7 @@ export const ThemeSelector = () => {
           <option value="light">Default (light)</option>
           <option value="dark">Dark</option>
           <option value="auto">Auto</option>
+          <option value="minimal">Minimal</option>
           <option value="borderless">Borderless</option>
         </select>
       </label>
