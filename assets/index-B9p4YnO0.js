@@ -21491,6 +21491,7 @@ const ThemeSelector = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "light", children: "Default (light)" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "dark", children: "Dark" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "auto", children: "Auto" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "minimal", children: "Minimal" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "borderless", children: "Borderless" })
         ]
       }
