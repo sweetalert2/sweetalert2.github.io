@@ -39,12 +39,14 @@ function Header() {
   };
   const [hash] = useHash();
   reactExports.useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash.slice(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => {
+      if (hash) {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
-    }
+    }, 300);
   }, [hash]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
