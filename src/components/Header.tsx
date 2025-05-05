@@ -23,12 +23,14 @@ export function Header() {
   const [hash] = useHash()
 
   useEffect(() => {
-    if (hash) {
-      const element = document.getElementById((hash as string).slice(1))
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setTimeout(() => {
+      if (hash) {
+        const element = document.getElementById((hash as string).slice(1))
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
       }
-    }
+    }, 300)
   }, [hash])
 
   return (
