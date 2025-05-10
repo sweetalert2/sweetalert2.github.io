@@ -3280,11 +3280,6 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://sexsitoys.com/lovense-games/", target: "_blank", rel: "noopener", "aria-label": "Sexsi Toys", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexsitoys.jpg", alt: "Sexsi Toys" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Sexsi Toys"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.cheapestsexdolls.com", target: "_blank", rel: "noopener", "aria-label": "CheapestSexDolls", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/cheapestsexdolls.png", alt: "CheapestSexDolls" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
