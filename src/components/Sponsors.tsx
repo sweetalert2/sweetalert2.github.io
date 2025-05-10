@@ -259,13 +259,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://sexsitoys.com/lovense-games/" target="_blank" rel="noopener" aria-label="Sexsi Toys">
-            <img src="/images/sponsors/sexsitoys.jpg" alt="Sexsi Toys" />
-            <br />
-            Sexsi Toys
-          </a>
-        </div>
-        <div>
           <a href="https://www.cheapestsexdolls.com" target="_blank" rel="noopener" aria-label="CheapestSexDolls">
             <img src="/images/sponsors/cheapestsexdolls.png" alt="CheapestSexDolls" />
             <br />
