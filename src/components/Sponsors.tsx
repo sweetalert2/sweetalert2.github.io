@@ -70,13 +70,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.coinbit.fi/" target="_blank" rel="noopener" aria-label="Kryptovaluutat">
-            <img src="/images/sponsors/coinbit.png" alt="Kryptovaluutat" />
-            <br />
-            Kryptovaluutat
-          </a>
-        </div>
-        <div>
           <a href="https://dlxplugins.com/" target="_blank" rel="noopener" aria-label="DLX Plugins">
             <img src="https://avatars.githubusercontent.com/u/106675919?s=200&v=4" alt="DLX Plugins" />
             <br />
