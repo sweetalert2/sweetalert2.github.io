@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-CEmLjFDk.js","assets/base-80a1f760-Ds8Ej-8G.js","assets/consoleHook-59e792cb-mcd5V0_A.js","assets/index-B9p4YnO0.js","assets/index-D8zh24Vz.css","assets/index-599aeaf7-BUFZODpx.js","assets/index-DdJMCVeU.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-B9p4YnO0.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-ppmRzLlB.js","assets/base-80a1f760-RQBWOWjG.js","assets/consoleHook-59e792cb-Biw1D1cr.js","assets/index-aV6usKc7.js","assets/index-D8zh24Vz.css","assets/index-599aeaf7-L0WMNmoG.js","assets/index-DEJ7UGOo.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-aV6usKc7.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
   let promise = Promise.resolve();
@@ -490,15 +490,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-CEmLjFDk.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-ppmRzLlB.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-BUFZODpx.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-L0WMNmoG.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DdJMCVeU.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DEJ7UGOo.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -23653,7 +23653,7 @@ const descendantOp = 107,
 const space$1 = [9, 10, 11, 12, 13, 32, 133, 160, 5760, 8192, 8193, 8194, 8195, 8196, 8197,
                8198, 8199, 8200, 8201, 8202, 8232, 8233, 8239, 8287, 12288];
 const colon = 58, parenL = 40, underscore = 95, bracketL$1 = 91, dash$1 = 45, period = 46,
-      hash = 35, percent = 37, ampersand = 38, backslash = 92, newline$1 = 10;
+      hash = 35, percent = 37, ampersand = 38, backslash = 92, newline$1 = 10, asterisk = 42;
 
 function isAlpha(ch) { return ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122 || ch >= 161 }
 
@@ -23685,7 +23685,7 @@ const descendant = new ExternalTokenizer(input => {
   if (space$1.includes(input.peek(-1))) {
     let {next} = input;
     if (isAlpha(next) || next == underscore || next == hash || next == period ||
-        next == bracketL$1 || next == colon && isAlpha(input.peek(1)) ||
+        next == asterisk || next == bracketL$1 || next == colon && isAlpha(input.peek(1)) ||
         next == dash$1 || next == ampersand)
       input.acceptToken(descendantOp);
   }

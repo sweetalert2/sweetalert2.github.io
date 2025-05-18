@@ -16695,7 +16695,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.21.0
+* sweetalert2 v11.21.1
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -16829,8 +16829,7 @@ const warnOnce = message => {
  * @param {string} deprecatedParam
  * @param {string?} useInstead
  */
-const warnAboutDeprecation = function (deprecatedParam) {
-  let useInstead = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+const warnAboutDeprecation = (deprecatedParam, useInstead = null) => {
   warnOnce(`"${deprecatedParam}" is deprecated and will be removed in the next major release.${useInstead ? ` Use "${useInstead}" instead.` : ''}`);
 };
 
@@ -17251,8 +17250,7 @@ const applyNumericalStyle = (elem, property, value) => {
  * @param {HTMLElement | null} elem
  * @param {string} display
  */
-const show = function (elem) {
-  let display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'flex';
+const show = (elem, display = 'flex') => {
   if (!elem) {
     return;
   }
@@ -17273,8 +17271,7 @@ const hide = elem => {
  * @param {HTMLElement | null} elem
  * @param {string} display
  */
-const showWhenInnerHtmlPresent = function (elem) {
-  let display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'block';
+const showWhenInnerHtmlPresent = (elem, display = 'block') => {
   if (!elem) {
     return;
   }
@@ -17305,8 +17302,7 @@ const setStyle = (parent, selector, property, value) => {
  * @param {any} condition
  * @param {string} display
  */
-const toggle = function (elem, condition) {
-  let display = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'flex';
+const toggle = (elem, condition, display = 'flex') => {
   if (condition) {
     show(elem, display);
   } else {
@@ -17334,6 +17330,22 @@ const allButtonsAreHidden = () => !isVisible$1(getConfirmButton()) && !isVisible
 const isScrollable = elem => !!(elem.scrollHeight > elem.clientHeight);
 
 /**
+ * @param {HTMLElement} element
+ * @param {HTMLElement} stopElement
+ * @returns {boolean}
+ */
+const selfOrParentIsScrollable = (element, stopElement) => {
+  let parent = element;
+  while (parent && parent !== stopElement) {
+    if (isScrollable(parent)) {
+      return true;
+    }
+    parent = parent.parentElement;
+  }
+  return false;
+};
+
+/**
  * borrowed from https://stackoverflow.com/a/46352119
  *
  * @param {HTMLElement} elem
@@ -17350,8 +17362,7 @@ const hasCssAnimation = elem => {
  * @param {number} timer
  * @param {boolean} reset
  */
-const animateTimerProgressBar = function (timer) {
-  let reset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+const animateTimerProgressBar = (timer, reset = false) => {
   const timerProgressBar = getTimerProgressBar();
   if (!timerProgressBar) {
     return;
@@ -18896,7 +18907,9 @@ const shouldPreventTouchMove = event => {
   if (target === container) {
     return true;
   }
-  if (!isScrollable(container) && target instanceof HTMLElement && target.tagName !== 'INPUT' &&
+  if (!isScrollable(container) && target instanceof HTMLElement && !selfOrParentIsScrollable(target, htmlContainer) &&
+  // #2823
+  target.tagName !== 'INPUT' &&
   // #1603
   target.tagName !== 'TEXTAREA' &&
   // #2266
@@ -20201,10 +20214,7 @@ const argsToParams = args => {
  * @param  {...SweetAlertOptions} args
  * @returns {Promise<SweetAlertResult>}
  */
-function fire() {
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
+function fire(...args) {
   return new this(...args);
 }
 
@@ -20317,8 +20327,7 @@ const clickHandlers = {};
 /**
  * @param {string} attr
  */
-function bindClickHandler() {
-  let attr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'data-swal-template';
+function bindClickHandler(attr = 'data-swal-template') {
   clickHandlers[attr] = this;
   if (!bodyClickListenerAdded) {
     document.body.addEventListener('click', bodyClickListener);
@@ -20376,16 +20385,12 @@ class EventEmitter {
    * @param {EventHandler} eventHandler
    */
   once(eventName, eventHandler) {
-    var _this = this;
     /**
      * @param {Array} args
      */
-    const onceFn = function () {
-      _this.removeListener(eventName, onceFn);
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      eventHandler.apply(_this, args);
+    const onceFn = (...args) => {
+      this.removeListener(eventName, onceFn);
+      eventHandler.apply(this, args);
     };
     this.on(eventName, onceFn);
   }
@@ -20394,10 +20399,7 @@ class EventEmitter {
    * @param {string} eventName
    * @param {Array} args
    */
-  emit(eventName) {
-    for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-      args[_key2 - 1] = arguments[_key2];
-    }
+  emit(eventName, ...args) {
     this._getHandlersByEventName(eventName).forEach(
     /**
      * @param {EventHandler} eventHandler
@@ -20997,7 +20999,7 @@ class SweetAlert {
    * @param {...any} args
    * @this {SweetAlert}
    */
-  constructor() {
+  constructor(...args) {
     /**
      * @type {Promise<SweetAlertResult>}
      */
@@ -21009,9 +21011,6 @@ class SweetAlert {
     currentInstance = this;
 
     // @ts-ignore
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
     const outerParams = Object.freeze(this.constructor.argsToParams(args));
 
     /** @type {Readonly<SweetAlertOptions>} */
@@ -21021,8 +21020,7 @@ class SweetAlert {
     this.isAwaitingPromise = false;
     _classPrivateFieldSet2(_promise, this, this._main(currentInstance.params));
   }
-  _main(userParams) {
-    let mixinParams = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  _main(userParams, mixinParams = {}) {
     showWarningsForParams(Object.assign({}, mixinParams, userParams));
     if (globalState.currentInstance) {
       const swalPromiseResolve = privateMethods.swalPromiseResolve.get(globalState.currentInstance);
@@ -21301,15 +21299,15 @@ Object.keys(instanceMethods).forEach(key => {
    * @param {...any} args
    * @returns {any | undefined}
    */
-  SweetAlert[key] = function () {
+  SweetAlert[key] = function (...args) {
     if (currentInstance && currentInstance[key]) {
-      return currentInstance[key](...arguments);
+      return currentInstance[key](...args);
     }
     return null;
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.21.0';
+SweetAlert.version = '11.21.1';
 
 const Swal = SweetAlert;
 // @ts-ignore
