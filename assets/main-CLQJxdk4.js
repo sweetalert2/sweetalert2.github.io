@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-aV6usKc7.js';
-import { C as CodeExample } from './CodeExample-m8Nnk8Az.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-Cjl2SwDu.js';
+import { C as CodeExample } from './CodeExample-C1YEr1A2.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -3250,11 +3250,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/dollauthority.png", alt: "Doll Authority" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Doll Authority"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://dreamlovedoll.com/", target: "_blank", rel: "noopener", "aria-label": "DreamLoveDoll", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/dreamlovedoll.jpg", alt: "DreamLoveDoll" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "DreamLoveDoll"
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sexdollpartner.com/", target: "_blank", rel: "noopener", "aria-label": "SexDollPartner", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sexdollpartner.jpg", alt: "SexDollPartner" }),
