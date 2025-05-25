@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 
 import 'sweetalert2/themes/borderless.css'
 import 'sweetalert2/themes/minimal.css'
+import 'sweetalert2/themes/bulma.css'
 
 declare global {
   interface Window {
@@ -36,6 +37,7 @@ export const ThemeSelector = () => {
           <option value="auto">Auto</option>
           <option value="minimal">Minimal</option>
           <option value="borderless">Borderless</option>
+          <option value="bulma">Bulma</option>
         </select>
       </label>
     </div>
