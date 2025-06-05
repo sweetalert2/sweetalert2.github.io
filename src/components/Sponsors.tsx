@@ -104,20 +104,6 @@ export function Sponsors() {
             ZezeLife
           </a>
         </div>
-        <div>
-          <a href="https://realspyapps.com/" target="_blank" rel="noopener" aria-label="Real Spy Apps">
-            <img src="/images/sponsors/realspyapps.jpeg" alt="Real Spy Apps" />
-            <br />
-            Real Spy Apps
-          </a>
-        </div>
-        <div>
-          <a href="https://celltrackingapps.com/" target="_blank" rel="noopener" aria-label="Phone Tracking Apps">
-            <img src="/images/sponsors/celltrackingapps.png" alt="Phone Tracking Apps" />
-            <br />
-            Phone Tracking Apps
-          </a>
-        </div>
       </div>
 
       <h3 id="nsfw-sponsors">NSFW Sponsors</h3>
