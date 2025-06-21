@@ -179,13 +179,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://aeroescorts.com/" target="_blank" rel="noopener" aria-label="AeroEscorts">
-            <img src="/images/sponsors/aeroescorts.png" alt="AeroEscorts" />
-            <br />
-            AeroEscorts
-          </a>
-        </div>
-        <div>
           <a href="https://www.hismith.co.uk/" target="_blank" rel="noopener" aria-label="Hismith">
             <img src="/images/sponsors/hismith.png" alt="Hismith" />
             <br />
