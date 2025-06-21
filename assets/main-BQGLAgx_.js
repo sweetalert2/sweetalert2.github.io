@@ -3212,11 +3212,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "SoSexDoll"
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://aeroescorts.com/", target: "_blank", rel: "noopener", "aria-label": "AeroEscorts", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/aeroescorts.png", alt: "AeroEscorts" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "AeroEscorts"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.hismith.co.uk/", target: "_blank", rel: "noopener", "aria-label": "Hismith", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/hismith.png", alt: "Hismith" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
