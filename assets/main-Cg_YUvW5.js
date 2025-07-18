@@ -3241,11 +3241,6 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.cheapestsexdolls.com", target: "_blank", rel: "noopener", "aria-label": "CheapestSexDolls", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/cheapestsexdolls.png", alt: "CheapestSexDolls" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "CheapestSexDolls"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.nakedoll.com/", target: "_blank", rel: "noopener", "aria-label": "NakeDoll", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/nakedoll.png", alt: "NakeDoll" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
