@@ -212,13 +212,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.cheapestsexdolls.com" target="_blank" rel="noopener" aria-label="CheapestSexDolls">
-            <img src="/images/sponsors/cheapestsexdolls.png" alt="CheapestSexDolls" />
-            <br />
-            CheapestSexDolls
-          </a>
-        </div>
-        <div>
           <a href="https://www.nakedoll.com/" target="_blank" rel="noopener" aria-label="NakeDoll">
             <img src="/images/sponsors/nakedoll.png" alt="NakeDoll" />
             <br />
