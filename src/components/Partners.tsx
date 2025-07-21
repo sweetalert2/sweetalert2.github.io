@@ -17,42 +17,6 @@ export function Partners() {
       imageUrl: '/images/hostinger.png',
     },
 
-    // NordVPN
-    {
-      link: 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=122472&url_id=902',
-      title: (
-        <b>
-          Get 75% discount <span className="nowrap"> on NordVPN's 2-year plan!</span>
-        </b>
-      ),
-      description: (
-        <>
-          A truly global VPN server network.
-          <br />
-          Cybersecurity kit built for every day.
-        </>
-      ),
-      imageUrl: '/images/nordvpn.png',
-    },
-
-    // NordPass
-    {
-      link: 'https://go.nordpass.io/aff_c?offer_id=488&aff_id=122472&url_id=9356',
-      title: (
-        <b>
-          Get 50% discount <span className="nowrap"> on NordPass Premium!</span>
-        </b>
-      ),
-      description: (
-        <>
-          NordPass is a leading password manager.
-          <br />
-          Trusted by millions.
-        </>
-      ),
-      imageUrl: '/images/nordpass.png',
-    },
-
     // CareerFoundry
     {
       link: 'https://careerfoundry.com/en/referral_registrations/new?referral=4rARax01',
