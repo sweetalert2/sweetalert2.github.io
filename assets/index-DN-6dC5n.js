@@ -21517,34 +21517,6 @@ function Partners() {
       ] }),
       imageUrl: "/images/hostinger.png"
     },
-    // NordVPN
-    {
-      link: "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=122472&url_id=902",
-      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
-        "Get 75% discount ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on NordVPN's 2-year plan!" })
-      ] }),
-      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "A truly global VPN server network.",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Cybersecurity kit built for every day."
-      ] }),
-      imageUrl: "/images/nordvpn.png"
-    },
-    // NordPass
-    {
-      link: "https://go.nordpass.io/aff_c?offer_id=488&aff_id=122472&url_id=9356",
-      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
-        "Get 50% discount ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on NordPass Premium!" })
-      ] }),
-      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "NordPass is a leading password manager.",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Trusted by millions."
-      ] }),
-      imageUrl: "/images/nordpass.png"
-    },
     // CareerFoundry
     {
       link: "https://careerfoundry.com/en/referral_registrations/new?referral=4rARax01",
