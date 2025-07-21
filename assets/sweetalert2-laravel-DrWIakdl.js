@@ -1,5 +1,5 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-DN-6dC5n.js';
-import { C as CodeExample } from './CodeExample-DQP9H89n.js';
+import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-CuA-rp-G.js';
+import { C as CodeExample } from './CodeExample-DSt6lYkU.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

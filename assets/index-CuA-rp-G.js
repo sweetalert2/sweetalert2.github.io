@@ -21516,42 +21516,6 @@ function Partners() {
         "Free domain. Free website migration. Free SSL."
       ] }),
       imageUrl: "/images/hostinger.png"
-    },
-    // CareerFoundry
-    {
-      link: "https://careerfoundry.com/en/referral_registrations/new?referral=4rARax01",
-      title: /* @__PURE__ */ jsxRuntimeExports.jsxs("b", { children: [
-        "Get 10% discount ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "nowrap", children: " on CareerFoundry courses!" })
-      ] }),
-      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "Career-change programs with a job guarantee.",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Launch a career in tech that lasts 🚀"
-      ] }),
-      imageUrl: "/images/careerfoundry.png"
-    },
-    // Coursera (via Impact)
-    {
-      link: "https://imp.i384100.net/kOJnXz",
-      title: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "Learn web development on Coursera!" }),
-      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "Flexible learning paths for your goals.",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "Unlock your potential now! 🚀"
-      ] }),
-      imageUrl: "/images/coursera.png"
-    },
-    // SentryPC (via Impact)
-    {
-      link: "https://sentrypc.7eer.net/e1ajMj",
-      title: /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: "Monitor. Filter. Control." }),
-      description: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        "Know everything your users do on their PC",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "and mobile devices on the Internet."
-      ] }),
-      imageUrl: "/images/sentrypc.png"
     }
   ];
   const partner = partners[Math.floor(Math.random() * partners.length)];
