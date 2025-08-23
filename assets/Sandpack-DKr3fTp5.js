@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-C78drww7.js","assets/base-80a1f760-B-L1no_r.js","assets/consoleHook-59e792cb-DO0fSMpu.js","assets/index-BKi69wVN.js","assets/index-CFPrp5Ss.css","assets/index-599aeaf7-CNx4y8JW.js","assets/index-DUUb2Gsb.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-B1VfhPWd.js","assets/base-80a1f760-MM4gJg3c.js","assets/consoleHook-59e792cb-BC-R-4AO.js","assets/index-BKi69wVN.js","assets/index-CFPrp5Ss.css","assets/index-599aeaf7-CT3AICpm.js","assets/index-CbtRiD0U.js"])))=>i.map(i=>d[i]);
 import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-BKi69wVN.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -8,7 +8,7 @@ const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+d
 		const cspNonceMeta = document.querySelector("meta[property=csp-nonce]");
 		const cspNonce = cspNonceMeta?.nonce || cspNonceMeta?.getAttribute("nonce");
 		function allSettled(promises$2) {
-			return Promise.all(promises$2.map((p$1) => Promise.resolve(p$1).then((value$1) => ({
+			return Promise.all(promises$2.map((p) => Promise.resolve(p).then((value$1) => ({
 				status: "fulfilled",
 				value: value$1
 			}), (reason) => ({
@@ -470,15 +470,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-C78drww7.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-B1VfhPWd.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CNx4y8JW.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CT3AICpm.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-DUUb2Gsb.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CbtRiD0U.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
