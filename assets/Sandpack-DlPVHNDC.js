@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-B1VfhPWd.js","assets/base-80a1f760-MM4gJg3c.js","assets/consoleHook-59e792cb-BC-R-4AO.js","assets/index-BKi69wVN.js","assets/index-CFPrp5Ss.css","assets/index-599aeaf7-CT3AICpm.js","assets/index-CbtRiD0U.js"])))=>i.map(i=>d[i]);
-import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-BKi69wVN.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-DkmD2n_7.js","assets/base-80a1f760-D7-PW-3T.js","assets/consoleHook-59e792cb-T1VJ-Js5.js","assets/index-ChcWV7S1.js","assets/index-CFPrp5Ss.css","assets/index-599aeaf7-ByLjyacE.js","assets/index-BDdeeN2y.js"])))=>i.map(i=>d[i]);
+import { a as React, r as reactExports, g as getDefaultExportFromCjs, j as jsxRuntimeExports } from './index-ChcWV7S1.js';
 
 const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
 	let promise = Promise.resolve();
@@ -470,15 +470,15 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
                         case "static": return [3 /*break*/, 3];
                     }
                     return [3 /*break*/, 5];
-                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-B1VfhPWd.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
+                case 1: return [4 /*yield*/, __vitePreload(() => import('./index-DkmD2n_7.js'),true              ?__vite__mapDeps([0,1,2,3,4]):void 0).then(function (m) { return m.SandpackNode; })];
                 case 2:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-CT3AICpm.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
+                case 3: return [4 /*yield*/, __vitePreload(() => import('./index-599aeaf7-ByLjyacE.js'),true              ?__vite__mapDeps([5,2,1,3,4]):void 0).then(function (m) { return m.SandpackStatic; })];
                 case 4:
                     Client = _c.sent();
                     return [3 /*break*/, 7];
-                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-CbtRiD0U.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
+                case 5: return [4 /*yield*/, __vitePreload(() => import('./index-BDdeeN2y.js'),true              ?__vite__mapDeps([6,1,3,4]):void 0).then(function (m) { return m.SandpackRuntime; })];
                 case 6:
                     Client = _c.sent();
                     _c.label = 7;
@@ -8534,6 +8534,29 @@ function skipAtomicRanges(atoms, pos, bias) {
             return pos;
     }
 }
+function skipAtomsForSelection(atoms, sel) {
+    let ranges = null;
+    for (let i = 0; i < sel.ranges.length; i++) {
+        let range = sel.ranges[i], updated = null;
+        if (range.empty) {
+            let pos = skipAtomicRanges(atoms, range.from, 0);
+            if (pos != range.from)
+                updated = EditorSelection.cursor(pos, -1);
+        }
+        else {
+            let from = skipAtomicRanges(atoms, range.from, -1);
+            let to = skipAtomicRanges(atoms, range.to, 1);
+            if (from != range.from || to != range.to)
+                updated = EditorSelection.range(range.from == range.anchor ? from : to, range.from == range.head ? from : to);
+        }
+        if (updated) {
+            if (!ranges)
+                ranges = sel.ranges.slice();
+            ranges[i] = updated;
+        }
+    }
+    return ranges ? EditorSelection.create(ranges, sel.mainIndex) : sel;
+}
 function skipAtoms(view, oldPos, pos) {
     let newPos = skipAtomicRanges(view.state.facet(atomicRanges).map(f => f(view)), pos.from, oldPos.head > pos.from ? -1 : 1);
     return newPos == pos.from ? pos : EditorSelection.cursor(newPos, newPos < pos.from ? 1 : -1);
@@ -8769,6 +8792,8 @@ function applyDOMChange(view, domChange) {
             if (view.inputState.lastSelectionOrigin == "select")
                 scrollIntoView = true;
             userEvent = view.inputState.lastSelectionOrigin;
+            if (userEvent == "select.pointer")
+                newSel = skipAtomsForSelection(view.state.facet(atomicRanges).map(f => f(view)), newSel);
         }
         view.dispatch({ selection: newSel, scrollIntoView, userEvent });
         return true;
@@ -9246,31 +9271,8 @@ class MouseSelection {
         if (this.dragging === false)
             this.select(this.lastEvent);
     }
-    skipAtoms(sel) {
-        let ranges = null;
-        for (let i = 0; i < sel.ranges.length; i++) {
-            let range = sel.ranges[i], updated = null;
-            if (range.empty) {
-                let pos = skipAtomicRanges(this.atoms, range.from, 0);
-                if (pos != range.from)
-                    updated = EditorSelection.cursor(pos, -1);
-            }
-            else {
-                let from = skipAtomicRanges(this.atoms, range.from, -1);
-                let to = skipAtomicRanges(this.atoms, range.to, 1);
-                if (from != range.from || to != range.to)
-                    updated = EditorSelection.range(range.from == range.anchor ? from : to, range.from == range.head ? from : to);
-            }
-            if (updated) {
-                if (!ranges)
-                    ranges = sel.ranges.slice();
-                ranges[i] = updated;
-            }
-        }
-        return ranges ? EditorSelection.create(ranges, sel.mainIndex) : sel;
-    }
     select(event) {
-        let { view } = this, selection = this.skipAtoms(this.style.get(event, this.extend, this.multiple));
+        let { view } = this, selection = skipAtomsForSelection(this.atoms, this.style.get(event, this.extend, this.multiple));
         if (this.mustSelect || !selection.eq(view.state.selection, this.dragging === false))
             this.view.dispatch({
                 selection,
@@ -9422,6 +9424,9 @@ handlers.mousedown = (view, event) => {
             mouseSel.start(event);
             return mouseSel.dragging === false;
         }
+    }
+    else {
+        view.inputState.setSelectionOrigin("select.pointer");
     }
     return false;
 };
@@ -12747,7 +12752,7 @@ class EditorView {
     }
     /**
     Find the line block (see
-    [`lineBlockAt`](https://codemirror.net/6/docs/ref/#view.EditorView.lineBlockAt) at the given
+    [`lineBlockAt`](https://codemirror.net/6/docs/ref/#view.EditorView.lineBlockAt)) at the given
     height, again interpreted relative to the [top of the
     document](https://codemirror.net/6/docs/ref/#view.EditorView.documentTop).
     */
@@ -13526,7 +13531,7 @@ function runHandlers(map, event, view, scope) {
             // Ctrl-Alt may be used for AltGr on Windows
             !(browser.windows && event.ctrlKey && event.altKey) &&
             // Alt-combinations on macOS tend to be typed characters
-            !(browser.mac && event.altKey && !event.ctrlKey) &&
+            !(browser.mac && event.altKey && !(event.ctrlKey || event.metaKey)) &&
             (baseName = base[event.keyCode]) && baseName != name) {
             if (runFor(scopeObj[prefix + modifiers(baseName, event, true)])) {
                 handled = true;
@@ -18951,7 +18956,7 @@ class Snippet {
         let fields = [];
         let lines = [], positions = [], m;
         for (let line of template.split(/\r\n?|\n/)) {
-            while (m = /[#$]\{(?:(\d+)(?::([^}]*))?|((?:\\[{}]|[^}])*))\}/.exec(line)) {
+            while (m = /[#$]\{(?:(\d+)(?::([^{}]*))?|((?:\\[{}]|[^{}])*))\}/.exec(line)) {
                 let seq = m[1] ? +m[1] : null, rawName = m[2] || m[3] || "", found = -1;
                 let name = rawName.replace(/\\[{}]/g, m => m[1]);
                 for (let i = 0; i < fields.length; i++) {
@@ -18968,6 +18973,12 @@ class Snippet {
                         if (pos.field >= found)
                             pos.field++;
                 }
+                for (let pos of positions)
+                    if (pos.line == lines.length && pos.from > m.index) {
+                        let snip = m[2] ? 3 + (m[1] || "").length : 2;
+                        pos.from -= snip;
+                        pos.to -= snip;
+                    }
                 positions.push(new FieldPos(found, lines.length, m.index, m.index + name.length));
                 line = line.slice(0, m.index) + rawName + line.slice(m.index + m[0].length);
             }
@@ -18997,7 +19008,7 @@ class ActiveSnippet {
     constructor(ranges, active) {
         this.ranges = ranges;
         this.active = active;
-        this.deco = Decoration.set(ranges.map(r => (r.from == r.to ? fieldMarker : fieldRange).range(r.from, r.to)));
+        this.deco = Decoration.set(ranges.map(r => (r.from == r.to ? fieldMarker : fieldRange).range(r.from, r.to)), true);
     }
     map(changes) {
         let ranges = [];
@@ -19141,7 +19152,7 @@ properties from `completion`, plus an `apply` function that
 applies the snippet.
 */
 function snippetCompletion(template, completion) {
-    return Object.assign(Object.assign({}, completion), { apply: snippet(template) });
+    return { ...completion, apply: snippet(template) };
 }
 const snippetPointerHandler = /*@__PURE__*/EditorView.domEventHandlers({
     mousedown(event, view) {

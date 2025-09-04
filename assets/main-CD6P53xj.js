@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-BKi69wVN.js';
-import { C as CodeExample } from './CodeExample-CzWg721T.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-ChcWV7S1.js';
+import { C as CodeExample } from './CodeExample-YBVN71pA.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -3171,6 +3171,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.venuslovedolls.com/", target: "_blank", rel: "noopener", "aria-label": "Venus Love Dolls", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/venuslovedolls.png", alt: "Venus Love Dolls" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Venus Love Dolls"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.xndoll.com", target: "_blank", rel: "noopener", "aria-label": "XNDOLL", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/xndoll.png", alt: "XNDOLL" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
