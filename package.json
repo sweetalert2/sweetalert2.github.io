@@ -15,7 +15,7 @@
     "@algolia/client-search": "^5.0.0",
     "@codesandbox/sandpack-react": "^2.9.0",
     "@codesandbox/sandpack-themes": "^2.0.21",
-    "@docsearch/css": "^3.5.2",
+    "@docsearch/css": "^4.0.0",
     "@docsearch/js": "^3.5.2",
     "@fontsource/montserrat": "^5.2.5",
     "@fontsource/source-code-pro": "^5.2.5",
