@@ -16,7 +16,7 @@
     "@codesandbox/sandpack-react": "^2.9.0",
     "@codesandbox/sandpack-themes": "^2.0.21",
     "@docsearch/css": "^4.0.0",
-    "@docsearch/js": "^3.5.2",
+    "@docsearch/js": "^4.0.0",
     "@fontsource/montserrat": "^5.2.5",
     "@fontsource/source-code-pro": "^5.2.5",
     "@github/mini-throttle": "^2.1.1",
