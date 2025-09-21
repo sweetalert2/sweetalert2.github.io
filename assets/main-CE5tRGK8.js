@@ -704,7 +704,6 @@ import 'sweetalert2/src/sweetalert2.scss'`,
         )
       ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { id: "frameworks-integrations", children: "Integrations with major frameworks" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "frameworks-integrations", children: [
@@ -2189,8 +2188,7 @@ function ConfigurationParams() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "show-example-btn", "aria-label": "Try me! Example: Mixin", onClick: examples.mixin.fn, children: "Try me!" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.mixin.fnString })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
+    ] }) })
   ] });
 }
 
@@ -2427,8 +2425,7 @@ function HandlingButtons() {
           ] })
         ] })
       ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
+    ] })
   ] });
 }
 
@@ -2502,8 +2499,7 @@ function HandlingDismissals() {
       " will be ",
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "undefined" }),
       ")."
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
+    ] })
   ] });
 }
 
@@ -2593,8 +2589,7 @@ function Icons() {
           }
         ) })
       ] })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
+    ] }) })
   ] });
 }
 
@@ -2770,8 +2765,7 @@ function InputTypes() {
           }
         ) })
       ] })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Partners, {})
+    ] }) })
   ] });
 }
 
