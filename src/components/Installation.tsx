@@ -69,8 +69,6 @@ import 'sweetalert2/src/sweetalert2.scss'`}
         </div>
       </div>
 
-      <Partners />
-
       <div className="center-container">
         <h3 id="frameworks-integrations">Integrations with major frameworks</h3>
         <div className="frameworks-integrations">

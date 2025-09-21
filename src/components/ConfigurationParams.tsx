@@ -1,6 +1,5 @@
 import { examples } from '../examples'
 import { CodeExample } from './CodeExample'
-import { Partners } from './Partners'
 
 export function ConfigurationParams() {
   return (
@@ -1082,8 +1081,6 @@ export function ConfigurationParams() {
           <CodeExample code={examples.mixin.fnString} />
         </li>
       </ul>
-
-      <Partners />
     </>
   )
 }
