@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports } from './index-Cvu2VbxU.js';
+import { j as jsxRuntimeExports } from './index-C6LMhCnQ.js';
 
 function CreatePortalDocs() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

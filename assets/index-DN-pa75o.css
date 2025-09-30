@@ -15,7 +15,7 @@
   font-weight: 400;
   src: url(/assets/source-code-pro-latin-400-normal-DEXWLoHG.woff2) format('woff2'), url(/assets/source-code-pro-latin-400-normal-Bf_aQirX.woff) format('woff');
 }
-/*! @docsearch/css 4.0.1 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 4.1.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#003dff;
   --docsearch-soft-primary-color:rgba(0,61,255,.1);
@@ -639,8 +639,8 @@ svg.DocSearch-Hit-Select-Icon {
 }
 .DocSearch-StartScreen-Icon {
   height: 64px;
-  width: 64px;
   stroke: var(--docsearch-icon-color);
+  width: 64px;
 }
 .DocSearch-Screen-Icon {
   color: var(--docsearch-icon-color);
@@ -873,10 +873,10 @@ svg.DocSearch-Hit-Select-Icon {
   background: var(--docsearch-hit-highlight-color);
 }
 .DocSearch-AskAiScreen-ActionButton svg {
-  height: 20px;
-  width: 20px;
-  stroke-width: 1.5;
   color: var(--docsearch-icon-color);
+  height: 20px;
+  stroke-width: 1.5;
+  width: 20px;
 }
 .DocSearch-AskAiScreen-CopyButton--copied {
   background-color: var(--docsearch-success-color);
