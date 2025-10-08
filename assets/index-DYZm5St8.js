@@ -17339,7 +17339,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.24.1
+* sweetalert2 v11.25.0
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -20593,7 +20593,7 @@ const showWarningsForParams = params => {
   if (params.backdrop === false && params.allowOutsideClick) {
     warn('"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`');
   }
-  if (params.theme && !['light', 'dark', 'auto', 'minimal', 'borderless', 'bootstrap-4', 'bootstrap-4-light', 'bootstrap-4-dark', 'embed-iframe', 'bulma', 'bulma-light', 'bulma-dark'].includes(params.theme)) {
+  if (params.theme && !['light', 'dark', 'auto', 'minimal', 'borderless', 'bootstrap-4', 'bootstrap-4-light', 'bootstrap-4-dark', 'material-ui', 'material-ui-light', 'material-ui-dark', 'embed-iframe', 'bulma', 'bulma-light', 'bulma-dark'].includes(params.theme)) {
     warn(`Invalid theme "${params.theme}"`);
   }
   for (const param in params) {
@@ -21940,7 +21940,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.24.1';
+SweetAlert.version = '11.25.0';
 
 const Swal = SweetAlert;
 // @ts-ignore
@@ -22127,6 +22127,7 @@ const ThemeSelector = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "dark", children: "Dark" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "auto", children: "Auto" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "bootstrap-4", children: "Bootstrap 4" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "material-ui", children: "Material UI" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "minimal", children: "Minimal" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "borderless", children: "Borderless" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "bulma", children: "Bulma" })
