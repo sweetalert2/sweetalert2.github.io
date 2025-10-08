@@ -6,6 +6,7 @@ import 'sweetalert2/themes/borderless.css'
 import 'sweetalert2/themes/minimal.css'
 import 'sweetalert2/themes/bulma.css'
 import 'sweetalert2/themes/bootstrap-4.css'
+import 'sweetalert2/themes/material-ui.css'
 
 declare global {
   interface Window {
@@ -37,6 +38,7 @@ export const ThemeSelector = () => {
           <option value="dark">Dark</option>
           <option value="auto">Auto</option>
           <option value="bootstrap-4">Bootstrap 4</option>
+          <option value="material-ui">Material UI</option>
           <option value="minimal">Minimal</option>
           <option value="borderless">Borderless</option>
           <option value="bulma">Bulma</option>
