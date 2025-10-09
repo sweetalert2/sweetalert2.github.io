@@ -3069,6 +3069,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://kryptot.fi/", target: "_blank", rel: "noopener", "aria-label": "Kryptot", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/kryptot.png", alt: "Kryptot" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Kryptot"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.inksonic.com/", target: "_blank", rel: "noopener", "aria-label": "InkSonic", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/inksonic.png", alt: "InkSonic" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
