@@ -15,7 +15,7 @@
   font-weight: 400;
   src: url(/assets/source-code-pro-latin-400-normal-DEXWLoHG.woff2) format('woff2'), url(/assets/source-code-pro-latin-400-normal-Bf_aQirX.woff) format('woff');
 }
-/*! @docsearch/css 4.1.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 4.2.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#003dff;
   --docsearch-soft-primary-color:rgba(0,61,255,.1);
@@ -37,6 +37,7 @@
   --docsearch-border-radius:4px;
   --docsearch-modal-width:800px;
   --docsearch-modal-height:600px;
+  --docsearch-modal-variable-height:60dvh;
   --docsearch-modal-background:#f5f6f7;
   --docsearch-modal-shadow:rgba(0,0,0,.2) 0px 12px 28px 0px,rgba(0,0,0,.1) 0px 2px 4px 0px,hsla(0,0%,100%,.05) 0px 0px 0px 1px inset;
   --docsearch-searchbox-height:56px;
@@ -61,6 +62,8 @@
   --ease-fast:cubic-bezier(0.45,0.15,0.6,0.9);
   --shadow-pop:0 4px 12px rgba(0,0,0,.06);
   --shimmer-bg:linear-gradient(90deg,#e0e3e8 0%,var(--docsearch-muted-color) 20%,var(--docsearch-muted-color) 60%,#e0e3e8 95%);
+  --docsearch-dropdown-menu-background:var(--docsearch-hit-background);
+  --docsearch-dropdown-menu-item-hover-background:var(--docsearch-modal-background);
 }
 html[data-theme=dark] {
   --docsearch-text-color:#c4c7dc;
@@ -88,6 +91,7 @@ html[data-theme=dark] {
   --docsearch-logo-color:#fff;
   --docsearch-muted-color:#7f8497;
   --shimmer-bg:linear-gradient(90deg,#e0e3e8 0%,var(--docsearch-muted-color) 20%,var(--docsearch-muted-color) 60%,#e0e3e8 95%);
+  --docsearch-dropdown-menu-item-hover-background:#10121e;
 }
 .DocSearch-Button {
   all: unset;
@@ -227,7 +231,7 @@ html[data-theme=dark] {
   position: relative;
   width: 100%;
 }
-.DocSearch-Input {
+.DocSearch-Input, .DocSearch-Modal-heading {
   appearance: none;
   background: transparent;
   border: 0;
@@ -255,7 +259,7 @@ html[data-theme=dark] {
 .DocSearch-Actions {
   align-items: center;
   display: flex;
-  gap: 16px;
+  gap: 8px;
   height: var(--docsearch-actions-height);
   justify-content: flex-end;
   padding: 0 2px;
@@ -265,21 +269,29 @@ html[data-theme=dark] {
   border-left: 1px solid var(--docsearch-subtle-color);
   height: 16px;
 }
-.DocSearch-AskAi-Return, .DocSearch-Close, .DocSearch-LoadingIndicator, .DocSearch-MagnifierLabel, .DocSearch-StreamingIndicator {
+.DocSearch-Action {
+  align-items: center;
+  color: var(--docsearch-highlight-color);
+  display: flex;
+  justify-content: center;
+  min-height: 24px;
+  min-width: 24px;
+}
+.DocSearch-Action, .DocSearch-AskAi-Return, .DocSearch-LoadingIndicator, .DocSearch-MagnifierLabel {
   margin: 0;
   padding: 0;
 }
 .DocSearch-AskAi-Return {
   cursor: pointer;
 }
-.DocSearch-AskAi-Return, .DocSearch-Close, .DocSearch-LoadingIndicator, .DocSearch-MagnifierLabel, .DocSearch-StreamingIndicator {
+.DocSearch-AskAi-Return, .DocSearch-LoadingIndicator, .DocSearch-MagnifierLabel {
   align-items: center;
   color: var(--docsearch-highlight-color);
   display: flex;
   justify-content: center;
 }
 @media screen and (prefers-reduced-motion: reduce) {
-  .DocSearch-Close, .DocSearch-StreamingIndicator {
+  .DocSearch-Action {
     animation: none;
     appearance: none;
     background: none;
@@ -291,7 +303,7 @@ html[data-theme=dark] {
     stroke-width: var(--docsearch-icon-stroke-width);
   }
 }
-.DocSearch-AskAi-Return, .DocSearch-Close, .DocSearch-StreamingIndicator {
+.DocSearch-Action, .DocSearch-AskAi-Return {
   animation: fade-in 0.1s ease-in forwards;
   appearance: none;
   background: none;
@@ -303,10 +315,10 @@ html[data-theme=dark] {
   right: 0;
   stroke-width: var(--docsearch-icon-stroke-width);
 }
-.DocSearch-AskAi-Return[hidden], .DocSearch-Close[hidden], .DocSearch-StreamingIndicator[hidden] {
+.DocSearch-AskAi-Return[hidden], .DocSearch-Close[hidden], .DocSearch-Input[hidden], .DocSearch-StreamingIndicator[hidden] {
   display: none;
 }
-.DocSearch-AskAi-Return:hover, .DocSearch-Close:hover, .DocSearch-StreamingIndicator:hover {
+.DocSearch-Action:hover, .DocSearch-AskAi-Return:hover {
   background: var(--docsearch-soft-primary-color);
   color: var(--docsearch-highlight-color);
 }
@@ -342,7 +354,8 @@ html[data-theme=dark] {
   outline-offset: 1px;
 }
 .DocSearch-Dropdown {
-  height: calc(var(--docsearch-modal-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
+  height: var(--docsearch-modal-variable-height);
+  max-height: calc(var(--docsearch-modal-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
   min-height: var(--docsearch-spacing);
   overflow-y: auto;
   overflow-y: overlay;
@@ -426,66 +439,6 @@ html[data-theme=dark] {
 .DocSearch-Hit:first-of-type {
   margin-top: 4px;
 }
-@keyframes hit-exit {
-  0% {
-    max-height: 4rem;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  60% {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    margin: 0;
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .DocSearch-Hit--deleting, .DocSearch-Hit--favoriting {
-    animation: none;
-  }
-}
-.DocSearch-Hit--favoriting {
-  animation: favOut var(--fav-out-dur) var(--ease-smooth) forwards;
-  transform-origin: center;
-}
-@keyframes favOut {
-  0% {
-    box-shadow: none;
-    opacity: 1;
-    transform: scale(1);
-  }
-  30% {
-    box-shadow: var(--shadow-pop);
-    transform: scale(1.01);
-  }
-  to {
-    box-shadow: none;
-    margin: 0;
-    max-height: 0;
-    opacity: 0;
-    transform: scale(0.6);
-  }
-}
-.DocSearch-Hit--deleting {
-  animation: hitExit var(--del-dur) var(--ease-fast) forwards;
-}
-@keyframes hitExit {
-  0% {
-    max-height: 4rem;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    margin: 0;
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-}
 .DocSearch-Hit a, .DocSearch-Hit--AskAI {
   background: var(--docsearch-hit-background);
   border-radius: 4px;
@@ -514,7 +467,10 @@ html[data-theme=dark] {
   width: 24px;
 }
 .DocSearch-Hit[aria-selected=true] .DocSearch-Hit--AskAI, .DocSearch-Hit[aria-selected=true] a {
-  background-color: var(--docsearch-hit-highlight-color) !important;
+  background-color: var(--docsearch-hit-highlight-color);
+}
+.DocSearch-Conversation-History .DocSearch-Hit[aria-selected=true] a {
+  background-color: var(--docsearch-hit-background);
 }
 .DocSearch-Hit mark {
   color: var(--docsearch-highlight-color);
@@ -820,15 +776,16 @@ svg.DocSearch-Hit-Select-Icon {
   border-radius: 4px;
   color: var(--docsearch-text-color);
   font-size: 0.8em;
-  gap: 16px;
+  gap: 1em;
   margin-bottom: 8px;
   padding: 24px;
   width: 100%;
 }
 .DocSearch-AskAiScreen-Query {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 600;
-  line-break: anywhere;
+  line-break: loose;
+  line-height: 1.4;
   margin: 0;
 }
 .DocSearch-AskAiScreen-Answer {
@@ -987,7 +944,7 @@ svg.DocSearch-Hit-Select-Icon {
 }
 .DocSearch-Markdown-Content {
   color: var(--docsearch-text-color);
-  font-size: 1em;
+  font-size: 0.9355em;
   line-height: 1.6;
   word-wrap: break-word;
 }
@@ -995,7 +952,7 @@ svg.DocSearch-Hit-Select-Icon {
   animation: fade-in 0.3s ease-in-out both;
 }
 .DocSearch-Markdown-Content p {
-  margin: 1.2em 0;
+  margin: 1em 0;
 }
 .DocSearch-Markdown-Content p:last-child {
   margin-bottom: 0;
@@ -1068,7 +1025,7 @@ svg.DocSearch-Hit-Select-Icon {
 .DocSearch-Markdown-Content li {
   color: var(--docsearch-text-color);
   line-height: 1.6;
-  margin: 0.5em 0;
+  margin: 0.8em 0;
   padding-left: 0.3em;
 }
 .DocSearch-Markdown-Content li > ol, .DocSearch-Markdown-Content li > ul {
@@ -1096,7 +1053,7 @@ svg.DocSearch-Hit-Select-Icon {
 .DocSearch-Markdown-Content hr {
   border: none;
   border-top: 1px solid var(--docsearch-subtle-color);
-  margin: 2em 0;
+  margin: 1em 0;
 }
 .DocSearch-Markdown-Content table {
   border-collapse: collapse;
@@ -1123,9 +1080,10 @@ svg.DocSearch-Hit-Select-Icon {
   color: var(--docsearch-icon-color);
 }
 .DocSearch-AskAiScreen-MessageContent-Tool {
-  align-items: baseline;
+  align-items: center;
   color: var(--docsearch-muted-color);
   display: flex;
+  line-height: 1.2;
   width: 100%;
 }
 .DocSearch-AskAiScreen-MessageContent-Tool.Tool--Result {
@@ -1149,6 +1107,11 @@ svg.DocSearch-Hit-Select-Icon {
 }
 .DocSearch-AskAiScreen-MessageContent-Tool-Query:hover svg {
   color: var(--docsearch-highlight-color);
+}
+.DocSearck-AskAiScreen-MessageContent-Stopped {
+  color: var(--docsearch-muted-color);
+  font-style: italic;
+  margin-top: 1em;
 }
 .DocSearch-AskAiScreen-SmallerLoadingIcon {
   height: 16px;
@@ -1280,6 +1243,71 @@ svg.DocSearch-Hit-Select-Icon {
 }
 .DocSearch-Markdown-Content--streaming .DocSearch-CodeSnippet-CopyButton {
   display: none;
+}
+.DocSearch-NewConversationScreen {
+  padding: 3em var(--docsearch-spacing);
+}
+.DocSearch-NewConversationScreen-Title {
+  color: var(--docsearch-text-color);
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0.15em;
+}
+.DocSearch-NewConversationScreen-Description {
+  color: var(--docsearch-muted-color);
+  font-size: 14px;
+}
+.DocSearch-NewConversationScreen-SuggestedQuestions {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--docsearch-spacing);
+  margin-top: 1.5em;
+}
+.DocSearch-NewConversationScreen-SuggestedQuestion {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d6d6e7;
+  border-radius: var(--docsearch-border-radius);
+  color: var(--docsearch-text-color);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  padding: 12px;
+}
+.DocSearch-Menu {
+  position: relative;
+}
+.DocSearch-Menu-content {
+  background-color: var(--docsearch-dropdown-menu-background);
+  border-radius: var(--docsearch-border-radius);
+  box-shadow: 0 0 0 1px rgba(33, 36, 61, 0.0509803922), 0 8px 16px -4px rgba(33, 36, 61, 0.2509803922);
+  display: none;
+  flex-direction: column;
+  min-width: 195px;
+  padding: 8px 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  z-index: 422;
+}
+.DocSearch-Menu-content.open {
+  display: flex;
+}
+.DocSearch-Menu-item {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: var(--docsearch-text-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 8px;
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+.DocSearch-Menu-item:hover {
+  background-color: var(--docsearch-dropdown-menu-item-hover-background);
 }
 pre code.hljs {
   display: block;
@@ -3061,6 +3089,179 @@ tr:hover .hover-anchor {
   --swal2-cancel-button-background-color: #14161a;
   --swal2-cancel-button-color: #ebecef;
   --swal2-cancel-button-box-shadow: 0 0 0 1px #353a46 inset;
+}
+[data-swal2-theme='bootstrap-5'],
+[data-swal2-theme='bootstrap-5-light'],
+[data-swal2-theme='bootstrap-5-dark'] {
+  /* BACKDROP */
+  --swal2-backdrop: rgba(0, 0, 0, 0.5);
+  --swal2-backdrop-transition: opacity 0.15s linear;
+
+  /* POPUP */
+  --swal2-width: 32rem;
+  --swal2-padding: 1.5rem;
+  --swal2-border: 1px solid var(--bs-border-color, rgba(0, 0, 0, 0.175));
+  --swal2-border-radius: 0.5rem;
+  --swal2-background: #fff;
+  --swal2-color: #212529;
+
+  /* ANIMATIONS */
+  --swal2-show-animation: bootstrap-5-fade-in 0.15s ease-out;
+  --swal2-hide-animation: bootstrap-5-fade-out 0.15s ease-in forwards;
+
+  /* TITLE */
+  --swal2-title-padding: 0 0 1rem;
+
+  /* HTML CONTAINER */
+  --swal2-html-container-padding: 0 0 1rem;
+
+  /* INPUT */
+  --swal2-input-border: 1px solid #dee2e6;
+  --swal2-input-border-radius: 0.375rem;
+  --swal2-input-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --swal2-input-background: #fff;
+  --swal2-input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  /* INPUT:HOVER */
+  --swal2-input-hover-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+
+  /* INPUT:FOCUS */
+  --swal2-input-focus-border: 1px solid #86b7fe;
+  --swal2-input-focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
+  /* PROGRESS STEPS */
+  --swal2-progress-step-background: #0d6efd;
+
+  /* VALIDATION MESSAGE */
+  --swal2-validation-message-background: #f8d7da;
+  --swal2-validation-message-color: #842029;
+
+  /* FOOTER */
+  --swal2-footer-border-color: #dee2e6;
+  --swal2-footer-background: #f8f9fa;
+  --swal2-footer-color: #6c757d;
+
+  /* CLOSE BUTTON */
+  --swal2-close-button-color: #000;
+  --swal2-close-button-transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+
+  /* ACTIONS */
+  --swal2-actions-justify-content: flex-end;
+  --swal2-actions-margin: 1rem -0.25rem 0;
+  --swal2-actions-padding: 0;
+
+  /* COMMON VARIABLES FOR ALL ACTION BUTTONS */
+  --swal2-action-button-transition:
+    color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  --swal2-action-button-hover: rgba(0, 0, 0, 0.075);
+  --swal2-action-button-active: rgba(0, 0, 0, 0.125);
+  --swal2-action-button-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
+  /* CONFIRM BUTTON */
+  --swal2-confirm-button-border-radius: 0.375rem;
+  --swal2-confirm-button-background-color: #0d6efd;
+  --swal2-confirm-button-color: #fff;
+  --swal2-confirm-button-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+
+  /* DENY BUTTON */
+  --swal2-deny-button-border-radius: 0.375rem;
+  --swal2-deny-button-background-color: #dc3545;
+  --swal2-deny-button-color: #fff;
+  --swal2-deny-button-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+
+  /* CANCEL BUTTON */
+  --swal2-cancel-button-border-radius: 0.375rem;
+  --swal2-cancel-button-background-color: #6c757d;
+  --swal2-cancel-button-color: #fff;
+  --swal2-cancel-button-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+
+  /* TOASTS */
+  --swal2-toast-border: 1px solid rgba(0, 0, 0, 0.175);
+  --swal2-toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-swal2-theme='bootstrap-5'] {
+    /* POPUP */
+    --swal2-background: #212529;
+    --swal2-color: #fff;
+    --swal2-border: 1px solid #495057;
+
+    /* INPUT */
+    --swal2-input-background: #2b3035;
+    --swal2-input-border: 1px solid #495057;
+    --swal2-input-focus-border: 1px solid #86b7fe;
+    --swal2-input-focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
+    /* VALIDATION MESSAGE */
+    --swal2-validation-message-background: #2c0b0e;
+    --swal2-validation-message-color: #ea868f;
+
+    /* FOOTER */
+    --swal2-footer-border-color: #495057;
+    --swal2-footer-background: #343a40;
+    --swal2-footer-color: #adb5bd;
+
+    /* CLOSE BUTTON */
+    --swal2-close-button-color: #fff;
+
+    /* TOASTS */
+    --swal2-toast-border: 1px solid #495057;
+  }
+}
+
+[data-swal2-theme='bootstrap-5-dark'] {
+  /* POPUP */
+  --swal2-background: #212529;
+  --swal2-color: #fff;
+  --swal2-border: 1px solid #495057;
+
+  /* INPUT */
+  --swal2-input-background: #2b3035;
+  --swal2-input-border: 1px solid #495057;
+  --swal2-input-focus-border: 1px solid #86b7fe;
+  --swal2-input-focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
+  /* VALIDATION MESSAGE */
+  --swal2-validation-message-background: #2c0b0e;
+  --swal2-validation-message-color: #ea868f;
+
+  /* FOOTER */
+  --swal2-footer-border-color: #495057;
+  --swal2-footer-background: #343a40;
+  --swal2-footer-color: #adb5bd;
+
+  /* CLOSE BUTTON */
+  --swal2-close-button-color: #fff;
+
+  /* TOASTS */
+  --swal2-toast-border: 1px solid #495057;
+}
+
+/* Bootstrap 5 Modal Animations */
+@keyframes bootstrap-5-fade-in {
+  0% {
+    transform: translate3d(0, -50px, 0) scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bootstrap-5-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -50px, 0) scale(0.9);
+    opacity: 0;
+  }
 }
 [data-swal2-theme='bootstrap-4'],
 [data-swal2-theme='bootstrap-4-light'],
