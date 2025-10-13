@@ -13,6 +13,7 @@ import {
   Nav,
   Showcase,
   Sponsors,
+  Themes,
 } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Showcase />
     <Examples />
     <Installation />
+    <Themes />
     <ConfigurationParams />
     <DeclarativeTemplates />
     <HandlingButtons />
