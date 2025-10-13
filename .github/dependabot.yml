@@ -16,6 +16,9 @@ updates:
           - 'major'
           - 'minor'
           - 'patch'
+    ignore:
+      - dependency-name: "cropperjs"
+        update-types: ["version-update:semver-major"]
     # do not update if a dependency’s release falls within its cooldown period (same as minimumReleaseAge or stabilityDays)
     cooldown:
       semver-major-days: 30
