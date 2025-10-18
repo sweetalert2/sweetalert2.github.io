@@ -14,10 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
 
-      - run: yarn install
-      - run: yarn lint
-      - run: yarn build
+      - run: bun install
+      - run: bun run lint
+      - run: bun run build
 
       - name: Deploy 🚀
         if: github.event_name == 'push'
@@ -29,5 +30,5 @@ jobs:
       - name: Check for broken links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: src/**/*.tsx --exclude https://api.github.com --exclude https://codepen.io/pen/define --exclude https://war.ukraine.ua/support-ukraine/  --exclude https://www.minisexdoll.com/anime-sexdoll/ --exclude https://www.mymasturbators.com/ --exclude https://github.com/sweetalert2/sweetalert2/commits/main --exclude https://sextoycollective.com/ --exclude https://www.pidoll.com/ --exclude https://www.uusexdoll.com/ --exclude https://huntlocals.com/ --exclude https://www.nakedoll.com/
+          args: src/**/*.tsx --exclude https://api.github.com --exclude https://codepen.io/pen/define --exclude https://war.ukraine.ua/support-ukraine/  --exclude https://www.minisexdoll.com/anime-sexdoll/ --exclude https://www.mymasturbators.com/ --exclude https://github.com/sweetalert2/sweetalert2/commits/main --exclude https://sextoycollective.com/ --exclude https://www.pidoll.com/ --exclude https://www.uusexdoll.com/ --exclude https://huntlocals.com/ --exclude https://www.nakedoll.com/ --exclude https://doctorclimax.com/
           fail: true
