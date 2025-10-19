@@ -160,20 +160,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://huntlocals.com/" target="_blank" rel="noopener" aria-label="HuntLocals">
-            <img src="/images/sponsors/huntlocals.png" alt="HuntLocals" />
-            <br />
-            HuntLocals
-          </a>
-        </div>
-        <div>
-          <a href="https://siteshartbandi.co/" target="_blank" rel="noopener" aria-label="سایت شرط بندی">
-            <img src="/images/sponsors/siteshartbandi.png" alt="سایت شرط بندی" />
-            <br />
-            <span dir="rtl">سایت شرط بندی</span>
-          </a>
-        </div>
-        <div>
           <a href="https://www.sosexdoll.com/cheap-sex-doll" target="_blank" rel="noopener" aria-label="SoSexDoll">
             <img src="/images/sponsors/sosexdoll.png" alt="SoSexDoll" />
             <br />
