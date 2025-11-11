@@ -1,5 +1,5 @@
 import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-0LS7ZHFn.js';
-import { _ as __vitePreload, S as Sandpack } from './Sandpack-BzhZRd2K.js';
+import { _ as __vitePreload, S as Sandpack } from './Sandpack-CXiJGztI.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./custom-icon-src-DtrF8osd.js');return { default: __vite_default__ }},true              ?[]:void 0)).default;
 const styles = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./custom-icon-styles-DjK9iNKt.js');return { default: __vite_default__ }},true              ?[]:void 0)).default;
