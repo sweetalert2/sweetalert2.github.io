@@ -2424,6 +2424,14 @@ kbd {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+.prtnr {
+  margin-top: 3em;
+  margin-bottom: -4em;
+}
+.prtnr img {
+  max-width: 100%;
+  height: auto;
+}
 .partner {
   margin: 3em auto -3em;
 }
