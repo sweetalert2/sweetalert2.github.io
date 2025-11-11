@@ -1,4 +1,4 @@
-import { e as createError, i as invariant } from './Sandpack-CXiJGztI.js';
+import { e as createError, i as invariant } from './Sandpack-DmLJnZcb.js';
 
 var EventEmitter = /** @class */ (function () {
     function EventEmitter() {

@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-0LS7ZHFn.js';
-import { C as CodeExample } from './CodeExample-BDLok9Gv.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-C9tBsw3J.js';
+import { C as CodeExample } from './CodeExample-ByQ8ofZ7.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);

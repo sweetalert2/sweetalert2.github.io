@@ -2432,6 +2432,9 @@ kbd {
   max-width: 100%;
   height: auto;
 }
+.prtnr:has(+ h1) {
+  margin-bottom: 0;
+}
 .partner {
   margin: 3em auto -3em;
 }
