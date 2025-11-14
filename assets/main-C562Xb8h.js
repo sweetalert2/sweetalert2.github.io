@@ -3170,6 +3170,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://pleasuremenow.com/", target: "_blank", rel: "noopener", "aria-label": "Pleasure Me Now", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/pleasuremenow.png", alt: "Pleasure Me Now" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Pleasure Me Now"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.venuslovedolls.com/", target: "_blank", rel: "noopener", "aria-label": "Venus Love Dolls", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/venuslovedolls.png", alt: "Venus Love Dolls" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
