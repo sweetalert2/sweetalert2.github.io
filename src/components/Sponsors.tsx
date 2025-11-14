@@ -139,6 +139,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://pleasuremenow.com/" target="_blank" rel="noopener" aria-label="Pleasure Me Now">
+            <img src="/images/sponsors/pleasuremenow.png" alt="Pleasure Me Now" />
+            <br />
+            Pleasure Me Now
+          </a>
+        </div>
+        <div>
           <a href="https://www.venuslovedolls.com/" target="_blank" rel="noopener" aria-label="Venus Love Dolls">
             <img src="/images/sponsors/venuslovedolls.png" alt="Venus Love Dolls" />
             <br />
