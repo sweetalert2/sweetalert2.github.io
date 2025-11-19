@@ -1,5 +1,5 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-C9tBsw3J.js';
-import { C as CodeExample } from './CodeExample-ByQ8ofZ7.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, P as Partners, S as Swal, R as ReactDOM, N as Nav } from './index-CzP0EcKe.js';
+import { C as CodeExample } from './CodeExample-BNp3vXd3.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -3170,6 +3170,11 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.bestblowjobmachines.com/", target: "_blank", rel: "noopener", "aria-label": "Mark Mitchell", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/bestblowjobmachines.png", alt: "Mark Mitchell" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Mark Mitchell"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://pleasuremenow.com/", target: "_blank", rel: "noopener", "aria-label": "Pleasure Me Now", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/pleasuremenow.png", alt: "Pleasure Me Now" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
