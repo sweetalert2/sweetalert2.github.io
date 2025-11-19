@@ -22143,7 +22143,7 @@ const ThemeSelector = () => {
 function Partners() {
   const partners = [
     // Cloudways: Black Friday
-    '<a href="https://www.cloudways.com/en/?id=1930700&amp;a_bid=b61d103c" target="_top"><img src="//www.cloudways.com/affiliate/accounts/default1/banners/b61d103c.png" alt="" title="" width="700" height="358" /></a><img style="border:0" src="https://www.cloudways.com/affiliate/scripts/imp.php?id=1930700&amp;a_bid=b61d103c" width="1" height="1" alt="" />',
+    '<a href="https://www.cloudways.com/en/?id=1930700&amp;a_bid=5c89ffc4" target="_top"><img src="//www.cloudways.com/affiliate/accounts/default1/banners/5c89ffc4.png" alt="" title="" width="728" height="90" /></a><img style="border:0" src="https://www.cloudways.com/affiliate/scripts/imp.php?id=1930700&amp;a_bid=5c89ffc4" width="1" height="1" alt="" />',
     // Cloudways: PHP - App
     // '<a href="https://www.cloudways.com/en/php-hosting.php?id=1930700&amp;a_bid=3992fe4c" target="_top"><img src="https://www.cloudways.com/affiliate/accounts/default1/banners/3992fe4c.jpg" alt="Faster PHP Cloud Hosting" title="Faster PHP Cloud Hosting" width="468" height="60" /></a><img style="border:0" src="https://www.cloudways.com/affiliate/scripts/imp.php?id=1930700&amp;a_bid=3992fe4c" width="1" height="1" alt="" />',
     // Cloudways: WordPress
