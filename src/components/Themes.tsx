@@ -181,7 +181,7 @@ Swal.fire({
                   code={`import 'sweetalert2/themes/bulma.css'
 
 Swal.fire({
-  title: 'Material UI theme',
+  title: 'Bulma theme',
   theme: 'bulma'
   // theme: 'bulma-light' // light theme only
   // theme: 'bulma-dark' // dark theme only
