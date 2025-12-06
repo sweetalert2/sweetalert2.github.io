@@ -17339,7 +17339,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.26.3
+* sweetalert2 v11.26.4
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -18143,6 +18143,7 @@ const setupAccessibility = params => {
 const setupRTL = targetElement => {
   if (window.getComputedStyle(targetElement).direction === 'rtl') {
     addClass(getContainer(), swalClasses.rtl);
+    globalState.isRTL = true;
   }
 };
 
@@ -19007,7 +19008,9 @@ const move = event => {
       clientX,
       clientY
     } = getClientXY(event);
-    popup.style.insetInlineStart = `${initialX + (clientX - mousedownX)}px`;
+    const deltaX = clientX - mousedownX;
+    // In RTL mode, negate the horizontal delta since insetInlineStart refers to the right edge
+    popup.style.insetInlineStart = `${initialX + (globalState.isRTL ? -deltaX : deltaX)}px`;
     popup.style.insetBlockStart = `${initialY + (clientY - mousedownY)}px`;
   }
 };
@@ -21942,7 +21945,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.26.3';
+SweetAlert.version = '11.26.4';
 
 const Swal = SweetAlert;
 // @ts-ignore
