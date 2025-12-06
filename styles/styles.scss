@@ -430,20 +430,6 @@ kbd {
   }
 }
 
-.prtnr {
-  margin-top: 3em;
-  margin-bottom: -4em;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  &:has(+ h1) {
-    margin-bottom: 0;
-  }
-}
-
 .partner {
   margin: 3em auto -3em;
 
