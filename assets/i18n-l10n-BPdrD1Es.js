@@ -1,32 +1,29 @@
 import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-C-DQVzMw.js';
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-BwIzf129.js';
-import { P as Prtnr } from './Prtnr-CL7jkfSA.js';
+import { P as Prtnr } from './Prtnr-DZ26ci6h.js';
 
-const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./draw-attention-src-xJK_7bGr.js');return { default: __vite_default__ }},true              ?[]:void 0)).default;
+const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./i18n-l10n-src-DiKUhmni.js');return { default: __vite_default__ }},true              ?[]:void 0)).default;
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, { recipeGallery: true }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Prtnr, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Draw Attention / Persistent Dialog" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Internationalization (i18n) and localization (l10n)" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "In this example, we are passing the function returning ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "false" }),
-      " value to",
-      " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "allowOutsideClick" }),
-      ". In that function we can also animate the popup to bring users' attention to it."
+      "In this example ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.i18next.com/", children: "i18next" }),
+      " is used, but you can use any i18n library."
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Sandpack,
       {
         dependencies: {
-          "animate.css": "^4.0.0"
+          i18next: "^24.0.0"
         },
         entry: "/App.ts",
         files: {
           "/App.ts": src
         },
-        editorHeight: 400,
+        editorHeight: 600,
         previewHeight: 250
       }
     )

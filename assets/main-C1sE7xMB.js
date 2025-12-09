@@ -1,5 +1,5 @@
 import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-C-DQVzMw.js';
-import { P as Prtnr } from './Prtnr-CL7jkfSA.js';
+import { P as Prtnr } from './Prtnr-DZ26ci6h.js';
 import { C as CodeExample } from './CodeExample-BJwxtsk0.js';
 
 const useHash = () => {

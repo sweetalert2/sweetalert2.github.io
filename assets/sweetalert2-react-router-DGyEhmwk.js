@@ -1,6 +1,6 @@
 import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-C-DQVzMw.js';
 import { _ as __vitePreload, S as Sandpack } from './Sandpack-BwIzf129.js';
-import { P as Prtnr } from './Prtnr-CL7jkfSA.js';
+import { P as Prtnr } from './Prtnr-DZ26ci6h.js';
 import { C as CreatePortalDocs } from './CreatePortalDocs-CKqSXrpM.js';
 
 const src = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./sweetalert2-react-router-src-B9Lz50FU.js');return { default: __vite_default__ }},true              ?[]:void 0)).default;

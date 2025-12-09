@@ -94,7 +94,7 @@ function Prtnr() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hostinger email is tailored for reliable, branded communication." }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "It lets you create domain-based mailboxes with secure, ad-free inboxes, spam protection, and easy website integration." })
       ] }),
-      imageUrl: "/images/prtnrs/horizons.png"
+      imageUrl: "/images/prtnrs/email.png"
     },
     // Hostinger Reach Email Marketing
     {
