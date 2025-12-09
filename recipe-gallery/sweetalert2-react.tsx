@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Nav, Prtnr } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./sweetalert2-react-src?raw')).default
@@ -8,6 +8,7 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
+      <Prtnr />
       <h1>SweetAlert2 + React example</h1>
       <p>
         Here's our official React integration:{' '}

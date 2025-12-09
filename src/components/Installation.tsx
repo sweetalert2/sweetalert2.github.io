@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CodeExample } from './CodeExample'
-import { Partners } from './Partners'
+// import { Partners } from './Partners'
 
 export function Installation() {
   return (
@@ -26,7 +26,7 @@ export function Installation() {
         <JsdelivrInfo />
       </div>
 
-      <Partners />
+      {/* <Partners /> */}
 
       <div className="center-container">
         <h3 id="usage">Usage</h3>

@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Nav, Prtnr } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 import { CreatePortalDocs } from './components/CreatePortalDocs'
 
@@ -9,6 +9,7 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
+      <Prtnr />
       <h1>Date input powered by react-day-picker</h1>
       <p>
         While it is possible to use <strong>input: 'date | datetime-local | time | week | month'</strong>

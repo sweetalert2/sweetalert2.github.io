@@ -1,10 +1,11 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Nav, Prtnr } from '../src/components'
 
 function Recipe() {
   return (
     <>
       <Nav recipeGallery showBackToRecipeGalleryLink={false} />
+      <Prtnr />
       <h1>Recipe Gallery</h1>
       <p className="center">
         A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less.

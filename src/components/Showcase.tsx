@@ -1,6 +1,6 @@
 import { examples } from '../examples'
 import { CodeExample } from './CodeExample'
-import { Partners } from './Partners'
+// import { Partners } from './Partners'
 
 export function Showcase() {
   return (
@@ -24,7 +24,7 @@ export function Showcase() {
         <CodeExample code={examples.sweetAlert.fnString} />
       </div>
 
-      <Partners />
+      {/* <Partners /> */}
     </>
   )
 }

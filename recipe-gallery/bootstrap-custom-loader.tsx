@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { Nav } from '../src/components'
+import { Nav, Prtnr } from '../src/components'
 import { Sandpack } from './components/Sandpack'
 
 const html = (await import(`./bootstrap-custom-loader-html.html?raw`)).default
@@ -10,6 +10,7 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
+      <Prtnr />
       <h1>Bootstrap 5 + custom loader</h1>
 
       <p className="center">
