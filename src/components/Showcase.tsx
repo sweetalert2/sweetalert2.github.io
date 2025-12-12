@@ -1,6 +1,5 @@
 import { examples } from '../examples'
 import { CodeExample } from './CodeExample'
-// import { Partners } from './Partners'
 
 export function Showcase() {
   return (
@@ -24,7 +23,16 @@ export function Showcase() {
         <CodeExample code={examples.sweetAlert.fnString} />
       </div>
 
-      {/* <Partners /> */}
+      <div style={{ marginTop: 50, marginBottom: -60 }}>
+        <a href="https://cheapgpt.store/" target="_blank" rel="noopener">
+          <img
+            src="/images/sponsors/cheapgpt.gif"
+            width="728"
+            height="90"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </a>
+      </div>
     </>
   )
 }
