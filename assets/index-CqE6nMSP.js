@@ -1007,7 +1007,7 @@ function requireReact_production () {
 	react_production.useTransition = function () {
 	  return ReactSharedInternals.H.useTransition();
 	};
-	react_production.version = "19.2.0";
+	react_production.version = "19.2.1";
 	return react_production;
 }
 
@@ -1239,7 +1239,7 @@ function requireReactDom_production () {
 	reactDom_production.useFormStatus = function () {
 	  return ReactSharedInternals.H.useHostTransitionStatus();
 	};
-	reactDom_production.version = "19.2.0";
+	reactDom_production.version = "19.2.1";
 	return reactDom_production;
 }
 
@@ -17179,14 +17179,14 @@ function requireReactDomClient_production () {
 	};
 	var isomorphicReactPackageVersion$jscomp$inline_1840 = React.version;
 	if (
-	  "19.2.0" !==
+	  "19.2.1" !==
 	  isomorphicReactPackageVersion$jscomp$inline_1840
 	)
 	  throw Error(
 	    formatProdErrorMessage(
 	      527,
 	      isomorphicReactPackageVersion$jscomp$inline_1840,
-	      "19.2.0"
+	      "19.2.1"
 	    )
 	  );
 	ReactDOMSharedInternals.findDOMNode = function (componentOrElement) {
@@ -17208,10 +17208,10 @@ function requireReactDomClient_production () {
 	};
 	var internals$jscomp$inline_2347 = {
 	  bundleType: 0,
-	  version: "19.2.0",
+	  version: "19.2.1",
 	  rendererPackageName: "react-dom",
 	  currentDispatcherRef: ReactSharedInternals,
-	  reconcilerVersion: "19.2.0"
+	  reconcilerVersion: "19.2.1"
 	};
 	if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
 	  var hook$jscomp$inline_2348 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
@@ -17309,7 +17309,7 @@ function requireReactDomClient_production () {
 	  listenToAllSupportedEvents(container);
 	  return new ReactDOMHydrationRoot(initialChildren);
 	};
-	reactDomClient_production.version = "19.2.0";
+	reactDomClient_production.version = "19.2.1";
 	return reactDomClient_production;
 }
 
@@ -17339,7 +17339,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.26.4
+* sweetalert2 v11.26.10
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -21945,7 +21945,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.26.4';
+SweetAlert.version = '11.26.10';
 
 const Swal = SweetAlert;
 // @ts-ignore
