@@ -23,10 +23,21 @@ export function Showcase() {
         <CodeExample code={examples.sweetAlert.fnString} />
       </div>
 
-      <div style={{ marginTop: 50, marginBottom: -60 }}>
+      <div style={{ marginTop: 50 }}>
         <a href="https://cheapgpt.store/" target="_blank" rel="noopener">
           <img
             src="/images/sponsors/cheapgpt.gif"
+            width="728"
+            height="90"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </a>
+      </div>
+
+      <div style={{ marginTop: 20, marginBottom: -60 }}>
+        <a href="https://ohmyprompt.net?utm_source=limonte" target="_blank" rel="noopener">
+          <img
+            src="/images/sponsors/ohmyprompt.gif"
             width="728"
             height="90"
             style={{ maxWidth: '100%', height: 'auto' }}
