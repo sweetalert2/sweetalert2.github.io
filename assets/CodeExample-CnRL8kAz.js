@@ -1,4 +1,4 @@
-import { g as getDefaultExportFromCjs, r as reactExports, j as jsxRuntimeExports } from './index-CqE6nMSP.js';
+import { g as getDefaultExportFromCjs, r as reactExports, j as jsxRuntimeExports } from './index-DXOkOnAK.js';
 
 /* eslint-disable no-multi-assign */
 
@@ -4252,6 +4252,7 @@ function CodeExample({
   const codeRef = reactExports.useRef(null);
   const codepenForm = reactExports.useRef(null);
   const codepenFormData = reactExports.useRef(null);
+  const [codeSyntaxHighlighted, setCodeSyntaxHighlighted] = reactExports.useState(null);
   const isAsync = !!code.match(/(^|\n)\w.*await/);
   reactExports.useEffect(() => {
     if (!codeRef.current || codeRef.current.classList.contains("hljs")) {
@@ -4265,6 +4266,7 @@ function CodeExample({
       HighlightJS.registerLanguage("php", php);
     }
     HighlightJS.highlightElement(codeRef.current);
+    setCodeSyntaxHighlighted(codeRef.current.innerHTML);
   }, [codeRef, language]);
   const openInCodepen = (event) => {
     if (event.nativeEvent.offsetY < 0) {
@@ -4292,7 +4294,10 @@ function CodeExample({
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("pre", { className: withoutCodepen ? "" : "code-sample", onClick: openInCodepen, ...props, children: /* @__PURE__ */ jsxRuntimeExports.jsx("code", { ref: codeRef, children: code }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("pre", { className: withoutCodepen ? "" : "code-sample", onClick: openInCodepen, ...props, children: [
+      codeSyntaxHighlighted ? "" : /* @__PURE__ */ jsxRuntimeExports.jsx("code", { ref: codeRef, children: code }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("code", { dangerouslySetInnerHTML: { __html: codeSyntaxHighlighted || "" } })
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("form", { action: "https://codepen.io/pen/define", method: "POST", target: "_blank", ref: codepenForm, children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "data", ref: codepenFormData }) })
   ] });
 }

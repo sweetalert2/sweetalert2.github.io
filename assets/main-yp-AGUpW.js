@@ -1,6 +1,6 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-CqE6nMSP.js';
-import { P as Prtnr } from './Prtnr-b09eeHlj.js';
-import { C as CodeExample } from './CodeExample-DfLky4NK.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-DXOkOnAK.js';
+import { P as Prtnr } from './Prtnr-CAaiXZVq.js';
+import { C as CodeExample } from './CodeExample-CnRL8kAz.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -339,7 +339,7 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 50 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://cheapgpt.store/", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 50 }, className: "ad-banner", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://cheapgpt.store/", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
         src: "/images/sponsors/cheapgpt.gif",
@@ -348,7 +348,7 @@ function Showcase() {
         style: { maxWidth: "100%", height: "auto" }
       }
     ) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 20, marginBottom: -60 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://ohmyprompt.net?utm_source=limonte", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 20, marginBottom: -60 }, className: "ad-banner", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://ohmyprompt.net?utm_source=limonte", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
         src: "/images/sponsors/ohmyprompt.gif",
