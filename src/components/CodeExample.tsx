@@ -3,7 +3,7 @@ import langJavascript from 'highlight.js/lib/languages/javascript'
 import langXml from 'highlight.js/lib/languages/xml'
 import langPhp from 'highlight.js/lib/languages/php'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { MouseEventHandler, RefObject } from 'react'
 
 type CodeExampleProps = {
@@ -25,6 +25,7 @@ export function CodeExample({
   const codeRef = useRef(null) as RefObject<HTMLElement | null>
   const codepenForm = useRef(null) as RefObject<HTMLFormElement | null>
   const codepenFormData = useRef(null) as RefObject<HTMLInputElement | null>
+  const [codeSyntaxHighlighted, setCodeSyntaxHighlighted] = useState<string | null>(null)
 
   const isAsync = !!code.match(/(^|\n)\w.*await/)
   useEffect(() => {
@@ -42,6 +43,7 @@ export function CodeExample({
       hljs.registerLanguage('php', langPhp)
     }
     hljs.highlightElement(codeRef.current)
+    setCodeSyntaxHighlighted(codeRef.current.innerHTML)
   }, [codeRef, language])
 
   const openInCodepen: MouseEventHandler = (event) => {
@@ -79,7 +81,8 @@ export function CodeExample({
   return (
     <>
       <pre className={withoutCodepen ? '' : 'code-sample'} onClick={openInCodepen} {...props}>
-        <code ref={codeRef}>{code}</code>
+        {codeSyntaxHighlighted ? '' : <code ref={codeRef}>{code}</code>}
+        <code dangerouslySetInnerHTML={{ __html: codeSyntaxHighlighted || '' }} />
       </pre>
       <form action="https://codepen.io/pen/define" method="POST" target="_blank" ref={codepenForm}>
         <input type="hidden" name="data" ref={codepenFormData} />
