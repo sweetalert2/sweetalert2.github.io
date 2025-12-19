@@ -339,7 +339,7 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 50 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://cheapgpt.store/", target: "_blank", rel: "noopener", className: "sponsor ad", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 50 }, className: "sponsor ad", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://cheapgpt.store/", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
         src: "/images/sponsors/cheapgpt.gif",
@@ -348,7 +348,7 @@ function Showcase() {
         style: { maxWidth: "100%", height: "auto" }
       }
     ) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 20, marginBottom: -60 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://ohmyprompt.net?utm_source=limonte", target: "_blank", rel: "noopener", className: "sponsor ad", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 20, marginBottom: -60 }, className: "sponsor ad", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://ohmyprompt.net?utm_source=limonte", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
         src: "/images/sponsors/ohmyprompt.gif",
