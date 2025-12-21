@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports } from './index-DXOkOnAK.js';
+import { j as jsxRuntimeExports } from './index-B0cNfZFj.js';
 
 function Prtnr() {
   const prtnrs = [

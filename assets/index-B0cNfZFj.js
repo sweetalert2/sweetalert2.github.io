@@ -17339,7 +17339,7 @@ var clientExports = requireClient();
 const ReactDOM = /*@__PURE__*/getDefaultExportFromCjs(clientExports);
 
 /*!
-* sweetalert2 v11.26.10
+* sweetalert2 v11.26.14
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -17960,7 +17960,7 @@ const toggle = (elem, condition, display = 'flex') => {
  * @param {HTMLElement | null} elem
  * @returns {boolean}
  */
-const isVisible$1 = elem => !!(elem && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length));
+const isVisible$1 = elem => Boolean(elem && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length));
 
 /**
  * @returns {boolean}
@@ -17971,7 +17971,7 @@ const allButtonsAreHidden = () => !isVisible$1(getConfirmButton()) && !isVisible
  * @param {HTMLElement} elem
  * @returns {boolean}
  */
-const isScrollable = elem => !!(elem.scrollHeight > elem.clientHeight);
+const isScrollable = elem => Boolean(elem.scrollHeight > elem.clientHeight);
 
 /**
  * @param {HTMLElement} element
@@ -18204,7 +18204,7 @@ const parseHtmlToContainer = (param, target) => {
  */
 const handleObject = (param, target) => {
   // JQuery element(s)
-  if (param.jquery) {
+  if ('jquery' in param) {
     handleJqueryElem(target, param);
   }
 
@@ -18216,7 +18216,7 @@ const handleObject = (param, target) => {
 
 /**
  * @param {HTMLElement} target
- * @param {object} elem
+ * @param {any} elem
  */
 const handleJqueryElem = (target, elem) => {
   target.textContent = '';
@@ -18603,96 +18603,119 @@ const checkAndSetInputValue = (input, inputValue) => {
 const renderInputType = {};
 
 /**
- * @param {HTMLInputElement} input
+ * @param {Input | HTMLElement} input
  * @param {SweetAlertOptions} params
- * @returns {HTMLInputElement}
+ * @returns {Input}
  */
 renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = renderInputType.search = renderInputType.date = renderInputType['datetime-local'] = renderInputType.time = renderInputType.week = renderInputType.month = /** @type {(input: Input | HTMLElement, params: SweetAlertOptions) => Input} */
 (input, params) => {
-  checkAndSetInputValue(input, params.inputValue);
-  setInputLabel(input, input, params);
-  setInputPlaceholder(input, params);
-  input.type = params.input;
-  return input;
+  const inputElement = /** @type {HTMLInputElement} */input;
+  checkAndSetInputValue(inputElement, params.inputValue);
+  setInputLabel(inputElement, inputElement, params);
+  setInputPlaceholder(inputElement, params);
+  inputElement.type = /** @type {string} */params.input;
+  return inputElement;
 };
 
 /**
- * @param {HTMLInputElement} input
+ * @param {Input | HTMLElement} input
  * @param {SweetAlertOptions} params
- * @returns {HTMLInputElement}
+ * @returns {Input}
  */
 renderInputType.file = (input, params) => {
-  setInputLabel(input, input, params);
-  setInputPlaceholder(input, params);
-  return input;
+  const inputElement = /** @type {HTMLInputElement} */input;
+  setInputLabel(inputElement, inputElement, params);
+  setInputPlaceholder(inputElement, params);
+  return inputElement;
 };
 
 /**
- * @param {HTMLInputElement} range
+ * @param {Input | HTMLElement} range
  * @param {SweetAlertOptions} params
- * @returns {HTMLInputElement}
+ * @returns {Input}
  */
 renderInputType.range = (range, params) => {
-  const rangeInput = range.querySelector('input');
-  const rangeOutput = range.querySelector('output');
-  checkAndSetInputValue(rangeInput, params.inputValue);
-  rangeInput.type = params.input;
-  checkAndSetInputValue(rangeOutput, params.inputValue);
-  setInputLabel(rangeInput, range, params);
-  return range;
+  const rangeContainer = /** @type {HTMLElement} */range;
+  const rangeInput = rangeContainer.querySelector('input');
+  const rangeOutput = rangeContainer.querySelector('output');
+  if (rangeInput) {
+    checkAndSetInputValue(rangeInput, params.inputValue);
+    rangeInput.type = /** @type {string} */params.input;
+    setInputLabel(rangeInput, /** @type {Input} */range, params);
+  }
+  if (rangeOutput) {
+    checkAndSetInputValue(rangeOutput, params.inputValue);
+  }
+  return /** @type {Input} */range;
 };
 
 /**
- * @param {HTMLSelectElement} select
+ * @param {Input | HTMLElement} select
  * @param {SweetAlertOptions} params
- * @returns {HTMLSelectElement}
+ * @returns {Input}
  */
 renderInputType.select = (select, params) => {
-  select.textContent = '';
+  const selectElement = /** @type {HTMLSelectElement} */select;
+  selectElement.textContent = '';
   if (params.inputPlaceholder) {
     const placeholder = document.createElement('option');
     setInnerHtml(placeholder, params.inputPlaceholder);
     placeholder.value = '';
     placeholder.disabled = true;
     placeholder.selected = true;
-    select.appendChild(placeholder);
+    selectElement.appendChild(placeholder);
   }
-  setInputLabel(select, select, params);
-  return select;
+  setInputLabel(selectElement, selectElement, params);
+  return selectElement;
 };
 
 /**
- * @param {HTMLInputElement} radio
- * @returns {HTMLInputElement}
+ * @param {Input | HTMLElement} radio
+ * @returns {Input}
  */
 renderInputType.radio = radio => {
-  radio.textContent = '';
-  return radio;
+  const radioElement = /** @type {HTMLElement} */radio;
+  radioElement.textContent = '';
+  return /** @type {Input} */radio;
 };
 
 /**
- * @param {HTMLLabelElement} checkboxContainer
+ * @param {Input | HTMLElement} checkboxContainer
  * @param {SweetAlertOptions} params
- * @returns {HTMLInputElement}
+ * @returns {Input}
  */
 renderInputType.checkbox = (checkboxContainer, params) => {
-  const checkbox = getInput$1(getPopup(), 'checkbox');
+  const popup = getPopup();
+  if (!popup) {
+    throw new Error('Popup not found');
+  }
+  const checkbox = getInput$1(popup, 'checkbox');
+  if (!checkbox) {
+    throw new Error('Checkbox input not found');
+  }
   checkbox.value = '1';
   checkbox.checked = Boolean(params.inputValue);
-  const label = checkboxContainer.querySelector('span');
-  setInnerHtml(label, params.inputPlaceholder || params.inputLabel);
+  const containerElement = /** @type {HTMLElement} */checkboxContainer;
+  const label = containerElement.querySelector('span');
+  if (label) {
+    const placeholderOrLabel = params.inputPlaceholder || params.inputLabel;
+    if (placeholderOrLabel) {
+      setInnerHtml(label, placeholderOrLabel);
+    }
+  }
   return checkbox;
 };
 
 /**
- * @param {HTMLTextAreaElement} textarea
+ * @param {Input | HTMLElement} textarea
  * @param {SweetAlertOptions} params
- * @returns {HTMLTextAreaElement}
+ * @returns {Input}
  */
 renderInputType.textarea = (textarea, params) => {
-  checkAndSetInputValue(textarea, params.inputValue);
-  setInputPlaceholder(textarea, params);
-  setInputLabel(textarea, textarea, params);
+  const textareaElement = /** @type {HTMLTextAreaElement} */textarea;
+  checkAndSetInputValue(textareaElement, params.inputValue);
+  setInputPlaceholder(textareaElement, params);
+  setInputLabel(textareaElement, textareaElement, params);
 
   /**
    * @param {HTMLElement} el
@@ -18704,26 +18727,33 @@ renderInputType.textarea = (textarea, params) => {
   setTimeout(() => {
     // https://github.com/sweetalert2/sweetalert2/issues/1699
     if ('MutationObserver' in window) {
-      const initialPopupWidth = parseInt(window.getComputedStyle(getPopup()).width);
+      const popup = getPopup();
+      if (!popup) {
+        return;
+      }
+      const initialPopupWidth = parseInt(window.getComputedStyle(popup).width);
       const textareaResizeHandler = () => {
         // check if texarea is still in document (i.e. popup wasn't closed in the meantime)
-        if (!document.body.contains(textarea)) {
+        if (!document.body.contains(textareaElement)) {
           return;
         }
-        const textareaWidth = textarea.offsetWidth + getMargin(textarea);
-        if (textareaWidth > initialPopupWidth) {
-          getPopup().style.width = `${textareaWidth}px`;
-        } else {
-          applyNumericalStyle(getPopup(), 'width', params.width);
+        const textareaWidth = textareaElement.offsetWidth + getMargin(textareaElement);
+        const popupElement = getPopup();
+        if (popupElement) {
+          if (textareaWidth > initialPopupWidth) {
+            popupElement.style.width = `${textareaWidth}px`;
+          } else {
+            applyNumericalStyle(popupElement, 'width', params.width);
+          }
         }
       };
-      new MutationObserver(textareaResizeHandler).observe(textarea, {
+      new MutationObserver(textareaResizeHandler).observe(textareaElement, {
         attributes: true,
         attributeFilter: ['style']
       });
     }
   });
-  return textarea;
+  return textareaElement;
 };
 
 /**
@@ -18987,7 +19017,11 @@ const removeDraggableListeners = popup => {
  */
 const down = event => {
   const popup = getPopup();
-  if (event.target === popup || getIcon().contains(/** @type {HTMLElement} */event.target)) {
+  if (!popup) {
+    return;
+  }
+  const icon = getIcon();
+  if (event.target === popup || icon && icon.contains(/** @type {HTMLElement} */event.target)) {
     dragging = true;
     const clientXY = getClientXY(event);
     mousedownX = clientXY.clientX;
@@ -19003,6 +19037,9 @@ const down = event => {
  */
 const move = event => {
   const popup = getPopup();
+  if (!popup) {
+    return;
+  }
   if (dragging) {
     let {
       clientX,
@@ -19203,6 +19240,7 @@ const renderTitle = (instance, params) => {
  * @param {SweetAlertOptions} params
  */
 const render = (instance, params) => {
+  var _globalState$eventEmi;
   renderPopup(instance, params);
   renderContainer(instance, params);
   renderProgressSteps(instance, params);
@@ -19217,7 +19255,7 @@ const render = (instance, params) => {
   if (typeof params.didRender === 'function' && popup) {
     params.didRender(popup);
   }
-  globalState.eventEmitter.emit('didRender', popup);
+  (_globalState$eventEmi = globalState.eventEmitter) === null || _globalState$eventEmi === void 0 || _globalState$eventEmi.emit('didRender', popup);
 };
 
 /*
@@ -19504,7 +19542,7 @@ const unsetAriaHidden = () => {
 };
 
 // @ts-ignore
-const isSafariOrIOS = typeof window !== 'undefined' && !!window.GestureEvent; // true for Safari desktop + all iOS browsers https://stackoverflow.com/a/70585394
+const isSafariOrIOS = typeof window !== 'undefined' && Boolean(window.GestureEvent); // true for Safari desktop + all iOS browsers https://stackoverflow.com/a/70585394
 
 /**
  * Fix iOS scrolling
@@ -19580,11 +19618,13 @@ const shouldPreventTouchMove = event => {
 /**
  * https://github.com/sweetalert2/sweetalert2/issues/1786
  *
- * @param {object} event
+ * @param {TouchEvent} event
  * @returns {boolean}
  */
 const isStylus = event => {
-  return event.touches && event.touches.length && event.touches[0].touchType === 'stylus';
+  return Boolean(event.touches && event.touches.length &&
+  // @ts-ignore - touchType is not a standard property
+  event.touches[0].touchType === 'stylus');
 };
 
 /**
@@ -20109,7 +20149,7 @@ const formatInputOptions = inputOptions => {
  * @returns {boolean}
  */
 const isSelected = (optionValue, inputValue) => {
-  return !!inputValue && inputValue.toString() === optionValue.toString();
+  return Boolean(inputValue) && inputValue !== null && inputValue !== undefined && inputValue.toString() === optionValue.toString();
 };
 
 /**
@@ -20198,7 +20238,7 @@ const handleInputValidator = (instance, inputValue, type) => {
  * @param {*} value
  */
 const deny = (instance, value) => {
-  const innerParams = privateProps.innerParams.get(instance || undefined);
+  const innerParams = privateProps.innerParams.get(instance);
   if (innerParams.showLoaderOnDeny) {
     showLoading(getDenyButton());
   }
@@ -20215,7 +20255,7 @@ const deny = (instance, value) => {
           value: typeof preDenyValue === 'undefined' ? value : preDenyValue
         });
       }
-    }).catch(error => rejectWith(instance || undefined, error));
+    }).catch(error => rejectWith(instance, error));
   } else {
     instance.close(/** @type SweetAlertResult */{
       isDenied: true,
@@ -20250,7 +20290,7 @@ const rejectWith = (instance, error) => {
  * @param {*} value
  */
 const confirm = (instance, value) => {
-  const innerParams = privateProps.innerParams.get(instance || undefined);
+  const innerParams = privateProps.innerParams.get(instance);
   if (innerParams.showLoaderOnConfirm) {
     showLoading();
   }
@@ -20265,7 +20305,7 @@ const confirm = (instance, value) => {
       } else {
         succeedWith(instance, typeof preConfirmValue === 'undefined' ? value : preConfirmValue);
       }
-    }).catch(error => rejectWith(instance || undefined, error));
+    }).catch(error => rejectWith(instance, error));
   } else {
     succeedWith(instance, value);
   }
@@ -20789,7 +20829,7 @@ const handleToastClick = (innerParams, domCache, dismissWith) => {
  * @returns {boolean}
  */
 const isAnyButtonShown = innerParams => {
-  return !!(innerParams.showConfirmButton || innerParams.showDenyButton || innerParams.showCancelButton || innerParams.showCloseButton);
+  return Boolean(innerParams.showConfirmButton || innerParams.showDenyButton || innerParams.showCancelButton || innerParams.showCloseButton);
 };
 let ignoreOutsideClick = false;
 
@@ -20974,7 +21014,7 @@ const increaseTimer = ms => {
  * @returns {boolean}
  */
 const isTimerRunning = () => {
-  return !!(globalState.timeout && globalState.timeout.isRunning());
+  return Boolean(globalState.timeout && globalState.timeout.isRunning());
 };
 
 let bodyClickListenerAdded = false;
@@ -21042,10 +21082,11 @@ class EventEmitter {
    */
   once(eventName, eventHandler) {
     /**
-     * @param {Array} args
+     * @param {...any} args
      */
     const onceFn = (...args) => {
       this.removeListener(eventName, onceFn);
+      // @ts-ignore
       eventHandler.apply(this, args);
     };
     this.on(eventName, onceFn);
@@ -21053,7 +21094,7 @@ class EventEmitter {
 
   /**
    * @param {string} eventName
-   * @param {Array} args
+   * @param {...any} args
    */
   emit(eventName, ...args) {
     this._getHandlersByEventName(eventName).forEach(
@@ -21062,6 +21103,7 @@ class EventEmitter {
      */
     eventHandler => {
       try {
+        // @ts-ignore
         eventHandler.apply(this, args);
       } catch (error) {
         console.error(error);
@@ -21283,9 +21325,9 @@ const getSwalParams = templateContent => {
     if (!paramName || !value) {
       return;
     }
-    if (typeof defaultParams[paramName] === 'boolean') {
+    if (paramName in defaultParams && typeof defaultParams[(/** @type {keyof typeof defaultParams} */paramName)] === 'boolean') {
       result[paramName] = value !== 'false';
-    } else if (typeof defaultParams[paramName] === 'object') {
+    } else if (paramName in defaultParams && typeof defaultParams[(/** @type {keyof typeof defaultParams} */paramName)] === 'object') {
       result[paramName] = JSON.parse(value);
     } else {
       result[paramName] = value;
@@ -21332,10 +21374,16 @@ const getSwalButtons = templateContent => {
     result[`${type}ButtonText`] = button.innerHTML;
     result[`show${capitalizeFirstLetter(type)}Button`] = true;
     if (button.hasAttribute('color')) {
-      result[`${type}ButtonColor`] = button.getAttribute('color');
+      const color = button.getAttribute('color');
+      if (color !== null) {
+        result[`${type}ButtonColor`] = color;
+      }
     }
     if (button.hasAttribute('aria-label')) {
-      result[`${type}ButtonAriaLabel`] = button.getAttribute('aria-label');
+      const ariaLabel = button.getAttribute('aria-label');
+      if (ariaLabel !== null) {
+        result[`${type}ButtonAriaLabel`] = ariaLabel;
+      }
     }
   });
   return result;
@@ -21393,7 +21441,7 @@ const getSwalIcon = templateContent => {
  * @returns {object}
  */
 const getSwalInput = templateContent => {
-  /** @type {object} */
+  /** @type {Record<string, any>} */
   const result = {};
   /** @type {HTMLElement | null} */
   const input = templateContent.querySelector('swal-input');
@@ -21480,12 +21528,16 @@ const SHOW_CLASS_TIMEOUT = 10;
  * @param {SweetAlertOptions} params
  */
 const openPopup = params => {
+  var _globalState$eventEmi, _globalState$eventEmi2;
   const container = getContainer();
   const popup = getPopup();
+  if (!container || !popup) {
+    return;
+  }
   if (typeof params.willOpen === 'function') {
     params.willOpen(popup);
   }
-  globalState.eventEmitter.emit('willOpen', popup);
+  (_globalState$eventEmi = globalState.eventEmitter) === null || _globalState$eventEmi === void 0 || _globalState$eventEmi.emit('willOpen', popup);
   const bodyStyles = window.getComputedStyle(document.body);
   const initialBodyOverflow = bodyStyles.overflowY;
   addClasses(container, popup, params);
@@ -21495,27 +21547,32 @@ const openPopup = params => {
     setScrollingVisibility(container, popup);
   }, SHOW_CLASS_TIMEOUT);
   if (isModal()) {
-    fixScrollContainer(container, params.scrollbarPadding, initialBodyOverflow);
+    // Using ternary instead of ?? operator for Webpack 4 compatibility
+    fixScrollContainer(container, params.scrollbarPadding !== undefined ? params.scrollbarPadding : false, initialBodyOverflow);
     setAriaHidden();
   }
   if (!isToast() && !globalState.previousActiveElement) {
     globalState.previousActiveElement = document.activeElement;
   }
   if (typeof params.didOpen === 'function') {
-    setTimeout(() => params.didOpen(popup));
+    const didOpen = params.didOpen;
+    setTimeout(() => didOpen(popup));
   }
-  globalState.eventEmitter.emit('didOpen', popup);
+  (_globalState$eventEmi2 = globalState.eventEmitter) === null || _globalState$eventEmi2 === void 0 || _globalState$eventEmi2.emit('didOpen', popup);
 };
 
 /**
- * @param {AnimationEvent} event
+ * @param {Event} event
  */
 const swalOpenAnimationFinished = event => {
   const popup = getPopup();
-  if (event.target !== popup) {
+  if (!popup || event.target !== popup) {
     return;
   }
   const container = getContainer();
+  if (!container) {
+    return;
+  }
   popup.removeEventListener('animationend', swalOpenAnimationFinished);
   popup.removeEventListener('transitionend', swalOpenAnimationFinished);
   container.style.overflowY = 'auto';
@@ -21561,14 +21618,20 @@ const fixScrollContainer = (container, scrollbarPadding, initialBodyOverflow) =>
  * @param {SweetAlertOptions} params
  */
 const addClasses = (container, popup, params) => {
-  addClass(container, params.showClass.backdrop);
+  var _params$showClass;
+  if ((_params$showClass = params.showClass) !== null && _params$showClass !== void 0 && _params$showClass.backdrop) {
+    addClass(container, params.showClass.backdrop);
+  }
   if (params.animation) {
     // this workaround with opacity is needed for https://github.com/sweetalert2/sweetalert2/issues/2059
     popup.style.setProperty('opacity', '0', 'important');
     show(popup, 'grid');
     setTimeout(() => {
+      var _params$showClass2;
       // Animate popup right after showing it
-      addClass(popup, params.showClass.popup);
+      if ((_params$showClass2 = params.showClass) !== null && _params$showClass2 !== void 0 && _params$showClass2.popup) {
+        addClass(popup, params.showClass.popup);
+      }
       // and remove the opacity workaround
       popup.style.removeProperty('opacity');
     }, SHOW_CLASS_TIMEOUT); // 10ms in order to fix #2062
@@ -21945,7 +22008,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.26.10';
+SweetAlert.version = '11.26.14';
 
 const Swal = SweetAlert;
 // @ts-ignore
@@ -21955,7 +22018,7 @@ Swal.default = Swal;
 var reactExports = requireReact();
 const React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-// sweetalert2-react-content v5.1.0
+// sweetalert2-react-content v5.1.1
 
 
 const mounts = [{
