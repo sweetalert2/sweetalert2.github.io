@@ -16,7 +16,7 @@ export function Nav({
   return (
     <>
       <Sidebar />
-      <i className="fa fa-bars" id="show-sidebar" onClick={() => showSidebar()}></i>
+      <i className="fa fa-bars show-sidebar" onClick={() => showSidebar()}></i>
 
       {recipeGallery ? (
         <>

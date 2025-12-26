@@ -102,7 +102,7 @@ nav {
   }
 }
 
-#show-sidebar {
+.show-sidebar {
   display: none;
   position: fixed;
   z-index: 1;
@@ -113,11 +113,11 @@ nav {
   width: 48px;
   height: 48px;
   background-color: $body-background;
-  font-size: 1.8em;
+  font-size: 1.8em !important;
   cursor: pointer;
 
   @media all and (width <= 1260px) {
-    display: flex;
+    display: flex !important;
   }
 }
 
