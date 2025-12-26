@@ -1,5 +1,3 @@
-# AGENTS.md
-
 ## Setup commands
 
 - Install deps: `bun install`
@@ -7,4 +5,4 @@
 
 ## Code style
 
-- TypeScript strict mode
+- JavaScript strict mode, always use JSDoc comments
