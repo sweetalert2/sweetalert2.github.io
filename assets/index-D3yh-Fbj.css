@@ -2145,7 +2145,7 @@ nav .version-selector {
   font-size: 1.1em;
   text-align: left;
 }
-#show-sidebar {
+.show-sidebar {
   display: none;
   position: fixed;
   z-index: 1;
@@ -2156,12 +2156,12 @@ nav .version-selector {
   width: 48px;
   height: 48px;
   background-color: #f2f4f6;
-  font-size: 1.8em;
+  font-size: 1.8em !important;
   cursor: pointer;
 }
 @media all and (width <= 1260px) {
-  #show-sidebar {
-    display: flex;
+  .show-sidebar {
+    display: flex !important;
   }
 }
 .sidebar {
