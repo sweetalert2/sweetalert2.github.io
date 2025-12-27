@@ -103,7 +103,7 @@ nav {
 }
 
 .show-sidebar {
-  display: none;
+  display: none !important;
   position: fixed;
   z-index: 1;
   top: 0;
