@@ -29,7 +29,7 @@ function Recipe() {
         files={{
           '/App.tsx': src,
           '/index.html': {
-            code: `<style>body { font-family: sans-serif; }</style><div id="root"></div>`,
+            code: `<style>body { font-family: sans-serif; }</style><div className="app-root"></div>`,
             hidden: true,
           },
         }}
@@ -40,4 +40,4 @@ function Recipe() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)
+ReactDOM.createRoot(document.querySelector('.app-root')!).render(<Recipe />)

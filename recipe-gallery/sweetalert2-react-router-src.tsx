@@ -30,7 +30,7 @@ const Home = () => {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.querySelector('.app-root')!).render(
   <BrowserRouter>
     <Link to="/">Home</Link> {' | '}
     <Link to="/about">About</Link>

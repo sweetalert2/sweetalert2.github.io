@@ -17,7 +17,7 @@ import {
 } from './components'
 import { Prtnr } from './components/Prtnr'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.querySelector('.app-root')!).render(
   <>
     <Nav />
     <Header />

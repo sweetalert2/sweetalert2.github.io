@@ -33,4 +33,4 @@ function Recipe() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<Recipe />)
+ReactDOM.createRoot(document.querySelector('.app-root')!).render(<Recipe />)
