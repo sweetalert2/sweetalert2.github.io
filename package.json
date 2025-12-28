@@ -5,8 +5,11 @@
   "description": "Documentation for SweetAlert2",
   "type": "module",
   "scripts": {
+    "predev": "node tools/generate-recipe-html.mjs",
     "dev": "vite --open",
+    "prebuild:dev": "node tools/generate-recipe-html.mjs",
     "build:dev": "tsc && vite build",
+    "prebuild": "node tools/generate-recipe-html.mjs",
     "build": "tsc && vite build --emptyOutDir",
     "lint": "stylelint styles/*.scss && eslint . --ignore-pattern 'dist/*'",
     "preview": "vite preview"
