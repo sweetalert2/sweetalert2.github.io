@@ -1,6 +1,6 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, R as ReactDOM, N as Nav } from './index-D4neMOMf.js';
-import { P as Prtnr } from './Prtnr-Ddp-8Vq5.js';
-import { C as CodeExample } from './CodeExample-C6uABqaG.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, a as renderRecipe, N as Nav } from './index-ByQkOKBL.js';
+import { P as Prtnr } from './Prtnr-BxLnBzYw.js';
+import { C as CodeExample } from './CodeExample-D7ppaDOg.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -3618,7 +3618,7 @@ Swal.fire({
   ] }) });
 }
 
-ReactDOM.createRoot(document.querySelector(".app-root")).render(
+renderRecipe(
   /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Nav, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Header, {}),

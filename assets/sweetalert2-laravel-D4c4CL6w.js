@@ -1,5 +1,5 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-D4neMOMf.js';
-import { C as CodeExample } from './CodeExample-C6uABqaG.js';
+import { a as renderRecipe, j as jsxRuntimeExports, N as Nav } from './index-ByQkOKBL.js';
+import { C as CodeExample } from './CodeExample-D7ppaDOg.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -92,4 +92,4 @@ Swal::toastQuestion([
     ) })
   ] });
 }
-ReactDOM.createRoot(document.querySelector(".app-root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));
+renderRecipe(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

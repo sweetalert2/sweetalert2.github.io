@@ -1,5 +1,5 @@
-import { R as ReactDOM, j as jsxRuntimeExports, N as Nav } from './index-D4neMOMf.js';
-import { P as Prtnr } from './Prtnr-Ddp-8Vq5.js';
+import { a as renderRecipe, j as jsxRuntimeExports, N as Nav } from './index-ByQkOKBL.js';
+import { P as Prtnr } from './Prtnr-BxLnBzYw.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -29,4 +29,4 @@ function Recipe() {
     ] })
   ] });
 }
-ReactDOM.createRoot(document.querySelector(".app-root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));
+renderRecipe(/* @__PURE__ */ jsxRuntimeExports.jsx(Recipe, {}));

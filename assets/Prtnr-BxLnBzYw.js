@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports } from './index-D4neMOMf.js';
+import { j as jsxRuntimeExports } from './index-ByQkOKBL.js';
 
 function Prtnr() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
