@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client'
+import { renderRecipe } from './utils'
 import {
   ConfigurationParams,
   DeclarativeTemplates,
@@ -17,7 +17,7 @@ import {
 } from './components'
 import { Prtnr } from './components/Prtnr'
 
-ReactDOM.createRoot(document.querySelector('.app-root')!).render(
+renderRecipe(
   <>
     <Nav />
     <Header />

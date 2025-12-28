@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom/client'
 import { Nav } from '../src/components'
+import { renderRecipe } from '../src/utils'
 import { CodeExample } from '../src/components/CodeExample'
 
 function Recipe() {
@@ -102,4 +102,4 @@ Swal::toastQuestion([
   )
 }
 
-ReactDOM.createRoot(document.querySelector('.app-root')!).render(<Recipe />)
+renderRecipe(<Recipe />)

@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom/client'
 import { Nav, Prtnr } from '../src/components'
+import { renderRecipe } from '../src/utils'
 import { Sandpack } from './components/Sandpack'
 
 const src = (await import('./input-number-input-range-src?raw')).default
@@ -31,4 +31,4 @@ function Recipe() {
   )
 }
 
-ReactDOM.createRoot(document.querySelector('.app-root')!).render(<Recipe />)
+renderRecipe(<Recipe />)
