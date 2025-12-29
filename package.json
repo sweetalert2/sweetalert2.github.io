@@ -43,6 +43,7 @@
     "@sweetalert2/eslint-config": "^1.1.8",
     "@sweetalert2/stylelint-config": "^3.0.0",
     "@types/bootstrap": "^5.2.8",
+    "@types/google.maps": "^3.58.1",
     "@types/jquery": "^3.5.24",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
