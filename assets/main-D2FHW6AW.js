@@ -64,7 +64,7 @@ function Header() {
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: "slava-ukraini", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://war.ukraine.ua/support-ukraine/", children: "SAVE LIVES, SUPPORT UKRAINE" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://u24.gov.ua/", children: "SAVE LIVES, SUPPORT UKRAINE" }),
         " 🇺🇦"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: "logo-slider", children: [
