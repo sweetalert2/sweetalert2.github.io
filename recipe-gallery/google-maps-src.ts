@@ -6,16 +6,22 @@ let currentPosition = { lat: 37.7749, lng: -122.4194 }
 
 // Wait for Google Maps API to load
 function waitForGoogleMaps(): Promise<void> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     if (typeof google !== 'undefined' && google.maps) {
       resolve()
     } else {
+      const timeout = setTimeout(() => {
+        clearInterval(checkInterval)
+        reject(new Error('Google Maps API failed to load'))
+      }, 10000) // 10 second timeout
+
       const checkInterval = setInterval(() => {
         if (typeof google !== 'undefined' && google.maps) {
           clearInterval(checkInterval)
+          clearTimeout(timeout)
           resolve()
         }
-      }, 100)
+      }, 250) // Check every 250ms
     }
   })
 }
@@ -47,20 +53,24 @@ Swal.fire({
   showConfirmButton: true,
   confirmButtonText: 'Select Location',
   didOpen: async () => {
-    await waitForGoogleMaps()
-    const mapElement = document.getElementById('map') as HTMLElement
-    const { map, marker } = initMap(mapElement)
+    try {
+      await waitForGoogleMaps()
+      const mapElement = document.getElementById('map') as HTMLElement
+      const { map, marker } = initMap(mapElement)
 
-    // Allow users to click on the map to change marker position
-    google.maps.event.addListener(map, 'click', (event: google.maps.MapMouseEvent) => {
-      if (event.latLng) {
-        marker.setPosition(event.latLng)
-        currentPosition = {
-          lat: event.latLng.lat(),
-          lng: event.latLng.lng(),
+      // Allow users to click on the map to change marker position
+      google.maps.event.addListener(map, 'click', (event: google.maps.MapMouseEvent) => {
+        if (event.latLng) {
+          marker.setPosition(event.latLng)
+          currentPosition = {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng(),
+          }
         }
-      }
-    })
+      })
+    } catch {
+      Swal.showValidationMessage('Failed to load Google Maps. Please check your API key.')
+    }
   },
   preConfirm: () => {
     return currentPosition

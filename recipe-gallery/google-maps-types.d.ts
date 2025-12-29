@@ -1,4 +1,6 @@
-// TypeScript declarations for Google Maps API
+// TypeScript declarations for Google Maps JavaScript API
+// Provides minimal type definitions needed for the SweetAlert2 Google Maps recipe
+// For complete type definitions, use @types/google.maps package
 declare namespace google.maps {
   interface MapOptions {
     center: { lat: number; lng: number }
