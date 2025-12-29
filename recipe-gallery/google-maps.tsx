@@ -4,6 +4,7 @@ import { Sandpack } from './components/Sandpack'
 
 const styles = (await import(`./google-maps-styles.css?raw`)).default
 const src = (await import('./google-maps-src?raw')).default
+const types = (await import('./google-maps-types.d?raw')).default
 
 function Recipe() {
   return (
@@ -28,6 +29,7 @@ function Recipe() {
         files={{
           '/App.ts': src,
           '/styles.css': styles,
+          '/types.d.ts': types,
           '/index.html': {
             code: `<!DOCTYPE html>
 <html>

@@ -4,6 +4,22 @@ import './styles.css'
 // Store the current marker position
 let currentPosition = { lat: 37.7749, lng: -122.4194 }
 
+// Wait for Google Maps API to load
+function waitForGoogleMaps(): Promise<void> {
+  return new Promise((resolve) => {
+    if (typeof google !== 'undefined' && google.maps) {
+      resolve()
+    } else {
+      const checkInterval = setInterval(() => {
+        if (typeof google !== 'undefined' && google.maps) {
+          clearInterval(checkInterval)
+          resolve()
+        }
+      }, 100)
+    }
+  })
+}
+
 // Initialize map when modal opens
 function initMap(element: HTMLElement) {
   const map = new google.maps.Map(element, {
@@ -30,7 +46,8 @@ Swal.fire({
   width: 800,
   showConfirmButton: true,
   confirmButtonText: 'Select Location',
-  didOpen: () => {
+  didOpen: async () => {
+    await waitForGoogleMaps()
     const mapElement = document.getElementById('map') as HTMLElement
     const { map, marker } = initMap(mapElement)
 
