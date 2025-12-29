@@ -1,10 +1,13 @@
 import Swal from 'sweetalert2'
 import './styles.css'
 
+// Store the current marker position
+let currentPosition = { lat: 37.7749, lng: -122.4194 }
+
 // Initialize map when modal opens
 function initMap(element: HTMLElement) {
   const map = new google.maps.Map(element, {
-    center: { lat: 37.7749, lng: -122.4194 }, // San Francisco
+    center: currentPosition,
     zoom: 12,
     mapTypeControl: true,
     streetViewControl: true,
@@ -13,7 +16,7 @@ function initMap(element: HTMLElement) {
 
   // Add a marker
   const marker = new google.maps.Marker({
-    position: { lat: 37.7749, lng: -122.4194 },
+    position: currentPosition,
     map: map,
     title: 'San Francisco',
   })
@@ -35,17 +38,15 @@ Swal.fire({
     google.maps.event.addListener(map, 'click', (event: google.maps.MapMouseEvent) => {
       if (event.latLng) {
         marker.setPosition(event.latLng)
+        currentPosition = {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng(),
+        }
       }
     })
   },
   preConfirm: () => {
-    const mapElement = document.getElementById('map') as HTMLElement
-    const map = google.maps.Map as any
-    // In a real application, you would retrieve the selected location
-    return {
-      lat: 37.7749,
-      lng: -122.4194,
-    }
+    return currentPosition
   },
 }).then((result) => {
   if (result.isConfirmed) {
@@ -56,3 +57,4 @@ Swal.fire({
     })
   }
 })
+
