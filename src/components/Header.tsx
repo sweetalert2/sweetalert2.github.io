@@ -48,7 +48,7 @@ export function Header() {
 
       <header>
         <div id="slava-ukraini">
-          <a href="https://war.ukraine.ua/support-ukraine/">SAVE LIVES, SUPPORT UKRAINE</a> 🇺🇦
+          <a href="https://u24.gov.ua/">SAVE LIVES, SUPPORT UKRAINE</a> 🇺🇦
         </div>
         <div id="logo-slider">
           <div id="logo-track">

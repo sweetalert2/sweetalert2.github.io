@@ -33,12 +33,4 @@ export default defineConfig({
       },
     },
   },
-  css: {
-    // https://stackoverflow.com/a/79003101/1331425
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler', // or "modern"
-      },
-    },
-  },
 })
