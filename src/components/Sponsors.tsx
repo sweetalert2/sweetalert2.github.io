@@ -77,13 +77,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://dlxplugins.com/" target="_blank" rel="noopener" aria-label="DLX Plugins">
-            <img src="https://avatars.githubusercontent.com/u/106675919?s=200&v=4" alt="DLX Plugins" />
-            <br />
-            DLX Plugins
-          </a>
-        </div>
-        <div>
           <a href="https://github.com/tiagostutz" target="_blank" rel="noopener" aria-label="Tiago de Oliveira Stutz">
             <img src="https://avatars0.githubusercontent.com/u/3986989?s=200&v=4" alt="Tiago de Oliveira Stutz" />
             <br />
