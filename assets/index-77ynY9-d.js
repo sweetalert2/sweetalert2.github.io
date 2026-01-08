@@ -1,6 +1,6 @@
-import { a as __extends, b as __awaiter, c as __generator, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, l as extractErrorDetails } from './Sandpack-B2CfAYfa.js';
-import { S as SandpackClient } from './base-80a1f760-CgHsm1Yd.js';
-import { g as getDefaultExportFromCjs } from './index-ByQkOKBL.js';
+import { a as __extends, b as __awaiter, c as __generator, f as dequal, d as __assign, g as createPackageJSON, e as createError, h as SandpackLogLevel, j as addPackageJSONIfNeeded, n as nullthrows, k as __spreadArray, l as extractErrorDetails } from './Sandpack-sy_qv-Sj.js';
+import { S as SandpackClient } from './base-80a1f760-6Py4-sRS.js';
+import { g as getDefaultExportFromCjs } from './index-BNPpqpQm.js';
 
 const require$$0 = {
   "application/1d-interleaved-parityfec": {"source":"iana"},
