@@ -3138,11 +3138,6 @@ function Sponsors() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://dlxplugins.com/", target: "_blank", rel: "noopener", "aria-label": "DLX Plugins", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://avatars.githubusercontent.com/u/106675919?s=200&v=4", alt: "DLX Plugins" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "DLX Plugins"
-      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://github.com/tiagostutz", target: "_blank", rel: "noopener", "aria-label": "Tiago de Oliveira Stutz", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://avatars0.githubusercontent.com/u/3986989?s=200&v=4", alt: "Tiago de Oliveira Stutz" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
