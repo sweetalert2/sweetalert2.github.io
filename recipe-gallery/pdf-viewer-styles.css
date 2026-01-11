@@ -1,0 +1,38 @@
+#pdf-controls {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#pdf-controls button {
+  padding: 8px 16px;
+  background-color: #7066e0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#pdf-controls button:hover:not(:disabled) {
+  background-color: #5a4ed4;
+}
+
+#pdf-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#page-info {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#pdfCanvas {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
