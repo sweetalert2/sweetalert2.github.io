@@ -27,7 +27,7 @@ function Recipe() {
 
       <Sandpack
         dependencies={{
-          'pdfjs-dist': '^4.0.379',
+          'pdfjs-dist': '^5.4.530',
         }}
         files={{
           '/App.ts': src,

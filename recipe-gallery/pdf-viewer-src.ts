@@ -3,7 +3,7 @@ import * as pdfjsLib from 'pdfjs-dist'
 import './styles.css'
 
 // Set up the PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.mjs'
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.530/build/pdf.worker.mjs'
 
 Swal.fire({
   title: 'PDF Preview',
