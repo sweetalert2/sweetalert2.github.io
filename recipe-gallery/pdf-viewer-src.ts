@@ -19,57 +19,61 @@ Swal.fire({
   showCloseButton: true,
   showConfirmButton: false,
   didOpen: async () => {
-    const pdfUrl = 'https://pdfobject.com/pdf/sample.pdf'
-    const loadingTask = pdfjsLib.getDocument(pdfUrl)
-    const pdf = await loadingTask.promise
+    try {
+      const pdfUrl = 'https://pdfobject.com/pdf/sample.pdf'
+      const loadingTask = pdfjsLib.getDocument(pdfUrl)
+      const pdf = await loadingTask.promise
 
-    let currentPage = 1
-    const totalPages = pdf.numPages
+      let currentPage = 1
+      const totalPages = pdf.numPages
 
-    const canvas = document.getElementById('pdfCanvas') as HTMLCanvasElement
-    const context = canvas.getContext('2d')!
-    const pageNumSpan = document.getElementById('page-num')!
-    const pageCountSpan = document.getElementById('page-count')!
-    const prevButton = document.getElementById('prev-page') as HTMLButtonElement
-    const nextButton = document.getElementById('next-page') as HTMLButtonElement
+      const canvas = document.getElementById('pdfCanvas') as HTMLCanvasElement
+      const context = canvas.getContext('2d')!
+      const pageNumSpan = document.getElementById('page-num')!
+      const pageCountSpan = document.getElementById('page-count')!
+      const prevButton = document.getElementById('prev-page') as HTMLButtonElement
+      const nextButton = document.getElementById('next-page') as HTMLButtonElement
 
-    pageCountSpan.textContent = String(totalPages)
+      pageCountSpan.textContent = String(totalPages)
 
-    async function renderPage(pageNumber: number) {
-      const page = await pdf.getPage(pageNumber)
-      const viewport = page.getViewport({ scale: 1.5 })
+      async function renderPage(pageNumber: number) {
+        const page = await pdf.getPage(pageNumber)
+        const viewport = page.getViewport({ scale: 1.5 })
 
-      canvas.height = viewport.height
-      canvas.width = viewport.width
+        canvas.height = viewport.height
+        canvas.width = viewport.width
 
-      const renderContext = {
-        canvasContext: context,
-        viewport: viewport,
-        canvas: canvas,
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport,
+          canvas: canvas,
+        }
+
+        await page.render(renderContext).promise
+        pageNumSpan.textContent = String(pageNumber)
+
+        prevButton.disabled = pageNumber <= 1
+        nextButton.disabled = pageNumber >= totalPages
       }
 
-      await page.render(renderContext).promise
-      pageNumSpan.textContent = String(pageNumber)
-
-      prevButton.disabled = pageNumber <= 1
-      nextButton.disabled = pageNumber >= totalPages
-    }
-
-    prevButton.addEventListener('click', () => {
-      if (currentPage > 1) {
+      prevButton.addEventListener('click', () => {
         currentPage--
         renderPage(currentPage)
-      }
-    })
+      })
 
-    nextButton.addEventListener('click', () => {
-      if (currentPage < totalPages) {
+      nextButton.addEventListener('click', () => {
         currentPage++
         renderPage(currentPage)
-      }
-    })
+      })
 
-    // Render the first page
-    await renderPage(currentPage)
+      // Render the first page
+      try {
+        await renderPage(currentPage)
+      } catch (error) {
+        Swal.showValidationMessage(`Failed to load PDF: ${error}`)
+      }
+    } catch (error) {
+      Swal.showValidationMessage(`Failed to load PDF document: ${error}`)
+    }
   },
 })
