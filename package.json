@@ -30,6 +30,7 @@
     "highlight.js": "^11.9.0",
     "i18next": "^25.5.2",
     "jquery": "^3.7.1",
+    "pdfjs-dist": "^5.4.530",
     "react": "^19.0.0",
     "react-day-picker": "^9.0.0",
     "react-dom": "^19.0.0",

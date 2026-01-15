@@ -28,6 +28,7 @@ const recipes = [
   { name: 'validation-message-custom-icon', title: 'Validation Message with a Custom Icon' },
   { name: 'blurred-backdrop', title: 'Blurred Backdrop' },
   { name: 'sidebars-drawers', title: 'Sidebars and Drawers' },
+  { name: 'pdf-viewer', title: 'PDF Viewer with Fullscreen Support' },
 ]
 
 function generateHtml(title, scriptSrc) {
