@@ -181,13 +181,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://dollauthority.com/" target="_blank" rel="noopener" aria-label="Doll Authority">
-            <img src="/images/sponsors/dollauthority.png" alt="Doll Authority" />
-            <br />
-            Doll Authority
-          </a>
-        </div>
-        <div>
           <a href="https://www.sexdollpartner.com/" target="_blank" rel="noopener" aria-label="SexDollPartner">
             <img src="/images/sponsors/sexdollpartner.jpg" alt="SexDollPartner" />
             <br />
