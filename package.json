@@ -29,7 +29,7 @@
     "date-fns": "^4.0.0",
     "highlight.js": "^11.9.0",
     "i18next": "^25.5.2",
-    "jquery": "^3.7.1",
+    "jquery": "^4.0.0",
     "react": "^19.0.0",
     "react-day-picker": "^9.0.0",
     "react-dom": "^19.0.0",
@@ -50,7 +50,7 @@
     "eslint": "^9.0.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.69.3",
-    "stylelint": "^16.0.0",
+    "stylelint": "^17.0.0",
     "typescript": "^5.0.2",
     "vite": "^7.0.0",
     "vite-plugin-html-inject": "^1.0.4"
