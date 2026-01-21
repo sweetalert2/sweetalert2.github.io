@@ -347,15 +347,6 @@ function Showcase() {
         height: "90",
         style: { maxWidth: "100%", height: "auto" }
       }
-    ) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 20, marginBottom: -60 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://ohmyprompt.net?utm_source=limonte", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "img",
-      {
-        src: "/images/sponsors/ohmyprompt.gif",
-        width: "728",
-        height: "90",
-        style: { maxWidth: "100%", height: "auto" }
-      }
     ) }) })
   ] });
 }
