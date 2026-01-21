@@ -33,17 +33,6 @@ export function Showcase() {
           />
         </a>
       </div>
-
-      <div style={{ marginTop: 20, marginBottom: -60 }}>
-        <a href="https://ohmyprompt.net?utm_source=limonte" target="_blank" rel="noopener">
-          <img
-            src="/images/sponsors/ohmyprompt.gif"
-            width="728"
-            height="90"
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
-        </a>
-      </div>
     </>
   )
 }
