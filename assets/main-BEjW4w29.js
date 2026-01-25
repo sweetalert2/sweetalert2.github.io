@@ -505,7 +505,7 @@ function Examples() {
             "button",
             {
               className: "show-example-btn",
-              "aria-label": "Try me! Example: jQuery HTML with custom animation",
+              "aria-label": "Try me! Example: custom animation",
               onClick: examples.customAnimation.fn,
               children: "Try me!"
             }
