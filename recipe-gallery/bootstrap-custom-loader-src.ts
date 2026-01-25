@@ -1,12 +1,9 @@
-import $ from 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import Swal from 'sweetalert2'
 import './styles.css'
 
-$('#myModal').modal()
-
-$('.trigger-swal').on('click', function () {
+document.querySelector('.trigger-swal')?.addEventListener('click', function () {
   Swal.fire({
     title: 'SweetAlert2 + Bootstrap 5',
     input: 'text',

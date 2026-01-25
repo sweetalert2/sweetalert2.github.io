@@ -24,7 +24,6 @@ function Recipe() {
       <Sandpack
         dependencies={{
           'bootstrap': '^4.0.0',
-          'jquery': '^3.2.1',
           'popper.js': '^1.12.9',
         }}
         files={{
