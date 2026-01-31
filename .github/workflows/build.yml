@@ -30,5 +30,5 @@ jobs:
       - name: Check for broken links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: src/**/*.tsx --exclude https://api.github.com --exclude https://codepen.io/pen/define --exclude https://www.minisexdoll.com/anime-sexdoll/ --exclude https://www.mymasturbators.com/ --exclude https://github.com/sweetalert2/sweetalert2/commits/main --exclude https://sextoycollective.com/ --exclude https://www.pidoll.com/ --exclude https://www.uusexdoll.com/ --exclude https://www.nakedoll.com/ --exclude https://doctorclimax.com/ --exclude https://www.cloudways.com/ --exclude https://cutesexdoll.com/
+          args: src/**/*.tsx --exclude https://api.github.com --exclude https://codepen.io/pen/define --exclude https://www.minisexdoll.com/anime-sexdoll/ --exclude https://www.mymasturbators.com/ --exclude https://github.com/sweetalert2/sweetalert2/commits/main --exclude https://sextoycollective.com/ --exclude https://www.pidoll.com/ --exclude https://www.uusexdoll.com/ --exclude https://www.nakedoll.com/ --exclude https://doctorclimax.com/ --exclude https://www.cloudways.com/ --exclude https://cutesexdoll.com/ --exclude https://www.buypenispump.com/
           fail: true
