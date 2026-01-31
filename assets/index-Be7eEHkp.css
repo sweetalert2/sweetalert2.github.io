@@ -15,7 +15,7 @@
   font-weight: 400;
   src: url(/assets/source-code-pro-latin-400-normal-DEXWLoHG.woff2) format('woff2'), url(/assets/source-code-pro-latin-400-normal-Bf_aQirX.woff) format('woff');
 }
-/*! @docsearch/css 4.4.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 4.5.3 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#003dff;
   --docsearch-soft-primary-color:rgba(0,61,255,.1);
@@ -145,6 +145,7 @@ html[data-theme=dark] {
   box-shadow: none !important;
   color: var(--docsearch-key-color);
   display: flex;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 14px;
   height: 24px;
   justify-content: center;
