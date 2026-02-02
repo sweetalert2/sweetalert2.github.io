@@ -3173,6 +3173,21 @@ function Sponsors() {
       }
     ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sponsors", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.xndoll.com", target: "_blank", rel: "noopener", "aria-label": "XNDOLL", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/xndoll.png", alt: "XNDOLL" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "XNDOLL"
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.pidoll.com", target: "_blank", rel: "noopener", "aria-label": "PIDOLL", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/pidoll.png", alt: "PIDOLL" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "PIDOLL"
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.palstoy.com", target: "_blank", rel: "noopener", "aria-label": "PalsToy", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/palstoy.png", alt: "PalsToy" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "PalsToy"
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.bestblowjobmachines.com/", target: "_blank", rel: "noopener", "aria-label": "Mark Mitchell", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/bestblowjobmachines.png", alt: "Mark Mitchell" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
@@ -3187,16 +3202,6 @@ function Sponsors() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/venuslovedolls.png", alt: "Venus Love Dolls" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         "Venus Love Dolls"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.xndoll.com", target: "_blank", rel: "noopener", "aria-label": "XNDOLL", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/xndoll.png", alt: "XNDOLL" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "XNDOLL"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.pidoll.com", target: "_blank", rel: "noopener", "aria-label": "PIDOLL", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/pidoll.png", alt: "PIDOLL" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "PIDOLL"
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://www.sosexdoll.com/cheap-sex-doll", target: "_blank", rel: "noopener", "aria-label": "SoSexDoll", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/images/sponsors/sosexdoll.png", alt: "SoSexDoll" }),
