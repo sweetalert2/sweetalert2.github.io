@@ -132,6 +132,27 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.xndoll.com" target="_blank" rel="noopener" aria-label="XNDOLL">
+            <img src="/images/sponsors/xndoll.png" alt="XNDOLL" />
+            <br />
+            XNDOLL
+          </a>
+        </div>
+        <div>
+          <a href="https://www.pidoll.com" target="_blank" rel="noopener" aria-label="PIDOLL">
+            <img src="/images/sponsors/pidoll.png" alt="PIDOLL" />
+            <br />
+            PIDOLL
+          </a>
+        </div>
+        <div>
+          <a href="https://www.palstoy.com" target="_blank" rel="noopener" aria-label="PalsToy">
+            <img src="/images/sponsors/palstoy.png" alt="PalsToy" />
+            <br />
+            PalsToy
+          </a>
+        </div>
+        <div>
           <a href="https://www.bestblowjobmachines.com/" target="_blank" rel="noopener" aria-label="Mark Mitchell">
             <img src="/images/sponsors/bestblowjobmachines.png" alt="Mark Mitchell" />
             <br />
@@ -150,20 +171,6 @@ export function Sponsors() {
             <img src="/images/sponsors/venuslovedolls.png" alt="Venus Love Dolls" />
             <br />
             Venus Love Dolls
-          </a>
-        </div>
-        <div>
-          <a href="https://www.xndoll.com" target="_blank" rel="noopener" aria-label="XNDOLL">
-            <img src="/images/sponsors/xndoll.png" alt="XNDOLL" />
-            <br />
-            XNDOLL
-          </a>
-        </div>
-        <div>
-          <a href="https://www.pidoll.com" target="_blank" rel="noopener" aria-label="PIDOLL">
-            <img src="/images/sponsors/pidoll.png" alt="PIDOLL" />
-            <br />
-            PIDOLL
           </a>
         </div>
         <div>
