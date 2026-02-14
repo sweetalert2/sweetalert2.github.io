@@ -167,13 +167,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.venuslovedolls.com/" target="_blank" rel="noopener" aria-label="Venus Love Dolls">
-            <img src="/images/sponsors/venuslovedolls.png" alt="Venus Love Dolls" />
-            <br />
-            Venus Love Dolls
-          </a>
-        </div>
-        <div>
           <a href="https://www.sosexdoll.com/cheap-sex-doll" target="_blank" rel="noopener" aria-label="SoSexDoll">
             <img src="/images/sponsors/sosexdoll.png" alt="SoSexDoll" />
             <br />
