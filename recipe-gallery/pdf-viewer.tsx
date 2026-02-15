@@ -21,10 +21,6 @@ function Recipe() {
         files={{
           '/App.ts': src,
           '/styles.css': styles,
-          '/index.html': {
-            code: `<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist/build/pdf.min.mjs" type="module"></script>\n<style>body { font-family: sans-serif; }</style>`,
-            hidden: true,
-          },
         }}
         previewHeight={600}
       />

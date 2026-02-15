@@ -1,11 +1,6 @@
 import Swal from 'sweetalert2'
 import './styles.css'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare const pdfjsLib: any
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist/build/pdf.worker.min.mjs'
-
 Swal.fire({
   title: 'PDF Viewer',
   html: '<canvas id="pdfCanvas"></canvas>',
@@ -13,6 +8,10 @@ Swal.fire({
   showCloseButton: true,
   showConfirmButton: false,
   didOpen: async () => {
+    // @ts-ignore load from CDN
+    const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs')
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs'
     const pdf = await pdfjsLib.getDocument('https://pdfobject.com/pdf/sample.pdf').promise
     const page = await pdf.getPage(1)
     const viewport = page.getViewport({ scale: 1.5 })
