@@ -18,6 +18,6 @@ Swal.fire({
     canvas.height = viewport.height
     canvas.width = viewport.width
     canvas.onclick = () => canvas.requestFullscreen()
-    page.render({ canvasContext: canvas.getContext('2d')!, viewport })
+    await page.render({ canvasContext: canvas.getContext('2d')!, viewport }).promise
   },
 })
