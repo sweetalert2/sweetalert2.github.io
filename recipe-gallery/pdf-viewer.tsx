@@ -21,10 +21,6 @@ function Recipe() {
         files={{
           '/App.ts': src,
           '/styles.css': styles,
-          '/index.html': {
-            code: `<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.js"></script>\n<style>body { font-family: sans-serif; }</style>`,
-            hidden: true,
-          },
         }}
         previewHeight={600}
       />
