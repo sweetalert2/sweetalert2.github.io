@@ -17,7 +17,6 @@ Swal.fire({
     const canvas = Swal.getPopup()!.querySelector('#pdfCanvas') as HTMLCanvasElement
     canvas.height = viewport.height
     canvas.width = viewport.width
-    canvas.onclick = () => canvas.requestFullscreen()
     await page.render({ canvasContext: canvas.getContext('2d')!, viewport }).promise
   },
 })

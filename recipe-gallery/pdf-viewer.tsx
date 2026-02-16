@@ -10,11 +10,10 @@ function Recipe() {
     <>
       <Nav recipeGallery />
       <Prtnr />
-      <h1>PDF Viewer with Fullscreen Support</h1>
+      <h1>PDF Viewer</h1>
 
       <p>
-        Uses <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> to render a PDF inside a SweetAlert2 popup. Click
-        the canvas to enter fullscreen mode.
+        Uses <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> to render a PDF inside a SweetAlert2 popup.
       </p>
 
       <Sandpack

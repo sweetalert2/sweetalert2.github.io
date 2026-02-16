@@ -66,7 +66,7 @@ function Recipe() {
           <a href="./sweetalert2-laravel.html">Laravel Example</a>
         </li>
         <li>
-          <a href="./pdf-viewer.html">PDF Viewer with Fullscreen Support</a>
+          <a href="./pdf-viewer.html">PDF Viewer</a>
         </li>
       </ul>
     </>

@@ -1,9 +1,3 @@
 #pdfCanvas {
-  cursor: pointer;
   max-width: 100%;
-}
-
-#pdfCanvas:fullscreen {
-  background: white;
-  object-fit: contain;
 }
