@@ -30,6 +30,7 @@ export default defineConfig({
         'validation-message-custom-icon': 'recipe-gallery/validation-message-custom-icon.html',
         'blurred-backdrop': 'recipe-gallery/blurred-backdrop.html',
         'sidebars-drawers': 'recipe-gallery/sidebars-drawers.html',
+        'pdf-viewer': 'recipe-gallery/pdf-viewer.html',
       },
     },
   },
