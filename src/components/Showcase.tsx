@@ -23,7 +23,7 @@ export function Showcase() {
         <CodeExample code={examples.sweetAlert.fnString} />
       </div>
 
-      <div style={{ marginTop: 50 }}>
+      <div style={{ marginTop: 50 }} className="mobile-hidden">
         <a href="https://cheapgpt.store/" target="_blank" rel="noopener">
           <img
             src="/images/sponsors/cheapgpt.gif"
