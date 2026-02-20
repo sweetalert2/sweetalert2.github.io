@@ -1,6 +1,6 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, a as renderRecipe, N as Nav } from './index-BI9HXfaR.js';
-import { P as Prtnr } from './Prtnr-CMQvqu1A.js';
-import { C as CodeExample } from './CodeExample-Ifz2tnyE.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, a as renderRecipe, N as Nav } from './index-DVWSIJEH.js';
+import { P as Prtnr } from './Prtnr-Do0soRzO.js';
+import { C as CodeExample } from './CodeExample-DOqqU7Mt.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
@@ -339,7 +339,7 @@ function Showcase() {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.sweetAlert.fnString })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 50 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://cheapgpt.store/", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 50 }, className: "mobile-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://cheapgpt.store/", target: "_blank", rel: "noopener", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
         src: "/images/sponsors/cheapgpt.gif",
