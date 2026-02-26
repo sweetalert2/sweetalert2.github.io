@@ -113,6 +113,11 @@ export function DeclarativeTemplates() {
           language="xml"
           withoutCodepen
         />
+        <p className="center">
+          [Security] The <strong>value</strong> attribute of <strong>swal-function-param</strong> is evaluated using{' '}
+          <code>new Function()</code>, which behaves like <code>eval()</code>. Only use{' '}
+          <strong>swal-function-param</strong> with trusted template content.
+        </p>
       </div>
 
       <div className="center-container mobile-hidden">
