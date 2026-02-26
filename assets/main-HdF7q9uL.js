@@ -2315,7 +2315,22 @@ function DeclarativeTemplates() {
           language: "xml",
           withoutCodepen: true
         }
-      )
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "center", children: [
+        "[Security] The ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "value" }),
+        " attribute of ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "swal-function-param" }),
+        " is evaluated using",
+        " ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("code", { children: "new Function()" }),
+        ", which behaves like ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("code", { children: "eval()" }),
+        ". Only use",
+        " ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "swal-function-param" }),
+        " with trusted template content."
+      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "center-container mobile-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { id: "declarative-triggering", className: "center", children: [
       "And you can even trigger SweetAlert2 popups declaratively! Use the ",
