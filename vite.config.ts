@@ -31,6 +31,7 @@ export default defineConfig({
         'blurred-backdrop': 'recipe-gallery/blurred-backdrop.html',
         'sidebars-drawers': 'recipe-gallery/sidebars-drawers.html',
         'pdf-viewer': 'recipe-gallery/pdf-viewer.html',
+        'google-maps': 'recipe-gallery/google-maps.html',
       },
     },
   },

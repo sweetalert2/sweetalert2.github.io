@@ -29,6 +29,7 @@ const recipes = [
   { name: 'blurred-backdrop', title: 'Blurred Backdrop' },
   { name: 'sidebars-drawers', title: 'Sidebars and Drawers' },
   { name: 'pdf-viewer', title: 'PDF Viewer' },
+  { name: 'google-maps', title: 'Google Maps' },
 ]
 
 function generateHtml(title, scriptSrc) {
