@@ -287,6 +287,15 @@ export default {
     })
   },
 
+  swalParams() {
+    const swalInstance = window.Swal.fire({
+      title: 'Hello World!',
+      icon: 'info',
+    }) as unknown as { params: import('sweetalert2').SweetAlertOptions }
+    console.log(swalInstance.params.title) // Hello World!
+    console.log(swalInstance.params.icon) // info
+  },
+
   // Declarative templates
   declarativeTemplate() {
     window.Swal.fire({

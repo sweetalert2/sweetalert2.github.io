@@ -1081,6 +1081,29 @@ export function ConfigurationParams() {
           <CodeExample code={examples.mixin.fnString} />
         </li>
       </ul>
+
+      <div className="mobile-hidden">
+        <p className="center" id="params">
+          Every SweetAlert2 instance has a <strong>params</strong> property containing the frozen
+          (read-only) options that were passed to{' '}
+          <strong>Swal.fire({'{'}&hellip;{'}'}):</strong>
+        </p>
+      </div>
+      <ul className="examples mobile-hidden">
+        <li>
+          <div className="ui">
+            <p>swal.params example</p>
+            <button
+              className="show-example-btn"
+              aria-label="Try me! Example: swal.params"
+              onClick={examples.swalParams.fn}
+            >
+              Try me!
+            </button>
+          </div>
+          <CodeExample code={examples.swalParams.fnString} />
+        </li>
+      </ul>
     </>
   )
 }
