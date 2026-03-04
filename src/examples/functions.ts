@@ -230,7 +230,7 @@ export default {
   },
   ajaxRequest() {
     window.Swal.fire({
-      title: 'Submit your Github username',
+      title: 'Submit your GitHub username',
       input: 'text',
       inputAttributes: {
         autocapitalize: 'off',

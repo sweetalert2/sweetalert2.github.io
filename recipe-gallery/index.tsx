@@ -68,6 +68,9 @@ function Recipe() {
         <li>
           <a href="./pdf-viewer.html">PDF Viewer</a>
         </li>
+        <li>
+          <a href="./google-maps.html">Google Maps</a>
+        </li>
       </ul>
     </>
   )
