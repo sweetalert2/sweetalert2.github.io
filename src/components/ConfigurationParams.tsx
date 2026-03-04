@@ -1082,14 +1082,18 @@ export function ConfigurationParams() {
         </li>
       </ul>
 
-      <div className="mobile-hidden">
+      <div className="center-container mobile-hidden">
         <p className="center" id="params">
-          Every SweetAlert2 instance has a <strong>params</strong> property containing the frozen
-          (read-only) options that were passed to{' '}
-          <strong>Swal.fire({'{'}&hellip;{'}'}):</strong>
+          Every SweetAlert2 instance has a <strong>params</strong> property containing the frozen (read-only) options
+          that were passed to{' '}
+          <strong>
+            Swal.fire({'{'}&hellip;{'}'})
+          </strong>
+          :
         </p>
         <CodeExample
           code={`const swalInstance = Swal.fire({ title: 'Hello World!', icon: 'info' })
+
 console.log(swalInstance.params.title) // Hello World!
 console.log(swalInstance.params.icon)  // info`}
         />
