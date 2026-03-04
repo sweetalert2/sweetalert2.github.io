@@ -1088,22 +1088,12 @@ export function ConfigurationParams() {
           (read-only) options that were passed to{' '}
           <strong>Swal.fire({'{'}&hellip;{'}'}):</strong>
         </p>
+        <CodeExample
+          code={`const swalInstance = Swal.fire({ title: 'Hello World!', icon: 'info' })
+console.log(swalInstance.params.title) // Hello World!
+console.log(swalInstance.params.icon)  // info`}
+        />
       </div>
-      <ul className="examples mobile-hidden">
-        <li>
-          <div className="ui">
-            <p>swal.params example</p>
-            <button
-              className="show-example-btn"
-              aria-label="Try me! Example: swal.params"
-              onClick={examples.swalParams.fn}
-            >
-              Try me!
-            </button>
-          </div>
-          <CodeExample code={examples.swalParams.fnString} />
-        </li>
-      </ul>
     </>
   )
 }
