@@ -2196,7 +2196,32 @@ function ConfigurationParams() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "show-example-btn", "aria-label": "Try me! Example: Mixin", onClick: examples.mixin.fn, children: "Try me!" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CodeExample, { code: examples.mixin.fnString })
-    ] }) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "center-container mobile-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "center", id: "params", children: [
+        "Every SweetAlert2 instance has a ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "params" }),
+        " property containing the frozen (read-only) options that were passed to",
+        " ",
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("strong", { children: [
+          "Swal.fire(",
+          "{",
+          "…",
+          "}",
+          ")"
+        ] }),
+        ":"
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CodeExample,
+        {
+          code: `const swalInstance = Swal.fire({ title: 'Hello World!', icon: 'info' })
+
+console.log(swalInstance.params.title) // Hello World!
+console.log(swalInstance.params.icon)  // info`
+        }
+      )
+    ] })
   ] });
 }
 
