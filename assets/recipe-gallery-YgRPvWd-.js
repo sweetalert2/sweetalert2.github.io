@@ -1,5 +1,5 @@
-import { a as renderRecipe, j as jsxRuntimeExports, N as Nav } from './index-BnjBLtb6.js';
-import { P as Prtnr } from './Prtnr-HfplIxeJ.js';
+import { a as renderRecipe, j as jsxRuntimeExports, N as Nav } from './index-ClOFCGRW.js';
+import { P as Prtnr } from './Prtnr-D92QBz_h.js';
 
 function Recipe() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

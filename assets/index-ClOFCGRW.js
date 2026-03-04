@@ -91,7 +91,7 @@ function requireJsxRuntime () {
 var jsxRuntimeExports = requireJsxRuntime();
 
 /*!
-* sweetalert2 v11.26.20
+* sweetalert2 v11.26.21
 * Released under the MIT License.
 */
 function _assertClassBrand(e, t, n) {
@@ -3140,10 +3140,10 @@ function hideLoading() {
   domCache.denyButton.disabled = false;
   domCache.cancelButton.disabled = false;
   const focusedElement = privateProps.focusedElement.get(this);
-  if (focusedElement instanceof HTMLElement) {
+  if (focusedElement instanceof HTMLElement && document.activeElement === document.body) {
     focusedElement.focus();
-    privateProps.focusedElement.delete(this);
   }
+  privateProps.focusedElement.delete(this);
 }
 
 /**
@@ -3213,10 +3213,10 @@ function setInputDisabled(input, disabled) {
 function enableButtons() {
   setButtonsDisabled(this, ['confirmButton', 'denyButton', 'cancelButton'], false);
   const focusedElement = privateProps.focusedElement.get(this);
-  if (focusedElement instanceof HTMLElement) {
+  if (focusedElement instanceof HTMLElement && document.activeElement === document.body) {
     focusedElement.focus();
-    privateProps.focusedElement.delete(this);
   }
+  privateProps.focusedElement.delete(this);
 }
 
 /**
@@ -4906,7 +4906,7 @@ Object.keys(instanceMethods).forEach(key => {
   };
 });
 SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '11.26.20';
+SweetAlert.version = '11.26.21';
 
 const Swal = SweetAlert;
 // @ts-ignore

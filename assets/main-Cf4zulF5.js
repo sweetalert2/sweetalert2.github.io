@@ -1,6 +1,6 @@
-import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, a as renderRecipe, N as Nav } from './index-BnjBLtb6.js';
-import { P as Prtnr } from './Prtnr-HfplIxeJ.js';
-import { C as CodeExample } from './CodeExample-CWuChwlt.js';
+import { r as reactExports, j as jsxRuntimeExports, D as DocSearch, e as examples, S as Swal, a as renderRecipe, N as Nav } from './index-ClOFCGRW.js';
+import { P as Prtnr } from './Prtnr-D92QBz_h.js';
+import { C as CodeExample } from './CodeExample-DKtLQpQy.js';
 
 const useHash = () => {
   const [hash, setHash] = reactExports.useState(() => window.location.hash);
