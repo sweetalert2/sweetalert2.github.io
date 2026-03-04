@@ -15,6 +15,10 @@ function Recipe() {
         Uses the <strong>embed-iframe</strong> theme and a simple Google Maps embed URL (no API key required).
       </p>
 
+      <p>
+        All themes can be found in the <a href="https://sweetalert2.github.io/#themes">SweetAlert2 themes gallery</a>.
+      </p>
+
       <Sandpack
         files={{
           '/App.ts': src,
