@@ -11,7 +11,7 @@
     "build:dev": "tsc && vite build",
     "prebuild": "node tools/generate-recipe-html.mjs",
     "build": "tsc && vite build --emptyOutDir",
-    "lint": "stylelint styles/*.scss && eslint . --ignore-pattern 'dist/*'",
+    "lint": "stylelint styles/*.scss && eslint . --ignore-pattern 'dist/*' && oxfmt --check",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -46,18 +46,12 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
     "eslint": "^10.0.2",
+    "oxfmt": "^0.36.0",
     "sass": "^1.97.3",
     "stylelint": "^17.3.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-html-inject": "^1.1.2"
-  },
-  "prettier": {
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true,
-    "quoteProps": "consistent",
-    "trailingComma": "es5"
   },
   "license": "MIT"
 }
