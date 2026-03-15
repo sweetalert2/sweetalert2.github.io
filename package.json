@@ -46,7 +46,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
     "eslint": "^10.0.2",
-    "oxfmt": "^0.40.0",
+    "oxfmt": "^0.36.0",
     "sass": "^1.97.3",
     "stylelint": "^17.3.0",
     "typescript": "^5.9.3",
