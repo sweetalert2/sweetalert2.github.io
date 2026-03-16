@@ -11,7 +11,7 @@
     "build:dev": "tsc && vite build",
     "prebuild": "node tools/generate-recipe-html.mjs",
     "build": "tsc && vite build --emptyOutDir",
-    "lint": "stylelint styles/*.scss && eslint . --ignore-pattern 'dist/*' && oxfmt --check",
+    "lint": "stylelint styles/*.scss && oxlint --ignore-pattern dist && oxfmt --check",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -35,18 +35,16 @@
     "react-router-dom": "^7.13.0",
     "search-insights": "^2.17.3",
     "sweetalert2": "^11.26.20",
-    "sweetalert2-react-content": "^5.1.1",
-    "typescript-eslint": "^8.56.1"
+    "sweetalert2-react-content": "^5.1.1"
   },
   "devDependencies": {
-    "@sweetalert2/eslint-config": "^1.3.3",
     "@sweetalert2/stylelint-config": "^3.1.0",
     "@types/bootstrap": "^5.2.10",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
-    "eslint": "^10.0.2",
     "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
     "sass": "^1.97.3",
     "stylelint": "^17.3.0",
     "typescript": "^5.9.3",

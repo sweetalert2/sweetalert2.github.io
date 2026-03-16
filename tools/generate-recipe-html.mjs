@@ -52,9 +52,7 @@ for (const recipe of recipes) {
   const htmlPath = resolve(recipeDir, `${recipe.name}.html`)
   const html = generateHtml(recipe.title, `./${recipe.name}.tsx`)
   writeFileSync(htmlPath, html, 'utf-8')
-  // eslint-disable-next-line no-console
   console.log(`Generated: ${recipe.name}.html`)
 }
 
-// eslint-disable-next-line no-console
 console.log(`\n✓ Generated ${recipes.length} recipe HTML files`)
