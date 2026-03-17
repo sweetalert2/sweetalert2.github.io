@@ -25,6 +25,7 @@ function Recipe() {
         dependencies={{
           'bootstrap': '^4.0.0',
           'popper.js': '^1.12.9',
+          'jquery': '^3.2.1',
         }}
         files={{
           '/App.ts': src,
