@@ -955,8 +955,16 @@ $bouncing-logo-min-height: 35%;
   align-items: center;
   justify-content: center;
 
-  a {
-    margin-right: 20em;
+  @media all and (width > 768px) {
+    a {
+      margin-right: 20em;
+    }
+  }
+
+  @media all and (width <= 768px) {
+    a {
+      margin-top: 1em;
+    }
   }
 
   #docsearch {

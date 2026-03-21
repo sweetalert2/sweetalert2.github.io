@@ -55,7 +55,7 @@ export function Sidebar() {
       <a href="/#frameworks-integrations" onClick={() => Swal.close()}>
         <span>Integrations</span>
       </a>
-      <a href="/#themes" onClick={() => Swal.close()}>
+      <a href="/#themes" className="mobile-hidden" onClick={() => Swal.close()}>
         <span>Themes</span>
       </a>
       <a href="/#configuration" className="mobile-hidden" onClick={() => Swal.close()}>
