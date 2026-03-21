@@ -33110,6 +33110,7 @@ function Sidebar() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 				href: "/#themes",
+				className: "mobile-hidden",
 				onClick: () => import_sweetalert2_all.default.close(),
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Themes" })
 			}),
