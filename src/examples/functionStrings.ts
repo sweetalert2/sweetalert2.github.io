@@ -7,6 +7,8 @@ Object.entries(functions).forEach(([id, fn]) => {
     .replace(/^.*\n/, '')
     .replace(/}$/, '')
     .replace(/(^|\n) {4}/g, '$1')
+    .replace(/(^|\n)\t{2}/g, '$1')
+    .replace(/\t/g, '  ')
     .replace(/.*rtl-container.*\n/, '')
     .replace(/(\d)e3/g, '$1000')
     .replace(/\/\*!/g, '/*')
