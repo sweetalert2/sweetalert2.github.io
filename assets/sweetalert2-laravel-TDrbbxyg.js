@@ -1,4 +1,4 @@
-import { _ as Nav, g as renderRecipe, p as CodeExample, v as require_jsx_runtime } from "./components-CpuCZEUO.js";
+import { _ as Nav, g as renderRecipe, p as CodeExample, v as require_jsx_runtime } from "./components-DZEGujI6.js";
 //#region recipe-gallery/sweetalert2-laravel.tsx
 var import_jsx_runtime = require_jsx_runtime();
 function Recipe() {
@@ -91,6 +91,7 @@ Swal::toastQuestion([
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 			src: "https://github.com/sweetalert2/sweetalert2-laravel/raw/main/sweetalert2-laravel.png",
+			alt: "SweetAlert2 Laravel integration demo screenshot",
 			style: { maxWidth: 840 }
 		}) })
 	] });

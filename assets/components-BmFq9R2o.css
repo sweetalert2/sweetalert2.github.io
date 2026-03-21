@@ -2277,6 +2277,8 @@ nav .version-selector {
   justify-content: center;
   width: 48px;
   height: 48px;
+  padding: 0;
+  border: none;
   background-color: #f2f4f6;
   font-size: 1.8em !important;
   cursor: pointer;

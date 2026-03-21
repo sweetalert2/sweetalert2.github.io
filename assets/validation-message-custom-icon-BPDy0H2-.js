@@ -1,5 +1,5 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-CpuCZEUO.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-DtD2mESK.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-DZEGujI6.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-B0ggCQw5.js";
 import "./utils-52664384-tXfMgvZN.js";
 //#region recipe-gallery/validation-message-custom-icon.tsx
 var import_jsx_runtime = require_jsx_runtime();

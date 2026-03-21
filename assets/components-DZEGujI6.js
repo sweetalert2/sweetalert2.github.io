@@ -33060,9 +33060,14 @@ var sidebarUrl = "https://github.com/sweetalert2/sweetalert2.github.io/blob/main
 function Nav({ recipeGallery = false, showBackToRecipeGalleryLink = true }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sidebar, {}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {
-			className: "fa fa-bars show-sidebar",
-			onClick: () => showSidebar()
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+			className: "show-sidebar",
+			onClick: () => showSidebar(),
+			"aria-label": "Open navigation menu",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {
+				className: "fa fa-bars",
+				"aria-hidden": "true"
+			})
 		}),
 		recipeGallery ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "recipe-gallery-top-nav",
@@ -33252,7 +33257,10 @@ function Header() {
 			id: "logo-slider",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				id: "logo-track",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: "/images/logo-donut-track.svg" })
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+					src: "/images/logo-donut-track.svg",
+					alt: ""
+				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				id: "logo-bouncer",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -37124,6 +37132,7 @@ function Showcase() {
 				rel: "noopener",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 					src: "/images/sponsors/cheapgpt.gif",
+					alt: "CheapGPT",
 					width: "728",
 					height: "90",
 					style: {
