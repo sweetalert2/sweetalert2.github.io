@@ -52,7 +52,7 @@ export function Header() {
         </div>
         <div id="logo-slider">
           <div id="logo-track">
-            <img src="/images/logo-donut-track.svg" />
+            <img src="/images/logo-donut-track.svg" alt="" />
           </div>
           <div id="logo-bouncer">
             <div id="logo-spinner">

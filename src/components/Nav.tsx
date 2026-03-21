@@ -16,7 +16,9 @@ export function Nav({
   return (
     <>
       <Sidebar />
-      <i className="fa fa-bars show-sidebar" onClick={() => showSidebar()}></i>
+      <button className="show-sidebar" onClick={() => showSidebar()} aria-label="Open navigation menu">
+        <i className="fa fa-bars" aria-hidden="true"></i>
+      </button>
 
       {recipeGallery ? (
         <>
