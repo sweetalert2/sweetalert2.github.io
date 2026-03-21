@@ -1,0 +1,4 @@
+//#region recipe-gallery/sweetalert2-react-src.tsx?raw
+var sweetalert2_react_src_default = "import ReactDOM from 'react-dom/client'\nimport { useState } from 'react'\nimport Swal from 'sweetalert2'\nimport withReactContent from 'sweetalert2-react-content'\n\nfunction App() {\n  const [inputValue, setInputValue] = useState('')\n\n  const showSwal = () => {\n    withReactContent(Swal).fire({\n      title: <i>Input something</i>,\n      input: 'text',\n      inputValue,\n      preConfirm: () => {\n        setInputValue(Swal.getInput()?.value || '')\n      },\n    })\n  }\n\n  return (\n    <>\n      <button onClick={showSwal}>Show SweetAlert2 modal</button>\n      <div>Your input: {inputValue}</div>\n    </>\n  )\n}\n\nReactDOM.createRoot(document.querySelector('.app-root')!).render(<App />)\n";
+//#endregion
+export { sweetalert2_react_src_default as default };

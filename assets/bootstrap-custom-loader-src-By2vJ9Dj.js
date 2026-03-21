@@ -1,0 +1,4 @@
+//#region recipe-gallery/bootstrap-custom-loader-src.ts?raw
+var bootstrap_custom_loader_src_default = "import 'bootstrap'\nimport 'bootstrap/dist/css/bootstrap.css'\nimport Swal from 'sweetalert2'\nimport './styles.css'\n\ndocument.querySelector('.trigger-swal')?.addEventListener('click', function () {\n  Swal.fire({\n    title: 'SweetAlert2 + Bootstrap 5',\n    input: 'text',\n    buttonsStyling: false,\n    showCancelButton: true,\n    customClass: {\n      confirmButton: 'btn btn-primary btn-lg mr-2',\n      cancelButton: 'btn btn-danger btn-lg',\n      loader: 'custom-loader',\n    },\n    loaderHtml: '<div class=\"spinner-border text-primary\"></div>',\n    preConfirm: () => {\n      Swal.showLoading()\n      return new Promise((resolve) => {\n        setTimeout(() => {\n          resolve(true)\n        }, 3000)\n      })\n    },\n  })\n})\n";
+//#endregion
+export { bootstrap_custom_loader_src_default as default };

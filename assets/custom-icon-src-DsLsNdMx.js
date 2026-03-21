@@ -1,0 +1,4 @@
+//#region recipe-gallery/custom-icon-src.ts?raw
+var custom_icon_src_default = "import Swal from 'sweetalert2'\nimport './styles.css'\n\nconst doubleCheckIcon =\n  '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" width=\"32\"><path d=\"M342.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 178.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l80 80c12.5 12.5 32.8 12.5 45.3 0l160-160zm96 128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 402.7 54.6 297.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l256-256z\" fill=\"currentColor\" /></svg>'\n\nSwal.fire({\n  title: 'My Icon is Special!',\n  icon: 'success',\n  iconHtml: doubleCheckIcon,\n  customClass: {\n    icon: 'rotate-y',\n  },\n})\n";
+//#endregion
+export { custom_icon_src_default as default };
