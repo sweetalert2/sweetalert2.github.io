@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     minify: false,
     target: 'esnext',
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         'main': 'index.html',
         'recipe-gallery': 'recipe-gallery/index.html',
