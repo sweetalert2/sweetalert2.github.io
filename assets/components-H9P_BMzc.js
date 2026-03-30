@@ -37075,7 +37075,10 @@ function CodeExample({ code, language = "javascript", codepenHtml, codepenCssExt
 		children: [codeSyntaxHighlighted ? "" : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
 			ref: codeRef,
 			children: code
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", { dangerouslySetInnerHTML: { __html: codeSyntaxHighlighted || "" } })]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+			dangerouslySetInnerHTML: { __html: codeSyntaxHighlighted || "" },
+			tabIndex: -1
+		})]
 	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("form", {
 		action: "https://codepen.io/pen/define",
 		method: "POST",
