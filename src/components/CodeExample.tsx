@@ -82,7 +82,7 @@ export function CodeExample({
     <>
       <pre className={withoutCodepen ? '' : 'code-sample'} onClick={openInCodepen} {...props}>
         {codeSyntaxHighlighted ? '' : <code ref={codeRef}>{code}</code>}
-        <code dangerouslySetInnerHTML={{ __html: codeSyntaxHighlighted || '' }} />
+        <code dangerouslySetInnerHTML={{ __html: codeSyntaxHighlighted || '' }} tabIndex={-1} />
       </pre>
       <form action="https://codepen.io/pen/define" method="POST" target="_blank" ref={codepenForm}>
         <input type="hidden" name="data" ref={codepenFormData} />
