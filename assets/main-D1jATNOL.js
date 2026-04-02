@@ -1,4 +1,4 @@
-import { _ as Nav, a as Icons, c as DeclarativeTemplates, d as Examples, f as Showcase, g as renderRecipe, h as Prtnr, i as InputTypes, l as ConfigurationParams, m as Header, n as Sponsors, o as HandlingDismissals, r as Methods, s as HandlingButtons, t as Themes, u as Installation, v as require_jsx_runtime } from "./components-H9P_BMzc.js";
+import { _ as Nav, a as Icons, c as DeclarativeTemplates, d as Examples, f as Showcase, g as renderRecipe, h as Prtnr, i as InputTypes, l as ConfigurationParams, m as Header, n as Sponsors, o as HandlingDismissals, r as Methods, s as HandlingButtons, t as Themes, u as Installation, v as require_jsx_runtime } from "./components-CIg7I_e8.js";
 //#region src/index.tsx
 var import_jsx_runtime = require_jsx_runtime();
 renderRecipe(/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
