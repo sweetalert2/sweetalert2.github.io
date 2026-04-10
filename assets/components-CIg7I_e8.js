@@ -37113,37 +37113,59 @@ function CodeExample({ code, language = "javascript", codepenHtml, codepenCssExt
 //#endregion
 //#region src/components/Showcase.tsx
 function Showcase() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "showcase normal",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "normal-alert",
-				children: "Normal alert"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-				onClick: examples.normalAlert.fn,
-				children: "Show normal alert"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.normalAlert.fnString }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "vs-icon" })
-		]
-	}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "showcase sweet",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-				src: "/images/SweetAlert2.png",
-				height: "30",
-				alt: "SweetAlert2"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-				className: "show-example-btn",
-				"aria-label": "Show SweetAlert2 success message",
-				onClick: examples.sweetAlert.fn,
-				children: "Show success message"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.sweetAlert.fnString })
-		]
-	})] });
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "showcase normal",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "normal-alert",
+					children: "Normal alert"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					onClick: examples.normalAlert.fn,
+					children: "Show normal alert"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.normalAlert.fnString }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "vs-icon" })
+			]
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "showcase sweet",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+					src: "/images/SweetAlert2.png",
+					height: "30",
+					alt: "SweetAlert2"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					className: "show-example-btn",
+					"aria-label": "Show SweetAlert2 success message",
+					onClick: examples.sweetAlert.fn,
+					children: "Show success message"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.sweetAlert.fnString })
+			]
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			style: { marginTop: 50 },
+			className: "mobile-hidden",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+				href: "https://cheapgpt.store/",
+				target: "_blank",
+				rel: "noopener",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+					src: "/images/sponsors/cheapgpt.gif",
+					alt: "CheapGPT",
+					width: "728",
+					height: "90",
+					style: {
+						maxWidth: "100%",
+						height: "auto"
+					}
+				})
+			})
+		})
+	] });
 }
 //#endregion
 //#region src/components/Examples.tsx
