@@ -20,7 +20,7 @@ function Recipe() {
 			" is used, but you can use any i18n library."
 		] }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sandpack, {
-			dependencies: { i18next: "^24.0.0" },
+			dependencies: { i18next: "^26.0.0" },
 			entry: "/App.ts",
 			files: { "/App.ts": src },
 			editorHeight: 600,
