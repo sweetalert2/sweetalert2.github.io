@@ -17,7 +17,7 @@ function Recipe() {
 
       <Sandpack
         dependencies={{
-          i18next: '^24.0.0',
+          i18next: '^26.0.0',
         }}
         entry="/App.ts"
         files={{
