@@ -538,7 +538,7 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 		*/
 		const applyNumericalStyle = (elem, property, value) => {
 			if (value === `${parseInt(`${value}`)}`) value = parseInt(value);
-			if (value || value === 0) elem.style.setProperty(property, typeof value === "number" ? `${value}px` : value);
+			if (value || value === 0) elem.style.setProperty(property, typeof value === "number" ? `${value}px` : 			/** @type {string} */ value);
 			else elem.style.removeProperty(property);
 		};
 		/**
@@ -1469,7 +1469,7 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 		* @returns {{ clientX: number, clientY: number }}
 		*/
 		const getClientXY = (event) => {
-			const source = event.type.startsWith("touch") ? event.touches[0] : event;
+			const source = event.type.startsWith("touch") ? event.touches[0] : 			/** @type {MouseEvent} */ event;
 			return {
 				clientX: source.clientX,
 				clientY: source.clientY
@@ -13928,6 +13928,10 @@ var require_sweetalert2_react_content_umd = /* @__PURE__ */ __commonJSMin(((expo
 }));
 //#endregion
 //#region node_modules/@docsearch/js/dist/esm/index.js
+var import_sweetalert2_all = /* @__PURE__ */ __toESM(require_sweetalert2_all(), 1);
+var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
+var import_client = /* @__PURE__ */ __toESM(require_client(), 1);
+var import_sweetalert2_react_content_umd = /* @__PURE__ */ __toESM(require_sweetalert2_react_content_umd(), 1);
 /*! @docsearch/js 4.6.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 function e(e, t) {
 	(null == t || t > e.length) && (t = e.length);
@@ -32998,7 +33002,6 @@ var require_jsx_runtime = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 }));
 //#endregion
 //#region src/components/DocSearch.tsx
-var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var import_jsx_runtime = require_jsx_runtime();
 function DocSearch() {
 	(0, import_react.useEffect)(() => {
@@ -33013,7 +33016,6 @@ function DocSearch() {
 }
 //#endregion
 //#region src/utils/themableSwal.tsx
-var import_sweetalert2_all = /* @__PURE__ */ __toESM(require_sweetalert2_all(), 1);
 window.Swal = import_sweetalert2_all.default;
 var ThemeSelector = () => {
 	const [currentTheme, setCurrentTheme] = (0, import_react.useState)("light");
@@ -33187,7 +33189,6 @@ function Sidebar() {
 }
 //#endregion
 //#region src/utils/sidebar.tsx
-var import_sweetalert2_react_content_umd = /* @__PURE__ */ __toESM(require_sweetalert2_react_content_umd(), 1);
 var showSidebar = () => {
 	(0, import_sweetalert2_react_content_umd.default)(import_sweetalert2_all.default).fire({
 		html: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sidebar, {}),
@@ -33220,7 +33221,6 @@ var useHash = () => {
 };
 //#endregion
 //#region src/utils/renderRecipe.tsx
-var import_client = /* @__PURE__ */ __toESM(require_client(), 1);
 /**
 * Renders a React component into the app-root element.
 * This utility removes duplicated ReactDOM.createRoot code across recipe pages.
@@ -37113,59 +37113,37 @@ function CodeExample({ code, language = "javascript", codepenHtml, codepenCssExt
 //#endregion
 //#region src/components/Showcase.tsx
 function Showcase() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "showcase normal",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "normal-alert",
-					children: "Normal alert"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-					onClick: examples.normalAlert.fn,
-					children: "Show normal alert"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.normalAlert.fnString }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "vs-icon" })
-			]
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "showcase sweet",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					src: "/images/SweetAlert2.png",
-					height: "30",
-					alt: "SweetAlert2"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-					className: "show-example-btn",
-					"aria-label": "Show SweetAlert2 success message",
-					onClick: examples.sweetAlert.fn,
-					children: "Show success message"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.sweetAlert.fnString })
-			]
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			style: { marginTop: 50 },
-			className: "mobile-hidden",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-				href: "https://cheapgpt.store/",
-				target: "_blank",
-				rel: "noopener",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					src: "/images/sponsors/cheapgpt.gif",
-					alt: "CheapGPT",
-					width: "728",
-					height: "90",
-					style: {
-						maxWidth: "100%",
-						height: "auto"
-					}
-				})
-			})
-		})
-	] });
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "showcase normal",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "normal-alert",
+				children: "Normal alert"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				onClick: examples.normalAlert.fn,
+				children: "Show normal alert"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.normalAlert.fnString }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "vs-icon" })
+		]
+	}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "showcase sweet",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+				src: "/images/SweetAlert2.png",
+				height: "30",
+				alt: "SweetAlert2"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				className: "show-example-btn",
+				"aria-label": "Show SweetAlert2 success message",
+				onClick: examples.sweetAlert.fn,
+				children: "Show success message"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.sweetAlert.fnString })
+		]
+	})] });
 }
 //#endregion
 //#region src/components/Examples.tsx
