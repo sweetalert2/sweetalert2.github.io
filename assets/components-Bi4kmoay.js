@@ -4279,7 +4279,7 @@ var require_react_production = /* @__PURE__ */ __commonJSMin(((exports) => {
 	exports.useTransition = function() {
 		return ReactSharedInternals.H.useTransition();
 	};
-	exports.version = "19.2.4";
+	exports.version = "19.2.5";
 }));
 //#endregion
 //#region node_modules/react/index.js
@@ -4671,7 +4671,7 @@ var require_react_dom_production = /* @__PURE__ */ __commonJSMin(((exports) => {
 	exports.useFormStatus = function() {
 		return ReactSharedInternals.H.useHostTransitionStatus();
 	};
-	exports.version = "19.2.4";
+	exports.version = "19.2.5";
 }));
 //#endregion
 //#region node_modules/react-dom/index.js
@@ -13731,7 +13731,7 @@ var require_react_dom_client_production = /* @__PURE__ */ __commonJSMin(((export
 		}
 	};
 	var isomorphicReactPackageVersion$jscomp$inline_1840 = React.version;
-	if ("19.2.4" !== isomorphicReactPackageVersion$jscomp$inline_1840) throw Error(formatProdErrorMessage(527, isomorphicReactPackageVersion$jscomp$inline_1840, "19.2.4"));
+	if ("19.2.5" !== isomorphicReactPackageVersion$jscomp$inline_1840) throw Error(formatProdErrorMessage(527, isomorphicReactPackageVersion$jscomp$inline_1840, "19.2.5"));
 	ReactDOMSharedInternals.findDOMNode = function(componentOrElement) {
 		var fiber = componentOrElement._reactInternals;
 		if (void 0 === fiber) {
@@ -13746,10 +13746,10 @@ var require_react_dom_client_production = /* @__PURE__ */ __commonJSMin(((export
 	};
 	var internals$jscomp$inline_2347 = {
 		bundleType: 0,
-		version: "19.2.4",
+		version: "19.2.5",
 		rendererPackageName: "react-dom",
 		currentDispatcherRef: ReactSharedInternals,
-		reconcilerVersion: "19.2.4"
+		reconcilerVersion: "19.2.5"
 	};
 	if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
 		var hook$jscomp$inline_2348 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
@@ -13786,7 +13786,7 @@ var require_react_dom_client_production = /* @__PURE__ */ __commonJSMin(((export
 		listenToAllSupportedEvents(container);
 		return new ReactDOMHydrationRoot(initialChildren);
 	};
-	exports.version = "19.2.4";
+	exports.version = "19.2.5";
 }));
 //#endregion
 //#region node_modules/react-dom/client.js
