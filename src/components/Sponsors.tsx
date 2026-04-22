@@ -27,6 +27,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://weballoon.app/" target="_blank" rel="noopener" aria-label="weballoon">
+            <img src="/images/sponsors/weballoon.png" alt="weballoon" />
+            <br />
+            weballoon
+          </a>
+        </div>
+        <div>
           <a href="https://kryptot.fi/" target="_blank" rel="noopener" aria-label="Kryptot">
             <img src="/images/sponsors/kryptot.png" alt="Kryptot" />
             <br />
