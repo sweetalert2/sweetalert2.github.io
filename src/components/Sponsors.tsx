@@ -61,18 +61,6 @@ export function Sponsors() {
         </div>
         <div>
           <a
-            href="https://boilerplatehub.com/?utm_source=sweetalert2"
-            target="_blank"
-            rel="noopener"
-            aria-label="Build your SaaS or App in days, not weeks"
-          >
-            <img src="/images/sponsors/boilerplatehub.jpg" alt="Build your SaaS or App in days, not weeks" />
-            <br />
-            Build your SaaS or App in days
-          </a>
-        </div>
-        <div>
-          <a
             href="https://ssmarket.net/buy-youtube-views"
             target="_blank"
             rel="noopener"
