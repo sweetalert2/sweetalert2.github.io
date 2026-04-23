@@ -40340,20 +40340,6 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://boilerplatehub.com/?utm_source=sweetalert2",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "Build your SaaS or App in days, not weeks",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/boilerplatehub.jpg",
-							alt: "Build your SaaS or App in days, not weeks"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"Build your SaaS or App in days"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://ssmarket.net/buy-youtube-views",
 					target: "_blank",
 					rel: "noopener",
