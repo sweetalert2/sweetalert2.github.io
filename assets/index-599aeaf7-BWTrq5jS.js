@@ -1,4 +1,4 @@
-import { t as __commonJSMin } from "./chunk-DkDYDee2.js";
+import { t as __commonJSMin } from "./chunk-Bg1a8CIW.js";
 import { a as __generator, i as __extends, r as __awaiter } from "./utils-52664384-tXfMgvZN.js";
 import { t as SandpackClient } from "./base-80a1f760-CIH9BsLu.js";
 import { a as generateRandomId, i as fromBundlerFilesToFS, n as consoleHook, t as EventEmitter } from "./consoleHook-59e792cb-Cs6UZcBG.js";

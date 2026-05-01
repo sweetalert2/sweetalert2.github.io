@@ -1,4 +1,4 @@
-import { a as __toESM, t as __commonJSMin } from "./chunk-DkDYDee2.js";
+import { a as __toESM, t as __commonJSMin } from "./chunk-Bg1a8CIW.js";
 //#region \0vite/modulepreload-polyfill.js
 (function polyfill() {
 	const relList = document.createElement("link").relList;
@@ -3616,9 +3616,19 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 			if (params.heightAuto && params.backdrop && !params.toast) addClass([document.documentElement, document.body], swalClasses["height-auto"]);
 		};
 		var defaultInputValidators = {
+			/**
+			* @param {string} string
+			* @param {string} [validationMessage]
+			* @returns {Promise<string | void>}
+			*/
 			email: (string, validationMessage) => {
 				return /^[a-zA-Z0-9.+_'-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]+$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || "Invalid email address");
 			},
+			/**
+			* @param {string} string
+			* @param {string} [validationMessage]
+			* @returns {Promise<string | void>}
+			*/
 			url: (string, validationMessage) => {
 				return /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || "Invalid URL");
 			}
@@ -3671,8 +3681,9 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 				}));
 				if (typeof window === "undefined") return;
 				currentInstance = this;
+				const outerParams = Object.freeze(this.constructor.argsToParams(args));
 				/** @type {Readonly<SweetAlertOptions>} */
-				this.params = Object.freeze(this.constructor.argsToParams(args));
+				this.params = outerParams;
 				/** @type {boolean} */
 				this.isAwaitingPromise = false;
 				_classPrivateFieldSet2(_promise, this, this._main(currentInstance.params));
@@ -25182,7 +25193,8 @@ var Ep = un(function e(t, n, r, u) {
 		success: !1,
 		get error() {
 			if (this._error) return this._error;
-			return this._error = new ip(e.common.issues), this._error;
+			var t = new ip(e.common.issues);
+			return this._error = t, this._error;
 		}
 	};
 };
@@ -27014,10 +27026,10 @@ var ch = function() {
 			key: "_getCached",
 			value: function() {
 				if (null !== this._cached) return this._cached;
-				var e = this._def.shape();
+				var e = this._def.shape(), t = Qd.objectKeys(e);
 				return this._cached = {
 					shape: e,
-					keys: Qd.objectKeys(e)
+					keys: t
 				}, this._cached;
 			}
 		},
@@ -34365,6 +34377,7 @@ var core_default = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exp
 			begin: beginShebang,
 			end: /$/,
 			relevance: 0,
+			/** @type {ModeCallback} */
 			"on:begin": (m, resp) => {
 				if (m.index !== 0) resp.ignoreMatch();
 			}
@@ -34467,9 +34480,11 @@ var core_default = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exp
 	*/
 	var END_SAME_AS_BEGIN = function(mode) {
 		return Object.assign(mode, {
+			/** @type {ModeCallback} */
 			"on:begin": (m, resp) => {
 				resp.data._beginMatch = m[1];
 			},
+			/** @type {ModeCallback} */
 			"on:end": (m, resp) => {
 				if (resp.data._beginMatch !== m[1]) resp.ignoreMatch();
 			}
@@ -34832,7 +34847,8 @@ var core_default = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exp
 			}
 			compile() {
 				if (this.regexes.length === 0) this.exec = () => null;
-				this.matcherRe = langRe(_rewriteBackreferences(this.regexes.map((el) => el[1]), { joinWith: "|" }), true);
+				const terminators = this.regexes.map((el) => el[1]);
+				this.matcherRe = langRe(_rewriteBackreferences(terminators, { joinWith: "|" }), true);
 				this.lastIndex = 0;
 			}
 			/** @param {string} s */
@@ -35950,6 +35966,10 @@ function javascript(hljs) {
 	const XML_TAG = {
 		begin: /<[A-Za-z0-9\\._:-]+/,
 		end: /\/[A-Za-z0-9\\._:-]+>|\/>/,
+		/**
+		* @param {RegExpMatchArray} match
+		* @param {CallbackResponse} response
+		*/
 		isTrulyOpeningTag: (match, response) => {
 			const afterMatchIndex = match[0].length + match.index;
 			const nextChar = match.input[afterMatchIndex];

@@ -1,6 +1,6 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-D4mzdnAK.js","assets/base-80a1f760-CIH9BsLu.js","assets/utils-52664384-tXfMgvZN.js","assets/consoleHook-59e792cb-Cs6UZcBG.js","assets/index-599aeaf7-Dp6TZq-h.js","assets/chunk-DkDYDee2.js","assets/runtime-DAJHdRbX.js"])))=>i.map(i=>d[i]);
-import { a as __toESM, t as __commonJSMin } from "./chunk-DkDYDee2.js";
-import { v as require_jsx_runtime, y as require_react } from "./components-TIHoRAm9.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-D4mzdnAK.js","assets/base-80a1f760-CIH9BsLu.js","assets/utils-52664384-tXfMgvZN.js","assets/consoleHook-59e792cb-Cs6UZcBG.js","assets/index-599aeaf7-BWTrq5jS.js","assets/chunk-Bg1a8CIW.js","assets/runtime-CvgtNL64.js"])))=>i.map(i=>d[i]);
+import { a as __toESM, t as __commonJSMin } from "./chunk-Bg1a8CIW.js";
+import { v as require_jsx_runtime, y as require_react } from "./components-C-SwNAir.js";
 import { a as __generator$1, d as normalizePath, m as dequal, r as __awaiter$1, s as addPackageJSONIfNeeded, u as extractErrorDetails } from "./utils-52664384-tXfMgvZN.js";
 //#region node_modules/@stitches/core/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime = require_jsx_runtime(), t$1 = "colors", n = "sizes", r$1 = "space", i$1 = {
@@ -873,13 +873,13 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
 				case 2:
 					Client = _c.sent();
 					return [3, 7];
-				case 3: return [4, __vitePreload(() => import("./index-599aeaf7-Dp6TZq-h.js").then(function(m) {
+				case 3: return [4, __vitePreload(() => import("./index-599aeaf7-BWTrq5jS.js").then(function(m) {
 					return m.SandpackStatic;
 				}), __vite__mapDeps([4,5,1,2,3]))];
 				case 4:
 					Client = _c.sent();
 					return [3, 7];
-				case 5: return [4, __vitePreload(() => import("./runtime-DAJHdRbX.js").then(function(m) {
+				case 5: return [4, __vitePreload(() => import("./runtime-CvgtNL64.js").then(function(m) {
 					return m.SandpackRuntime;
 				}), __vite__mapDeps([6,5,1,2]))];
 				case 6:
@@ -2567,10 +2567,29 @@ final ordering of extensions is determined by first sorting by
 precedence and then by order within each precedence.
 */
 var Prec = {
+	/**
+	The highest precedence level, for extensions that should end up
+	near the start of the precedence ordering.
+	*/
 	highest: /* @__PURE__ */ prec(Prec_.highest),
+	/**
+	A higher-than-default precedence, for extensions that should
+	come before those with default precedence.
+	*/
 	high: /* @__PURE__ */ prec(Prec_.high),
+	/**
+	The default precedence, which is also used for extensions
+	without an explicit precedence.
+	*/
 	default: /* @__PURE__ */ prec(Prec_.default),
+	/**
+	A lower-than-default precedence.
+	*/
 	low: /* @__PURE__ */ prec(Prec_.low),
+	/**
+	The lowest precedence level. Meant for things that should end up
+	near the end of the extension order.
+	*/
 	lowest: /* @__PURE__ */ prec(Prec_.lowest)
 };
 var PrecExtension = class {
@@ -4039,7 +4058,8 @@ var LayerCursor = class {
 			break;
 		} else {
 			let chunkPos = this.layer.chunkPos[this.chunkIndex], chunk = this.layer.chunk[this.chunkIndex];
-			this.from = chunkPos + chunk.from[this.rangeIndex];
+			let from = chunkPos + chunk.from[this.rangeIndex];
+			this.from = from;
 			this.to = chunkPos + chunk.to[this.rangeIndex];
 			this.value = chunk.value[this.rangeIndex];
 			this.setRangeIndex(this.rangeIndex + 1);
@@ -9394,7 +9414,8 @@ var ViewState = class {
 		this.defaultTextDirection = Direction.LTR;
 		this.visibleRanges = [];
 		this.mustEnforceCursorAssoc = false;
-		this.heightOracle = new HeightOracle(state.facet(contentAttributes).some((v) => typeof v != "function" && v.class == "cm-lineWrapping"));
+		let guessWrapping = state.facet(contentAttributes).some((v) => typeof v != "function" && v.class == "cm-lineWrapping");
+		this.heightOracle = new HeightOracle(guessWrapping);
 		this.stateDeco = state.facet(decorations).filter((d) => typeof d != "function");
 		this.heightMap = HeightMap.empty().applyChanges(this.stateDeco, Text.empty, this.heightOracle.setDoc(state.doc), [new ChangedRange(0, 0, 0, state.doc.length)]);
 		for (let i = 0; i < 2; i++) {
@@ -14728,89 +14749,369 @@ For tags that extend some parent tag, the documentation links to
 the parent.
 */
 var tags$1 = {
+	/**
+	A comment.
+	*/
 	comment,
+	/**
+	A line [comment](#highlight.tags.comment).
+	*/
 	lineComment: t(comment),
+	/**
+	A block [comment](#highlight.tags.comment).
+	*/
 	blockComment: t(comment),
+	/**
+	A documentation [comment](#highlight.tags.comment).
+	*/
 	docComment: t(comment),
+	/**
+	Any kind of identifier.
+	*/
 	name,
+	/**
+	The [name](#highlight.tags.name) of a variable.
+	*/
 	variableName: t(name),
+	/**
+	A type [name](#highlight.tags.name).
+	*/
 	typeName,
+	/**
+	A tag name (subtag of [`typeName`](#highlight.tags.typeName)).
+	*/
 	tagName: t(typeName),
+	/**
+	A property or field [name](#highlight.tags.name).
+	*/
 	propertyName,
+	/**
+	An attribute name (subtag of [`propertyName`](#highlight.tags.propertyName)).
+	*/
 	attributeName: t(propertyName),
+	/**
+	The [name](#highlight.tags.name) of a class.
+	*/
 	className: t(name),
+	/**
+	A label [name](#highlight.tags.name).
+	*/
 	labelName: t(name),
+	/**
+	A namespace [name](#highlight.tags.name).
+	*/
 	namespace: t(name),
+	/**
+	The [name](#highlight.tags.name) of a macro.
+	*/
 	macroName: t(name),
+	/**
+	A literal value.
+	*/
 	literal,
+	/**
+	A string [literal](#highlight.tags.literal).
+	*/
 	string,
+	/**
+	A documentation [string](#highlight.tags.string).
+	*/
 	docString: t(string),
+	/**
+	A character literal (subtag of [string](#highlight.tags.string)).
+	*/
 	character: t(string),
+	/**
+	An attribute value (subtag of [string](#highlight.tags.string)).
+	*/
 	attributeValue: t(string),
+	/**
+	A number [literal](#highlight.tags.literal).
+	*/
 	number,
+	/**
+	An integer [number](#highlight.tags.number) literal.
+	*/
 	integer: t(number),
+	/**
+	A floating-point [number](#highlight.tags.number) literal.
+	*/
 	float: t(number),
+	/**
+	A boolean [literal](#highlight.tags.literal).
+	*/
 	bool: t(literal),
+	/**
+	Regular expression [literal](#highlight.tags.literal).
+	*/
 	regexp: t(literal),
+	/**
+	An escape [literal](#highlight.tags.literal), for example a
+	backslash escape in a string.
+	*/
 	escape: t(literal),
+	/**
+	A color [literal](#highlight.tags.literal).
+	*/
 	color: t(literal),
+	/**
+	A URL [literal](#highlight.tags.literal).
+	*/
 	url: t(literal),
+	/**
+	A language keyword.
+	*/
 	keyword,
+	/**
+	The [keyword](#highlight.tags.keyword) for the self or this
+	object.
+	*/
 	self: t(keyword),
+	/**
+	The [keyword](#highlight.tags.keyword) for null.
+	*/
 	null: t(keyword),
+	/**
+	A [keyword](#highlight.tags.keyword) denoting some atomic value.
+	*/
 	atom: t(keyword),
+	/**
+	A [keyword](#highlight.tags.keyword) that represents a unit.
+	*/
 	unit: t(keyword),
+	/**
+	A modifier [keyword](#highlight.tags.keyword).
+	*/
 	modifier: t(keyword),
+	/**
+	A [keyword](#highlight.tags.keyword) that acts as an operator.
+	*/
 	operatorKeyword: t(keyword),
+	/**
+	A control-flow related [keyword](#highlight.tags.keyword).
+	*/
 	controlKeyword: t(keyword),
+	/**
+	A [keyword](#highlight.tags.keyword) that defines something.
+	*/
 	definitionKeyword: t(keyword),
+	/**
+	A [keyword](#highlight.tags.keyword) related to defining or
+	interfacing with modules.
+	*/
 	moduleKeyword: t(keyword),
+	/**
+	An operator.
+	*/
 	operator,
+	/**
+	An [operator](#highlight.tags.operator) that dereferences something.
+	*/
 	derefOperator: t(operator),
+	/**
+	Arithmetic-related [operator](#highlight.tags.operator).
+	*/
 	arithmeticOperator: t(operator),
+	/**
+	Logical [operator](#highlight.tags.operator).
+	*/
 	logicOperator: t(operator),
+	/**
+	Bit [operator](#highlight.tags.operator).
+	*/
 	bitwiseOperator: t(operator),
+	/**
+	Comparison [operator](#highlight.tags.operator).
+	*/
 	compareOperator: t(operator),
+	/**
+	[Operator](#highlight.tags.operator) that updates its operand.
+	*/
 	updateOperator: t(operator),
+	/**
+	[Operator](#highlight.tags.operator) that defines something.
+	*/
 	definitionOperator: t(operator),
+	/**
+	Type-related [operator](#highlight.tags.operator).
+	*/
 	typeOperator: t(operator),
+	/**
+	Control-flow [operator](#highlight.tags.operator).
+	*/
 	controlOperator: t(operator),
+	/**
+	Program or markup punctuation.
+	*/
 	punctuation,
+	/**
+	[Punctuation](#highlight.tags.punctuation) that separates
+	things.
+	*/
 	separator: t(punctuation),
+	/**
+	Bracket-style [punctuation](#highlight.tags.punctuation).
+	*/
 	bracket,
+	/**
+	Angle [brackets](#highlight.tags.bracket) (usually `<` and `>`
+	tokens).
+	*/
 	angleBracket: t(bracket),
+	/**
+	Square [brackets](#highlight.tags.bracket) (usually `[` and `]`
+	tokens).
+	*/
 	squareBracket: t(bracket),
+	/**
+	Parentheses (usually `(` and `)` tokens). Subtag of
+	[bracket](#highlight.tags.bracket).
+	*/
 	paren: t(bracket),
+	/**
+	Braces (usually `{` and `}` tokens). Subtag of
+	[bracket](#highlight.tags.bracket).
+	*/
 	brace: t(bracket),
+	/**
+	Content, for example plain text in XML or markup documents.
+	*/
 	content,
+	/**
+	[Content](#highlight.tags.content) that represents a heading.
+	*/
 	heading,
+	/**
+	A level 1 [heading](#highlight.tags.heading).
+	*/
 	heading1: t(heading),
+	/**
+	A level 2 [heading](#highlight.tags.heading).
+	*/
 	heading2: t(heading),
+	/**
+	A level 3 [heading](#highlight.tags.heading).
+	*/
 	heading3: t(heading),
+	/**
+	A level 4 [heading](#highlight.tags.heading).
+	*/
 	heading4: t(heading),
+	/**
+	A level 5 [heading](#highlight.tags.heading).
+	*/
 	heading5: t(heading),
+	/**
+	A level 6 [heading](#highlight.tags.heading).
+	*/
 	heading6: t(heading),
+	/**
+	A prose [content](#highlight.tags.content) separator (such as a horizontal rule).
+	*/
 	contentSeparator: t(content),
+	/**
+	[Content](#highlight.tags.content) that represents a list.
+	*/
 	list: t(content),
+	/**
+	[Content](#highlight.tags.content) that represents a quote.
+	*/
 	quote: t(content),
+	/**
+	[Content](#highlight.tags.content) that is emphasized.
+	*/
 	emphasis: t(content),
+	/**
+	[Content](#highlight.tags.content) that is styled strong.
+	*/
 	strong: t(content),
+	/**
+	[Content](#highlight.tags.content) that is part of a link.
+	*/
 	link: t(content),
+	/**
+	[Content](#highlight.tags.content) that is styled as code or
+	monospace.
+	*/
 	monospace: t(content),
+	/**
+	[Content](#highlight.tags.content) that has a strike-through
+	style.
+	*/
 	strikethrough: t(content),
+	/**
+	Inserted text in a change-tracking format.
+	*/
 	inserted: t(),
+	/**
+	Deleted text.
+	*/
 	deleted: t(),
+	/**
+	Changed text.
+	*/
 	changed: t(),
+	/**
+	An invalid or unsyntactic element.
+	*/
 	invalid: t(),
+	/**
+	Metadata or meta-instruction.
+	*/
 	meta,
+	/**
+	[Metadata](#highlight.tags.meta) that applies to the entire
+	document.
+	*/
 	documentMeta: t(meta),
+	/**
+	[Metadata](#highlight.tags.meta) that annotates or adds
+	attributes to a given syntactic element.
+	*/
 	annotation: t(meta),
+	/**
+	Processing instruction or preprocessor directive. Subtag of
+	[meta](#highlight.tags.meta).
+	*/
 	processingInstruction: t(meta),
+	/**
+	[Modifier](#highlight.Tag^defineModifier) that indicates that a
+	given element is being defined. Expected to be used with the
+	various [name](#highlight.tags.name) tags.
+	*/
 	definition: Tag.defineModifier("definition"),
+	/**
+	[Modifier](#highlight.Tag^defineModifier) that indicates that
+	something is constant. Mostly expected to be used with
+	[variable names](#highlight.tags.variableName).
+	*/
 	constant: Tag.defineModifier("constant"),
+	/**
+	[Modifier](#highlight.Tag^defineModifier) used to indicate that
+	a [variable](#highlight.tags.variableName) or [property
+	name](#highlight.tags.propertyName) is being called or defined
+	as a function.
+	*/
 	function: Tag.defineModifier("function"),
+	/**
+	[Modifier](#highlight.Tag^defineModifier) that can be applied to
+	[names](#highlight.tags.name) to indicate that they belong to
+	the language's standard environment.
+	*/
 	standard: Tag.defineModifier("standard"),
+	/**
+	[Modifier](#highlight.Tag^defineModifier) that indicates a given
+	[names](#highlight.tags.name) is local to some scope.
+	*/
 	local: Tag.defineModifier("local"),
+	/**
+	A generic variant [modifier](#highlight.Tag^defineModifier) that
+	can be used to tag language-specific alternative variants of
+	some common tag. It is recommended for themes to define special
+	forms of at least the [string](#highlight.tags.string) and
+	[variable name](#highlight.tags.variableName) tags, since those
+	come up a lot.
+	*/
 	special: Tag.defineModifier("special")
 };
 for (let name in tags$1) {
@@ -19706,7 +20007,8 @@ var SimulatedStack = class {
 			this.stack.push(this.state, 0, 0);
 			this.base += 3;
 		} else this.base -= (depth - 1) * 3;
-		this.state = this.start.p.parser.getGoto(this.stack[this.base - 3], term, true);
+		let goto = this.start.p.parser.getGoto(this.stack[this.base - 3], term, true);
+		this.state = goto;
 	}
 };
 var StackBufferCursor = class StackBufferCursor {
@@ -19919,7 +20221,8 @@ var InputStream = class {
 			this.chunk2 = this.chunk;
 			this.chunk2Pos = this.chunkPos;
 			let nextChunk = this.input.chunk(this.pos);
-			this.chunk = this.pos + nextChunk.length > this.range.to ? nextChunk.slice(0, this.range.to - this.pos) : nextChunk;
+			let end = this.pos + nextChunk.length;
+			this.chunk = end > this.range.to ? nextChunk.slice(0, this.range.to - this.pos) : nextChunk;
 			this.chunkPos = this.pos;
 			this.chunkOff = 0;
 		}
@@ -24242,6 +24545,19 @@ var require_lib = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		_createClass(Anser, null, [
 			{
 				key: "escapeForHtml",
+				/**
+				* Anser.escapeForHtml
+				* Escape the input HTML.
+				*
+				* This does the minimum escaping of text to make it compliant with HTML.
+				* In particular, the '&','<', and '>' characters are escaped. This should
+				* be run prior to `ansiToHtml`.
+				*
+				* @name Anser.escapeForHtml
+				* @function
+				* @param {String} txt The input text (containing the ANSI snippets).
+				* @returns {String} The escaped html.
+				*/
 				value: function escapeForHtml(txt) {
 					return new Anser().escapeForHtml(txt);
 				}
@@ -26405,7 +26721,15 @@ var combineTemplateFilesToSetup = function(_a) {
 	if (!baseTemplate) throw new Error("[sandpack-react]: invalid template \"".concat(template, "\" provided"));
 	if (!customSetup && !files) return baseTemplate;
 	return {
+		/**
+		* The input setup might have files in the simple form Record<string, string>
+		* so we convert them to the sandbox template format
+		*/
 		files: convertedFilesToBundlerFiles(__assign(__assign({}, baseTemplate.files), files)),
+		/**
+		* Merge template dependencies and user custom dependencies.
+		* As a rule, the custom dependencies must overwrite the template ones.
+		*/
 		dependencies: __assign(__assign({}, baseTemplate.dependencies), customSetup === null || customSetup === void 0 ? void 0 : customSetup.dependencies),
 		devDependencies: __assign(__assign({}, baseTemplate.devDependencies), customSetup === null || customSetup === void 0 ? void 0 : customSetup.devDependencies),
 		entry: normalizePath(customSetup === null || customSetup === void 0 ? void 0 : customSetup.entry),
@@ -30254,6 +30578,9 @@ var consoleItemClassName = css((_a = {
 		height: 1,
 		background: "$colors$surface3"
 	},
+	/**
+	* Editor reset
+	*/
 	".sp-cm": { padding: 0 },
 	".cm-editor": { background: "none" },
 	".cm-content": { padding: 0 }
@@ -30535,6 +30862,9 @@ var Sandpack$2 = function(_a) {
 		additionalLanguages: (_h = options.codeEditor) === null || _h === void 0 ? void 0 : _h.additionalLanguages
 	};
 	var providerOptions = {
+		/**
+		* TS-why: Type 'string | number | symbol' is not assignable to type 'string'
+		*/
 		activeFile: options.activeFile,
 		visibleFiles: options.visibleFiles,
 		recompileMode: options.recompileMode,
