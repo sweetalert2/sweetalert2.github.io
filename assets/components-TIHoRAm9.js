@@ -40284,6 +40284,20 @@ function Sponsors() {
 			className: "sponsors",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.blueplenum.com/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "BluePlenum",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/blueplenum.jpg",
+							alt: "BluePlenum"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"BluePlenum"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://weballoon.app/",
 					target: "_blank",
 					rel: "noopener",
@@ -40685,20 +40699,6 @@ function Sponsors() {
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"sexdoll"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://www.blueplenum.com/",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "BluePlenum",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/blueplenum.jpg",
-							alt: "BluePlenum"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"BluePlenum"
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
