@@ -40688,17 +40688,17 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://cutesexdoll.com/",
+					href: "https://www.blueplenum.com/",
 					target: "_blank",
 					rel: "noopener",
-					"aria-label": "Cute Sex Doll",
+					"aria-label": "BluePlenum",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/cutesexdoll.jpg",
-							alt: "Cute Sex Doll"
+							src: "/images/sponsors/blueplenum.jpg",
+							alt: "BluePlenum"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"Cute Sex Doll"
+						"BluePlenum"
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
