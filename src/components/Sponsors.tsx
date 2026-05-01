@@ -27,6 +27,13 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a href="https://www.blueplenum.com/" target="_blank" rel="noopener" aria-label="BluePlenum">
+            <img src="/images/sponsors/blueplenum.jpg" alt="BluePlenum" />
+            <br />
+            BluePlenum
+          </a>
+        </div>
+        <div>
           <a href="https://weballoon.app/" target="_blank" rel="noopener" aria-label="weballoon">
             <img src="/images/sponsors/weballoon.png" alt="weballoon" />
             <br />
@@ -253,13 +260,6 @@ export function Sponsors() {
             <img src="/images/sponsors/uusexdoll.png" alt="sexdoll" />
             <br />
             sexdoll
-          </a>
-        </div>
-        <div>
-          <a href="https://cutesexdoll.com/" target="_blank" rel="noopener" aria-label="Cute Sex Doll">
-            <img src="/images/sponsors/cutesexdoll.jpg" alt="Cute Sex Doll" />
-            <br />
-            Cute Sex Doll
           </a>
         </div>
         <div>
