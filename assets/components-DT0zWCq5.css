@@ -15,7 +15,7 @@
   font-weight: 400;
   src: url(/assets/source-code-pro-latin-400-normal-DEXWLoHG.woff2) format('woff2'), url(/assets/source-code-pro-latin-400-normal-Bf_aQirX.woff) format('woff');
 }
-/*! @docsearch/css 4.6.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 4.6.3 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#003dff;
   --docsearch-soft-primary-color:rgba(0,61,255,.1);
@@ -243,18 +243,22 @@ html[data-theme=dark] {
   background: transparent;
   border: 0;
   color: var(--docsearch-text-color);
-  flex: 1;
+  flex: 1 1 0%;
   font: inherit;
   font-size: 1.2em;
   font-weight: 300;
   height: 100%;
   line-height: 1.4;
+  min-width: 0;
   outline: none;
   overflow-y: hidden;
   padding-block-start: 0;
   padding-inline-start: 8px;
   resize: none;
-  width: 80%;
+}
+.DocSearch-Input {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 .DocSearch-Input::placeholder {
   color: var(--docsearch-muted-color);
@@ -266,11 +270,12 @@ html[data-theme=dark] {
 .DocSearch-Actions {
   align-items: center;
   display: flex;
+  flex: 0 0 auto;
   gap: 8px;
   height: var(--docsearch-actions-height);
   justify-content: flex-end;
   padding: 0 2px;
-  width: var(--docsearch-actions-width);
+  width: auto;
 }
 .DocSearch-Divider {
   border-inline-start: 1px solid var(--docsearch-subtle-color);
@@ -892,6 +897,9 @@ svg.DocSearch-Hit-Select-Icon {
   font-size: 12px;
   margin: 12px 0 8px;
   width: 100%;
+}
+.DocSearch-AskAiScreen-Error--ThreadDepth .DocSearch-AskAiScreen-Error-Title {
+  margin-bottom: 6px;
 }
 @keyframes slideDown {
   0% {
