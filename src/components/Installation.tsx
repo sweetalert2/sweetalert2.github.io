@@ -19,25 +19,31 @@ export function Installation() {
     <>
       <div className="center-container download-section">
         <h3 id="download">Download &amp; install</h3>
-        <div style={{
-          position: 'relative',
-          marginBottom: '24px',
-          borderRadius: '12px',
-          overflow: 'hidden',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-          backgroundColor: '#f8f9fa'
-        }}>
-          <pre style={{
-            margin: 0,
-            padding: '20px',
-            backgroundColor: '#1e1e1e',
-            color: '#d4d4d4',
-            fontSize: '15px',
-            lineHeight: '1.6',
-            overflowX: 'auto'
-          }}>
+        <div
+          style={{
+            position: 'relative',
+            marginBottom: '24px',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+            backgroundColor: '#f8f9fa',
+          }}
+        >
+          <pre
+            style={{
+              margin: 0,
+              padding: '20px',
+              backgroundColor: '#1e1e1e',
+              color: '#d4d4d4',
+              fontSize: '15px',
+              lineHeight: '1.6',
+              overflowX: 'auto',
+            }}
+          >
             <code>
-              <span className="unselectable" style={{ color: '#858585', marginRight: '8px' }}>$ </span>
+              <span className="unselectable" style={{ color: '#858585', marginRight: '8px' }}>
+                ${' '}
+              </span>
               <span style={{ color: '#ce9178' }}>npm install sweetalert2</span>
             </code>
           </pre>
@@ -46,32 +52,30 @@ export function Installation() {
             title="Copy to clipboard"
             aria-label="Copy installation command"
             style={{
-              position: 'absolute',
-              top: '12px',
-              right: '12px',
-              padding: '10px 16px',
-              backgroundColor: copied ? '#10b981' : '#3b82f6',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontSize: '13px',
-              fontWeight: '600',
-              letterSpacing: '0.3px',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-              boxShadow: copied 
-                ? '0 4px 12px rgba(16, 185, 129, 0.4)' 
-                : '0 4px 12px rgba(59, 130, 246, 0.3)',
-              transform: copied ? 'scale(0.98)' : 'scale(1)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              opacity: 0.95,
+              'position': 'absolute',
+              'top': '12px',
+              'right': '12px',
+              'padding': '10px 16px',
+              'backgroundColor': copied ? '#10b981' : '#3b82f6',
+              'color': 'white',
+              'border': 'none',
+              'borderRadius': '8px',
+              'cursor': 'pointer',
+              'fontSize': '13px',
+              'fontWeight': '600',
+              'letterSpacing': '0.3px',
+              'transition': 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              'boxShadow': copied ? '0 4px 12px rgba(16, 185, 129, 0.4)' : '0 4px 12px rgba(59, 130, 246, 0.3)',
+              'transform': copied ? 'scale(0.98)' : 'scale(1)',
+              'display': 'flex',
+              'alignItems': 'center',
+              'gap': '6px',
+              'backdropFilter': 'blur(10px)',
+              'WebkitBackdropFilter': 'blur(10px)',
+              'opacity': 0.95,
               '&:hover': {
                 opacity: 1,
-              }
+              },
             }}
             onMouseEnter={(e) => {
               if (!copied) {
@@ -86,9 +90,7 @@ export function Installation() {
               }
             }}
           >
-            <span style={{ fontSize: '16px' }}>
-              {copied ? '✓' : '📋'}
-            </span>
+            <span style={{ fontSize: '16px' }}>{copied ? '✓' : '📋'}</span>
             <span>{copied ? 'Copied!' : 'Copy'}</span>
           </button>
         </div>
