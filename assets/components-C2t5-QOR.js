@@ -33528,7 +33528,33 @@ function renderRecipe(component) {
 //#endregion
 //#region src/components/Prtnr.tsx
 function Prtnr() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {});
+	const prtnrs = [{
+		link: "https://refnocode.trade.re/gt06b1m7",
+		title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+			"Join Trade Republic today!",
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+			"Start investing with a free stock worth up to $200 🚀"
+		] }),
+		description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+		imageUrl: "/images/prtnrs/trade-republic.png"
+	}];
+	const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)];
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+		className: "prtnr-lg",
+		href: prtnr.link,
+		target: "_blank",
+		rel: "noreferrer noopener",
+		tabIndex: -1,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: prtnr.imageUrl }),
+			prtnr.title,
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "description",
+				children: prtnr.description
+			})
+		]
+	});
 }
 //#endregion
 //#region src/components/Header.tsx

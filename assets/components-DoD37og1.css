@@ -2622,6 +2622,10 @@ a.prtnr-lg {
   text-align: start;
   text-decoration: none;
 }
+a.prtnr-lg b {
+  display: block;
+  margin: 10px 10px 0;
+}
 a.prtnr-lg:hover {
   border: 2px solid #bbb;
 }
