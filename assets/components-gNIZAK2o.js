@@ -33528,27 +33528,41 @@ function renderRecipe(component) {
 //#endregion
 //#region src/components/Prtnr.tsx
 function Prtnr() {
-	const prtnrs = [{
-		link: "https://refnocode.trade.re/gt06b1m7",
-		title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-			"Join Trade Republic today!",
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-			"Start investing with a free stock worth up to $200 🚀"
-		] }),
-		description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-		imageUrl: "/images/prtnrs/trade-republic.png"
-	}, {
-		link: "https://m.do.co/c/12907f2ba0bf",
-		title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-			"Get started with DigitalOcean today!",
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-			"Deploy your app and get $25 in credit 🚀"
-		] }),
-		description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-		imageUrl: "/images/prtnrs/digitalocean.png"
-	}];
+	const prtnrs = [
+		{
+			link: "https://refnocode.trade.re/gt06b1m7",
+			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+				"Join Trade Republic today!",
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				"Start investing with a free stock worth up to $200 🚀"
+			] }),
+			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+			imageUrl: "/images/prtnrs/trade-republic.png"
+		},
+		{
+			link: "https://m.do.co/c/12907f2ba0bf",
+			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+				"Get started with DigitalOcean today!",
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				"Deploy your app and get $25 in credit 🚀"
+			] }),
+			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+			imageUrl: "/images/prtnrs/digitalocean.png"
+		},
+		{
+			link: "https://www.hostinger.com?REFERRALCODE=BKZHOSTINDAB",
+			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+				"Get started with Hostinger today!",
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				"Deploy your app and get 20% discount 🚀"
+			] }),
+			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+			imageUrl: "/images/prtnrs/hostinger.png"
+		}
+	];
 	const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 		className: "prtnr-lg",
