@@ -33561,6 +33561,17 @@ function Prtnr() {
 			] }),
 			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
 			imageUrl: "/images/prtnrs/hostinger.png"
+		},
+		{
+			link: "https://revolut.com/referral/?referral-code=vladimh4x",
+			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+				"Start using Revolut today!",
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				"Join me and over 70 million users 🚀"
+			] }),
+			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+			imageUrl: "/images/prtnrs/revolut.png"
 		}
 	];
 	const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)];
