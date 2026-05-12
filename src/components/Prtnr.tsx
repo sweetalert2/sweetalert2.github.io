@@ -1,6 +1,6 @@
 export function Prtnr() {
   const prtnrs = [
-    // Hostinger Web Hosting
+    // Trade Republic
     {
       link: 'https://refnocode.trade.re/gt06b1m7',
       title: (
@@ -13,6 +13,21 @@ export function Prtnr() {
       ),
       description: <></>,
       imageUrl: '/images/prtnrs/trade-republic.png',
+    },
+
+    // DigitalOcean
+    {
+      link: 'https://m.do.co/c/12907f2ba0bf',
+      title: (
+        <b>
+          Get started with DigitalOcean today!
+          <br />
+          <br />
+          Deploy your app and get $25 in credit 🚀
+        </b>
+      ),
+      description: <></>,
+      imageUrl: '/images/prtnrs/digitalocean.png',
     },
   ]
 
