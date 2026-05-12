@@ -1,5 +1,5 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-C2t5-QOR.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-5lWq6yLU.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-CaEP4PbA.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-CP0G4Ban.js";
 //#region recipe-gallery/sidebars-drawers.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var html = (await __vitePreload(async () => {

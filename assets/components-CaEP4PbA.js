@@ -33538,6 +33538,16 @@ function Prtnr() {
 		] }),
 		description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
 		imageUrl: "/images/prtnrs/trade-republic.png"
+	}, {
+		link: "https://m.do.co/c/12907f2ba0bf",
+		title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+			"Get started with DigitalOcean today!",
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+			"Deploy your app and get $100 in credit 🚀"
+		] }),
+		description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+		imageUrl: "/images/prtnrs/digitalocean.png"
 	}];
 	const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
