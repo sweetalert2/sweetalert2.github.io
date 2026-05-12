@@ -44,6 +44,21 @@ export function Prtnr() {
       description: <></>,
       imageUrl: '/images/prtnrs/hostinger.png',
     },
+
+    // Revolut
+    {
+      link: 'https://revolut.com/referral/?referral-code=vladimh4x',
+      title: (
+        <b>
+          Start using Revolut today!
+          <br />
+          <br />
+          Join me and over 70 million users 🚀
+        </b>
+      ),
+      description: <></>,
+      imageUrl: '/images/prtnrs/revolut.png',
+    },
   ]
 
   const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)]
