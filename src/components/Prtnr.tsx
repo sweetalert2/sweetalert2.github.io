@@ -29,6 +29,21 @@ export function Prtnr() {
       description: <></>,
       imageUrl: '/images/prtnrs/digitalocean.png',
     },
+
+    // Hostinger
+    {
+      link: 'https://www.hostinger.com?REFERRALCODE=BKZHOSTINDAB',
+      title: (
+        <b>
+          Get started with Hostinger today!
+          <br />
+          <br />
+          Deploy your website and get 20% discount 🚀
+        </b>
+      ),
+      description: <></>,
+      imageUrl: '/images/prtnrs/hostinger.png',
+    },
   ]
 
   const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)]
