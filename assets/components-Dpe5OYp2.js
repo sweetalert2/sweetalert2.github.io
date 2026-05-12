@@ -33557,7 +33557,7 @@ function Prtnr() {
 				"Get started with Hostinger today!",
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Deploy your app and get 20% discount 🚀"
+				"Deploy your website and get 20% discount 🚀"
 			] }),
 			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
 			imageUrl: "/images/prtnrs/hostinger.png"
