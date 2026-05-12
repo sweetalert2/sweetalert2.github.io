@@ -518,6 +518,11 @@ a.prtnr-lg {
   text-align: start;
   text-decoration: none;
 
+  b {
+    display: block;
+    margin: 10px 10px 0;
+  }
+
   &:hover {
     border: 2px solid #bbb;
 
