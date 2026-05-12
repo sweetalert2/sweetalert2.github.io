@@ -33544,7 +33544,7 @@ function Prtnr() {
 			"Get started with DigitalOcean today!",
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-			"Deploy your app and get $100 in credit 🚀"
+			"Deploy your app and get $25 in credit 🚀"
 		] }),
 		description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
 		imageUrl: "/images/prtnrs/digitalocean.png"
