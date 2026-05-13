@@ -59,6 +59,24 @@ export function Prtnr() {
       description: <></>,
       imageUrl: '/images/prtnrs/revolut.png',
     },
+
+    // Deel
+    {
+      link: 'https://deel.com/referrals/Vladimir-356KvXWR',
+      title: (
+        <b>
+          Hire and pay global teams easily with Deel!
+          <br />
+          <br />
+          Fast, compliant payroll and HR for remote businesses worldwide.
+          <br />
+          <br />
+          Start today with $500 in Deel credits 🚀
+        </b>
+      ),
+      description: <></>,
+      imageUrl: '/images/prtnrs/deel.webp',
+    },
   ]
 
   const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)]
