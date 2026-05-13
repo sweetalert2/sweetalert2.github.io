@@ -33572,6 +33572,20 @@ function Prtnr() {
 			] }),
 			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
 			imageUrl: "/images/prtnrs/revolut.png"
+		},
+		{
+			link: "https://deel.com/referrals/Vladimir-356KvXWR",
+			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
+				"Hire and pay global teams easily with Deel!",
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				"Fast, compliant payroll and HR for remote businesses worldwide.",
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+				"Start today with $500 in Deel credits 🚀"
+			] }),
+			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
+			imageUrl: "/images/prtnrs/deel.webp"
 		}
 	];
 	const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)];
