@@ -7625,15 +7625,15 @@ var init_db = __esmMin((() => {
 		"x-shader/x-vertex": { "compressible": true }
 	};
 }));
+/*!
+* mime-db
+* Copyright(c) 2014 Jonathan Ong
+* Copyright(c) 2015-2022 Douglas Christopher Wilson
+* MIT Licensed
+*/
 //#endregion
 //#region node_modules/@codesandbox/sandpack-client/dist/clients/runtime/index.mjs
 var import_mime_db = /* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
-	/*!
-	* mime-db
-	* Copyright(c) 2014 Jonathan Ong
-	* Copyright(c) 2015-2022 Douglas Christopher Wilson
-	* MIT Licensed
-	*/
 	/**
 	* Module exports.
 	*/
