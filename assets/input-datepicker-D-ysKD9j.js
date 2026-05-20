@@ -32,7 +32,7 @@ function Recipe() {
 			dependencies: {
 				"react": "^19.0.0",
 				"react-dom": "^19.0.0",
-				"react-day-picker": "^9.0.0",
+				"react-day-picker": "^10.0.0",
 				"date-fns": "^4.0.0"
 			},
 			entry: "/App.tsx",
