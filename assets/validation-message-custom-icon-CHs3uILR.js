@@ -1,5 +1,5 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-BBtVUIOP.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-C8qHGd1H.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-dv9sIHLQ.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-BW4GAPxk.js";
 //#region recipe-gallery/validation-message-custom-icon.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var html = (await __vitePreload(async () => {

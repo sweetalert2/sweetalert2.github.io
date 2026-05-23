@@ -3194,9 +3194,6 @@ tr:hover .hover-anchor {
   --swal2-show-animation: none;
   --swal2-hide-animation: none;
 
-  /* ICONS */
-  --swal2-icon-animations: false;
-
   /* INPUT */
   --swal2-input-border-radius: 0;
   --swal2-input-box-shadow: none;
@@ -3222,6 +3219,18 @@ tr:hover .hover-anchor {
   --swal2-toast-hide-animation: none;
   --swal2-toast-border: 1px solid rgba(0, 0, 0, 0.3);
   --swal2-toast-box-shadow: none;
+}
+
+/* ICON ANIMATIONS */
+[data-swal2-theme='minimal'] div:where(.swal2-icon).swal2-icon-show,
+[data-swal2-theme='minimal'] div:where(.swal2-icon).swal2-icon-show .swal2-x-mark,
+[data-swal2-theme='minimal'] div:where(.swal2-icon).swal2-icon-show .swal2-icon-content,
+[data-swal2-theme='minimal'] div:where(.swal2-icon).swal2-icon-show .swal2-success-line-tip,
+[data-swal2-theme='minimal'] div:where(.swal2-icon).swal2-icon-show .swal2-success-line-long,
+[data-swal2-theme='minimal'] div:where(.swal2-icon).swal2-icon-show .swal2-success-circular-line-right,
+[data-swal2-theme='minimal'] .swal2-toast .swal2-icon-show .swal2-success-line-tip,
+[data-swal2-theme='minimal'] .swal2-toast .swal2-icon-show .swal2-success-line-long {
+  animation: none;
 }
 [data-swal2-theme='bulma'],
 [data-swal2-theme='bulma-light'],
