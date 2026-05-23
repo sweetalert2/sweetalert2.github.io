@@ -1,4 +1,5 @@
 export * from './Nav'
+export * from './CodeWithCopy'
 export * from './Prtnr'
 export * from './Header'
 export * from './Showcase'

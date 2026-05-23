@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CodeExample } from './CodeExample'
+import { CodeWithCopy } from './CodeWithCopy'
 // import { Partners } from './Partners'
 
 export function Installation() {
@@ -8,9 +9,9 @@ export function Installation() {
       <div className="center-container download-section">
         <h3 id="download">Download &amp; install</h3>
         <pre>
-          <code>
+          <CodeWithCopy>
             <span className="unselectable">$ </span>npm install sweetalert2
-          </code>
+          </CodeWithCopy>
         </pre>
         <p>
           Or grab from{' '}

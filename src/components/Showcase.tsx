@@ -7,7 +7,7 @@ export function Showcase() {
       <div className="showcase normal">
         <div className="normal-alert">Normal alert</div>
         <button onClick={examples.normalAlert.fn}>Show normal alert</button>
-        <CodeExample code={examples.normalAlert.fnString} />
+        <CodeExample code={examples.normalAlert.fnString} withoutCopy withoutCodepen />
         <div className="vs-icon"></div>
       </div>
 
