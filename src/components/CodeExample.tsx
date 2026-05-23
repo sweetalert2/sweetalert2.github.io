@@ -5,6 +5,7 @@ import langPhp from 'highlight.js/lib/languages/php'
 
 import { useEffect, useRef, useState } from 'react'
 import type { MouseEventHandler, RefObject } from 'react'
+import { CodeWithCopy } from './CodeWithCopy'
 
 type CodeExampleProps = {
   code: string
@@ -12,6 +13,7 @@ type CodeExampleProps = {
   codepenHtml?: string
   codepenCssExternal?: string
   withoutCodepen?: boolean
+  withoutCopy?: boolean
 } & React.HTMLAttributes<HTMLPreElement>
 
 export function CodeExample({
@@ -20,6 +22,7 @@ export function CodeExample({
   codepenHtml,
   codepenCssExternal,
   withoutCodepen,
+  withoutCopy = false,
   ...props
 }: CodeExampleProps) {
   const codeRef = useRef(null) as RefObject<HTMLElement | null>
@@ -82,7 +85,11 @@ export function CodeExample({
     <>
       <pre className={withoutCodepen ? '' : 'code-sample'} onClick={openInCodepen} {...props}>
         {codeSyntaxHighlighted ? '' : <code ref={codeRef}>{code}</code>}
-        <code dangerouslySetInnerHTML={{ __html: codeSyntaxHighlighted || '' }} tabIndex={-1} />
+        {withoutCopy ? (
+          <code dangerouslySetInnerHTML={{ __html: codeSyntaxHighlighted || '' }} tabIndex={-1} />
+        ) : (
+          <CodeWithCopy dangerouslySetInnerHTML={{ __html: codeSyntaxHighlighted || '' }} tabIndex={-1} />
+        )}
       </pre>
       <form action="https://codepen.io/pen/define" method="POST" target="_blank" ref={codepenForm}>
         <input type="hidden" name="data" ref={codepenFormData} />
