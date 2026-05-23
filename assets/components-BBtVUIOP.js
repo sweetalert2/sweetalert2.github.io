@@ -33526,6 +33526,53 @@ function renderRecipe(component) {
 	import_client.createRoot(document.querySelector(".app-root")).render(component);
 }
 //#endregion
+//#region src/components/CodeWithCopy.tsx
+/**
+* A <code> element with a hover-revealed click-to-copy button.
+* Strips `.unselectable` children (e.g. "$ " prompts) from the copied text.
+*/
+function CodeWithCopy({ children, ...props }) {
+	const codeRef = (0, import_react.useRef)(null);
+	const [copied, setCopied] = (0, import_react.useState)(false);
+	/** @param {React.MouseEvent} e */
+	const handleCopy = (e) => {
+		e.stopPropagation();
+		if (!codeRef.current) return;
+		const clone = codeRef.current.cloneNode(true);
+		clone.querySelectorAll(".unselectable").forEach((el) => el.remove());
+		navigator.clipboard.writeText(clone.textContent?.trim() ?? "");
+		setCopied(true);
+		setTimeout(() => setCopied(false), 2e3);
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+		className: "code-with-copy",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+			ref: codeRef,
+			...props,
+			children
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+			className: "copy-btn",
+			onClick: handleCopy,
+			"aria-label": "Copy to clipboard",
+			children: copied ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+				xmlns: "http://www.w3.org/2000/svg",
+				viewBox: "0 0 16 16",
+				width: "14",
+				height: "14",
+				fill: "currentColor",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z" })
+			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+				xmlns: "http://www.w3.org/2000/svg",
+				viewBox: "0 0 16 16",
+				width: "14",
+				height: "14",
+				fill: "currentColor",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z" })]
+			})
+		})]
+	});
+}
+//#endregion
 //#region src/components/Prtnr.tsx
 function Prtnr() {
 	const prtnrs = [
@@ -37434,7 +37481,7 @@ function php(hljs) {
 }
 //#endregion
 //#region src/components/CodeExample.tsx
-function CodeExample({ code, language = "javascript", codepenHtml, codepenCssExternal, withoutCodepen, ...props }) {
+function CodeExample({ code, language = "javascript", codepenHtml, codepenCssExternal, withoutCodepen, withoutCopy = false, ...props }) {
 	const codeRef = (0, import_react.useRef)(null);
 	const codepenForm = (0, import_react.useRef)(null);
 	const codepenFormData = (0, import_react.useRef)(null);
@@ -37476,7 +37523,10 @@ function CodeExample({ code, language = "javascript", codepenHtml, codepenCssExt
 		children: [codeSyntaxHighlighted ? "" : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
 			ref: codeRef,
 			children: code
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+		}), withoutCopy ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+			dangerouslySetInnerHTML: { __html: codeSyntaxHighlighted || "" },
+			tabIndex: -1
+		}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeWithCopy, {
 			dangerouslySetInnerHTML: { __html: codeSyntaxHighlighted || "" },
 			tabIndex: -1
 		})]
@@ -37506,7 +37556,11 @@ function Showcase() {
 				onClick: examples.normalAlert.fn,
 				children: "Show normal alert"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.normalAlert.fnString }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, {
+				code: examples.normalAlert.fnString,
+				withoutCopy: true,
+				withoutCodepen: true
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "vs-icon" })
 		]
 	}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -37765,7 +37819,7 @@ function Installation() {
 					id: "download",
 					children: "Download & install"
 				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("code", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CodeWithCopy, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "unselectable",
 					children: "$ "
 				}), "npm install sweetalert2"] }) }),

@@ -2512,7 +2512,7 @@ kbd {
 .showcase.normal {
   margin-right: 4px;
 }
-.showcase.normal button {
+.showcase.normal button:not(.copy-btn) {
   margin: 27px;
   padding: 8px 16px;
   font-size: 1.1em;
@@ -2541,10 +2541,10 @@ kbd {
 .showcase.sweet {
   padding-top: 14px;
 }
-.showcase.sweet button {
+.showcase.sweet button:not(.copy-btn) {
   margin: 8px auto 25px;
 }
-.showcase button {
+.showcase button:not(.copy-btn) {
   margin: 2em auto;
 }
 .showcase .vs-icon {
@@ -2863,6 +2863,34 @@ tr:hover .hover-anchor {
 }
 .unselectable {
   user-select: none;
+}
+.code-with-copy {
+  display: block;
+}
+.code-with-copy:hover .copy-btn {
+  opacity: 1;
+}
+.copy-btn {
+  display: flex;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
+  transition: opacity 0.2s ease-in-out, background 0.15s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.25em;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
 }
 @keyframes logo-bounce {
   0% {
