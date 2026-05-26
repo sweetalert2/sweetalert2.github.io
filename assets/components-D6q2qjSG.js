@@ -40710,20 +40710,6 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://weballoon.app/",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "weballoon",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/weballoon.png",
-							alt: "weballoon"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"weballoon"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://kryptot.fi/",
 					target: "_blank",
 					rel: "noopener",
