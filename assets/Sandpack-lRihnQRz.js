@@ -1,7 +1,7 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-D4mzdnAK.js","assets/base-80a1f760-CIH9BsLu.js","assets/utils-52664384-tXfMgvZN.js","assets/consoleHook-59e792cb-Cs6UZcBG.js","assets/index-599aeaf7-BWTrq5jS.js","assets/chunk-Bg1a8CIW.js","assets/runtime-eg3dFojV.js"])))=>i.map(i=>d[i]);
-import { a as __toESM, t as __commonJSMin } from "./chunk-Bg1a8CIW.js";
-import { v as require_jsx_runtime, y as require_react } from "./components-D6q2qjSG.js";
-import { a as __generator$1, d as normalizePath, m as dequal, r as __awaiter$1, s as addPackageJSONIfNeeded, u as extractErrorDetails } from "./utils-52664384-tXfMgvZN.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-3ablBi-x.js","assets/base-80a1f760-BP9QBmUn.js","assets/utils-52664384-CXDgtX4N.js","assets/consoleHook-59e792cb-x8Hg4Zgk.js","assets/index-599aeaf7-6r3LyHmP.js","assets/chunk-_TIqcEvS.js","assets/runtime-QR0dSec4.js"])))=>i.map(i=>d[i]);
+import { a as __toESM, t as __commonJSMin } from "./chunk-_TIqcEvS.js";
+import { v as require_jsx_runtime, y as require_react } from "./components-DY8rVf5_.js";
+import { a as __generator$1, d as normalizePath, m as dequal, r as __awaiter$1, s as addPackageJSONIfNeeded, u as extractErrorDetails } from "./utils-52664384-CXDgtX4N.js";
 //#region node_modules/@stitches/core/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime = require_jsx_runtime(), t$1 = "colors", n = "sizes", r$1 = "space", i$1 = {
 	gap: r$1,
@@ -867,19 +867,19 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
 						case "static": return [3, 3];
 					}
 					return [3, 5];
-				case 1: return [4, __vitePreload(() => import("./node-D4mzdnAK.js").then(function(m) {
+				case 1: return [4, __vitePreload(() => import("./node-3ablBi-x.js").then(function(m) {
 					return m.SandpackNode;
 				}), __vite__mapDeps([0,1,2,3]))];
 				case 2:
 					Client = _c.sent();
 					return [3, 7];
-				case 3: return [4, __vitePreload(() => import("./index-599aeaf7-BWTrq5jS.js").then(function(m) {
+				case 3: return [4, __vitePreload(() => import("./index-599aeaf7-6r3LyHmP.js").then(function(m) {
 					return m.SandpackStatic;
 				}), __vite__mapDeps([4,5,1,2,3]))];
 				case 4:
 					Client = _c.sent();
 					return [3, 7];
-				case 5: return [4, __vitePreload(() => import("./runtime-eg3dFojV.js").then(function(m) {
+				case 5: return [4, __vitePreload(() => import("./runtime-QR0dSec4.js").then(function(m) {
 					return m.SandpackRuntime;
 				}), __vite__mapDeps([6,5,1,2]))];
 				case 6:
@@ -1274,7 +1274,7 @@ var TextNode = class TextNode extends Text {
 		return chunked.length == 1 ? chunked[0] : new TextNode(chunked, length);
 	}
 };
-Text.empty = /* @__PURE__ */ new TextLeaf([""], 0);
+Text.empty = /*@__PURE__*/ new TextLeaf([""], 0);
 function textLength(text) {
 	let length = -1;
 	for (let line of text) length += line.length + 1;
@@ -1505,7 +1505,7 @@ var DefaultSplit = /\r\n?|\n/;
 /**
 Distinguishes different ways in which positions can be mapped.
 */
-var MapMode = /* @__PURE__ */ (function(MapMode) {
+var MapMode = /*@__PURE__*/ (function(MapMode) {
 	/**
 	Map a position to a valid new position, even when its context
 	was deleted.
@@ -2466,7 +2466,7 @@ function dynamicFacetSlot(addresses, facet, providers) {
 		}
 	};
 }
-var initField = /* @__PURE__ */ Facet.define({ static: true });
+var initField = /*@__PURE__*/ Facet.define({ static: true });
 /**
 Fields can store additional information in an editor state, and
 keep it in sync with the rest of the state.
@@ -2572,26 +2572,26 @@ var Prec = {
 	The highest precedence level, for extensions that should end up
 	near the start of the precedence ordering.
 	*/
-	highest: /* @__PURE__ */ prec(Prec_.highest),
+	highest: /*@__PURE__*/ prec(Prec_.highest),
 	/**
 	A higher-than-default precedence, for extensions that should
 	come before those with default precedence.
 	*/
-	high: /* @__PURE__ */ prec(Prec_.high),
+	high: /*@__PURE__*/ prec(Prec_.high),
 	/**
 	The default precedence, which is also used for extensions
 	without an explicit precedence.
 	*/
-	default: /* @__PURE__ */ prec(Prec_.default),
+	default: /*@__PURE__*/ prec(Prec_.default),
 	/**
 	A lower-than-default precedence.
 	*/
-	low: /* @__PURE__ */ prec(Prec_.low),
+	low: /*@__PURE__*/ prec(Prec_.low),
 	/**
 	The lowest precedence level. Meant for things that should end up
 	near the end of the extension order.
 	*/
-	lowest: /* @__PURE__ */ prec(Prec_.lowest)
+	lowest: /*@__PURE__*/ prec(Prec_.lowest)
 };
 var PrecExtension = class {
 	constructor(inner, prec) {
@@ -2745,19 +2745,19 @@ function ensureAddr(state, addr) {
 function getAddr(state, addr) {
 	return addr & 1 ? state.config.staticValues[addr >> 1] : state.values[addr >> 1];
 }
-var languageData = /* @__PURE__ */ Facet.define();
-var allowMultipleSelections = /* @__PURE__ */ Facet.define({
+var languageData = /*@__PURE__*/ Facet.define();
+var allowMultipleSelections = /*@__PURE__*/ Facet.define({
 	combine: (values) => values.some((v) => v),
 	static: true
 });
-var lineSeparator = /* @__PURE__ */ Facet.define({
+var lineSeparator = /*@__PURE__*/ Facet.define({
 	combine: (values) => values.length ? values[0] : void 0,
 	static: true
 });
-var changeFilter = /* @__PURE__ */ Facet.define();
-var transactionFilter = /* @__PURE__ */ Facet.define();
-var transactionExtender = /* @__PURE__ */ Facet.define();
-var readOnly = /* @__PURE__ */ Facet.define({ combine: (values) => values.length ? values[0] : false });
+var changeFilter = /*@__PURE__*/ Facet.define();
+var transactionFilter = /*@__PURE__*/ Facet.define();
+var transactionExtender = /*@__PURE__*/ Facet.define();
+var readOnly = /*@__PURE__*/ Facet.define({ combine: (values) => values.length ? values[0] : false });
 /**
 Annotations are tagged values that are used to add metadata to
 transactions in an extensible way. They should be used to model
@@ -2872,11 +2872,11 @@ the editor. Doing this will discard any extensions
 the content of [reconfigured](https://codemirror.net/6/docs/ref/#state.Compartment.reconfigure)
 compartments.
 */
-StateEffect.reconfigure = /* @__PURE__ */ StateEffect.define();
+StateEffect.reconfigure = /*@__PURE__*/ StateEffect.define();
 /**
 Append extensions to the top-level configuration of the editor.
 */
-StateEffect.appendConfig = /* @__PURE__ */ StateEffect.define();
+StateEffect.appendConfig = /*@__PURE__*/ StateEffect.define();
 /**
 Changes to the editor state are grouped into transactions.
 Typically, a user action creates a single transaction, which may
@@ -2978,7 +2978,7 @@ var Transaction = class Transaction {
 Annotation used to store transaction timestamps. Automatically
 added to every transaction, holding `Date.now()`.
 */
-Transaction.time = /* @__PURE__ */ Annotation.define();
+Transaction.time = /*@__PURE__*/ Annotation.define();
 /**
 Annotation used to associate a transaction with a user interface
 event. Holds a string identifying the event, using a
@@ -3005,19 +3005,19 @@ information. The events used by the core libraries are:
 Use [`isUserEvent`](https://codemirror.net/6/docs/ref/#state.Transaction.isUserEvent) to check
 whether the annotation matches a given event.
 */
-Transaction.userEvent = /* @__PURE__ */ Annotation.define();
+Transaction.userEvent = /*@__PURE__*/ Annotation.define();
 /**
 Annotation indicating whether a transaction should be added to
 the undo history or not.
 */
-Transaction.addToHistory = /* @__PURE__ */ Annotation.define();
+Transaction.addToHistory = /*@__PURE__*/ Annotation.define();
 /**
 Annotation indicating (when present and true) that a transaction
 represents a change made by some other actor, not the user. This
 is used, for example, to tag other people's changes in
 collaborative editing.
 */
-Transaction.remote = /* @__PURE__ */ Annotation.define();
+Transaction.remote = /*@__PURE__*/ Annotation.define();
 function joinRanges(a, b) {
 	let result = [];
 	for (let iA = 0, iB = 0;;) {
@@ -3124,7 +3124,7 @@ The categories produced by a [character
 categorizer](https://codemirror.net/6/docs/ref/#state.EditorState.charCategorizer). These are used
 do things like selecting by word.
 */
-var CharCategory = /* @__PURE__ */ (function(CharCategory) {
+var CharCategory = /*@__PURE__*/ (function(CharCategory) {
 	/**
 	Word characters.
 	*/
@@ -3142,7 +3142,7 @@ var CharCategory = /* @__PURE__ */ (function(CharCategory) {
 var nonASCIISingleCaseWordChar = /[\u00df\u0587\u0590-\u05f4\u0600-\u06ff\u3040-\u309f\u30a0-\u30ff\u3400-\u4db5\u4e00-\u9fcc\uac00-\ud7af]/;
 var wordChar;
 try {
-	wordChar = /* @__PURE__ */ new RegExp("[\\p{Alphabetic}\\p{Number}_]", "u");
+	wordChar = /*@__PURE__*/ new RegExp("[\\p{Alphabetic}\\p{Number}_]", "u");
 } catch (_) {}
 function hasWordChar(str) {
 	if (wordChar) return wordChar.test(str);
@@ -3480,7 +3480,7 @@ Configures the tab size to use in this state. The first
 (highest-precedence) value of the facet is used. If no value is
 given, this defaults to 4.
 */
-EditorState.tabSize = /* @__PURE__ */ Facet.define({ combine: (values) => values.length ? values[0] : 4 });
+EditorState.tabSize = /*@__PURE__*/ Facet.define({ combine: (values) => values.length ? values[0] : 4 });
 /**
 The line separator to use. By default, any of `"\n"`, `"\r\n"`
 and `"\r"` is treated as a separator when splitting lines, and
@@ -3511,7 +3511,7 @@ Registers translation phrases. The
 all objects registered with this facet to find translations for
 its argument.
 */
-EditorState.phrases = /* @__PURE__ */ Facet.define({ compare(a, b) {
+EditorState.phrases = /*@__PURE__*/ Facet.define({ compare(a, b) {
 	let kA = Object.keys(a), kB = Object.keys(b);
 	return kA.length == kB.length && kA.every((k) => a[k] == b[k]);
 } });
@@ -3569,7 +3569,7 @@ but do want to process every transaction.
 Extenders run _after_ filters, when both are present.
 */
 EditorState.transactionExtender = transactionExtender;
-Compartment.reconfigure = /* @__PURE__ */ StateEffect.define();
+Compartment.reconfigure = /*@__PURE__*/ StateEffect.define();
 /**
 Utility function for combining behaviors to fill in a config
 object from an array of provided configs. `defaults` should hold
@@ -3909,7 +3909,7 @@ var RangeSet = class RangeSet {
 /**
 The empty set of ranges.
 */
-RangeSet.empty = /* @__PURE__ */ new RangeSet([], [], null, -1);
+RangeSet.empty = /*@__PURE__*/ new RangeSet([], [], null, -1);
 function lazySort(ranges) {
 	if (ranges.length > 1) for (let prev = ranges[0], i = 1; i < ranges.length; i++) {
 		let cur = ranges[i];
@@ -4322,7 +4322,7 @@ function findColumn(string, col, tabSize, strict) {
 //#endregion
 //#region node_modules/style-mod/src/style-mod.js
 var C = "ͼ";
-var COUNT = typeof Symbol == "undefined" ? "__" + C : Symbol.for(C);
+var COUNT = typeof Symbol == "undefined" ? "__ͼ" : Symbol.for(C);
 var SET = typeof Symbol == "undefined" ? "__styleSet" + Math.floor(Math.random() * 1e8) : Symbol("styleSet");
 var top = typeof globalThis != "undefined" ? globalThis : typeof window != "undefined" ? window : {};
 var StyleModule = class {
@@ -4520,31 +4520,31 @@ var nav = typeof navigator != "undefined" ? navigator : {
 	platform: ""
 };
 var doc = typeof document != "undefined" ? document : { documentElement: { style: {} } };
-var ie_edge = /* @__PURE__ */ /Edge\/(\d+)/.exec(nav.userAgent);
-var ie_upto10 = /* @__PURE__ */ /MSIE \d/.test(nav.userAgent);
-var ie_11up = /* @__PURE__ */ /Trident\/(?:[7-9]|\d{2,})\..*rv:(\d+)/.exec(nav.userAgent);
+var ie_edge = /*@__PURE__*/ /Edge\/(\d+)/.exec(nav.userAgent);
+var ie_upto10 = /*@__PURE__*/ /MSIE \d/.test(nav.userAgent);
+var ie_11up = /*@__PURE__*/ /Trident\/(?:[7-9]|\d{2,})\..*rv:(\d+)/.exec(nav.userAgent);
 var ie = !!(ie_upto10 || ie_11up || ie_edge);
-var gecko = !ie && /* @__PURE__ */ /gecko\/(\d+)/i.test(nav.userAgent);
-var chrome = !ie && /* @__PURE__ */ /Chrome\/(\d+)/.exec(nav.userAgent);
+var gecko = !ie && /*@__PURE__*/ /gecko\/(\d+)/i.test(nav.userAgent);
+var chrome = !ie && /*@__PURE__*/ /Chrome\/(\d+)/.exec(nav.userAgent);
 var webkit = "webkitFontSmoothing" in doc.documentElement.style;
-var safari = !ie && /* @__PURE__ */ /Apple Computer/.test(nav.vendor);
-var ios = safari && (/* @__PURE__ */ /Mobile\/\w+/.test(nav.userAgent) || nav.maxTouchPoints > 2);
+var safari = !ie && /*@__PURE__*/ /Apple Computer/.test(nav.vendor);
+var ios = safari && (/*@__PURE__*/ /Mobile\/\w+/.test(nav.userAgent) || nav.maxTouchPoints > 2);
 var browser = {
-	mac: ios || /* @__PURE__ */ /Mac/.test(nav.platform),
-	windows: /* @__PURE__ */ /Win/.test(nav.platform),
-	linux: /* @__PURE__ */ /Linux|X11/.test(nav.platform),
+	mac: ios || /*@__PURE__*/ /Mac/.test(nav.platform),
+	windows: /*@__PURE__*/ /Win/.test(nav.platform),
+	linux: /*@__PURE__*/ /Linux|X11/.test(nav.platform),
 	ie,
 	ie_version: ie_upto10 ? doc.documentMode || 6 : ie_11up ? +ie_11up[1] : ie_edge ? +ie_edge[1] : 0,
 	gecko,
-	gecko_version: gecko ? +(/* @__PURE__ */ /Firefox\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
+	gecko_version: gecko ? +(/*@__PURE__*/ /Firefox\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
 	chrome: !!chrome,
 	chrome_version: chrome ? +chrome[1] : 0,
 	ios,
-	android: /* @__PURE__ */ /Android\b/.test(nav.userAgent),
+	android: /*@__PURE__*/ /Android\b/.test(nav.userAgent),
 	webkit,
-	webkit_version: webkit ? +(/* @__PURE__ */ /\bAppleWebKit\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
+	webkit_version: webkit ? +(/*@__PURE__*/ /\bAppleWebKit\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
 	safari,
-	safari_version: safari ? +(/* @__PURE__ */ /\bVersion\/(\d+(\.\d+)?)/.exec(nav.userAgent) || [0, 0])[1] : 0,
+	safari_version: safari ? +(/*@__PURE__*/ /\bVersion\/(\d+(\.\d+)?)/.exec(nav.userAgent) || [0, 0])[1] : 0,
 	tabSize: doc.documentElement.style.tabSize != null ? "tab-size" : "-moz-tab-size"
 };
 function combineAttrs(source, target) {
@@ -4553,7 +4553,7 @@ function combineAttrs(source, target) {
 	else target[name] = source[name];
 	return target;
 }
-var noAttrs = /* @__PURE__ */ Object.create(null);
+var noAttrs = /*@__PURE__*/ Object.create(null);
 function attrsEq(a, b, ignore) {
 	if (a == b) return true;
 	if (!a) a = noAttrs;
@@ -4693,7 +4693,7 @@ var WidgetType = class {
 /**
 The different types of blocks that can occur in an editor view.
 */
-var BlockType = /* @__PURE__ */ (function(BlockType) {
+var BlockType = /*@__PURE__*/ (function(BlockType) {
 	/**
 	A line of text.
 	*/
@@ -5214,7 +5214,7 @@ var DOMPos = class DOMPos {
 /**
 Used to indicate [text direction](https://codemirror.net/6/docs/ref/#view.EditorView.textDirection).
 */
-var Direction = /* @__PURE__ */ (function(Direction) {
+var Direction = /*@__PURE__*/ (function(Direction) {
 	/**
 	Left-to-right.
 	*/
@@ -5231,15 +5231,15 @@ function dec(str) {
 	for (let i = 0; i < str.length; i++) result.push(1 << +str[i]);
 	return result;
 }
-var LowTypes = /* @__PURE__ */ dec("88888888888888888888888888888888888666888888787833333333337888888000000000000000000000000008888880000000000000000000000000088888888888888888888888888888888888887866668888088888663380888308888800000000000000000000000800000000000000000000000000000008");
-var ArabicTypes = /* @__PURE__ */ dec("4444448826627288999999999992222222222222222222222222222222222222222222222229999999999999999999994444444444644222822222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222999999949999999229989999223333333333");
-var Brackets = /* @__PURE__ */ Object.create(null), BracketStack = [];
+var LowTypes = /*@__PURE__*/ dec("88888888888888888888888888888888888666888888787833333333337888888000000000000000000000000008888880000000000000000000000000088888888888888888888888888888888888887866668888088888663380888308888800000000000000000000000800000000000000000000000000000008");
+var ArabicTypes = /*@__PURE__*/ dec("4444448826627288999999999992222222222222222222222222222222222222222222222229999999999999999999994444444444644222822222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222999999949999999229989999223333333333");
+var Brackets = /*@__PURE__*/ Object.create(null), BracketStack = [];
 for (let p of [
 	"()",
 	"[]",
 	"{}"
 ]) {
-	let l = /* @__PURE__ */ p.charCodeAt(0), r = /* @__PURE__ */ p.charCodeAt(1);
+	let l = /*@__PURE__*/ p.charCodeAt(0), r = /*@__PURE__*/ p.charCodeAt(1);
 	Brackets[l] = r;
 	Brackets[r] = -l;
 }
@@ -5512,18 +5512,18 @@ function autoDirection(text, from, to) {
 	}
 	return LTR;
 }
-var clickAddsSelectionRange = /* @__PURE__ */ Facet.define();
-var dragMovesSelection$1 = /* @__PURE__ */ Facet.define();
-var mouseSelectionStyle = /* @__PURE__ */ Facet.define();
-var exceptionSink = /* @__PURE__ */ Facet.define();
-var updateListener = /* @__PURE__ */ Facet.define();
-var inputHandler$1 = /* @__PURE__ */ Facet.define();
-var focusChangeEffect = /* @__PURE__ */ Facet.define();
-var clipboardInputFilter = /* @__PURE__ */ Facet.define();
-var clipboardOutputFilter = /* @__PURE__ */ Facet.define();
-var perLineTextDirection = /* @__PURE__ */ Facet.define({ combine: (values) => values.some((x) => x) });
-var nativeSelectionHidden = /* @__PURE__ */ Facet.define({ combine: (values) => values.some((x) => x) });
-var scrollHandler = /* @__PURE__ */ Facet.define();
+var clickAddsSelectionRange = /*@__PURE__*/ Facet.define();
+var dragMovesSelection$1 = /*@__PURE__*/ Facet.define();
+var mouseSelectionStyle = /*@__PURE__*/ Facet.define();
+var exceptionSink = /*@__PURE__*/ Facet.define();
+var updateListener = /*@__PURE__*/ Facet.define();
+var inputHandler$1 = /*@__PURE__*/ Facet.define();
+var focusChangeEffect = /*@__PURE__*/ Facet.define();
+var clipboardInputFilter = /*@__PURE__*/ Facet.define();
+var clipboardOutputFilter = /*@__PURE__*/ Facet.define();
+var perLineTextDirection = /*@__PURE__*/ Facet.define({ combine: (values) => values.some((x) => x) });
+var nativeSelectionHidden = /*@__PURE__*/ Facet.define({ combine: (values) => values.some((x) => x) });
+var scrollHandler = /*@__PURE__*/ Facet.define();
 var ScrollTarget = class ScrollTarget {
 	constructor(range, y, x, yMargin, xMargin, isSnapshot = false) {
 		this.range = range;
@@ -5540,8 +5540,8 @@ var ScrollTarget = class ScrollTarget {
 		return this.range.to <= state.doc.length ? this : new ScrollTarget(EditorSelection.cursor(state.doc.length), this.y, this.x, this.yMargin, this.xMargin, this.isSnapshot);
 	}
 };
-var scrollIntoView = /* @__PURE__ */ StateEffect.define({ map: (t, ch) => t.map(ch) });
-var setEditContextFormatting = /* @__PURE__ */ StateEffect.define();
+var scrollIntoView = /*@__PURE__*/ StateEffect.define({ map: (t, ch) => t.map(ch) });
+var setEditContextFormatting = /*@__PURE__*/ StateEffect.define();
 /**
 Log or report an unhandled exception in client code. Should
 probably only be used by extension code that allows client code to
@@ -5561,9 +5561,9 @@ function logException(state, exception, context) {
 	else if (context) console.error(context + ":", exception);
 	else console.error(exception);
 }
-var editable = /* @__PURE__ */ Facet.define({ combine: (values) => values.length ? values[0] : true });
+var editable = /*@__PURE__*/ Facet.define({ combine: (values) => values.length ? values[0] : true });
 var nextPluginID = 0;
-var viewPlugin = /* @__PURE__ */ Facet.define({ combine(plugins) {
+var viewPlugin = /*@__PURE__*/ Facet.define({ combine(plugins) {
 	return plugins.filter((p, i) => {
 		for (let j = 0; j < i; j++) if (plugins[j].plugin == p.plugin) return false;
 		return true;
@@ -5666,13 +5666,13 @@ var PluginInstance = class {
 		this.spec = this.value = null;
 	}
 };
-var editorAttributes = /* @__PURE__ */ Facet.define();
-var contentAttributes = /* @__PURE__ */ Facet.define();
-var decorations = /* @__PURE__ */ Facet.define();
-var blockWrappers = /* @__PURE__ */ Facet.define();
-var outerDecorations = /* @__PURE__ */ Facet.define();
-var atomicRanges = /* @__PURE__ */ Facet.define();
-var bidiIsolatedRanges = /* @__PURE__ */ Facet.define();
+var editorAttributes = /*@__PURE__*/ Facet.define();
+var contentAttributes = /*@__PURE__*/ Facet.define();
+var decorations = /*@__PURE__*/ Facet.define();
+var blockWrappers = /*@__PURE__*/ Facet.define();
+var outerDecorations = /*@__PURE__*/ Facet.define();
+var atomicRanges = /*@__PURE__*/ Facet.define();
+var bidiIsolatedRanges = /*@__PURE__*/ Facet.define();
 function getIsolatedRanges(view, line) {
 	let isolates = view.state.facet(bidiIsolatedRanges);
 	if (!isolates.length) return isolates;
@@ -5704,7 +5704,7 @@ function getIsolatedRanges(view, line) {
 	});
 	return result;
 }
-var scrollMargins = /* @__PURE__ */ Facet.define();
+var scrollMargins = /*@__PURE__*/ Facet.define();
 function getScrollMargins(view) {
 	let left = 0, right = 0, top = 0, bottom = 0;
 	for (let source of view.state.facet(scrollMargins)) {
@@ -5723,7 +5723,7 @@ function getScrollMargins(view) {
 		bottom
 	};
 }
-var styleModule = /* @__PURE__ */ Facet.define();
+var styleModule = /*@__PURE__*/ Facet.define();
 var ChangedRange = class ChangedRange {
 	constructor(fromA, toA, fromB, toB) {
 		this.fromA = fromA;
@@ -6870,9 +6870,9 @@ var NullWidget = class extends WidgetType {
 		return true;
 	}
 };
-NullWidget.inline = /* @__PURE__ */ new NullWidget("span");
-NullWidget.block = /* @__PURE__ */ new NullWidget("div");
-var BreakWidget = /* @__PURE__ */ new class extends WidgetType {
+NullWidget.inline = /*@__PURE__*/ new NullWidget("span");
+NullWidget.block = /*@__PURE__*/ new NullWidget("div");
+var BreakWidget = /*@__PURE__*/ new class extends WidgetType {
 	toDOM() {
 		return document.createElement("br");
 	}
@@ -7947,7 +7947,7 @@ function applyDOMChange(view, domChange) {
 			insert: Text.of(domChange.text.slice(sel.from - from, selEnd).split(LineBreakPlaceholder))
 		};
 		else if (diff = findDiff(cmp, domChange.text, preferredPos - from, preferredSide)) {
-			if (browser.chrome && lastKey == 13 && diff.toB == diff.from + 2 && domChange.text.slice(diff.from, diff.toB) == LineBreakPlaceholder + LineBreakPlaceholder) diff.toB--;
+			if (browser.chrome && lastKey == 13 && diff.toB == diff.from + 2 && domChange.text.slice(diff.from, diff.toB) == "￿￿") diff.toB--;
 			change = {
 				from: from + diff.from,
 				to: from + diff.toA,
@@ -8429,8 +8429,8 @@ function eventBelongsToEditor(view, event) {
 	for (let node = event.target, tile; node != view.contentDOM; node = node.parentNode) if (!node || node.nodeType == 11 || (tile = Tile.get(node)) && tile.isWidget() && !tile.isHidden && tile.widget.ignoreEvent(event)) return false;
 	return true;
 }
-var handlers = /* @__PURE__ */ Object.create(null);
-var observers = /* @__PURE__ */ Object.create(null);
+var handlers = /*@__PURE__*/ Object.create(null);
+var observers = /*@__PURE__*/ Object.create(null);
 var brokenClipboardAPI = browser.ie && browser.ie_version < 15 || browser.ios && browser.webkit_version < 604;
 function capturePaste(view) {
 	let parent = view.dom.parentNode;
@@ -8742,7 +8742,7 @@ handlers.copy = handlers.cut = (view, event) => {
 		return false;
 	}
 };
-var isFocusChange = /* @__PURE__ */ Annotation.define();
+var isFocusChange = /*@__PURE__*/ Annotation.define();
 function focusChangeTransaction(state, focus) {
 	let effects = [];
 	for (let getEffect of state.facet(focusChangeEffect)) {
@@ -8833,7 +8833,7 @@ handlers.beforeinput = (view, event) => {
 	if (browser.safari && event.inputType == "insertText" && view.inputState.composing >= 0) setTimeout(() => observers.compositionend(view, event), 20);
 	return false;
 };
-var appliedFirefoxHack = /* @__PURE__ */ new Set();
+var appliedFirefoxHack = /*@__PURE__*/ new Set();
 function firefoxCopyCutHack(doc) {
 	if (!appliedFirefoxHack.has(doc)) {
 		appliedFirefoxHack.add(doc);
@@ -8974,7 +8974,7 @@ var BlockInfo = class BlockInfo {
 		return new BlockInfo(this.from, this.length + other.length, this.top, this.height + other.height, content);
 	}
 };
-var QueryType = /* @__PURE__ */ (function(QueryType) {
+var QueryType = /*@__PURE__*/ (function(QueryType) {
 	QueryType[QueryType["ByPos"] = 0] = "ByPos";
 	QueryType[QueryType["ByHeight"] = 1] = "ByHeight";
 	QueryType[QueryType["ByPosNoHeight"] = 2] = "ByPosNoHeight";
@@ -9072,7 +9072,7 @@ function replace(old, val) {
 	return val;
 }
 HeightMap.prototype.size = 1;
-var SpaceDeco = /* @__PURE__ */ Decoration.replace({});
+var SpaceDeco = /*@__PURE__*/ Decoration.replace({});
 var HeightMapBlock = class extends HeightMap {
 	constructor(length, height, deco) {
 		super(length, height);
@@ -10038,9 +10038,9 @@ function scaleBlock(block, scaler) {
 	let bTop = scaler.toDOM(block.top), bBottom = scaler.toDOM(block.bottom);
 	return new BlockInfo(block.from, block.length, bTop, bBottom - bTop, Array.isArray(block._content) ? block._content.map((b) => scaleBlock(b, scaler)) : block._content);
 }
-var theme = /* @__PURE__ */ Facet.define({ combine: (strs) => strs.join(" ") });
-var darkTheme = /* @__PURE__ */ Facet.define({ combine: (values) => values.indexOf(true) > -1 });
-var baseThemeID = /* @__PURE__ */ StyleModule.newName(), baseLightID = /* @__PURE__ */ StyleModule.newName(), baseDarkID = /* @__PURE__ */ StyleModule.newName();
+var theme = /*@__PURE__*/ Facet.define({ combine: (strs) => strs.join(" ") });
+var darkTheme = /*@__PURE__*/ Facet.define({ combine: (values) => values.indexOf(true) > -1 });
+var baseThemeID = /*@__PURE__*/ StyleModule.newName(), baseLightID = /*@__PURE__*/ StyleModule.newName(), baseDarkID = /*@__PURE__*/ StyleModule.newName();
 var lightDarkIDs = {
 	"&light": "." + baseLightID,
 	"&dark": "." + baseDarkID
@@ -10054,7 +10054,7 @@ function buildTheme(main, spec, scopes) {
 		}) : main + " " + sel;
 	} });
 }
-var baseTheme$1$1 = /* @__PURE__ */ buildTheme("." + baseThemeID, {
+var baseTheme$1$1 = /*@__PURE__*/ buildTheme("." + baseThemeID, {
 	"&": {
 		position: "relative !important",
 		boxSizing: "border-box",
@@ -11858,7 +11858,7 @@ view keeps it away from the sides of the editor, either as a
 single pixel number or two different values for the different
 axes. Defaults to 5 pixels on both axes.
 */
-EditorView.cursorScrollMargin = /* @__PURE__ */ Facet.define({ combine: (inputs) => {
+EditorView.cursorScrollMargin = /*@__PURE__*/ Facet.define({ combine: (inputs) => {
 	let x = 5, y = 5;
 	for (let i of inputs) if (typeof i == "number") x = y = i;
 	else ({x, y} = i);
@@ -11888,7 +11888,7 @@ Provides a Content Security Policy nonce to use when creating
 the style sheets for the editor. Holds the empty string when no
 nonce has been provided.
 */
-EditorView.cspNonce = /* @__PURE__ */ Facet.define({ combine: (values) => values.length ? values[0] : "" });
+EditorView.cspNonce = /*@__PURE__*/ Facet.define({ combine: (values) => values.length ? values[0] : "" });
 /**
 Facet that provides additional DOM attributes for the editor's
 editable DOM element.
@@ -11903,7 +11903,7 @@ EditorView.editorAttributes = editorAttributes;
 An extension that enables line wrapping in the editor (by
 setting CSS `white-space` to `pre-wrap` in the content).
 */
-EditorView.lineWrapping = /* @__PURE__ */ EditorView.contentAttributes.of({ "class": "cm-lineWrapping" });
+EditorView.lineWrapping = /*@__PURE__*/ EditorView.contentAttributes.of({ "class": "cm-lineWrapping" });
 /**
 State effect used to include screen reader announcements in a
 transaction. These will be added to the DOM in a visually hidden
@@ -11912,7 +11912,7 @@ describe effects that are visually obvious but may not be
 noticed by screen reader users (such as moving to the next
 search match).
 */
-EditorView.announce = /* @__PURE__ */ StateEffect.define();
+EditorView.announce = /*@__PURE__*/ StateEffect.define();
 var MaxBidiLine = 4096;
 var BadMeasure = {};
 var CachedOrder = class CachedOrder {
@@ -11970,7 +11970,7 @@ function modifiers(name, event, shift) {
 	if (shift !== false && event.shiftKey) name = "Shift-" + name;
 	return name;
 }
-var handleKeyEvents = /* @__PURE__ */ Prec.default(/* @__PURE__ */ EditorView.domEventHandlers({ keydown(event, view) {
+var handleKeyEvents = /*@__PURE__*/ Prec.default(/*@__PURE__*/ EditorView.domEventHandlers({ keydown(event, view) {
 	return runHandlers(getKeymap(view.state), event, view, "editor");
 } }));
 /**
@@ -11981,8 +11981,8 @@ determine their precedence (the ones specified early or with high
 priority get checked first). When a handler has returned `true`
 for a given key, no further handlers are called.
 */
-var keymap = /* @__PURE__ */ Facet.define({ enables: handleKeyEvents });
-var Keymaps = /* @__PURE__ */ new WeakMap();
+var keymap = /*@__PURE__*/ Facet.define({ enables: handleKeyEvents });
+var Keymaps = /*@__PURE__*/ new WeakMap();
 function getKeymap(state) {
 	let bindings = state.facet(keymap);
 	let map = Keymaps.get(bindings);
@@ -12202,7 +12202,7 @@ var MatchDecorator = class {
 	}
 };
 var UnicodeRegexpSupport = /x/.unicode != null ? "gu" : "g";
-var Specials = /* @__PURE__ */ new RegExp("[\0-\b\n--­؜​‎‏\u2028\u2029‭‮⁦⁧⁩﻿￹-￼]", UnicodeRegexpSupport);
+var Specials = /*@__PURE__*/ new RegExp("[\0-\b\n--­؜​‎‏\u2028\u2029‭‮⁦⁧⁩﻿￹-￼]", UnicodeRegexpSupport);
 var Names = {
 	0: "null",
 	7: "bell",
@@ -12235,7 +12235,7 @@ function supportsTabSize() {
 	}
 	return _supportsTabSize || false;
 }
-var specialCharConfig = /* @__PURE__ */ Facet.define({ combine(configs) {
+var specialCharConfig = /*@__PURE__*/ Facet.define({ combine(configs) {
 	let config = combineConfig(configs, {
 		render: null,
 		specialChars: Specials,
@@ -12344,8 +12344,8 @@ DOM class.
 function highlightActiveLine() {
 	return activeLineHighlighter$1;
 }
-var lineDeco$1 = /* @__PURE__ */ Decoration.line({ class: "cm-activeLine" });
-var activeLineHighlighter$1 = /* @__PURE__ */ ViewPlugin.fromClass(class {
+var lineDeco$1 = /*@__PURE__*/ Decoration.line({ class: "cm-activeLine" });
+var activeLineHighlighter$1 = /*@__PURE__*/ ViewPlugin.fromClass(class {
 	constructor(view) {
 		this.decorations = this.getDeco(view);
 	}
@@ -12400,14 +12400,14 @@ Markers given to this facet should _only_ define an
 [`toDOM`](https://codemirror.net/6/docs/ref/#view.GutterMarker.toDOM) (or the marker will appear
 in all gutters for the line).
 */
-var gutterLineClass = /* @__PURE__ */ Facet.define();
+var gutterLineClass = /*@__PURE__*/ Facet.define();
 /**
 Facet used to add a class to all gutter elements next to a widget.
 Should not provide widgets with a `toDOM` method.
 */
-var gutterWidgetClass = /* @__PURE__ */ Facet.define();
-var activeGutters = /* @__PURE__ */ Facet.define();
-var unfixGutters = /* @__PURE__ */ Facet.define({ combine: (values) => values.some((x) => x) });
+var gutterWidgetClass = /*@__PURE__*/ Facet.define();
+var activeGutters = /*@__PURE__*/ Facet.define();
+var unfixGutters = /*@__PURE__*/ Facet.define({ combine: (values) => values.some((x) => x) });
 /**
 The gutter-drawing plugin is automatically enabled when you add a
 gutter, but you can use this function to explicitly configure it.
@@ -12423,7 +12423,7 @@ function gutters(config) {
 	if (config && config.fixed === false) result.push(unfixGutters.of(true));
 	return result;
 }
-var gutterView = /* @__PURE__ */ ViewPlugin.fromClass(class {
+var gutterView = /*@__PURE__*/ ViewPlugin.fromClass(class {
 	constructor(view) {
 		this.view = view;
 		this.domAfter = null;
@@ -12692,12 +12692,12 @@ function sameMarkers(a, b) {
 /**
 Facet used to provide markers to the line number gutter.
 */
-var lineNumberMarkers = /* @__PURE__ */ Facet.define();
+var lineNumberMarkers = /*@__PURE__*/ Facet.define();
 /**
 Facet used to create markers in the line number gutter next to widgets.
 */
-var lineNumberWidgetMarker = /* @__PURE__ */ Facet.define();
-var lineNumberConfig = /* @__PURE__ */ Facet.define({ combine(values) {
+var lineNumberWidgetMarker = /*@__PURE__*/ Facet.define();
+var lineNumberConfig = /*@__PURE__*/ Facet.define({ combine(values) {
 	return combineConfig(values, {
 		formatNumber: String,
 		domEventHandlers: {}
@@ -12725,7 +12725,7 @@ var NumberMarker = class extends GutterMarker {
 function formatNumber(view, number) {
 	return view.state.facet(lineNumberConfig).formatNumber(number, view.state);
 }
-var lineNumberGutter = /* @__PURE__ */ activeGutters.compute([lineNumberConfig], (state) => ({
+var lineNumberGutter = /*@__PURE__*/ activeGutters.compute([lineNumberConfig], (state) => ({
 	class: "cm-lineNumbers",
 	renderEmptyElements: false,
 	markers(view) {
@@ -15523,7 +15523,7 @@ var _a$10;
 Node prop stored in a parser's top syntax node to provide the
 facet that stores language-specific data for that language.
 */
-var languageDataProp = /* @__PURE__ */ new NodeProp();
+var languageDataProp = /*@__PURE__*/ new NodeProp();
 /**
 Helper function to define a facet (to be added to the top syntax
 node(s) for a language via
@@ -15539,7 +15539,7 @@ function defineLanguageFacet(baseData) {
 Syntax node prop used to register sublanguages. Should be added to
 the top level node type for the language.
 */
-var sublanguageProp = /* @__PURE__ */ new NodeProp();
+var sublanguageProp = /*@__PURE__*/ new NodeProp();
 /**
 A language object manages parsing and per-language
 [metadata](https://codemirror.net/6/docs/ref/#state.EditorState.languageDataAt). Parse data is
@@ -15642,7 +15642,7 @@ var Language = class {
 /**
 @internal
 */
-Language.setState = /* @__PURE__ */ StateEffect.define();
+Language.setState = /*@__PURE__*/ StateEffect.define();
 function topNodeAt(state, pos, side) {
 	let topLang = state.facet(language), tree = syntaxTree(state).topNode;
 	if (!topLang || topLang.allowsNesting) {
@@ -15961,7 +15961,7 @@ var LanguageState = class LanguageState {
 		return new LanguageState(parseState);
 	}
 };
-Language.state = /* @__PURE__ */ StateField.define({
+Language.state = /*@__PURE__*/ StateField.define({
 	create: LanguageState.init,
 	update(value, tr) {
 		for (let e of tr.effects) if (e.is(Language.setState)) return e.value;
@@ -15980,7 +15980,7 @@ if (typeof requestIdleCallback != "undefined") requestIdle = (callback) => {
 	return () => idle < 0 ? clearTimeout(timeout) : cancelIdleCallback(idle);
 };
 var isInputPending = typeof navigator != "undefined" && ((_a$10 = navigator.scheduling) === null || _a$10 === void 0 ? void 0 : _a$10.isInputPending) ? () => navigator.scheduling.isInputPending() : null;
-var parseWorker = /* @__PURE__ */ ViewPlugin.fromClass(class ParseWorker {
+var parseWorker = /*@__PURE__*/ ViewPlugin.fromClass(class ParseWorker {
 	constructor(view) {
 		this.view = view;
 		this.working = null;
@@ -16049,7 +16049,7 @@ by `Language` object's `extension` property (so you don't need to
 manually wrap your languages in this). Can be used to access the
 current language on a state.
 */
-var language = /* @__PURE__ */ Facet.define({
+var language = /*@__PURE__*/ Facet.define({
 	combine(languages) {
 		return languages.length ? languages[0] : null;
 	},
@@ -16088,13 +16088,13 @@ determined, and the line should inherit the indentation of the one
 above it. A return value of `undefined` defers to the next indent
 service.
 */
-var indentService = /* @__PURE__ */ Facet.define();
+var indentService = /*@__PURE__*/ Facet.define();
 /**
 Facet for overriding the unit by which indentation happens. Should
 be a string consisting entirely of the same whitespace character.
 When not set, this defaults to 2 spaces.
 */
-var indentUnit = /* @__PURE__ */ Facet.define({ combine: (values) => {
+var indentUnit = /*@__PURE__*/ Facet.define({ combine: (values) => {
 	if (!values.length) return "  ";
 	let unit = values[0];
 	if (!unit || /\S/.test(unit) || Array.from(unit).some((e) => e != unit[0])) throw new Error("Invalid indent unit: " + JSON.stringify(values[0]));
@@ -16240,7 +16240,7 @@ context to a column number (see also
 [`indentString`](https://codemirror.net/6/docs/ref/#language.indentString)) or null, where null
 indicates that no definitive indentation can be determined.
 */
-var indentNodeProp = /* @__PURE__ */ new NodeProp();
+var indentNodeProp = /*@__PURE__*/ new NodeProp();
 function syntaxIndentation(cx, ast, pos) {
 	let stack = ast.resolveStack(pos);
 	let inner = ast.resolveInner(pos, -1).resolve(pos, 0).enterUnfinishedNodesBefore(pos);
@@ -16411,7 +16411,7 @@ syntax node types. Given a syntax node, it should check whether
 that tree is foldable and return the range that can be collapsed
 when it is.
 */
-var foldNodeProp = /* @__PURE__ */ new NodeProp();
+var foldNodeProp = /*@__PURE__*/ new NodeProp();
 /**
 [Fold](https://codemirror.net/6/docs/ref/#language.foldNodeProp) function that folds everything but
 the first and the last child of a syntax node. Useful for nodes
@@ -16466,8 +16466,8 @@ var HighlightStyle = class HighlightStyle {
 		return new HighlightStyle(specs, options || {});
 	}
 };
-var highlighterFacet = /* @__PURE__ */ Facet.define();
-var fallbackHighlighter = /* @__PURE__ */ Facet.define({ combine(values) {
+var highlighterFacet = /*@__PURE__*/ Facet.define();
+var fallbackHighlighter = /*@__PURE__*/ Facet.define({ combine(values) {
 	return values.length ? [values[0]] : null;
 } });
 function getHighlighters(state) {
@@ -16523,14 +16523,14 @@ var TreeHighlighter = class {
 		return builder.finish();
 	}
 };
-var treeHighlighter = /* @__PURE__ */ Prec.high(/* @__PURE__ */ ViewPlugin.fromClass(TreeHighlighter, { decorations: (v) => v.decorations }));
+var treeHighlighter = /*@__PURE__*/ Prec.high(/*@__PURE__*/ ViewPlugin.fromClass(TreeHighlighter, { decorations: (v) => v.decorations }));
 tags$1.meta, tags$1.link, tags$1.heading, tags$1.emphasis, tags$1.strong, tags$1.strikethrough, tags$1.keyword, tags$1.atom, tags$1.bool, tags$1.url, tags$1.contentSeparator, tags$1.labelName, tags$1.literal, tags$1.inserted, tags$1.string, tags$1.deleted, tags$1.regexp, tags$1.escape, tags$1.string, tags$1.variableName, tags$1.variableName, tags$1.typeName, tags$1.namespace, tags$1.className, tags$1.variableName, tags$1.macroName, tags$1.propertyName, tags$1.comment, tags$1.invalid;
-var baseTheme$1 = /* @__PURE__ */ EditorView.baseTheme({
+var baseTheme$1 = /*@__PURE__*/ EditorView.baseTheme({
 	"&.cm-focused .cm-matchingBracket": { backgroundColor: "#328c8252" },
 	"&.cm-focused .cm-nonmatchingBracket": { backgroundColor: "#bb555544" }
 });
 var DefaultScanDist = 1e4, DefaultBrackets = "()[]{}";
-var bracketMatchingConfig = /* @__PURE__ */ Facet.define({ combine(configs) {
+var bracketMatchingConfig = /*@__PURE__*/ Facet.define({ combine(configs) {
 	return combineConfig(configs, {
 		afterCursor: true,
 		brackets: DefaultBrackets,
@@ -16538,7 +16538,7 @@ var bracketMatchingConfig = /* @__PURE__ */ Facet.define({ combine(configs) {
 		renderMatch: defaultRenderMatch
 	});
 } });
-var matchingMark = /* @__PURE__ */ Decoration.mark({ class: "cm-matchingBracket" }), nonmatchingMark = /* @__PURE__ */ Decoration.mark({ class: "cm-nonmatchingBracket" });
+var matchingMark = /*@__PURE__*/ Decoration.mark({ class: "cm-matchingBracket" }), nonmatchingMark = /*@__PURE__*/ Decoration.mark({ class: "cm-nonmatchingBracket" });
 function defaultRenderMatch(match) {
 	let decorations = [];
 	let mark = match.matched ? matchingMark : nonmatchingMark;
@@ -16588,7 +16588,7 @@ a node, a ‘handle’—the part of the node that is highlighted, and
 that the cursor must be on to activate highlighting in the first
 place.
 */
-var bracketMatchingHandle = /* @__PURE__ */ new NodeProp();
+var bracketMatchingHandle = /*@__PURE__*/ new NodeProp();
 function matchingNodes(node, dir, brackets) {
 	let byProp = node.prop(dir < 0 ? NodeProp.openedBy : NodeProp.closedBy);
 	if (byProp) return byProp;
@@ -16695,11 +16695,11 @@ function matchPlainBrackets(state, pos, dir, tree, tokenType, maxScanDistance, b
 		matched: false
 	} : null;
 }
-var noTokens = /* @__PURE__ */ Object.create(null);
+var noTokens = /*@__PURE__*/ Object.create(null);
 var typeArray = [NodeType.none];
 var warned = [];
-var byTag = /* @__PURE__ */ Object.create(null);
-var defaultTable = /* @__PURE__ */ Object.create(null);
+var byTag = /*@__PURE__*/ Object.create(null);
+var defaultTable = /*@__PURE__*/ Object.create(null);
 for (let [legacyName, name] of [
 	["variable", "variableName"],
 	["variable-2", "variableName.special"],
@@ -16713,7 +16713,7 @@ for (let [legacyName, name] of [
 	["error", "invalid"],
 	["header", "heading"],
 	["property", "propertyName"]
-]) defaultTable[legacyName] = /* @__PURE__ */ createTokenType(noTokens, name);
+]) defaultTable[legacyName] = /*@__PURE__*/ createTokenType(noTokens, name);
 function warnForPart(part, msg) {
 	if (warned.indexOf(part) > -1) return;
 	warned.push(part);
@@ -16796,9 +16796,9 @@ function ifNotIn(nodes, source) {
 This annotation is added to transactions that are produced by
 picking a completion.
 */
-var pickedCompletion = /* @__PURE__ */ Annotation.define();
+var pickedCompletion = /*@__PURE__*/ Annotation.define();
 typeof navigator == "object" && navigator.platform;
-var baseTheme = /* @__PURE__ */ EditorView.baseTheme({
+var baseTheme = /*@__PURE__*/ EditorView.baseTheme({
 	".cm-tooltip.cm-tooltip-autocomplete": { "& > ul": {
 		fontFamily: "monospace",
 		whiteSpace: "nowrap",
@@ -16977,7 +16977,7 @@ var Snippet = class Snippet {
 		return new Snippet(lines, positions);
 	}
 };
-var fieldMarker = /* @__PURE__ */ Decoration.widget({ widget: /* @__PURE__ */ new class extends WidgetType {
+var fieldMarker = /*@__PURE__*/ Decoration.widget({ widget: /*@__PURE__*/ new class extends WidgetType {
 	toDOM() {
 		let span = document.createElement("span");
 		span.className = "cm-snippetFieldPosition";
@@ -16987,7 +16987,7 @@ var fieldMarker = /* @__PURE__ */ Decoration.widget({ widget: /* @__PURE__ */ ne
 		return false;
 	}
 }() });
-var fieldRange = /* @__PURE__ */ Decoration.mark({ class: "cm-snippetField" });
+var fieldRange = /*@__PURE__*/ Decoration.mark({ class: "cm-snippetField" });
 var ActiveSnippet = class ActiveSnippet {
 	constructor(ranges, active) {
 		this.ranges = ranges;
@@ -17007,11 +17007,11 @@ var ActiveSnippet = class ActiveSnippet {
 		return sel.ranges.every((range) => this.ranges.some((r) => r.field == this.active && r.from <= range.from && r.to >= range.to));
 	}
 };
-var setActive = /* @__PURE__ */ StateEffect.define({ map(value, changes) {
+var setActive = /*@__PURE__*/ StateEffect.define({ map(value, changes) {
 	return value && value.map(changes);
 } });
-var moveToField = /* @__PURE__ */ StateEffect.define();
-var snippetState = /* @__PURE__ */ StateField.define({
+var moveToField = /*@__PURE__*/ StateEffect.define();
+var snippetState = /*@__PURE__*/ StateField.define({
 	create() {
 		return null;
 	},
@@ -17123,10 +17123,10 @@ snippets. The default binds Tab to
 [`prevSnippetField`](https://codemirror.net/6/docs/ref/#autocomplete.prevSnippetField), and Escape
 to [`clearSnippet`](https://codemirror.net/6/docs/ref/#autocomplete.clearSnippet).
 */
-var snippetKeymap = /* @__PURE__ */ Facet.define({ combine(maps) {
+var snippetKeymap = /*@__PURE__*/ Facet.define({ combine(maps) {
 	return maps.length ? maps[0] : defaultSnippetKeymap;
 } });
-var addSnippetKeymap = /* @__PURE__ */ Prec.highest(/* @__PURE__ */ keymap.compute([snippetKeymap], (state) => state.facet(snippetKeymap)));
+var addSnippetKeymap = /*@__PURE__*/ Prec.highest(/*@__PURE__*/ keymap.compute([snippetKeymap], (state) => state.facet(snippetKeymap)));
 /**
 Create a completion from a snippet. Returns an object with the
 properties from `completion`, plus an `apply` function that
@@ -17138,7 +17138,7 @@ function snippetCompletion(template, completion) {
 		apply: snippet(template)
 	};
 }
-var snippetPointerHandler = /* @__PURE__ */ EditorView.domEventHandlers({ mousedown(event, view) {
+var snippetPointerHandler = /*@__PURE__*/ EditorView.domEventHandlers({ mousedown(event, view) {
 	let active = view.state.field(snippetState, false), pos;
 	if (!active || (pos = view.posAtCoords({
 		x: event.clientX,
@@ -17164,14 +17164,14 @@ var defaults = {
 	before: ")]}:;>",
 	stringPrefixes: []
 };
-var closeBracketEffect = /* @__PURE__ */ StateEffect.define({ map(value, mapping) {
+var closeBracketEffect = /*@__PURE__*/ StateEffect.define({ map(value, mapping) {
 	let mapped = mapping.mapPos(value, -1, MapMode.TrackAfter);
 	return mapped == null ? void 0 : mapped;
 } });
-var closedBracket = /* @__PURE__ */ new class extends RangeValue {}();
+var closedBracket = /*@__PURE__*/ new class extends RangeValue {}();
 closedBracket.startSide = 1;
 closedBracket.endSide = -1;
-var bracketState = /* @__PURE__ */ StateField.define({
+var bracketState = /*@__PURE__*/ StateField.define({
 	create() {
 		return RangeSet.empty;
 	},
@@ -17203,8 +17203,8 @@ function closing(ch) {
 function config(state, pos) {
 	return state.languageDataAt("closeBrackets", pos)[0] || defaults;
 }
-var android$1 = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
-var inputHandler = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, insert) => {
+var android$1 = typeof navigator == "object" && /*@__PURE__*/ /Android\b/.test(navigator.userAgent);
+var inputHandler = /*@__PURE__*/ EditorView.inputHandler.of((view, from, to, insert) => {
 	if ((android$1 ? view.composing : view.compositionStarted) || view.state.readOnly) return false;
 	let sel = view.state.selection.main;
 	if (insert.length > 2 || insert.length == 2 && codePointSize(codePointAt(insert, 0)) == 1 || from != sel.from || to != sel.to) return false;
@@ -17447,19 +17447,19 @@ The line comment syntax is taken from the
 [`commentTokens`](https://codemirror.net/6/docs/ref/#commands.CommentTokens) [language
 data](https://codemirror.net/6/docs/ref/#state.EditorState.languageDataAt).
 */
-var toggleLineComment = /* @__PURE__ */ command(changeLineComment, 0);
+var toggleLineComment = /*@__PURE__*/ command(changeLineComment, 0);
 /**
 Comment or uncomment the current selection using block comments.
 The block comment syntax is taken from the
 [`commentTokens`](https://codemirror.net/6/docs/ref/#commands.CommentTokens) [language
 data](https://codemirror.net/6/docs/ref/#state.EditorState.languageDataAt).
 */
-var toggleBlockComment = /* @__PURE__ */ command(changeBlockComment, 0);
+var toggleBlockComment = /*@__PURE__*/ command(changeBlockComment, 0);
 /**
 Comment or uncomment the lines around the current selection using
 block comments.
 */
-var toggleBlockCommentByLine = /* @__PURE__ */ command((o, s) => changeBlockComment(o, s, selectedLineRanges(s)), 0);
+var toggleBlockCommentByLine = /*@__PURE__*/ command((o, s) => changeBlockComment(o, s, selectedLineRanges(s)), 0);
 function getConfig(state, pos) {
 	let data = state.languageDataAt("commentTokens", pos, 1);
 	return data.length ? data[0] : {};
@@ -17607,7 +17607,7 @@ function changeLineComment(option, state, ranges = state.selection.ranges) {
 	}
 	return null;
 }
-var fromHistory = /* @__PURE__ */ Annotation.define();
+var fromHistory = /*@__PURE__*/ Annotation.define();
 /**
 Transaction annotation that will prevent that transaction from
 being combined with other transactions in the undo history. Given
@@ -17615,7 +17615,7 @@ being combined with other transactions in the undo history. Given
 `"after"`, subsequent transactions won't be combined with this
 one. With `"full"`, the transaction is isolated on both sides.
 */
-var isolateHistory = /* @__PURE__ */ Annotation.define();
+var isolateHistory = /*@__PURE__*/ Annotation.define();
 /**
 This facet provides a way to register functions that, given a
 transaction, provide a set of effects that the history should
@@ -17623,8 +17623,8 @@ store when inverting the transaction. This can be used to
 integrate some kinds of effects in the history, so that they can
 be undone (and redone again).
 */
-var invertedEffects = /* @__PURE__ */ Facet.define();
-var historyConfig = /* @__PURE__ */ Facet.define({ combine(configs) {
+var invertedEffects = /*@__PURE__*/ Facet.define();
+var historyConfig = /*@__PURE__*/ Facet.define({ combine(configs) {
 	return combineConfig(configs, {
 		minDepth: 100,
 		newGroupDelay: 500,
@@ -17635,7 +17635,7 @@ var historyConfig = /* @__PURE__ */ Facet.define({ combine(configs) {
 		joinToEvent: (a, b) => (tr, adj) => a(tr, adj) || b(tr, adj)
 	});
 } });
-var historyField_ = /* @__PURE__ */ StateField.define({
+var historyField_ = /*@__PURE__*/ StateField.define({
 	create() {
 		return HistoryState.empty;
 	},
@@ -17699,20 +17699,20 @@ function cmd(side, selection) {
 Undo a single group of history events. Returns false if no group
 was available.
 */
-var undo = /* @__PURE__ */ cmd(0, false);
+var undo = /*@__PURE__*/ cmd(0, false);
 /**
 Redo a group of history events. Returns false if no group was
 available.
 */
-var redo = /* @__PURE__ */ cmd(1, false);
+var redo = /*@__PURE__*/ cmd(1, false);
 /**
 Undo a change or selection change.
 */
-var undoSelection = /* @__PURE__ */ cmd(0, true);
+var undoSelection = /*@__PURE__*/ cmd(0, true);
 /**
 Redo a change or selection change.
 */
-var redoSelection = /* @__PURE__ */ cmd(1, true);
+var redoSelection = /*@__PURE__*/ cmd(1, true);
 var HistEvent = class HistEvent {
 	constructor(changes, effects, mapped, startSelection, selectionsAfter) {
 		this.changes = changes;
@@ -17873,7 +17873,7 @@ var HistoryState = class HistoryState {
 		}
 	}
 };
-HistoryState.empty = /* @__PURE__ */ new HistoryState(none, none);
+HistoryState.empty = /*@__PURE__*/ new HistoryState(none, none);
 /**
 Default key bindings for the undo history.
 
@@ -18611,11 +18611,11 @@ will also delete that whitespace. When the cursor is between
 matching brackets, an additional newline will be inserted after
 the cursor.
 */
-var insertNewlineAndIndent = /* @__PURE__ */ newlineAndIndent(false);
+var insertNewlineAndIndent = /*@__PURE__*/ newlineAndIndent(false);
 /**
 Create a blank, indented line below the current line.
 */
-var insertBlankLine = /* @__PURE__ */ newlineAndIndent(true);
+var insertBlankLine = /*@__PURE__*/ newlineAndIndent(true);
 function newlineAndIndent(atEof) {
 	return ({ state, dispatch }) => {
 		if (state.readOnly) return false;
@@ -18857,7 +18857,7 @@ property changed to `mac`.)
 - Cmd-Backspace (macOS): [`deleteLineBoundaryBackward`](https://codemirror.net/6/docs/ref/#commands.deleteLineBoundaryBackward).
 - Cmd-Delete (macOS): [`deleteLineBoundaryForward`](https://codemirror.net/6/docs/ref/#commands.deleteLineBoundaryForward).
 */
-var standardKeymap = /* @__PURE__ */ [
+var standardKeymap = /*@__PURE__*/ [
 	{
 		key: "ArrowLeft",
 		run: cursorCharLeft,
@@ -19002,7 +19002,7 @@ var standardKeymap = /* @__PURE__ */ [
 		run: deleteLineBoundaryForward,
 		preventDefault: true
 	}
-].concat(/* @__PURE__ */ emacsStyleKeymap.map((b) => ({
+].concat(/*@__PURE__*/ emacsStyleKeymap.map((b) => ({
 	mac: b.key,
 	run: b.run,
 	shift: b.shift
@@ -19032,7 +19032,7 @@ The default keymap. Includes all bindings from
 - Shift-Alt-a: [`toggleBlockComment`](https://codemirror.net/6/docs/ref/#commands.toggleBlockComment).
 - Ctrl-m (Alt-Shift-m on macOS): [`toggleTabFocusMode`](https://codemirror.net/6/docs/ref/#commands.toggleTabFocusMode).
 */
-var defaultKeymap = /* @__PURE__ */ [
+var defaultKeymap = /*@__PURE__*/ [
 	{
 		key: "Alt-ArrowLeft",
 		mac: "Ctrl-ArrowLeft",
@@ -19874,7 +19874,7 @@ function createIntersectionObserver({ root = null, pollInterval = null, useMutat
 		unsubscribe: (callback) => callbacks.delete(callback)
 	};
 }
-var _intersectionObserver = /* @__PURE__ */ new Map();
+var _intersectionObserver = /*#__PURE__*/ new Map();
 function getIntersectionObserver(options) {
 	const { root, ...keys } = options;
 	const key = JSON.stringify(keys);
@@ -21633,7 +21633,7 @@ function properties() {
 	}
 	return _properties || [];
 }
-var pseudoClasses = /* @__PURE__ */ [
+var pseudoClasses = /*@__PURE__*/ [
 	"active",
 	"after",
 	"any-link",
@@ -21701,7 +21701,7 @@ var pseudoClasses = /* @__PURE__ */ [
 	type: "class",
 	label: name
 }));
-var values = /* @__PURE__ */ [
+var values = /*@__PURE__*/ [
 	"above",
 	"absolute",
 	"activeborder",
@@ -22124,7 +22124,7 @@ var values = /* @__PURE__ */ [
 ].map((name) => ({
 	type: "keyword",
 	label: name
-})).concat(/* @__PURE__ */ [
+})).concat(/*@__PURE__*/ [
 	"aliceblue",
 	"antiquewhite",
 	"aqua",
@@ -22271,7 +22271,7 @@ var values = /* @__PURE__ */ [
 	type: "constant",
 	label: name
 })));
-var tags = /* @__PURE__ */ [
+var tags = /*@__PURE__*/ [
 	"a",
 	"abbr",
 	"address",
@@ -22354,7 +22354,7 @@ var tags = /* @__PURE__ */ [
 	type: "type",
 	label: name
 }));
-var atRules = /* @__PURE__ */ [
+var atRules = /*@__PURE__*/ [
 	"@charset",
 	"@color-profile",
 	"@container",
@@ -22387,7 +22387,7 @@ function isVarArg(node, doc) {
 	if ((callee === null || callee === void 0 ? void 0 : callee.name) != "Callee") return false;
 	return doc.sliceString(callee.from, callee.to) == "var";
 }
-var VariablesByNode = /* @__PURE__ */ new NodeWeakMap();
+var VariablesByNode = /*@__PURE__*/ new NodeWeakMap();
 var declSelector = ["Declaration"];
 function astTop(node) {
 	for (let cur = node;;) {
@@ -22494,15 +22494,15 @@ var defineCSSCompletionSource = (isVariable) => (context) => {
 /**
 CSS property, variable, and value keyword completion source.
 */
-var cssCompletionSource = /* @__PURE__ */ defineCSSCompletionSource((n) => n.name == "VariableName");
+var cssCompletionSource = /*@__PURE__*/ defineCSSCompletionSource((n) => n.name == "VariableName");
 /**
 A language provider based on the [Lezer CSS
 parser](https://github.com/lezer-parser/css), extended with
 highlighting and indentation information.
 */
-var cssLanguage = /* @__PURE__ */ LRLanguage.define({
+var cssLanguage = /*@__PURE__*/ LRLanguage.define({
 	name: "css",
-	parser: /* @__PURE__ */ parser$2.configure({ props: [/* @__PURE__ */ indentNodeProp.add({ Declaration: /* @__PURE__ */ continuedIndent() }), /* @__PURE__ */ foldNodeProp.add({ "Block KeyframeList": foldInside })] }),
+	parser: /*@__PURE__*/ parser$2.configure({ props: [/*@__PURE__*/ indentNodeProp.add({ Declaration: /*@__PURE__*/ continuedIndent() }), /*@__PURE__*/ foldNodeProp.add({ "Block KeyframeList": foldInside })] }),
 	languageData: {
 		commentTokens: { block: {
 			open: "/*",
@@ -23422,57 +23422,57 @@ A collection of JavaScript-related
 [snippets](https://codemirror.net/6/docs/ref/#autocomplete.snippet).
 */
 var snippets = [
-	/* @__PURE__ */ snippetCompletion("function ${name}(${params}) {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("function ${name}(${params}) {\n	${}\n}", {
 		label: "function",
 		detail: "definition",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("for (let ${index} = 0; ${index} < ${bound}; ${index}++) {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("for (let ${index} = 0; ${index} < ${bound}; ${index}++) {\n	${}\n}", {
 		label: "for",
 		detail: "loop",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("for (let ${name} of ${collection}) {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("for (let ${name} of ${collection}) {\n	${}\n}", {
 		label: "for",
 		detail: "of loop",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("do {\n	${}\n} while (${})", {
+	/*@__PURE__*/ snippetCompletion("do {\n	${}\n} while (${})", {
 		label: "do",
 		detail: "loop",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("while (${}) {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("while (${}) {\n	${}\n}", {
 		label: "while",
 		detail: "loop",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("try {\n	${}\n} catch (${error}) {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("try {\n	${}\n} catch (${error}) {\n	${}\n}", {
 		label: "try",
 		detail: "/ catch block",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("if (${}) {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("if (${}) {\n	${}\n}", {
 		label: "if",
 		detail: "block",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("if (${}) {\n	${}\n} else {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("if (${}) {\n	${}\n} else {\n	${}\n}", {
 		label: "if",
 		detail: "/ else block",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("class ${name} {\n	constructor(${params}) {\n		${}\n	}\n}", {
+	/*@__PURE__*/ snippetCompletion("class ${name} {\n	constructor(${params}) {\n		${}\n	}\n}", {
 		label: "class",
 		detail: "definition",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("import {${names}} from \"${module}\"\n${}", {
+	/*@__PURE__*/ snippetCompletion("import {${names}} from \"${module}\"\n${}", {
 		label: "import",
 		detail: "named",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("import ${name} from \"${module}\"\n${}", {
+	/*@__PURE__*/ snippetCompletion("import ${name} from \"${module}\"\n${}", {
 		label: "import",
 		detail: "default",
 		type: "keyword"
@@ -23482,25 +23482,25 @@ var snippets = [
 A collection of snippet completions for TypeScript. Includes the
 JavaScript [snippets](https://codemirror.net/6/docs/ref/#lang-javascript.snippets).
 */
-var typescriptSnippets = /* @__PURE__ */ snippets.concat([
-	/* @__PURE__ */ snippetCompletion("interface ${name} {\n	${}\n}", {
+var typescriptSnippets = /*@__PURE__*/ snippets.concat([
+	/*@__PURE__*/ snippetCompletion("interface ${name} {\n	${}\n}", {
 		label: "interface",
 		detail: "definition",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("type ${name} = ${type}", {
+	/*@__PURE__*/ snippetCompletion("type ${name} = ${type}", {
 		label: "type",
 		detail: "definition",
 		type: "keyword"
 	}),
-	/* @__PURE__ */ snippetCompletion("enum ${name} {\n	${}\n}", {
+	/*@__PURE__*/ snippetCompletion("enum ${name} {\n	${}\n}", {
 		label: "enum",
 		detail: "definition",
 		type: "keyword"
 	})
 ]);
-var cache = /* @__PURE__ */ new NodeWeakMap();
-var ScopeNodes = /* @__PURE__ */ new Set([
+var cache = /*@__PURE__*/ new NodeWeakMap();
+var ScopeNodes = /*@__PURE__*/ new Set([
 	"Script",
 	"Block",
 	"FunctionExpression",
@@ -23518,12 +23518,12 @@ function defID(type) {
 }
 var functionContext = ["FunctionDeclaration"];
 var gatherCompletions = {
-	FunctionDeclaration: /* @__PURE__ */ defID("function"),
-	ClassDeclaration: /* @__PURE__ */ defID("class"),
+	FunctionDeclaration: /*@__PURE__*/ defID("function"),
+	ClassDeclaration: /*@__PURE__*/ defID("class"),
 	ClassExpression: () => true,
-	EnumDeclaration: /* @__PURE__ */ defID("constant"),
-	TypeAliasDeclaration: /* @__PURE__ */ defID("type"),
-	NamespaceDeclaration: /* @__PURE__ */ defID("namespace"),
+	EnumDeclaration: /*@__PURE__*/ defID("constant"),
+	TypeAliasDeclaration: /*@__PURE__*/ defID("type"),
+	NamespaceDeclaration: /*@__PURE__*/ defID("namespace"),
 	VariableDefinition(node, def) {
 		if (!node.matchContext(functionContext)) def(node, "variable");
 	},
@@ -23600,20 +23600,20 @@ A language provider based on the [Lezer JavaScript
 parser](https://github.com/lezer-parser/javascript), extended with
 highlighting and indentation information.
 */
-var javascriptLanguage = /* @__PURE__ */ LRLanguage.define({
+var javascriptLanguage = /*@__PURE__*/ LRLanguage.define({
 	name: "javascript",
-	parser: /* @__PURE__ */ parser.configure({ props: [/* @__PURE__ */ indentNodeProp.add({
-		IfStatement: /* @__PURE__ */ continuedIndent({ except: /^\s*({|else\b)/ }),
-		TryStatement: /* @__PURE__ */ continuedIndent({ except: /^\s*({|catch\b|finally\b)/ }),
+	parser: /*@__PURE__*/ parser.configure({ props: [/*@__PURE__*/ indentNodeProp.add({
+		IfStatement: /*@__PURE__*/ continuedIndent({ except: /^\s*({|else\b)/ }),
+		TryStatement: /*@__PURE__*/ continuedIndent({ except: /^\s*({|catch\b|finally\b)/ }),
 		LabeledStatement: flatIndent,
 		SwitchBody: (context) => {
 			let after = context.textAfter, closed = /^\s*\}/.test(after), isCase = /^\s*(case|default)\b/.test(after);
 			return context.baseIndent + (closed ? 0 : isCase ? 1 : 2) * context.unit;
 		},
-		Block: /* @__PURE__ */ delimitedIndent({ closing: "}" }),
+		Block: /*@__PURE__*/ delimitedIndent({ closing: "}" }),
 		ArrowFunction: (cx) => cx.baseIndent + cx.unit,
 		"TemplateString BlockComment": () => null,
-		"Statement Property": /* @__PURE__ */ continuedIndent({ except: /^\s*{/ }),
+		"Statement Property": /*@__PURE__*/ continuedIndent({ except: /^\s*{/ }),
 		JSXElement(context) {
 			let closed = /^\s*<\//.test(context.textAfter);
 			return context.lineIndent(context.node.from) + (closed ? 0 : context.unit);
@@ -23625,7 +23625,7 @@ var javascriptLanguage = /* @__PURE__ */ LRLanguage.define({
 		"JSXOpenTag JSXSelfClosingTag"(context) {
 			return context.column(context.node.from) + context.unit;
 		}
-	}), /* @__PURE__ */ foldNodeProp.add({
+	}), /*@__PURE__*/ foldNodeProp.add({
 		"Block ClassBody SwitchBody EnumBody ObjectExpression ArrayExpression ObjectType": foldInside,
 		BlockComment(tree) {
 			return {
@@ -23674,7 +23674,7 @@ var javascriptLanguage = /* @__PURE__ */ LRLanguage.define({
 });
 var jsxSublanguage = {
 	test: (node) => /^JSX/.test(node.name),
-	facet: /* @__PURE__ */ defineLanguageFacet({ commentTokens: { block: {
+	facet: /*@__PURE__*/ defineLanguageFacet({ commentTokens: { block: {
 		open: "{/*",
 		close: "*/}"
 	} } })
@@ -23682,27 +23682,27 @@ var jsxSublanguage = {
 /**
 A language provider for TypeScript.
 */
-var typescriptLanguage = /* @__PURE__ */ javascriptLanguage.configure({ dialect: "ts" }, "typescript");
+var typescriptLanguage = /*@__PURE__*/ javascriptLanguage.configure({ dialect: "ts" }, "typescript");
 /**
 Language provider for JSX.
 */
-var jsxLanguage = /* @__PURE__ */ javascriptLanguage.configure({
+var jsxLanguage = /*@__PURE__*/ javascriptLanguage.configure({
 	dialect: "jsx",
-	props: [/* @__PURE__ */ sublanguageProp.add((n) => n.isTop ? [jsxSublanguage] : void 0)]
+	props: [/*@__PURE__*/ sublanguageProp.add((n) => n.isTop ? [jsxSublanguage] : void 0)]
 });
 /**
 Language provider for JSX + TypeScript.
 */
-var tsxLanguage = /* @__PURE__ */ javascriptLanguage.configure({
+var tsxLanguage = /*@__PURE__*/ javascriptLanguage.configure({
 	dialect: "jsx ts",
-	props: [/* @__PURE__ */ sublanguageProp.add((n) => n.isTop ? [jsxSublanguage] : void 0)]
+	props: [/*@__PURE__*/ sublanguageProp.add((n) => n.isTop ? [jsxSublanguage] : void 0)]
 }, "typescript");
 var kwCompletion = (name) => ({
 	label: name,
 	type: "keyword"
 });
-var keywords = /* @__PURE__ */ "break case const continue default delete export extends false finally in instanceof let new return static super switch this throw true typeof var yield".split(" ").map(kwCompletion);
-var typescriptKeywords = /* @__PURE__ */ keywords.concat(/* @__PURE__ */ [
+var keywords = /*@__PURE__*/ "break case const continue default delete export extends false finally in instanceof let new return static super switch this throw true typeof var yield".split(" ").map(kwCompletion);
+var typescriptKeywords = /*@__PURE__*/ keywords.concat(/*@__PURE__*/ [
 	"declare",
 	"implements",
 	"private",
@@ -23733,12 +23733,12 @@ function elementName$1(doc, tree, max = doc.length) {
 	for (let ch = tree === null || tree === void 0 ? void 0 : tree.firstChild; ch; ch = ch.nextSibling) if (ch.name == "JSXIdentifier" || ch.name == "JSXBuiltin" || ch.name == "JSXNamespacedName" || ch.name == "JSXMemberExpression") return doc.sliceString(ch.from, Math.min(ch.to, max));
 	return "";
 }
-var android = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
+var android = typeof navigator == "object" && /*@__PURE__*/ /Android\b/.test(navigator.userAgent);
 /**
 Extension that will automatically insert JSX close tags when a `>` or
 `/` is typed.
 */
-var autoCloseTags$1 = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, text, defaultInsert) => {
+var autoCloseTags$1 = /*@__PURE__*/ EditorView.inputHandler.of((view, from, to, text, defaultInsert) => {
 	if ((android ? view.composing : view.compositionStarted) || view.state.readOnly || from != to || text != ">" && text != "/" || !javascriptLanguage.isActiveAt(view.state, from, -1)) return false;
 	let base = defaultInsert(), { state } = base;
 	let closeTags = state.changeByRange((range) => {
@@ -24359,7 +24359,7 @@ var GlobalAttrs = {
 		"search",
 		"tag"
 	],
-	role: /* @__PURE__ */ "alert application article banner button cell checkbox complementary contentinfo dialog document feed figure form grid gridcell heading img list listbox listitem main navigation region row rowgroup search switch tab table tabpanel textbox timer".split(" "),
+	role: /*@__PURE__*/ "alert application article banner button cell checkbox complementary contentinfo dialog document feed figure form grid gridcell heading img list listbox listitem main navigation region row rowgroup search switch tab table tabpanel textbox timer".split(" "),
 	"aria-activedescendant": null,
 	"aria-atomic": Bool,
 	"aria-autocomplete": [
@@ -24436,7 +24436,7 @@ var GlobalAttrs = {
 	"aria-valuenow": null,
 	"aria-valuetext": null
 };
-var eventAttributes = /* @__PURE__ */ "beforeunload copy cut dragstart dragover dragleave dragenter dragend drag paste focus blur change click load mousedown mouseenter mouseleave mouseup keydown keyup resize scroll unload".split(" ").map((n) => "on" + n);
+var eventAttributes = /*@__PURE__*/ "beforeunload copy cut dragstart dragover dragleave dragenter dragend drag paste focus blur change click load mousedown mouseenter mouseleave mouseup keydown keyup resize scroll unload".split(" ").map((n) => "on" + n);
 for (let a of eventAttributes) GlobalAttrs[a] = null;
 var Schema = class {
 	constructor(extraTags, extraAttrs) {
@@ -24452,7 +24452,7 @@ var Schema = class {
 		this.globalAttrNames = Object.keys(this.globalAttrs);
 	}
 };
-Schema.default = /* @__PURE__ */ new Schema();
+Schema.default = /*@__PURE__*/ new Schema();
 function elementName(doc, tree, max = doc.length) {
 	if (!tree) return "";
 	let tag = tree.firstChild;
@@ -24600,7 +24600,7 @@ function htmlCompletionSourceWith(config) {
 	let schema = extraAttrs || extraTags ? new Schema(extraTags, extraAttrs) : Schema.default;
 	return (context) => htmlCompletionFor(schema, context);
 }
-var jsonParser = /* @__PURE__ */ javascriptLanguage.parser.configure({ top: "SingleExpression" });
+var jsonParser = /*@__PURE__*/ javascriptLanguage.parser.configure({ top: "SingleExpression" });
 var defaultNesting = [
 	{
 		tag: "script",
@@ -24639,17 +24639,17 @@ var defaultNesting = [
 		parser: cssLanguage.parser
 	}
 ];
-var defaultAttrs = /* @__PURE__ */ [{
+var defaultAttrs = /*@__PURE__*/ [{
 	name: "style",
-	parser: /* @__PURE__ */ cssLanguage.parser.configure({ top: "Styles" })
-}].concat(/* @__PURE__ */ eventAttributes.map((name) => ({
+	parser: /*@__PURE__*/ cssLanguage.parser.configure({ top: "Styles" })
+}].concat(/*@__PURE__*/ eventAttributes.map((name) => ({
 	name,
 	parser: javascriptLanguage.parser
 })));
-var htmlPlain = /* @__PURE__ */ LRLanguage.define({
+var htmlPlain = /*@__PURE__*/ LRLanguage.define({
 	name: "html",
-	parser: /* @__PURE__ */ parser$1.configure({ props: [
-		/* @__PURE__ */ indentNodeProp.add({
+	parser: /*@__PURE__*/ parser$1.configure({ props: [
+		/*@__PURE__*/ indentNodeProp.add({
 			Element(context) {
 				let after = /^(\s*)(<\/)?/.exec(context.textAfter);
 				if (context.node.to <= context.pos + after[0].length) return context.continue();
@@ -24670,7 +24670,7 @@ var htmlPlain = /* @__PURE__ */ LRLanguage.define({
 				return null;
 			}
 		}),
-		/* @__PURE__ */ foldNodeProp.add({ Element(node) {
+		/*@__PURE__*/ foldNodeProp.add({ Element(node) {
 			let first = node.firstChild, last = node.lastChild;
 			if (!first || first.name != "OpenTag") return null;
 			return {
@@ -24678,7 +24678,7 @@ var htmlPlain = /* @__PURE__ */ LRLanguage.define({
 				to: last.name == "CloseTag" ? last.from : node.to
 			};
 		} }),
-		/* @__PURE__ */ bracketMatchingHandle.add({ "OpenTag CloseTag": (node) => node.getChild("TagName") })
+		/*@__PURE__*/ bracketMatchingHandle.add({ "OpenTag CloseTag": (node) => node.getChild("TagName") })
 	] }),
 	languageData: {
 		commentTokens: { block: {
@@ -24695,7 +24695,7 @@ parser](https://github.com/lezer-parser/html), extended with the
 JavaScript and CSS parsers to parse the content of `<script>` and
 `<style>` tags.
 */
-var htmlLanguage = /* @__PURE__ */ htmlPlain.configure({ wrap: /* @__PURE__ */ configureNesting(defaultNesting, defaultAttrs) });
+var htmlLanguage = /*@__PURE__*/ htmlPlain.configure({ wrap: /*@__PURE__*/ configureNesting(defaultNesting, defaultAttrs) });
 /**
 Language support for HTML, including
 [`htmlCompletion`](https://codemirror.net/6/docs/ref/#lang-html.htmlCompletion) and JavaScript and
@@ -24716,12 +24716,12 @@ function html(config = {}) {
 		css$1().support
 	]);
 }
-var selfClosers = /* @__PURE__ */ new Set(/* @__PURE__ */ "area base br col command embed frame hr img input keygen link meta param source track wbr menuitem".split(" "));
+var selfClosers = /*@__PURE__*/ new Set(/*@__PURE__*/ "area base br col command embed frame hr img input keygen link meta param source track wbr menuitem".split(" "));
 /**
 Extension that will automatically insert close tags when a `>` or
 `/` is typed.
 */
-var autoCloseTags = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, text, insertTransaction) => {
+var autoCloseTags = /*@__PURE__*/ EditorView.inputHandler.of((view, from, to, text, insertTransaction) => {
 	if (view.composing || view.state.readOnly || from != to || text != ">" && text != "/" || !htmlLanguage.isActiveAt(view.state, from, -1)) return false;
 	let base = insertTransaction(), { state } = base;
 	let closeTags = state.changeByRange((range) => {

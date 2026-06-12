@@ -1,17 +1,17 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-D6q2qjSG.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-BE8ZlkNd.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-DY8rVf5_.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-lRihnQRz.js";
 //#region recipe-gallery/validation-message-custom-icon.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var html = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./validation-message-custom-icon-html-1xnj1Xvv.js");
+	const { default: __vite_default__ } = await import("./validation-message-custom-icon-html-Cv0pE8qo.js");
 	return { default: __vite_default__ };
 }, [])).default;
 var styles = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./validation-message-custom-icon-styles-CjB2SExM.js");
+	const { default: __vite_default__ } = await import("./validation-message-custom-icon-styles-BIEvdWSZ.js");
 	return { default: __vite_default__ };
 }, [])).default;
 var src = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./validation-message-custom-icon-src-DDLfejlk.js");
+	const { default: __vite_default__ } = await import("./validation-message-custom-icon-src-DokedkZZ.js");
 	return { default: __vite_default__ };
 }, [])).default;
 function Recipe() {

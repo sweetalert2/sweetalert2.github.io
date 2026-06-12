@@ -1,6 +1,6 @@
-import { a as __generator, c as createError, f as nullthrows, i as __extends, n as __assign, r as __awaiter } from "./utils-52664384-tXfMgvZN.js";
-import { t as SandpackClient } from "./base-80a1f760-CIH9BsLu.js";
-import { a as generateRandomId, c as writeBuffer, i as fromBundlerFilesToFS, n as consoleHook, o as getMessageFromError, r as findStartScriptPackageJson, s as readBuffer, t as EventEmitter } from "./consoleHook-59e792cb-Cs6UZcBG.js";
+import { a as __generator, c as createError, f as nullthrows, i as __extends, n as __assign, r as __awaiter } from "./utils-52664384-CXDgtX4N.js";
+import { t as SandpackClient } from "./base-80a1f760-BP9QBmUn.js";
+import { a as generateRandomId, c as writeBuffer, i as fromBundlerFilesToFS, n as consoleHook, o as getMessageFromError, r as findStartScriptPackageJson, s as readBuffer, t as EventEmitter } from "./consoleHook-59e792cb-x8Hg4Zgk.js";
 //#region node_modules/@codesandbox/nodebox/build/index.mjs
 var __create = Object.create;
 var __defProp = Object.defineProperty;

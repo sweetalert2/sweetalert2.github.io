@@ -1,9 +1,9 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-D6q2qjSG.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-BE8ZlkNd.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-DY8rVf5_.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-lRihnQRz.js";
 //#region recipe-gallery/draw-attention.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var src = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./draw-attention-src-B7CpdH1h.js");
+	const { default: __vite_default__ } = await import("./draw-attention-src-B0EbSO2N.js");
 	return { default: __vite_default__ };
 }, [])).default;
 function Recipe() {

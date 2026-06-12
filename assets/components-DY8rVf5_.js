@@ -1,4 +1,4 @@
-import { a as __toESM, t as __commonJSMin } from "./chunk-Bg1a8CIW.js";
+import { a as __toESM, t as __commonJSMin } from "./chunk-_TIqcEvS.js";
 //#region \0vite/modulepreload-polyfill.js
 (function polyfill() {
 	const relList = document.createElement("link").relList;
@@ -2844,7 +2844,7 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 		const unsetWeakMaps = (obj, instance) => {
 			for (const i in obj) obj[i].delete(instance);
 		};
-		var instanceMethods = /* @__PURE__ */ Object.freeze({
+		var instanceMethods = /*#__PURE__*/ Object.freeze({
 			__proto__: null,
 			_destroy,
 			close,
@@ -3198,7 +3198,7 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 			if (eventHandler) globalState.eventEmitter.removeListener(eventName, eventHandler);
 			else globalState.eventEmitter.removeAllListeners(eventName);
 		};
-		var staticMethods = /* @__PURE__ */ Object.freeze({
+		var staticMethods = /*#__PURE__*/ Object.freeze({
 			__proto__: null,
 			argsToParams,
 			bindClickHandler,
@@ -3640,7 +3640,7 @@ var require_sweetalert2_all = /* @__PURE__ */ __commonJSMin(((exports, module) =
 		}
 		/** @type {SweetAlert} */
 		let currentInstance;
-		var _promise = /* @__PURE__ */ new WeakMap();
+		var _promise = /*#__PURE__*/ new WeakMap();
 		class SweetAlert {
 			/**
 			* @param {...(SweetAlertOptions | string)} args
@@ -4266,7 +4266,7 @@ var require_react_production = /* @__PURE__ */ __commonJSMin(((exports) => {
 	exports.useTransition = function() {
 		return ReactSharedInternals.H.useTransition();
 	};
-	exports.version = "19.2.6";
+	exports.version = "19.2.7";
 }));
 //#endregion
 //#region node_modules/react/index.js
@@ -4658,7 +4658,7 @@ var require_react_dom_production = /* @__PURE__ */ __commonJSMin(((exports) => {
 	exports.useFormStatus = function() {
 		return ReactSharedInternals.H.useHostTransitionStatus();
 	};
-	exports.version = "19.2.6";
+	exports.version = "19.2.7";
 }));
 //#endregion
 //#region node_modules/react-dom/index.js
@@ -13718,7 +13718,7 @@ var require_react_dom_client_production = /* @__PURE__ */ __commonJSMin(((export
 		}
 	};
 	var isomorphicReactPackageVersion$jscomp$inline_1840 = React.version;
-	if ("19.2.6" !== isomorphicReactPackageVersion$jscomp$inline_1840) throw Error(formatProdErrorMessage(527, isomorphicReactPackageVersion$jscomp$inline_1840, "19.2.6"));
+	if ("19.2.7" !== isomorphicReactPackageVersion$jscomp$inline_1840) throw Error(formatProdErrorMessage(527, isomorphicReactPackageVersion$jscomp$inline_1840, "19.2.7"));
 	ReactDOMSharedInternals.findDOMNode = function(componentOrElement) {
 		var fiber = componentOrElement._reactInternals;
 		if (void 0 === fiber) {
@@ -13733,10 +13733,10 @@ var require_react_dom_client_production = /* @__PURE__ */ __commonJSMin(((export
 	};
 	var internals$jscomp$inline_2347 = {
 		bundleType: 0,
-		version: "19.2.6",
+		version: "19.2.7",
 		rendererPackageName: "react-dom",
 		currentDispatcherRef: ReactSharedInternals,
-		reconcilerVersion: "19.2.6"
+		reconcilerVersion: "19.2.7"
 	};
 	if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
 		var hook$jscomp$inline_2348 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
@@ -13773,7 +13773,7 @@ var require_react_dom_client_production = /* @__PURE__ */ __commonJSMin(((export
 		listenToAllSupportedEvents(container);
 		return new ReactDOMHydrationRoot(initialChildren);
 	};
-	exports.version = "19.2.6";
+	exports.version = "19.2.7";
 }));
 //#endregion
 //#region node_modules/react-dom/client.js
@@ -13842,7 +13842,7 @@ var require_sweetalert2_react_content_umd = /* @__PURE__ */ __commonJSMin(((expo
 				const mountKeys = mounts.map((mount) => mount.key);
 				Object.entries(params).forEach((_ref) => {
 					let [key, value] = _ref;
-					if (mountKeys.includes(key) && /* @__PURE__ */ React.isValidElement(value)) {
+					if (mountKeys.includes(key) && /*#__PURE__*/ React.isValidElement(value)) {
 						reactParams[key] = value;
 						otherParams[key] = " ";
 					} else otherParams[key] = value;
@@ -13866,7 +13866,7 @@ var require_sweetalert2_react_content_umd = /* @__PURE__ */ __commonJSMin(((expo
 			}
 			return class extends ParentSwal {
 				static argsToParams(args) {
-					if (/* @__PURE__ */ React.isValidElement(args[0]) || /* @__PURE__ */ React.isValidElement(args[1])) {
+					if (/*#__PURE__*/ React.isValidElement(args[0]) || /*#__PURE__*/ React.isValidElement(args[1])) {
 						const params = {};
 						[
 							"title",
@@ -34853,7 +34853,7 @@ var core_default = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exp
 		relevance: 0
 	};
 	var METHOD_GUARD = {
-		begin: "\\.\\s*" + UNDERSCORE_IDENT_RE,
+		begin: "\\.\\s*[a-zA-Z_]\\w*",
 		relevance: 0
 	};
 	/**
@@ -34875,7 +34875,7 @@ var core_default = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exp
 			}
 		});
 	};
-	var MODES = /* @__PURE__ */ Object.freeze({
+	var MODES = /*#__PURE__*/ Object.freeze({
 		__proto__: null,
 		APOS_STRING_MODE,
 		BACKSLASH_ESCAPE,
@@ -36468,7 +36468,7 @@ function javascript(hljs) {
 						},
 						{
 							className: "variable",
-							begin: IDENT_RE$1 + "(?=\\s*(-)|$)",
+							begin: "[A-Za-z$_][0-9A-Za-z$_]*(?=\\s*(-)|$)",
 							endsParent: true,
 							relevance: 0
 						},
@@ -36745,7 +36745,7 @@ function javascript(hljs) {
 			},
 			PROPERTY_ACCESS,
 			{
-				match: "\\$" + IDENT_RE$1,
+				match: "\\$[A-Za-z$_][0-9A-Za-z$_]*",
 				relevance: 0
 			},
 			{

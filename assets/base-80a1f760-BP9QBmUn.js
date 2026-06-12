@@ -1,4 +1,4 @@
-import { m as dequal } from "./utils-52664384-tXfMgvZN.js";
+import { m as dequal } from "./utils-52664384-CXDgtX4N.js";
 //#region node_modules/@codesandbox/sandpack-client/dist/base-80a1f760.mjs
 var SandpackClient = function() {
 	function SandpackClient(iframeSelector, sandboxSetup, options) {

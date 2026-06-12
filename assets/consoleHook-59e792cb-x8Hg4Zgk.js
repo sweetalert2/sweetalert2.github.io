@@ -1,4 +1,4 @@
-import { c as createError, p as invariant } from "./utils-52664384-tXfMgvZN.js";
+import { c as createError, p as invariant } from "./utils-52664384-CXDgtX4N.js";
 //#region node_modules/@codesandbox/sandpack-client/dist/consoleHook-59e792cb.mjs
 var EventEmitter = function() {
 	function EventEmitter() {

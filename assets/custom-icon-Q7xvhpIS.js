@@ -1,13 +1,13 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-D6q2qjSG.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-BE8ZlkNd.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-DY8rVf5_.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-lRihnQRz.js";
 //#region recipe-gallery/custom-icon.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var src = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./custom-icon-src-DsLsNdMx.js");
+	const { default: __vite_default__ } = await import("./custom-icon-src-GeWq8tyH.js");
 	return { default: __vite_default__ };
 }, [])).default;
 var styles = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./custom-icon-styles-OpAkt-mD.js");
+	const { default: __vite_default__ } = await import("./custom-icon-styles-DcK69n4i.js");
 	return { default: __vite_default__ };
 }, [])).default;
 function Recipe() {

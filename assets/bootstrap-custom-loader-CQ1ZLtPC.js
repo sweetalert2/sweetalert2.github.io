@@ -1,17 +1,17 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-D6q2qjSG.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-BE8ZlkNd.js";
+import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-DY8rVf5_.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-lRihnQRz.js";
 //#region recipe-gallery/bootstrap-custom-loader.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var html = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./bootstrap-custom-loader-html-bXWRadKB.js");
+	const { default: __vite_default__ } = await import("./bootstrap-custom-loader-html-C-ORzr0f.js");
 	return { default: __vite_default__ };
 }, [])).default;
 var styles = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./bootstrap-custom-loader-styles-D6Ahp2VM.js");
+	const { default: __vite_default__ } = await import("./bootstrap-custom-loader-styles-DGcrhYzp.js");
 	return { default: __vite_default__ };
 }, [])).default;
 var src = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./bootstrap-custom-loader-src-By2vJ9Dj.js");
+	const { default: __vite_default__ } = await import("./bootstrap-custom-loader-src-DdTSRerN.js");
 	return { default: __vite_default__ };
 }, [])).default;
 function Recipe() {
