@@ -40946,6 +40946,20 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.hismith.co.uk/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Hismith",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/hismith.png",
+							alt: "Hismith"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Hismith"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://www.sexdollpartner.com/",
 					target: "_blank",
 					rel: "noopener",
