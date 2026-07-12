@@ -1,6 +1,6 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-3ablBi-x.js","assets/base-80a1f760-BP9QBmUn.js","assets/utils-52664384-CXDgtX4N.js","assets/consoleHook-59e792cb-x8Hg4Zgk.js","assets/index-599aeaf7-6r3LyHmP.js","assets/chunk-_TIqcEvS.js","assets/runtime-QR0dSec4.js"])))=>i.map(i=>d[i]);
-import { a as __toESM, t as __commonJSMin } from "./chunk-_TIqcEvS.js";
-import { v as require_jsx_runtime, y as require_react } from "./components-DY8rVf5_.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-DHAVAmZ9.js","assets/utils-52664384-CXDgtX4N.js","assets/base-80a1f760-BP9QBmUn.js","assets/consoleHook-59e792cb-zyW127Uk.js","assets/index-599aeaf7-FDfELQiJ.js","assets/rolldown-runtime-FZ4Itg2g.js","assets/runtime-Cnovx3ss.js"])))=>i.map(i=>d[i]);
+import { a as __toESM, t as __commonJSMin } from "./rolldown-runtime-FZ4Itg2g.js";
+import { v as require_jsx_runtime, y as require_react } from "./components-BrreRpGX.js";
 import { a as __generator$1, d as normalizePath, m as dequal, r as __awaiter$1, s as addPackageJSONIfNeeded, u as extractErrorDetails } from "./utils-52664384-CXDgtX4N.js";
 //#region node_modules/@stitches/core/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime = require_jsx_runtime(), t$1 = "colors", n = "sizes", r$1 = "space", i$1 = {
@@ -504,7 +504,7 @@ var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime 
 				o.insertRule("@media{}", r), o.insertRule(`--sxs{--sxs:${e}}`, r), l[t] = {
 					group: o.cssRules[r + 1],
 					index: r,
-					cache: new Set([e])
+					cache: /* @__PURE__ */ new Set([e])
 				};
 			}
 			v(l[t]);
@@ -593,7 +593,7 @@ var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime 
 				...t
 			} : (t = String(t), u[e] = "undefined" !== t || l.has(e) ? t : o[e]);
 		} else u[e] = o[e];
-		const h = new Set([...i]);
+		const h = /* @__PURE__ */ new Set([...i]);
 		for (const [r, i, o, l] of t.composers) {
 			n.rules.styled.cache.has(r) || (n.rules.styled.cache.add(r), x(i, [`.${r}`], [], e, ((e) => {
 				d.styled.apply(e);
@@ -812,17 +812,20 @@ var __vitePreload = function preload(baseModule, deps, importerUrl) {
 				reason
 			}))));
 		}
+		function importMetaResolve(specifier) {
+			if (import.meta.resolve) return import.meta.resolve(specifier);
+			return new URL(specifier, new URL("../../../src/node/plugins/importAnalysisBuild.ts", import.meta.url)).href;
+		}
 		promise = allSettled(deps.map((dep) => {
 			dep = assetsURL(dep, importerUrl);
+			dep = importMetaResolve(dep);
 			if (dep in seen) return;
 			seen[dep] = true;
 			const isCss = dep.endsWith(".css");
-			const cssSelector = isCss ? "[rel=\"stylesheet\"]" : "";
-			if (!!importerUrl) for (let i = links.length - 1; i >= 0; i--) {
+			for (let i = links.length - 1; i >= 0; i--) {
 				const link = links[i];
 				if (link.href === dep && (!isCss || link.rel === "stylesheet")) return;
 			}
-			else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;
 			const link = document.createElement("link");
 			link.rel = isCss ? "stylesheet" : scriptRel;
 			if (!isCss) link.as = "script";
@@ -867,19 +870,19 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
 						case "static": return [3, 3];
 					}
 					return [3, 5];
-				case 1: return [4, __vitePreload(() => import("./node-3ablBi-x.js").then(function(m) {
+				case 1: return [4, __vitePreload(() => import("./node-DHAVAmZ9.js").then(function(m) {
 					return m.SandpackNode;
 				}), __vite__mapDeps([0,1,2,3]))];
 				case 2:
 					Client = _c.sent();
 					return [3, 7];
-				case 3: return [4, __vitePreload(() => import("./index-599aeaf7-6r3LyHmP.js").then(function(m) {
+				case 3: return [4, __vitePreload(() => import("./index-599aeaf7-FDfELQiJ.js").then(function(m) {
 					return m.SandpackStatic;
 				}), __vite__mapDeps([4,5,1,2,3]))];
 				case 4:
 					Client = _c.sent();
 					return [3, 7];
-				case 5: return [4, __vitePreload(() => import("./runtime-QR0dSec4.js").then(function(m) {
+				case 5: return [4, __vitePreload(() => import("./runtime-Cnovx3ss.js").then(function(m) {
 					return m.SandpackRuntime;
 				}), __vite__mapDeps([6,5,1,2]))];
 				case 6:
@@ -2689,7 +2692,8 @@ var Configuration = class Configuration {
 				dynamicSlots.push((a) => dynamicFacetSlot(a, facet, providers));
 			}
 		}
-		return new Configuration(base, newCompartments, dynamicSlots.map((f) => f(address)), address, staticValues, facets);
+		let dynamic = dynamicSlots.map((f) => f(address));
+		return new Configuration(base, newCompartments, dynamic, address, staticValues, facets);
 	}
 };
 function flatten(extension, compartments, newCompartments) {
@@ -19818,13 +19822,14 @@ function useIntersectionObserver(target, options = {}) {
 		threshold
 	}));
 	import_react.useEffect(() => {
-		setObserver(getIntersectionObserver({
+		const observer = getIntersectionObserver({
 			root,
 			pollInterval,
 			useMutationObserver,
 			rootMargin,
 			threshold
-		}));
+		});
+		setObserver(observer);
 	}, [
 		root,
 		rootMargin,

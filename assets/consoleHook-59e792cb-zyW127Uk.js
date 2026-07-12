@@ -59,7 +59,7 @@ var TokenType;
 	TokenType["String"] = "String";
 	TokenType["EnvVar"] = "EnvVar";
 })(TokenType || (TokenType = {}));
-var operators = new Map([
+var operators = /* @__PURE__ */ new Map([
 	["&&", { type: TokenType.AND }],
 	["||", { type: TokenType.OR }],
 	["|", { type: TokenType.PIPE }],
