@@ -40947,7 +40947,7 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://www.hismith.co.uk/",
+					href: "https://www.hismith.com/en/",
 					target: "_blank",
 					rel: "noopener",
 					"aria-label": "Hismith",

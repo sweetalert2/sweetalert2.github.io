@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-DHAVAmZ9.js","assets/utils-52664384-CXDgtX4N.js","assets/base-80a1f760-BP9QBmUn.js","assets/consoleHook-59e792cb-zyW127Uk.js","assets/index-599aeaf7-FDfELQiJ.js","assets/rolldown-runtime-FZ4Itg2g.js","assets/runtime-Cnovx3ss.js"])))=>i.map(i=>d[i]);
 import { a as __toESM, t as __commonJSMin } from "./rolldown-runtime-FZ4Itg2g.js";
-import { v as require_jsx_runtime, y as require_react } from "./components-BrreRpGX.js";
+import { v as require_jsx_runtime, y as require_react } from "./components-DcWUfe9C.js";
 import { a as __generator$1, d as normalizePath, m as dequal, r as __awaiter$1, s as addPackageJSONIfNeeded, u as extractErrorDetails } from "./utils-52664384-CXDgtX4N.js";
 //#region node_modules/@stitches/core/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime = require_jsx_runtime(), t$1 = "colors", n = "sizes", r$1 = "space", i$1 = {
@@ -814,7 +814,11 @@ var __vitePreload = function preload(baseModule, deps, importerUrl) {
 		}
 		function importMetaResolve(specifier) {
 			if (import.meta.resolve) return import.meta.resolve(specifier);
-			return new URL(specifier, new URL("../../../src/node/plugins/importAnalysisBuild.ts", import.meta.url)).href;
+			return new URL(
+				specifier,
+				/** #__KEEP__ */
+				import.meta.url
+			).href;
 		}
 		promise = allSettled(deps.map((dep) => {
 			dep = assetsURL(dep, importerUrl);
