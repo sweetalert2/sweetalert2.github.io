@@ -41003,20 +41003,6 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://www.onahole.com/",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "hentai sex toys",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/onahole.png",
-							alt: "hentai sex toys"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"hentai sex toys"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://vsdoll.net/",
 					target: "_blank",
 					rel: "noopener",
