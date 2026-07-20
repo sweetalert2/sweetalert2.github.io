@@ -202,13 +202,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://www.onahole.com/" target="_blank" rel="noopener" aria-label="hentai sex toys">
-            <img src="/images/sponsors/onahole.png" alt="hentai sex toys" />
-            <br />
-            hentai sex toys
-          </a>
-        </div>
-        <div>
           <a href="https://vsdoll.net/" target="_blank" rel="noopener" aria-label="VSDoll">
             <img src="/images/sponsors/vsdoll.png" alt="VSDoll" />
             <br />
