@@ -260,10 +260,7 @@ function DownloadsLastMonth() {
     return (
       <div>
         Downloads last month:{' '}
-        <a
-          href="https://npm-stat.com/charts.html?package=sweetalert2"
-          aria-label={`Downloads last month ${downloadsLastMonth}`}
-        >
+        <a href="https://www.npmjs.com/package/sweetalert2" aria-label={`Downloads last month ${downloadsLastMonth}`}>
           {downloadsLastMonth}
         </a>
       </div>
