@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/node-DHAVAmZ9.js","assets/utils-52664384-CXDgtX4N.js","assets/base-80a1f760-BP9QBmUn.js","assets/consoleHook-59e792cb-zyW127Uk.js","assets/index-599aeaf7-FDfELQiJ.js","assets/rolldown-runtime-FZ4Itg2g.js","assets/runtime-Cnovx3ss.js"])))=>i.map(i=>d[i]);
 import { a as __toESM, t as __commonJSMin } from "./rolldown-runtime-FZ4Itg2g.js";
-import { v as require_jsx_runtime, y as require_react } from "./components-DuJG0KRh.js";
+import { v as require_jsx_runtime, y as require_react } from "./components-d5c5x7Xf.js";
 import { a as __generator$1, d as normalizePath, m as dequal, r as __awaiter$1, s as addPackageJSONIfNeeded, u as extractErrorDetails } from "./utils-52664384-CXDgtX4N.js";
 //#region node_modules/@stitches/core/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react()), import_jsx_runtime = require_jsx_runtime(), t$1 = "colors", n = "sizes", r$1 = "space", i$1 = {
@@ -899,7 +899,8 @@ function loadSandpackClient(iframeSelector, sandboxSetup, options) {
 }
 //#endregion
 //#region node_modules/@marijn/find-cluster-break/src/index.js
-var rangeFrom = [], rangeTo = [];
+var rangeFrom = [];
+var rangeTo = [];
 (() => {
 	let numbers = "lc,34,7n,7,7b,19,,,,2,,2,,,20,b,1c,l,g,,2t,7,2,6,2,2,,4,z,,u,r,2j,b,1m,9,9,,o,4,,9,,3,,5,17,3,3b,f,,w,1j,,,,4,8,4,,3,7,a,2,t,,1m,,,,2,4,8,,9,,a,2,q,,2,2,1l,,4,2,4,2,2,3,3,,u,2,3,,b,2,1l,,4,5,,2,4,,k,2,m,6,,,1m,,,2,,4,8,,7,3,a,2,u,,1n,,,,c,,9,,14,,3,,1l,3,5,3,,4,7,2,b,2,t,,1m,,2,,2,,3,,5,2,7,2,b,2,s,2,1l,2,,,2,4,8,,9,,a,2,t,,20,,4,,2,3,,,8,,29,,2,7,c,8,2q,,2,9,b,6,22,2,r,,,,,,1j,e,,5,,2,5,b,,10,9,,2u,4,,6,,2,2,2,p,2,4,3,g,4,d,,2,2,6,,f,,jj,3,qa,3,t,3,t,2,u,2,1s,2,,7,8,,2,b,9,,19,3,3b,2,y,,3a,3,4,2,9,,6,3,63,2,2,,1m,,,7,,,,,2,8,6,a,2,,1c,h,1r,4,1c,7,,,5,,14,9,c,2,w,4,2,2,,3,1k,,,2,3,,,3,1m,8,2,2,48,3,,d,,7,4,,6,,3,2,5i,1m,,5,ek,,5f,x,2da,3,3x,,2o,w,fe,6,2x,2,n9w,4,,a,w,2,28,2,7k,,3,,4,,p,2,5,,47,2,q,i,d,,12,8,p,b,1a,3,1c,,2,4,2,2,13,,1v,6,2,2,2,2,c,,8,,1b,,1f,,,3,2,2,5,2,,,16,2,8,,6m,,2,,4,,fn4,,kh,g,g,g,a6,2,gt,,6a,,45,5,1ae,3,,2,5,4,14,3,4,,4l,2,fx,4,ar,2,49,b,4w,,1i,f,1k,3,1d,4,2,2,1x,3,10,5,,8,1q,,c,2,1g,9,a,4,2,,2n,3,2,,,2,6,,4g,,3,8,l,2,1l,2,,,,,m,,e,7,3,5,5f,8,2,3,,,n,,29,,2,6,,,2,,,2,,2,6j,,2,4,6,2,,2,r,2,2d,8,2,,,2,2y,,,,2,6,,,2t,3,2,4,,5,77,9,,2,6t,,a,2,,,4,,40,4,2,2,4,,w,a,14,6,2,4,8,,9,6,2,3,1a,d,,2,ba,7,,6,,,2a,m,2,7,,2,,2,3e,6,3,,,2,,7,,,20,2,3,,,,9n,2,f0b,5,1n,7,t4,,1r,4,29,,f5k,2,43q,,,3,4,5,8,8,2,7,u,4,44,3,1iz,1j,4,1e,8,,e,,m,5,,f,11s,7,,h,2,7,,2,,5,79,7,c5,4,15s,7,31,7,240,5,gx7k,2o,3k,6o".split(",").map((s) => s ? parseInt(s, 36) : 1);
 	for (let i = 0, n = 0; i < numbers.length; i++) (i % 2 ? rangeTo : rangeFrom).push(n = n + numbers[i]);
@@ -5233,7 +5234,8 @@ var Direction = /*@__PURE__*/ (function(Direction) {
 	Direction[Direction["RTL"] = 1] = "RTL";
 	return Direction;
 })(Direction || (Direction = {}));
-var LTR = Direction.LTR, RTL = Direction.RTL;
+var LTR = Direction.LTR;
+var RTL = Direction.RTL;
 function dec(str) {
 	let result = [];
 	for (let i = 0; i < str.length; i++) result.push(1 << +str[i]);
@@ -5241,7 +5243,8 @@ function dec(str) {
 }
 var LowTypes = /*@__PURE__*/ dec("88888888888888888888888888888888888666888888787833333333337888888000000000000000000000000008888880000000000000000000000000088888888888888888888888888888888888887866668888088888663380888308888800000000000000000000000800000000000000000000000000000008");
 var ArabicTypes = /*@__PURE__*/ dec("4444448826627288999999999992222222222222222222222222222222222222222222222229999999999999999999994444444444644222822222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222999999949999999229989999223333333333");
-var Brackets = /*@__PURE__*/ Object.create(null), BracketStack = [];
+var Brackets = /*@__PURE__*/ Object.create(null);
+var BracketStack = [];
 for (let p of [
 	"()",
 	"[]",
@@ -8552,7 +8555,9 @@ function rangeForClick(view, pos, bias, type) {
 	}
 }
 var BadMouseDetail = browser.ie && browser.ie_version <= 11;
-var lastMouseDown = null, lastMouseDownCount = 0, lastMouseDownTime = 0;
+var lastMouseDown = null;
+var lastMouseDownCount = 0;
+var lastMouseDownTime = 0;
 function getClickType(event) {
 	if (!BadMouseDetail) return event.detail;
 	let last = lastMouseDown, lastTime = lastMouseDownTime;
@@ -10048,7 +10053,9 @@ function scaleBlock(block, scaler) {
 }
 var theme = /*@__PURE__*/ Facet.define({ combine: (strs) => strs.join(" ") });
 var darkTheme = /*@__PURE__*/ Facet.define({ combine: (values) => values.indexOf(true) > -1 });
-var baseThemeID = /*@__PURE__*/ StyleModule.newName(), baseLightID = /*@__PURE__*/ StyleModule.newName(), baseDarkID = /*@__PURE__*/ StyleModule.newName();
+var baseThemeID = /*@__PURE__*/ StyleModule.newName();
+var baseLightID = /*@__PURE__*/ StyleModule.newName();
+var baseDarkID = /*@__PURE__*/ StyleModule.newName();
 var lightDarkIDs = {
 	"&light": "." + baseLightID,
 	"&dark": "." + baseDarkID
@@ -13034,7 +13041,8 @@ var NodeSet = class NodeSet {
 		return new NodeSet(newTypes);
 	}
 };
-var CachedNode = /* @__PURE__ */ new WeakMap(), CachedInnerNode = /* @__PURE__ */ new WeakMap();
+var CachedNode = /* @__PURE__ */ new WeakMap();
+var CachedInnerNode = /* @__PURE__ */ new WeakMap();
 /**
 Options that control iteration. Can be combined with the `|`
 operator to enable multiple ones.
@@ -15007,7 +15015,20 @@ function getStyleTags(node) {
 	return rule || null;
 }
 var t = Tag.define;
-var comment = t(), name = t(), typeName = t(name), propertyName = t(name), literal = t(), string = t(literal), number = t(literal), content = t(), heading = t(content), keyword = t(), operator = t(), punctuation = t(), bracket = t(punctuation), meta = t();
+var comment = t();
+var name = t();
+var typeName = t(name);
+var propertyName = t(name);
+var literal = t();
+var string = t(literal);
+var number = t(literal);
+var content = t();
+var heading = t(content);
+var keyword = t();
+var operator = t();
+var punctuation = t();
+var bracket = t(punctuation);
+var meta = t();
 /**
 The default set of highlighting [tags](#highlight.Tag).
 
@@ -16537,7 +16558,8 @@ var baseTheme$1 = /*@__PURE__*/ EditorView.baseTheme({
 	"&.cm-focused .cm-matchingBracket": { backgroundColor: "#328c8252" },
 	"&.cm-focused .cm-nonmatchingBracket": { backgroundColor: "#bb555544" }
 });
-var DefaultScanDist = 1e4, DefaultBrackets = "()[]{}";
+var DefaultScanDist = 1e4;
+var DefaultBrackets = "()[]{}";
 var bracketMatchingConfig = /*@__PURE__*/ Facet.define({ combine(configs) {
 	return combineConfig(configs, {
 		afterCursor: true,
@@ -16546,7 +16568,8 @@ var bracketMatchingConfig = /*@__PURE__*/ Facet.define({ combine(configs) {
 		renderMatch: defaultRenderMatch
 	});
 } });
-var matchingMark = /*@__PURE__*/ Decoration.mark({ class: "cm-matchingBracket" }), nonmatchingMark = /*@__PURE__*/ Decoration.mark({ class: "cm-nonmatchingBracket" });
+var matchingMark = /*@__PURE__*/ Decoration.mark({ class: "cm-matchingBracket" });
+var nonmatchingMark = /*@__PURE__*/ Decoration.mark({ class: "cm-nonmatchingBracket" });
 function defaultRenderMatch(match) {
 	let decorations = [];
 	let mark = match.matched ? matchingMark : nonmatchingMark;
@@ -21377,7 +21400,14 @@ function getSpecializer(spec) {
 }
 //#endregion
 //#region node_modules/@lezer/css/dist/index.js
-var descendantOp = 135, Unit = 1, identifier$2 = 136, callee = 137, VariableName = 2, queryIdentifier = 138, queryVariableName = 3, QueryCallee = 4;
+var descendantOp = 135;
+var Unit = 1;
+var identifier$2 = 136;
+var callee = 137;
+var VariableName = 2;
+var queryIdentifier = 138;
+var queryVariableName = 3;
+var QueryCallee = 4;
 var space$1 = [
 	9,
 	10,
@@ -21405,7 +21435,18 @@ var space$1 = [
 	8287,
 	12288
 ];
-var colon = 58, parenL = 40, underscore = 95, bracketL$1 = 91, dash$1 = 45, period = 46, hash = 35, percent = 37, ampersand = 38, backslash = 92, newline$1 = 10, asterisk = 42;
+var colon = 58;
+var parenL = 40;
+var underscore = 95;
+var bracketL$1 = 91;
+var dash$1 = 45;
+var period = 46;
+var hash = 35;
+var percent = 37;
+var ampersand = 38;
+var backslash = 92;
+var newline$1 = 10;
+var asterisk = 42;
 function isAlpha(ch) {
 	return ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122 || ch >= 161;
 }
@@ -22387,7 +22428,8 @@ var atRules = /*@__PURE__*/ [
 	type: "keyword",
 	label
 }));
-var identifier$1 = /^(\w[\w-]*|-\w[\w-]*|)$/, variable = /^-(-[\w-]*)?$/;
+var identifier$1 = /^(\w[\w-]*|-\w[\w-]*|)$/;
+var variable = /^-(-[\w-]*)?$/;
 function isVarArg(node, doc) {
 	var _a;
 	if (node.name == "(" || node.type.isError) node = node.parent || node;
@@ -22529,7 +22571,39 @@ function css$1() {
 }
 //#endregion
 //#region node_modules/@lezer/html/dist/index.js
-var scriptText = 55, StartCloseScriptTag = 1, styleText = 56, StartCloseStyleTag = 2, textareaText = 57, StartCloseTextareaTag = 3, EndTag = 4, SelfClosingEndTag = 5, StartTag = 6, StartScriptTag = 7, StartStyleTag = 8, StartTextareaTag = 9, StartSelfClosingTag = 10, StartCloseTag = 11, NoMatchStartCloseTag = 12, MismatchedStartCloseTag = 13, missingCloseTag = 58, IncompleteTag = 14, IncompleteCloseTag = 15, commentContent$1 = 59, Element = 21, TagName = 23, Attribute = 24, AttributeName = 25, AttributeValue = 27, UnquotedAttributeValue = 28, ScriptText = 29, StyleText = 32, TextareaText = 35, OpenTag = 37, CloseTag = 38, Dialect_noMatch = 0, Dialect_selfClosing = 1;
+var scriptText = 55;
+var StartCloseScriptTag = 1;
+var styleText = 56;
+var StartCloseStyleTag = 2;
+var textareaText = 57;
+var StartCloseTextareaTag = 3;
+var EndTag = 4;
+var SelfClosingEndTag = 5;
+var StartTag = 6;
+var StartScriptTag = 7;
+var StartStyleTag = 8;
+var StartTextareaTag = 9;
+var StartSelfClosingTag = 10;
+var StartCloseTag = 11;
+var NoMatchStartCloseTag = 12;
+var MismatchedStartCloseTag = 13;
+var missingCloseTag = 58;
+var IncompleteTag = 14;
+var IncompleteCloseTag = 15;
+var commentContent$1 = 59;
+var Element = 21;
+var TagName = 23;
+var Attribute = 24;
+var AttributeName = 25;
+var AttributeValue = 27;
+var UnquotedAttributeValue = 28;
+var ScriptText = 29;
+var StyleText = 32;
+var TextareaText = 35;
+var OpenTag = 37;
+var CloseTag = 38;
+var Dialect_noMatch = 0;
+var Dialect_selfClosing = 1;
 var selfClosers$1 = {
 	area: true,
 	base: true,
@@ -22638,7 +22712,9 @@ var closeOnOpen = {
 function nameChar(ch) {
 	return ch == 45 || ch == 46 || ch == 58 || ch >= 65 && ch <= 90 || ch == 95 || ch >= 97 && ch <= 122 || ch >= 161;
 }
-var cachedName = null, cachedInput = null, cachedPos = 0;
+var cachedName = null;
+var cachedInput = null;
+var cachedPos = 0;
 function tagNameAfter(input, offset) {
 	let pos = input.pos + offset;
 	if (cachedPos == pos && cachedInput == input) return cachedName;
@@ -22652,7 +22728,12 @@ function tagNameAfter(input, offset) {
 	cachedPos = pos;
 	return cachedName = name ? name.toLowerCase() : next == question$1 || next == bang ? void 0 : null;
 }
-var lessThan = 60, greaterThan = 62, slash$1 = 47, question$1 = 63, bang = 33, dash = 45;
+var lessThan = 60;
+var greaterThan = 62;
+var slash$1 = 47;
+var question$1 = 63;
+var bang = 33;
+var dash = 45;
 function ElementContext(name, parent) {
 	this.name = name;
 	this.parent = parent;
@@ -22961,7 +23042,18 @@ function configureNesting(tags = [], attributes = []) {
 }
 //#endregion
 //#region node_modules/@lezer/javascript/dist/index.js
-var noSemi = 316, noSemiType = 317, incdec = 1, incdecPrefix = 2, questionDot = 3, JSXStartTag = 4, insertSemi = 318, spaces = 320, newline = 321, LineComment = 5, BlockComment = 6, Dialect_jsx = 0;
+var noSemi = 316;
+var noSemiType = 317;
+var incdec = 1;
+var incdecPrefix = 2;
+var questionDot = 3;
+var JSXStartTag = 4;
+var insertSemi = 318;
+var spaces = 320;
+var newline = 321;
+var LineComment = 5;
+var BlockComment = 6;
+var Dialect_jsx = 0;
 var space = [
 	9,
 	10,
@@ -22989,7 +23081,17 @@ var space = [
 	8287,
 	12288
 ];
-var braceR = 125, semicolon = 59, slash = 47, star = 42, plus = 43, minus = 45, lt = 60, comma = 44, question = 63, dot = 46, bracketL = 91;
+var braceR = 125;
+var semicolon = 59;
+var slash = 47;
+var star = 42;
+var plus = 43;
+var minus = 45;
+var lt = 60;
+var comma = 44;
+var question = 63;
+var dot = 46;
+var bracketL = 91;
 var trackNewline = new ContextTracker({
 	start: false,
 	shift(context, term) {
@@ -26159,11 +26261,13 @@ var _a$9;
 /**
 * @category Theme
 */
-var THEME_PREFIX = "sp", createTheme = (_a$9 = X({ prefix: THEME_PREFIX }), _a$9.createTheme), css = _a$9.css;
-_a$9.getCssText;
+var THEME_PREFIX = "sp";
 /**
 * @category Theme
 */
+var createTheme = (_a$9 = X({ prefix: THEME_PREFIX }), _a$9.createTheme);
+var css = _a$9.css;
+_a$9.getCssText;
 var keyframes = _a$9.keyframes;
 var defaultVariables = {
 	space: new Array(11).fill(" ").reduce(function(acc, _, index) {
@@ -27800,7 +27904,9 @@ var useActiveCode = function() {
 		updateCode: sandpack.updateCurrentFile
 	};
 };
-var _a$8, _b$2, _c;
+var _a$8;
+var _b$2;
+var _c;
 var iconStandaloneClassName = css({ svg: { margin: "auto" } });
 var buttonClassName = css((_a$8 = {
 	appearance: "none",
@@ -28351,7 +28457,8 @@ var activeLineHighlighter = ViewPlugin.fromClass(function() {
 }(), { decorations: function(v) {
 	return v.decorations;
 } });
-var _a$5, _b$1;
+var _a$5;
+var _b$1;
 var placeholderClassName = css({
 	margin: "0",
 	display: "block",
@@ -28743,7 +28850,8 @@ import_react.forwardRef(function(_a, ref) {
 		sandpack.status === "idle" ? (0, import_jsx_runtime.jsx)(RunButton$1, {}) : null
 	] }));
 });
-var _a$4, _b;
+var _a$4;
+var _b;
 var layoutClassName = css((_a$4 = {
 	border: "1px solid $colors$surface2",
 	display: "flex",
