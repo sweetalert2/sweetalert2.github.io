@@ -1,4 +1,4 @@
-import { _ as require_jsx_runtime } from "./components-sfQtakl5.js";
+import { _ as require_jsx_runtime } from "./components-C2Ot1B7D.js";
 //#region recipe-gallery/components/CreatePortalDocs.tsx
 var import_jsx_runtime = require_jsx_runtime();
 function CreatePortalDocs() {

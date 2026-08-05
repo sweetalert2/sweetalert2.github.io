@@ -38435,7 +38435,9 @@ import 'sweetalert2/src/sweetalert2.scss'`,
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 								src: "/images/react.svg",
 								width: "125",
-								alt: ""
+								alt: "",
+								loading: "lazy",
+								decoding: "async"
 							})
 						]
 					}) }),
@@ -38450,7 +38452,9 @@ import 'sweetalert2/src/sweetalert2.scss'`,
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 								src: "/images/vue.png",
 								width: "125",
-								alt: ""
+								alt: "",
+								loading: "lazy",
+								decoding: "async"
 							})
 						]
 					}) }),
@@ -38465,7 +38469,9 @@ import 'sweetalert2/src/sweetalert2.scss'`,
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 								src: "/images/angular.svg",
 								width: "125",
-								alt: ""
+								alt: "",
+								loading: "lazy",
+								decoding: "async"
 							})
 						]
 					}) }),
@@ -38480,7 +38486,9 @@ import 'sweetalert2/src/sweetalert2.scss'`,
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 								src: "/images/laravel.svg",
 								width: "125",
-								alt: ""
+								alt: "",
+								loading: "lazy",
+								decoding: "async"
 							})
 						]
 					}) })
@@ -41229,7 +41237,9 @@ function Sponsors() {
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/plus.png",
-						alt: ""
+						alt: "",
+						loading: "lazy",
+						decoding: "async"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 					"Add your logo and link",
@@ -41249,7 +41259,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/blueplenum.jpg",
-							alt: "BluePlenum"
+							alt: "BluePlenum",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"BluePlenum"
@@ -41263,7 +41275,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/kryptot.png",
-							alt: "Kryptot"
+							alt: "Kryptot",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Kryptot"
@@ -41277,7 +41291,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/inksonic.png",
-							alt: "InkSonic"
+							alt: "InkSonic",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"InkSonic"
@@ -41291,7 +41307,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/bluehive.png",
-							alt: "Your Occupational Healthcare Hub"
+							alt: "Your Occupational Healthcare Hub",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Your Occupational Healthcare Hub"
@@ -41305,7 +41323,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/ssmarket.png",
-							alt: "Buy Youtube Views"
+							alt: "Buy Youtube Views",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Buy Youtube Views"
@@ -41319,7 +41339,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "https://avatars0.githubusercontent.com/u/3986989?s=200&v=4",
-							alt: "Tiago de Oliveira Stutz"
+							alt: "Tiago de Oliveira Stutz",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Tiago de Oliveira Stutz"
@@ -41333,7 +41355,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/istartips.png",
-							alt: "iStarTips"
+							alt: "iStarTips",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"iStarTips"
@@ -41347,7 +41371,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/roboflow.png",
-							alt: "Roboflow"
+							alt: "Roboflow",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Roboflow"
@@ -41361,7 +41387,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/zezelife.png",
-							alt: "ZezeLife"
+							alt: "ZezeLife",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"ZezeLife"
@@ -41395,7 +41423,9 @@ function Sponsors() {
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/plus.png",
-						alt: ""
+						alt: "",
+						loading: "lazy",
+						decoding: "async"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 					"Add your logo and link",
@@ -41415,7 +41445,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/xndoll.png",
-							alt: "XNDOLL"
+							alt: "XNDOLL",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"XNDOLL"
@@ -41429,7 +41461,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/pidoll.png",
-							alt: "PIDOLL"
+							alt: "PIDOLL",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"PIDOLL"
@@ -41443,7 +41477,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/palstoy.png",
-							alt: "PalsToy"
+							alt: "PalsToy",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"PalsToy"
@@ -41457,7 +41493,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/bestblowjobmachines.png",
-							alt: "Mark Mitchell"
+							alt: "Mark Mitchell",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Mark Mitchell"
@@ -41471,7 +41509,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/pleasuremenow.png",
-							alt: "Pleasure Me Now"
+							alt: "Pleasure Me Now",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Pleasure Me Now"
@@ -41485,7 +41525,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/sosexdoll.png",
-							alt: "SoSexDoll"
+							alt: "SoSexDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"SoSexDoll"
@@ -41499,7 +41541,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/hismith.png",
-							alt: "Hismith"
+							alt: "Hismith",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Hismith"
@@ -41513,7 +41557,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/sexdollpartner.jpg",
-							alt: "SexDollPartner"
+							alt: "SexDollPartner",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"SexDollPartner"
@@ -41527,7 +41573,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/xspacecup.png",
-							alt: "XspaceCup - Top Male Masturbator Brand"
+							alt: "XspaceCup - Top Male Masturbator Brand",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"XspaceCup - Top Male Masturbator Brand"
@@ -41541,7 +41589,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/nakedoll.png",
-							alt: "NakeDoll"
+							alt: "NakeDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"NakeDoll"
@@ -41555,7 +41605,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/vsdoll.png",
-							alt: "VSDoll"
+							alt: "VSDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"VSDoll"
@@ -41569,7 +41621,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/sextorso.png",
-							alt: "sexdoll torso"
+							alt: "sexdoll torso",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"sexdoll torso"
@@ -41583,7 +41637,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/minisexdoll.png",
-							alt: "anime sexdoll"
+							alt: "anime sexdoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"anime sexdoll"
@@ -41597,7 +41653,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/myminisexdoll.png",
-							alt: "cheap sexdoll"
+							alt: "cheap sexdoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"cheap sexdoll"
@@ -41611,7 +41669,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/hugedildo.png",
-							alt: "huge dildo"
+							alt: "huge dildo",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"huge dildo"
@@ -41625,7 +41685,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/uusexdoll.png",
-							alt: "sexdoll"
+							alt: "sexdoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"sexdoll"
@@ -41639,7 +41701,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/uusextoy.png",
-							alt: "best pocket pussy"
+							alt: "best pocket pussy",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"best pocket pussy"
@@ -41653,7 +41717,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/lovedolltorso.png",
-							alt: "female torso sex doll"
+							alt: "female torso sex doll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"female torso sex doll"
@@ -41667,7 +41733,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/mymasturbators.png",
-							alt: "male masturbator"
+							alt: "male masturbator",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"male masturbator"
@@ -41681,7 +41749,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/buypenispump.png",
-							alt: "penis pump"
+							alt: "penis pump",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"penis pump"
@@ -41695,7 +41765,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/bestrealdoll.jpeg",
-							alt: "BestRealDoll"
+							alt: "BestRealDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"BestRealDoll"
@@ -41709,7 +41781,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/sexdolltech.jpeg",
-							alt: "SexDollTech"
+							alt: "SexDollTech",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"SexDollTech"
@@ -41723,7 +41797,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/sexdollsoff.png",
-							alt: "YourDoll"
+							alt: "YourDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"SexDollsOff"
@@ -41737,7 +41813,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/realsexdoll.png",
-							alt: "YourDoll"
+							alt: "YourDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"RealSexDoll"
@@ -41751,7 +41829,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/yourdoll.jpg",
-							alt: "YourDoll"
+							alt: "YourDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"YourDoll"
@@ -41765,7 +41845,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/annies-dollhouse.png",
-							alt: "Annie's Dollhouse"
+							alt: "Annie's Dollhouse",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"Annie's Dollhouse"
@@ -41779,7 +41861,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/sextoycollective.jpg",
-							alt: "STC"
+							alt: "STC",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"STC"
@@ -41794,7 +41878,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/doctorclimax.png",
-							alt: "DoctorClimax"
+							alt: "DoctorClimax",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"DoctorClimax"
@@ -41808,7 +41894,9 @@ function Sponsors() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/images/sponsors/bsdoll.jpg",
-							alt: "BSDoll"
+							alt: "BSDoll",
+							loading: "lazy",
+							decoding: "async"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"BSDoll"
@@ -41836,7 +41924,9 @@ function Themes() {
 					src: "/images/themes-dark.png",
 					alt: "SweetAlert2 Dark Theme",
 					width: 300,
-					style: { marginTop: 10 }
+					style: { marginTop: 10 },
+					loading: "lazy",
+					decoding: "async"
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { children: [
 					"Dark theme is included by default. To use it, just set the ",
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "theme" }),
@@ -41862,10 +41952,14 @@ function Themes() {
 					className: "theme-comparison",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-auto-light.png",
-						alt: "SweetAlert2 Auto Theme Light"
+						alt: "SweetAlert2 Auto Theme Light",
+						loading: "lazy",
+						decoding: "async"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-auto-dark.png",
-						alt: "SweetAlert2 Auto Theme Dark"
+						alt: "SweetAlert2 Auto Theme Dark",
+						loading: "lazy",
+						decoding: "async"
 					})]
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { children: [
 					"Auto theme is also included in default SweetAlert2 styles, it automatically adapts to the browser's theme (light or dark). To use it, just set the ",
@@ -41892,10 +41986,14 @@ function Themes() {
 					className: "theme-comparison",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-bootstrap-5-light.png",
-						alt: "SweetAlert2 Bootstrap 5 Theme Light"
+						alt: "SweetAlert2 Bootstrap 5 Theme Light",
+						loading: "lazy",
+						decoding: "async"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-bootstrap-5-dark.png",
-						alt: "SweetAlert2 Bootstrap 5 Theme Dark"
+						alt: "SweetAlert2 Bootstrap 5 Theme Dark",
+						loading: "lazy",
+						decoding: "async"
 					})]
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { children: [
 					"Bootstrap 5 theme is a separate CSS file that automatically adapts to the browser's theme (light or dark). To use it, you need to import the theme's CSS file and set the ",
@@ -41925,10 +42023,14 @@ Swal.fire({
 					className: "theme-comparison",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-bootstrap-4-light.png",
-						alt: "SweetAlert2 Bootstrap 4 Theme Light"
+						alt: "SweetAlert2 Bootstrap 4 Theme Light",
+						loading: "lazy",
+						decoding: "async"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-bootstrap-4-dark.png",
-						alt: "SweetAlert2 Bootstrap 4 Theme Dark"
+						alt: "SweetAlert2 Bootstrap 4 Theme Dark",
+						loading: "lazy",
+						decoding: "async"
 					})]
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { children: [
 					"Bootstrap 4 theme is a separate CSS file that automatically adapts to the browser's theme (light or dark). To use it, you need to import the theme's CSS file and set the ",
@@ -41958,10 +42060,14 @@ Swal.fire({
 					className: "theme-comparison",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-material-ui-light.png",
-						alt: "SweetAlert2 Material UI Theme Light"
+						alt: "SweetAlert2 Material UI Theme Light",
+						loading: "lazy",
+						decoding: "async"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-material-ui-dark.png",
-						alt: "SweetAlert2 Material UI Theme Dark"
+						alt: "SweetAlert2 Material UI Theme Dark",
+						loading: "lazy",
+						decoding: "async"
 					})]
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { children: [
 					"Material UI theme is a separate CSS file that automatically adapts to the browser's theme (light or dark). To use it, you need to import the theme's CSS file and set the ",
@@ -41991,10 +42097,14 @@ Swal.fire({
 					className: "theme-comparison",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-bulma-light.png",
-						alt: "SweetAlert2 Bulma Theme Light"
+						alt: "SweetAlert2 Bulma Theme Light",
+						loading: "lazy",
+						decoding: "async"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/themes-bulma-dark.png",
-						alt: "SweetAlert2 Bulma Theme Dark"
+						alt: "SweetAlert2 Bulma Theme Dark",
+						loading: "lazy",
+						decoding: "async"
 					})]
 				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { children: [
 					"Bulma theme is a separate CSS file that automatically adapts to the browser's theme (light or dark). To use it, you need to import the theme's CSS file and set the ",

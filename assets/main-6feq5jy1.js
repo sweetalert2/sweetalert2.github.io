@@ -1,4 +1,4 @@
-import { _ as require_jsx_runtime, a as Icons, c as DeclarativeTemplates, d as Examples, f as Showcase, g as renderRecipe, h as Nav, i as InputTypes, l as ConfigurationParams, m as Header, n as Sponsors, o as HandlingDismissals, r as Methods, s as HandlingButtons, t as Themes, u as Installation } from "./components-sfQtakl5.js";
+import { _ as require_jsx_runtime, a as Icons, c as DeclarativeTemplates, d as Examples, f as Showcase, g as renderRecipe, h as Nav, i as InputTypes, l as ConfigurationParams, m as Header, n as Sponsors, o as HandlingDismissals, r as Methods, s as HandlingButtons, t as Themes, u as Installation } from "./components-C2Ot1B7D.js";
 //#region src/index.tsx
 var import_jsx_runtime = require_jsx_runtime();
 renderRecipe(/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
