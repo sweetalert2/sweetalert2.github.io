@@ -38256,10 +38256,7 @@ function Examples() {
 						onClick: examples.customHtml.fn,
 						children: "Try me!"
 					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, {
-					code: examples.customHtml.fnString,
-					codepenCssExternal: "https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
-				})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, { code: examples.customHtml.fnString })]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 				id: "three-buttons",
