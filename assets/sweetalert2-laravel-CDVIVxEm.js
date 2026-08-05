@@ -1,4 +1,4 @@
-import { _ as require_jsx_runtime, g as Nav, h as renderRecipe, p as CodeExample } from "./components-DqbLuyMf.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav, p as CodeExample } from "./components-sfQtakl5.js";
 //#region recipe-gallery/sweetalert2-laravel.tsx
 var import_jsx_runtime = require_jsx_runtime();
 function Recipe() {

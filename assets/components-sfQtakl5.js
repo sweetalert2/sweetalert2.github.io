@@ -14149,11 +14149,93 @@ var require_sweetalert2_react_content_umd = /* @__PURE__ */ __commonJSMin(((expo
 	}));
 }));
 //#endregion
-//#region node_modules/@docsearch/js/dist/esm/index.js
+//#region node_modules/react/cjs/react-jsx-runtime.production.js
+/**
+* @license React
+* react-jsx-runtime.production.js
+*
+* Copyright (c) Meta Platforms, Inc. and affiliates.
+*
+* This source code is licensed under the MIT license found in the
+* LICENSE file in the root directory of this source tree.
+*/
+var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((exports) => {
+	var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
+	var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
+	function jsxProd(type, config, maybeKey) {
+		var key = null;
+		void 0 !== maybeKey && (key = "" + maybeKey);
+		void 0 !== config.key && (key = "" + config.key);
+		if ("key" in config) {
+			maybeKey = {};
+			for (var propName in config) "key" !== propName && (maybeKey[propName] = config[propName]);
+		} else maybeKey = config;
+		config = maybeKey.ref;
+		return {
+			$$typeof: REACT_ELEMENT_TYPE,
+			type,
+			key,
+			ref: void 0 !== config ? config : null,
+			props: maybeKey
+		};
+	}
+	exports.Fragment = REACT_FRAGMENT_TYPE;
+	exports.jsx = jsxProd;
+	exports.jsxs = jsxProd;
+}));
+//#endregion
+//#region node_modules/react/jsx-runtime.js
+var require_jsx_runtime = /* @__PURE__ */ __commonJSMin(((exports, module) => {
+	module.exports = require_react_jsx_runtime_production();
+}));
+//#endregion
+//#region src/utils/sidebar.tsx
 var import_sweetalert2_all = /* @__PURE__ */ __toESM(require_sweetalert2_all(), 1);
-var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
-var import_client = /* @__PURE__ */ __toESM(require_client(), 1);
 var import_sweetalert2_react_content_umd = /* @__PURE__ */ __toESM(require_sweetalert2_react_content_umd(), 1);
+var import_jsx_runtime = require_jsx_runtime();
+var showSidebar = () => {
+	(0, import_sweetalert2_react_content_umd.default)(import_sweetalert2_all.default).fire({
+		html: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sidebar, {}),
+		showConfirmButton: false,
+		showCloseButton: true,
+		position: "top-left",
+		customClass: { container: "sidebar" },
+		showClass: { popup: "animate__animated animate__fadeInLeft animate__faster" },
+		hideClass: { popup: "animate__animated animate__fadeOutLeft animate__faster" },
+		footer: `This sidebar is powered by SweetAlert2,
+      <a href="${sidebarUrl}" class="nowrap" target="_blank">source code ↗</a>`
+	});
+};
+//#endregion
+//#region src/utils/useHash.tsx
+var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
+var useHash = () => {
+	const [hash, setHash] = (0, import_react.useState)(() => window.location.hash);
+	const hashChangeHandler = (0, import_react.useCallback)(() => {
+		setHash(window.location.hash);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		window.addEventListener("hashchange", hashChangeHandler);
+		return () => {
+			window.removeEventListener("hashchange", hashChangeHandler);
+		};
+	}, []);
+	return [hash, (0, import_react.useCallback)((newHash) => {
+		if (newHash !== hash) window.location.hash = newHash;
+	}, [hash])];
+};
+//#endregion
+//#region src/utils/renderRecipe.tsx
+var import_client = /* @__PURE__ */ __toESM(require_client(), 1);
+/**
+* Renders a React component into the app-root element.
+* This utility removes duplicated ReactDOM.createRoot code across recipe pages.
+*/
+function renderRecipe(component) {
+	import_client.createRoot(document.querySelector(".app-root")).render(component);
+}
+//#endregion
+//#region node_modules/@docsearch/js/dist/esm/index.js
 /*! @docsearch/js 4.6.3 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 function e(e, t) {
 	(null == t || t > e.length) && (t = e.length);
@@ -33860,48 +33942,7 @@ function LD(e) {
 	};
 }
 //#endregion
-//#region node_modules/react/cjs/react-jsx-runtime.production.js
-/**
-* @license React
-* react-jsx-runtime.production.js
-*
-* Copyright (c) Meta Platforms, Inc. and affiliates.
-*
-* This source code is licensed under the MIT license found in the
-* LICENSE file in the root directory of this source tree.
-*/
-var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((exports) => {
-	var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
-	var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
-	function jsxProd(type, config, maybeKey) {
-		var key = null;
-		void 0 !== maybeKey && (key = "" + maybeKey);
-		void 0 !== config.key && (key = "" + config.key);
-		if ("key" in config) {
-			maybeKey = {};
-			for (var propName in config) "key" !== propName && (maybeKey[propName] = config[propName]);
-		} else maybeKey = config;
-		config = maybeKey.ref;
-		return {
-			$$typeof: REACT_ELEMENT_TYPE,
-			type,
-			key,
-			ref: void 0 !== config ? config : null,
-			props: maybeKey
-		};
-	}
-	exports.Fragment = REACT_FRAGMENT_TYPE;
-	exports.jsx = jsxProd;
-	exports.jsxs = jsxProd;
-}));
-//#endregion
-//#region node_modules/react/jsx-runtime.js
-var require_jsx_runtime = /* @__PURE__ */ __commonJSMin(((exports, module) => {
-	module.exports = require_react_jsx_runtime_production();
-}));
-//#endregion
 //#region src/components/DocSearch.tsx
-var import_jsx_runtime = require_jsx_runtime();
 function DocSearch() {
 	(0, import_react.useEffect)(() => {
 		LD({
@@ -34085,47 +34126,6 @@ function Sidebar() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeSelector, {})
 		]
 	});
-}
-//#endregion
-//#region src/utils/sidebar.tsx
-var showSidebar = () => {
-	(0, import_sweetalert2_react_content_umd.default)(import_sweetalert2_all.default).fire({
-		html: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sidebar, {}),
-		showConfirmButton: false,
-		showCloseButton: true,
-		position: "top-left",
-		customClass: { container: "sidebar" },
-		showClass: { popup: "animate__animated animate__fadeInLeft animate__faster" },
-		hideClass: { popup: "animate__animated animate__fadeOutLeft animate__faster" },
-		footer: `This sidebar is powered by SweetAlert2,
-      <a href="${sidebarUrl}" class="nowrap" target="_blank">source code ↗</a>`
-	});
-};
-//#endregion
-//#region src/utils/useHash.tsx
-var useHash = () => {
-	const [hash, setHash] = (0, import_react.useState)(() => window.location.hash);
-	const hashChangeHandler = (0, import_react.useCallback)(() => {
-		setHash(window.location.hash);
-	}, []);
-	(0, import_react.useEffect)(() => {
-		window.addEventListener("hashchange", hashChangeHandler);
-		return () => {
-			window.removeEventListener("hashchange", hashChangeHandler);
-		};
-	}, []);
-	return [hash, (0, import_react.useCallback)((newHash) => {
-		if (newHash !== hash) window.location.hash = newHash;
-	}, [hash])];
-};
-//#endregion
-//#region src/utils/renderRecipe.tsx
-/**
-* Renders a React component into the app-root element.
-* This utility removes duplicated ReactDOM.createRoot code across recipe pages.
-*/
-function renderRecipe(component) {
-	import_client.createRoot(document.querySelector(".app-root")).render(component);
 }
 //#endregion
 //#region src/components/CodeWithCopy.tsx
@@ -42022,4 +42022,4 @@ Swal.fire({
 	}) });
 }
 //#endregion
-export { require_jsx_runtime as _, Icons as a, DeclarativeTemplates as c, Examples as d, Showcase as f, Nav as g, renderRecipe as h, InputTypes as i, ConfigurationParams as l, Header as m, Sponsors as n, HandlingDismissals as o, CodeExample as p, Methods as r, HandlingButtons as s, Themes as t, Installation as u, require_react as v };
+export { require_jsx_runtime as _, Icons as a, DeclarativeTemplates as c, Examples as d, Showcase as f, renderRecipe as g, Nav as h, InputTypes as i, ConfigurationParams as l, Header as m, Sponsors as n, HandlingDismissals as o, CodeExample as p, Methods as r, HandlingButtons as s, Themes as t, Installation as u, require_react as v };
