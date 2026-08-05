@@ -156,7 +156,7 @@ export function Header() {
             </div>
           </div>
         </div>
-        <img id="logo-text" src="./images/SweetAlert2.png" alt="SweetAlert2" />
+        <img id="logo-text" src="./images/SweetAlert2.png" alt="SweetAlert2" width={780} height={152} />
         <div className="stats mobile-hidden">
           <CurrentVersion />
           <LatestUpdate />

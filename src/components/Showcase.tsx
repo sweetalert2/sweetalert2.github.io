@@ -12,7 +12,7 @@ export function Showcase() {
       </div>
 
       <div className="showcase sweet">
-        <img src="/images/SweetAlert2.png" height="30" alt="SweetAlert2" />
+        <img src="/images/SweetAlert2.png" width="154" height="30" alt="SweetAlert2" />
         <button
           className="show-example-btn"
           aria-label="Show SweetAlert2 success message"

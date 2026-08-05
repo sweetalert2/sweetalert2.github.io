@@ -22,6 +22,7 @@ export function Themes() {
                   src="/images/themes-dark.png"
                   alt="SweetAlert2 Dark Theme"
                   width={300}
+                  height={143}
                   style={{ marginTop: 10 }}
                   loading="lazy"
                   decoding="async"
