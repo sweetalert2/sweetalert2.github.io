@@ -82,7 +82,13 @@ export function Prtnr() {
   const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)]
 
   return (
-    <a className="prtnr-lg" href={prtnr.link} target="_blank" rel="noreferrer noopener" tabIndex={-1}>
+    <a
+      className="prtnr-lg"
+      href={prtnr.link}
+      target="_blank"
+      rel="sponsored nofollow noreferrer noopener"
+      tabIndex={-1}
+    >
       <img src={prtnr.imageUrl} />
 
       {prtnr.title}

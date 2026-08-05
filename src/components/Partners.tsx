@@ -22,7 +22,7 @@ export function Partners() {
 
   return (
     <div className="partner">
-      <a href={partner.link} target="_blank" rel="noreferrer noopener" tabIndex={-1}>
+      <a href={partner.link} target="_blank" rel="sponsored nofollow noreferrer noopener" tabIndex={-1}>
         <img src={partner.imageUrl} alt="" />
         <b>{partner.title}</b>
         <div className="description">{partner.description}</div>
