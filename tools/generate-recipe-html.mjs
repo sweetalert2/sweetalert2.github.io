@@ -10,28 +10,128 @@ const __dirname = dirname(__filename)
 
 const SITE_URL = 'https://sweetalert2.github.io'
 
+// `description` becomes the page's meta description, so each one should say what
+// the recipe actually demonstrates. Avoid double quotes: these are emitted into
+// an HTML attribute.
 const recipes = [
-  { name: 'index', title: 'SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks' },
-  { name: 'queue-with-progress-steps', title: 'Queue with Progress Steps' },
-  { name: 'bootstrap-custom-loader', title: 'Bootstrap 5 + custom loader' },
-  { name: 'custom-icon', title: 'Custom Success Icon' },
-  { name: 'sweetalert2-laravel', title: 'SweetAlert2 + Laravel' },
-  { name: 'sweetalert2-react', title: 'SweetAlert2 + React' },
-  { name: 'sweetalert2-react-router', title: 'SweetAlert2 + React Router' },
-  { name: 'three-buttons-dialog', title: 'Yes/No/Cancel Dialog' },
-  { name: 'modal-with-iframe', title: 'Modal with iframe inside' },
-  { name: 'draw-attention', title: 'Draw Attention / Persistent Dialog' },
-  { name: 'colored-toasts', title: 'Colored Toasts' },
-  { name: 'crop-image', title: 'Crop User Image' },
-  { name: 'login-form', title: 'Login Form' },
-  { name: 'input-datepicker', title: 'Date input powered by react-day-picker' },
-  { name: 'i18n-l10n', title: 'Internationalization (i18n) and localization (l10n)' },
-  { name: 'input-number-input-range', title: 'input[number] + input[range]' },
-  { name: 'validation-message-custom-icon', title: 'Validation Message with a Custom Icon' },
-  { name: 'blurred-backdrop', title: 'Blurred Backdrop' },
-  { name: 'sidebars-drawers', title: 'Sidebars and Drawers' },
-  { name: 'pdf-viewer', title: 'PDF Viewer' },
-  { name: 'google-maps', title: 'Google Maps' },
+  {
+    name: 'index',
+    title: 'SweetAlert2 Recipe Gallery - Code Examples for Specific Tasks',
+    description:
+      'A collection of easy-to-digest SweetAlert2 code examples for specific tasks, each in about 30 lines of code or less.',
+  },
+  {
+    name: 'queue-with-progress-steps',
+    title: 'Queue with Progress Steps',
+    description:
+      'Chain several SweetAlert2 popups into a wizard using Swal.mixin() with progressSteps and currentProgressStep.',
+  },
+  {
+    name: 'bootstrap-custom-loader',
+    title: 'Bootstrap 5 + custom loader',
+    description:
+      'Style SweetAlert2 with Bootstrap 5 buttons via buttonsStyling: false and customClass, plus a custom loader animation.',
+  },
+  {
+    name: 'custom-icon',
+    title: 'Custom Success Icon',
+    description:
+      'Replace the built-in SweetAlert2 success icon with your own inline SVG using iconHtml and a customClass animation.',
+  },
+  {
+    name: 'sweetalert2-laravel',
+    title: 'SweetAlert2 + Laravel',
+    description:
+      'Show SweetAlert2 popups from a Laravel application using the sweetalert2-laravel package, with the same API options.',
+  },
+  {
+    name: 'sweetalert2-react',
+    title: 'SweetAlert2 + React',
+    description:
+      'Render React components inside a SweetAlert2 popup with sweetalert2-react-content, including a controlled input.',
+  },
+  {
+    name: 'sweetalert2-react-router',
+    title: 'SweetAlert2 + React Router',
+    description:
+      'Use SweetAlert2 with React Router, rendering router-aware links inside a popup via createPortal and didOpen.',
+  },
+  {
+    name: 'three-buttons-dialog',
+    title: 'Yes/No/Cancel Dialog',
+    description:
+      'Build a Yes / No / Cancel dialog with showDenyButton and showCancelButton, reordering the buttons with customClass.',
+  },
+  {
+    name: 'modal-with-iframe',
+    title: 'Modal with iframe inside',
+    description: 'Embed a YouTube iframe inside a SweetAlert2 popup using the built-in embed-iframe theme.',
+  },
+  {
+    name: 'draw-attention',
+    title: 'Draw Attention / Persistent Dialog',
+    description:
+      'Make a SweetAlert2 popup shake instead of closing when the backdrop is clicked, using allowOutsideClick and animate.css.',
+  },
+  {
+    name: 'colored-toasts',
+    title: 'Colored Toasts',
+    description:
+      'Create colored SweetAlert2 toast notifications with Swal.mixin(), iconColor and a timer progress bar.',
+  },
+  {
+    name: 'crop-image',
+    title: 'Crop User Image',
+    description:
+      'Let users crop an image inside a SweetAlert2 popup with Cropper.js, updating a live preview as they drag.',
+  },
+  {
+    name: 'login-form',
+    title: 'Login Form',
+    description: 'Collect a username and password in one SweetAlert2 popup using two inputs and preConfirm validation.',
+  },
+  {
+    name: 'input-datepicker',
+    title: 'Date input powered by react-day-picker',
+    description: 'Render a react-day-picker date range calendar inside a SweetAlert2 popup using createPortal.',
+  },
+  {
+    name: 'i18n-l10n',
+    title: 'Internationalization (i18n) and localization (l10n)',
+    description:
+      'Translate SweetAlert2 popup text with i18next for internationalization (i18n) and localization (l10n).',
+  },
+  {
+    name: 'input-number-input-range',
+    title: 'input[number] + input[range]',
+    description: 'Keep a number input and a range slider in sync inside a single SweetAlert2 popup.',
+  },
+  {
+    name: 'validation-message-custom-icon',
+    title: 'Validation Message with a Custom Icon',
+    description: 'Add an icon to the SweetAlert2 validation message with showValidationMessage and a customClass.',
+  },
+  {
+    name: 'blurred-backdrop',
+    title: 'Blurred Backdrop',
+    description: 'Blur the page behind a SweetAlert2 popup with a CSS filter applied while swal2-shown is active.',
+  },
+  {
+    name: 'sidebars-drawers',
+    title: 'Sidebars and Drawers',
+    description:
+      'Turn SweetAlert2 popups into left, right, top and bottom drawers using position and animate.css show and hide classes.',
+  },
+  {
+    name: 'pdf-viewer',
+    title: 'PDF Viewer',
+    description: 'Render a PDF inside a SweetAlert2 popup onto a canvas with pdf.js.',
+  },
+  {
+    name: 'google-maps',
+    title: 'Google Maps',
+    description: 'Embed a Google Maps iframe inside a SweetAlert2 popup using the embed-iframe theme.',
+  },
 ]
 
 /**
@@ -74,16 +174,25 @@ function breadcrumbJsonLd(recipe) {
 }
 
 /**
- * @param {string} title
+ * @param {{name: string, title: string, description: string}} recipe
  * @param {string} scriptSrc
  * @param {string} canonical Site-root-relative canonical path
  * @param {string} structuredData JSON-LD payload for the page
  * @returns {string}
  */
-function generateHtml(title, scriptSrc, canonical, structuredData) {
+function generateHtml(recipe, scriptSrc, canonical, structuredData) {
+  // Brand the <title> for recognisability in search results, unless the recipe
+  // title already says SweetAlert2 (avoids "SweetAlert2 + React - SweetAlert2").
+  const title = recipe.title.includes('SweetAlert2') ? recipe.title : `${recipe.title} - SweetAlert2`
+
   return `<!DOCTYPE html>
 <html lang="en">
-  <load ="partials/head.html" title="${title}" canonical="${canonical}" />
+  <load
+    ="partials/head.html"
+    title="${title}"
+    description="${recipe.description}"
+    canonical="${canonical}"
+  />
   <body>
     <div class="app-root"></div>
     <script type="application/ld+json">
@@ -112,7 +221,7 @@ mkdirSync(recipeDir, { recursive: true })
 
 for (const recipe of recipes) {
   const htmlPath = resolve(recipeDir, `${recipe.name}.html`)
-  const html = generateHtml(recipe.title, `./${recipe.name}.tsx`, canonicalPath(recipe.name), breadcrumbJsonLd(recipe))
+  const html = generateHtml(recipe, `./${recipe.name}.tsx`, canonicalPath(recipe.name), breadcrumbJsonLd(recipe))
   writeFileSync(htmlPath, html, 'utf-8')
   console.log(`Generated: ${recipe.name}.html`)
 }
