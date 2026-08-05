@@ -9,18 +9,13 @@
   <link rel="apple-touch-icon" href="/images/favicon.png" />
 
   <!--
-    Resource hints. jsdelivr gets a full preconnect because it serves two
-    render-blocking stylesheets below, so its connection is on the critical
-    path. Deliberately no crossorigin: the stylesheet requests are not CORS,
-    and a crossorigin preconnect would open a connection they cannot reuse.
-
-    The rest only get dns-prefetch. They are either deferred (analytics),
-    fetched after mount (the GitHub/npm stats in Header.tsx, the stars
-    iframe), or may never be used at all (Algolia, which requests only once
-    someone types in the search box), so spending a connection up front
-    would be wasteful.
+    Resource hints. Nothing here is on the critical path any more now that no
+    stylesheet is loaded from a third party, so there is no preconnect: these
+    origins are all either deferred (analytics), fetched after mount (the
+    GitHub/npm stats in Header.tsx, the stars iframe), or may never be used at
+    all (Algolia, which requests only once someone types in the search box).
+    dns-prefetch covers the DNS lookup without spending a connection up front.
   -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://38BPOKYOZ2-dsn.algolia.net" />
   <link rel="dns-prefetch" href="https://analytics.limonte.dev" />
   <link rel="dns-prefetch" href="https://api.github.com" />
@@ -50,9 +45,6 @@
   <meta name="theme-color" content="#f2f4f6" />
 
   <link rel="stylesheet" href="/styles/styles.scss" />
-
-  <!-- Font Awesome icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css" />
 
   <script
     defer

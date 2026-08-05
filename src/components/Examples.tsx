@@ -1,5 +1,6 @@
 import { examples } from '../examples'
 import { CodeExample } from './CodeExample'
+import { IconExternalLink } from './UiIcons'
 
 export function Examples() {
   return (
@@ -132,7 +133,7 @@ export function Examples() {
                 tabIndex={-1}
                 className="nowrap"
               >
-                Animate.css <i className="fa fa-external-link"></i>
+                Animate.css <IconExternalLink />
               </a>
             </p>
             <button
