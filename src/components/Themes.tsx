@@ -19,7 +19,7 @@ export function Themes() {
               <td>
                 <h4>dark</h4>
                 <img
-                  src="/images/themes-dark.png"
+                  src="/images/themes-dark.webp"
                   alt="SweetAlert2 Dark Theme"
                   width={300}
                   height={143}
@@ -52,13 +52,13 @@ export function Themes() {
                 <h4>auto</h4>
                 <div className="theme-comparison">
                   <img
-                    src="/images/themes-auto-light.png"
+                    src="/images/themes-auto-light.webp"
                     alt="SweetAlert2 Auto Theme Light"
                     loading="lazy"
                     decoding="async"
                   />
                   <img
-                    src="/images/themes-auto-dark.png"
+                    src="/images/themes-auto-dark.webp"
                     alt="SweetAlert2 Auto Theme Dark"
                     loading="lazy"
                     decoding="async"
@@ -90,13 +90,13 @@ export function Themes() {
                 <h4>bootstrap-5</h4>
                 <div className="theme-comparison">
                   <img
-                    src="/images/themes-bootstrap-5-light.png"
+                    src="/images/themes-bootstrap-5-light.webp"
                     alt="SweetAlert2 Bootstrap 5 Theme Light"
                     loading="lazy"
                     decoding="async"
                   />
                   <img
-                    src="/images/themes-bootstrap-5-dark.png"
+                    src="/images/themes-bootstrap-5-dark.webp"
                     alt="SweetAlert2 Bootstrap 5 Theme Dark"
                     loading="lazy"
                     decoding="async"
@@ -132,13 +132,13 @@ Swal.fire({
                 <h4>bootstrap-4</h4>
                 <div className="theme-comparison">
                   <img
-                    src="/images/themes-bootstrap-4-light.png"
+                    src="/images/themes-bootstrap-4-light.webp"
                     alt="SweetAlert2 Bootstrap 4 Theme Light"
                     loading="lazy"
                     decoding="async"
                   />
                   <img
-                    src="/images/themes-bootstrap-4-dark.png"
+                    src="/images/themes-bootstrap-4-dark.webp"
                     alt="SweetAlert2 Bootstrap 4 Theme Dark"
                     loading="lazy"
                     decoding="async"
@@ -174,13 +174,13 @@ Swal.fire({
                 <h4>material-ui</h4>
                 <div className="theme-comparison">
                   <img
-                    src="/images/themes-material-ui-light.png"
+                    src="/images/themes-material-ui-light.webp"
                     alt="SweetAlert2 Material UI Theme Light"
                     loading="lazy"
                     decoding="async"
                   />
                   <img
-                    src="/images/themes-material-ui-dark.png"
+                    src="/images/themes-material-ui-dark.webp"
                     alt="SweetAlert2 Material UI Theme Dark"
                     loading="lazy"
                     decoding="async"
@@ -216,13 +216,13 @@ Swal.fire({
                 <h4>bulma</h4>
                 <div className="theme-comparison">
                   <img
-                    src="/images/themes-bulma-light.png"
+                    src="/images/themes-bulma-light.webp"
                     alt="SweetAlert2 Bulma Theme Light"
                     loading="lazy"
                     decoding="async"
                   />
                   <img
-                    src="/images/themes-bulma-dark.png"
+                    src="/images/themes-bulma-dark.webp"
                     alt="SweetAlert2 Bulma Theme Dark"
                     loading="lazy"
                     decoding="async"
