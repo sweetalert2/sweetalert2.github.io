@@ -34359,7 +34359,9 @@ function Header() {
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 			id: "logo-text",
 			src: "./images/SweetAlert2.png",
-			alt: "SweetAlert2"
+			alt: "SweetAlert2",
+			width: 780,
+			height: 152
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "stats mobile-hidden",
@@ -38090,6 +38092,7 @@ function Showcase() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 				src: "/images/SweetAlert2.png",
+				width: "154",
 				height: "30",
 				alt: "SweetAlert2"
 			}),
@@ -41924,6 +41927,7 @@ function Themes() {
 					src: "/images/themes-dark.png",
 					alt: "SweetAlert2 Dark Theme",
 					width: 300,
+					height: 143,
 					style: { marginTop: 10 },
 					loading: "lazy",
 					decoding: "async"

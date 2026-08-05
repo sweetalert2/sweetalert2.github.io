@@ -3307,6 +3307,7 @@ tr:hover .hover-anchor {
 #logo-text {
   width: 28em;
   max-width: 95%;
+  height: auto;
 }
 
 .recipes-list {
