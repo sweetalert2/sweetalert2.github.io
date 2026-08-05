@@ -7012,15 +7012,23 @@ tr:hover .hover-anchor {
   align-items: center;
   justify-content: center;
 }
+.recipe-gallery-top-nav .breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
 @media all and (width > 768px) {
-  .recipe-gallery-top-nav a {
+  .recipe-gallery-top-nav .breadcrumbs {
     margin-right: 20em;
   }
 }
 @media all and (width <= 768px) {
-  .recipe-gallery-top-nav a {
+  .recipe-gallery-top-nav .breadcrumbs {
     margin-top: 1em;
   }
+}
+.recipe-gallery-top-nav .breadcrumbs .separator {
+  color: #a7adb2;
 }
 .recipe-gallery-top-nav #docsearch {
   margin: 1em 0 !important;

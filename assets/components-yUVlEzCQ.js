@@ -34061,15 +34061,6 @@ function IconBars() {
 		]
 	});
 }
-function IconArrowLeft() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-		...decorative,
-		className: "ui-icon",
-		viewBox: "0 0 24 24",
-		...stroke,
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M19 12H5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "m12 19-7-7 7-7" })]
-	});
-}
 function IconExternalLink() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
 		...decorative,
@@ -34086,7 +34077,7 @@ function IconExternalLink() {
 //#endregion
 //#region src/components/Nav.tsx
 var sidebarUrl = "https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx";
-function Nav({ recipeGallery = false, showBackToRecipeGalleryLink = true }) {
+function Nav({ recipeGallery = false, showBreadcrumbs = true }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sidebar, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
@@ -34097,9 +34088,24 @@ function Nav({ recipeGallery = false, showBackToRecipeGalleryLink = true }) {
 		}),
 		recipeGallery ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "recipe-gallery-top-nav",
-			children: [showBackToRecipeGalleryLink ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-				href: "/recipe-gallery/",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconArrowLeft, {}), " Back to Recipe Gallery"]
+			children: [showBreadcrumbs ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+				className: "breadcrumbs",
+				"aria-label": "Breadcrumb",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "/",
+						children: "SweetAlert2"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "separator",
+						"aria-hidden": "true",
+						children: "/"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "/recipe-gallery/",
+						children: "Recipe Gallery"
+					})
+				]
 			}) : null, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DocSearch, {})]
 		}) }) : null
 	] });

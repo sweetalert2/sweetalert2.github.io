@@ -1,11 +1,11 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-DtqPtIxL.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-yUVlEzCQ.js";
 //#region recipe-gallery/index.tsx
 var import_jsx_runtime = require_jsx_runtime();
 function Recipe() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, {
 			recipeGallery: true,
-			showBackToRecipeGalleryLink: false
+			showBreadcrumbs: false
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Recipe Gallery" }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
