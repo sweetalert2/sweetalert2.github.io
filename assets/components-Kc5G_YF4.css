@@ -6263,7 +6263,7 @@ button {
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-nav {
+.sidebar-nav {
   display: flex;
   position: fixed;
   z-index: 1;
@@ -6275,16 +6275,16 @@ nav {
   transition: left 0.5s ease-in-out;
 }
 @media all and (width <= 1260px) {
-  nav {
+  .sidebar-nav {
     display: none;
   }
 }
 @media all and (width <= 1300px) {
-  nav {
+  .sidebar-nav {
     left: 0;
   }
 }
-nav a {
+.sidebar-nav a {
   display: flex;
   margin-right: 15px;
   padding: 0.4em 1em;
@@ -6293,25 +6293,25 @@ nav a {
   border-left: 4px solid transparent;
   text-decoration: none !important;
 }
-nav a::before {
+.sidebar-nav a::before {
   content: "›";
   margin-right: 1em;
 }
-nav a:hover {
+.sidebar-nav a:hover {
   border-left: 4px solid #1f74b6;
 }
-nav a.recipe-gallery {
+.sidebar-nav a.recipe-gallery {
   color: #c712bb;
 }
-nav a.recipe-gallery:hover {
+.sidebar-nav a.recipe-gallery:hover {
   border-left: 4px solid #c712bb;
 }
-nav a span {
+.sidebar-nav a span {
   flex-grow: 1;
   text-align: left;
 }
-nav .theme-selector,
-nav .version-selector {
+.sidebar-nav .theme-selector,
+.sidebar-nav .version-selector {
   margin: 2em 0 0 0.6em;
   font-size: 1.1em;
   text-align: left;
@@ -6349,7 +6349,7 @@ nav .version-selector {
 .sidebar .swal2-html-container {
   margin: 0 2em 0 0;
 }
-.sidebar nav {
+.sidebar .sidebar-nav {
   display: block !important;
   position: initial;
   font-size: 16px;

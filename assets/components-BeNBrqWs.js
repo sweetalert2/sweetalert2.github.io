@@ -34112,7 +34112,7 @@ function Nav({ recipeGallery = false, showBreadcrumbs = true }) {
 }
 function Sidebar() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-		className: "mobile-hidden",
+		className: "sidebar-nav mobile-hidden",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 				href: "/#examples",
