@@ -57,7 +57,9 @@ button {
     sans-serif;
 }
 
-nav {
+// Scoped to the sidebar explicitly. As a bare `nav` selector this styled
+// every <nav> on the page, including the breadcrumb trail.
+.sidebar-nav {
   display: flex;
   position: fixed;
   z-index: 1;
@@ -149,7 +151,7 @@ nav {
     margin: 0 2em 0 0;
   }
 
-  nav {
+  .sidebar-nav {
     display: block !important;
     position: initial;
     font-size: 16px;
