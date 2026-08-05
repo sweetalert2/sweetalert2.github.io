@@ -45,7 +45,7 @@ export function Nav({
 
 export function Sidebar() {
   return (
-    <nav className="mobile-hidden">
+    <nav className="sidebar-nav mobile-hidden">
       <a href="/#examples" onClick={() => Swal.close()}>
         <span>Examples</span>
       </a>
