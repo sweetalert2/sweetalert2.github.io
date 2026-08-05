@@ -97,6 +97,8 @@ Swal::toastQuestion([
           src="https://github.com/sweetalert2/sweetalert2-laravel/raw/main/sweetalert2-laravel.png"
           alt="SweetAlert2 Laravel integration demo screenshot"
           style={{ maxWidth: 840 }}
+          loading="lazy"
+          decoding="async"
         />
       </p>
     </>

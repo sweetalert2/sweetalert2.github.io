@@ -79,7 +79,7 @@ import 'sweetalert2/src/sweetalert2.scss'`}
             >
               React
               <br />
-              <img src="/images/react.svg" width="125" alt="" />
+              <img src="/images/react.svg" width="125" alt="" loading="lazy" decoding="async" />
             </a>
           </div>
           <div>
@@ -91,7 +91,7 @@ import 'sweetalert2/src/sweetalert2.scss'`}
             >
               Vue
               <br />
-              <img src="/images/vue.png" width="125" alt="" />
+              <img src="/images/vue.png" width="125" alt="" loading="lazy" decoding="async" />
             </a>
           </div>
           <div>
@@ -103,7 +103,7 @@ import 'sweetalert2/src/sweetalert2.scss'`}
             >
               Angular
               <br />
-              <img src="/images/angular.svg" width="125" alt="" />
+              <img src="/images/angular.svg" width="125" alt="" loading="lazy" decoding="async" />
             </a>
           </div>
           <div>
@@ -115,7 +115,7 @@ import 'sweetalert2/src/sweetalert2.scss'`}
             >
               Laravel
               <br />
-              <img src="/images/laravel.svg" width="125" alt="" />
+              <img src="/images/laravel.svg" width="125" alt="" loading="lazy" decoding="async" />
             </a>
           </div>
         </div>

@@ -18,7 +18,14 @@ export function Themes() {
             <tr>
               <td>
                 <h4>dark</h4>
-                <img src="/images/themes-dark.png" alt="SweetAlert2 Dark Theme" width={300} style={{ marginTop: 10 }} />
+                <img
+                  src="/images/themes-dark.png"
+                  alt="SweetAlert2 Dark Theme"
+                  width={300}
+                  style={{ marginTop: 10 }}
+                  loading="lazy"
+                  decoding="async"
+                />
               </td>
               <td>
                 Dark theme is included by default. To use it, just set the <strong>theme</strong> parameter to{' '}
@@ -43,8 +50,18 @@ export function Themes() {
               <td>
                 <h4>auto</h4>
                 <div className="theme-comparison">
-                  <img src="/images/themes-auto-light.png" alt="SweetAlert2 Auto Theme Light" />
-                  <img src="/images/themes-auto-dark.png" alt="SweetAlert2 Auto Theme Dark" />
+                  <img
+                    src="/images/themes-auto-light.png"
+                    alt="SweetAlert2 Auto Theme Light"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/images/themes-auto-dark.png"
+                    alt="SweetAlert2 Auto Theme Dark"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </td>
               <td>
@@ -71,8 +88,18 @@ export function Themes() {
               <td>
                 <h4>bootstrap-5</h4>
                 <div className="theme-comparison">
-                  <img src="/images/themes-bootstrap-5-light.png" alt="SweetAlert2 Bootstrap 5 Theme Light" />
-                  <img src="/images/themes-bootstrap-5-dark.png" alt="SweetAlert2 Bootstrap 5 Theme Dark" />
+                  <img
+                    src="/images/themes-bootstrap-5-light.png"
+                    alt="SweetAlert2 Bootstrap 5 Theme Light"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/images/themes-bootstrap-5-dark.png"
+                    alt="SweetAlert2 Bootstrap 5 Theme Dark"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </td>
               <td>
@@ -103,8 +130,18 @@ Swal.fire({
               <td>
                 <h4>bootstrap-4</h4>
                 <div className="theme-comparison">
-                  <img src="/images/themes-bootstrap-4-light.png" alt="SweetAlert2 Bootstrap 4 Theme Light" />
-                  <img src="/images/themes-bootstrap-4-dark.png" alt="SweetAlert2 Bootstrap 4 Theme Dark" />
+                  <img
+                    src="/images/themes-bootstrap-4-light.png"
+                    alt="SweetAlert2 Bootstrap 4 Theme Light"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/images/themes-bootstrap-4-dark.png"
+                    alt="SweetAlert2 Bootstrap 4 Theme Dark"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </td>
               <td>
@@ -135,8 +172,18 @@ Swal.fire({
               <td>
                 <h4>material-ui</h4>
                 <div className="theme-comparison">
-                  <img src="/images/themes-material-ui-light.png" alt="SweetAlert2 Material UI Theme Light" />
-                  <img src="/images/themes-material-ui-dark.png" alt="SweetAlert2 Material UI Theme Dark" />
+                  <img
+                    src="/images/themes-material-ui-light.png"
+                    alt="SweetAlert2 Material UI Theme Light"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/images/themes-material-ui-dark.png"
+                    alt="SweetAlert2 Material UI Theme Dark"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </td>
               <td>
@@ -167,8 +214,18 @@ Swal.fire({
               <td>
                 <h4>bulma</h4>
                 <div className="theme-comparison">
-                  <img src="/images/themes-bulma-light.png" alt="SweetAlert2 Bulma Theme Light" />
-                  <img src="/images/themes-bulma-dark.png" alt="SweetAlert2 Bulma Theme Dark" />
+                  <img
+                    src="/images/themes-bulma-light.png"
+                    alt="SweetAlert2 Bulma Theme Light"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="/images/themes-bulma-dark.png"
+                    alt="SweetAlert2 Bulma Theme Dark"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </td>
               <td>
