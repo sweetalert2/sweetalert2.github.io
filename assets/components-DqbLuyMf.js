@@ -34175,86 +34175,6 @@ function CodeWithCopy({ children, ...props }) {
 	});
 }
 //#endregion
-//#region src/components/Prtnr.tsx
-function Prtnr() {
-	const prtnrs = [
-		{
-			link: "https://refnocode.trade.re/gt06b1m7",
-			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-				"Join Trade Republic today!",
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Start investing with a free stock worth up to $200 🚀"
-			] }),
-			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-			imageUrl: "/images/prtnrs/trade-republic.png"
-		},
-		{
-			link: "https://m.do.co/c/12907f2ba0bf",
-			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-				"Get started with DigitalOcean today!",
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Deploy your app and get $25 in credit 🚀"
-			] }),
-			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-			imageUrl: "/images/prtnrs/digitalocean.png"
-		},
-		{
-			link: "https://www.hostinger.com?REFERRALCODE=BKZHOSTINDAB",
-			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-				"Get started with Hostinger today!",
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Deploy your website and get 20% discount 🚀"
-			] }),
-			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-			imageUrl: "/images/prtnrs/hostinger.png"
-		},
-		{
-			link: "https://revolut.com/referral/?referral-code=vladimh4x",
-			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-				"Start using Revolut today!",
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Join me and over 70 million users 🚀"
-			] }),
-			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-			imageUrl: "/images/prtnrs/revolut.png"
-		},
-		{
-			link: "https://deel.com/referrals/Vladimir-356KvXWR",
-			title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("b", { children: [
-				"Hire and pay global teams easily with Deel!",
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Fast, compliant payroll and HR for remote businesses worldwide.",
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-				"Start today with $500 in Deel credits 🚀"
-			] }),
-			description: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {}),
-			imageUrl: "/images/prtnrs/deel.webp"
-		}
-	];
-	const prtnr = prtnrs[Math.floor(Math.random() * prtnrs.length)];
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-		className: "prtnr-lg",
-		href: prtnr.link,
-		target: "_blank",
-		rel: "noreferrer noopener",
-		tabIndex: -1,
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: prtnr.imageUrl }),
-			prtnr.title,
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "description",
-				children: prtnr.description
-			})
-		]
-	});
-}
-//#endregion
 //#region src/components/Header.tsx
 function Header() {
 	const st4 = { fill: "#fa7471" };
@@ -42102,4 +42022,4 @@ Swal.fire({
 	}) });
 }
 //#endregion
-export { Nav as _, Icons as a, DeclarativeTemplates as c, Examples as d, Showcase as f, renderRecipe as g, Prtnr as h, InputTypes as i, ConfigurationParams as l, Header as m, Sponsors as n, HandlingDismissals as o, CodeExample as p, Methods as r, HandlingButtons as s, Themes as t, Installation as u, require_jsx_runtime as v, require_react as y };
+export { require_jsx_runtime as _, Icons as a, DeclarativeTemplates as c, Examples as d, Showcase as f, Nav as g, renderRecipe as h, InputTypes as i, ConfigurationParams as l, Header as m, Sponsors as n, HandlingDismissals as o, CodeExample as p, Methods as r, HandlingButtons as s, Themes as t, Installation as u, require_react as v };

@@ -1,5 +1,5 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-d5c5x7Xf.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-ziWvvxvT.js";
+import { _ as require_jsx_runtime, g as Nav, h as renderRecipe } from "./components-DqbLuyMf.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-CvyccRfx.js";
 //#region recipe-gallery/three-buttons-dialog.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var styles = (await __vitePreload(async () => {
@@ -13,7 +13,6 @@ var src = (await __vitePreload(async () => {
 function Recipe() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, { recipeGallery: true }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Prtnr, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Yes/No/Cancel Dialog" }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
 			"You can reorder buttons by using the CSS property ",

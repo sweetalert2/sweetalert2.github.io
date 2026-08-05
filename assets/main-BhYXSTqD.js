@@ -1,10 +1,9 @@
-import { _ as Nav, a as Icons, c as DeclarativeTemplates, d as Examples, f as Showcase, g as renderRecipe, h as Prtnr, i as InputTypes, l as ConfigurationParams, m as Header, n as Sponsors, o as HandlingDismissals, r as Methods, s as HandlingButtons, t as Themes, u as Installation, v as require_jsx_runtime } from "./components-d5c5x7Xf.js";
+import { _ as require_jsx_runtime, a as Icons, c as DeclarativeTemplates, d as Examples, f as Showcase, g as Nav, h as renderRecipe, i as InputTypes, l as ConfigurationParams, m as Header, n as Sponsors, o as HandlingDismissals, r as Methods, s as HandlingButtons, t as Themes, u as Installation } from "./components-DqbLuyMf.js";
 //#region src/index.tsx
 var import_jsx_runtime = require_jsx_runtime();
 renderRecipe(/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 	/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, {}),
 	/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
-	/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Prtnr, {}),
 	/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Showcase, {}),
 	/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Examples, {}),
 	/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Installation, {}),

@@ -1,6 +1,6 @@
-import { _ as Nav, g as renderRecipe, h as Prtnr, v as require_jsx_runtime } from "./components-d5c5x7Xf.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-ziWvvxvT.js";
-import { t as CreatePortalDocs } from "./CreatePortalDocs-BcduDsx6.js";
+import { _ as require_jsx_runtime, g as Nav, h as renderRecipe } from "./components-DqbLuyMf.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-CvyccRfx.js";
+import { t as CreatePortalDocs } from "./CreatePortalDocs-D_zT_B1x.js";
 //#region recipe-gallery/input-datepicker.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var src = (await __vitePreload(async () => {
@@ -10,7 +10,6 @@ var src = (await __vitePreload(async () => {
 function Recipe() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, { recipeGallery: true }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Prtnr, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Date input powered by react-day-picker" }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
 			"While it is possible to use ",
