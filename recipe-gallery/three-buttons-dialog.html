@@ -10,6 +10,25 @@
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link rel="apple-touch-icon" href="/images/favicon.png" />
 
+  <!--
+    Resource hints. jsdelivr gets a full preconnect because it serves two
+    render-blocking stylesheets below, so its connection is on the critical
+    path. Deliberately no crossorigin: the stylesheet requests are not CORS,
+    and a crossorigin preconnect would open a connection they cannot reuse.
+
+    The rest only get dns-prefetch. They are either deferred (analytics),
+    fetched after mount (the GitHub/npm stats in Header.tsx, the stars
+    iframe), or may never be used at all (Algolia, which requests only once
+    someone types in the search box), so spending a connection up front
+    would be wasteful.
+  -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://38BPOKYOZ2-dsn.algolia.net" />
+  <link rel="dns-prefetch" href="https://analytics.limonte.dev" />
+  <link rel="dns-prefetch" href="https://api.github.com" />
+  <link rel="dns-prefetch" href="https://api.npmjs.org" />
+  <link rel="dns-prefetch" href="https://ghbtns.com" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SweetAlert2" />
