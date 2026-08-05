@@ -11,6 +11,7 @@ export default defineConfig({
     rolldownOptions: {
       input: {
         'main': 'index.html',
+        '404': '404.html',
         'recipe-gallery': 'recipe-gallery/index.html',
         'queue-with-progress-steps': 'recipe-gallery/queue-with-progress-steps.html',
         'bootstrap-custom-loader': 'recipe-gallery/bootstrap-custom-loader.html',
