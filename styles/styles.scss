@@ -872,6 +872,11 @@ $bouncing-logo-min-height: 35%;
 #logo-text {
   width: 28em;
   max-width: 95%;
+
+  // The width/height attributes give the browser the aspect ratio up front so
+  // it can reserve space before the image loads. height must be auto or the
+  // height attribute would fight the CSS width and squash the logo.
+  height: auto;
 }
 
 .recipes-list {
