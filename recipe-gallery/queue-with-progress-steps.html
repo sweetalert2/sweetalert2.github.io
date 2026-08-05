@@ -11,18 +11,13 @@
   <link rel="apple-touch-icon" href="/images/favicon.png" />
 
   <!--
-    Resource hints. jsdelivr gets a full preconnect because it serves two
-    render-blocking stylesheets below, so its connection is on the critical
-    path. Deliberately no crossorigin: the stylesheet requests are not CORS,
-    and a crossorigin preconnect would open a connection they cannot reuse.
-
-    The rest only get dns-prefetch. They are either deferred (analytics),
-    fetched after mount (the GitHub/npm stats in Header.tsx, the stars
-    iframe), or may never be used at all (Algolia, which requests only once
-    someone types in the search box), so spending a connection up front
-    would be wasteful.
+    Resource hints. Nothing here is on the critical path any more now that no
+    stylesheet is loaded from a third party, so there is no preconnect: these
+    origins are all either deferred (analytics), fetched after mount (the
+    GitHub/npm stats in Header.tsx, the stars iframe), or may never be used at
+    all (Algolia, which requests only once someone types in the search box).
+    dns-prefetch covers the DNS lookup without spending a connection up front.
   -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://38BPOKYOZ2-dsn.algolia.net" />
   <link rel="dns-prefetch" href="https://analytics.limonte.dev" />
   <link rel="dns-prefetch" href="https://api.github.com" />
@@ -52,20 +47,17 @@
   <meta name="theme-color" content="#f2f4f6" />
 
 
-  <!-- Font Awesome icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css" />
-
   <script
     defer
     src="https://analytics.limonte.dev/script.js"
     data-website-id="81d20216-968e-4799-b130-9e9ca2f8bd66"
   ></script>
-  <script type="module" crossorigin src="/assets/queue-with-progress-steps-DxVxzAyk.js"></script>
+  <script type="module" crossorigin src="/assets/queue-with-progress-steps-BwzSsLYu.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-FZ4Itg2g.js">
-  <link rel="modulepreload" crossorigin href="/assets/components-CanYN14Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/components-DtqPtIxL.js">
   <link rel="modulepreload" crossorigin href="/assets/utils-52664384-CXDgtX4N.js">
-  <link rel="modulepreload" crossorigin href="/assets/Sandpack-DoiEZqBk.js">
-  <link rel="stylesheet" crossorigin href="/assets/components-WhxI1uXz.css">
+  <link rel="modulepreload" crossorigin href="/assets/Sandpack-DJaHTI3c.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-BXvW6d2d.css">
 </head>
 
   <body>

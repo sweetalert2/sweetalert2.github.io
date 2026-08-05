@@ -1,29 +1,25 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-CanYN14Z.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-DoiEZqBk.js";
-//#region recipe-gallery/crop-image.tsx
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-DtqPtIxL.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-DJaHTI3c.js";
+//#region recipe-gallery/colored-toasts.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var styles = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./crop-image-styles-BDxYu6Pf.js");
+	const { default: __vite_default__ } = await import("./colored-toasts-styles-Bl1KsD9x.js");
 	return { default: __vite_default__ };
 }, [])).default;
 var src = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./crop-image-src-ojNmCJ40.js");
+	const { default: __vite_default__ } = await import("./colored-toasts-src-DBIo3S6e.js");
 	return { default: __vite_default__ };
 }, [])).default;
 function Recipe() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, { recipeGallery: true }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Crop User Image with Cropper.js" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Colored Toasts" }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sandpack, {
-			dependencies: {
-				"cropperjs": "^1.0.0",
-				"@github/mini-throttle": "^2.0.0"
-			},
 			files: {
 				"/App.ts": src,
 				"/styles.css": styles
 			},
-			previewHeight: 650
+			previewHeight: 250
 		})
 	] });
 }

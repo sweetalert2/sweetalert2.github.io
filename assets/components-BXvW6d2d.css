@@ -6780,6 +6780,10 @@ tr:hover .hover-anchor {
   white-space: nowrap;
 }
 
+.ui-icon {
+  vertical-align: -0.125em;
+}
+
 .border-radius-0 {
   border-radius: 0 !important;
 }

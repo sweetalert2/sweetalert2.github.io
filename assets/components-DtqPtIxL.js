@@ -34016,6 +34016,74 @@ var ThemeSelector = () => {
 	});
 };
 //#endregion
+//#region src/components/UiIcons.tsx
+var decorative = {
+	"width": "1em",
+	"height": "1em",
+	"aria-hidden": true,
+	"focusable": "false"
+};
+var stroke = {
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: 2,
+	strokeLinecap: "round",
+	strokeLinejoin: "round"
+};
+function IconBars() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+		...decorative,
+		className: "ui-icon",
+		viewBox: "0 0 24 24",
+		fill: "currentColor",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+				x: "3",
+				y: "5",
+				width: "18",
+				height: "2",
+				rx: "1"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+				x: "3",
+				y: "11",
+				width: "18",
+				height: "2",
+				rx: "1"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+				x: "3",
+				y: "17",
+				width: "18",
+				height: "2",
+				rx: "1"
+			})
+		]
+	});
+}
+function IconArrowLeft() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+		...decorative,
+		className: "ui-icon",
+		viewBox: "0 0 24 24",
+		...stroke,
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M19 12H5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "m12 19-7-7 7-7" })]
+	});
+}
+function IconExternalLink() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+		...decorative,
+		className: "ui-icon",
+		viewBox: "0 0 24 24",
+		...stroke,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M15 3h6v6" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M10 14 21 3" })
+		]
+	});
+}
+//#endregion
 //#region src/components/Nav.tsx
 var sidebarUrl = "https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx";
 function Nav({ recipeGallery = false, showBackToRecipeGalleryLink = true }) {
@@ -34025,16 +34093,13 @@ function Nav({ recipeGallery = false, showBackToRecipeGalleryLink = true }) {
 			className: "show-sidebar",
 			onClick: () => showSidebar(),
 			"aria-label": "Open navigation menu",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {
-				className: "fa fa-bars",
-				"aria-hidden": "true"
-			})
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconBars, {})
 		}),
 		recipeGallery ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "recipe-gallery-top-nav",
 			children: [showBackToRecipeGalleryLink ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 				href: "/recipe-gallery/",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", { className: "fa fa-arrow-left" }), " Back to Recipe Gallery"]
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconArrowLeft, {}), " Back to Recipe Gallery"]
 			}) : null, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DocSearch, {})]
 		}) }) : null
 	] });
@@ -34501,11 +34566,11 @@ var functions_default = {
 			showCancelButton: true,
 			focusConfirm: false,
 			confirmButtonText: `
-        <i class="fa fa-thumbs-up"></i> Great!
+        👍 Great!
       `,
 			confirmButtonAriaLabel: "Thumbs up, great!",
 			cancelButtonText: `
-        <i class="fa fa-thumbs-down"></i>
+        👎
       `,
 			cancelButtonAriaLabel: "Thumbs down"
 		});
@@ -34824,7 +34889,7 @@ var functions_default = {
         I agree with the terms and conditions
       `,
 			confirmButtonText: `
-        Continue&nbsp;<i class="fa fa-arrow-right"></i>
+        Continue&nbsp;→
       `,
 			inputValidator: (result) => {
 				return !result && "You need to agree with T&C";
@@ -38227,7 +38292,7 @@ function Examples() {
 							rel: "noreferrer noopener",
 							tabIndex: -1,
 							className: "nowrap",
-							children: ["Animate.css ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", { className: "fa fa-external-link" })]
+							children: ["Animate.css ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconExternalLink, {})]
 						})
 					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						className: "show-example-btn",
@@ -38356,7 +38421,7 @@ function Installation() {
 						target: "_blank",
 						rel: "noopener",
 						className: "nowrap",
-						children: ["jsDelivr CDN ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", { className: "fa fa-external-link" })]
+						children: ["jsDelivr CDN ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconExternalLink, {})]
 					})
 				] }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeExample, {
