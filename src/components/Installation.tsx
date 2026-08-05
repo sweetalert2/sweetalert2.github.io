@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { CodeExample } from './CodeExample'
 import { CodeWithCopy } from './CodeWithCopy'
+import { IconExternalLink } from './UiIcons'
 
 export function Installation() {
   return (
@@ -15,7 +16,7 @@ export function Installation() {
         <p>
           Or grab from{' '}
           <a href="https://www.jsdelivr.com/package/npm/sweetalert2" target="_blank" rel="noopener" className="nowrap">
-            jsDelivr CDN <i className="fa fa-external-link"></i>
+            jsDelivr CDN <IconExternalLink />
           </a>
         </p>
         <CodeExample

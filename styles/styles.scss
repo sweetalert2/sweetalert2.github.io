@@ -639,6 +639,13 @@ tr:hover {
   white-space: nowrap;
 }
 
+// Inline UI icons (src/components/UiIcons.tsx). Sized in em so they scale with
+// the inherited font-size, nudged down to sit on the text baseline the way the
+// Font Awesome glyphs they replaced did.
+.ui-icon {
+  vertical-align: -0.125em;
+}
+
 .border-radius-0 {
   border-radius: 0 !important;
 }

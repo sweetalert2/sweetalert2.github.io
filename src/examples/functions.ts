@@ -57,11 +57,11 @@ export default {
       showCancelButton: true,
       focusConfirm: false,
       confirmButtonText: `
-        <i class="fa fa-thumbs-up"></i> Great!
+        👍 Great!
       `,
       confirmButtonAriaLabel: 'Thumbs up, great!',
       cancelButtonText: `
-        <i class="fa fa-thumbs-down"></i>
+        👎
       `,
       cancelButtonAriaLabel: 'Thumbs down',
     })
@@ -454,7 +454,7 @@ export default {
         I agree with the terms and conditions
       `,
       confirmButtonText: `
-        Continue&nbsp;<i class="fa fa-arrow-right"></i>
+        Continue&nbsp;→
       `,
       inputValidator: (result) => {
         return !result && 'You need to agree with T&C'
