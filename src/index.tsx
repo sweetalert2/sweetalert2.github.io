@@ -15,13 +15,11 @@ import {
   Sponsors,
   Themes,
 } from './components'
-import { Prtnr } from './components/Prtnr'
 
 renderRecipe(
   <>
     <Nav />
     <Header />
-    <Prtnr />
     <Showcase />
     <Examples />
     <Installation />

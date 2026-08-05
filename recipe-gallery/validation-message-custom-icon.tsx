@@ -1,4 +1,4 @@
-import { Nav, Prtnr } from '../src/components'
+import { Nav } from '../src/components'
 import { renderRecipe } from '../src/utils'
 import { Sandpack } from './components/Sandpack'
 
@@ -10,7 +10,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Prtnr />
       <h1>Validation Message with a Custom Icon</h1>
 
       <p>In this example, we are using the Font Awesome icon instead of the default one.</p>

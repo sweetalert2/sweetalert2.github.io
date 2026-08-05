@@ -1,4 +1,4 @@
-import { Nav, Prtnr } from '../src/components'
+import { Nav } from '../src/components'
 import { renderRecipe } from '../src/utils'
 import { Sandpack } from './components/Sandpack'
 import { CreatePortalDocs } from './components/CreatePortalDocs'
@@ -9,7 +9,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Prtnr />
       <h1>Date input powered by react-day-picker</h1>
       <p>
         While it is possible to use <strong>input: 'date | datetime-local | time | week | month'</strong>

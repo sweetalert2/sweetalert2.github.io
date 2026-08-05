@@ -1,4 +1,4 @@
-import { Nav, Prtnr } from '../src/components'
+import { Nav } from '../src/components'
 import { renderRecipe } from '../src/utils'
 import { Sandpack } from './components/Sandpack'
 
@@ -9,7 +9,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Prtnr />
       <h1>Yes/No/Cancel Dialog</h1>
 
       <p>

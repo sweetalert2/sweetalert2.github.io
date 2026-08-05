@@ -1,4 +1,4 @@
-import { Nav, Prtnr } from '../src/components'
+import { Nav } from '../src/components'
 import { renderRecipe } from '../src/utils'
 import { Sandpack } from './components/Sandpack'
 
@@ -10,7 +10,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Prtnr />
       <h1>Bootstrap 5 + custom loader</h1>
 
       <p className="center">
