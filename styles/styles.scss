@@ -903,15 +903,23 @@ $bouncing-logo-min-height: 35%;
   align-items: center;
   justify-content: center;
 
-  @media all and (width > 768px) {
-    a {
+  // The offset belongs to the trail as a whole, not to each link inside it,
+  // so it stays on .breadcrumbs rather than on a bare `a` selector.
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    @media all and (width > 768px) {
       margin-right: 20em;
     }
-  }
 
-  @media all and (width <= 768px) {
-    a {
+    @media all and (width <= 768px) {
       margin-top: 1em;
+    }
+
+    .separator {
+      color: $chateaugray;
     }
   }
 

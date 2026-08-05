@@ -2,16 +2,16 @@ import Swal from 'sweetalert2'
 import { showSidebar } from '../utils'
 import { DocSearch } from './DocSearch'
 import { ThemeSelector } from '../utils/themableSwal'
-import { IconArrowLeft, IconBars } from './UiIcons'
+import { IconBars } from './UiIcons'
 
 export const sidebarUrl = 'https://github.com/sweetalert2/sweetalert2.github.io/blob/main/src/utils/sidebar.tsx'
 
 export function Nav({
   recipeGallery = false,
-  showBackToRecipeGalleryLink = true,
+  showBreadcrumbs = true,
 }: {
   recipeGallery?: boolean
-  showBackToRecipeGalleryLink?: boolean
+  showBreadcrumbs?: boolean
 }) {
   return (
     <>
@@ -23,10 +23,17 @@ export function Nav({
       {recipeGallery ? (
         <>
           <div className="recipe-gallery-top-nav">
-            {showBackToRecipeGalleryLink ? (
-              <a href="/recipe-gallery/">
-                <IconArrowLeft /> Back to Recipe Gallery
-              </a>
+            {showBreadcrumbs ? (
+              // Mirrors the BreadcrumbList JSON-LD the generator emits: Google
+              // prefers breadcrumb markup to match a visible trail. The current
+              // page is the <h1> below, so it is not repeated here.
+              <nav className="breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">SweetAlert2</a>
+                <span className="separator" aria-hidden="true">
+                  /
+                </span>
+                <a href="/recipe-gallery/">Recipe Gallery</a>
+              </nav>
             ) : null}
             <DocSearch />
           </div>
