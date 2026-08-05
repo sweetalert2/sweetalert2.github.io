@@ -1,4 +1,4 @@
-import { Nav, Prtnr } from '../src/components'
+import { Nav } from '../src/components'
 import { renderRecipe } from '../src/utils'
 import { Sandpack } from './components/Sandpack'
 
@@ -8,7 +8,6 @@ function Recipe() {
   return (
     <>
       <Nav recipeGallery />
-      <Prtnr />
       <h1>Queue with Progress Steps</h1>
 
       <Sandpack
