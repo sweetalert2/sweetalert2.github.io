@@ -35,17 +35,60 @@ const recipes = [
 ]
 
 /**
+ * Serialise a JSON-LD object for embedding in a <script> tag.
+ * `<` is escaped so a value can never terminate the script element early.
+ * @param {object} data
+ * @returns {string}
+ */
+function jsonLd(data) {
+  return JSON.stringify(data, null, 2).replace(/</g, '\\u003c')
+}
+
+/**
+ * BreadcrumbList for a recipe page: SweetAlert2 > Recipe Gallery > <recipe>.
+ * The gallery index itself stops at the second level. The final crumb omits
+ * `item`, since it is the current page.
+ * @param {{name: string, title: string}} recipe
+ * @returns {string}
+ */
+function breadcrumbJsonLd(recipe) {
+  const crumbs = [{ '@type': 'ListItem', 'position': 1, 'name': 'SweetAlert2', 'item': `${SITE_URL}/` }]
+
+  if (recipe.name === 'index') {
+    crumbs.push({ '@type': 'ListItem', 'position': 2, 'name': 'Recipe Gallery' })
+  } else {
+    crumbs.push({
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Recipe Gallery',
+      'item': `${SITE_URL}/recipe-gallery/`,
+    })
+    crumbs.push({ '@type': 'ListItem', 'position': 3, 'name': recipe.title })
+  }
+
+  return jsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': crumbs,
+  })
+}
+
+/**
  * @param {string} title
  * @param {string} scriptSrc
  * @param {string} canonical Site-root-relative canonical path
+ * @param {string} structuredData JSON-LD payload for the page
  * @returns {string}
  */
-function generateHtml(title, scriptSrc, canonical) {
+function generateHtml(title, scriptSrc, canonical, structuredData) {
   return `<!DOCTYPE html>
 <html lang="en">
   <load ="partials/head.html" title="${title}" canonical="${canonical}" />
   <body>
     <div class="app-root"></div>
+    <script type="application/ld+json">
+${structuredData}
+    </script>
     <script type="module" src="${scriptSrc}"></script>
   </body>
 </html>
@@ -69,7 +112,7 @@ mkdirSync(recipeDir, { recursive: true })
 
 for (const recipe of recipes) {
   const htmlPath = resolve(recipeDir, `${recipe.name}.html`)
-  const html = generateHtml(recipe.title, `./${recipe.name}.tsx`, canonicalPath(recipe.name))
+  const html = generateHtml(recipe.title, `./${recipe.name}.tsx`, canonicalPath(recipe.name), breadcrumbJsonLd(recipe))
   writeFileSync(htmlPath, html, 'utf-8')
   console.log(`Generated: ${recipe.name}.html`)
 }
