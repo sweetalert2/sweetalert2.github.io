@@ -88,10 +88,7 @@ export function Examples() {
               Try me!
             </button>
           </div>
-          <CodeExample
-            code={examples.customHtml.fnString}
-            codepenCssExternal="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
-          />
+          <CodeExample code={examples.customHtml.fnString} />
         </li>
 
         <li id="three-buttons">
