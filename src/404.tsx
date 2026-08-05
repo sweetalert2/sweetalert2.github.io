@@ -5,7 +5,7 @@ function NotFound() {
   return (
     <>
       {/* recipeGallery renders the top nav with the search box; there is no gallery to go back to */}
-      <Nav recipeGallery showBackToRecipeGalleryLink={false} />
+      <Nav recipeGallery showBreadcrumbs={false} />
 
       <h1>Page not found</h1>
 

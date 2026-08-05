@@ -4,7 +4,7 @@ import { renderRecipe } from '../src/utils'
 function Recipe() {
   return (
     <>
-      <Nav recipeGallery showBackToRecipeGalleryLink={false} />
+      <Nav recipeGallery showBreadcrumbs={false} />
       <h1>Recipe Gallery</h1>
       <p className="center">
         A collection of easy-to-digest code examples for specific tasks in about 30 lines of code or less.
