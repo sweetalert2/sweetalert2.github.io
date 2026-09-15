@@ -109,6 +109,23 @@ export function Sponsors() {
             ZezeLife
           </a>
         </div>
+        <div>
+          <a
+            href="https://sealedrose.com/verify-video"
+            target="_blank"
+            rel="noopener"
+            aria-label="Sealed Rose — AI Deepfake Detector"
+          >
+            <img
+              src="/images/sponsors/sealedrose.png"
+              alt="Sealed Rose — AI Deepfake Detector"
+              loading="lazy"
+              decoding="async"
+            />
+            <br />
+            Sealed Rose — AI Deepfake Detector
+          </a>
+        </div>
       </div>
 
       <h3 id="nsfw-sponsors">NSFW Sponsors</h3>
