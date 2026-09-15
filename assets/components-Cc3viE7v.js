@@ -41323,6 +41323,22 @@ function Sponsors() {
 			className: "sponsors",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://sealedrose.com/verify-video",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Sealed Rose — AI Deepfake Detector",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/sealedrose.png",
+							alt: "Sealed Rose — AI Deepfake Detector",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Sealed Rose — AI Deepfake Detector"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://www.blueplenum.com/",
 					target: "_blank",
 					rel: "noopener",
@@ -41464,22 +41480,6 @@ function Sponsors() {
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"ZezeLife"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://sealedrose.com/verify-video",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "Sealed Rose — AI Deepfake Detector",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/sealedrose.png",
-							alt: "Sealed Rose — AI Deepfake Detector",
-							loading: "lazy",
-							decoding: "async"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"Sealed Rose — AI Deepfake Detector"
 					]
 				}) })
 			]
