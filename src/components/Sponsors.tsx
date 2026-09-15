@@ -27,6 +27,23 @@ export function Sponsors() {
 
       <div className="sponsors">
         <div>
+          <a
+            href="https://sealedrose.com/verify-video"
+            target="_blank"
+            rel="noopener"
+            aria-label="Sealed Rose — AI Deepfake Detector"
+          >
+            <img
+              src="/images/sponsors/sealedrose.png"
+              alt="Sealed Rose — AI Deepfake Detector"
+              loading="lazy"
+              decoding="async"
+            />
+            <br />
+            Sealed Rose — AI Deepfake Detector
+          </a>
+        </div>
+        <div>
           <a href="https://www.blueplenum.com/" target="_blank" rel="noopener" aria-label="BluePlenum">
             <img src="/images/sponsors/blueplenum.jpg" alt="BluePlenum" loading="lazy" decoding="async" />
             <br />
@@ -107,23 +124,6 @@ export function Sponsors() {
             <img src="/images/sponsors/zezelife.png" alt="ZezeLife" loading="lazy" decoding="async" />
             <br />
             ZezeLife
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://sealedrose.com/verify-video"
-            target="_blank"
-            rel="noopener"
-            aria-label="Sealed Rose — AI Deepfake Detector"
-          >
-            <img
-              src="/images/sponsors/sealedrose.png"
-              alt="Sealed Rose — AI Deepfake Detector"
-              loading="lazy"
-              decoding="async"
-            />
-            <br />
-            Sealed Rose — AI Deepfake Detector
           </a>
         </div>
       </div>
