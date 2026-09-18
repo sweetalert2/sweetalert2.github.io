@@ -41988,6 +41988,134 @@ function Sponsors() {
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 						"BSDoll"
 					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.uloversdoll.com/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "ULoversDoll",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/uloversdoll.png",
+							alt: "ULoversDoll",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"ULoversDoll"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.uloversdoll.de/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Uloversdoll.de",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/uloversdoll.png",
+							alt: "Uloversdoll.de",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Uloversdoll.de"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.karenlovely.jp/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Karenlovely",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/karenlovely.png",
+							alt: "Karenlovely",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Karenlovely"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.karendoll.com",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Karendoll",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/karendoll.png",
+							alt: "Karendoll",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Karendoll"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.gutdolls.com/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Gutdolls",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/gutdolls.png",
+							alt: "Gutdolls",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Gutdolls"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.fraudoll.com/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Fraudoll",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/fraudoll.png",
+							alt: "Fraudoll",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Fraudoll"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.yeloly.com/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Yeloly",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/yeloly.png",
+							alt: "Yeloly",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Yeloly"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://www.yeloly.de/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "Yeloly.de",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/yeloly.png",
+							alt: "Yeloly.de",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"Yeloly.de"
+					]
 				}) })
 			]
 		})

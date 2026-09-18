@@ -1,6 +1,6 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-Cc3viE7v.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-CcO8zeXl.js";
-import { t as CreatePortalDocs } from "./CreatePortalDocs-DFFqrv2D.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-CoCX2WOb.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-CkadWehH.js";
+import { t as CreatePortalDocs } from "./CreatePortalDocs-Ew7X_4Ad.js";
 //#region recipe-gallery/sweetalert2-react-router.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var src = (await __vitePreload(async () => {
