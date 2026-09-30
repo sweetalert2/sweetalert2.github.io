@@ -993,10 +993,6 @@ $bouncing-logo-min-height: 35%;
   justify-content: center;
   margin: 1.5em 0 2em !important;
 
-  button {
-    box-shadow: var(--docsearch-searchbox-shadow);
-  }
-
   @media all and (width <= 768px) {
     position: fixed;
     z-index: 1;

@@ -17,8 +17,8 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.20.0",
     "@codesandbox/sandpack-themes": "^2.0.21",
-    "@docsearch/css": "^4.6.0",
-    "@docsearch/js": "^4.6.0",
+    "@docsearch/css": "^5.1.1",
+    "@docsearch/js": "^5.1.1",
     "@fontsource/montserrat": "^5.2.8",
     "@fontsource/source-code-pro": "^5.2.7",
     "@github/mini-throttle": "^2.1.1",
