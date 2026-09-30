@@ -1,4 +1,4 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-YcKzMJCv.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-x1ebJRE2.js";
 //#region src/404.tsx
 var import_jsx_runtime = require_jsx_runtime();
 function NotFound() {
