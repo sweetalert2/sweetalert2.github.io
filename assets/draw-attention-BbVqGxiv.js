@@ -1,28 +1,28 @@
 import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-x1ebJRE2.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-CkZLw1Uj.js";
-//#region recipe-gallery/i18n-l10n.tsx
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-CLDgPZn-.js";
+//#region recipe-gallery/draw-attention.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var src = (await __vitePreload(async () => {
-	const { default: __vite_default__ } = await import("./i18n-l10n-src-Bpc-uvCe.js");
+	const { default: __vite_default__ } = await import("./draw-attention-src-B0EbSO2N.js");
 	return { default: __vite_default__ };
 }, [])).default;
 function Recipe() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, { recipeGallery: true }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Internationalization (i18n) and localization (l10n)" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Draw Attention / Persistent Dialog" }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
-			"In this example ",
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-				href: "https://www.i18next.com/",
-				children: "i18next"
-			}),
-			" is used, but you can use any i18n library."
+			"In this example, we are passing the function returning ",
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "false" }),
+			" value to",
+			" ",
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "allowOutsideClick" }),
+			". In that function we can also animate the popup to bring users' attention to it."
 		] }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sandpack, {
-			dependencies: { i18next: "^26.0.0" },
+			dependencies: { "animate.css": "^4.0.0" },
 			entry: "/App.ts",
 			files: { "/App.ts": src },
-			editorHeight: 600,
+			editorHeight: 400,
 			previewHeight: 250
 		})
 	] });

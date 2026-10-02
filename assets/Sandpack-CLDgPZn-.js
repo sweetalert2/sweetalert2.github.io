@@ -14705,12 +14705,12 @@ var StructureCursor = class {
 	constructor(root, offset) {
 		this.offset = offset;
 		this.done = false;
-		this.cursor = root.cursor(IterMode.IncludeAnonymous | IterMode.IgnoreMounts);
+		this.cursor = root.cursor(IterMode.IncludeAnonymous | IterMode.IgnoreMounts | IterMode.ExcludeBuffers);
 	}
 	moveTo(pos) {
 		let { cursor } = this, p = pos - this.offset;
-		while (!this.done && cursor.from < p) if (cursor.to >= pos && cursor.enter(p, 1, IterMode.IgnoreOverlays | IterMode.ExcludeBuffers));
-		else if (cursor.to <= pos) {
+		while (!this.done && cursor.from < p) if (cursor.to >= p && cursor.enter(p, 1, IterMode.IncludeAnonymous | IterMode.IgnoreOverlays | IterMode.ExcludeBuffers));
+		else if (cursor.to <= p) {
 			if (!cursor.next(false)) this.done = true;
 		} else break;
 	}
@@ -15017,7 +15017,7 @@ function styleTags(spec) {
 var ruleNodeProp = new NodeProp({ combine(a, b) {
 	let cur, root, take;
 	while (a || b) {
-		if (!a || b && a.depth >= b.depth) {
+		if (!a || b && a.depth < b.depth) {
 			take = b;
 			b = b.next;
 		} else {
@@ -15200,7 +15200,7 @@ and necessarily incomplete. A full ontology of syntactic
 constructs would fill a stack of books, and be impractical to
 write themes for. So try to make do with this set. If all else
 fails, [open an
-issue](https://github.com/codemirror/codemirror.next) to propose a
+issue](https://code.haverbeke.berlin/codemirror/dev/issues) to propose a
 new tag, or [define](#highlight.Tag^define) a local custom tag for
 your use case.
 
