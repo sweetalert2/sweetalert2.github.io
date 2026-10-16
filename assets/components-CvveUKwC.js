@@ -15553,8 +15553,8 @@ function renderRecipe(component) {
 	import_client.createRoot(document.querySelector(".app-root")).render(component);
 }
 //#endregion
-//#region node_modules/@docsearch/js/dist/esm/rolldown-runtime-BHQJBBcH.js
-/*! @docsearch/js 5.1.1 (UNRELEASED 9eb5db9) | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+//#region node_modules/@docsearch/js/dist/esm/rolldown-runtime-BAXlfg2Z.js
+/*! @docsearch/js 5.1.2 (UNRELEASED e387920) | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -15590,7 +15590,7 @@ var __copyProps = (to, from, except, desc) => {
 var __toCommonJS = (mod) => __hasOwnProp.call(mod, "module.exports") ? mod["module.exports"] : __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 //#endregion
 //#region node_modules/@docsearch/js/dist/esm/docsearch.js
-/*! @docsearch/js 5.1.1 (UNRELEASED 9eb5db9) | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/js 5.1.2 (UNRELEASED e387920) | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 function _typeof$16(o) {
 	"@babel/helpers - typeof";
 	return _typeof$16 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
@@ -16686,7 +16686,7 @@ function usePlatformKeys() {
 		if (typeof navigator !== "undefined") isAppleDevice() ? setKey("⌘") : setKey(ACTION_KEY_DEFAULT);
 	}, []);
 	const [actionKeyReactsTo, actionKeyAltText, actionKeyLabel] = key === "Ctrl" ? [
-		ACTION_KEY_DEFAULT,
+		"Control",
 		"Control",
 		"Ctrl"
 	] : [
@@ -16734,9 +16734,9 @@ function DocSearchButtonKey({ reactsToKey, children }) {
 			window.removeEventListener("keyup", handleKeyUp);
 		};
 	}, [reactsToKey]);
-	return /* @__PURE__ */ En.createElement("kbd", { className: isKeyDown ? "DocSearch-Button-Key DocSearch-Button-Key--pressed" : "DocSearch-Button-Key" + (reactsToKey === "Ctrl" ? " DocSearch-Button-Key--ctrl" : "") }, children);
+	return /* @__PURE__ */ En.createElement("kbd", { className: "DocSearch-Button-Key" + (reactsToKey === "Control" ? " DocSearch-Button-Key--ctrl" : "") + (isKeyDown ? " DocSearch-Button-Key--pressed" : "") }, children);
 }
-var version$1 = "5.1.1";
+var version$1 = "5.1.2";
 function _OverloadYield(e, d) {
 	this.v = e, this.k = d;
 }
@@ -17811,6 +17811,22 @@ function liteClient(appId, apiKey, options) {
 	}, browserOptions));
 }
 init_compat();
+/**
+* Key code browsers report while an IME is processing a key. Safari fires
+* `compositionend` before the confirming `keydown`, so `isComposing` is already
+* false and this code is the remaining signal.
+*
+* @see https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+* @see https://github.com/algolia/docsearch/issues/1304
+*/
+var IME_PROCESS_KEY_CODE = 229;
+/**
+* True when a keydown belongs to an in-progress IME composition, including the
+* Enter that confirms a conversion.
+*/
+function isComposingKey(event) {
+	return event.nativeEvent.isComposing || event.keyCode === IME_PROCESS_KEY_CODE;
+}
 function LoadingIcon({ className }) {
 	return /* @__PURE__ */ En.createElement("svg", {
 		viewBox: "0 0 38 38",
@@ -27877,7 +27893,7 @@ function ChipDismiss(_ref) {
 }
 Chip.Dismiss = ChipDismiss;
 var _excluded$5$4 = ["className"];
-var _excluded2$3 = [
+var _excluded2$1$1 = [
 	"align",
 	"alignOffset",
 	"side",
@@ -27902,7 +27918,7 @@ Menu$1.Trigger = En.forwardRef((_ref2, ref) => {
 	}, props));
 });
 function MenuPopup(_ref3) {
-	let { align = "start", alignOffset = 0, side = "bottom", sideOffset = 4, collisionBoundary = "clipping-ancestors", container } = _ref3, props = _objectWithoutProperties$6(_ref3, _excluded2$3);
+	let { align = "start", alignOffset = 0, side = "bottom", sideOffset = 4, collisionBoundary = "clipping-ancestors", container } = _ref3, props = _objectWithoutProperties$6(_ref3, _excluded2$1$1);
 	return /* @__PURE__ */ En.createElement(MenuPortal, { container }, /* @__PURE__ */ En.createElement(MenuPositioner, {
 		className: "DocSearch-Menu-Positioner",
 		align,
@@ -28096,6 +28112,7 @@ var _excluded$4$4 = [
 	"searchInputLabel",
 	"state"
 ];
+var _excluded2$3 = ["onKeyDown"];
 function SearchBoxForm(_ref) {
 	let { actionsBeforeClose, autoFocus, clearButtonAriaLabel, clearButtonTitle, closeButtonAriaLabel, closeButtonText, hideInput, inputOverlay, inputProps, inputRef, isFromSelection, leadingElement, onClose, placeholder, searchInputLabel, state } = _ref, autocomplete = _objectWithoutProperties$6(_ref, _excluded$4$4);
 	const { onReset } = autocomplete.getFormProps({ inputElement: inputRef.current });
@@ -28110,6 +28127,16 @@ function SearchBoxForm(_ref) {
 		autoFocus,
 		maxLength: 512
 	});
+	const _ref2 = inputProps !== null && inputProps !== void 0 ? inputProps : {}, { onKeyDown: providedOnKeyDown } = _ref2, restInputProps = _objectWithoutProperties$6(_ref2, _excluded2$3);
+	const handleInputKeyDown = (event) => {
+		var _baseInputProps$onKey;
+		if (isComposingKey(event)) return;
+		if (providedOnKeyDown) {
+			providedOnKeyDown(event);
+			return;
+		}
+		(_baseInputProps$onKey = baseInputProps.onKeyDown) === null || _baseInputProps$onKey === void 0 || _baseInputProps$onKey.call(baseInputProps, event);
+	};
 	const isKeywordSearchLoading = state.status === "stalled";
 	return /* @__PURE__ */ En.createElement("form", {
 		className: "DocSearch-Form",
@@ -28120,7 +28147,8 @@ function SearchBoxForm(_ref) {
 	}, leadingElement || (isKeywordSearchLoading ? /* @__PURE__ */ En.createElement("div", { className: "DocSearch-LoadingIndicator" }, /* @__PURE__ */ En.createElement(LoadingIcon, null)) : /* @__PURE__ */ En.createElement("label", _objectSpread2$2({ className: "DocSearch-MagnifierLabel" }, autocomplete.getLabelProps()), /* @__PURE__ */ En.createElement(SearchIcon, null), /* @__PURE__ */ En.createElement("span", { className: "DocSearch-VisuallyHiddenForAccessibility" }, searchInputLabel))), inputOverlay, /* @__PURE__ */ En.createElement("input", _objectSpread2$2(_objectSpread2$2(_objectSpread2$2({
 		className: "DocSearch-Input",
 		ref: inputRef
-	}, baseInputProps), inputProps), {}, {
+	}, baseInputProps), restInputProps), {}, {
+		onKeyDown: handleInputKeyDown,
 		placeholder,
 		hidden: hideInput
 	})), /* @__PURE__ */ En.createElement("div", { className: "DocSearch-Actions" }, actionsBeforeClose, /* @__PURE__ */ En.createElement("button", {
