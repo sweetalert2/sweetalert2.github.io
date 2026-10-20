@@ -1,5 +1,5 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-CvveUKwC.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-BWREo30Q.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-De16pOBx.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-DxLiw18t.js";
 //#region recipe-gallery/colored-toasts.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var styles = (await __vitePreload(async () => {
