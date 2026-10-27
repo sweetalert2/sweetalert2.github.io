@@ -1,5 +1,5 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-De16pOBx.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-DxLiw18t.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-C_C5Pq32.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-BHVS3ZqG.js";
 //#region recipe-gallery/modal-with-iframe.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var src = (await __vitePreload(async () => {

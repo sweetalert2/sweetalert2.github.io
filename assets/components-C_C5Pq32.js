@@ -39616,22 +39616,6 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://kryptot.fi/",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "Kryptot",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/kryptot.png",
-							alt: "Kryptot",
-							loading: "lazy",
-							decoding: "async"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"Kryptot"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://www.inksonic.com/",
 					target: "_blank",
 					rel: "noopener",
