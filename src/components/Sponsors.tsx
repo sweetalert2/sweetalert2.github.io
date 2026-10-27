@@ -51,13 +51,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a href="https://kryptot.fi/" target="_blank" rel="noopener" aria-label="Kryptot">
-            <img src="/images/sponsors/kryptot.png" alt="Kryptot" loading="lazy" decoding="async" />
-            <br />
-            Kryptot
-          </a>
-        </div>
-        <div>
           <a href="https://www.inksonic.com/" target="_blank" rel="noopener" aria-label="InkSonic">
             <img src="/images/sponsors/inksonic.png" alt="InkSonic" loading="lazy" decoding="async" />
             <br />
