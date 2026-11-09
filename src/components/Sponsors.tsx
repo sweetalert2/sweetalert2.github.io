@@ -28,6 +28,23 @@ export function Sponsors() {
       <div className="sponsors">
         <div>
           <a
+            href="https://freispace.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="freispace – post-production scheduling software"
+          >
+            <img
+              src="/images/sponsors/freispace.svg"
+              alt="freispace – post-production scheduling software"
+              loading="lazy"
+              decoding="async"
+            />
+            <br />
+            freispace – post-production scheduling software
+          </a>
+        </div>
+        <div>
+          <a
             href="https://sealedrose.com/verify-video"
             target="_blank"
             rel="noopener"
