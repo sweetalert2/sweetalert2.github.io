@@ -39584,6 +39584,22 @@ function Sponsors() {
 			className: "sponsors",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "https://freispace.com/",
+					target: "_blank",
+					rel: "noopener",
+					"aria-label": "freispace – post-production scheduling software",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/images/sponsors/freispace.svg",
+							alt: "freispace – post-production scheduling software",
+							loading: "lazy",
+							decoding: "async"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+						"freispace – post-production scheduling software"
+					]
+				}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://sealedrose.com/verify-video",
 					target: "_blank",
 					rel: "noopener",
