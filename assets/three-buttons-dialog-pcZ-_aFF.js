@@ -1,5 +1,5 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-BBDMOK5_.js";
-import { n as __vitePreload, t as Sandpack } from "./Sandpack-kMq8RVOK.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-BxIrBmjj.js";
+import { n as __vitePreload, t as Sandpack } from "./Sandpack-Di8ZrOrE.js";
 // recipe-gallery/three-buttons-dialog.tsx
 var import_jsx_runtime = require_jsx_runtime();
 var styles = (await __vitePreload(async () => {

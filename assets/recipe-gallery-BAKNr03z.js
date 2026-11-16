@@ -1,4 +1,4 @@
-import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-BBDMOK5_.js";
+import { _ as require_jsx_runtime, g as renderRecipe, h as Nav } from "./components-BxIrBmjj.js";
 // recipe-gallery/index.tsx
 var import_jsx_runtime = require_jsx_runtime();
 function Recipe() {
