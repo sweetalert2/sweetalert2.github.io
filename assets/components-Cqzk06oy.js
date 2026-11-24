@@ -39608,22 +39608,6 @@ function Sponsors() {
 					]
 				}) }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "https://ssmarket.net/buy-youtube-views",
-					target: "_blank",
-					rel: "noopener",
-					"aria-label": "Buy Youtube Views",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/images/sponsors/ssmarket.png",
-							alt: "Buy Youtube Views",
-							loading: "lazy",
-							decoding: "async"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						"Buy Youtube Views"
-					]
-				}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "https://github.com/tiagostutz",
 					target: "_blank",
 					rel: "noopener",
