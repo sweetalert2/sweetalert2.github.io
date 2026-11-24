@@ -75,18 +75,6 @@ export function Sponsors() {
           </a>
         </div>
         <div>
-          <a
-            href="https://ssmarket.net/buy-youtube-views"
-            target="_blank"
-            rel="noopener"
-            aria-label="Buy Youtube Views"
-          >
-            <img src="/images/sponsors/ssmarket.png" alt="Buy Youtube Views" loading="lazy" decoding="async" />
-            <br />
-            Buy Youtube Views
-          </a>
-        </div>
-        <div>
           <a href="https://github.com/tiagostutz" target="_blank" rel="noopener" aria-label="Tiago de Oliveira Stutz">
             <img
               src="https://avatars0.githubusercontent.com/u/3986989?s=200&v=4"
